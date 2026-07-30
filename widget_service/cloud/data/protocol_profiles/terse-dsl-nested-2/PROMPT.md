@@ -13,16 +13,10 @@ JavaScript/TypeScript。
 严格使用以下程序形式：先以分号结束根调用，再声明 data 对象并以分号结束。data 对象是卡片的初始
 数据模型，不是任意 JavaScript 赋值。
 Column("card",
-  Text('今日' + data.appUsageStatus.appUsage.appName + '使用时长', "title"),
-  Row("between",
-    Text(data.appUsageStatus.appUsage.durationText, "subtitle"),
-    Button("clickMe", "primary")
-  )
+  Text('prefix ' + data.item.name + ' suffix', "title")
 );
 data = {
-  appUsageStatus: {
-    appUsage: { appName: "示例应用", durationText: "25 分钟" }
-  }
+  item: { name: "value" }
 };
 
 只允许一个根组件和一个 data 声明：第一条语句必须是根组件调用，第二条语句必须是 `data = {...}`；
@@ -77,7 +71,7 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 鸿蒙 A2UI 插值 `$__data.model.field.subField`。字段名必须是合法标识符，禁止 `[]`、可选链、函数调用、赋值、递增、模板
 字符串、对象方法和任意其他 JavaScript 表达式。Text 和 Button 的文本值可使用 `+` 拼接字符串
 字面量与 `data.field.subField`；只要使用 `+`，其中所有字符串字面量必须使用单引号，例如
-`Text('今日' + data.app.name + '使用时长', "title")`。禁止数值运算、条件表达式和其他组件字段中的
+`Text('prefix ' + data.item.name + ' suffix', "title")`。禁止数值运算、条件表达式和其他组件字段中的
 拼接表达式。
 
 data 声明的右侧必须是一个非空对象字面量；其内部只允许对象、数组、字符串、数字、布尔和 null
@@ -89,7 +83,7 @@ data 声明的右侧必须是一个非空对象字面量；其内部只允许对
 中，固定形态为 `onClick: [systemCall("call", {args...})]`；也兼容输入 `onclick`，但转换后统一为
 `onClick`。`systemCall` 不是任意函数：它的 call 和 args 必须与 TaskSpec.eventCandidates 中某一项
 完全一致，禁止使用 event id、action、event、回调函数或臆造参数。例如：
-`Button("设置防沉迷", "primary", {onClick: [systemCall("clickToDeeplink", {abilityName: "com.a", bundleName: "com.b", intentName: "Settings", urr: "parent_control"})]})`。
+`Button("Action", "primary", {onClick: [systemCall("allowedCall", {key: "value"})]})`。
 
 不得生成 Catalog 未声明的组件或字段，不得使用 __proto__、prototype、constructor 对象键。
 当前服务只允许下列组件；禁止生成 Grid、Tabs、TabContent、TextInput、Toggle、Radio、
@@ -118,7 +112,7 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 - Progress 必须同时提供有限数字 value 与 total，且 total 大于 0。
 
 Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/media/...` 具体本地资源文件
-路径，例如 `Image("resources/base/media/hourglass_fill.svg", "icon")`；不得使用 `asset.xxx`、
+路径，例如 `Image("resources/base/media/icon.svg", "icon")`；不得使用 `asset.xxx`、
 `asset/...`、资源 ID、别名、网络 URL 或 data URI，也不得臆造路径。
 
 数据模型：data 声明会作为 A2UI 数据模型的 `/model` 值；`data.a.b` 会转换为
