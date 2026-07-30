@@ -680,6 +680,11 @@ class WidgetGenerationService:
                             ),
                         )
                     except TerseDslNested2ConversionError as exc:
+                        logger.error(
+                            f"{_MODULE} terse_nested2_conversion_failed "
+                            "phase=initial "
+                            f"error={exc}"
+                        )
                         raise A2UIModelGenerationError(
                             "TerseDSL-Nested-2 conversion failed"
                         ) from exc
@@ -793,6 +798,11 @@ class WidgetGenerationService:
                             ),
                         )
                     except TerseDslNested2ConversionError as exc:
+                        logger.error(
+                            f"{_MODULE} terse_nested2_conversion_failed "
+                            "phase=repair "
+                            f"error={exc}"
+                        )
                         raise A2UIModelGenerationError(
                             "TerseDSL-Nested-2 repair conversion failed"
                         ) from exc
@@ -924,7 +934,8 @@ class WidgetGenerationService:
                 f"error_code={ErrorCode.A2UI_GENERATION_FAILED.value} "
                 f"model_failure_retry_count={model_failure_retry_count} "
                 f"validation_retry_count={validation_retry_count} "
-                f"exception_type={type(exc).__name__} validation_continued=false "
+                f"exception_type={type(exc).__name__} exception={exc!s} "
+                "validation_continued=false "
                 "artifact_saved=false"
             )
             response = GenerateWidgetCardResponse(
