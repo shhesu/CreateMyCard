@@ -674,6 +674,10 @@ class WidgetGenerationService:
                             generated_source,
                             size=card_spec.suggestSize,
                             protocol_profile=conversion_protocol_profile,
+                            task_spec=task_spec.model_dump(
+                                mode="json",
+                                exclude_none=True,
+                            ),
                         )
                     except TerseDslNested2ConversionError as exc:
                         raise A2UIModelGenerationError(
@@ -783,6 +787,10 @@ class WidgetGenerationService:
                             repaired_dsl,
                             size=card_spec.suggestSize,
                             protocol_profile=conversion_protocol_profile,
+                            task_spec=task_spec.model_dump(
+                                mode="json",
+                                exclude_none=True,
+                            ),
                         )
                     except TerseDslNested2ConversionError as exc:
                         raise A2UIModelGenerationError(
@@ -1161,16 +1169,6 @@ class WidgetGenerationService:
                 status=GenerationStatus.UNSUPPORTED,
                 suggestSize=request.size or "2x4",
                 message="TerseDSL-Nested-2 当前只支持新建卡片，不支持继续编辑。",
-                errorCode=ErrorCode.PROTOCOL_CAPABILITY_UNSUPPORTED.value,
-            )
-        if request.candidateDataBindings or request.candidateEventCandidates:
-            return GenerateWidgetCardResponse(
-                status=GenerationStatus.UNSUPPORTED,
-                suggestSize=request.size or "2x4",
-                message=(
-                    "TerseDSL-Nested-2 当前只支持字面量静态卡片，"
-                    "不支持动态数据或点击事件。"
-                ),
                 errorCode=ErrorCode.PROTOCOL_CAPABILITY_UNSUPPORTED.value,
             )
         try:

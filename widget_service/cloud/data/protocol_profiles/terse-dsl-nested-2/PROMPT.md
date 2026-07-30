@@ -85,8 +85,11 @@ data 声明的右侧必须是一个非空对象字面量；其内部只允许对
 都必须在 data 对象中存在。若 TaskSpec 提供动态数据候选，data 对象只能声明这些候选 writeResultTo
 路径下的字段及其初始/示例值，不得臆造数据根路径。
 
-禁止回调、事件处理代码、网络请求和任意未列出的 JavaScript 语法。事件当前不受此协议支持；Button
-只能使用 label、Design 和允许的 options，不能声明 onClick、action 或 event。
+禁止回调、任意 JavaScript 代码、网络请求和任意未列出的语法。点击事件只允许写在 Button 的 options
+中，固定形态为 `onClick: [systemCall("call", {args...})]`；也兼容输入 `onclick`，但转换后统一为
+`onClick`。`systemCall` 不是任意函数：它的 call 和 args 必须与 TaskSpec.eventCandidates 中某一项
+完全一致，禁止使用 event id、action、event、回调函数或臆造参数。例如：
+`Button("设置防沉迷", "primary", {onClick: [systemCall("clickToDeeplink", {abilityName: "com.a", bundleName: "com.b", intentName: "Settings", urr: "parent_control"})]})`。
 
 不得生成 Catalog 未声明的组件或字段，不得使用 __proto__、prototype、constructor 对象键。
 当前服务只允许下列组件；禁止生成 Grid、Tabs、TabContent、TextInput、Toggle、Radio、
@@ -109,7 +112,7 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 
 可选参数字段（只能使用以下字段名；? 表示可省略）：
 
-- Button options: { enabled?: boolean }
+- Button options: { enabled?: boolean; onClick?: [systemCall("call", {args...})] }
 - Checkbox options: { label?: string; select?: boolean; value?: string; group?: string }
 - Text、Image、Divider、Row、Column、List、Stack 没有可选字段，不得输出 options。
 - Progress 必须同时提供有限数字 value 与 total，且 total 大于 0。
@@ -120,7 +123,7 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/
 
 数据模型：data 声明会作为 A2UI 数据模型的 `/model` 值；`data.a.b` 会转换为
 `{{$__data.model.a.b}}`，Text/Button 的拼接会转换为 `{{'前缀' + $__data.model.a.b + '后缀'}}`。
-当前协议只支持 Create + external lifecycle，不支持 Patch；事件仍不支持。
+当前协议只支持 Create + external lifecycle，不支持 Patch。
 
 只有在容器既不承载业务分组，也不承担对齐、间距、层叠、背景、边框、阅读顺序或视觉层级等布局/
 样式作用，且移除后界面语义与视觉结构不变时，才可省略该冗余包装层。

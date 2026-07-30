@@ -94,14 +94,24 @@ class TextExpression:
     parts: tuple[str | DataReference, ...]
 
 
+@dataclass(frozen=True)
+class SystemCall:
+    """A restricted event invocation that lowers to an A2UI onClick handler."""
+
+    call: str
+    args: dict[str, Any]
+
+
 def convert_terse_dsl_nested2_to_a2ui(
     source: str,
     *,
     size: str,
     protocol_profile: dict[str, Any],
+    task_spec: dict[str, Any] | None = None,
 ) -> str:
     """Convert one Nested-2 component tree and optional data declaration to A2UI."""
     root = parse_terse_dsl_nested2(source)
+    _validate_system_calls(root, task_spec)
     compact_rows: list[list[Any]] = []
     _append_compact_rows(root, "root", size, compact_rows)
     if root.data is not None:
@@ -255,7 +265,7 @@ def _parse_component(node: ast.AST, depth: int, state: dict[str, int]) -> Nested
     children: list[Nested2Node] = []
     child_started = False
     for value_index, argument in enumerate(node.args):
-        if isinstance(argument, ast.Call):
+        if _is_component_call(argument):
             child_started = True
             children.append(_parse_component(argument, depth + 1, state))
             continue
@@ -274,6 +284,14 @@ def _parse_component(node: ast.AST, depth: int, state: dict[str, int]) -> Nested
     return Nested2Node(component_type, tuple(values), tuple(children))
 
 
+def _is_component_call(node: ast.AST) -> bool:
+    return (
+        isinstance(node, ast.Call)
+        and isinstance(node.func, ast.Name)
+        and node.func.id in _COMPONENTS
+    )
+
+
 def _component_value(
     node: ast.AST,
     depth: int,
@@ -282,6 +300,8 @@ def _component_value(
     """Parse a component value, including safe data reads and text concatenation."""
     if isinstance(node, ast.Attribute):
         return _data_reference(node)
+    if isinstance(node, ast.Call):
+        return _system_call(node, depth)
     if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
         if not allow_text_expression:
             raise TerseDslNested2ConversionError(
@@ -290,6 +310,25 @@ def _component_value(
         parts = _text_expression_parts(node, depth)
         return TextExpression(tuple(parts))
     return _literal_value(node, depth)
+
+
+def _system_call(node: ast.Call, depth: int) -> SystemCall:
+    """Parse only systemCall(call, args) as an event value inside Button options."""
+    if not isinstance(node.func, ast.Name) or node.func.id != "systemCall":
+        raise TerseDslNested2ConversionError(
+            "Only systemCall(call, args) is allowed as a non-component call."
+        )
+    if node.keywords or len(node.args) != 2:
+        raise TerseDslNested2ConversionError(
+            "systemCall requires exactly a call string and an args object."
+        )
+    call = _json_literal_value(node.args[0], depth + 1)
+    args = _json_literal_value(node.args[1], depth + 1)
+    if not isinstance(call, str) or not call or not isinstance(args, dict):
+        raise TerseDslNested2ConversionError(
+            "systemCall requires a non-empty call string and an args object."
+        )
+    return SystemCall(call, args)
 
 
 def _literal_value(node: ast.AST, depth: int) -> Any:
@@ -417,6 +456,8 @@ def _validate_value_references(value: Any, data: dict[str, Any] | None) -> None:
         for part in value.parts:
             _validate_value_references(part, data)
         return
+    if isinstance(value, SystemCall):
+        return
     if isinstance(value, dict):
         for child in value.values():
             _validate_value_references(child, data)
@@ -433,6 +474,80 @@ def _data_path_exists(data: dict[str, Any], path: tuple[str, ...]) -> bool:
             return False
         current = current[part]
     return True
+
+
+def _validate_system_calls(
+    node: Nested2Node,
+    task_spec: dict[str, Any] | None,
+) -> None:
+    allowed = _candidate_system_calls(task_spec)
+    for value in node.values:
+        _validate_system_call_value(
+            value,
+            allowed,
+            component_type=node.component_type,
+        )
+    for child in node.children:
+        _validate_system_calls(child, task_spec)
+
+
+def _candidate_system_calls(
+    task_spec: dict[str, Any] | None,
+) -> set[str]:
+    if not isinstance(task_spec, dict):
+        return set()
+    candidates = task_spec.get("eventCandidates")
+    if not isinstance(candidates, list):
+        return set()
+    return {
+        _stable_json({"call": item.get("call"), "args": item.get("args")})
+        for item in candidates
+        if isinstance(item, dict)
+        and isinstance(item.get("call"), str)
+        and item.get("call")
+        and isinstance(item.get("args"), dict)
+    }
+
+
+def _validate_system_call_value(
+    value: Any,
+    allowed: set[str],
+    *,
+    component_type: str,
+    inside_on_click: bool = False,
+) -> None:
+    if isinstance(value, SystemCall):
+        if component_type != "Button" or not inside_on_click:
+            raise TerseDslNested2ConversionError(
+                "systemCall is only allowed in Button onClick options."
+            )
+        handler = {"call": value.call, "args": value.args}
+        if _stable_json(handler) not in allowed:
+            raise TerseDslNested2ConversionError(
+                "systemCall is not present in TaskSpec.eventCandidates."
+            )
+        return
+    if isinstance(value, dict):
+        for key, child in value.items():
+            _validate_system_call_value(
+                child,
+                allowed,
+                component_type=component_type,
+                inside_on_click=key in {"onClick", "onclick"},
+            )
+        return
+    if isinstance(value, list):
+        for child in value:
+            _validate_system_call_value(
+                child,
+                allowed,
+                component_type=component_type,
+                inside_on_click=inside_on_click,
+            )
+
+
+def _stable_json(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
 def _append_compact_rows(
@@ -524,8 +639,13 @@ def _lower_component_value(value: Any) -> Any:
         return _A2UI_EXPRESSION_MARKER + " + ".join(
             _a2ui_expression_part(part) for part in value.parts
         )
+    if isinstance(value, SystemCall):
+        return {"call": value.call, "args": _lower_component_value(value.args)}
     if isinstance(value, dict):
-        return {key: _lower_component_value(child) for key, child in value.items()}
+        return {
+            "onClick" if key == "onclick" else key: _lower_component_value(child)
+            for key, child in value.items()
+        }
     if isinstance(value, list):
         return [_lower_component_value(child) for child in value]
     return value

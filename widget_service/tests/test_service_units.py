@@ -169,6 +169,50 @@ data = {
     }
 
 
+def test_terse_dsl_nested2_converts_task_spec_authorized_system_call():
+    source = '''
+Column("card",
+  Button("设置防沉迷", "primary", {
+    onClick: [systemCall("clickToDeeplink", {
+      abilityName: "com.a", bundleName: "com.b", intentName: "Settings", urr: "parent_control"
+    })]
+  })
+);
+data = { appUsageStats: { appUsage: { appName: "抖音" } } };
+'''
+    task_spec = {
+        "eventCandidates": [
+            {
+                "id": "event.open.settings.parentControl",
+                "call": "clickToDeeplink",
+                "args": {
+                    "abilityName": "com.a",
+                    "bundleName": "com.b",
+                    "intentName": "Settings",
+                    "urr": "parent_control",
+                },
+            }
+        ]
+    }
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        source,
+        size="2x2",
+        protocol_profile=profile,
+        task_spec=task_spec,
+    )
+    messages = [json_module.loads(line) for line in genui.splitlines()]
+    button = messages[1]["updateComponents"]["components"][1]
+
+    assert button["onClick"] == [
+        {
+            "call": "clickToDeeplink",
+            "args": task_spec["eventCandidates"][0]["args"],
+        }
+    ]
+
+
 @pytest.mark.parametrize(
     "source",
     [
@@ -272,22 +316,7 @@ def test_terse_dsl_nested2_prompt_builder_uses_terse_system_prompt():
     )
 
 
-def test_terse_dsl_nested2_rejects_dynamic_and_edit_requests():
-    dynamic_request = GenerateWidgetCardRequest(
-        uid="test-user",
-        prdVer=APP_VERSION,
-        device={"romVersion": ROM_VERSION_6},
-        userQuery="生成动态天气卡片",
-        title="天气",
-        description="动态天气",
-        candidateDataBindings=[
-            {
-                "capabilityId": "ViewWeather",
-                "arguments": {"districtName": "上海"},
-                "writeResultTo": "/data/weather",
-            }
-        ],
-    )
+def test_terse_dsl_nested2_rejects_edit_requests():
     edit_request = GenerateWidgetCardRequest(
         uid="test-user",
         prdVer=APP_VERSION,
@@ -297,14 +326,9 @@ def test_terse_dsl_nested2_rejects_dynamic_and_edit_requests():
     )
     service = WidgetGenerationService()
 
-    dynamic_response = service.generate_widget_card_terse_dsl_nested2(
-        dynamic_request
-    )
     edit_response = service.generate_widget_card_terse_dsl_nested2(edit_request)
 
-    assert dynamic_response.status == GenerationStatus.UNSUPPORTED
     assert edit_response.status == GenerationStatus.UNSUPPORTED
-    assert dynamic_response.errorCode == "PROTOCOL_CAPABILITY_UNSUPPORTED"
     assert edit_response.errorCode == "PROTOCOL_CAPABILITY_UNSUPPORTED"
 
 
