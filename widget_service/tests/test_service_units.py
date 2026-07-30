@@ -157,10 +157,10 @@ data = {
     components = messages[1]["updateComponents"]["components"]
 
     assert components[1]["content"] == (
-        "{{'今日' + $__data.model.appUsageStatus.appUsage.appName + '使用市场'}}"
+        "{{ '今日' + ${/model/appUsageStatus/appUsage/appName} + '使用市场' }}"
     )
     assert components[2]["content"] == (
-        "{{$__data.model.appUsageStatus.appUsage.durationText}}"
+        "{{ ${/model/appUsageStatus/appUsage/durationText} }}"
     )
     assert messages[2]["updateDataModel"]["value"]["model"] == {
         "appUsageStatus": {

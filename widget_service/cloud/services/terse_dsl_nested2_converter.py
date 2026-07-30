@@ -632,7 +632,7 @@ def _merge_options(props: dict[str, Any], values: Any) -> None:
 
 
 def _lower_component_value(value: Any) -> Any:
-    """Lower safe Terse data reads to Harmony A2UI template expressions."""
+    """Lower safe Terse data reads to standard A2UI template expressions."""
     if isinstance(value, DataReference):
         return _data_template_expression(value)
     if isinstance(value, TextExpression):
@@ -652,14 +652,18 @@ def _lower_component_value(value: Any) -> Any:
 
 
 def _data_template_expression(reference: DataReference) -> str:
-    return _A2UI_EXPRESSION_MARKER + _a2ui_expression_part(reference)
+    return _A2UI_EXPRESSION_MARKER + _a2ui_template_reference(reference)
 
 
 def _a2ui_expression_part(part: str | DataReference) -> str:
     if isinstance(part, DataReference):
-        return "$__data.model." + ".".join(part.path)
+        return _a2ui_template_reference(part)
     return _single_quoted_a2ui_string(part)
 
+
+def _a2ui_template_reference(reference: DataReference) -> str:
+    """Convert ``data.a.b`` to a standard A2UI JSON Pointer expression."""
+    return "${/model/" + "/".join(reference.path) + "}"
 
 def _single_quoted_a2ui_string(value: str) -> str:
     return (
@@ -683,7 +687,7 @@ def _restore_a2ui_expressions(genui: str) -> str:
 def _restore_a2ui_expression_value(value: Any) -> Any:
     if isinstance(value, str) and value.startswith(_A2UI_EXPRESSION_MARKER):
         expression = value.removeprefix(_A2UI_EXPRESSION_MARKER)
-        return "{{" + expression + "}}"
+        return "{{ " + expression + " }}"
     if isinstance(value, list):
         return [_restore_a2ui_expression_value(item) for item in value]
     if isinstance(value, dict):
