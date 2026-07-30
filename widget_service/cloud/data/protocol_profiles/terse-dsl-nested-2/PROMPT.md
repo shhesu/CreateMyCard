@@ -114,8 +114,9 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 - Text、Image、Divider、Row、Column、List、Stack 没有可选字段，不得输出 options。
 - Progress 必须同时提供有限数字 value 与 total，且 total 大于 0。
 
-Image.source 只能使用 TaskSpec assetCandidates 中提供的 resources/base/media/ 本地资源路径，不得
-臆造路径、使用网络 URL 或 data URI。
+Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/media/...` 具体本地资源文件
+路径，例如 `Image("resources/base/media/hourglass_fill.svg", "icon")`；不得使用 `asset.xxx`、
+`asset/...`、资源 ID、别名、网络 URL 或 data URI，也不得臆造路径。
 
 数据模型：data 声明会作为 A2UI 数据模型的 `/model` 值；`data.a.b` 会转换为
 `{{$__data.model.a.b}}`，Text/Button 的拼接会转换为 `{{'前缀' + $__data.model.a.b + '后缀'}}`。
