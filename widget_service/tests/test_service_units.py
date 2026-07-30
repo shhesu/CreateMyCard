@@ -2516,7 +2516,7 @@ def test_a2ui_model_client_collects_llmclient_stream(monkeypatch):
     captured: dict = {}
     dsl = '{"createSurface":{"surfaceId":"root"}}'
 
-    async def fake_stream(options, messages):
+    async def fake_stream(options, messages, *, _on_usage=None):
         captured["api_key"] = options.api_key
         captured["messages"] = messages
         yield "```genui\n"

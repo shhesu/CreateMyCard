@@ -100,6 +100,7 @@ async def stream_genui(
     messages: list[dict],
     *,
     _on_sse_event: Callable[[str, str, dict | None], None] | None = None,
+    _on_usage: Callable[[dict], None] | None = None,
 ) -> AsyncGenerator[str, None]:
     """流式调用 LLM，逐 token yield content。"""
     api_key = "AccessService"
@@ -173,6 +174,9 @@ async def stream_genui(
 
                             try:
                                 response = json.loads(content)
+                                usage = response.get("usage")
+                                if isinstance(usage, dict) and _on_usage is not None:
+                                    _on_usage(usage)
                                 choices = response.get('choices', [])
 
                                 if choices:
