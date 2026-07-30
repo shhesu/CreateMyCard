@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) Huawei Technologies Co., Ltd. 2026-2026. All rights reserved.
 import asyncio
-import math
 import time
 
 from app.logger import json_for_log, logger
@@ -40,20 +39,11 @@ class LlmClientModelTransport:
             "completion_tokens",
             usage.get("output_tokens"),
         )
-        source = "usage"
-        if not isinstance(prompt_tokens, int) or not isinstance(completion_tokens, int):
-            prompt_tokens = _estimate_tokens("".join(item.get("content", "") for item in messages))
-            completion_tokens = _estimate_tokens(result)
-            source = "estimated"
+        has_usage = isinstance(prompt_tokens, int) and isinstance(completion_tokens, int)
         logger.info(
             f"{_MODULE} llm_call_metrics prompt_tokens={prompt_tokens} "
             f"completion_tokens={completion_tokens} api_latency_ms={duration_ms} "
-            f"token_source={source}"
+            f"token_source={'usage' if has_usage else 'unavailable'}"
         )
         logger.info(f"{_MODULE} response_collected content={json_for_log(result)}")
         return result
-
-
-def _estimate_tokens(value: str) -> int:
-    """Conservative fallback used only when an OpenAI-compatible usage block is absent."""
-    return math.ceil(len(value.encode("utf-8")) / 4) if value else 0

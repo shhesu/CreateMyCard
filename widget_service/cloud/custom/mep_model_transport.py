@@ -235,13 +235,14 @@ class MepModelTransport:
         )
         input_tokens = final_event.get("inputTokenNum") if final_event else None
         completion_tokens = final_event.get("generateTokenNum") if final_event else None
+        has_usage = isinstance(input_tokens, int) and isinstance(completion_tokens, int)
         model_time_ms = final_event.get("modelTime") if final_event else None
         speed = self._token_speed(duration_ms, first_token_latency_ms, completion_tokens)
         logger.info(
             f"{_MODULE} llm_call_metrics content_preview={json_for_log(full_text)} "
             f"prompt_tokens={input_tokens} completion_tokens={completion_tokens} "
             f"api_latency_ms={duration_ms} first_token_latency_ms={first_token_latency_ms} "
-            "token_source=usage "
+            f"token_source={'usage' if has_usage else 'unavailable'} "
             f"model_time_ms={model_time_ms} tokens_per_sec={speed} "
             f"finish_reason={self._event_value(final_event, 'finishReason')} "
             f"error_code={self._event_value(final_event, 'errorCode')} "

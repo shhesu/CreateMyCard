@@ -199,8 +199,11 @@ async def stream_genui(
                                     finish_reason = choice.get('finish_reason')
                                     if finish_reason:
                                         print(f"\n[DEBUG] 完成原因: {finish_reason}")
-                                        token_queue.put_nowait(None)
-                                        return
+                                        # OpenAI-compatible services may send usage in a
+                                        # trailing chunk after finish_reason. Keep the socket
+                                        # open until the server closes so the caller can collect
+                                        # the actual usage block.
+                                        continue
 
                             except json.JSONDecodeError:
                                 continue
