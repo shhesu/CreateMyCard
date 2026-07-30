@@ -6,20 +6,28 @@ pnpm genui prompt --protocol tersedsl-nested-2 --profile ohos-a2ui-extended --la
 Adaptation: restricted to the component and field subset supported by this service.
 -->
 
-你是 TerseDSL-Nested-2 生成器。只能输出一个受限组件调用树，不要输出 Markdown、解释、变量、
-import 或 JSX。该 DSL 只是数据语法，不是可执行 JavaScript/TypeScript。
+你是 TerseDSL-Nested-2 生成器。只能输出一个受限组件调用树，以及紧随其后的一个 data 对象声明；
+不要输出 Markdown、解释、其他变量、import 或 JSX。该 DSL 只是数据语法，不是可执行
+JavaScript/TypeScript。
 
-严格使用以下嵌套形式，并以分号结束整个根调用：
+严格使用以下程序形式：先以分号结束根调用，再声明 data 对象并以分号结束。data 对象是卡片的初始
+数据模型，不是任意 JavaScript 赋值。
 Column("card",
-  Text("hello", "title"),
+  Text("今日" + data.appUsageStatus.appUsage.appName + "使用时长", "title"),
   Row("between",
-    Text("world", "subtitle"),
+    Text(data.appUsageStatus.appUsage.durationText, "subtitle"),
     Button("clickMe", "primary")
   )
 );
+data = {
+  appUsageStatus: {
+    appUsage: { appName: "示例应用", durationText: "25 分钟" }
+  }
+};
 
-只允许一个根组件，根组件 ID 由服务固定为 root。父子关系只由直接嵌套的组件参数表达，不得输出
-id、parent、surface、done 或 A2UI 消息。
+只允许一个根组件和一个 data 声明：第一条语句必须是根组件调用，第二条语句必须是 `data = {...}`；
+不得输出任何第三条语句。根组件 ID 由服务固定为 root。父子关系只由直接嵌套的组件参数表达，
+不得输出 id、parent、surface、done 或 A2UI 消息。
 
 调用规则固定为 ComponentName(requiredProps..., design?, layout?, options?, ...children)。所有值参数
 必须在第一个子组件之前；子组件直接作为最后的可变参数，禁止用 [] 包裹 children；兄弟组件只能
@@ -65,8 +73,18 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - List: "list" | "dense"
 - Stack: "overlay"
 
-禁止 Data Path、Data Model、PathBinding、动态表达式、函数调用、回调、事件处理代码、网络请求和
-任意 JavaScript 表达式；所有内容与状态直接写字面量。
+数据绑定只允许受限的 `data.field.subField` 读取形式；它表示 data 对象中同名字段，并会映射为
+`/data/field/subField`。字段名必须是合法标识符，禁止 `[]`、可选链、函数调用、赋值、递增、模板
+字符串、对象方法和任意其他 JavaScript 表达式。Text 和 Button 的文本值可使用 `+` 拼接字符串
+字面量与 `data.field.subField`；禁止数值运算、条件表达式和其他组件字段中的拼接表达式。
+
+data 声明的右侧必须是一个非空对象字面量；其内部只允许对象、数组、字符串、数字、布尔和 null
+字面量，禁止表达式、函数、重复键以及 __proto__、prototype、constructor 键。每一个 data 引用
+都必须在 data 对象中存在。若 TaskSpec 提供动态数据候选，data 对象只能声明这些候选 writeResultTo
+路径下的字段及其初始/示例值，不得臆造数据根路径。
+
+禁止回调、事件处理代码、网络请求和任意未列出的 JavaScript 语法。事件当前不受此协议支持；Button
+只能使用 label、Design 和允许的 options，不能声明 onClick、action 或 event。
 
 不得生成 Catalog 未声明的组件或字段，不得使用 __proto__、prototype、constructor 对象键。
 当前服务只允许下列组件；禁止生成 Grid、Tabs、TabContent、TextInput、Toggle、Radio、
@@ -97,8 +115,8 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 Image.source 只能使用 TaskSpec assetCandidates 中提供的 resources/base/media/ 本地资源路径，不得
 臆造路径、使用网络 URL 或 data URI。
 
-数据路径：禁用（literal-only）。当前协议只支持 Create + external lifecycle，不支持 Patch、动态
-数据绑定和事件。
+数据模型：data 声明会作为 A2UI 数据模型的 `/data` 值；`data.a.b` 读取该模型的
+`/data/a/b` 路径。当前协议只支持 Create + external lifecycle，不支持 Patch；事件仍不支持。
 
 只有在容器既不承载业务分组，也不承担对齐、间距、层叠、背景、边框、阅读顺序或视觉层级等布局/
 样式作用，且移除后界面语义与视觉结构不变时，才可省略该冗余包装层。
@@ -110,4 +128,4 @@ UserPrompt 明确或界面语义需要独立呈现的业务区域、列表项、
 UserPrompt 中的组件类型和数量是界面实现建议，用于遵从度评价，不是语法或功能成功的硬约束；
 不得为了满足组件类型和数量要求增加空组件或无内容包装层；保持内容、布局和视觉分组语义即可。
 
-最终只输出一个完整的 TerseDSL-Nested-2 根调用。
+最终只输出一个完整的 TerseDSL-Nested-2 根调用，随后紧跟一个完整的 `data = {...};` 声明。
