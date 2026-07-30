@@ -127,6 +127,40 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/
 `{{ ${/model/a/b} }}`，Text/Button 的拼接会转换为 `{{ '前缀' + ${/model/a/b} + '后缀' }}`。
 当前协议只支持 Create + external lifecycle，不支持 Patch。
 
+## 桌面 Form 视觉与构图规则（移植自 design-compact-dsl）
+
+目标不是把字段合法塞进方块，而是在固定画布上交付单焦点、清晰且有层级的服务卡片。
+先确定卡片用途和主信息，再决定字段取舍、字阶、图标和行动；不得把所有字段平铺成仪表盘。
+
+### Card Shell 与尺寸
+
+- `2x2` 为 160×160；`2x4` 为 320×160。横卡只能增加横向组织空间，不得增加纵向内容层数。
+- root 固定圆角 20、padding 12、clip true，并由转换器提供低对比场景渐变；不得通过额外容器伪造卡片外壳。
+- `2x2` 采用 title / content / action 的紧凑竖向分区；`2x4` 优先采用左右信息组或右侧行动区，不要把竖卡横向拉宽。
+- 所有可见内容必须留在 12vp 安全边距内。内容超出时先降字阶、合并同行或选择完整字段子集，不得堆叠裁切。
+
+### 语义角色与信息取舍
+
+- 每张卡必须有 identity（这是什么卡）和 primary（最重要事实）；support 仅在与 primary 构成完整语义时保留；action 仅在有合法 eventCandidates 时生成。
+- identity 从 userQuery 压缩为 2–6 字的用途名，不能由数据叶子、事件参数或数字拼接。
+- primary/support 的事实只能来自 data；description 只可压缩成短标签。不得把 sampleValue、事件 args、uri、号码或关系字段写成可见文案。
+- 容量不足时保留一个语义完整的最小子集，宁可省略无关 support，也不要留下孤立标签、裸数值或多个互不相关的指标。
+
+### 字阶、图标与行动
+
+- 常规 identity 使用 `subtitle-s`；主信息按密度使用 `body-m`、`subtitle-l`、`title-s`，只有宽松单焦点时使用 `display-s`。辅助信息用 `body-s` 或 `caption-*`。
+- 已展示角色若有语义匹配的 assetCandidates，优先使用一个图标点题；identity 图标 20×20，行内图标 14–16，Button 图标 16×16。不要把候选图标全贴。
+- `capsule` 用于文字行动；`icon-round` 仅用于纯图标行动。2x2 至多一个显式行动，2x4 至多两个。
+- onClick 必须原样使用 eventCandidates 的 call 和 args；args 绝不进入 Text 或 Button 文案。
+
+### 间距与布局审计
+
+- Row / Column 的可见兄弟使用 2、4 或 8 的 itemMargin；List 使用 2 或 4 的 space。不得使用 6 或大于 12 的随意间距。
+- `Row("between", ...)` 仅承载两个语义组（左簇 / 右簇），不要塞入三个以上叶子节点。
+- 数值与单位先组成内层 Row，再与旁注分轨；相邻可见元素不得零间距贴死。
+- Progress 只能表达真实比例、阶段或阈值，必须搭配说明 Text；一张卡最多一个主 Progress 信息块，禁止裸 Progress。
+- Divider 默认省略，只有确实改善分组时才使用。
+
 只有在容器既不承载业务分组，也不承担对齐、间距、层叠、背景、边框、阅读顺序或视觉层级等布局/
 样式作用，且移除后界面语义与视觉结构不变时，才可省略该冗余包装层。
 

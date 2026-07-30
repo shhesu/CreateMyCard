@@ -714,7 +714,7 @@ def _container_props(
     props: dict[str, Any] = {}
     _merge_options(props, values)
     layouts = {
-        ("Column", "section"): {"width": "matchParent", "itemMargin": 6},
+        ("Column", "section"): {"width": "matchParent", "itemMargin": 8},
         ("Column", "compact"): {"width": "matchParent", "itemMargin": 4},
         ("Row", "between"): {
             "width": "matchParent",
@@ -728,8 +728,8 @@ def _container_props(
             "justifyContent": "end",
             "alignItems": "center",
         },
-        ("List", "list"): {"width": "matchParent", "space": 6},
-        ("List", "dense"): {"width": "matchParent", "space": 4},
+        ("List", "list"): {"width": "matchParent", "space": 4},
+        ("List", "dense"): {"width": "matchParent", "space": 2},
         ("Stack", "overlay"): {"width": "matchParent", "height": "matchParent"},
     }
     if component_id == "root":
@@ -746,7 +746,10 @@ def _container_props(
             "padding": 12,
             "borderRadius": 20,
             "clip": True,
-            "backgroundColor": "background_primary",
+            "linearGradient": {
+                "direction": "RightBottom",
+                "colors": [["#FFE8F1F5", 0], ["#FFE2ECE4", 1]],
+            },
             "itemMargin": 8,
         }
     if layout is None:
