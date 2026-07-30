@@ -74,7 +74,7 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - Stack: "overlay"
 
 数据绑定只允许受限的 `data.field.subField` 读取形式；它表示 data 对象中同名字段，并会映射为
-`/data/field/subField`。字段名必须是合法标识符，禁止 `[]`、可选链、函数调用、赋值、递增、模板
+鸿蒙 A2UI 插值 `$__data.model.field.subField`。字段名必须是合法标识符，禁止 `[]`、可选链、函数调用、赋值、递增、模板
 字符串、对象方法和任意其他 JavaScript 表达式。Text 和 Button 的文本值可使用 `+` 拼接字符串
 字面量与 `data.field.subField`；禁止数值运算、条件表达式和其他组件字段中的拼接表达式。
 
@@ -115,8 +115,9 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 Image.source 只能使用 TaskSpec assetCandidates 中提供的 resources/base/media/ 本地资源路径，不得
 臆造路径、使用网络 URL 或 data URI。
 
-数据模型：data 声明会作为 A2UI 数据模型的 `/data` 值；`data.a.b` 读取该模型的
-`/data/a/b` 路径。当前协议只支持 Create + external lifecycle，不支持 Patch；事件仍不支持。
+数据模型：data 声明会作为 A2UI 数据模型的 `/model` 值；`data.a.b` 会转换为
+`{{$__data.model.a.b}}`，Text/Button 的拼接会转换为 `{{"前缀" + $__data.model.a.b + "后缀"}}`。
+当前协议只支持 Create + external lifecycle，不支持 Patch；事件仍不支持。
 
 只有在容器既不承载业务分组，也不承担对齐、间距、层叠、背景、边框、阅读顺序或视觉层级等布局/
 样式作用，且移除后界面语义与视觉结构不变时，才可省略该冗余包装层。

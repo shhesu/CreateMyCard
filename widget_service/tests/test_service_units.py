@@ -134,12 +134,50 @@ Column("card",
     assert components[4]["styles"]["fontColor"] == "#FF64BB5C"
 
 
+def test_terse_dsl_nested2_converts_declared_data_and_a2ui_interpolation():
+    source = '''
+Column("card",
+  Text('今日' + data.appUsageStatus.appUsage.appName + '使用市场', "title"),
+  Text(data.appUsageStatus.appUsage.durationText, "success")
+);
+data = {
+  appUsageStatus: {
+    appUsage: {appName: "示例应用", durationText: "25 分钟"}
+  }
+};
+'''
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        source,
+        size="2x2",
+        protocol_profile=profile,
+    )
+    messages = [json_module.loads(line) for line in genui.splitlines()]
+    components = messages[1]["updateComponents"]["components"]
+
+    assert components[1]["content"] == (
+        "{{\"今日\" + $__data.model.appUsageStatus.appUsage.appName + \"使用市场\"}}"
+    )
+    assert components[2]["content"] == (
+        "{{$__data.model.appUsageStatus.appUsage.durationText}}"
+    )
+    assert messages[2]["updateDataModel"]["value"]["model"] == {
+        "appUsageStatus": {
+            "appUsage": {"appName": "示例应用", "durationText": "25 分钟"}
+        }
+    }
+
+
 @pytest.mark.parametrize(
     "source",
     [
         'Column("card", Text(fetch("x"), "body"));',
         'Column("card", Unknown("x"));',
         'Column("card", Text("x", {constructor: "bad"}));',
+        'Column("card", Text(data.missing, "body"));',
+        'Column("card", Text(data.value + 1, "body")); data = {value: "x"};',
+        'Column("card", Text("x", "body")); data = fetch("x");',
         'Row("between", Text("x", "body"));',
     ],
 )

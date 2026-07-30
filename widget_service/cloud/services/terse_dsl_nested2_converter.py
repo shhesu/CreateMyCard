@@ -22,6 +22,7 @@ MAX_NESTING_DEPTH = 32
 MAX_STRING_LENGTH = 65_536
 MAX_COLLECTION_ITEMS = 256
 MAX_OBJECT_FIELDS = 128
+_A2UI_EXPRESSION_MARKER = "__terse_a2ui_expression__:"
 
 _FORBIDDEN_KEYS = frozenset({"__proto__", "prototype", "constructor"})
 _CONTAINERS = frozenset({"Row", "Column", "List", "Stack"})
@@ -76,6 +77,21 @@ class Nested2Node:
     component_type: str
     values: tuple[Any, ...]
     children: tuple[Nested2Node, ...]
+    data: dict[str, Any] | None = None
+
+
+@dataclass(frozen=True)
+class DataReference:
+    """A read-only reference to a field declared by the trailing data object."""
+
+    path: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class TextExpression:
+    """A restricted string concatenation expression for A2UI interpolation."""
+
+    parts: tuple[str | DataReference, ...]
 
 
 def convert_terse_dsl_nested2_to_a2ui(
@@ -84,27 +100,30 @@ def convert_terse_dsl_nested2_to_a2ui(
     size: str,
     protocol_profile: dict[str, Any],
 ) -> str:
-    """Convert one literal-only Nested-2 component tree to three A2UI messages."""
+    """Convert one Nested-2 component tree and optional data declaration to A2UI."""
     root = parse_terse_dsl_nested2(source)
     compact_rows: list[list[Any]] = []
     _append_compact_rows(root, "root", size, compact_rows)
+    if root.data is not None:
+        compact_rows.append(["/model", root.data])
     compact_rows.append(["/ui/state", "ready"])
     compact_dsl = "\n".join(
         json.dumps(row, ensure_ascii=False, separators=(",", ":"))
         for row in compact_rows
     )
     try:
-        return convert_compact_dsl_to_a2ui(
+        converted = convert_compact_dsl_to_a2ui(
             compact_dsl,
             size=size,
             protocol_profile=protocol_profile,
         )
+        return _restore_a2ui_expressions(converted)
     except CompactDslConversionError as exc:
         raise TerseDslNested2ConversionError(str(exc)) from exc
 
 
 def parse_terse_dsl_nested2(source: str) -> Nested2Node:
-    """Parse Nested-2 with Python's AST parser, then enforce a closed data grammar."""
+    """Parse a component tree followed by an optional restricted data declaration."""
     if not isinstance(source, str) or not source.strip():
         raise TerseDslNested2ConversionError("TerseDSL-Nested-2 output is empty.")
     if len(source) > MAX_INPUT_LENGTH:
@@ -115,17 +134,39 @@ def parse_terse_dsl_nested2(source: str) -> Nested2Node:
         raise TerseDslNested2ConversionError(
             f"TerseDSL-Nested-2 syntax error at line {exc.lineno}: {exc.msg}."
         ) from exc
-    if len(module.body) != 1 or not isinstance(module.body[0], ast.Expr):
+    if not module.body or len(module.body) > 2 or not isinstance(module.body[0], ast.Expr):
         raise TerseDslNested2ConversionError(
-            "TerseDSL-Nested-2 must contain exactly one component call."
+            "TerseDSL-Nested-2 must start with exactly one component call."
         )
+    data: dict[str, Any] | None = None
+    if len(module.body) == 2:
+        data = _parse_data_assignment(module.body[1])
     state = {"components": 0}
     root = _parse_component(module.body[0].value, 1, state)
     if root.component_type != "Column":
         raise TerseDslNested2ConversionError("The root component must be Column.")
     if not root.values or root.values[0] != "card":
         raise TerseDslNested2ConversionError('The root must use Column("card", ...).')
+    root = Nested2Node(root.component_type, root.values, root.children, data)
+    _validate_data_references(root, data)
     return root
+
+
+def _parse_data_assignment(statement: ast.stmt) -> dict[str, Any]:
+    """Accept only the trailing ``data = {...}`` declaration."""
+    if (
+        not isinstance(statement, ast.Assign)
+        or len(statement.targets) != 1
+        or not isinstance(statement.targets[0], ast.Name)
+        or statement.targets[0].id != "data"
+    ):
+        raise TerseDslNested2ConversionError(
+            'The only statement after the root call may be `data = {...}`.'
+        )
+    data = _json_literal_value(statement.value, 1)
+    if not isinstance(data, dict) or not data:
+        raise TerseDslNested2ConversionError("data must be a non-empty object literal.")
+    return data
 
 
 def _python_compatible_source(source: str) -> str:
@@ -196,7 +237,7 @@ def _parse_component(node: ast.AST, depth: int, state: dict[str, int]) -> Nested
     values: list[Any] = []
     children: list[Nested2Node] = []
     child_started = False
-    for argument in node.args:
+    for value_index, argument in enumerate(node.args):
         if isinstance(argument, ast.Call):
             child_started = True
             children.append(_parse_component(argument, depth + 1, state))
@@ -205,12 +246,33 @@ def _parse_component(node: ast.AST, depth: int, state: dict[str, int]) -> Nested
             raise TerseDslNested2ConversionError(
                 "Value arguments must appear before the first child."
             )
-        values.append(_literal_value(argument, depth))
+        allow_text_expression = (
+            value_index == 0 and component_type in {"Text", "Button"}
+        )
+        values.append(_component_value(argument, depth, allow_text_expression))
     if children and component_type not in _CONTAINERS:
         raise TerseDslNested2ConversionError(
             f"{component_type} cannot contain child components."
         )
     return Nested2Node(component_type, tuple(values), tuple(children))
+
+
+def _component_value(
+    node: ast.AST,
+    depth: int,
+    allow_text_expression: bool = False,
+) -> Any:
+    """Parse a component value, including safe data reads and text concatenation."""
+    if isinstance(node, ast.Attribute):
+        return _data_reference(node)
+    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
+        if not allow_text_expression:
+            raise TerseDslNested2ConversionError(
+                "String concatenation is only allowed for Text.content and Button.label."
+            )
+        parts = _text_expression_parts(node, depth)
+        return TextExpression(tuple(parts))
+    return _literal_value(node, depth)
 
 
 def _literal_value(node: ast.AST, depth: int) -> Any:
@@ -224,7 +286,7 @@ def _literal_value(node: ast.AST, depth: int) -> Any:
     if isinstance(node, ast.List):
         if len(node.elts) > MAX_COLLECTION_ITEMS:
             raise TerseDslNested2ConversionError("Array literal exceeds the item limit.")
-        return [_literal_value(item, depth + 1) for item in node.elts]
+        return [_component_value(item, depth + 1) for item in node.elts]
     if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
         operand = _literal_value(node.operand, depth + 1)
         if isinstance(operand, bool) or not isinstance(operand, (int, float)):
@@ -244,11 +306,116 @@ def _literal_value(node: ast.AST, depth: int) -> Any:
                 raise TerseDslNested2ConversionError(f'Forbidden object key "{key}".')
             if key in result:
                 raise TerseDslNested2ConversionError(f'Duplicate object key "{key}".')
-            result[key] = _literal_value(value_node, depth + 1)
+            result[key] = _component_value(value_node, depth + 1)
         return result
     raise TerseDslNested2ConversionError(
         "Only string, number, boolean, null, array, and object literals are allowed."
     )
+
+
+def _json_literal_value(node: ast.AST, depth: int) -> Any:
+    """Parse the declared data object without allowing references or expressions."""
+    if depth > MAX_NESTING_DEPTH:
+        raise TerseDslNested2ConversionError("Literal nesting exceeds 32 levels.")
+    if isinstance(node, ast.Constant):
+        if isinstance(node.value, str) and len(node.value) > MAX_STRING_LENGTH:
+            raise TerseDslNested2ConversionError("String literal exceeds the size limit.")
+        if node.value is None or isinstance(node.value, (str, int, float, bool)):
+            return node.value
+    if isinstance(node, ast.List):
+        if len(node.elts) > MAX_COLLECTION_ITEMS:
+            raise TerseDslNested2ConversionError("Array literal exceeds the item limit.")
+        return [_json_literal_value(item, depth + 1) for item in node.elts]
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
+        operand = _json_literal_value(node.operand, depth + 1)
+        if isinstance(operand, bool) or not isinstance(operand, (int, float)):
+            raise TerseDslNested2ConversionError(
+                "Unary signs are only allowed on numeric literals."
+            )
+        return operand if isinstance(node.op, ast.UAdd) else -operand
+    if isinstance(node, ast.Dict):
+        if len(node.keys) > MAX_OBJECT_FIELDS:
+            raise TerseDslNested2ConversionError("Object literal exceeds the field limit.")
+        result: dict[str, Any] = {}
+        for key_node, value_node in zip(node.keys, node.values, strict=True):
+            key = _json_literal_value(key_node, depth + 1)
+            if not isinstance(key, str):
+                raise TerseDslNested2ConversionError("Object keys must be strings.")
+            if key in _FORBIDDEN_KEYS:
+                raise TerseDslNested2ConversionError(f'Forbidden object key "{key}".')
+            if key in result:
+                raise TerseDslNested2ConversionError(f'Duplicate object key "{key}".')
+            result[key] = _json_literal_value(value_node, depth + 1)
+        return result
+    raise TerseDslNested2ConversionError(
+        "data may contain only JSON literal values."
+    )
+
+
+def _data_reference(node: ast.Attribute) -> DataReference:
+    """Resolve only ``data.identifier...`` access chains to a data reference."""
+    parts: list[str] = []
+    current: ast.AST = node
+    while isinstance(current, ast.Attribute):
+        if current.attr.startswith("_") or current.attr in _FORBIDDEN_KEYS:
+            raise TerseDslNested2ConversionError("Unsafe data field reference.")
+        parts.append(current.attr)
+        current = current.value
+    if not isinstance(current, ast.Name) or current.id != "data":
+        raise TerseDslNested2ConversionError(
+            "Data references must use the form data.field.subField."
+        )
+    return DataReference(tuple(reversed(parts)))
+
+
+def _text_expression_parts(node: ast.AST, depth: int) -> list[str | DataReference]:
+    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
+        return _text_expression_parts(node.left, depth + 1) + _text_expression_parts(
+            node.right, depth + 1
+        )
+    value = _component_value(node, depth)
+    if isinstance(value, (str, DataReference)):
+        return [value]
+    raise TerseDslNested2ConversionError(
+        "Text concatenation supports only string literals and data references."
+    )
+
+
+def _validate_data_references(node: Nested2Node, data: dict[str, Any] | None) -> None:
+    for value in node.values:
+        _validate_value_references(value, data)
+    for child in node.children:
+        _validate_data_references(child, data)
+
+
+def _validate_value_references(value: Any, data: dict[str, Any] | None) -> None:
+    if isinstance(value, DataReference):
+        if data is None or not _data_path_exists(data, value.path):
+            dotted = ".".join(value.path)
+            raise TerseDslNested2ConversionError(
+                f"Data reference data.{dotted} is not declared by data."
+            )
+        return
+    if isinstance(value, TextExpression):
+        for part in value.parts:
+            _validate_value_references(part, data)
+        return
+    if isinstance(value, dict):
+        for child in value.values():
+            _validate_value_references(child, data)
+        return
+    if isinstance(value, list):
+        for child in value:
+            _validate_value_references(child, data)
+
+
+def _data_path_exists(data: dict[str, Any], path: tuple[str, ...]) -> bool:
+    current: Any = data
+    for part in path:
+        if not isinstance(current, dict) or part not in current:
+            return False
+        current = current[part]
+    return True
 
 
 def _append_compact_rows(
@@ -308,7 +475,7 @@ def _designed_leaf_props(
         raise TerseDslNested2ConversionError(
             f"{node.component_type} requires {required_name}."
         )
-    props = {required_name: node.values[0]}
+    props = {required_name: _lower_component_value(node.values[0])}
     remaining = list(node.values[1:])
     if remaining and isinstance(remaining[0], str):
         design = remaining.pop(0)
@@ -329,7 +496,56 @@ def _merge_options(props: dict[str, Any], values: Any) -> None:
         raise TerseDslNested2ConversionError(
             "Options must be one non-empty object in the final value position."
         )
-    props.update(values[0])
+    props.update(_lower_component_value(values[0]))
+
+
+def _lower_component_value(value: Any) -> Any:
+    """Lower safe Terse data reads to Harmony A2UI template expressions."""
+    if isinstance(value, DataReference):
+        return _data_template_expression(value)
+    if isinstance(value, TextExpression):
+        return _A2UI_EXPRESSION_MARKER + " + ".join(
+            _a2ui_expression_part(part) for part in value.parts
+        )
+    if isinstance(value, dict):
+        return {key: _lower_component_value(child) for key, child in value.items()}
+    if isinstance(value, list):
+        return [_lower_component_value(child) for child in value]
+    return value
+
+
+def _data_template_expression(reference: DataReference) -> str:
+    return _A2UI_EXPRESSION_MARKER + _a2ui_expression_part(reference)
+
+
+def _a2ui_expression_part(part: str | DataReference) -> str:
+    if isinstance(part, DataReference):
+        return "$__data.model." + ".".join(part.path)
+    return json.dumps(part, ensure_ascii=False)
+
+
+def _restore_a2ui_expressions(genui: str) -> str:
+    """Restore Terse-only placeholders after Compact DSL has completed validation."""
+    messages = [json.loads(line) for line in genui.splitlines()]
+    restored = [_restore_a2ui_expression_value(message) for message in messages]
+    return "\n".join(
+        json.dumps(message, ensure_ascii=False, separators=(",", ":"))
+        for message in restored
+    )
+
+
+def _restore_a2ui_expression_value(value: Any) -> Any:
+    if isinstance(value, str) and value.startswith(_A2UI_EXPRESSION_MARKER):
+        expression = value.removeprefix(_A2UI_EXPRESSION_MARKER)
+        return "{{" + expression + "}}"
+    if isinstance(value, list):
+        return [_restore_a2ui_expression_value(item) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: _restore_a2ui_expression_value(child)
+            for key, child in value.items()
+        }
+    return value
 
 
 def _container_props(
