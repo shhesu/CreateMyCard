@@ -19,6 +19,11 @@ data = {
   item: { name: "value" }
 };
 
+**字符串拼接硬规则：**只要 Text 或 Button 的第一个参数包含 `+`，该表达式中的所有
+字符串字面量都必须使用单引号。正确：`Text('prefix ' + data.item.name + ' suffix', "subtitle-s")`；
+错误：`Text("prefix " + data.item.name + " suffix", "subtitle-s")`。该规则只约束 `+` 表达式内部的
+字符串；design、普通静态文案和对象字段值仍可使用双引号。
+
 只允许一个根组件和一个 data 声明：第一条语句必须是根组件调用，第二条语句必须是 `data = {...}`；
 不得输出任何第三条语句。根组件 ID 由服务固定为 root。父子关系只由直接嵌套的组件参数表达，
 不得输出 id、parent、surface、done 或 A2UI 消息。
