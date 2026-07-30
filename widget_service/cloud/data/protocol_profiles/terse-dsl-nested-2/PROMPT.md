@@ -13,7 +13,7 @@ JavaScript/TypeScript。
 严格使用以下程序形式：先以分号结束根调用，再声明 data 对象并以分号结束。data 对象是卡片的初始
 数据模型，不是任意 JavaScript 赋值。
 Column("card",
-  Text("今日" + data.appUsageStatus.appUsage.appName + "使用时长", "title"),
+  Text('今日' + data.appUsageStatus.appUsage.appName + '使用时长', "title"),
   Row("between",
     Text(data.appUsageStatus.appUsage.durationText, "subtitle"),
     Button("clickMe", "primary")
@@ -76,7 +76,9 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 数据绑定只允许受限的 `data.field.subField` 读取形式；它表示 data 对象中同名字段，并会映射为
 鸿蒙 A2UI 插值 `$__data.model.field.subField`。字段名必须是合法标识符，禁止 `[]`、可选链、函数调用、赋值、递增、模板
 字符串、对象方法和任意其他 JavaScript 表达式。Text 和 Button 的文本值可使用 `+` 拼接字符串
-字面量与 `data.field.subField`；禁止数值运算、条件表达式和其他组件字段中的拼接表达式。
+字面量与 `data.field.subField`；只要使用 `+`，其中所有字符串字面量必须使用单引号，例如
+`Text('今日' + data.app.name + '使用时长', "title")`。禁止数值运算、条件表达式和其他组件字段中的
+拼接表达式。
 
 data 声明的右侧必须是一个非空对象字面量；其内部只允许对象、数组、字符串、数字、布尔和 null
 字面量，禁止表达式、函数、重复键以及 __proto__、prototype、constructor 键。每一个 data 引用
@@ -116,7 +118,7 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 resources/base/m
 臆造路径、使用网络 URL 或 data URI。
 
 数据模型：data 声明会作为 A2UI 数据模型的 `/model` 值；`data.a.b` 会转换为
-`{{$__data.model.a.b}}`，Text/Button 的拼接会转换为 `{{"前缀" + $__data.model.a.b + "后缀"}}`。
+`{{$__data.model.a.b}}`，Text/Button 的拼接会转换为 `{{'前缀' + $__data.model.a.b + '后缀'}}`。
 当前协议只支持 Create + external lifecycle，不支持 Patch；事件仍不支持。
 
 只有在容器既不承载业务分组，也不承担对齐、间距、层叠、背景、边框、阅读顺序或视觉层级等布局/

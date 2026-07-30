@@ -157,7 +157,7 @@ data = {
     components = messages[1]["updateComponents"]["components"]
 
     assert components[1]["content"] == (
-        "{{\"今日\" + $__data.model.appUsageStatus.appUsage.appName + \"使用市场\"}}"
+        "{{'今日' + $__data.model.appUsageStatus.appUsage.appName + '使用市场'}}"
     )
     assert components[2]["content"] == (
         "{{$__data.model.appUsageStatus.appUsage.durationText}}"
@@ -177,6 +177,7 @@ data = {
         'Column("card", Text("x", {constructor: "bad"}));',
         'Column("card", Text(data.missing, "body"));',
         'Column("card", Text(data.value + 1, "body")); data = {value: "x"};',
+        'Column("card", Text("today" + data.value, "body")); data = {value: "x"};',
         'Column("card", Text("x", "body")); data = fetch("x");',
         'Row("between", Text("x", "body"));',
     ],
