@@ -213,6 +213,59 @@ data = { appUsageStats: { appUsage: { appName: "抖音" } } };
     ]
 
 
+def test_terse_dsl_nested2_validates_asset_candidate_and_event_together():
+    """素材候选与事件候选同时存在时，Terse 产物应通过有效能力校验。"""
+    source = '''
+Column("card",
+  Image("resources/base/media/hourglass_fill.svg", "icon"),
+  Button("家长控制", "small", {onClick: [systemCall("clickToDeeplink", {
+    abilityName: "com.huawei.hmos.settings.MainAbility",
+    bundleName: "com.huawei.hmos.settings",
+    intentName: "Settings",
+    uri: "parent_control"
+  })]})
+);
+'''
+    event = {
+        "id": "event.open.settings.parentControl",
+        "call": "clickToDeeplink",
+        "args": {
+            "abilityName": "com.huawei.hmos.settings.MainAbility",
+            "bundleName": "com.huawei.hmos.settings",
+            "intentName": "Settings",
+            "uri": "parent_control",
+        },
+    }
+    asset = {
+        "id": "asset.hourglass_fill",
+        "src": "resources/base/media/hourglass_fill.svg",
+        "description": "沙漏图标",
+    }
+    task_spec = {"eventCandidates": [event], "assetCandidates": [asset]}
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        source,
+        size="2x2",
+        protocol_profile=profile,
+        task_spec=task_spec,
+    )
+    report = validate_card_api(
+        artifact={
+            "genui": genui,
+            "cardSpec": {"title": "家长控制", "description": "使用时长", "suggestSize": "2x2"},
+            "taskSpec": task_spec,
+            "effectiveCapabilities": {
+                "data": [],
+                "event": [event],
+                "asset": [asset["id"]],
+            },
+        }
+    )
+
+    assert not report.has_code("EFFECTIVE_ASSET_NOT_ALLOWED")
+    assert not report.has_code("EFFECTIVE_EVENT_NOT_ALLOWED")
+
+
 @pytest.mark.parametrize(
     "source",
     [

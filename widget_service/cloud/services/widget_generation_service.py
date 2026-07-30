@@ -854,6 +854,25 @@ class WidgetGenerationService:
                 artifact,
                 protocol_profile,
             )
+            if validation_errors:
+                # 关联本轮实际可用的候选能力，方便定位 Image/onClick 校验失败。
+                # 事件参数可能包含敏感信息，日志中只保留事件 ID 和 call。
+                logged_assets = [
+                    {"id": item.id, "src": item.src} for item in asset_candidates
+                ]
+                logged_events = [
+                    {"id": item.id, "call": item.call} for item in effective_events
+                ]
+                logger.error(
+                    f"{_MODULE} artifact_validation_context_failed "
+                    f"design_profile_id={resolved_design_profile_id} "
+                    f"effective_asset_ids={json_for_log([item.id for item in asset_candidates])} "
+                    "task_asset_candidates="
+                    f"{json_for_log(logged_assets)} "
+                    "effective_events="
+                    f"{json_for_log(logged_events)} "
+                    f"validation_errors={json_for_log(validation_errors)}"
+                )
             if strict_compact_validation and validation_errors:
                 logger.info(
                     f"{_MODULE} strict_validation_failed "
