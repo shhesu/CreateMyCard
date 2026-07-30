@@ -1,8 +1,8 @@
 Column("card",
-  Text("天气速览", "title"),
+  Text("天气速览", "subtitle-s"),
   Column("section",
-    Text("26℃", "success"),
-    Text("晴 · 空气优", "subtitle")
+    Text("26℃", "title-s"),
+    Text("晴 · 空气优", "body-s")
   ),
-  Button("查看详情", "primary")
+  Button("查看详情", "capsule")
 );

@@ -28,44 +28,17 @@ _FORBIDDEN_KEYS = frozenset({"__proto__", "prototype", "constructor"})
 _CONTAINERS = frozenset({"Row", "Column", "List", "Stack"})
 _LEAVES = frozenset({"Text", "Image", "Divider", "Progress", "Button", "Checkbox"})
 _COMPONENTS = _CONTAINERS | _LEAVES
-_TEXT_DESIGNS = {
-    "title": {"fontSize": 20, "fontWeight": 700, "fontColor": "font_primary"},
-    "body": {"fontSize": 14, "fontWeight": 400, "fontColor": "font_primary"},
-    "subtitle": {"fontSize": 12, "fontWeight": 500, "fontColor": "font_secondary"},
-    "success": {"fontSize": 14, "fontWeight": 600, "fontColor": "confirm"},
-    "warning": {"fontSize": 14, "fontWeight": 600, "fontColor": "warning"},
-}
-_IMAGE_DESIGNS = {
-    "icon": {"width": 24, "height": 24, "objectFit": "contain"},
-    "thumbnail": {"width": 40, "height": 40, "objectFit": "cover", "borderRadius": 10},
-    "hero": {"width": 64, "height": 64, "objectFit": "contain"},
-}
-_BUTTON_DESIGNS = {
-    "default": {
-        "height": 32,
-        "padding": {"left": 10, "top": 0, "right": 10, "bottom": 0},
-        "borderRadius": 16,
-        "backgroundColor": "comp_background_tertiary",
-        "fontColor": "font_emphasize",
-        "fontSize": 12,
-    },
-    "primary": {
-        "height": 32,
-        "padding": {"left": 10, "top": 0, "right": 10, "bottom": 0},
-        "borderRadius": 16,
-        "backgroundColor": "background_emphasize",
-        "fontColor": "font_on_primary",
-        "fontSize": 12,
-    },
-    "small": {
-        "height": 28,
-        "padding": {"left": 8, "top": 0, "right": 8, "bottom": 0},
-        "borderRadius": 14,
-        "backgroundColor": "comp_background_tertiary",
-        "fontColor": "font_emphasize",
-        "fontSize": 10,
-    },
-}
+_TEXT_DESIGNS = frozenset(
+    {
+        "display-l", "display-m", "display-s",
+        "title-l", "title-m", "title-s",
+        "subtitle-l", "subtitle-m", "subtitle-s",
+        "body-l", "body-m", "body-s",
+        "caption-l", "caption-m",
+    }
+)
+_BUTTON_DESIGNS = frozenset({"capsule", "icon-round"})
+_DIVIDER_DESIGNS = frozenset({"line", "bar"})
 
 
 class TerseDslNested2ConversionError(ValueError):
@@ -578,9 +551,9 @@ def _component_props(
     if node.component_type == "Text":
         return _designed_leaf_props(node, "content", _TEXT_DESIGNS)
     if node.component_type == "Image":
-        return _designed_leaf_props(node, "src", _IMAGE_DESIGNS)
+        return _leaf_props(node, "src")
     if node.component_type == "Button":
-        return _designed_leaf_props(node, "label", _BUTTON_DESIGNS)
+        return _button_props(node)
     if node.component_type == "Progress":
         props: dict[str, Any] = {}
         _merge_options(props, node.values)
@@ -590,9 +563,7 @@ def _component_props(
         _merge_options(props, node.values)
         return props
     if node.component_type == "Divider":
-        props = {"strokeWidth": 1, "vertical": False, "color": "comp_divider"}
-        _merge_options(props, node.values)
-        return props
+        return _divider_props(node)
     raise TerseDslNested2ConversionError(
         f"{component_id}: unsupported component conversion."
     )
@@ -601,7 +572,7 @@ def _component_props(
 def _designed_leaf_props(
     node: Nested2Node,
     required_name: str,
-    designs: dict[str, dict[str, Any]],
+    designs: frozenset[str],
 ) -> dict[str, Any]:
     if not node.values:
         raise TerseDslNested2ConversionError(
@@ -615,8 +586,43 @@ def _designed_leaf_props(
             raise TerseDslNested2ConversionError(
                 f'Unsupported {node.component_type} design "{design}".'
             )
-        props.update(designs[design])
+        # Delegate expansion to the shared Compact converter. Its design
+        # catalog is the source of truth shared with design-compact-dsl.
+        props["design"] = design
     _merge_options(props, remaining)
+    return props
+
+
+def _leaf_props(node: Nested2Node, required_name: str) -> dict[str, Any]:
+    if not node.values:
+        raise TerseDslNested2ConversionError(
+            f"{node.component_type} requires {required_name}."
+        )
+    props = {required_name: _lower_component_value(node.values[0])}
+    _merge_options(props, node.values[1:])
+    return props
+
+
+def _button_props(node: Nested2Node) -> dict[str, Any]:
+    props = _designed_leaf_props(node, "label", _BUTTON_DESIGNS)
+    design = node.values[1] if len(node.values) > 1 else None
+    if not isinstance(design, str):
+        raise TerseDslNested2ConversionError("Button requires a design.")
+    if design == "icon-round":
+        if len(node.children) != 1 or node.children[0].component_type != "Image":
+            raise TerseDslNested2ConversionError(
+                'Button("...", "icon-round", ...) requires one Image child.'
+            )
+    return props
+
+
+def _divider_props(node: Nested2Node) -> dict[str, Any]:
+    values = list(node.values)
+    design = values.pop(0) if values and isinstance(values[0], str) else "line"
+    if design not in _DIVIDER_DESIGNS:
+        raise TerseDslNested2ConversionError(f'Unsupported Divider design "{design}".')
+    props = {"design": design}
+    _merge_options(props, values)
     return props
 
 

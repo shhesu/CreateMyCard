@@ -101,10 +101,10 @@ from utils.upload_file_obs import UploadFileOSMS
 def test_terse_dsl_nested2_converts_nested_tree_to_standard_a2ui():
     source = """
 Column("card",
-  Text("天气速览", "title"),
+  Text("天气速览", "subtitle-s"),
   Row("between",
-    Text("当前温度", "body"),
-    Text("26℃", "success")
+    Text("当前温度", "body-m"),
+    Text("26℃", "title-s")
   ),
   Progress({value: 68, total: 100})
 );
@@ -131,14 +131,14 @@ Column("card",
         "root_2",
     ]
     assert components[0]["styles"]["width"] == "matchParent"
-    assert components[4]["styles"]["fontColor"] == "#FF64BB5C"
+    assert components[4]["styles"]["fontSize"] == 20
 
 
 def test_terse_dsl_nested2_converts_declared_data_and_a2ui_interpolation():
     source = '''
 Column("card",
-  Text('今日' + data.appUsageStatus.appUsage.appName + '使用市场', "title"),
-  Text(data.appUsageStatus.appUsage.durationText, "success")
+  Text('今日' + data.appUsageStatus.appUsage.appName + '使用市场', "subtitle-s"),
+  Text(data.appUsageStatus.appUsage.durationText, "body-m")
 );
 data = {
   appUsageStatus: {
@@ -172,7 +172,7 @@ data = {
 def test_terse_dsl_nested2_converts_task_spec_authorized_system_call():
     source = '''
 Column("card",
-  Button("设置防沉迷", "primary", {
+  Button("设置防沉迷", "capsule", {
     onClick: [systemCall("clickToDeeplink", {
       abilityName: "com.a", bundleName: "com.b", intentName: "Settings", urr: "parent_control"
     })]
@@ -217,8 +217,8 @@ def test_terse_dsl_nested2_validates_asset_candidate_and_event_together():
     """素材候选与事件候选同时存在时，Terse 产物应通过有效能力校验。"""
     source = '''
 Column("card",
-  Image("resources/base/media/hourglass_fill.svg", "icon"),
-  Button("家长控制", "small", {onClick: [systemCall("clickToDeeplink", {
+  Image("resources/base/media/hourglass_fill.svg", {width: 20, height: 20}),
+  Button("家长控制", "capsule", {onClick: [systemCall("clickToDeeplink", {
     abilityName: "com.huawei.hmos.settings.MainAbility",
     bundleName: "com.huawei.hmos.settings",
     intentName: "Settings",
@@ -269,14 +269,14 @@ Column("card",
 @pytest.mark.parametrize(
     "source",
     [
-        'Column("card", Text(fetch("x"), "body"));',
+        'Column("card", Text(fetch("x"), "body-m"));',
         'Column("card", Unknown("x"));',
         'Column("card", Text("x", {constructor: "bad"}));',
-        'Column("card", Text(data.missing, "body"));',
-        'Column("card", Text(data.value + 1, "body")); data = {value: "x"};',
-        'Column("card", Text("today" + data.value, "body")); data = {value: "x"};',
-        'Column("card", Text("x", "body")); data = fetch("x");',
-        'Row("between", Text("x", "body"));',
+        'Column("card", Text(data.missing, "body-m"));',
+        'Column("card", Text(data.value + 1, "body-m")); data = {value: "x"};',
+        'Column("card", Text("today" + data.value, "body-m")); data = {value: "x"};',
+        'Column("card", Text("x", "body-m")); data = fetch("x");',
+        'Row("between", Text("x", "body-m"));',
     ],
 )
 def test_terse_dsl_nested2_rejects_executable_or_unsupported_input(source):
@@ -287,8 +287,8 @@ def test_terse_dsl_nested2_rejects_executable_or_unsupported_input(source):
 def test_terse_dsl_nested2_generation_uses_local_prompt_and_converter(monkeypatch):
     source = """
 Column("card",
-  Text("静态天气", "title"),
-  Text("晴 26℃", "success")
+  Text("静态天气", "subtitle-s"),
+  Text("晴 26℃", "title-s")
 );
 """
     prompts: list[list[dict[str, str]]] = []

@@ -13,7 +13,7 @@ JavaScript/TypeScript。
 严格使用以下程序形式：先以分号结束根调用，再声明 data 对象并以分号结束。data 对象是卡片的初始
 数据模型，不是任意 JavaScript 赋值。
 Column("card",
-  Text('prefix ' + data.item.name + ' suffix', "title")
+  Text('prefix ' + data.item.name + ' suffix', "subtitle-s")
 );
 data = {
   item: { name: "value" }
@@ -39,16 +39,22 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 参数后放一个 LayoutPreset 字符串；可选属性对象位于这些字符串后、第一个 child 前。字符串推荐
 双引号，也兼容单引号。
 
-共享 Design Profile：ohos-card-balanced/v1。使用位置 Design 字符串选择语义样式，转换器确定性
-展开为 A2UI styles。
+共享 Design Profile 与 design-compact-dsl 完全一致。Design 字符串由转换器确定性展开为 A2UI
+属性；禁止手写其展开字段。
 
-- 每个 Text、Button、Image 必须按业务角色选择一个 Design。
-- 标题用 title，正文用 body，弱化信息用 subtitle，正向数值用 success，风险或跌幅用 warning。
-- 主按钮用 primary，次按钮用 default，列表小按钮用 small；每张卡片最多一个 primary。
-- 主图用 hero，列表缩略图用 thumbnail，普通图标用 icon。
-- 禁止手写 styles，也不得输出 Design 的展开字段；重复列表项只保留必要的 Design 字符串。
-- 可用 Design：Text: "title" | "body" | "subtitle" | "success" | "warning"；
-  Button: "primary" | "default" | "small"；Image: "hero" | "thumbnail" | "icon"。
+- Text 可用：`display-l` / `display-m` / `display-s`（56 / 48 / 36）；
+  `title-l` / `title-m` / `title-s`（30 / 24 / 20）；
+  `subtitle-l` / `subtitle-m` / `subtitle-s`（18 / 16 / 14）；
+  `body-l` / `body-m` / `body-s`（16 / 14 / 12）；
+  `caption-l` / `caption-m`（12 / 10）。这些 token 同时定义默认字重。
+- Image 没有 Design；尺寸由所在角色决定：identity 20×20，行内 14–16，Button 内 16×16。
+- Divider 可用 `line`（1vp）或 `bar`（8vp），默认 `line`。
+- Progress 可用 `linear-bar`、`segmented-bar`、`threshold-bar`；单一环形指标写
+  `type: "ring"`，它不是 Design。
+- Button 必须使用 `capsule`（文字胶囊，36 高、圆角 20、8vp 水平 padding、14/500）或
+  `icon-round`（36×36 圆钮、圆角 18）。`icon-round` 必须恰有一个 Image child。
+- Checkbox 没有 Design。禁止继续使用旧 token：`title`、`body`、`subtitle`、`success`、
+  `warning`、`primary`、`default`、`small`、`icon`、`thumbnail`、`hero`。
 
 共享 LayoutPreset：compact-layout/0.1。转换器将预设确定性展开为标准 A2UI 属性。
 
@@ -83,7 +89,7 @@ data 声明的右侧必须是一个非空对象字面量；其内部只允许对
 中，固定形态为 `onClick: [systemCall("call", {args...})]`；也兼容输入 `onclick`，但转换后统一为
 `onClick`。`systemCall` 不是任意函数：它的 call 和 args 必须与 TaskSpec.eventCandidates 中某一项
 完全一致，禁止使用 event id、action、event、回调函数或臆造参数。例如：
-`Button("Action", "primary", {onClick: [systemCall("allowedCall", {key: "value"})]})`。
+`Button("Action", "capsule", {onClick: [systemCall("allowedCall", {key: "value"})]})`。
 
 不得生成 Catalog 未声明的组件或字段，不得使用 __proto__、prototype、constructor 对象键。
 当前服务只允许下列组件；禁止生成 Grid、Tabs、TabContent、TextInput、Toggle、Radio、
@@ -93,11 +99,11 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 
 组件签名（...children 表示直接嵌套的零到多个组件调用，不是数组属性）：
 
-- Text(text, design?) — 扩展文本
-- Image(source, design?) — 扩展图片
-- Divider() — 扩展分隔线
-- Progress({ value, total }) — 进度条
-- Button(label, design?, options?) — 扩展按钮
+- Text(text, design?, options?) — 扩展文本
+- Image(source, options?) — 扩展图片
+- Divider(design?, options?) — 扩展分隔线
+- Progress({ value, total, threshold?, design?, type? }) — 进度条
+- Button(label, design, options?) — 扩展按钮
 - Checkbox(options?) — 扩展复选框
 - Row(layout?, ...children) — 扩展水平布局
 - Column(layout?, ...children) — 扩展垂直布局
@@ -108,11 +114,13 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 
 - Button options: { enabled?: boolean; onClick?: [systemCall("call", {args...})] }
 - Checkbox options: { label?: string; select?: boolean; value?: string; group?: string }
-- Text、Image、Divider、Row、Column、List、Stack 没有可选字段，不得输出 options。
+- Text 可选字段：fontColor、textAlign、maxLines、textOverflow、minFontSize、maxFontSize；
+  Image 可选字段：objectFit、fillColor、width、height、borderRadius；
+  Divider 可选字段：color、vertical；Row、Column、List、Stack 没有可选字段。
 - Progress 必须同时提供有限数字 value 与 total，且 total 大于 0。
 
 Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/media/...` 具体本地资源文件
-路径，例如 `Image("resources/base/media/icon.svg", "icon")`；不得使用 `asset.xxx`、
+路径，例如 `Image("resources/base/media/icon.svg", {width: 20, height: 20})`；不得使用 `asset.xxx`、
 `asset/...`、资源 ID、别名、网络 URL 或 data URI，也不得臆造路径。
 
 数据模型：data 声明会作为 A2UI 数据模型的 `/model` 值；`data.a.b` 会转换为
