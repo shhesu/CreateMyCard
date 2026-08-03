@@ -66,10 +66,12 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - root 必须是 Column 并使用 card，整棵树只能使用一次 card。
 - 普通纵向区块使用 section 或 compact；List 使用 list 或 dense。
 - 只有明确需要首尾分布或右对齐时，Row 才使用 between 或 actions。
+- `compact` 只能是 Column 的 layout，绝不能写成 `Row("compact", ...)`。需要在 Row 中
+  放紧凑信息组时，必须写成 `Row("between", Column("compact", ...), Column("compact", ...))`。
 - 重复列表中的普通 Row 使用默认布局，不逐行重复 LayoutPreset。
 - Stack 使用 overlay；没有合适 LayoutPreset 时整体省略。
 - 不得同时输出 LayoutPreset 与其展开字段，不得手写 styles、itemMargin、space 或预设包含的字段。
-- 普通列表行应写 Row(Text("项目", "body"))，不得写 Row("", Text(...)) 或 Row(null, Text(...))。
+- 普通列表行应写 Row(Text("项目", "body-m"))，不得写 Row("", Text(...)) 或 Row(null, Text(...))。
 
 可用 LayoutPreset：
 
@@ -128,6 +130,9 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
   alignItems，List 可使用 space/listDirection，Stack 可使用 alignContent。
 - root 可写 `Column("card", { ... }, ...)`。root options 可覆盖默认场景渐变，或增加
   backgroundColor、borderColor、borderWidth、shadow 等卡片背景/边框属性；不得覆盖固定 width、height。
+- **root 背景硬规则：**每次生成都必须在 `Column("card", { ... }, ...)` 的 options 中显式写且只写一种
+  背景：`linearGradient` 或 `backgroundColor`。优先使用低对比 `linearGradient`，不得使用纯白背景。
+  例如：`Column("card", {linearGradient: {direction: "RightBottom", colors: [["#FFE8F1F5", 0], ["#FFE2ECE4", 1]]}}, ...)`。
 - Progress 必须同时提供有限数字 value 与 total，且 total 大于 0。
 
 Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/media/...` 具体本地资源文件
@@ -151,7 +156,7 @@ Terse 调用语法，而非 Compact DSL 数组行。目标不是把字段合法�
 ### Card Shell 与尺寸
 
 - `2x2` 为 160×160；`2x4` 为 320×160。横卡只能增加横向组织空间，不得增加纵向内容层数。
-- root 固定圆角 20、padding 12、clip true，并由转换器提供低对比场景渐变；不得通过额外容器伪造卡片外壳。
+- root 固定圆角 20、padding 12、clip true，且必须显式提供低对比场景渐变或背景色；不得通过额外容器伪造卡片外壳。
 - `2x2` 采用 title / content / action 的紧凑竖向分区；`2x4` 优先采用左右信息组或右侧行动区，不要把竖卡横向拉宽。
 - 所有可见内容必须留在 12vp 安全边距内。内容超出时先降字阶、合并同行或选择完整字段子集，不得堆叠裁切。
 - root 使用低对比 linearGradient 场景洗色；不要用纯白根面，也不要用大面积插画或网络图片充当背景。
