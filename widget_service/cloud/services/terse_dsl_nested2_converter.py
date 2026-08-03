@@ -742,9 +742,17 @@ def _container_props(
             raise TerseDslNested2ConversionError(
                 'Root must be Column("card", ...) with a supported size.'
             )
-        if "width" in props or "height" in props:
+        explicit_dimensions = {
+            key: props.pop(key)
+            for key in ("width", "height")
+            if key in props
+        }
+        if any(
+            explicit_dimensions[key] != dimensions[key]
+            for key in explicit_dimensions
+        ):
             raise TerseDslNested2ConversionError(
-                "Root options cannot override the size-locked width or height."
+                "Root width and height must match the size-locked dimensions."
             )
         return {
             **dimensions,

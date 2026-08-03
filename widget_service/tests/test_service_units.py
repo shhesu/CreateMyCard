@@ -155,6 +155,18 @@ Column("card", {
     assert root["styles"]["shadow"] == "small"
 
 
+def test_terse_dsl_nested2_allows_size_matching_root_dimensions():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        'Column("card", {width: 160, height: 160}, Text("防沉迷", "subtitle-s"));',
+        size="2x2",
+        protocol_profile=profile,
+    )
+
+    surface = json_module.loads(genui.splitlines()[0])["createSurface"]
+    assert (surface["width"], surface["height"]) == (140, 140)
+
+
 def test_terse_dsl_nested2_converter_supports_compact_horizontal_size_alias():
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
     genui = convert_terse_dsl_nested2_to_a2ui(
