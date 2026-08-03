@@ -155,6 +155,18 @@ Column("card", {
     assert root["styles"]["shadow"] == "small"
 
 
+def test_terse_dsl_nested2_converter_supports_compact_horizontal_size_alias():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        'Column("card", Text("横向卡片", "subtitle-s"));',
+        size="4x2",
+        protocol_profile=profile,
+    )
+
+    surface = json_module.loads(genui.splitlines()[0])["createSurface"]
+    assert (surface["width"], surface["height"]) == (300, 140)
+
+
 def test_terse_dsl_nested2_converts_declared_data_and_a2ui_interpolation():
     source = '''
 Column("card",
@@ -380,13 +392,22 @@ def test_terse_dsl_nested2_prompt_builder_uses_terse_system_prompt():
     )
 
     assert prompt[0]["role"] == "system"
-    assert prompt[0]["content"].startswith("TERSE_NESTED2_SYSTEM_PROMPT")
-    assert "# 2x2 Pack（160×160 标题/内容/按钮竖栈）" in prompt[0]["content"]
+    assert prompt[0]["content"] == "TERSE_NESTED2_SYSTEM_PROMPT"
     assert prompt[1]["role"] == "user"
     assert json_module.loads(prompt[1]["content"]) == task_spec.model_dump(
         mode="json",
         exclude_none=True,
     )
+
+
+def test_terse_prompt_is_a_materialized_compact_prompt_with_terse_protocol():
+    prompt = A2UIProtocolRegistry.read_design_prompt("terse-dsl-nested-2")
+
+    assert prompt.startswith("# Form GenUI Prompt（桌面卡片）")
+    assert "# TerseDSL-Nested-2 Protocol Replacement" in prompt
+    assert "# 2x2 Pack（160×160 标题/内容/按钮竖栈）" in prompt
+    assert "# Protocol Core(桌面 Form 卡)" not in prompt
+    assert "# Data Binding（A2UI Compact DSL）" not in prompt
 
 
 def test_terse_dsl_nested2_rejects_edit_requests():

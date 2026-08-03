@@ -736,10 +736,15 @@ def _container_props(
         dimensions = {
             "2x2": {"width": 160, "height": 160},
             "2x4": {"width": 320, "height": 160},
+            "4x2": {"width": 320, "height": 160},
         }.get(size)
         if node.component_type != "Column" or layout != "card" or dimensions is None:
             raise TerseDslNested2ConversionError(
                 'Root must be Column("card", ...) with a supported size.'
+            )
+        if "width" in props or "height" in props:
+            raise TerseDslNested2ConversionError(
+                "Root options cannot override the size-locked width or height."
             )
         return {
             **dimensions,
