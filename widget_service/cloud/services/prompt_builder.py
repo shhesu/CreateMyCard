@@ -9,8 +9,19 @@ from services.compact_dsl_protocol import (
     build_compact_generation_context,
     is_compact_dsl,
 )
+from services.protocol_registry import (
+    DESIGN_COMPACT_PROFILE_ID,
+    A2UIProtocolRegistry,
+)
 
 _MODULE = "[Prompt Builder]"
+
+_COMPACT_PROTOCOL_SECTIONS = (
+    "## 3. Output Contract",
+    "# Protocol Core(桌面 Form 卡)",
+    "# Data Binding（A2UI Compact DSL）",
+    "# Component Catalog（桌面 Form 卡）",
+)
 
 SYSTEM_PROMPT = get_settings().system_prompt
 EDIT_SYSTEM_PROMPT = get_settings().edit_system_prompt
@@ -24,8 +35,19 @@ class PromptBuilder:
         system_prompt: str,
     ) -> list[dict[str, str]]:
         """构造 TerseDSL-Nested-2 静态新建模型输入。"""
+        shared_ui_prompt = self._terse_compact_prompt_without_protocol()
         return [
-            {"role": "system", "content": system_prompt},
+            {
+                "role": "system",
+                "content": (
+                    system_prompt
+                    + "\n\n# design-compact-dsl Shared Prompt\n"
+                    + "以下是 design-compact-dsl 的完整非协议章节，逐字复用。Compact 专属协议章节"
+                    "已由上方 TerseDSL-Nested-2 定义替换；若有任何语法冲突，以上方 Terse 定义为准，"
+                    "其余所有 UI 规则必须原样遵循。\n\n"
+                    + shared_ui_prompt
+                ),
+            },
             {
                 "role": "user",
                 "content": json.dumps(
@@ -34,6 +56,22 @@ class PromptBuilder:
                 ),
             },
         ]
+
+    @staticmethod
+    def _terse_compact_prompt_without_protocol() -> str:
+        """Reuse every Compact prompt chapter except Compact DSL-specific contracts."""
+        compact_prompt = A2UIProtocolRegistry.read_design_prompt(
+            DESIGN_COMPACT_PROFILE_ID
+        )
+        for marker in _COMPACT_PROTOCOL_SECTIONS:
+            start = compact_prompt.find(marker)
+            if start < 0:
+                raise ValueError(f"Compact protocol section missing: {marker}")
+            heading_prefix = "\n## " if marker.startswith("## ") else "\n# "
+            next_heading = compact_prompt.find(heading_prefix, start + len(marker))
+            end = next_heading if next_heading >= 0 else len(compact_prompt)
+            compact_prompt = compact_prompt[:start] + compact_prompt[end:]
+        return compact_prompt.strip()
 
     def build_design_compact(
         self,

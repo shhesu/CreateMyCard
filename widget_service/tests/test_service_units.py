@@ -379,10 +379,9 @@ def test_terse_dsl_nested2_prompt_builder_uses_terse_system_prompt():
         "TERSE_NESTED2_SYSTEM_PROMPT",
     )
 
-    assert prompt[0] == {
-        "role": "system",
-        "content": "TERSE_NESTED2_SYSTEM_PROMPT",
-    }
+    assert prompt[0]["role"] == "system"
+    assert prompt[0]["content"].startswith("TERSE_NESTED2_SYSTEM_PROMPT")
+    assert "# 2x2 Pack（160×160 标题/内容/按钮竖栈）" in prompt[0]["content"]
     assert prompt[1]["role"] == "user"
     assert json_module.loads(prompt[1]["content"]) == task_spec.model_dump(
         mode="json",
