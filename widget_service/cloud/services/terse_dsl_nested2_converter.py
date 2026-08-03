@@ -728,6 +728,11 @@ def _container_props(
             "justifyContent": "end",
             "alignItems": "center",
         },
+        ("Row", "compact"): {
+            "width": "matchParent",
+            "itemMargin": 4,
+            "alignItems": "center",
+        },
         ("List", "list"): {"width": "matchParent", "space": 4},
         ("List", "dense"): {"width": "matchParent", "space": 2},
         ("Stack", "overlay"): {"width": "matchParent", "height": "matchParent"},

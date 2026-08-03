@@ -102,8 +102,8 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - root 必须是 Column 并使用 card，整棵树只能使用一次 card。
 - 普通纵向区块使用 section 或 compact；List 使用 list 或 dense。
 - 只有明确需要首尾分布或右对齐时，Row 才使用 between 或 actions。
-- `compact` 只能是 Column 的 layout，绝不能写成 `Row("compact", ...)`。需要在 Row 中
-  放紧凑信息组时，必须写成 `Row("between", Column("compact", ...), Column("compact", ...))`。
+- `compact` 可用于 Column，或用于不需要两端分布的紧凑 Row；`Row("compact", ...)` 会展开为
+  4vp 间距、垂直居中的普通水平行。需要左右分布时用 `Row("between", ...)`。
 - 重复列表中的普通 Row 使用默认布局，不逐行重复 LayoutPreset。
 - Stack 使用 overlay；没有合适 LayoutPreset 时整体省略。
 - 不得同时输出 LayoutPreset 与其展开字段，不得手写 styles、itemMargin、space 或预设包含的字段。

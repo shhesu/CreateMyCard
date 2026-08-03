@@ -134,6 +134,20 @@ Column("card",
     assert components[4]["styles"]["fontSize"] == 20
 
 
+def test_terse_dsl_nested2_converts_compact_row_layout():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        'Column("card", Row("compact", Text("标签", "body-s"), Text("数值", "body-m")));',
+        size="2x2",
+        protocol_profile=profile,
+    )
+
+    components = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"]
+    row = components[1]
+    assert row["itemMargin"] == 4
+    assert row["styles"]["alignItems"] == "center"
+
+
 def test_terse_dsl_nested2_allows_root_card_surface_options():
     source = '''
 Column("card", {
