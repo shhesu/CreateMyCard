@@ -110,10 +110,10 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 - Progress({ value, total, threshold?, design?, type? }) — 进度条
 - Button(label, design, options?) — 扩展按钮
 - Checkbox(options?) — 扩展复选框
-- Row(layout?, ...children) — 扩展水平布局
-- Column(layout?, ...children) — 扩展垂直布局
-- List(layout?, ...children) — 扩展列表
-- Stack(layout?, ...children) — 层叠布局
+- Row(layout?, options?, ...children) — 扩展水平布局
+- Column(layout?, options?, ...children) — 扩展垂直布局
+- List(layout?, options?, ...children) — 扩展列表
+- Stack(layout?, options?, ...children) — 层叠布局
 
 可选参数字段（只能使用以下字段名；? 表示可省略）：
 
@@ -121,7 +121,13 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 - Checkbox options: { label?: string; select?: boolean; value?: string; group?: string }
 - Text 可选字段：fontColor、textAlign、maxLines、textOverflow、minFontSize、maxFontSize；
   Image 可选字段：objectFit、fillColor、width、height、borderRadius；
-  Divider 可选字段：color、vertical；Row、Column、List、Stack 没有可选字段。
+  Divider 可选字段：color、vertical。
+- Row、Column、List、Stack options 可使用 Compact DSL 的 CommonProps：width、height、
+  flexShrink、layoutWeight、margin、padding、borderRadius、clip、backgroundColor、linearGradient、
+  borderWidth、borderColor、shadow、visibility；Row/Column 还可使用 itemMargin、justifyContent、
+  alignItems，List 可使用 space/listDirection，Stack 可使用 alignContent。
+- root 可写 `Column("card", { ... }, ...)`。root options 可覆盖默认场景渐变，或增加
+  backgroundColor、borderColor、borderWidth、shadow 等卡片背景/边框属性；不得覆盖固定 width、height。
 - Progress 必须同时提供有限数字 value 与 total，且 total 大于 0。
 
 Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/media/...` 具体本地资源文件
@@ -134,8 +140,13 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/
 
 ## 桌面 Form 视觉与构图规则（移植自 design-compact-dsl）
 
-目标不是把字段合法塞进方块，而是在固定画布上交付单焦点、清晰且有层级的服务卡片。
-先确定卡片用途和主信息，再决定字段取舍、字阶、图标和行动；不得把所有字段平铺成仪表盘。
+本节与 `design-compact-dsl` 的 UI 决策规则保持一致；唯一差异是本协议使用本文件定义的嵌套
+Terse 调用语法，而非 Compact DSL 数组行。目标不是把字段合法塞进方块，而是在固定画布上交付
+单焦点、场景洗色、材质诚实、定高分白且一眼可读的服务卡片。
+
+生成顺序固定为：先理解 userQuery / size / schema / assetCandidates / eventCandidates；再确定用途、
+主信息、完整字段子集、场景套色与尺寸构图；最后选择组件、Design token、数据绑定和 onClick。
+不得先堆字段再事后修布局，不得把设计 token 当作装饰清单。
 
 ### Card Shell 与尺寸
 
@@ -143,6 +154,8 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/
 - root 固定圆角 20、padding 12、clip true，并由转换器提供低对比场景渐变；不得通过额外容器伪造卡片外壳。
 - `2x2` 采用 title / content / action 的紧凑竖向分区；`2x4` 优先采用左右信息组或右侧行动区，不要把竖卡横向拉宽。
 - 所有可见内容必须留在 12vp 安全边距内。内容超出时先降字阶、合并同行或选择完整字段子集，不得堆叠裁切。
+- root 使用低对比 linearGradient 场景洗色；不要用纯白根面，也不要用大面积插画或网络图片充当背景。
+- 一张 TaskSpec 只生成一张卡；root 只承担固定 shell，不新增替代方案、空容器或未挂载节点。
 
 ### 语义角色与信息取舍
 
@@ -150,6 +163,8 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/
 - identity 从 userQuery 压缩为 2–6 字的用途名，不能由数据叶子、事件参数或数字拼接。
 - primary/support 的事实只能来自 data；description 只可压缩成短标签。不得把 sampleValue、事件 args、uri、号码或关系字段写成可见文案。
 - 容量不足时保留一个语义完整的最小子集，宁可省略无关 support，也不要留下孤立标签、裸数值或多个互不相关的指标。
+- 动态事实只能来自 schema/data；schema description 只能压缩成 2–6 字短标签；单位、百分号、破折号可作为独立静态 Text，禁止把动态值与字面量拼成未经约束的事实文案。
+- userQuery 提供用途、密度和行动意图；assetCandidates 按已展示角色与 description 语义匹配；eventCandidates 只提供 onClick，不是事实或文案库。
 
 ### 字阶、图标与行动
 
@@ -165,6 +180,29 @@ Image.source 只能使用 TaskSpec assetCandidates 中提供的 `resources/base/
 - 数值与单位先组成内层 Row，再与旁注分轨；相邻可见元素不得零间距贴死。
 - Progress 只能表达真实比例、阶段或阈值，必须搭配说明 Text；一张卡最多一个主 Progress 信息块，禁止裸 Progress。
 - Divider 默认省略，只有确实改善分组时才使用。
+
+### 场景套色与实例视觉
+
+- 一张卡只选一种套色家族：neutral、brand、cool、expressive、warmActive、warmInfo、positive 或 calmStatus；不得混搭多套强调色。
+- 浅色洗色表面上的标题与单色 SVG 使用主墨 `#E5000000`，副信息通常为 `#99000000`；深底或实色行动面才使用白色系。多色插画不写 fillColor。
+- identity / primary / support 应形成清楚的字阶和留白，不要所有 Text 都用同一字号或粗体；`fontWeight:700` 只给主指标或关键时间。
+- 信息托盘仅在有助于分组时使用浅背景、圆角和 padding；不要为每行都套卡片，也不要把 Button 与内容背板重叠。
+- 窄列默认单行省略；空副标题、空单位、空 label/value 直接省略节点。
+
+### 尺寸配方
+
+- `2x2`：最多一个主视觉和一个显式行动。先锁 title/content/action 三个区的 8vp 保护间距，再决定内容；不能为了保留次要字段挤压区间距。
+- `2x4`：优先左侧 identity/primary 信息组 + 右侧 support 或 action rail；宽度增加用于同行组合、成组指标和完整 support，不用于增加纵向层数。
+- `Row("between", ...)` 的左右孩子必须是语义簇，例如“图标+标题”与“数值+单位”；数值与单位先在内层 Row 成组。
+- 只在真实进度、占用或阈值场景使用 Progress；比例、状态说明与 Progress 必须是同一个信息块，不得生成独立装饰条。
+
+### 输出前审计
+
+- identity 与 primary 是否都可见，且用户能在一眼内知道“这是什么、当前最重要的事实是什么”？
+- 所有事实是否来自 data，所有图片是否来自 assetCandidates，所有点击是否精确来自 eventCandidates？
+- 是否只使用一个视觉焦点、一种套色和语义完整字段子集，而不是字段集装箱？
+- 是否符合当前尺寸的安全边距、固定高度、字阶、间距和行动数量限制？
+- 是否因为协议语法而牺牲了 UI 规则？如果是，优先保留 UI 规则，并选择更简单但语义完整的组件树。
 
 只有在容器既不承载业务分组，也不承担对齐、间距、层叠、背景、边框、阅读顺序或视觉层级等布局/
 样式作用，且移除后界面语义与视觉结构不变时，才可省略该冗余包装层。

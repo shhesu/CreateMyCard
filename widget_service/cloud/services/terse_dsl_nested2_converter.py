@@ -751,6 +751,7 @@ def _container_props(
                 "colors": [["#FFE8F1F5", 0], ["#FFE2ECE4", 1]],
             },
             "itemMargin": 8,
+            **props,
         }
     if layout is None:
         return props

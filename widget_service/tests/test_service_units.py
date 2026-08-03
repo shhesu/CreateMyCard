@@ -134,6 +134,27 @@ Column("card",
     assert components[4]["styles"]["fontSize"] == 20
 
 
+def test_terse_dsl_nested2_allows_root_card_surface_options():
+    source = '''
+Column("card", {
+  backgroundColor: "#FFF3F7FF", borderWidth: 1, borderColor: "#335C8DFF",
+  shadow: "small"
+}, Text("防沉迷", "subtitle-s"));
+'''
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        source,
+        size="2x2",
+        protocol_profile=profile,
+    )
+    root = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][0]
+
+    assert root["styles"]["backgroundColor"] == "#FFF3F7FF"
+    assert root["styles"]["borderColor"] == "#335C8DFF"
+    assert root["styles"]["shadow"] == "small"
+
+
 def test_terse_dsl_nested2_converts_declared_data_and_a2ui_interpolation():
     source = '''
 Column("card",
