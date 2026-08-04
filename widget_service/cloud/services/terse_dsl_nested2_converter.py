@@ -557,9 +557,7 @@ def _component_props(
     if node.component_type == "Button":
         return _button_props(node)
     if node.component_type == "Progress":
-        props: dict[str, Any] = {}
-        _merge_options(props, node.values)
-        return props
+        return _progress_props(node)
     if node.component_type == "Checkbox":
         props = {}
         _merge_options(props, node.values)
@@ -625,6 +623,22 @@ def _divider_props(node: Nested2Node) -> dict[str, Any]:
         raise TerseDslNested2ConversionError(f'Unsupported Divider design "{design}".')
     props = {"design": design}
     _merge_options(props, values)
+    return props
+
+
+def _progress_props(node: Nested2Node) -> dict[str, Any]:
+    """Lower Progress numeric data reads to Compact DSL path bindings."""
+    values = list(node.values)
+    if len(values) != 1 or not isinstance(values[0], dict) or not values[0]:
+        raise TerseDslNested2ConversionError(
+            "Progress requires one non-empty props object."
+        )
+    props: dict[str, Any] = {}
+    for key, value in values[0].items():
+        if key in {"value", "total", "threshold"} and isinstance(value, DataReference):
+            props[key] = {"path": "/model/" + "/".join(value.path)}
+        else:
+            props[key] = _lower_component_value(value)
     return props
 
 
