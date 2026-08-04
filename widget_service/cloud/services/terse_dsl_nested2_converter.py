@@ -647,6 +647,9 @@ def _progress_props(node: Nested2Node) -> dict[str, Any]:
         raise TerseDslNested2ConversionError(
             "Progress requires {value, total, ...} or value, total, design/options."
         )
+    if raw_props.get("design") == "ring":
+        raw_props = {key: value for key, value in raw_props.items() if key != "design"}
+        raw_props["type"] = "ring"
     props: dict[str, Any] = {}
     for key, value in raw_props.items():
         if key in {"value", "total", "threshold"} and isinstance(value, DataReference):

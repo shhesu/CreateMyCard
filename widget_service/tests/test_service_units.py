@@ -293,6 +293,18 @@ data = {mem: {used: 43.75}};
     assert component["styles"]["height"] == 8
 
 
+def test_terse_dsl_nested2_normalizes_ring_progress_design():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        'Column("card", Progress({value: 68, total: 100, design: "ring"}));',
+        size="2x2",
+        protocol_profile=profile,
+    )
+
+    component = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][1]
+    assert component["styles"]["type"] == "ring"
+
+
 def test_terse_dsl_nested2_converts_task_spec_authorized_system_call():
     source = '''
 Column("card",

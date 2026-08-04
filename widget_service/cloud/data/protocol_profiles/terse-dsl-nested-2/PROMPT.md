@@ -406,7 +406,7 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - Image 没有 Design；尺寸由所在角色决定：identity 20×20，行内 14–16，Button 内 16×16。
 - Divider 可用 `line`（1vp）或 `bar`（8vp），默认 `line`。
 - Progress 可用 `linear-bar`、`segmented-bar`、`threshold-bar`；单一环形指标写
-  `type: "ring"`，它不是 Design。
+  `type: "ring"`，它不是 Design。兼容输入 `design: "ring"`，但生成时优先写 `type: "ring"`。
 - Button 仅使用 `capsule`（文字胶囊，36 高、圆角 20、8vp 水平 padding、14/500）。当前
   Terse 协议不支持 `icon-round`，也不支持 Button 内嵌 Image。
 - Checkbox 没有 Design。禁止继续使用旧 token：`title`、`body`、`subtitle`、`success`、
