@@ -279,6 +279,20 @@ data = {mem: {used: 43.75}};
     assert component["value"] == "{{ ${/model/mem/used} }}"
 
 
+def test_terse_dsl_nested2_converts_positional_progress_values():
+    source = '''
+Column("card", Progress(data.mem.used, 100, "linear-bar"));
+data = {mem: {used: 43.75}};
+'''
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+
+    genui = convert_terse_dsl_nested2_to_a2ui(source, size="2x2", protocol_profile=profile)
+
+    component = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][1]
+    assert component["value"] == "{{ ${/model/mem/used} }}"
+    assert component["styles"]["height"] == 8
+
+
 def test_terse_dsl_nested2_converts_task_spec_authorized_system_call():
     source = '''
 Column("card",

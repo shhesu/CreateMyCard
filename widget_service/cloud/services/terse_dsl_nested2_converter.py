@@ -628,14 +628,27 @@ def _divider_props(node: Nested2Node) -> dict[str, Any]:
 
 
 def _progress_props(node: Nested2Node) -> dict[str, Any]:
-    """Lower Progress numeric data reads to Compact DSL path bindings."""
+    """Lower object or positional Progress values to Compact DSL props."""
     values = list(node.values)
-    if len(values) != 1 or not isinstance(values[0], dict) or not values[0]:
+    if len(values) == 1 and isinstance(values[0], dict) and values[0]:
+        raw_props = values[0]
+    elif 2 <= len(values) <= 3:
+        raw_props = {"value": values[0], "total": values[1]}
+        if len(values) == 3:
+            if isinstance(values[2], str):
+                raw_props["design"] = values[2]
+            elif isinstance(values[2], dict) and values[2]:
+                raw_props.update(values[2])
+            else:
+                raise TerseDslNested2ConversionError(
+                    "Progress third positional value must be a design string or options object."
+                )
+    else:
         raise TerseDslNested2ConversionError(
-            "Progress requires one non-empty props object."
+            "Progress requires {value, total, ...} or value, total, design/options."
         )
     props: dict[str, Any] = {}
-    for key, value in values[0].items():
+    for key, value in raw_props.items():
         if key in {"value", "total", "threshold"} and isinstance(value, DataReference):
             props[key] = {"path": "/model/" + "/".join(value.path)}
         else:

@@ -144,7 +144,7 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 - Text(text, design?, options?) — 扩展文本
 - Image(source, options?) — 扩展图片
 - Divider(design?, options?) — 扩展分隔线
-- Progress({ value, total, threshold?, design?, type? }) — 进度条
+- Progress({ value, total, threshold?, design?, type? }) — 进度条；兼容 `Progress(value, total, design?/options?)`
 - Button(label, design, options?) — 扩展按钮；Button 不支持任何子组件或内嵌 Image
 - Checkbox(options?) — 扩展复选框
 - Row(layout?, options?, ...children) — 扩展水平布局
