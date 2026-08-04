@@ -271,7 +271,7 @@ def _component_value(
     allow_text_expression: bool = False,
 ) -> Any:
     """Parse a component value, including safe data reads and text concatenation."""
-    if isinstance(node, ast.Attribute):
+    if isinstance(node, (ast.Attribute, ast.Subscript)):
         return _data_reference(node)
     if isinstance(node, ast.Call):
         return _system_call(node, depth)
@@ -381,19 +381,33 @@ def _json_literal_value(node: ast.AST, depth: int) -> Any:
     )
 
 
-def _data_reference(node: ast.Attribute) -> DataReference:
-    """Resolve only ``data.identifier...`` access chains to a data reference."""
+def _data_reference(node: ast.Attribute | ast.Subscript) -> DataReference:
+    """Resolve ``data.identifier[0]...`` access chains to a data reference."""
     parts: list[str] = []
     current: ast.AST = node
-    while isinstance(current, ast.Attribute):
-        if current.attr.startswith("_") or current.attr in _FORBIDDEN_KEYS:
-            raise TerseDslNested2ConversionError("Unsafe data field reference.")
-        parts.append(current.attr)
+    while isinstance(current, (ast.Attribute, ast.Subscript)):
+        if isinstance(current, ast.Attribute):
+            if current.attr.startswith("_") or current.attr in _FORBIDDEN_KEYS:
+                raise TerseDslNested2ConversionError("Unsafe data field reference.")
+            parts.append(current.attr)
+            current = current.value
+            continue
+        index = current.slice
+        if (
+            not isinstance(index, ast.Constant)
+            or isinstance(index.value, bool)
+            or not isinstance(index.value, int)
+            or index.value < 0
+        ):
+            raise TerseDslNested2ConversionError(
+                "Data array indexes must be non-negative integer literals."
+            )
+        parts.append(str(index.value))
         current = current.value
     if not isinstance(current, ast.Name) or current.id != "data":
         expression = ast.unparse(node)
         raise TerseDslNested2ConversionError(
-            "Data references must use the form data.field.subField; "
+            "Data references must use the form data.field.subField or data.list[0].field; "
             f'received "{expression}".'
         )
     return DataReference(tuple(reversed(parts)))
@@ -445,9 +459,15 @@ def _validate_value_references(value: Any, data: dict[str, Any] | None) -> None:
 def _data_path_exists(data: dict[str, Any], path: tuple[str, ...]) -> bool:
     current: Any = data
     for part in path:
-        if not isinstance(current, dict) or part not in current:
-            return False
-        current = current[part]
+        if isinstance(current, dict):
+            if part not in current:
+                return False
+            current = current[part]
+            continue
+        if isinstance(current, list) and part.isdigit() and int(part) < len(current):
+            current = current[int(part)]
+            continue
+        return False
     return True
 
 

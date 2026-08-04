@@ -116,9 +116,9 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - List: "list" | "dense"
 - Stack: "overlay"
 
-数据绑定只允许受限的 `data.field.subField` 读取形式；它表示 data 对象中同名字段，并会映射为
-标准 A2UI JSON Pointer 插值 `${/model/field/subField}`。字段名必须是合法标识符，禁止 `[]`、可选链、函数调用、赋值、递增、模板
-字符串、对象方法和任意其他 JavaScript 表达式。Text 和 Button 的文本值可使用 `+` 拼接字符串
+数据绑定只允许受限的 `data.field.subField` 或 `data.list[0].field` 读取形式；它表示 data 对象中同名字段，并会映射为
+标准 A2UI JSON Pointer 插值 `${/model/field/subField}`。字段名必须是合法标识符，禁止可选链、函数调用、赋值、递增、模板
+字符串、对象方法和任意其他 JavaScript 表达式。数组只允许非负整数常量下标，例如 `[0]`，禁止动态、负数或字符串下标。Text 和 Button 的文本值可使用 `+` 拼接字符串
 字面量与 `data.field.subField`；只要使用 `+`，其中所有字符串字面量必须使用单引号，例如
 `Text('prefix ' + data.item.name + ' suffix', "title")`。禁止数值运算、条件表达式和其他组件字段中的
 拼接表达式。
@@ -1316,8 +1316,8 @@ root Column or Row [
 例如必须写 `Text('今日' + data.app.name + '使用时长', "title-s")`，绝不能写
 `Text("今日" + data.app.name + "使用时长", "title-s")`。静态文本与 options 仍可使用双引号。
 
-动态数据只写 `data.field.subField`，根 `data` 对应紧随组件树声明的 `data = {...}` 对象。例如
-`Text(data.appUsage.appName, "title-s")`。绝不能输出 Compact/A2UI 绑定形式：`{"path":"/..."}`、
+动态数据只写 `data.field.subField` 或 `data.list[0].field`，根 `data` 对应紧随组件树声明的 `data = {...}` 对象。例如
+`Text(data.appUsage.appName, "title-s")` 或 `Text(data.weather.daily[0].rainProbabilityPercent, "title-s")`。绝不能输出 Compact/A2UI 绑定形式：`{"path":"/..."}`、
 `${/model/...}`、`{{ ... }}`、`model.field`、`$__data` 或 `dataModel.field`；这些都不是 Terse DSL。
 
 Button 只能写 `Button(label, "capsule", options?)`，不得嵌套 `Image` 或任何子组件，也不得使用
