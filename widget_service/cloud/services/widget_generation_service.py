@@ -1041,6 +1041,7 @@ class WidgetGenerationService:
                 source_load_result.artifact_digest if source_load_result else None
             ),
             model_metrics=model_client.last_model_metrics,
+            model_prompt=prompt,
         )
         # ArtifactStore 当前是本地 mock/OBS TODO 入口，返回端侧可下载 URL 和摘要。
         logger.info(
@@ -1372,6 +1373,7 @@ class WidgetGenerationService:
         generation_mode: str = "create",
         source_artifact_digest: str | None = None,
         model_metrics: dict[str, int | float | None] | None = None,
+        model_prompt: list[dict[str, str]] | None = None,
     ) -> WidgetArtifact:
         """组装完整 artifact。
 
@@ -1406,6 +1408,7 @@ class WidgetGenerationService:
             genui=genui,
             cardSpec=card_spec,
             taskSpec=task_spec,
+            modelPrompt=model_prompt or [],
             effectiveCapabilities={
                 # data 只暴露能力 ID，端侧按 CardSpec.dataBindings 执行真实数据刷新。
                 "data": [item.id for item in data_capabilities],

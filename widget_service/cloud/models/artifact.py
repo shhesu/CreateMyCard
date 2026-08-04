@@ -39,6 +39,7 @@ class WidgetArtifact(BaseModel):
     genui: str
     cardSpec: dict[str, Any]
     taskSpec: dict[str, Any]
+    modelPrompt: list[dict[str, str]] = Field(default_factory=list)
     effectiveCapabilities: dict[str, list[Any]] = Field(default_factory=dict)
     removedCapabilities: list[RemovedCapability] = Field(default_factory=list)
     generationPlan: GenerationPlan = Field(default_factory=GenerationPlan)

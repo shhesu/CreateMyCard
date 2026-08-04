@@ -67,7 +67,9 @@ class ArtifactStore:
             ).encode("utf-8")
         )
         digest = calculate_artifact_digest(artifact)
-        logger.info(f"{_MODULE} artifact_payload_built payload_bytes={payload_bytes} digest={digest}")
+        logger.info(
+            f"{_MODULE} artifact_payload_built payload_bytes={payload_bytes} digest={digest}"
+        )
 
         # Artifact 以具名 Markdown 代码块上传。每个块名与对应契约字段一致，
         # 既保留端侧现有的 genui/cardspec 解析方式，也完整携带排障和回放信息。
@@ -75,6 +77,7 @@ class ArtifactStore:
             "cardspec": artifact_data["cardSpec"],
             "schema": {"schemaVersion": artifact_data["schemaVersion"]},
             "taskspec": artifact_data["taskSpec"],
+            "prompt": artifact_data["modelPrompt"],
             "effectivecapabilities": artifact_data["effectiveCapabilities"],
             "removedcapabilities": artifact_data["removedCapabilities"],
             "generationplan": artifact_data["generationPlan"],
