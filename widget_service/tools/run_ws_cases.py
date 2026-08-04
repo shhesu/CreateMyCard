@@ -10,10 +10,13 @@ import re
 import sys
 import urllib.request
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 import websockets
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Font, PatternFill
 
 
 @dataclass
@@ -26,7 +29,7 @@ class CaseResult:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Send every case file verbatim to a WebSocket and save its result."
+        description="Send every case file verbatim to a WebSocket and save one Excel report."
     )
     parser.add_argument("--ws-url", required=True, help="WebSocket endpoint, e.g. ws://host/path")
     parser.add_argument(
@@ -35,7 +38,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--result-dir",
         type=Path,
-        help="Output directory (default: <cases-dir>/result)",
+        help="Excel output directory (default: <cases-dir>/result)",
+    )
+    parser.add_argument(
+        "--case",
+        type=Path,
+        help="Run only this case file (absolute or relative to --cases-dir)",
     )
     parser.add_argument("--timeout", type=float, default=180.0, help="Per-case timeout in seconds")
     return parser.parse_args()
@@ -89,42 +97,63 @@ def extract_code_blocks(markdown: str, language: str) -> list[str]:
     return re.findall(pattern, markdown, flags=re.IGNORECASE | re.DOTALL)
 
 
-def output_base(case_file: Path, cases_dir: Path, result_dir: Path) -> Path:
-    relative = case_file.relative_to(cases_dir).with_suffix("")
-    return result_dir / relative
+def extracted_blocks(markdown: str | None, language: str, aliases: tuple[str, ...]) -> str:
+    if markdown is None:
+        return ""
+    return "\n\n".join(
+        block.strip()
+        for alias in aliases
+        for block in extract_code_blocks(markdown, alias)
+    )
 
 
-def write_result(base: Path, case_file: Path, result: CaseResult) -> None:
-    base.parent.mkdir(parents=True, exist_ok=True)
-    report = [f"# {case_file.name}", ""]
-    if result.error:
-        report.extend(["## Error", "", result.error, ""])
-    else:
-        report.extend(["## Status", "", "success", ""])
-    if result.artifact_url:
-        report.extend(["## Artifact URL", "", result.artifact_url, ""])
-    if result.artifact_markdown is not None:
-        artifact_file = base.with_suffix(".artifact.md")
-        artifact_file.write_text(result.artifact_markdown, encoding="utf-8")
-        for language, fence_names in (
-            ("genui", ("genui",)),
-            ("designcompactdsl", ("designcompactdsl", "design-compact-dsl")),
-        ):
-            blocks = [
-                block
-                for fence_name in fence_names
-                for block in extract_code_blocks(result.artifact_markdown, fence_name)
+def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_path: Path) -> None:
+    """Write every case result into one timestamp-named Excel workbook."""
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "Results"
+    headers = [
+        "Case",
+        "Status",
+        "Error",
+        "Artifact URL",
+        "GenUI",
+        "DesignCompactDSL",
+        "Response JSON",
+    ]
+    sheet.append(headers)
+    for case_file, result in results:
+        sheet.append(
+            [
+                str(case_file.relative_to(cases_dir)),
+                "FAIL" if result.error else "PASS",
+                result.error or "",
+                result.artifact_url or "",
+                extracted_blocks(result.artifact_markdown, "genui", ("genui",)),
+                extracted_blocks(
+                    result.artifact_markdown,
+                    "designcompactdsl",
+                    ("designcompactdsl", "design-compact-dsl"),
+                ),
+                json.dumps(result.response, ensure_ascii=False, indent=2)
+                if result.response is not None
+                else "",
             ]
-            if blocks:
-                code_file = base.with_suffix(f".{language}")
-                code_file.write_text("\n\n".join(blocks).strip() + "\n", encoding="utf-8")
-                report.extend(
-                    [f"## {language}", "", f"```{language}", blocks[0].strip(), "```", ""]
-                )
-    if result.response is not None:
-        response_json = json.dumps(result.response, ensure_ascii=False, indent=2)
-        report.extend(["## Response", "", "```json", response_json, "```", ""])
-    base.with_suffix(".result.md").write_text("\n".join(report), encoding="utf-8")
+        )
+    header_fill = PatternFill("solid", fgColor="1F4E78")
+    for cell in sheet[1]:
+        cell.font = Font(bold=True, color="FFFFFF")
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center")
+    for row in sheet.iter_rows(min_row=2):
+        for cell in row:
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+    sheet.freeze_panes = "A2"
+    sheet.auto_filter.ref = sheet.dimensions
+    for column, width in {"A": 32, "B": 10, "C": 42, "D": 60, "E": 60, "F": 60, "G": 60}.items():
+        sheet.column_dimensions[column].width = width
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    workbook.save(output_path)
 
 
 async def main() -> int:
@@ -134,31 +163,44 @@ async def main() -> int:
     if not cases_dir.is_dir():
         print(f"cases directory does not exist: {cases_dir}", file=sys.stderr)
         return 2
-    case_files = sorted(
-        path
-        for path in cases_dir.rglob("*")
-        if path.is_file() and result_dir not in path.parents
-    )
+    if args.case:
+        selected_case = args.case if args.case.is_absolute() else cases_dir / args.case
+        selected_case = selected_case.resolve()
+        if not selected_case.is_file() or cases_dir not in selected_case.parents:
+            print(f"case file does not exist in cases directory: {selected_case}", file=sys.stderr)
+            return 2
+        case_files = [selected_case]
+    else:
+        case_files = sorted(
+            path
+            for path in cases_dir.rglob("*")
+            if path.is_file() and result_dir not in path.parents
+        )
     if not case_files:
         print(f"no case files found in: {cases_dir}", file=sys.stderr)
         return 2
 
     failures = 0
+    results: list[tuple[Path, CaseResult]] = []
     for case_file in case_files:
         result = await run_case(args.ws_url, case_file.read_text(encoding="utf-8"), args.timeout)
         if result.error is None and result.response is not None:
             result.artifact_url = extract_artifact_url(result.response)
-            if result.artifact_url:
+            if not result.artifact_url:
+                result.error = "successful response does not contain a non-empty artifactUrl"
+            else:
                 try:
                     result.artifact_markdown = download_markdown(result.artifact_url, args.timeout)
                 except Exception as exc:
                     result.error = f"artifact download failed: {type(exc).__name__}: {exc}"
         if result.error:
             failures += 1
-        write_result(output_base(case_file, cases_dir, result_dir), case_file, result)
+        results.append((case_file, result))
         status = "FAIL" if result.error else "PASS"
         print(f"[{status}] {case_file.relative_to(cases_dir)}")
-    print(f"completed {len(case_files)} case(s), failures: {failures}; results: {result_dir}")
+    report_path = result_dir / f"{datetime.now():%Y%m%d_%H%M%S}.xlsx"
+    write_excel(results, cases_dir, report_path)
+    print(f"completed {len(case_files)} case(s), failures: {failures}; report: {report_path}")
     return 1 if failures else 0
 
 
