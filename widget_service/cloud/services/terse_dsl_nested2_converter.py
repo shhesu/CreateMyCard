@@ -391,8 +391,10 @@ def _data_reference(node: ast.Attribute) -> DataReference:
         parts.append(current.attr)
         current = current.value
     if not isinstance(current, ast.Name) or current.id != "data":
+        expression = ast.unparse(node)
         raise TerseDslNested2ConversionError(
-            "Data references must use the form data.field.subField."
+            "Data references must use the form data.field.subField; "
+            f'received "{expression}".'
         )
     return DataReference(tuple(reversed(parts)))
 

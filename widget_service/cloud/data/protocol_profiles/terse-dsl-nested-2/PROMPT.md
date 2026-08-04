@@ -1315,3 +1315,7 @@ root Column or Row [
 声明。**若 Text 或 Button 的第一个参数包含 `+`，表达式中的每个字符串字面量必须使用单引号。**
 例如必须写 `Text('今日' + data.app.name + '使用时长', "title-s")`，绝不能写
 `Text("今日" + data.app.name + "使用时长", "title-s")`。静态文本与 options 仍可使用双引号。
+
+动态数据只写 `data.field.subField`，根 `data` 对应紧随组件树声明的 `data = {...}` 对象。例如
+`Text(data.appUsage.appName, "title-s")`。绝不能输出 Compact/A2UI 绑定形式：`{"path":"/..."}`、
+`${/model/...}`、`{{ ... }}`、`model.field`、`$__data` 或 `dataModel.field`；这些都不是 Terse DSL。
