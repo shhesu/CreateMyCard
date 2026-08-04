@@ -29,6 +29,7 @@ class MepModelTransport:
     def __init__(self, settings: Settings, timeout: int = 600) -> None:
         self.settings = settings
         self.timeout = timeout
+        self.last_metrics: dict[str, int | float | None] = {}
 
     @staticmethod
     def messages_to_qwen_prompt(messages: list[dict[str, str]]) -> str:
@@ -237,6 +238,11 @@ class MepModelTransport:
         completion_tokens = final_event.get("generateTokenNum") if final_event else None
         has_usage = isinstance(input_tokens, int) and isinstance(completion_tokens, int)
         model_time_ms = final_event.get("modelTime") if final_event else None
+        self.last_metrics = {
+            "promptTokens": input_tokens if isinstance(input_tokens, int) else None,
+            "completionTokens": completion_tokens if isinstance(completion_tokens, int) else None,
+            "apiLatencyMs": duration_ms,
+        }
         speed = self._token_speed(duration_ms, first_token_latency_ms, completion_tokens)
         logger.info(
             f"{_MODULE} llm_call_metrics content_preview={json_for_log(full_text)} "

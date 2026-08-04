@@ -25,6 +25,7 @@ class CaseResult:
     error: str | None
     artifact_url: str | None = None
     artifact_markdown: str | None = None
+    model_metrics: dict[str, int | float | None] | None = None
 
 
 def parse_args() -> argparse.Namespace:
@@ -107,6 +108,21 @@ def extracted_blocks(markdown: str | None, language: str, aliases: tuple[str, ..
     )
 
 
+def extract_model_metrics(markdown: str | None) -> dict[str, int | float | None]:
+    """Read model call metrics stored in the artifact's ``meta`` JSON block."""
+    if markdown is None:
+        return {}
+    blocks = extract_code_blocks(markdown, "meta")
+    if not blocks:
+        return {}
+    try:
+        meta = json.loads(blocks[0])
+    except json.JSONDecodeError:
+        return {}
+    metrics = meta.get("modelMetrics") if isinstance(meta, dict) else None
+    return metrics if isinstance(metrics, dict) else {}
+
+
 def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_path: Path) -> None:
     """Write every case result into one timestamp-named Excel workbook."""
     workbook = Workbook()
@@ -117,6 +133,9 @@ def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_
         "Status",
         "Error",
         "Artifact URL",
+        "Prompt Tokens",
+        "Completion Tokens",
+        "API Latency (ms)",
         "GenUI",
         "DesignCompactDSL",
         "Response JSON",
@@ -129,6 +148,9 @@ def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_
                 "FAIL" if result.error else "PASS",
                 result.error or "",
                 result.artifact_url or "",
+                (result.model_metrics or {}).get("promptTokens"),
+                (result.model_metrics or {}).get("completionTokens"),
+                (result.model_metrics or {}).get("apiLatencyMs"),
                 extracted_blocks(result.artifact_markdown, "genui", ("genui",)),
                 extracted_blocks(
                     result.artifact_markdown,
@@ -150,7 +172,18 @@ def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_
             cell.alignment = Alignment(vertical="top", wrap_text=True)
     sheet.freeze_panes = "A2"
     sheet.auto_filter.ref = sheet.dimensions
-    for column, width in {"A": 32, "B": 10, "C": 42, "D": 60, "E": 60, "F": 60, "G": 60}.items():
+    for column, width in {
+        "A": 32,
+        "B": 10,
+        "C": 42,
+        "D": 60,
+        "E": 16,
+        "F": 18,
+        "G": 18,
+        "H": 60,
+        "I": 60,
+        "J": 60,
+    }.items():
         sheet.column_dimensions[column].width = width
     output_path.parent.mkdir(parents=True, exist_ok=True)
     workbook.save(output_path)
@@ -191,6 +224,7 @@ async def main() -> int:
             else:
                 try:
                     result.artifact_markdown = download_markdown(result.artifact_url, args.timeout)
+                    result.model_metrics = extract_model_metrics(result.artifact_markdown)
                 except Exception as exc:
                     result.error = f"artifact download failed: {type(exc).__name__}: {exc}"
         if result.error:

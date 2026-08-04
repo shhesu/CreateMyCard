@@ -78,6 +78,7 @@ class A2UIModelClient:
         )
         self.backend = backend
         self.transport = transport
+        self.last_model_metrics: dict[str, int | float | None] = {}
         self.mock_data_path = Path(mock_data_path) if mock_data_path else None
         self._suppress_prompt_log = False
 
@@ -118,6 +119,9 @@ class A2UIModelClient:
                     )
                 try:
                     raw_output = self.transport.generate(prompt)
+                    self.last_model_metrics = dict(
+                        getattr(self.transport, "last_metrics", {})
+                    )
                 except ModelTransportError as exc:
                     raw_output = self._recover_design_output_after_abort(
                         exc,

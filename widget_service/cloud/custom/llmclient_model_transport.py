@@ -12,6 +12,9 @@ _MODULE = "[LLMClient Model Transport]"
 class LlmClientModelTransport:
     """适配现有 llmclient 流，保持其实现不变。"""
 
+    def __init__(self) -> None:
+        self.last_metrics: dict[str, int | float | None] = {}
+
     def generate(self, messages: list[dict[str, str]]) -> str:
         """聚合 llmclient 的流式 Token，返回未经 DSL 处理的完整文本。"""
         usage: dict = {}
@@ -40,6 +43,11 @@ class LlmClientModelTransport:
             usage.get("output_tokens"),
         )
         has_usage = isinstance(prompt_tokens, int) and isinstance(completion_tokens, int)
+        self.last_metrics = {
+            "promptTokens": prompt_tokens if isinstance(prompt_tokens, int) else None,
+            "completionTokens": completion_tokens if isinstance(completion_tokens, int) else None,
+            "apiLatencyMs": duration_ms,
+        }
         logger.info(
             f"{_MODULE} llm_call_metrics prompt_tokens={prompt_tokens} "
             f"completion_tokens={completion_tokens} api_latency_ms={duration_ms} "

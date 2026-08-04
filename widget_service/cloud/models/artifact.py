@@ -30,6 +30,7 @@ class ArtifactMeta(BaseModel):
     generationMode: Literal["create", "edit"] = "create"
     artifactId: str = "00000000-0000-0000-0000-000000000000"
     sourceArtifactDigest: str | None = None
+    modelMetrics: dict[str, int | float | None] = Field(default_factory=dict)
     createdAt: int
 
 

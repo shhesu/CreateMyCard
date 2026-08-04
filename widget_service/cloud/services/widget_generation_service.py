@@ -1040,6 +1040,7 @@ class WidgetGenerationService:
             source_artifact_digest=(
                 source_load_result.artifact_digest if source_load_result else None
             ),
+            model_metrics=model_client.last_model_metrics,
         )
         # ArtifactStore 当前是本地 mock/OBS TODO 入口，返回端侧可下载 URL 和摘要。
         logger.info(
@@ -1370,6 +1371,7 @@ class WidgetGenerationService:
         artifact_id: str | None = None,
         generation_mode: str = "create",
         source_artifact_digest: str | None = None,
+        model_metrics: dict[str, int | float | None] | None = None,
     ) -> WidgetArtifact:
         """组装完整 artifact。
 
@@ -1436,6 +1438,7 @@ class WidgetGenerationService:
                 generationMode=generation_mode,
                 artifactId=artifact_id,
                 sourceArtifactDigest=source_artifact_digest,
+                modelMetrics=model_metrics or {},
                 createdAt=int(time.time() * 1000),
             ),
         )
