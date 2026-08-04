@@ -137,6 +137,7 @@ def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_
         "Completion Tokens",
         "API Latency (ms)",
         "Prompt",
+        "TaskSpec",
         "GenUI",
         "DesignCompactDSL",
         "Response JSON",
@@ -153,6 +154,7 @@ def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_
                 (result.model_metrics or {}).get("completionTokens"),
                 (result.model_metrics or {}).get("apiLatencyMs"),
                 extracted_blocks(result.artifact_markdown, "prompt", ("prompt",)),
+                extracted_blocks(result.artifact_markdown, "taskspec", ("taskspec",)),
                 extracted_blocks(result.artifact_markdown, "genui", ("genui",)),
                 extracted_blocks(
                     result.artifact_markdown,
@@ -186,6 +188,7 @@ def write_excel(results: list[tuple[Path, CaseResult]], cases_dir: Path, output_
         "I": 60,
         "J": 60,
         "K": 60,
+        "L": 60,
     }.items():
         sheet.column_dimensions[column].width = width
     output_path.parent.mkdir(parents=True, exist_ok=True)

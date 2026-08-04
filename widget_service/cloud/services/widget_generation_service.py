@@ -1042,6 +1042,7 @@ class WidgetGenerationService:
             ),
             model_metrics=model_client.last_model_metrics,
             model_prompt=prompt,
+            design_compact_dsl=latest_design_dsl or None,
         )
         # ArtifactStore 当前是本地 mock/OBS TODO 入口，返回端侧可下载 URL 和摘要。
         logger.info(
@@ -1374,6 +1375,7 @@ class WidgetGenerationService:
         source_artifact_digest: str | None = None,
         model_metrics: dict[str, int | float | None] | None = None,
         model_prompt: list[dict[str, str]] | None = None,
+        design_compact_dsl: str | None = None,
     ) -> WidgetArtifact:
         """组装完整 artifact。
 
@@ -1406,6 +1408,7 @@ class WidgetGenerationService:
         artifact_id = artifact_id or str(uuid.uuid4())
         return WidgetArtifact(
             genui=genui,
+            designCompactDsl=design_compact_dsl,
             cardSpec=card_spec,
             taskSpec=task_spec,
             modelPrompt=model_prompt or [],

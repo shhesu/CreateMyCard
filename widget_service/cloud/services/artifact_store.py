@@ -89,6 +89,8 @@ class ArtifactStore:
             + "\n```",
             f"```genui\n{artifact.genui}\n```",
         ]
+        if artifact.designCompactDsl:
+            blocks.append(f"```designcompactdsl\n{artifact.designCompactDsl}\n```")
         blocks.extend(
             "```" + name + "\n"
             + json.dumps(value, ensure_ascii=False, indent=2)
