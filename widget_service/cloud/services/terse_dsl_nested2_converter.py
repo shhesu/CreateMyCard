@@ -125,7 +125,6 @@ def parse_terse_dsl_nested2(source: str) -> Nested2Node:
     data: dict[str, Any] | None = None
     if len(module.body) == 2:
         data = _parse_data_assignment(module.body[1])
-    _validate_expression_string_quotes(module, translated_source)
     state = {"components": 0}
     root = _parse_component(module.body[0].value, 1, state)
     if root.component_type != "Column":
@@ -152,21 +151,6 @@ def _parse_data_assignment(statement: ast.stmt) -> dict[str, Any]:
     if not isinstance(data, dict) or not data:
         raise TerseDslNested2ConversionError("data must be a non-empty object literal.")
     return data
-
-
-def _validate_expression_string_quotes(module: ast.Module, source: str) -> None:
-    """Require single-quoted literals in every supported ``+`` expression."""
-    for node in ast.walk(module):
-        if not isinstance(node, ast.BinOp) or not isinstance(node.op, ast.Add):
-            continue
-        segment = ast.get_source_segment(source, node)
-        if segment is None:
-            raise TerseDslNested2ConversionError("Cannot read text expression source.")
-        for token in tokenize.generate_tokens(io.StringIO(segment).readline):
-            if token.type == tokenize.STRING and not token.string.startswith("'"):
-                raise TerseDslNested2ConversionError(
-                    "String literals in a + expression must use single quotes."
-                )
 
 
 def _python_compatible_source(source: str) -> str:

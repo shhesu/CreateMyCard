@@ -228,6 +228,19 @@ data = {
     }
 
 
+def test_terse_dsl_nested2_normalizes_double_quoted_text_expression_literals():
+    source = '''
+Column("card", Text(data.weather.location + "天气", "subtitle-s"));
+data = {weather: {location: "上海"}};
+'''
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+
+    genui = convert_terse_dsl_nested2_to_a2ui(source, size="2x2", protocol_profile=profile)
+
+    component = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][1]
+    assert component["content"] == "{{ ${/model/weather/location} + '天气' }}"
+
+
 def test_terse_dsl_nested2_converts_data_reference_with_array_index():
     source = '''
 Column("card", Text(data.weather.daily[0].rainProbabilityPercent, "title-s"));
@@ -359,7 +372,6 @@ Column("card",
         'Column("card", Text("x", {constructor: "bad"}));',
         'Column("card", Text(data.missing, "body-m"));',
         'Column("card", Text(data.value + 1, "body-m")); data = {value: "x"};',
-        'Column("card", Text("today" + data.value, "body-m")); data = {value: "x"};',
         'Column("card", Text("x", "body-m")); data = fetch("x");',
         'Row("between", Text("x", "body-m"));',
     ],

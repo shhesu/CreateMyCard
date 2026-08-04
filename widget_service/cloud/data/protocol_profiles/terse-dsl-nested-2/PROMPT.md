@@ -55,10 +55,9 @@ data = {
   item: { name: "value" }
 };
 
-**字符串拼接硬规则：**只要 Text 或 Button 的第一个参数包含 `+`，该表达式中的所有
-字符串字面量都必须使用单引号。正确：`Text('prefix ' + data.item.name + ' suffix', "subtitle-s")`；
-错误：`Text("prefix " + data.item.name + " suffix", "subtitle-s")`。该规则只约束 `+` 表达式内部的
-字符串；design、普通静态文案和对象字段值仍可使用双引号。
+**字符串拼接规范：**Text 或 Button 的第一个参数包含 `+` 时，优先让表达式中的字符串字面量使用
+单引号，例如 `Text('prefix ' + data.item.name + ' suffix', "subtitle-s")`。转换器同时兼容双引号，
+并会将最终 A2UI 表达式规范化为单引号；design、普通静态文案和对象字段值仍可使用双引号。
 
 只允许一个根组件和一个 data 声明：第一条语句必须是根组件调用，第二条语句必须是 `data = {...}`；
 不得输出任何第三条语句。根组件 ID 由服务固定为 root。父子关系只由直接嵌套的组件参数表达，
@@ -1312,9 +1311,9 @@ root Column or Row [
 # Terse 输出最终语法门禁
 
 在输出前只检查 TerseDSL-Nested-2 语法：回复只能是一个根组件调用，随后是一个 `data = {...};`
-声明。**若 Text 或 Button 的第一个参数包含 `+`，表达式中的每个字符串字面量必须使用单引号。**
-例如必须写 `Text('今日' + data.app.name + '使用时长', "title-s")`，绝不能写
-`Text("今日" + data.app.name + "使用时长", "title-s")`。静态文本与 options 仍可使用双引号。
+声明。若 Text 或 Button 的第一个参数包含 `+`，优先使用单引号，例如
+`Text('今日' + data.app.name + '使用时长', "title-s")`。双引号拼接也会被转换器兼容并规范化；
+静态文本与 options 仍可使用双引号。
 
 动态数据只写 `data.field.subField` 或 `data.list[0].field`，根 `data` 对应紧随组件树声明的 `data = {...}` 对象。例如
 `Text(data.appUsage.appName, "title-s")` 或 `Text(data.weather.daily[0].rainProbabilityPercent, "title-s")`。绝不能输出 Compact/A2UI 绑定形式：`{"path":"/..."}`、
