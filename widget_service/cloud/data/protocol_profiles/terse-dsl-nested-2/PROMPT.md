@@ -1308,3 +1308,10 @@ root Column or Row [
 - 是否通过高度预算避免遮挡、裁切和换行？
 - `identity / primary / support / action` 是否各自有清晰角色？
 - action 是否没有挤掉语义完整内容子集？
+
+# Terse 输出最终语法门禁
+
+在输出前只检查 TerseDSL-Nested-2 语法：回复只能是一个根组件调用，随后是一个 `data = {...};`
+声明。**若 Text 或 Button 的第一个参数包含 `+`，表达式中的每个字符串字面量必须使用单引号。**
+例如必须写 `Text('今日' + data.app.name + '使用时长', "title-s")`，绝不能写
+`Text("今日" + data.app.name + "使用时长", "title-s")`。静态文本与 options 仍可使用双引号。

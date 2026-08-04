@@ -432,6 +432,7 @@ def test_terse_prompt_is_a_materialized_compact_prompt_with_terse_protocol():
     assert prompt.startswith("# Form GenUI Prompt（桌面卡片）")
     assert "# TerseDSL-Nested-2 Protocol Replacement" in prompt
     assert "# 2x2 Pack（160×160 标题/内容/按钮竖栈）" in prompt
+    assert "# Terse 输出最终语法门禁" in prompt
     assert "# Protocol Core(桌面 Form 卡)" not in prompt
     assert "# Data Binding（A2UI Compact DSL）" not in prompt
 
