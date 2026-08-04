@@ -92,8 +92,8 @@ Design/LayoutPreset 没有合适值时应直接省略，不要用空字符串、
 - Divider 可用 `line`（1vp）或 `bar`（8vp），默认 `line`。
 - Progress 可用 `linear-bar`、`segmented-bar`、`threshold-bar`；单一环形指标写
   `type: "ring"`，它不是 Design。
-- Button 必须使用 `capsule`（文字胶囊，36 高、圆角 20、8vp 水平 padding、14/500）或
-  `icon-round`（36×36 圆钮、圆角 18）。`icon-round` 必须恰有一个 Image child。
+- Button 仅使用 `capsule`（文字胶囊，36 高、圆角 20、8vp 水平 padding、14/500）。当前
+  Terse 协议不支持 `icon-round`，也不支持 Button 内嵌 Image。
 - Checkbox 没有 Design。禁止继续使用旧 token：`title`、`body`、`subtitle`、`success`、
   `warning`、`primary`、`default`、`small`、`icon`、`thumbnail`、`hero`。
 
@@ -146,7 +146,7 @@ Catalog：ohos-a2ui-extended（ohos.a2ui.extended.catalog）的当前服务子�
 - Image(source, options?) — 扩展图片
 - Divider(design?, options?) — 扩展分隔线
 - Progress({ value, total, threshold?, design?, type? }) — 进度条
-- Button(label, design, options?) — 扩展按钮
+- Button(label, design, options?) — 扩展按钮；Button 不支持任何子组件或内嵌 Image
 - Checkbox(options?) — 扩展复选框
 - Row(layout?, options?, ...children) — 扩展水平布局
 - Column(layout?, options?, ...children) — 扩展垂直布局
@@ -1319,3 +1319,6 @@ root Column or Row [
 动态数据只写 `data.field.subField`，根 `data` 对应紧随组件树声明的 `data = {...}` 对象。例如
 `Text(data.appUsage.appName, "title-s")`。绝不能输出 Compact/A2UI 绑定形式：`{"path":"/..."}`、
 `${/model/...}`、`{{ ... }}`、`model.field`、`$__data` 或 `dataModel.field`；这些都不是 Terse DSL。
+
+Button 只能写 `Button(label, "capsule", options?)`，不得嵌套 `Image` 或任何子组件，也不得使用
+`icon-round`。需要图片时，将 Image 放在 Button 之外的 Row/Column 中。
