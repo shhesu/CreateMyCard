@@ -1320,4 +1320,5 @@ root Column or Row [
 `${/model/...}`、`{{ ... }}`、`model.field`、`$__data` 或 `dataModel.field`；这些都不是 Terse DSL。
 
 Button 只能写 `Button(label, "capsule", options?)`，不得嵌套 `Image` 或任何子组件，也不得使用
-`icon-round`。需要图片时，将 Image 放在 Button 之外的 Row/Column 中。
+`icon-round`。`label` 必须是非空静态动作词（如“查看详情”“去设置”），不得写空字符串、空白或
+data 绑定；需要图片时，将 Image 放在 Button 之外的 Row/Column 中。

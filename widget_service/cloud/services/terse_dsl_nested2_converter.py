@@ -612,6 +612,8 @@ def _button_props(node: Nested2Node) -> dict[str, Any]:
     design = node.values[1] if len(node.values) > 1 else None
     if not isinstance(design, str):
         raise TerseDslNested2ConversionError("Button requires a design.")
+    if isinstance(props["label"], str) and not props["label"].strip():
+        props["label"] = "操作"
     return props
 
 

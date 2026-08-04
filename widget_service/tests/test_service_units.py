@@ -148,6 +148,18 @@ def test_terse_dsl_nested2_converts_compact_row_layout():
     assert row["styles"]["alignItems"] == "center"
 
 
+def test_terse_dsl_nested2_replaces_empty_button_label_with_generic_action():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        'Column("card", Button("", "capsule"));',
+        size="2x2",
+        protocol_profile=profile,
+    )
+
+    component = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][1]
+    assert component["label"] == "操作"
+
+
 def test_terse_dsl_nested2_allows_root_card_surface_options():
     source = '''
 Column("card", {
