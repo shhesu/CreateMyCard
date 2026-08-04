@@ -493,11 +493,13 @@ def test_terse_dsl_nested2_prompt_builder_uses_terse_system_prompt():
 def test_terse_prompt_is_a_materialized_compact_prompt_with_terse_protocol():
     prompt = A2UIProtocolRegistry.read_design_prompt("terse-dsl-nested-2")
 
-    assert prompt.startswith("# Form GenUI Prompt（桌面卡片）")
+    assert prompt.startswith("# 独立 Form GenUI 裸直出提示词")
     assert "# TerseDSL-Nested-2 Protocol Replacement" in prompt
-    assert "# 2x2 Pack（160×160 标题/内容/按钮竖栈）" in prompt
+    assert "## 组件布局与属性语义（同步自 design-compact-dsl）" in prompt
+    assert "`Row` 的主轴是水平方向" in prompt
+    assert "## 九、Block 与行级编排" in prompt
     assert "# Terse 输出最终语法门禁" in prompt
-    assert "动态数据只写 `data.field.subField`" in prompt
+    assert "动态数据使用 `data.field.subField`" in prompt
     assert "# Protocol Core(桌面 Form 卡)" not in prompt
     assert "# Data Binding（A2UI Compact DSL）" not in prompt
 
