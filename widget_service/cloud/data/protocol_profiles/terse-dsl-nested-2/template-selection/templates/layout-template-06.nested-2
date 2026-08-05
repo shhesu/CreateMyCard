@@ -1,0 +1,11 @@
+Column({ itemMargin: 7, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true, justifyContent: "spaceBetween" } },
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "top" } },
+    Stack({ styles: { width: 60, height: 60, alignContent: "center" } },
+      Progress({ value: 72, total: 100, styles: { width: 60, height: 60, color: "#FF66686D", type: "ring", strokeWidth: 8 } }),
+      Text("999分", { styles: { width: 60, fontSize: 14, fontWeight: "medium", fontColor: "#FFFFFFFF", textAlign: "center", maxLines: 1 } })
+    ),
+    Image("resources/base/media/template_icon.svg", { styles: { width: 24, height: 24, borderRadius: 5, backgroundColor: "#FF66686D", objectFit: "contain" } })
+  ),
+  Text("辅助文本辅助文本", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFB5B7BC", maxLines: 1, textOverflow: "ellipsis" } }),
+  Button("按钮文本", { styles: { width: "matchParent", height: 40, borderRadius: 20, borderWidth: 1, borderColor: "#FF5B5D62", backgroundColor: "#00000000", fontColor: "#FFFFFFFF", fontSize: 14, fontWeight: "medium" } })
+);

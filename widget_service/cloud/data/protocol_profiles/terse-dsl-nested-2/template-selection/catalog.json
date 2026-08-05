@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "card-template-catalog-v1",
+  "size": "2x2",
+  "templates": [
+    {
+      "templateId": "layout-template-01",
+      "businessTypes": ["media-recommendation", "capture-status", "recording"],
+      "keywords": ["歌单", "推荐", "录音", "录像", "运动摄影", "播放"],
+      "structure": "标题、右上图标、底部辅助信息与右下主视觉",
+      "examples": ["歌单推荐", "运动摄影状态", "录音机"]
+    },
+    {
+      "templateId": "layout-template-02",
+      "businessTypes": ["article-summary", "news-digest", "knowledge-card"],
+      "keywords": ["资讯", "新闻", "摘要", "科普", "指数", "文章"],
+      "structure": "标题、右上图标、底部两行正文摘要",
+      "examples": ["宇宙资讯", "24小时指数", "知识摘要"]
+    },
+    {
+      "templateId": "layout-template-03",
+      "businessTypes": ["album-media", "reading-progress", "device-media"],
+      "keywords": ["专辑", "音乐", "音箱", "阅读", "笔记", "书籍", "封面"],
+      "structure": "标题与副标题、左下大封面、右下动作或状态",
+      "examples": ["宇宙探险记", "音乐专辑", "阅读指南", "Sound X"]
+    },
+    {
+      "templateId": "layout-template-04",
+      "businessTypes": ["primary-action", "nearby-service", "meeting-action", "scan-action"],
+      "keywords": ["立即", "开始", "加入", "扫描", "加油", "会议", "附近"],
+      "structure": "说明、标题、辅助文本、底部全宽主按钮",
+      "examples": ["附近加油站", "应用检测", "加入会议"]
+    },
+    {
+      "templateId": "layout-template-05",
+      "businessTypes": ["metric-list", "usage-breakdown", "environment-list"],
+      "keywords": ["使用", "统计", "列表", "明细", "卡路里", "营养", "环境"],
+      "structure": "标题与副标题、三项紧凑列表",
+      "examples": ["手机使用分项", "卡路里明细", "阳台环境"]
+    },
+    {
+      "templateId": "layout-template-06",
+      "businessTypes": ["score-action", "scan-result", "countdown"],
+      "keywords": ["评分", "检测", "扫描", "倒计时", "剩余", "进度", "重新"],
+      "structure": "左上环形分值、右上图标、辅助说明、底部按钮",
+      "examples": ["安装状态优劣", "重新扫描", "节日倒计时"]
+    },
+    {
+      "templateId": "layout-template-07",
+      "businessTypes": ["health-metric", "activity-metric", "single-kpi"],
+      "keywords": ["步数", "睡眠", "压力", "心率", "指标", "健康", "运动"],
+      "structure": "左上超大单指标、右上图标、底部状态与动作",
+      "examples": ["今日步数", "睡眠时长", "压力值"]
+    },
+    {
+      "templateId": "layout-template-08",
+      "businessTypes": ["dual-metric", "calendar-weather", "progress-breakdown"],
+      "keywords": ["日历", "天气", "温度", "空气", "进度条", "双指标", "完成率"],
+      "structure": "大指标、横向进度条、底部左右两组明细",
+      "examples": ["日期日历", "天气温度", "双项进度"]
+    },
+    {
+      "templateId": "layout-template-09",
+      "businessTypes": ["contact-grid", "shortcut-grid", "four-item-grid"],
+      "keywords": ["联系人", "快捷", "四宫格", "拍照", "录像", "人像", "自拍"],
+      "structure": "四个等权圆形入口与对应短标签",
+      "examples": ["常用联系人", "相机快捷入口"]
+    },
+    {
+      "templateId": "layout-template-10",
+      "businessTypes": ["todo-list", "schedule-list", "tips-list"],
+      "keywords": ["待办", "日程", "任务", "课程", "技巧", "清单", "两项"],
+      "structure": "标题与右上图标、下方两条独立内容块",
+      "examples": ["全部待办", "今日课程", "每日技巧"]
+    }
+  ]
+}

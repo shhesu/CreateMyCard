@@ -30,6 +30,7 @@ from models.generation import EventAction
 from services.artifact_store import ArtifactStore
 from services.capability_registry import CapabilityRegistry
 from services.card_spec_builder import CardSpecBuilder
+from services.card_template_selector import CardTemplateSelector
 from services.compact_dsl_a2ui_converter import (
     CompactDslConversionError,
     validate_compact_dsl_context,
@@ -44,6 +45,7 @@ from services.edit_request_normalizer import EditRequestNormalizer
 from services.prompt_builder import PromptBuilder
 from services.protocol_registry import (
     A2UI_FORM_PROTOCOL_PROFILE_ID,
+    CARD_TEMPLATE_SELECTOR_PROFILE_ID,
     COMPACT_DSL_PROTOCOL_PROFILE_ID,
     TERSE_DSL_NESTED2_PROFILE_ID,
     A2UIProtocolRegistry,
@@ -531,12 +533,36 @@ class WidgetGenerationService:
         )
         # prompt 约束模型生成 DSL；Validator 用于质量观测，重试由配置控制，不作为保存门禁。
         if terse_nested2:
+            model_client = A2UIModelClient(backend=model_backend)
+            template_context = None
+            if task_spec.size == "2x2":
+                try:
+                    template_selector = CardTemplateSelector()
+                    selection_prompt = template_selector.build_prompt(task_spec)
+                    selection_source = model_client.generate(
+                        selection_prompt,
+                        {"id": CARD_TEMPLATE_SELECTOR_PROFILE_ID, "format": "json"},
+                    )
+                    template_selection = template_selector.parse(selection_source)
+                    template_context = template_selection.prompt_context()
+                    logger.info(
+                        f"{_MODULE} card_template_selected "
+                        f"template_id={template_selection.template_id} "
+                        f"business_type={template_selection.business_type} "
+                        f"confidence={template_selection.confidence}"
+                    )
+                except (OSError, ValueError, A2UIModelGenerationError) as exc:
+                    logger.warning(
+                        f"{_MODULE} card_template_selection_skipped "
+                        f"exception_type={type(exc).__name__} exception={exc!r}"
+                    )
             terse_system_prompt = A2UIProtocolRegistry.read_design_prompt(
                 TERSE_DSL_NESTED2_PROFILE_ID
             )
             prompt = PromptBuilder().build_terse_dsl_nested2(
                 task_spec,
                 terse_system_prompt,
+                template_context=template_context,
             )
         elif design_profile_id is not None:
             design_system_prompt = A2UIProtocolRegistry.read_design_prompt(
@@ -582,7 +608,8 @@ class WidgetGenerationService:
         latency_by_stage["specAndPrompt"] = self._elapsed_ms(stage_started_at)
         stage_started_at = time.perf_counter()
 
-        model_client = A2UIModelClient(backend=model_backend)
+        if not terse_nested2:
+            model_client = A2UIModelClient(backend=model_backend)
         model_protocol_profile = protocol_profile
         if design_profile_id is not None:
             model_protocol_profile = {

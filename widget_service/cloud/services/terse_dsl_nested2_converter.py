@@ -746,6 +746,7 @@ def _container_props(
     layout = values.pop(0) if values and isinstance(values[0], str) else None
     props: dict[str, Any] = {}
     _merge_options(props, values)
+    _normalize_container_alignment(node.component_type, props)
     layouts = {
         ("Column", "section"): {"width": "matchParent", "itemMargin": 8},
         ("Column", "compact"): {"width": "matchParent", "itemMargin": 4},
@@ -812,3 +813,43 @@ def _container_props(
             f'Unsupported {node.component_type} layout "{layout}".'
         )
     return {**preset, **props}
+
+
+def _normalize_container_alignment(
+    component_type: str,
+    props: dict[str, Any],
+) -> None:
+    """Accept common alignContent mistakes on linear containers.
+
+    ``alignContent`` belongs to Stack.  Terse model output occasionally uses it
+    on Row/Column to express the cross-axis alignment; Compact DSL calls that
+    property ``alignItems``.  Normalize only unambiguous values and preserve
+    unsupported values so the normal protocol validation still reports them.
+    """
+    if component_type not in {"Row", "Column"} or "alignContent" not in props:
+        return
+
+    align_content = props.pop("alignContent")
+    mappings = {
+        "Row": {
+            "top": "top",
+            "center": "center",
+            "bottom": "bottom",
+            "topStart": "top",
+            "bottomStart": "bottom",
+        },
+        "Column": {
+            "start": "start",
+            "center": "center",
+            "end": "end",
+            "topStart": "start",
+            "topEnd": "end",
+            "bottomStart": "start",
+            "bottomEnd": "end",
+        },
+    }
+    align_items = mappings[component_type].get(align_content)
+    if align_items is None:
+        props["alignContent"] = align_content
+        return
+    props.setdefault("alignItems", align_items)

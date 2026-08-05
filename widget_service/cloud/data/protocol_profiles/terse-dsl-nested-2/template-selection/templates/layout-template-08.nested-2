@@ -1,0 +1,24 @@
+Column({ itemMargin: 7, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true, justifyContent: "spaceBetween" } },
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "top" } },
+    Column({ itemMargin: 1 },
+      Text("按钮文本3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFB5B7BC" } }),
+      Row({ itemMargin: 4, styles: { alignItems: "bottom" } },
+        Text("00", { styles: { fontSize: 34, fontWeight: "bold", fontColor: "#FFFFFFFF", maxLines: 1 } }),
+        Text("按钮文本3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FF8F9197" } })
+      )
+    ),
+    Image("resources/base/media/template_icon.svg", { styles: { width: 24, height: 24, borderRadius: 5, backgroundColor: "#FF66686D", objectFit: "contain" } })
+  ),
+  Progress({ value: 64, total: 100, styles: { width: "matchParent", height: 8, borderRadius: 4, color: "#FFF2F2F2", backgroundColor: "#FF66686D", type: "linear" } }),
+  Row({ itemMargin: 12, styles: { width: "matchParent" } },
+    Column({ itemMargin: 2 },
+      Text("次标题3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFFFFFFF" } }),
+      Text("次标题3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFFFFFFF" } })
+    ),
+    Divider({ styles: { width: 1, height: 32, strokeWidth: 1, vertical: true, color: "#FF4B4D52" } }),
+    Column({ itemMargin: 2 },
+      Text("次标题3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFFFFFFF" } }),
+      Text("次标题3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFFFFFFF" } })
+    )
+  )
+);

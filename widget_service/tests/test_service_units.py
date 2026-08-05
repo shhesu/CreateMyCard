@@ -74,6 +74,7 @@ from custom.llmclient_model_transport import LlmClientModelTransport
 from custom.mep_model_transport import MepModelTransport
 from custom.model_transport import ModelTransportError, create_model_transport
 from services.card_spec_builder import CardSpecBuilder
+from services.card_template_selector import CardTemplateSelector
 from services.card_validator import validate_card
 from services.card_validation import validate_card as validate_card_api
 from services.card_validation.rule_registry import RuleRegistry
@@ -146,6 +147,18 @@ def test_terse_dsl_nested2_converts_compact_row_layout():
     row = components[1]
     assert row["itemMargin"] == 4
     assert row["styles"]["alignItems"] == "center"
+
+
+def test_terse_dsl_nested2_normalizes_column_align_content():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        'Column("card", Column("compact", {alignContent: "center"}, Text("内容", "body-s")));',
+        size="2x2",
+        protocol_profile=profile,
+    )
+
+    component = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][1]
+    assert component["styles"]["alignItems"] == "center"
 
 
 def test_terse_dsl_nested2_replaces_empty_button_label_with_generic_action():
@@ -433,6 +446,17 @@ Column("card",
 
     def generate_nested2(_client, prompt, protocol_profile):
         prompts.append(prompt)
+        if protocol_profile["id"] == "card-template-selector":
+            assert protocol_profile["format"] == "json"
+            return json_module.dumps(
+                {
+                    "templateId": "layout-template-08",
+                    "businessType": "calendar-weather",
+                    "reason": "天气主指标与双项明细匹配",
+                    "confidence": 0.96,
+                },
+                ensure_ascii=False,
+            )
         assert protocol_profile["id"] == "terse-dsl-nested-2"
         assert protocol_profile["format"] == "terse-dsl-nested-2"
         return source
@@ -473,17 +497,20 @@ Column("card",
         classmethod(read_nested2_protocol),
     )
 
-    response = WidgetGenerationService().generate_widget_card_terse_dsl_nested2(
-        _model_failure_request()
-    )
+    request = _model_failure_request().model_copy(update={"size": "2x2"})
+    response = WidgetGenerationService().generate_widget_card_terse_dsl_nested2(request)
 
     assert response.status == GenerationStatus.SUCCESS
     assert response.artifactUrl == "https://artifact.test/nested2"
-    assert "TerseDSL-Nested-2" in prompts[0][0]["content"]
+    assert "卡片模板选择器" in prompts[0][0]["content"]
+    assert "TerseDSL-Nested-2" in prompts[1][0]["content"]
+    nested_user_payload = json_module.loads(prompts[1][1]["content"])
+    assert nested_user_payload["selectedTemplate"]["templateId"] == "layout-template-08"
+    assert "templateTerseDslNested2" in nested_user_payload["selectedTemplate"]
     assert '"createSurface"' in saved_genui[0]
     assert selected_conversion_profiles == ["terse-dsl-nested-2"]
     create_surface = json_module.loads(saved_genui[0].splitlines()[0])["createSurface"]
-    assert create_surface["width"] == 298
+    assert create_surface["width"] == 138
 
 
 def test_terse_dsl_nested2_prompt_builder_uses_terse_system_prompt():
@@ -500,6 +527,49 @@ def test_terse_dsl_nested2_prompt_builder_uses_terse_system_prompt():
         mode="json",
         exclude_none=True,
     )
+
+
+def test_card_template_selector_builds_prompt_and_validates_selection():
+    task_spec = TaskSpec(**_build_design_test_task_spec())
+    selector = CardTemplateSelector()
+    prompt = selector.build_prompt(task_spec)
+
+    assert "卡片模板选择器" in prompt[0]["content"]
+    user_payload = json_module.loads(prompt[1]["content"])
+    assert user_payload["taskSpec"]["size"] == task_spec.size
+    assert len(user_payload["templateCatalog"]["templates"]) == 10
+
+    selection = selector.parse(
+        json_module.dumps(
+            {
+                "templateId": "layout-template-07",
+                "businessType": "health-metric",
+                "reason": "单一健康指标匹配",
+                "confidence": 0.91,
+            },
+            ensure_ascii=False,
+        )
+    )
+    assert selection.template_id == "layout-template-07"
+    assert selection.template_source.startswith("Column(")
+
+
+def test_terse_prompt_builder_injects_selected_template_without_changing_system_prompt():
+    task_spec = TaskSpec(**_build_design_test_task_spec())
+    template_context = {
+        "templateId": "layout-template-07",
+        "templateTerseDslNested2": 'Column("card", Text("00", "title-s"));',
+    }
+    prompt = PromptBuilder().build_terse_dsl_nested2(
+        task_spec,
+        "ORIGINAL_TERSE_PROMPT",
+        template_context=template_context,
+    )
+
+    assert prompt[0]["content"] == "ORIGINAL_TERSE_PROMPT"
+    payload = json_module.loads(prompt[1]["content"])
+    assert payload["taskSpec"] == task_spec.model_dump(mode="json", exclude_none=True)
+    assert payload["selectedTemplate"] == template_context
 
 
 def test_terse_prompt_is_a_materialized_compact_prompt_with_terse_protocol():

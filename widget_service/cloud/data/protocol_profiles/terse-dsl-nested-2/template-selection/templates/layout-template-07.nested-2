@@ -1,0 +1,16 @@
+Column({ itemMargin: 8, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true, justifyContent: "spaceBetween" } },
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "top" } },
+    Column({ itemMargin: 2 },
+      Text("按钮文本3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFB5B7BC" } }),
+      Row({ itemMargin: 4, styles: { alignItems: "bottom" } },
+        Text("00", { styles: { fontSize: 34, fontWeight: "bold", fontColor: "#FFFFFFFF", maxLines: 1 } }),
+        Text("按钮文本3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FF8F9197" } })
+      )
+    ),
+    Image("resources/base/media/template_icon.svg", { styles: { width: 24, height: 24, borderRadius: 5, backgroundColor: "#FF66686D", objectFit: "contain" } })
+  ),
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "bottom" } },
+    Text("按钮文本3", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFB5B7BC" } }),
+    Image("resources/base/media/template_action.svg", { styles: { width: 26, height: 26, borderWidth: 2, borderColor: "#FF5B5D62", backgroundColor: "#00000000", objectFit: "contain" } })
+  )
+);

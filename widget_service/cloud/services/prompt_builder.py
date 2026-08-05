@@ -22,8 +22,15 @@ class PromptBuilder:
         self,
         task_spec: TaskSpec,
         system_prompt: str,
+        template_context: dict | None = None,
     ) -> list[dict[str, str]]:
         """构造 TerseDSL-Nested-2 静态新建模型输入。"""
+        user_payload = task_spec.model_dump(mode="json", exclude_none=True)
+        if template_context is not None:
+            user_payload = {
+                "taskSpec": user_payload,
+                "selectedTemplate": template_context,
+            }
         return [
             {
                 "role": "system",
@@ -32,7 +39,7 @@ class PromptBuilder:
             {
                 "role": "user",
                 "content": json.dumps(
-                    task_spec.model_dump(mode="json", exclude_none=True),
+                    user_payload,
                     ensure_ascii=False,
                 ),
             },

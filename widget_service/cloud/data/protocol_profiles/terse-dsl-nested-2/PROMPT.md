@@ -3363,3 +3363,7 @@ value_group Row [
 最终只输出一个 TerseDSL-Nested-2 根组件调用，随后是一个 `data = {...};` 声明；不得输出 genui
 围栏、NDJSON 或解释。动态数据使用 `data.field.subField` 或 `data.list[0].field`。Button 仅允许
 非空静态 label 的 `capsule`，不得嵌套 Image。
+
+`alignContent` 只允许用于 Stack；Row 必须使用 `alignItems: "top" | "center" | "bottom"`，Column
+必须使用 `alignItems: "start" | "center" | "end"`，不得在 Row 或 Column 的 options 中写
+`alignContent`。

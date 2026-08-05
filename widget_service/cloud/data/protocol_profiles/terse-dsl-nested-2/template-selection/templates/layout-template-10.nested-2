@@ -1,0 +1,10 @@
+Column({ itemMargin: 10, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true } },
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "center" } },
+    Text("标题", { styles: { fontSize: 16, fontWeight: "medium", fontColor: "#FFFFFFFF" } }),
+    Image("resources/base/media/template_icon.svg", { styles: { width: 24, height: 24, borderRadius: 5, backgroundColor: "#FF66686D", objectFit: "contain" } })
+  ),
+  Column({ itemMargin: 5, styles: { width: "matchParent" } },
+    Image("resources/base/media/template_banner_1.png", { styles: { width: "matchParent", height: 38, borderWidth: 2, borderColor: "#FF3F4146", backgroundColor: "#00000000", objectFit: "cover" } }),
+    Image("resources/base/media/template_banner_2.png", { styles: { width: "matchParent", height: 38, borderWidth: 2, borderColor: "#FF3F4146", backgroundColor: "#00000000", objectFit: "cover" } })
+  )
+);

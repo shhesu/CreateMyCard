@@ -1,0 +1,20 @@
+Column({ itemMargin: 10, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true, justifyContent: "center" } },
+  Grid({ styles: { width: "matchParent", columnsTemplate: "1fr 1fr", rowsTemplate: "1fr 1fr", columnsGap: 14, rowsGap: 10 } },
+    Column({ itemMargin: 4, styles: { alignItems: "center" } },
+      Image("resources/base/media/template_item_1.png", { styles: { width: 42, height: 42, borderRadius: 21, backgroundColor: "#FF66686D", objectFit: "cover" } }),
+      Text("辅助文本", { styles: { fontColor: "#FFFFFFFF", fontSize: 10, fontWeight: "regular" } })
+    ),
+    Column({ itemMargin: 4, styles: { alignItems: "center" } },
+      Image("resources/base/media/template_item_2.png", { styles: { width: 42, height: 42, borderRadius: 21, backgroundColor: "#FF66686D", objectFit: "cover" } }),
+      Text("辅助文本", { styles: { fontColor: "#FFFFFFFF", fontSize: 10, fontWeight: "regular" } })
+    ),
+    Column({ itemMargin: 4, styles: { alignItems: "center" } },
+      Image("resources/base/media/template_item_3.png", { styles: { width: 42, height: 42, borderRadius: 21, backgroundColor: "#FF66686D", objectFit: "cover" } }),
+      Text("辅助文本", { styles: { fontColor: "#FFFFFFFF", fontSize: 10, fontWeight: "regular" } })
+    ),
+    Column({ itemMargin: 4, styles: { alignItems: "center" } },
+      Image("resources/base/media/template_item_4.png", { styles: { width: 42, height: 42, borderRadius: 21, backgroundColor: "#FF66686D", objectFit: "cover" } }),
+      Text("辅助文本", { styles: { fontColor: "#FFFFFFFF", fontSize: 10, fontWeight: "regular" } })
+    )
+  )
+);

@@ -1,0 +1,11 @@
+Column({ itemMargin: 8, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true, justifyContent: "spaceBetween" } },
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "center" } },
+    Text("标题", { styles: { fontSize: 16, fontWeight: "medium", fontColor: "#FFFFFFFF" } }),
+    Image("resources/base/media/template_icon.svg", { styles: { width: 24, height: 24, borderRadius: 5, backgroundColor: "#FF66686D", objectFit: "contain" } })
+  ),
+  Column({ itemMargin: 4, styles: { width: "matchParent" } },
+    Text("辅助文本", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FF8F9197" } }),
+    Text("正文正文正文正文", { styles: { fontSize: 14, fontWeight: "regular", fontColor: "#FFFFFFFF", maxLines: 1, textOverflow: "ellipsis" } }),
+    Text("正文正文正文正文", { styles: { fontSize: 14, fontWeight: "regular", fontColor: "#FFFFFFFF", maxLines: 1, textOverflow: "ellipsis" } })
+  )
+);

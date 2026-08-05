@@ -1,0 +1,13 @@
+Column({ itemMargin: 8, styles: { width: 160, height: 160, padding: 16, borderRadius: 24, backgroundColor: "#FF101114", clip: true, justifyContent: "spaceBetween" } },
+  Row({ styles: { width: "matchParent", justifyContent: "spaceBetween", alignItems: "top" } },
+    Column({ itemMargin: 3 },
+      Text("标题", { styles: { fontSize: 16, fontWeight: "medium", fontColor: "#FFFFFFFF" } }),
+      Text("次要信息", { styles: { fontSize: 12, fontWeight: "regular", fontColor: "#FFB5B7BC" } })
+    ),
+    Image("resources/base/media/template_icon.svg", { styles: { width: 24, height: 24, borderRadius: 5, backgroundColor: "#FF66686D", objectFit: "contain" } })
+  ),
+  Row({ styles: { width: "matchParent", height: 76, justifyContent: "spaceBetween", alignItems: "bottom" } },
+    Image("resources/base/media/template_hero.png", { styles: { width: 84, height: 76, borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 8, bottomRight: 0 }, backgroundColor: "#FF66686D", objectFit: "cover" } }),
+    Image("resources/base/media/template_image.png", { styles: { width: 32, height: 32, borderRadius: 6, backgroundColor: "#FF66686D", objectFit: "cover" } })
+  )
+);

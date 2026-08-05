@@ -25,6 +25,7 @@ from services.compact_dsl_a2ui_converter import (
 )
 from services.compact_dsl_protocol import is_compact_dsl
 from services.protocol_registry import (
+    CARD_TEMPLATE_SELECTOR_PROFILE_ID,
     DESIGN_COMPACT_PROFILE_ID,
     TERSE_DSL_NESTED2_PROFILE_ID,
     A2UIProtocolRegistry,
@@ -160,7 +161,14 @@ class A2UIModelClient:
         is_terse_nested2 = (
             protocol_profile.get("id") == TERSE_DSL_NESTED2_PROFILE_ID
         )
-        if not is_compact_dsl(protocol_profile) and not is_terse_nested2:
+        is_template_selector = (
+            protocol_profile.get("id") == CARD_TEMPLATE_SELECTOR_PROFILE_ID
+        )
+        if (
+            not is_compact_dsl(protocol_profile)
+            and not is_terse_nested2
+            and not is_template_selector
+        ):
             dsl_text = self.convert_dsl(dsl_text)
         logger.info(
             f"{_MODULE} dsl_processed backend={self.backend} "
@@ -218,6 +226,8 @@ class A2UIModelClient:
             return f"mock.design-compact-dsl-{size}.dat"
         if protocol_profile.get("id") == TERSE_DSL_NESTED2_PROFILE_ID:
             return "mock.terse-dsl-nested-2.dat"
+        if protocol_profile.get("id") == CARD_TEMPLATE_SELECTOR_PROFILE_ID:
+            return "mock.card-template-selector.dat"
         if is_compact_dsl(protocol_profile):
             return "mock.compact-dsl.dat"
         return "mock.dat"
