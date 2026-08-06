@@ -105,7 +105,6 @@ class A2UIModelClient:
             logger.info(
                 f"{_MODULE} generate_started use_mock={json_for_log(self.use_mock)} "
                 f"backend={self.backend} "
-                f"system_prompt={json_for_log(prompt)}"
             )
 
         try:

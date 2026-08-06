@@ -124,6 +124,8 @@ def run_local_server() -> None:
         app,
         host=settings.server_host,
         port=settings.server_port,
+        ws_ping_interval=settings.websocket_ping_interval_seconds,
+        ws_ping_timeout=settings.websocket_ping_timeout_seconds,
         log_config=None,
     )
 

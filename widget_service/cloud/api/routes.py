@@ -7,9 +7,10 @@ import traceback
 import uuid
 from typing import Any
 
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel, ValidationError
 from starlette.concurrency import run_in_threadpool
+from starlette.responses import FileResponse
 
 from api.schemas import (
     CapabilityOverviewRequest,
@@ -42,6 +43,30 @@ GENERATION_OPERATIONS = frozenset(
         "generateWidgetCardTerseDslNested2",
     }
 )
+
+
+@router.get("/artifacts/{artifact_name}")
+async def download_local_artifact(artifact_name: str) -> FileResponse:
+    """下载当前服务保存在本地工作目录中的 artifact。"""
+    if not artifact_name.startswith("artifact_") or not artifact_name.endswith(".md"):
+        raise HTTPException(status_code=404, detail="Artifact not found")
+    workspace_root = get_settings().WORKSPACE_ROOT.resolve()
+    artifact_path = (workspace_root / artifact_name).resolve()
+    if artifact_path.parent != workspace_root or not artifact_path.is_file():
+        raise HTTPException(status_code=404, detail="Artifact not found")
+    return FileResponse(artifact_path, media_type="text/markdown; charset=utf-8")
+
+
+@router.get("/previews/{preview_name}")
+async def download_local_preview(preview_name: str) -> FileResponse:
+    """下载服务端生成的 PNG 预览。"""
+    if not preview_name.startswith("preview_") or not preview_name.endswith(".png"):
+        raise HTTPException(status_code=404, detail="Preview not found")
+    preview_root = (get_settings().WORKSPACE_ROOT / "previews").resolve()
+    preview_path = (preview_root / preview_name).resolve()
+    if preview_path.parent != preview_root or not preview_path.is_file():
+        raise HTTPException(status_code=404, detail="Preview not found")
+    return FileResponse(preview_path, media_type="image/png")
 
 ERROR_EXPLANATIONS = {
     ErrorCode.INVALID_ARGUMENTS.value: (
@@ -592,7 +617,7 @@ async def generate_widget_card_ws(websocket: WebSocket):
         GenerateWidgetCardRequest,
         lambda service, request: service.generate_widget_card_a2ui_form(request),
         heartbeat=True,
-        heartbeat_interval=6.0,        
+        heartbeat_interval=get_settings().websocket_heartbeat_interval_seconds,
     )
 
 
@@ -605,7 +630,7 @@ async def generate_widget_card_compact_dsl_ws(websocket: WebSocket):
         GenerateWidgetCardRequest,
         lambda service, request: service.generate_widget_card_compact_dsl(request),
         heartbeat=True,
-        heartbeat_interval=6.0,        
+        heartbeat_interval=get_settings().websocket_heartbeat_interval_seconds,
     )
 
 
@@ -620,5 +645,5 @@ async def generate_widget_card_terse_dsl_nested2_ws(websocket: WebSocket):
             request
         ),
         heartbeat=True,
-        heartbeat_interval=6.0,
+        heartbeat_interval=get_settings().websocket_heartbeat_interval_seconds,
     )

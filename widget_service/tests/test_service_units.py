@@ -64,6 +64,7 @@ from models.service import (
     WidgetWebSocketResultMessage,
 )
 from services.artifact_store import ArtifactStore
+from services.a2ui_png_renderer import A2uiPngRenderer
 from custom.a2ui_model_client import (
     A2UIModelClient,
     A2UIModelGenerationError,
@@ -135,6 +136,18 @@ Column("card",
     assert components[4]["styles"]["fontSize"] == 20
 
 
+def test_terse_dsl_nested2_accepts_markdown_fenced_model_output():
+    """模型附带 Markdown 围栏时，转换器仍应解析出合法 DSL。"""
+    source = """```text
+Column("card", Text("天气速览", "subtitle-s"));
+```"""
+
+    root = parse_terse_dsl_nested2(source)
+
+    assert root.component_type == "Column"
+    assert root.values[0] == "card"
+
+
 def test_terse_dsl_nested2_converts_compact_row_layout():
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
     genui = convert_terse_dsl_nested2_to_a2ui(
@@ -174,12 +187,12 @@ def test_terse_dsl_nested2_replaces_empty_button_label_with_generic_action():
 
 
 def test_terse_dsl_nested2_allows_root_card_surface_options():
-    source = '''
+    source = """
 Column("card", {
   backgroundColor: "#FFF3F7FF", borderWidth: 1, borderColor: "#335C8DFF",
   shadow: "small"
 }, Text("防沉迷", "subtitle-s"));
-'''
+"""
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
 
     genui = convert_terse_dsl_nested2_to_a2ui(
@@ -192,6 +205,25 @@ Column("card", {
     assert root["styles"]["backgroundColor"] == "#FFF3F7FF"
     assert root["styles"]["borderColor"] == "#335C8DFF"
     assert root["styles"]["shadow"] == "small"
+
+
+def test_terse_dsl_nested2_normalizes_root_gradient_to_standard_a2ui():
+    profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
+    genui = convert_terse_dsl_nested2_to_a2ui(
+        (
+            'Column("card", {linearGradient: {direction: "RightBottom", '
+            'colors: [["#FFFFFFFF", 0], ["#FF92D6CC", 1]]}}, '
+            'Text("睡眠", "subtitle-s"));'
+        ),
+        size="2x2",
+        protocol_profile=profile,
+    )
+
+    root = json_module.loads(genui.splitlines()[1])["updateComponents"]["components"][0]
+    assert root["styles"]["linearGradient"] == {
+        "angle": 145,
+        "colors": [["#FFFFFFFF", 0], ["#FF92D6CC", 1]],
+    }
 
 
 def test_terse_dsl_nested2_allows_size_matching_root_dimensions():
@@ -219,7 +251,7 @@ def test_terse_dsl_nested2_converter_supports_compact_horizontal_size_alias():
 
 
 def test_terse_dsl_nested2_converts_declared_data_and_a2ui_interpolation():
-    source = '''
+    source = """
 Column("card",
   Text('今日' + data.appUsageStatus.appUsage.appName + '使用市场', "subtitle-s"),
   Text(data.appUsageStatus.appUsage.durationText, "body-m")
@@ -229,7 +261,7 @@ data = {
     appUsage: {appName: "示例应用", durationText: "25 分钟"}
   }
 };
-'''
+"""
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
 
     genui = convert_terse_dsl_nested2_to_a2ui(
@@ -243,21 +275,17 @@ data = {
     assert components[1]["content"] == (
         "{{ '今日' + ${/model/appUsageStatus/appUsage/appName} + '使用市场' }}"
     )
-    assert components[2]["content"] == (
-        "{{ ${/model/appUsageStatus/appUsage/durationText} }}"
-    )
+    assert components[2]["content"] == ("{{ ${/model/appUsageStatus/appUsage/durationText} }}")
     assert messages[2]["updateDataModel"]["value"]["model"] == {
-        "appUsageStatus": {
-            "appUsage": {"appName": "示例应用", "durationText": "25 分钟"}
-        }
+        "appUsageStatus": {"appUsage": {"appName": "示例应用", "durationText": "25 分钟"}}
     }
 
 
 def test_terse_dsl_nested2_normalizes_double_quoted_text_expression_literals():
-    source = '''
+    source = """
 Column("card", Text(data.weather.location + "天气", "subtitle-s"));
 data = {weather: {location: "上海"}};
-'''
+"""
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
 
     genui = convert_terse_dsl_nested2_to_a2ui(source, size="2x2", protocol_profile=profile)
@@ -267,10 +295,10 @@ data = {weather: {location: "上海"}};
 
 
 def test_terse_dsl_nested2_converts_data_reference_with_array_index():
-    source = '''
+    source = """
 Column("card", Text(data.weather.daily[0].rainProbabilityPercent, "title-s"));
 data = {weather: {daily: [{rainProbabilityPercent: 80}]}};
-'''
+"""
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
 
     genui = convert_terse_dsl_nested2_to_a2ui(source, size="2x2", protocol_profile=profile)
@@ -280,10 +308,10 @@ data = {weather: {daily: [{rainProbabilityPercent: 80}]}};
 
 
 def test_terse_dsl_nested2_converts_progress_data_reference_to_path_binding():
-    source = '''
+    source = """
 Column("card", Progress({value: data.mem.used, total: 100, design: "linear-bar"}));
 data = {mem: {used: 43.75}};
-'''
+"""
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
 
     genui = convert_terse_dsl_nested2_to_a2ui(source, size="2x2", protocol_profile=profile)
@@ -293,10 +321,10 @@ data = {mem: {used: 43.75}};
 
 
 def test_terse_dsl_nested2_converts_positional_progress_values():
-    source = '''
+    source = """
 Column("card", Progress(data.mem.used, 100, "linear-bar"));
 data = {mem: {used: 43.75}};
-'''
+"""
     profile = A2UIProtocolRegistry("a2ui-form-rom6.0-v1").get_profile()
 
     genui = convert_terse_dsl_nested2_to_a2ui(source, size="2x2", protocol_profile=profile)
@@ -319,7 +347,7 @@ def test_terse_dsl_nested2_normalizes_ring_progress_design():
 
 
 def test_terse_dsl_nested2_converts_task_spec_authorized_system_call():
-    source = '''
+    source = """
 Column("card",
   Button("设置防沉迷", "capsule", {
     onClick: [systemCall("clickToDeeplink", {
@@ -328,7 +356,7 @@ Column("card",
   })
 );
 data = { appUsageStats: { appUsage: { appName: "抖音" } } };
-'''
+"""
     task_spec = {
         "eventCandidates": [
             {
@@ -364,7 +392,7 @@ data = { appUsageStats: { appUsage: { appName: "抖音" } } };
 
 def test_terse_dsl_nested2_validates_asset_candidate_and_event_together():
     """素材候选与事件候选同时存在时，Terse 产物应通过有效能力校验。"""
-    source = '''
+    source = """
 Column("card",
   Image("resources/base/media/hourglass_fill.svg", {width: 20, height: 20}),
   Button("家长控制", "capsule", {onClick: [systemCall("clickToDeeplink", {
@@ -374,7 +402,7 @@ Column("card",
     uri: "parent_control"
   })]})
 );
-'''
+"""
     event = {
         "id": "event.open.settings.parentControl",
         "call": "clickToDeeplink",
@@ -632,10 +660,7 @@ def test_websocket_handler_runs_sync_service_in_threadpool():
                 errorCode="FAILED",
                 error={"message": "failed"},
             ),
-            (
-                "工具执行过程中发生未分类的服务异常，本次调用未成功完成，建议稍后重试。"
-                "报错信息如下"
-            ),
+            ("工具执行过程中发生未分类的服务异常，本次调用未成功完成，建议稍后重试。报错信息如下"),
         ),
     ],
 )
@@ -688,6 +713,10 @@ def test_anyio_thread_pool_uses_configured_capacity(monkeypatch):
     assert Settings(_env_file=None).anyio_thread_pool_tokens == 80
     assert Settings(_env_file=None).a2ui_form_model_backend == "mep"
     assert Settings(_env_file=None).design_compact_model_backend == "llmclient"
+    assert Settings(_env_file=None).deepseek_timeout_seconds == 600.0
+    assert Settings(_env_file=None).deepseek_thinking_mode == "disabled"
+    assert Settings(_env_file=None).websocket_heartbeat_interval_seconds == 3.0
+    assert Settings(_env_file=None).websocket_ping_timeout_seconds == 600.0
     assert Settings(_env_file=None).enable_default_protocol_profile_fallback is True
     settings = get_settings()
     monkeypatch.setattr(settings, "anyio_thread_pool_tokens", 80)
@@ -707,9 +736,7 @@ def test_websocket_handler_sets_request_id_to_logger_context():
     出参：无；通过源码顺序断言保证首条请求日志及后续线程池日志都携带 requestId。
     """
     routes_source = (CLOUD_ROOT / "api" / "routes.py").read_text(encoding="utf-8")
-    set_context_position = routes_source.index(
-        'task_logger.set_session_id(request_id or "None")'
-    )
+    set_context_position = routes_source.index('task_logger.set_session_id(request_id or "None")')
     request_log_position = routes_source.index("widget_operation_ws_payload_received")
 
     assert "from app.logger import json_for_log, logger, task_logger" in routes_source
@@ -717,14 +744,17 @@ def test_websocket_handler_sets_request_id_to_logger_context():
 
 
 def test_json_for_log_uses_standard_json_syntax():
-    assert json_for_log(
-        {
-            "name": "运动健康",
-            "enabled": True,
-            "missing": None,
-            "items": ["a"],
-        }
-    ) == '{"name":"运动健康","enabled":true,"missing":null,"items":["a"]}'
+    assert (
+        json_for_log(
+            {
+                "name": "运动健康",
+                "enabled": True,
+                "missing": None,
+                "items": ["a"],
+            }
+        )
+        == '{"name":"运动健康","enabled":true,"missing":null,"items":["a"]}'
+    )
 
 
 def test_generation_summary_contains_required_observability_fields(monkeypatch):
@@ -828,10 +858,7 @@ def _ids_installed_apps_payload(*bundle_names: str) -> dict:
         "nameSpaces": [
             {
                 "dataType": "t_ids_kv_ohos_installed_apps",
-                "values": [
-                    {"data": {"bundleName": bundle_name}}
-                    for bundle_name in bundle_names
-                ],
+                "values": [{"data": {"bundleName": bundle_name}} for bundle_name in bundle_names],
             }
         ]
     }
@@ -945,9 +972,7 @@ def test_ids_query_builds_structured_request_and_signature(monkeypatch):
     assert client.build_ids_sign(timestamp_ms=1000) == f"access;1000;{expected_sign}"
     assert request.headers.model_dump(by_alias=True)["Content-Type"] == "application/json"
     query_log = next(
-        message
-        for message in log_messages
-        if "ids_device_capability_query_built" in message
+        message for message in log_messages if "ids_device_capability_query_built" in message
     )
     assert 'body={"requestId":"ids-unit-1"' in query_log
     assert "callingUid" not in query_log
@@ -978,9 +1003,7 @@ def test_ids_query_uses_default_odid_when_device_odid_missing():
 def test_ids_mock_enabled_reads_existing_file_without_remote(tmp_path, monkeypatch):
     mock_path = tmp_path / "ids_mock.json"
     mock_path.write_text(
-        json_module.dumps(
-            _ids_installed_apps_payload("com.huawei.hmos.health.core")
-        ),
+        json_module.dumps(_ids_installed_apps_payload("com.huawei.hmos.health.core")),
         encoding="utf-8",
     )
     client = IDSClient(mock_response_path=mock_path)
@@ -1058,9 +1081,7 @@ def test_ids_mock_disabled_ignores_existing_file_and_queries_remote(
     remote_payload = _ids_installed_apps_payload("com.huawei.hmos.weather")
     mock_path = tmp_path / "ids_mock.json"
     mock_path.write_text(
-        json_module.dumps(
-            _ids_installed_apps_payload("com.huawei.hmos.health.core")
-        ),
+        json_module.dumps(_ids_installed_apps_payload("com.huawei.hmos.health.core")),
         encoding="utf-8",
     )
 
@@ -1506,10 +1527,7 @@ def test_data_capability_registry_declares_leaf_samples_and_known_package_depend
         "GetHealthAndSportSummary",
         "GetSystemMemInfo",
     ]
-    assert all(
-        set(item.dependencies.model_dump()) == {"requiredPackages"}
-        for item in capabilities
-    )
+    assert all(set(item.dependencies.model_dump()) == {"requiredPackages"} for item in capabilities)
 
     weather = registry.get_data_capability("ViewWeather")
     calendar = registry.get_data_capability("GetCalendarEvents")
@@ -1519,17 +1537,21 @@ def test_data_capability_registry_declares_leaf_samples_and_known_package_depend
     assert weather.dependencies.requiredPackages == [
         RequiredPackage(packageName="com.huawei.hmos.weather")
     ]
-    assert weather.outputSchema["properties"]["current"]["properties"][
-        "temperatureText"
-    ]["sampleValue"] == "26℃"
+    assert (
+        weather.outputSchema["properties"]["current"]["properties"]["temperatureText"][
+            "sampleValue"
+        ]
+        == "26℃"
+    )
 
     assert calendar is not None
     assert calendar.dependencies.requiredPackages == [
         RequiredPackage(packageName="com.huawei.hmos.calendar")
     ]
-    assert calendar.outputSchema["properties"]["events"]["items"]["properties"]["title"][
-        "sampleValue"
-    ] == "产品评审"
+    assert (
+        calendar.outputSchema["properties"]["events"]["items"]["properties"]["title"]["sampleValue"]
+        == "产品评审"
+    )
     assert health is not None
     assert health.dependencies.requiredPackages == [
         RequiredPackage(packageName="com.huawei.hmos.health.core")
@@ -1553,19 +1575,12 @@ def test_data_capability_output_schema_is_self_contained():
         return [schema]
 
     assert not (
-        CLOUD_ROOT
-        / "data"
-        / "capabilities"
-        / REGISTRY_VERSION_6
-        / "data_model_mappings.json"
+        CLOUD_ROOT / "data" / "capabilities" / REGISTRY_VERSION_6 / "data_model_mappings.json"
     ).exists()
     for capability in capabilities:
         leaves = leaf_nodes(capability.outputSchema)
         assert leaves
-        assert all(
-            {"type", "description", "sampleValue"}.issubset(leaf)
-            for leaf in leaves
-        )
+        assert all({"type", "description", "sampleValue"}.issubset(leaf) for leaf in leaves)
 
 
 def test_event_capability_registry_uses_package_dependencies_only():
@@ -1573,10 +1588,7 @@ def test_event_capability_registry_uses_package_dependencies_only():
     capabilities = registry.list_event_capabilities()
 
     assert capabilities
-    assert all(
-        set(item.dependencies.model_dump()) == {"requiredPackages"}
-        for item in capabilities
-    )
+    assert all(set(item.dependencies.model_dump()) == {"requiredPackages"} for item in capabilities)
     health_events = {
         item.id: item
         for item in capabilities
@@ -1629,12 +1641,7 @@ def test_cloud_capability_registries_are_self_contained_and_valid():
 def test_cloud_registry_covers_offline_skill_capability_inventory():
     """防止离线 Skill 新增能力后，云侧版本目录继续使用不完整的旧快照。"""
     repository_root = PROJECT_ROOT.parent
-    offline_reference = (
-        repository_root
-        / "skills"
-        / "harmony-card-generation-offline"
-        / "reference"
-    )
+    offline_reference = repository_root / "skills" / "harmony-card-generation-offline" / "reference"
     data_directory = offline_reference / "capability" / "data-capability"
     offline_data_ids = set()
     for path in data_directory.glob("*.md"):
@@ -1642,9 +1649,7 @@ def test_cloud_registry_covers_offline_skill_capability_inventory():
             continue
         manifest_text = path.read_text(encoding="utf-8").split("```json", 1)[1]
         id_line = next(
-            line.strip()
-            for line in manifest_text.splitlines()
-            if line.strip().startswith('"id":')
+            line.strip() for line in manifest_text.splitlines() if line.strip().startswith('"id":')
         )
         offline_data_ids.add(id_line.split('"')[3])
 
@@ -1656,9 +1661,7 @@ def test_cloud_registry_covers_offline_skill_capability_inventory():
     offline_events = set()
     for capability in event_manifest["capabilities"]:
         for target in capability["supportedTargets"]:
-            descriptions = [
-                page["description"] for page in target.get("pages", [target])
-            ]
+            descriptions = [page["description"] for page in target.get("pages", [target])]
             offline_events.update(
                 (
                     capability["functionCall"],
@@ -1668,9 +1671,7 @@ def test_cloud_registry_covers_offline_skill_capability_inventory():
                 for description in descriptions
             )
 
-    asset_text = (
-        offline_reference / "design" / "asset-library.md"
-    ).read_text(encoding="utf-8")
+    asset_text = (offline_reference / "design" / "asset-library.md").read_text(encoding="utf-8")
     offline_assets = {}
     for line in asset_text.splitlines():
         if not line.startswith("| `resources/base/media/"):
@@ -1684,9 +1685,7 @@ def test_cloud_registry_covers_offline_skill_capability_inventory():
         (item.call, item.targetScene, item.description)
         for item in registry.list_event_capabilities()
     }
-    cloud_assets = {
-        item.src: item.description for item in registry.list_asset_capabilities()
-    }
+    cloud_assets = {item.src: item.description for item in registry.list_asset_capabilities()}
     media_directory = repository_root / "resources" / "base" / "media"
     media_sources = {
         path.relative_to(repository_root).as_posix()
@@ -1753,9 +1752,7 @@ def test_data_capability_allows_missing_leaf_sample_value():
         description="缺少样例",
         outputSchema={
             "type": "object",
-            "properties": {
-                "value": {"type": "string", "description": "展示值"}
-            },
+            "properties": {"value": {"type": "string", "description": "展示值"}},
         },
     )
 
@@ -1777,9 +1774,7 @@ def test_capability_dependencies_ignore_legacy_fields_and_keep_package_names():
         ],
     )
 
-    assert dependencies.model_dump() == {
-        "requiredPackages": [{"packageName": "com.example.app"}]
-    }
+    assert dependencies.model_dump() == {"requiredPackages": [{"packageName": "com.example.app"}]}
 
 
 def test_event_capability_accepts_legacy_dependency_metadata():
@@ -1922,9 +1917,7 @@ def test_ids_installation_filter_only_applies_to_configured_health_package(
 def test_package_dependency_filter_ignores_rom_version():
     registry = CapabilityRegistry(version=REGISTRY_VERSION_6)
     resolver = DeviceCapabilityResolver(registry)
-    ids_state = IDSDeviceCapabilityState(
-        installed_apps={"com.huawei.hmos.health.core"}
-    )
+    ids_state = IDSDeviceCapabilityState(installed_apps={"com.huawei.hmos.health.core"})
     available, _, _, removed = resolver.resolve_capability_overview(
         DeviceContext(romVersion="1"),
         ids_state,
@@ -1937,9 +1930,7 @@ def test_package_dependency_filter_ignores_rom_version():
 def test_ids_installation_filter_default_scope_is_health_only():
     settings = Settings()
 
-    assert settings.ids_installation_filter_package_names == (
-        "com.huawei.hmos.health.core",
-    )
+    assert settings.ids_installation_filter_package_names == ("com.huawei.hmos.health.core",)
 
 
 def test_empty_ids_installation_filter_scope_skips_ids_query(monkeypatch):
@@ -2014,13 +2005,10 @@ def test_dependency_filter_logs_one_json_result(monkeypatch):
     assert result["availableDataCapabilityCount"] == 7
     assert result["availableEventCapabilityCount"] > 0
     assert result["availableAssetCapabilityCount"] > 0
-    assert {
-        item["id"] for item in result["removedCapabilities"]
-    } == set(result["checkedCapabilityIds"])
-    assert {
-        (item["type"], item["reason"])
-        for item in result["removedCapabilities"]
-    } == {
+    assert {item["id"] for item in result["removedCapabilities"]} == set(
+        result["checkedCapabilityIds"]
+    )
+    assert {(item["type"], item["reason"]) for item in result["removedCapabilities"]} == {
         ("data", ErrorCode.PACKAGE_NOT_INSTALLED.value),
         ("event", ErrorCode.PACKAGE_NOT_INSTALLED.value),
     }
@@ -2261,9 +2249,7 @@ def test_generation_binding_rejects_invalid_write_result_json_pointer(
         candidateOutputFields=["/current/condition"],
     )
 
-    effective, capabilities, removed = resolver.resolve_generation_data_bindings(
-        [binding]
-    )
+    effective, capabilities, removed = resolver.resolve_generation_data_bindings([binding])
 
     assert effective == []
     assert capabilities == []
@@ -2562,15 +2548,11 @@ def test_a2ui_model_client_selects_compact_dsl_mock_by_profile():
     profile = A2UIProtocolRegistry("compact-dsl-v1").get_profile()
 
     genui = A2UIModelClient(use_mock=True).generate([], profile)
-    expected = (CLOUD_ROOT / "custom" / "mock.compact-dsl.dat").read_text(
-        encoding="utf-8"
-    )
+    expected = (CLOUD_ROOT / "custom" / "mock.compact-dsl.dat").read_text(encoding="utf-8")
 
     assert genui == expected
     assert all(
-        isinstance(json_module.loads(line), list)
-        for line in genui.splitlines()
-        if line.strip()
+        isinstance(json_module.loads(line), list) for line in genui.splitlines() if line.strip()
     )
 
 
@@ -2644,9 +2626,7 @@ def test_a2ui_model_client_selects_llmclient_backend(monkeypatch):
 
     monkeypatch.setattr(
         "custom.a2ui_model_client.create_model_transport",
-        lambda backend, _settings: (
-            calls.append(("factory", backend)) or FakeTransport()
-        ),
+        lambda backend, _settings: calls.append(("factory", backend)) or FakeTransport(),
     )
     client = A2UIModelClient(use_mock=False, backend="llmclient")
     monkeypatch.setattr(client, "convert_dsl", lambda value: value)
@@ -2742,7 +2722,7 @@ def test_a2ui_model_client_collects_llmclient_stream(monkeypatch):
 
     messages = [{"role": "user", "content": "weather"}]
     monkeypatch.setattr("custom.llmclient_model_transport.stream_genui", fake_stream)
-    transport = LlmClientModelTransport()
+    transport = LlmClientModelTransport(Settings(_env_file=None, deepseek_api_key="test-api-key"))
     client = A2UIModelClient(
         use_mock=False,
         backend="llmclient",
@@ -2754,7 +2734,7 @@ def test_a2ui_model_client_collects_llmclient_stream(monkeypatch):
 
     assert result == f"converted:{dsl}"
     assert captured == {
-        "api_key": "AccessService",
+        "api_key": "test-api-key",
         "messages": messages,
     }
 
@@ -2766,10 +2746,8 @@ def test_a2ui_model_client_converts_design_dsl_to_standard_dsl(monkeypatch):
     design_dsl = "\n".join(
         (
             "```genui",
-            '["root","Column",{"width":160,"height":160,"padding":8,'
-            '"itemMargin":8},["title"]]',
-            '["title","Text",{"content":{"path":"/data/message"},'
-            '"design":"title-s"}]',
+            '["root","Column",{"width":160,"height":160,"padding":8,"itemMargin":8},["title"]]',
+            '["title","Text",{"content":{"path":"/data/message"},"design":"title-s"}]',
             '["/data/message","欢迎回来"]',
             "```",
         )
@@ -2786,9 +2764,7 @@ def test_a2ui_model_client_converts_design_dsl_to_standard_dsl(monkeypatch):
     assert messages[1]["updateComponents"]["root"] == "root"
     assert messages[2]["updateDataModel"]["value"]["data"]["message"] == "欢迎回来"
     conversion_logs = [
-        message
-        for message in info_logs
-        if "design_dsl_conversion_completed" in message
+        message for message in info_logs if "design_dsl_conversion_completed" in message
     ]
     assert len(conversion_logs) == 1
     assert "converted_dsl=" in conversion_logs[0]
@@ -2849,10 +2825,7 @@ def test_a2ui_model_client_design_test_task_spec_covers_weather_capabilities():
         "asset.drop_1",
         "asset.thermometer_sun_fill",
     ]
-    assert all(
-        candidate["src"].endswith(".svg")
-        for candidate in task_spec["assetCandidates"]
-    )
+    assert all(candidate["src"].endswith(".svg") for candidate in task_spec["assetCandidates"])
 
 
 def test_a2ui_model_client_builds_qwen_chatml_prompt():
@@ -2882,8 +2855,7 @@ def test_a2ui_model_client_reads_predict_stream(monkeypatch):
         }
     )
     stream = (
-        f"$@START_PREFIX@#{partial}$@END_SUFFIX@#"
-        f"$@START_PREFIX@#{final}$@END_SUFFIX@#"
+        f"$@START_PREFIX@#{partial}$@END_SUFFIX@#$@START_PREFIX@#{final}$@END_SUFFIX@#"
     ).encode()
     captured: dict = {}
 
@@ -2973,8 +2945,7 @@ def test_compact_model_client_returns_streamed_ndjson(monkeypatch):
         }
     )
     stream = (
-        f"$@START_PREFIX@#{partial}$@END_SUFFIX@#"
-        f"$@START_PREFIX@#{final}$@END_SUFFIX@#"
+        f"$@START_PREFIX@#{partial}$@END_SUFFIX@#$@START_PREFIX@#{final}$@END_SUFFIX@#"
     ).encode()
 
     class FakeResponse:
@@ -3021,9 +2992,7 @@ def test_compact_model_client_returns_streamed_ndjson(monkeypatch):
 
 
 def test_compact_model_client_has_no_artificial_completion_limit():
-    source = (CLOUD_ROOT / "custom" / "mep_model_transport.py").read_text(
-        encoding="utf-8"
-    )
+    source = (CLOUD_ROOT / "custom" / "mep_model_transport.py").read_text(encoding="utf-8")
 
     assert "COMPACT_DSL_MAX_TOKENS" not in source
     assert "max_duration" not in source
@@ -3184,9 +3153,7 @@ def test_model_failure_retries_once_and_continues_after_success(monkeypatch):
         ),
     )
 
-    response = WidgetGenerationService().generate_widget_card_a2ui_form(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_a2ui_form(_model_failure_request())
 
     assert model_calls == [1, 2]
     assert response.status == GenerationStatus.SUCCESS
@@ -3212,9 +3179,7 @@ def test_model_failure_stops_after_one_retry(monkeypatch):
     monkeypatch.setattr(ArtifactValidator, "validate", unexpected_validate)
     monkeypatch.setattr(ArtifactStore, "save", unexpected_save)
 
-    response = WidgetGenerationService().generate_widget_card_a2ui_form(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_a2ui_form(_model_failure_request())
 
     assert model_calls == [1, 2]
     assert response.status == GenerationStatus.FAILED
@@ -3260,9 +3225,7 @@ def test_repair_model_failure_retries_same_repair_prompt_once(monkeypatch):
         ),
     )
 
-    response = WidgetGenerationService().generate_widget_card_a2ui_form(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_a2ui_form(_model_failure_request())
 
     assert len(model_prompts) == 3
     assert model_prompts[1] == model_prompts[2]
@@ -3295,9 +3258,7 @@ def test_repair_model_failure_does_not_validate_or_save_second_result(monkeypatc
     monkeypatch.setattr(ArtifactValidator, "validate", validate_once)
     monkeypatch.setattr(ArtifactStore, "save", unexpected_save)
 
-    response = WidgetGenerationService().generate_widget_card_a2ui_form(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_a2ui_form(_model_failure_request())
 
     assert model_calls == [1, 2]
     assert validation_calls == ["invalid-but-nonempty-dsl"]
@@ -3330,9 +3291,7 @@ def test_design_compact_validation_error_does_not_retry_or_save(monkeypatch):
     monkeypatch.setattr(ArtifactValidator, "validate", validate_standard)
     monkeypatch.setattr(ArtifactStore, "save", unexpected_save)
 
-    response = WidgetGenerationService().generate_widget_card_compact_dsl(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_compact_dsl(_model_failure_request())
 
     assert response.status == GenerationStatus.FAILED
     assert response.errorCode == ErrorCode.VALIDATION_FAILED.value
@@ -3360,9 +3319,7 @@ def test_design_compact_ignores_validation_disabled_switch(monkeypatch):
         ),
     )
 
-    response = WidgetGenerationService().generate_widget_card_compact_dsl(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_compact_dsl(_model_failure_request())
 
     assert response.status == GenerationStatus.SUCCESS
     assert response.artifactUrl == "https://artifact.test/design-validation-disabled"
@@ -3383,9 +3340,7 @@ def test_design_compact_validation_error_without_repair_fails(monkeypatch):
     monkeypatch.setattr(ArtifactValidator, "validate", validation_error)
     monkeypatch.setattr(ArtifactStore, "save", unexpected_save)
 
-    response = WidgetGenerationService().generate_widget_card_compact_dsl(
-        _model_failure_request()
-    )
+    response = WidgetGenerationService().generate_widget_card_compact_dsl(_model_failure_request())
 
     assert response.status == GenerationStatus.FAILED
     assert response.errorCode == ErrorCode.VALIDATION_FAILED.value
@@ -3504,14 +3459,9 @@ def test_artifact_store_returns_structured_save_result(tmp_path, monkeypatch):
     - monkeypatch：pytest monkeypatch 工具。
     出参：无；通过断言验证上传结果和 CardSpec 内容。
     """
-    mock_storage_dir = tmp_path / "mock_obs"
-    monkeypatch.setattr(
-        "services.artifact_store.file_obs",
-        UploadFileOSMS(
-            base_url="https://obs.mock.local/widget",
-            mock_storage_dir=mock_storage_dir,
-        ),
-    )
+    settings = get_settings()
+    monkeypatch.setattr(settings, "WORKSPACE_ROOT", tmp_path)
+    monkeypatch.setattr(settings, "artifact_base_url", "http://local.test/artifacts")
     artifact = WidgetArtifact(
         genui="{}\n{}\n{}",
         cardSpec={
@@ -3530,8 +3480,8 @@ def test_artifact_store_returns_structured_save_result(tmp_path, monkeypatch):
 
     assert result.artifactUrl.endswith(".md")
     assert result.artifactDigest.startswith("sha256:")
-    uploaded_file = mock_storage_dir / result.artifactUrl.rsplit("/", 1)[-1]
-    uploaded_content = uploaded_file.read_text(encoding="utf-8")
+    saved_file = tmp_path / result.artifactUrl.rsplit("/", 1)[-1]
+    uploaded_content = saved_file.read_text(encoding="utf-8")
     assert uploaded_content.startswith("```cardspec\n")
     assert uploaded_content.index("```cardspec") < uploaded_content.index("```genui")
     assert uploaded_content.index("```genui") < uploaded_content.index("```schema")
@@ -3547,6 +3497,18 @@ def test_artifact_store_returns_structured_save_result(tmp_path, monkeypatch):
     assert '"description": "查看当前天气"' in uploaded_content
     assert '"dataModelSchema"' in uploaded_content
     assert '"protocolProfileId": "a2ui-form-rom6.0-v1"' in uploaded_content
+
+
+def test_a2ui_png_renderer_handles_weighted_layout_and_svg_asset(tmp_path):
+    """渲染器应输出包含加权布局和 SVG 图标的有效 PNG。"""
+    genui = """{"createSurface":{"width":140,"height":140}}
+{"updateComponents":{"root":"root","components":[{"id":"root","component":"Column","children":["title","icon"],"itemMargin":8,"styles":{"padding":12,"linearGradient":{"colors":[["#FFFFFFFF",0],["#FF92D6CC",1]]}}},{"id":"title","component":"Text","content":"睡眠评分","styles":{"fontSize":16,"layoutWeight":1}},{"id":"icon","component":"Image","src":"resources/base/media/moon_circle_fill.svg","styles":{"width":20,"height":20}}]}}
+{"updateDataModel":{"value":{"model":{}}}}"""
+    output_path = tmp_path / "preview.png"
+
+    A2uiPngRenderer().render(genui, output_path)
+
+    assert output_path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
 
 
 def test_file_utils_save_and_delete_utf8_text(tmp_path):
@@ -3672,9 +3634,7 @@ def test_artifact_validator_rejects_legacy_component_shape():
 
 def test_card_validation_is_exposed_as_in_process_api():
     reporter = validate_card_api(dsl_text="not-json")
-    validator_source = (CLOUD_ROOT / "services" / "validator.py").read_text(
-        encoding="utf-8"
-    )
+    validator_source = (CLOUD_ROOT / "services" / "validator.py").read_text(encoding="utf-8")
 
     assert reporter.has_code("DSL_JSON_PARSE_FAILED")
     assert "services.card_validation" in validator_source
@@ -3702,34 +3662,24 @@ def test_card_validation_loads_latest_online_rule_snapshot():
 
 def test_card_validation_snapshot_covers_all_online_runtime_files():
     repository_root = PROJECT_ROOT.parent
-    skill_scripts = (
-        repository_root / "skills" / "harmony-card-generation-online" / "scripts"
-    )
+    skill_scripts = repository_root / "skills" / "harmony-card-generation-online" / "scripts"
     skill_validators = skill_scripts / "validators"
     service_validators = CLOUD_ROOT / "services" / "card_validation"
     skill_rules = skill_scripts / "rules"
     service_rules = CLOUD_ROOT / "data" / "validator_rules"
 
-    skill_validator_names = {
-        path.name for path in skill_validators.glob("*.py") if path.is_file()
-    }
+    skill_validator_names = {path.name for path in skill_validators.glob("*.py") if path.is_file()}
     service_validator_names = {
         path.name for path in service_validators.glob("*.py") if path.is_file()
     }
     assert service_validator_names == skill_validator_names
 
-    skill_rule_paths = {
-        path.relative_to(skill_rules) for path in skill_rules.rglob("*.json")
-    }
-    service_rule_paths = {
-        path.relative_to(service_rules) for path in service_rules.rglob("*.json")
-    }
+    skill_rule_paths = {path.relative_to(skill_rules) for path in skill_rules.rglob("*.json")}
+    service_rule_paths = {path.relative_to(service_rules) for path in service_rules.rglob("*.json")}
     assert service_rule_paths == skill_rule_paths
 
     for relative_path in skill_rule_paths:
-        skill_rule = json_module.loads(
-            (skill_rules / relative_path).read_text(encoding="utf-8")
-        )
+        skill_rule = json_module.loads((skill_rules / relative_path).read_text(encoding="utf-8"))
         service_rule = json_module.loads(
             (service_rules / relative_path).read_text(encoding="utf-8")
         )
@@ -3804,9 +3754,7 @@ def _a2ui_genui_with_image(
 
 def test_card_validator_uses_effective_asset_candidates_without_external_reads():
     source = "resources/base/media/air_fill.svg"
-    validator_source = (
-        CLOUD_ROOT / "services" / "card_validator.py"
-    ).read_text(encoding="utf-8")
+    validator_source = (CLOUD_ROOT / "services" / "card_validator.py").read_text(encoding="utf-8")
 
     selected_report = validate_card(
         _a2ui_genui_with_image(source),
@@ -3853,9 +3801,7 @@ def test_artifact_validator_accepts_compact_dsl_ndjson():
     """验证极简协议允许字符串属性通过 path 数据行取值。"""
     profile = A2UIProtocolRegistry("compact-dsl-v1").get_profile()
     artifact = WidgetArtifact(
-        genui=(CLOUD_ROOT / "custom" / "mock.compact-dsl.dat").read_text(
-            encoding="utf-8"
-        ),
+        genui=(CLOUD_ROOT / "custom" / "mock.compact-dsl.dat").read_text(encoding="utf-8"),
         cardSpec={"suggestSize": "2x2"},
         taskSpec={"dataModelSchema": {"data": {}}},
         meta=ArtifactMeta(
@@ -3883,8 +3829,7 @@ def test_artifact_validator_rejects_invalid_binding_data(data_line, expected_err
     lines = [
         '["root","Stack",{"width":"matchParent","height":140,"padding":12,'
         '"borderRadius":18,"clip":true,"backgroundColor":"#FFFFFFFF"},["title"]]',
-        '["title","Text",{"width":100,"height":20,'
-        '"content":{"path":"/title"},"fontSize":14}]',
+        '["title","Text",{"width":100,"height":20,"content":{"path":"/title"},"fontSize":14}]',
     ]
     if data_line:
         lines.append(data_line)

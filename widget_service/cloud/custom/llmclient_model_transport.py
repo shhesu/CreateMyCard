@@ -4,6 +4,7 @@ import asyncio
 import time
 
 from app.logger import json_for_log, logger
+from config.config import Settings, get_settings
 from custom.llmclient import LLMClientOptions, stream_genui
 
 _MODULE = "[LLMClient Model Transport]"
@@ -12,8 +13,9 @@ _MODULE = "[LLMClient Model Transport]"
 class LlmClientModelTransport:
     """适配现有 llmclient 流，保持其实现不变。"""
 
-    def __init__(self) -> None:
+    def __init__(self, settings: Settings | None = None) -> None:
         self.last_metrics: dict[str, int | float | None] = {}
+        self.settings = settings or get_settings()
 
     def generate(self, messages: list[dict[str, str]]) -> str:
         """聚合 llmclient 的流式 Token，返回未经 DSL 处理的完整文本。"""
@@ -23,7 +25,14 @@ class LlmClientModelTransport:
             usage.update(value)
 
         async def collect_stream() -> str:
-            options = LLMClientOptions(api_key="AccessService")
+            options = LLMClientOptions(
+                api_key=self.settings.deepseek_api_key,
+                api_url=self.settings.deepseek_api_url,
+                model=self.settings.deepseek_model,
+                temperature=self.settings.model_temperature,
+                thinking_mode=self.settings.deepseek_thinking_mode,
+                timeout_seconds=self.settings.deepseek_timeout_seconds,
+            )
             chunks = [
                 chunk
                 async for chunk in stream_genui(

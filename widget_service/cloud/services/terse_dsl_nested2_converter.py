@@ -30,11 +30,20 @@ _LEAVES = frozenset({"Text", "Image", "Divider", "Progress", "Button", "Checkbox
 _COMPONENTS = _CONTAINERS | _LEAVES
 _TEXT_DESIGNS = frozenset(
     {
-        "display-l", "display-m", "display-s",
-        "title-l", "title-m", "title-s",
-        "subtitle-l", "subtitle-m", "subtitle-s",
-        "body-l", "body-m", "body-s",
-        "caption-l", "caption-m",
+        "display-l",
+        "display-m",
+        "display-s",
+        "title-l",
+        "title-m",
+        "title-s",
+        "subtitle-l",
+        "subtitle-m",
+        "subtitle-s",
+        "body-l",
+        "body-m",
+        "body-s",
+        "caption-l",
+        "caption-m",
     }
 )
 _BUTTON_DESIGNS = frozenset({"capsule"})
@@ -91,8 +100,7 @@ def convert_terse_dsl_nested2_to_a2ui(
         compact_rows.append(["/model", root.data])
     compact_rows.append(["/ui/state", "ready"])
     compact_dsl = "\n".join(
-        json.dumps(row, ensure_ascii=False, separators=(",", ":"))
-        for row in compact_rows
+        json.dumps(row, ensure_ascii=False, separators=(",", ":")) for row in compact_rows
     )
     try:
         converted = convert_compact_dsl_to_a2ui(
@@ -109,6 +117,7 @@ def parse_terse_dsl_nested2(source: str) -> Nested2Node:
     """Parse a component tree followed by an optional restricted data declaration."""
     if not isinstance(source, str) or not source.strip():
         raise TerseDslNested2ConversionError("TerseDSL-Nested-2 output is empty.")
+    source = _strip_markdown_code_fence(source)
     if len(source) > MAX_INPUT_LENGTH:
         raise TerseDslNested2ConversionError("TerseDSL-Nested-2 input exceeds the size limit.")
     translated_source = _python_compatible_source(source)
@@ -136,6 +145,17 @@ def parse_terse_dsl_nested2(source: str) -> Nested2Node:
     return root
 
 
+def _strip_markdown_code_fence(source: str) -> str:
+    """Remove one outer Markdown code fence accidentally included by the model."""
+    text = source.strip()
+    if not text.startswith("```"):
+        return text
+    first_newline = text.find("\n")
+    if first_newline < 0 or not text.endswith("```"):
+        return text
+    return text[first_newline + 1 : -3].strip()
+
+
 def _parse_data_assignment(statement: ast.stmt) -> dict[str, Any]:
     """Accept only the trailing ``data = {...}`` declaration."""
     if (
@@ -145,7 +165,7 @@ def _parse_data_assignment(statement: ast.stmt) -> dict[str, Any]:
         or statement.targets[0].id != "data"
     ):
         raise TerseDslNested2ConversionError(
-            'The only statement after the root call may be `data = {...}`.'
+            "The only statement after the root call may be `data = {...}`."
         )
     data = _json_literal_value(statement.value, 1)
     if not isinstance(data, dict) or not data:
@@ -204,14 +224,10 @@ def _parse_component(node: ast.AST, depth: int, state: dict[str, int]) -> Nested
     if depth > MAX_NESTING_DEPTH:
         raise TerseDslNested2ConversionError("Component nesting exceeds 32 levels.")
     if not isinstance(node, ast.Call) or not isinstance(node.func, ast.Name):
-        raise TerseDslNested2ConversionError(
-            "Only direct Catalog component calls are allowed."
-        )
+        raise TerseDslNested2ConversionError("Only direct Catalog component calls are allowed.")
     component_type = node.func.id
     if component_type not in _COMPONENTS:
-        raise TerseDslNested2ConversionError(
-            f'Unsupported component type "{component_type}".'
-        )
+        raise TerseDslNested2ConversionError(f'Unsupported component type "{component_type}".')
     if node.keywords:
         raise TerseDslNested2ConversionError("Keyword arguments are not allowed.")
     state["components"] += 1
@@ -230,14 +246,10 @@ def _parse_component(node: ast.AST, depth: int, state: dict[str, int]) -> Nested
             raise TerseDslNested2ConversionError(
                 "Value arguments must appear before the first child."
             )
-        allow_text_expression = (
-            value_index == 0 and component_type in {"Text", "Button"}
-        )
+        allow_text_expression = value_index == 0 and component_type in {"Text", "Button"}
         values.append(_component_value(argument, depth, allow_text_expression))
     if children and component_type not in _CONTAINERS:
-        raise TerseDslNested2ConversionError(
-            f"{component_type} cannot contain child components."
-        )
+        raise TerseDslNested2ConversionError(f"{component_type} cannot contain child components.")
     return Nested2Node(component_type, tuple(values), tuple(children))
 
 
@@ -360,9 +372,7 @@ def _json_literal_value(node: ast.AST, depth: int) -> Any:
                 raise TerseDslNested2ConversionError(f'Duplicate object key "{key}".')
             result[key] = _json_literal_value(value_node, depth + 1)
         return result
-    raise TerseDslNested2ConversionError(
-        "data may contain only JSON literal values."
-    )
+    raise TerseDslNested2ConversionError("data may contain only JSON literal values.")
 
 
 def _data_reference(node: ast.Attribute | ast.Subscript) -> DataReference:
@@ -535,9 +545,7 @@ def _append_compact_rows(
     size: str,
     rows: list[list[Any]],
 ) -> None:
-    child_ids = [
-        f"{component_id}_{index}" for index in range(len(node.children))
-    ]
+    child_ids = [f"{component_id}_{index}" for index in range(len(node.children))]
     props = _component_props(node, component_id, size)
     row: list[Any] = [component_id, node.component_type, props]
     if node.component_type in _CONTAINERS:
@@ -568,9 +576,7 @@ def _component_props(
         return props
     if node.component_type == "Divider":
         return _divider_props(node)
-    raise TerseDslNested2ConversionError(
-        f"{component_id}: unsupported component conversion."
-    )
+    raise TerseDslNested2ConversionError(f"{component_id}: unsupported component conversion.")
 
 
 def _designed_leaf_props(
@@ -579,9 +585,7 @@ def _designed_leaf_props(
     designs: frozenset[str],
 ) -> dict[str, Any]:
     if not node.values:
-        raise TerseDslNested2ConversionError(
-            f"{node.component_type} requires {required_name}."
-        )
+        raise TerseDslNested2ConversionError(f"{node.component_type} requires {required_name}.")
     props = {required_name: _lower_component_value(node.values[0])}
     remaining = list(node.values[1:])
     if remaining and isinstance(remaining[0], str):
@@ -599,9 +603,7 @@ def _designed_leaf_props(
 
 def _leaf_props(node: Nested2Node, required_name: str) -> dict[str, Any]:
     if not node.values:
-        raise TerseDslNested2ConversionError(
-            f"{node.component_type} requires {required_name}."
-        )
+        raise TerseDslNested2ConversionError(f"{node.component_type} requires {required_name}.")
     props = {required_name: _lower_component_value(node.values[0])}
     _merge_options(props, node.values[1:])
     return props
@@ -704,11 +706,11 @@ def _a2ui_template_reference(reference: DataReference) -> str:
     """Convert ``data.a.b`` to a standard A2UI JSON Pointer expression."""
     return "${/model/" + "/".join(reference.path) + "}"
 
+
 def _single_quoted_a2ui_string(value: str) -> str:
     return (
         "'"
-        + value.replace("\\", "\\\\").replace("'", "\\'")
-        .replace("\n", "\\n").replace("\r", "\\r")
+        + value.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r")
         + "'"
     )
 
@@ -718,8 +720,7 @@ def _restore_a2ui_expressions(genui: str) -> str:
     messages = [json.loads(line) for line in genui.splitlines()]
     restored = [_restore_a2ui_expression_value(message) for message in messages]
     return "\n".join(
-        json.dumps(message, ensure_ascii=False, separators=(",", ":"))
-        for message in restored
+        json.dumps(message, ensure_ascii=False, separators=(",", ":")) for message in restored
     )
 
 
@@ -730,10 +731,7 @@ def _restore_a2ui_expression_value(value: Any) -> Any:
     if isinstance(value, list):
         return [_restore_a2ui_expression_value(item) for item in value]
     if isinstance(value, dict):
-        return {
-            key: _restore_a2ui_expression_value(child)
-            for key, child in value.items()
-        }
+        return {key: _restore_a2ui_expression_value(child) for key, child in value.items()}
     return value
 
 
@@ -747,6 +745,7 @@ def _container_props(
     props: dict[str, Any] = {}
     _merge_options(props, values)
     _normalize_container_alignment(node.component_type, props)
+    _normalize_linear_gradient(props)
     layouts = {
         ("Column", "section"): {"width": "matchParent", "itemMargin": 8},
         ("Column", "compact"): {"width": "matchParent", "itemMargin": 4},
@@ -781,15 +780,8 @@ def _container_props(
             raise TerseDslNested2ConversionError(
                 'Root must be Column("card", ...) with a supported size.'
             )
-        explicit_dimensions = {
-            key: props.pop(key)
-            for key in ("width", "height")
-            if key in props
-        }
-        if any(
-            explicit_dimensions[key] != dimensions[key]
-            for key in explicit_dimensions
-        ):
+        explicit_dimensions = {key: props.pop(key) for key in ("width", "height") if key in props}
+        if any(explicit_dimensions[key] != dimensions[key] for key in explicit_dimensions):
             raise TerseDslNested2ConversionError(
                 "Root width and height must match the size-locked dimensions."
             )
@@ -799,7 +791,7 @@ def _container_props(
             "borderRadius": 20,
             "clip": True,
             "linearGradient": {
-                "direction": "RightBottom",
+                "angle": 145,
                 "colors": [["#FFE8F1F5", 0], ["#FFE2ECE4", 1]],
             },
             "itemMargin": 8,
@@ -853,3 +845,24 @@ def _normalize_container_alignment(
         props["alignContent"] = align_content
         return
     props.setdefault("alignItems", align_items)
+
+
+def _normalize_linear_gradient(props: dict[str, Any]) -> None:
+    """Lower Harmony direction aliases to the standard A2UI gradient angle."""
+    gradient = props.get("linearGradient")
+    if not isinstance(gradient, dict) or "angle" in gradient:
+        return
+    direction = gradient.get("direction")
+    angles = {
+        "RightBottom": 145,
+        "RightTop": 45,
+        "LeftBottom": 225,
+        "LeftTop": 315,
+    }
+    angle = angles.get(direction)
+    if angle is None:
+        return
+    normalized = dict(gradient)
+    normalized.pop("direction")
+    normalized["angle"] = angle
+    props["linearGradient"] = normalized

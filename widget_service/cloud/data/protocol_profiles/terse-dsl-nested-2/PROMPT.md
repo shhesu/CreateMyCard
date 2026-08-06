@@ -3367,3 +3367,7 @@ value_group Row [
 `alignContent` 只允许用于 Stack；Row 必须使用 `alignItems: "top" | "center" | "bottom"`，Column
 必须使用 `alignItems: "start" | "center" | "end"`，不得在 Row 或 Column 的 options 中写
 `alignContent`。
+
+模板（如有）只决定组件层级与布局角色，绝不继承或锁定视觉样式。每次生成都必须为 root 独立
+设置 `linearGradient` 或 `backgroundColor`；标准 A2UI 渐变使用 `linearGradient: {angle: 145, colors: [...]}`，
+不得使用 `direction`。

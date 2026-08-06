@@ -602,9 +602,6 @@ class WidgetGenerationService:
                     ]
                 )
 
-        logger.info(
-            f"{_MODULE} a2ui_prompt_built prompt={json_for_log(prompt)}"
-        )
         latency_by_stage["specAndPrompt"] = self._elapsed_ms(stage_started_at)
         stage_started_at = time.perf_counter()
 
@@ -1096,6 +1093,7 @@ class WidgetGenerationService:
             status=response_plan.status,
             artifactUrl=artifact_save_result.artifactUrl,
             artifactDigest=artifact_save_result.artifactDigest,
+            previewUrl=artifact_save_result.previewUrl,
             suggestSize=card_spec.suggestSize,
             message=response_plan.message,
             removedCapabilities=removed,

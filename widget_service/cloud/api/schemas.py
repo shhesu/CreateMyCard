@@ -272,6 +272,7 @@ class GenerateWidgetCardResponse(BaseModel):
     status: GenerationStatus
     artifactUrl: str = ""
     artifactDigest: str = ""
+    previewUrl: str = ""
     suggestSize: WidgetSize
     message: str
     removedCapabilities: list[RemovedCapability] = Field(default_factory=list)

@@ -34,10 +34,10 @@ class CardTemplateSelection:
             "confidence": self.confidence,
             "templateTerseDslNested2": self.template_source,
             "instruction": (
-                "将模板仅作为2x2构图参考：保留组件层级、信息分区和布局角色；替换业务"
-                "文案、数据绑定、素材、颜色和允许的动作。不要照抄模板中的像素尺寸、"
-                "样式对象或占位资源，最终语法、Design Token、LayoutPreset、根尺寸和"
-                "能力约束始终以原系统Prompt与TaskSpec为准。"
+                "模板只提供组件层级、信息分区与布局角色参考。必须独立生成并允许修改 root"
+                "背景、渐变、颜色、字体、间距、圆角及全部组件属性；替换业务文案、数据绑定、"
+                "素材和动作。不要照抄模板中的像素尺寸、样式对象或占位资源；最终语法、Design "
+                "Token、LayoutPreset、根尺寸和能力约束始终以原系统Prompt与TaskSpec为准。"
             ),
         }
 

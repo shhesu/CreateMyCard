@@ -1,52 +1,18 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) Huawei Technologies Co., Ltd. 2026-2026. All rights reserved.
-import asyncio
 import json
 import os
-from threading import Thread
+from pathlib import Path
 
 from app.logger import logger
 from config.config import get_settings
 from models.artifact import WidgetArtifact
 from models.service import ArtifactSaveResult
+from services.a2ui_png_renderer import A2uiPngRenderer
 from services.source_artifact_repository import calculate_artifact_digest
-from utils.file import delete_file, save_txt_file
-from utils.upload_file_obs import UploadFileOSMS
+from utils.file import save_txt_file
 
 _MODULE = "[Artifact Store]"
-
-file_obs = UploadFileOSMS()
-
-
-def _run_async(coro):
-    """在新线程中运行异步协程，避免与现有事件循环冲突。
-
-    入参：
-    - coro：待执行的协程对象。
-    出参：协程返回值。
-    """
-    result = [None]
-    exception = [None]
-
-    def runner():
-        loop = None
-        try:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            result[0] = loop.run_until_complete(coro)
-        except Exception as e:
-            exception[0] = e
-        finally:
-            if loop is not None:
-                loop.close()
-
-    thread = Thread(target=runner)
-    thread.start()
-    thread.join()
-
-    if exception[0]:
-        raise exception[0]
-    return result[0]
 
 
 class ArtifactStore:
@@ -71,7 +37,7 @@ class ArtifactStore:
             f"{_MODULE} artifact_payload_built payload_bytes={payload_bytes} digest={digest}"
         )
 
-        # Artifact 以具名 Markdown 代码块上传。每个块名与对应契约字段一致，
+        # Artifact 以具名 Markdown 代码块保存。每个块名与对应契约字段一致，
         # 既保留端侧现有的 genui/cardspec 解析方式，也完整携带排障和回放信息。
         json_blocks = {
             "cardspec": artifact_data["cardSpec"],
@@ -92,9 +58,7 @@ class ArtifactStore:
         if artifact.designCompactDsl:
             blocks.append(f"```designcompactdsl\n{artifact.designCompactDsl}\n```")
         blocks.extend(
-            "```" + name + "\n"
-            + json.dumps(value, ensure_ascii=False, indent=2)
-            + "\n```"
+            "```" + name + "\n" + json.dumps(value, ensure_ascii=False, indent=2) + "\n```"
             for name, value in json_blocks.items()
             if name != "cardspec"
         )
@@ -102,17 +66,28 @@ class ArtifactStore:
 
         # UUID 同时进入 meta 和对象名，避免毫秒时间戳在并发生成时发生覆盖。
         file_name = f"artifact_{artifact.meta.artifactId}.md"
-        file_path = os.path.join(str(get_settings().WORKSPACE_ROOT), file_name)
+        settings = get_settings()
+        file_path = os.path.join(str(settings.WORKSPACE_ROOT), file_name)
         save_txt_file(file_path, file_content)
         logger.info(f"{_MODULE} artifact_file_saved path={file_path}")
-
+        artifact_url = f"{settings.artifact_base_url.rstrip('/')}/{file_name}"
+        preview_name = f"preview_{artifact.meta.artifactId}.png"
+        preview_path = Path(settings.WORKSPACE_ROOT) / "previews" / preview_name
+        preview_base_url = settings.artifact_base_url.rsplit("/artifacts", 1)[0]
+        preview_url = ""
         try:
-            # 上传到 OBS，获取访问链接
-            artifact_url = _run_async(file_obs.upload_file(file_path))
-            if not artifact_url:
-                raise RuntimeError("artifact upload to OBS failed")
-            logger.info(f"{_MODULE} artifact_uploaded artifact_url={artifact_url}")
-            return ArtifactSaveResult(artifactUrl=artifact_url, artifactDigest=digest)
-        finally:
-            # 清理本地临时文件
-            delete_file(file_path)
+            A2uiPngRenderer().render(artifact.genui, preview_path)
+            preview_url = f"{preview_base_url}/previews/{preview_name}"
+        except (KeyError, OSError, TypeError, ValueError, json.JSONDecodeError) as error:
+            # A preview is auxiliary: malformed/unsupported A2UI must not prevent
+            # the card artifact itself from being returned to the caller.
+            logger.warning(
+                f"{_MODULE} preview_render_failed "
+                f"artifact_id={artifact.meta.artifactId} error={error}"
+            )
+        logger.info(f"{_MODULE} artifact_saved_locally artifact_url={artifact_url}")
+        return ArtifactSaveResult(
+            artifactUrl=artifact_url,
+            artifactDigest=digest,
+            previewUrl=preview_url,
+        )

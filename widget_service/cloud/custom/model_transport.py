@@ -42,5 +42,5 @@ def create_model_transport(
     if backend == "llmclient":
         from custom.llmclient_model_transport import LlmClientModelTransport
 
-        return LlmClientModelTransport()
+        return LlmClientModelTransport(settings or get_settings())
     raise ValueError(f"Unsupported model backend: {backend}")

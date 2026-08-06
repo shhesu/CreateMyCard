@@ -197,6 +197,7 @@ class ArtifactSaveResult(BaseModel):
 
     artifactUrl: str
     artifactDigest: str
+    previewUrl: str = ""
 
 
 class ResponsePlan(BaseModel):
