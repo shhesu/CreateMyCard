@@ -1,0 +1,51 @@
+widget_service/cloud/services/cardplan_template/models.py
+  s_6d7c9a526b8e3e::t_33c9c16c82d88b 51
+widget_service/cloud/services/cardplan_template/compiler.py
+  s_6d7c9a526b8e3e::t_cf65bddd0d74df 7-8,68,92,104-112,245,484
+  s_6d7c9a526b8e3e::t_33c9c16c82d88b 100-101,113-116,180-181,351-356,404-415,419-483,485-487
+  s_6d7c9a526b8e3e::t_7164b0bc0791d8 488-489
+docs/云侧方案设计.md
+  s_6d7c9a526b8e3e::t_6fc8039d19cd4c 508-509,519-522,1462-1463
+widget_service/README.md
+  s_6d7c9a526b8e3e::t_6fc8039d19cd4c 93-97
+widget_service/cloud/services/advanced_component_pipeline/models.py
+  s_6d7c9a526b8e3e::t_33c9c16c82d88b 53-56
+widget_service/docs/cardplan_template_production.md
+  s_6d7c9a526b8e3e::t_ff05d0bad59ee4 139-140
+  s_6d7c9a526b8e3e::t_6fc8039d19cd4c 132-134,141-144
+widget_service/docs/method_usage.md
+  s_6d7c9a526b8e3e::t_6fc8039d19cd4c 124-126
+widget_service/cloud/services/advanced_component_pipeline/ui_planner.py
+  s_6d7c9a526b8e3e::t_6578e63ee738e6 74,76-77
+  s_6d7c9a526b8e3e::t_33c9c16c82d88b 44-47
+  s_6d7c9a526b8e3e::t_7e80d3d8dd5caf 66-67,75
+widget_service/tests/test_cardplan_template.py
+  s_6d7c9a526b8e3e::t_e6793d1c8981a5 21-22,335-355
+  s_6d7c9a526b8e3e::t_4a47bf18443c88 30,264-287,306-334
+  s_6d7c9a526b8e3e::t_a5a4b5a47f7fc4 288-305
+  s_6d7c9a526b8e3e::t_d72be36d88731f 356-357
+widget_service/cloud/services/cardplan_template/prompt.py
+  s_6d7c9a526b8e3e::t_063f08244f516f 283-286,290
+  s_6d7c9a526b8e3e::t_33c9c16c82d88b 93-97,153,167-177,185,188-190,274-279,281-282,287,292-301,332-353,414-437,440,442-443
+  s_6d7c9a526b8e3e::t_cf65bddd0d74df 90-91,280,291
+  s_6d7c9a526b8e3e::t_6aa22f8b933db6 192-195,288-289,438-439,441
+  s_6d7c9a526b8e3e::t_6578e63ee738e6 222-229,246
+  s_6d7c9a526b8e3e::t_0d877b74378e8f 191
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "8e4c9ce9c8c0903a8668555cc401d36da1c26537",
+  "prompts": {},
+  "sessions": {
+    "s_6d7c9a526b8e3e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd7ef-851e-7242-a2dc-0da5b3c412f2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 49
+    }
+  }
+}
