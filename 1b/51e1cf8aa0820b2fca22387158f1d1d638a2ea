@@ -1,0 +1,35 @@
+widget_service/tests/test_model_routing.py
+  s_6d7c9a526b8e3e::t_a7aca37129d688 257-262,279-284,302-307,325,332,360,367,408,414
+widget_service/docs/cardplan_template_production.md
+  s_6d7c9a526b8e3e::t_5bfc5a0c8529e6 91,94-99,173-177
+  s_6d7c9a526b8e3e::t_9be299e67f2a80 178
+widget_service/tests/test_service_units.py
+  s_6d7c9a526b8e3e::t_d676925092582c 80,428-441
+  s_6d7c9a526b8e3e::t_1b09337bb972d8 3015-3042
+  s_6d7c9a526b8e3e::t_1d73a5137181a0 442-443
+  s_6d7c9a526b8e3e::t_00dbc41367d796 3014
+widget_service/cloud/custom/llmclient.py
+  s_6d7c9a526b8e3e::t_1417a0332be4e3 51-54,96-98
+  s_6d7c9a526b8e3e::t_d676925092582c 159,168-169,196-198,201-214
+  s_6d7c9a526b8e3e::t_2b96c20210d4f4 199-200
+widget_service/cloud/custom/model_runtime.py
+  s_6d7c9a526b8e3e::t_0b7afb75d40ed7 189-193,226,231-263
+  s_6d7c9a526b8e3e::t_fea00f267c80d7 25,31,42,61-62,105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "1b51e1cf8aa0820b2fca22387158f1d1d638a2ea",
+  "prompts": {},
+  "sessions": {
+    "s_6d7c9a526b8e3e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd7ef-851e-7242-a2dc-0da5b3c412f2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 29
+    }
+  }
+}
