@@ -1,0 +1,29 @@
+widget_service/test_reports/getWidgetCapabilityOverview.md
+  s_e8430ba6fd52cb::t_7efd21a9c5b6c3 61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "00af7537e067799742f57a41606829b7c7f59c5a",
+  "prompts": {},
+  "sessions": {
+    "s_7834fcd34f1ef0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff116-48a2-7863-a226-e715d80d8bc1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 129
+    },
+    "s_e8430ba6fd52cb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff39e-df51-76d3-902d-9e94a3236adb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
