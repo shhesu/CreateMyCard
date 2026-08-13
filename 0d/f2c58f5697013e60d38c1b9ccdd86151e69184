@@ -1,0 +1,22 @@
+widget_service/docs/advanced-component-pipeline-example-wiki.md
+  s_e8430ba6fd52cb::t_5926cde32b9ad5 1-481
+widget_service/docs/advanced-business-components-wiki.md
+  s_e8430ba6fd52cb::t_5926cde32b9ad5 11-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "0df2c58f5697013e60d38c1b9ccdd86151e69184",
+  "prompts": {},
+  "sessions": {
+    "s_e8430ba6fd52cb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff39e-df51-76d3-902d-9e94a3236adb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
