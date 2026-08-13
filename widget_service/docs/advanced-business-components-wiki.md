@@ -8,6 +8,9 @@
 >
 > 整卡区域、重排和 Action 槽位见
 > [`advanced-layout-components-wiki.md`](advanced-layout-components-wiki.md)。
+>
+> 需要从端侧输入、两步 LLM 输出一路查看到展开后 TerseDSL 和最终 A2UI 时，见
+> [`advanced-component-pipeline-example-wiki.md`](advanced-component-pipeline-example-wiki.md)。
 
 ## 1. 设计目标与链路
 
