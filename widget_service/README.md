@@ -112,6 +112,10 @@ optional and omitted by default; business content owns its semantic title. Busin
 and local Template capability. The trusted service validates Theme/palette compatibility, layout compatibility,
 action limits, and Chinese phrase-level candidates before the second model call.
 
+本地启动服务并使用 HarmonyOS 真机直连调试时，见
+[`docs/local-device-debugging-wiki.md`](docs/local-device-debugging-wiki.md)。该流程不使用 HDC 端口反向映射，
+并覆盖局域网监听、artifact 下载地址、端侧 HAP、hilog、截图和批次结果归档。
+
 ## Run
 
 ```bash
