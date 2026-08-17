@@ -1,0 +1,158 @@
+widget_service/cloud/services/template_generation/__init__.py
+  s_ecd92453e7cd3d::t_3effd9aff8727a 1-2,4
+  s_ecd92453e7cd3d::t_777ca03faf38f5 3,5
+widget_service/cloud/services/template_generation/docs/README.md
+  s_ecd92453e7cd3d::t_7d25ba50c6d155 1-46
+widget_service/cloud/services/template_generation/engine/advanced/__init__.py
+  s_ecd92453e7cd3d::t_341f063f9c78c7 1
+widget_service/cloud/services/template_generation/engine/__init__.py
+  s_ecd92453e7cd3d::t_341f063f9c78c7 1
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_ecd92453e7cd3d::t_7d25ba50c6d155 1-53
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_ecd92453e7cd3d::t_341f063f9c78c7 1-2642
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_ecd92453e7cd3d::t_341f063f9c78c7 1-357
+widget_service/cloud/services/template_generation/docs/migration-notes.md
+  s_ecd92453e7cd3d::t_7d25ba50c6d155 1-22
+widget_service/cloud/services/template_generation/model_client.py
+  s_ecd92453e7cd3d::t_71b8f4fd8f15f0 1-103
+widget_service/cloud/services/template_generation/archive.py
+  s_ecd92453e7cd3d::t_3effd9aff8727a 1-133
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_c491c4048c0920 24
+  s_ecd92453e7cd3d::t_f5f5744f777c06 35-53
+  s_ecd92453e7cd3d::t_023ccc0bb10b19 1-23,25-34,54-322
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_ecd92453e7cd3d::t_79ab880600206a 1-364
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_ecd92453e7cd3d::t_341f063f9c78c7 1-3182
+widget_service/cloud/services/template_generation/engine/cardplan/framer.py
+  s_ecd92453e7cd3d::t_79ab880600206a 1-86
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_7d25ba50c6d155 1-62
+widget_service/cloud/services/widget_generation_service.py
+  s_ecd92453e7cd3d::t_eb3c2a4642f8cb 1086-1087
+  s_ecd92453e7cd3d::t_777ca03faf38f5 61
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_3effd9aff8727a 1-8,10-81,88-91,94-191,196-202,209-219,221-237
+  s_ecd92453e7cd3d::t_777ca03faf38f5 9,82-87,220
+  s_ecd92453e7cd3d::t_c32fd066a80382 92-93
+  s_ecd92453e7cd3d::t_ebd763521f8d3b 192-195,203-208
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_ecd92453e7cd3d::t_71b8f4fd8f15f0 1-62,75-339
+  s_ecd92453e7cd3d::t_ebd763521f8d3b 63-74
+widget_service/cloud/services/template_generation/engine/advanced/data_shape.py
+  s_ecd92453e7cd3d::t_222eae041f1d3c 1-98
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_ecd92453e7cd3d::t_b796d74511f5f9 1-652
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_ecd92453e7cd3d::t_9a9aad80352e2d 1-1171
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_ecd92453e7cd3d::t_3f1b2fc6a0097e 1-850
+widget_service/cloud/services/template_generation/engine/cardplan/__init__.py
+  s_ecd92453e7cd3d::t_c0cd91886a8f0f 1-15
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_ecd92453e7cd3d::t_b68983366ff783 1-8744
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_c937651744d1f3 1-55
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_ecd92453e7cd3d::t_76b558039f2a89 1-19
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_ecd92453e7cd3d::t_3ea06f9eda660d 1-228
+widget_service/cloud/services/template_generation/engine/cardplan/parser.py
+  s_ecd92453e7cd3d::t_8bc33b591cc05b 1-295
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_ecd92453e7cd3d::t_184a6c0652d164 1-1072
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_ecd92453e7cd3d::t_6a99f91bcdf9cb 1-1389
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_ecd92453e7cd3d::t_05ad78566e4624 1-570
+widget_service/cloud/services/template_generation/resources/source/advanced-component-registry.json
+  s_ecd92453e7cd3d::t_af0a52c4f182f1 1-1341
+widget_service/cloud/services/template_generation/resources/source/advanced-component-ux-registry.json
+  s_ecd92453e7cd3d::t_d49e74d9efbd6a 1-527
+widget_service/cloud/services/template_generation/resources/source/prompts/card-template-planner/00-chrome-kernel.md
+  s_ecd92453e7cd3d::t_1f965b5000c55b 1-14
+widget_service/cloud/services/template_generation/resources/source/prompts/card-template-planner/10-dsl-and-boundary.md
+  s_ecd92453e7cd3d::t_7f73e7a66112a5 1-21
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/00-hybrid-kernel.md
+  s_ecd92453e7cd3d::t_a5feb60ded64ad 1-14
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/10-template-composition.md
+  s_ecd92453e7cd3d::t_70a8d9770f1ec3 1-54
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/20-action-and-budget.md
+  s_ecd92453e7cd3d::t_9fa96527505548 1-18
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_ecd92453e7cd3d::t_c0d8ffbec2afd2 1-33
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_ecd92453e7cd3d::t_b65d7114577df4 1-30
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage-cli/provider.json
+  s_ecd92453e7cd3d::t_973cec71b8cb95 1-27
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage-cli/templates/app-usage-overview.cardtpl
+  s_ecd92453e7cd3d::t_1b1e38c16750f1 1-156
+widget_service/cloud/services/template_generation/resources/source/providers/battery-cli/provider.json
+  s_ecd92453e7cd3d::t_b80b7cc0872e86 1-27
+widget_service/cloud/services/template_generation/resources/source/providers/battery-cli/templates/battery-overview.cardtpl
+  s_ecd92453e7cd3d::t_2959f2a2cd806b 1-204
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/provider.json
+  s_ecd92453e7cd3d::t_ff52cfb21b4ab3 1-32
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/templates/date-overview.cardtpl
+  s_ecd92453e7cd3d::t_0087bc03a446af 1-48
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/templates/schedule-overview.cardtpl
+  s_ecd92453e7cd3d::t_cae081b7d4b0d4 1-320
+widget_service/cloud/services/template_generation/resources/source/providers/countdown-cli/provider.json
+  s_ecd92453e7cd3d::t_6096bbc6dbd591 1-27
+widget_service/cloud/services/template_generation/resources/source/providers/countdown-cli/templates/workout-countdown.cardtpl
+  s_ecd92453e7cd3d::t_81eb770fb63fa4 1-32
+widget_service/cloud/services/template_generation/resources/source/providers/earphone-cli/provider.json
+  s_ecd92453e7cd3d::t_ff1ef8025c2e09 1-27
+widget_service/cloud/services/template_generation/resources/source/providers/earphone-cli/templates/bluetooth-device-overview.cardtpl
+  s_ecd92453e7cd3d::t_e0e030fa2a8c31 1-515
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/provider.json
+  s_ecd92453e7cd3d::t_4ee31c4e716bfc 1-47
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/templates/activity-overview.cardtpl
+  s_ecd92453e7cd3d::t_f27c5cd84c46be 1-128
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/templates/heart-rate-overview.cardtpl
+  s_ecd92453e7cd3d::t_5f52b826ab7024 1-553
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/templates/sleep-overview.cardtpl
+  s_ecd92453e7cd3d::t_3564b6d5272549 1-327
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/templates/workout-overview.cardtpl
+  s_ecd92453e7cd3d::t_aafe17d7be03b5 1-46
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory-cli/provider.json
+  s_ecd92453e7cd3d::t_0b3a383eb0f286 1-27
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory-cli/schemas/get-system-mem-info.schema.json
+  s_ecd92453e7cd3d::t_830993a30efd50 1-10
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory-cli/templates/resource-usage-overview.cardtpl
+  s_ecd92453e7cd3d::t_0e672459f427e4 1-130
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/README.md
+  s_ecd92453e7cd3d::t_67dfe0891df2d8 1-38
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/provider.json
+  s_ecd92453e7cd3d::t_72bd4da62f8c1b 1-29
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/samples/sunny.json
+  s_ecd92453e7cd3d::t_31ba3618ad4950 1-15
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/schemas/view-weather.output.schema.json
+  s_ecd92453e7cd3d::t_f041889c33f19e 1-60
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/templates/weather-overview.cardtpl
+  s_ecd92453e7cd3d::t_14aba5575e2ccf 1-249
+widget_service/cloud/services/template_generation/resources/source/template-registry.json
+  s_ecd92453e7cd3d::t_42712be49d18ce 1-13866
+widget_service/cloud/services/template_generation/resources/source/theme-profiles.json
+  s_ecd92453e7cd3d::t_b8504a61f1d3d2 1-476
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "89a92b709114dc8fa5674de1da444db6fd179445",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 36
+    }
+  }
+}
