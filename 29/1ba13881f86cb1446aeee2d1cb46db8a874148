@@ -1,0 +1,69 @@
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_a86d3f045c2499 18,20,36,71-73
+  s_ecd92453e7cd3d::t_cf860fa7514092 74
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage-cli/templates/app-usage-overview.cardtpl
+  s_ecd92453e7cd3d::t_0c18a74070781b 12-17
+  s_ecd92453e7cd3d::t_9797ce1dc875d6 18-19
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/provider.json
+  s_ecd92453e7cd3d::t_90f721f3ca699c 39
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/provider.json
+  s_ecd92453e7cd3d::t_90f721f3ca699c 19,24
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_06d88cdd95cc14 125
+  s_ecd92453e7cd3d::t_203fe90c543b92 76
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/templates/sleep-overview.cardtpl
+  s_ecd92453e7cd3d::t_9797ce1dc875d6 19-20
+  s_ecd92453e7cd3d::t_0c18a74070781b 13-18
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_7e64050a49b1d2 27-29
+  s_ecd92453e7cd3d::t_a244cb90b3cbb6 30
+  s_ecd92453e7cd3d::t_8a328c974b7435 33,74-134
+  s_ecd92453e7cd3d::t_6457505c775dc5 46-52,138-141,143,147,151-153,356,378-419,425
+  s_ecd92453e7cd3d::t_5526ff201545ce 135-136
+  s_ecd92453e7cd3d::t_30becdc505f888 420-424
+  s_ecd92453e7cd3d::t_3bd60e559e0821 426-428
+  s_ecd92453e7cd3d::t_8f92510f085b2f 429
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_ecd92453e7cd3d::t_a86d3f045c2499 40-52,58-59
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_ecd92453e7cd3d::t_f9e2269ca71323 1337-1346
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage-cli/provider.json
+  s_ecd92453e7cd3d::t_90f721f3ca699c 19
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_ecd92453e7cd3d::t_a8d6add856622e 279-280,290-309,316-325
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/templates/date-overview.cardtpl
+  s_ecd92453e7cd3d::t_0c18a74070781b 9-14
+docs/云侧方案设计.md
+  s_ecd92453e7cd3d::t_a86d3f045c2499 550-552
+  s_ecd92453e7cd3d::t_67477a034c2a3a 507-510
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_ecd92453e7cd3d::t_d352ff8eaf9463 609-610,614-616
+  s_ecd92453e7cd3d::t_7e64050a49b1d2 17,19
+  s_ecd92453e7cd3d::t_03bfa723f1e8ff 202,557,573,577-578,583-584,602-608,611-613,617
+  s_ecd92453e7cd3d::t_87ddde8e6aa0ec 618-619
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_59331d705548fe 19-20,23-25,30,33
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/templates/schedule-overview.cardtpl
+  s_ecd92453e7cd3d::t_0c18a74070781b 12-14
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_ecd92453e7cd3d::t_7e64050a49b1d2 12-15
+  s_ecd92453e7cd3d::t_4582046fdabefe 69,121,125,131-132,295,299-304,346,355-363,388,465,472,500
+  s_ecd92453e7cd3d::t_3b4869353cbf7a 126-130,133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "291ba13881f86cb1446aeee2d1cb46db8a874148",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 92
+    }
+  }
+}
