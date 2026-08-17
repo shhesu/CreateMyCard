@@ -1,0 +1,69 @@
+skills/harmony-card-generation-online/scripts/rules/config/protocol.json
+  s_ecd92453e7cd3d::t_f8df1d90c424f4 4
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_ecd92453e7cd3d::t_d0e1e9e81d3663 31,551,564,567-586
+  s_ecd92453e7cd3d::t_8b0092639b38d4 587
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_ecd92453e7cd3d::t_7f75a6881f55b9 128
+widget_service/tests/test_service_units.py
+  s_ecd92453e7cd3d::t_f8df1d90c424f4 4574
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_ecd92453e7cd3d::t_a8f00d3b9bd2b0 14,155
+widget_service/cloud/services/advanced_component_pipeline/components/a2ui_base.py
+  s_ecd92453e7cd3d::t_1031fc1a3986dd 14
+widget_service/cloud/custom/a2ui_model_client.py
+  s_ecd92453e7cd3d::t_1031fc1a3986dd 485
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_3a0462aeee81bd 7,19,21,23,26,28,30,35,39
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_ecd92453e7cd3d::t_7f75a6881f55b9 1094
+widget_service/cloud/custom/mock.dat
+  s_ecd92453e7cd3d::t_8a56d84af1dd24 1
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/component-catalog.md
+  s_ecd92453e7cd3d::t_1607e789a89fde 15
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/protocol.md
+  s_ecd92453e7cd3d::t_0427eec16fae8c 15
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/protocol.json
+  s_ecd92453e7cd3d::t_f5ab2343179c43 3
+widget_service/cloud/data/protocol_profiles/terse-dsl-nested-2/protocol.json
+  s_ecd92453e7cd3d::t_c2d44354571268 3
+widget_service/cloud/data/validator_rules/config/protocol.json
+  s_ecd92453e7cd3d::t_bbe2b37c356f0b 4
+widget_service/cloud/services/card_validator.py
+  s_ecd92453e7cd3d::t_ad83c754e0129d 64
+widget_service/cloud/services/protocol_registry.py
+  s_ecd92453e7cd3d::t_106fe143984a1f 92
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage-cli/provider.json
+  s_ecd92453e7cd3d::t_1ffff1f8a8565f 24
+widget_service/cloud/services/template_generation/resources/source/providers/battery-cli/provider.json
+  s_ecd92453e7cd3d::t_2d8fc5f1ec5cc6 24
+widget_service/cloud/services/template_generation/resources/source/providers/calendar-cli/provider.json
+  s_ecd92453e7cd3d::t_ea47b10951e0cc 29
+widget_service/cloud/services/template_generation/resources/source/providers/countdown-cli/provider.json
+  s_ecd92453e7cd3d::t_46383cab51c3c0 24
+widget_service/cloud/services/template_generation/resources/source/providers/earphone-cli/provider.json
+  s_ecd92453e7cd3d::t_68cd3a8e0b86c8 24
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/provider.json
+  s_ecd92453e7cd3d::t_37377e8856b71b 44
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory-cli/provider.json
+  s_ecd92453e7cd3d::t_93e150043e397d 24
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/provider.json
+  s_ecd92453e7cd3d::t_b10b36faf46eea 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "57a1075295fe7e6bfc202f06ff3eb1d151f305ac",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 20
+    }
+  }
+}
