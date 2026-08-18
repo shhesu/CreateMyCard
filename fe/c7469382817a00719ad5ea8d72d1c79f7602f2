@@ -1,0 +1,22 @@
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_55931a85606db9::t_4c6ffcf2970e4a 82-95
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_55931a85606db9::t_4c6ffcf2970e4a 729-731
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.31.1604",
+  "base_commit_sha": "fec7469382817a00719ad5ea8d72d1c79f7602f2",
+  "prompts": {},
+  "sessions": {
+    "s_55931a85606db9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff8fd-9bd8-7203-aa88-498a562c6e91",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
