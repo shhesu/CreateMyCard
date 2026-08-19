@@ -30,6 +30,7 @@ widget_service/cloud/services/template_generation/resources/source/themes/sleep-
 widget_service/cloud/services/template_generation/docs/README.md
   s_ecd92453e7cd3d::t_6f53f12b34c183 55-57
   s_ecd92453e7cd3d::t_52ae655462f00f 58
+  s_ecd92453e7cd3d::t_c13bd3c05bc666 26
 widget_service/cloud/services/template_generation/docs/provider-template-contract.md
   s_ecd92453e7cd3d::t_67e1c3d4aefae4 72-73,76
   s_ecd92453e7cd3d::t_eb65360cfd5010 74-75
@@ -73,6 +74,7 @@ widget_service/cloud/services/template_generation/docs/architecture.md
   s_ecd92453e7cd3d::t_6f53f12b34c183 76-84,88-90
   s_ecd92453e7cd3d::t_eb65360cfd5010 85-87
   s_ecd92453e7cd3d::t_67e1c3d4aefae4 72-75
+  s_ecd92453e7cd3d::t_c13bd3c05bc666 17,19,36
 widget_service/cloud/services/template_generation/resources/source/themes/system-low-power-blue/first-layer.md
   s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
 widget_service/cloud/services/template_generation/resources/source/themes/race-sunrise-action/first-layer.md
