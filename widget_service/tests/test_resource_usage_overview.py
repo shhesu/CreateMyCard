@@ -364,7 +364,7 @@ def test_single_resource_direct_constructor_lowers_to_standard_a2ui(
 
 
 @pytest.mark.parametrize("size", ["2x2", "2x4"])
-def test_resource_title_is_top_level_and_ring_text_uses_rounded_integer(size: str):
+def test_resource_title_is_top_level_and_ring_text_uses_raw_value(size: str):
     compiled, _projection = _compile_resource(
         _resource_task(size=size, usage_percent=43.75),
         'SingleFocusLayout(ResourceUsageOverview({"variant":"memory","role":"hero"}));',
@@ -375,18 +375,17 @@ def test_resource_title_is_top_level_and_ring_text_uses_rounded_integer(size: st
     content_index = output.index('Row("between"', title_index)
     assert title_index < content_index
     assert output.count('Text("内存占用"') == 1
-    assert 'Text("44", "body", {"fontSize":14' in output
-    assert 'Text("43.75", "body"' not in output
+    assert 'Text("43.75", "body", {"fontSize":14' in output
     assert '"value":43.75' in output
 
 
-def test_resource_percentage_text_rounds_half_up_without_changing_chart_value():
+def test_resource_percentage_text_uses_raw_value_without_changing_chart_value():
     compiled, _projection = _compile_resource(
         _resource_task(usage_percent=42.5),
         'SingleFocusLayout(ResourceUsageOverview({"variant":"memory","role":"hero"}));',
     )
 
-    assert 'Text("43", "body", {"fontSize":14' in compiled.effective_output
+    assert 'Text("42.5", "body", {"fontSize":14' in compiled.effective_output
     assert '"value":42.5' in compiled.effective_output
 
 
@@ -406,7 +405,7 @@ def test_resource_percentage_without_icon_is_fixed_inside_ring():
     )
 
     assert stack_index < progress_index < percent_row_index
-    assert percent_row_index < output.index('Text("44"', percent_row_index)
+    assert percent_row_index < output.index('Text("43.75"', percent_row_index)
     update = json.loads(compiled.a2ui.splitlines()[1])["updateComponents"]
     components = update["components"]
     progress = next(
@@ -440,7 +439,7 @@ def test_resource_peer_without_icon_keeps_percentage_inside_compact_ring():
     output = compiled.effective_output
     stack_index = output.index('Stack("overlay", {"width":44,"height":44')
     next_stack_index = output.index('Stack("overlay"', stack_index + 1)
-    percent_index = output.index('Text("44"', stack_index)
+    percent_index = output.index('Text("43.75"', stack_index)
 
     assert percent_index < next_stack_index
     assert '"justifyContent":"center"' in output[stack_index:percent_index]
@@ -602,7 +601,7 @@ def test_resource_battery_2x2_lowers_to_two_equal_compact_rings(with_action: boo
     assert compiled.effective_output.index('Text("内存与电量"') < (
         compiled.effective_output.index('"type":"ring"')
     )
-    assert compiled.effective_output.count('Text("44"') == 1
+    assert compiled.effective_output.count('Text("43.75"') == 1
     assert compiled.effective_output.count('Text("68%"') == 1
     assert "titleIcon" not in compiled.effective_output
     assert "ResourceUsageOverview" not in compiled.effective_output
