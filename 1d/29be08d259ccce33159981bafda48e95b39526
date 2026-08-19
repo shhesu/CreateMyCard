@@ -1,0 +1,154 @@
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-10
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-26
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_ecd92453e7cd3d::t_3235e0b0e23db1 67-70,95-96,104-105,128-136,139,148-149,169-170,197-203
+  s_ecd92453e7cd3d::t_7512348279cc34 1125-1142,1250-1257
+  s_ecd92453e7cd3d::t_3d6e8dd2068d00 1463
+widget_service/cloud/services/template_generation/resources/source/themes/rainy-commute-gray-blue/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_ecd92453e7cd3d::t_fb1ae78521f5d4 26,29,31,60-63,69,71-74,138-153
+  s_ecd92453e7cd3d::t_eeaf9ad5d7f566 241-252,274-344
+  s_ecd92453e7cd3d::t_82d9aaa4db4fcc 154
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-13
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 14
+widget_service/cloud/services/template_generation/resources/source/themes/audio-product-neutral-violet/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_ecd92453e7cd3d::t_7413eda1727f6a 5-7
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-9
+widget_service/cloud/services/template_generation/resources/source/themes/sleep-night-violet/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/docs/README.md
+  s_ecd92453e7cd3d::t_6f53f12b34c183 55-57
+  s_ecd92453e7cd3d::t_52ae655462f00f 58
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_ecd92453e7cd3d::t_67e1c3d4aefae4 72-73,76
+  s_ecd92453e7cd3d::t_eb65360cfd5010 74-75
+  s_ecd92453e7cd3d::t_6f53f12b34c183 5,10-12,19,26-35,69
+widget_service/cloud/services/template_generation/resources/source/themes/family-weather-care-blue/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-16
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 11
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-10
+widget_service/cloud/services/template_generation/resources/source/themes/digital-wellbeing-neutral-dark/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 11
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-10
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_ecd92453e7cd3d::t_7413eda1727f6a 6-7
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_ecd92453e7cd3d::t_fca6498d749a75 29,102-109,316-317
+  s_ecd92453e7cd3d::t_926b6bf4a488d9 293
+  s_ecd92453e7cd3d::t_b11b141bae4116 367-373
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-11
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 12
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_b3004db1c9ba1b 1-12
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 13
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_cec80bada63311 861-866
+  s_ecd92453e7cd3d::t_201820a7d6899b 35,39,358-360,404,408,413-415,539,660-661
+  s_ecd92453e7cd3d::t_18b4d99f2d12c9 137-141,967-979,987,989
+  s_ecd92453e7cd3d::t_c39ca202b4353b 647-649,652-653,662,918,929,942
+  s_ecd92453e7cd3d::t_79866eebbfe681 99-136,142-149,654-655,657-658,665-670,672
+  s_ecd92453e7cd3d::t_f9c245b99fb940 556-596
+  s_ecd92453e7cd3d::t_4e66c7a7e77bb7 917
+  s_ecd92453e7cd3d::t_6a57b519100f60 484
+widget_service/cloud/services/template_generation/resources/source/theme-profiles.json
+  s_ecd92453e7cd3d::t_db58be199fb98a 7,49,93,137,181,224,268,312,356,401,445
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_6f53f12b34c183 76-84,88-90
+  s_ecd92453e7cd3d::t_eb65360cfd5010 85-87
+  s_ecd92453e7cd3d::t_67e1c3d4aefae4 72-75
+widget_service/cloud/services/template_generation/resources/source/themes/system-low-power-blue/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/race-sunrise-action/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/themes/meeting-paper-neutral/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_ecd92453e7cd3d::t_93c06020579213 167-214,225-226,228-236,239-240,251,253-275
+  s_ecd92453e7cd3d::t_95473d428782b3 52,73,83,86-96,99-108,148-157
+  s_ecd92453e7cd3d::t_320be349ad79d6 161
+  s_ecd92453e7cd3d::t_d98b098bdaa553 716-742,754-758,762,764,775-781
+  s_ecd92453e7cd3d::t_4a33bc993f95f5 392
+  s_ecd92453e7cd3d::t_be3b6e49844a96 482,490,498,501-502,506-510,513,527
+  s_ecd92453e7cd3d::t_2f9474f2eb36c3 215-224,246,249-250
+  s_ecd92453e7cd3d::t_c035f91c1f0e20 227,243-245,252,276-295,410,743-753,759-761,763,765-774
+  s_ecd92453e7cd3d::t_a054f3673e4f8c 8
+  s_ecd92453e7cd3d::t_59ebe935f6f15a 237-238,241-242,247-248
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 8
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-7
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-10
+widget_service/cloud/services/template_generation/resources/source/themes/device-clean-blue-teal/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/focus-warm-amber/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_ecd92453e7cd3d::t_981c2117864153 279-281,283,285-299,304-308,312-316
+  s_ecd92453e7cd3d::t_515810d8cdb122 317-318
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_ecd92453e7cd3d::t_6c52e7a6770d79 26,108,125-130
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-7
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_71e7e9d554d20c 18,60-71
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 20
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-19
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-9
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_ecd92453e7cd3d::t_6aee82fe39e462 5-6
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_ecd92453e7cd3d::t_dcb73ce22ff686 185-188,202
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-9
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_85f0edba76a1ba 23
+  s_ecd92453e7cd3d::t_f87905e123b35e 1-22
+widget_service/cloud/services/template_generation/resources/source/themes/race-night-violet/first-layer.md
+  s_ecd92453e7cd3d::t_e7ba79ba2927bb 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "1d29be08d259ccce33159981bafda48e95b39526",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1070
+    }
+  }
+}
