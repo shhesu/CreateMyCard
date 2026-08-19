@@ -1,0 +1,52 @@
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 1,22
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_0ecd48ff3b3572::t_0ed37cc1933a4e 14,49
+  s_0ecd48ff3b3572::t_7d7478645c2ce5 68-72,88-97
+  s_0ecd48ff3b3572::t_77c40f2376ef86 26,920-934,940,942,944-947,950,952-961,963,965-966,973-981,986-988,990-993,998-1009,1019,1021,1023-1026,1029-1031,1033-1037,1039-1044,1046-1047,1051,1060-1069,1071-1076,1078
+widget_service/cloud/services/template_generation/docs/migration-notes.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 6,9-10
+widget_service/cloud/services/template_generation/__init__.py
+  s_0ecd48ff3b3572::t_85a2d3e9176c68 1,3,7-8
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 5-7,13,33,65-70,76-78,82-83
+  s_0ecd48ff3b3572::t_c4b194da9b7578 14-28,34-43
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 1,5
+widget_service/cloud/services/template_generation/facade.py
+  s_0ecd48ff3b3572::t_3824e24adacb48 9,11-12,14,39,45-46,49-50,53-55,57-58,60,63-66,69-71,74-75,77-80,82,89,96,103,129-130,132-133,156
+  s_0ecd48ff3b3572::t_7b2cc44419cf26 106-112
+  s_0ecd48ff3b3572::t_7d7478645c2ce5 68
+  s_0ecd48ff3b3572::t_7aab30feef2ac1 113
+docs/云侧方案设计.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 1098-1102
+widget_service/cloud/services/widget_artifact_builder.py
+  s_0ecd48ff3b3572::t_d27ad8e8cc12a8 1-76
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_0ecd48ff3b3572::t_509df99dc46c6b 18,38
+  s_0ecd48ff3b3572::t_c4b194da9b7578 19-37,39-42
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 1,9-14,16-17
+widget_service/cloud/services/template_generation/docs/README.md
+  s_0ecd48ff3b3572::t_84d360f4cb9bbb 9,12,15-17,24-25,27-29,31,40,51-53
+widget_service/cloud/services/widget_generation_service.py
+  s_0ecd48ff3b3572::t_77aa4d4f4e5b64 379-380,515-518,543-544,1392-1393
+  s_0ecd48ff3b3572::t_c3d7b0e0cfae54 31,62-63,66,71-87,1077,1080,1116-1175,1394-1408
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "22aaf4cd51671f18b81b8427e82e39ac0fb58649",
+  "prompts": {},
+  "sessions": {
+    "s_0ecd48ff3b3572": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a017b6-ae88-76e3-8911-8b5047d3b872",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 385
+    }
+  }
+}
