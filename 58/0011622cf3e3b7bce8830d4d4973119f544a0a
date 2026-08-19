@@ -1,0 +1,95 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_e16c23404afcf6 48-51
+  s_ecd92453e7cd3d::t_54290cedf9c64a 799,806-810,817,822-826,977
+  s_ecd92453e7cd3d::t_7d1250e7a701ce 1008
+  s_ecd92453e7cd3d::t_df66cd31c61be3 1013-1049,1057-1058
+  s_ecd92453e7cd3d::t_fd72a7748ab39c 141
+  s_ecd92453e7cd3d::t_c3eaf077d428d9 140,142-144,366,410,414,421,545,562,596,654-655,659-660,669,680,973-976,978-981,1000-1007
+  s_ecd92453e7cd3d::t_d5576c04b01ebd 1009
+  s_ecd92453e7cd3d::t_5af31ae5edf095 869-870,1010-1012,1059-1075
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_ecd92453e7cd3d::t_17ba046f65e6a1 36-37
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_ecd92453e7cd3d::t_20cfd0dcd3f6e8 227,565-566,571-573
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_ecd92453e7cd3d::t_bd71ad9a88ec03 19
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_17ba046f65e6a1 80,83,85-87,89-91
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_f063b80cbbefb0 18,20,24,37,41,48,52
+  s_ecd92453e7cd3d::t_5d1d3031076544 17
+  s_ecd92453e7cd3d::t_ba3a7e3e5d7aa9 11
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_ecd92453e7cd3d::t_7c47919c5e973e 761
+  s_ecd92453e7cd3d::t_4f92eff54d84d2 788-792
+  s_ecd92453e7cd3d::t_8a4382d981cef1 220-224,237,240-241,249,484,504,693,695,697,699,701,704
+  s_ecd92453e7cd3d::t_fd72a7748ab39c 242-243
+  s_ecd92453e7cd3d::t_5af31ae5edf095 238,760
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_ecd92453e7cd3d::t_753535b1aabb59 2304
+  s_ecd92453e7cd3d::t_c4f3b75edfe1f5 2096
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 8
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_ecd92453e7cd3d::t_ceb40a4f9b287c 26,126,128
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_ecd92453e7cd3d::t_0e6cde84d2dc5a 7
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 8
+widget_service/cloud/services/template_generation/resources/source/advanced-component-ux-registry.json
+  s_ecd92453e7cd3d::t_54290cedf9c64a 39,203,218,252,321
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_ecd92453e7cd3d::t_7ecfc844b96248 5598-5599
+  s_ecd92453e7cd3d::t_8d35e2ab4945d9 682,923-924,928,942,6617
+  s_ecd92453e7cd3d::t_32349bf055da96 5334-5335,5339
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 10
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_ecd92453e7cd3d::t_17ba046f65e6a1 30,74-76
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 10
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_ecd92453e7cd3d::t_ceb40a4f9b287c 29,102-104,106,315-317
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_ecd92453e7cd3d::t_0047cd8b4e8b3e 281,293,297,299,302-311,317,326
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 12
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_ecd92453e7cd3d::t_5af31ae5edf095 5
+  s_ecd92453e7cd3d::t_e2b11969e3ee91 11,13-23,25-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "580011622cf3e3b7bce8830d4d4973119f544a0a",
+  "prompts": {},
+  "sessions": {
+    "s_0ecd48ff3b3572": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a017b6-ae88-76e3-8911-8b5047d3b872",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 77
+    },
+    "s_46fa17422602e6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a013c1-6ad5-7613-ad9b-1e1ef081a1ec",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 14
+    },
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 3
+    }
+  }
+}
