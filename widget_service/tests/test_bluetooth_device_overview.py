@@ -370,7 +370,8 @@ def test_single_2x2_direct_layout_has_external_percent_and_no_fake_labels():
     assert output.count('"width":40,"height":40') >= 4
     assert output.count('"layoutWeight":1') >= 2
     assert output.count('"width":18,"height":18') == 2
-    assert 'Text("76%"' in output and 'Text("72%"' in output
+    assert 'Text("76"' in output and 'Text("72"' in output
+    assert 'Text("%"' in output
     assert "左耳" not in output and "右耳" not in output
     assert "充电盒" not in output
     assert "PillAction" not in output and "onClick" not in output
@@ -418,7 +419,8 @@ def test_single_2x4_conditionally_renders_missing_ear_case_and_two_real_actions(
         "ActionMatrixLayout",
     )
     assert output.count('"type":"ring"') == 1
-    assert 'Text("76%"' in output and 'Text("72%"' not in output
+    assert 'Text("76"' in output and 'Text("72"' not in output
+    assert 'Text("%"' in output
     assert 'Text("充电盒 64%"' in output
     assert output.count('"call":"clickToIntent"') == 2
     assert "播放" not in output and "暂停" not in output and "下一首" not in output

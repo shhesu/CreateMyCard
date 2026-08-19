@@ -217,8 +217,8 @@ def test_2x2_battery_uses_compact_description_and_bottom_left_ring():
     )
     output = compiled.effective_output
 
-    assert 'Text("电量 68%，电量正常，充电中", "body",' in output
-    description = output.split('Text("电量 68%，电量正常，充电中"', 1)[1]
+    assert 'Text("68%", "body",' in output
+    description = output.split('Text("68%"', 1)[1]
     assert '"fontSize":12' in description
     assert '"maxLines":2' in description
     assert '"alignContent":"bottomStart"' in output
