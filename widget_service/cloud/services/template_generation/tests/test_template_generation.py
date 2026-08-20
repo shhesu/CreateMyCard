@@ -31,6 +31,7 @@ from services.template_generation.engine.advanced.content_selectors import (
     app_usage_overview_is_eligible,
     app_usage_overview_query_is_supported,
     apply_content_selectors,
+    extract_workout_latest_facts,
 )
 from services.template_generation.engine.advanced.data_shape import extract_data_shape
 from services.template_generation.engine.advanced.models import AdvancedScopeBrief
@@ -113,6 +114,119 @@ def test_all_provider_templates_are_loaded_from_the_isolated_directory():
         for template_id in registry.provider_template_ids
         for definition in (registry.require_template(template_id),)
     )
+
+
+def test_workout_template_requires_one_complete_training_session():
+    registry = get_cardplan_registry()
+    definition = registry.require_template("WorkoutOverview@1")
+
+    assert definition.required_data == (
+        "/exerciseTypeName",
+        "/exerciseCalorieText",
+        "/exerciseDurationText",
+        "/exerciseEndTimeText",
+    )
+    assert set(definition.variants[0].parameters_schema["properties"]) == {"sourceIcon"}
+
+    session = {
+        "exerciseTypeName": {
+            "type": "string",
+            "description": "最近运动类型",
+            "sampleValue": "户外跑步",
+        },
+        "exerciseCalorieText": {
+            "type": "string",
+            "description": "最近运动热量",
+            "sampleValue": "260 千卡",
+        },
+        "exerciseDurationText": {
+            "type": "string",
+            "description": "最近运动时长",
+            "sampleValue": "40分",
+        },
+        "exerciseEndTimeText": {
+            "type": "string",
+            "description": "最近运动结束时间",
+            "sampleValue": "19:10",
+        },
+    }
+    facts = extract_workout_latest_facts({"data": {"healthSport": session}})
+    assert facts is not None
+    assert facts.end_time_text == "19:10"
+
+    incomplete = {key: value for key, value in session.items() if key != "exerciseEndTimeText"}
+    assert extract_workout_latest_facts({"data": {"healthSport": incomplete}}) is None
+
+
+def test_first_layer_receives_workout_session_routing_rules_and_four_required_paths():
+    session = {
+        "exerciseTypeName": {
+            "type": "string",
+            "description": "最近运动类型",
+            "sampleValue": "户外跑步",
+        },
+        "exerciseCalorieText": {
+            "type": "string",
+            "description": "最近运动热量",
+            "sampleValue": "260 千卡",
+        },
+        "exerciseDurationText": {
+            "type": "string",
+            "description": "最近运动时长",
+            "sampleValue": "40分",
+        },
+        "exerciseEndTimeText": {
+            "type": "string",
+            "description": "最近运动结束时间",
+            "sampleValue": "19:10",
+        },
+    }
+    task_spec = TaskSpec(
+        userQuery="查看最近一次户外跑步的时长和热量",
+        size="2x2",
+        eventCandidates=[],
+        assetCandidates=[],
+        dataModelSchema={"data": {"healthSport": session}},
+    )
+    binding = CandidateDataBinding(
+        capabilityId="GetHealthAndSportSummary",
+        writeResultTo="/data/healthSport",
+        candidateOutputFields=[f"/{name}" for name in session],
+    )
+
+    messages = build_advanced_scope_prompt(
+        task_spec,
+        extract_data_shape(task_spec),
+        get_cardplan_registry(),
+        ("GetHealthAndSportSummary",),
+        template_route_decision=True,
+        coverage_bindings=(binding,),
+        card_spec={
+            "title": "最近运动",
+            "suggestSize": "2x2",
+            "dataBindings": [
+                {
+                    "capabilityId": "GetHealthAndSportSummary",
+                    "writeResultTo": "/data/healthSport",
+                }
+            ],
+        },
+    )
+
+    payload = json.loads(messages[1]["content"])
+    workout = next(item for item in payload["component"] if item["id"] == "WorkoutOverview")
+    template = next(
+        item for item in workout["templates"] if item["templateId"] == "WorkoutOverview@1"
+    )
+    assert template["requiredTaskSpecPaths"] == [
+        "/data/healthSport/exerciseTypeName",
+        "/data/healthSport/exerciseCalorieText",
+        "/data/healthSport/exerciseDurationText",
+        "/data/healthSport/exerciseEndTimeText",
+    ]
+    provider_rules = json.dumps(payload["providerFirstLayerRules"], ensure_ascii=False)
+    assert "最近一次特定运动训练会话" in provider_rules
+    assert "ActivityOverview` 默认互斥" in provider_rules
 
 
 def test_first_layer_uses_candidate_provider_and_theme_documents_with_task_spec_paths():
@@ -1212,21 +1326,20 @@ async def test_first_layer_rejection_falls_back_to_original(monkeypatch):
 
 
 @pytest.mark.asyncio
-async def test_terse_template_mismatch_falls_back_to_original_at_entry(monkeypatch):
+async def test_terse_template_mismatch_returns_failed_without_original_flow(monkeypatch):
     original_called = False
-    original_response = object()
 
     async def original_generation(*_args: Any, **_kwargs: Any) -> Any:
         nonlocal original_called
         original_called = True
-        return original_response
+        return object()
 
     async def rejected(*_args: Any, **_kwargs: Any) -> Any:
         raise TemplateRouteNotApplicable("LLM rejected template route")
 
     service = WidgetGenerationService()
     monkeypatch.setattr(
-        widget_generation_service_module,
+        facade,
         "generate_template_artifact",
         rejected,
     )
@@ -1237,23 +1350,54 @@ async def test_terse_template_mismatch_falls_back_to_original_at_entry(monkeypat
     )
     response = await service.generate_widget_card_terse_dsl_nested2(_weather_request())
 
-    assert response is original_response
-    assert original_called is True
+    assert response.status == GenerationStatus.FAILED
+    assert response.errorCode == "A2UI_GENERATION_FAILED"
+    assert original_called is False
 
 
 @pytest.mark.asyncio
-async def test_terse_edit_rejection_uses_original_flow(monkeypatch):
+async def test_terse_selected_template_failure_returns_failed_without_original_flow(
+    monkeypatch,
+):
+    original_called = False
+
+    async def original_generation(*_args: Any, **_kwargs: Any) -> Any:
+        nonlocal original_called
+        original_called = True
+        return object()
+
+    async def failed(*_args: Any, **_kwargs: Any) -> Any:
+        raise TemplateGenerationError("template body validation failed")
+
+    service = WidgetGenerationService()
+    monkeypatch.setattr(facade, "generate_template_artifact", failed)
+    monkeypatch.setattr(
+        service,
+        "_generate_widget_card_with_policy",
+        original_generation,
+    )
+    response = await service.generate_widget_card_terse_dsl_nested2(_weather_request())
+
+    assert response.status == GenerationStatus.FAILED
+    assert response.errorCode == "A2UI_GENERATION_FAILED"
+    assert original_called is False
+
+
+@pytest.mark.asyncio
+async def test_terse_edit_returns_failed_without_template_or_original_flow(monkeypatch):
     request = _weather_request().model_copy(
         update={"sourceArtifactUrl": "https://artifact.test/source.md"}
     )
     request.model_fields_set.add("sourceArtifactUrl")
 
-    original_response = object()
-
     async def original_generation(*_args: Any, **_kwargs: Any) -> Any:
-        return original_response
+        pytest.fail("Terse edit must not enter the original flow")
+
+    async def unexpected_template(*_args: Any, **_kwargs: Any) -> Any:
+        pytest.fail("Terse edit must not attempt template generation")
 
     service = WidgetGenerationService()
+    monkeypatch.setattr(facade, "generate_template_artifact", unexpected_template)
     monkeypatch.setattr(
         service,
         "_generate_widget_card_with_policy",
@@ -1261,7 +1405,8 @@ async def test_terse_edit_rejection_uses_original_flow(monkeypatch):
     )
     response = await service.generate_widget_card_terse_dsl_nested2(request)
 
-    assert response is original_response
+    assert response.status == GenerationStatus.FAILED
+    assert response.errorCode == "A2UI_GENERATION_FAILED"
 
 
 @pytest.mark.asyncio
