@@ -4,7 +4,7 @@
 
 模板是 Compact 和 TerseDSL-Nested-2 create 场景的内部生成方式，不新增外部协议。原始入口构造既有
 `GenerationRoutePolicy`，显式提供模板所需依赖并接收模板生成结果。模板模块不持有主服务对象，也不具备
-调用原协议生成链的能力；两种协议的回退都由公开入口负责。
+调用原协议生成链的能力。Compact 的回退由公开入口负责；Terse 生产入口不允许回退。
 
 ## 路由状态机
 
@@ -14,11 +14,11 @@ generateWidgetCardCompactDsl
   └─ create
        ├─ generate_template_artifact
        │    ├─ 准备 dev 能力裁决、CardSpec、TaskSpec
-       │    ├─ 第一层 LLM：从候选字段中提取 query 必显字段，选择 Theme 和业务模板
+       │    ├─ 第一层 LLM：从 TaskSpec 全量字段中判断 query 必显字段，只输出 theme/component/action
        │    ├─ 服务端完整覆盖校验
-       │    │    ├─ 必显字段不属于候选或模板未消费任一必显字段 → 抛出异常
+       │    │    ├─ 显式字段未完整覆盖、模板 requiredData 不完整或 dataDomain 不一致 → 抛出异常
        │    │    └─ 全部覆盖 → 锁定模板路由
-       │    ├─ 第二层 LLM：只生成受限布局和模板调用
+       │    ├─ 第二层 LLM：只生成 Layout Template、业务 Template 和可选 PillAction
        │    ├─ 服务端解析、参数校验、模板展开
        │    ├─ 内部 A2UI 适配当前 dev Form profile
        │    ├─ A2UI → A2UI-Compact
@@ -30,17 +30,17 @@ generateWidgetCardCompactDsl
 
 ```text
 generateWidgetCardTerseDslNested2
-  ├─ edit → 模板接口抛出异常 → 原始 TerseDSL-Nested-2 流程
+  ├─ edit → failed
   └─ create
        ├─ generate_template_artifact
-       │    ├─ 第一层 LLM 提取 query 必显字段并执行服务端完整覆盖校验
+       │    ├─ 第一层 LLM 只输出 theme/component/action，并执行服务端完整覆盖校验
        │    │    └─ 未匹配、字段未完整覆盖或模型不可用 → 抛出异常
        │    ├─ 第二层 LLM、参数校验和模板展开
        │    │    └─ 任一失败 → 抛出异常
        │    ├─ 展开后的 TerseDSL-Nested-2 → 模块内隔离转换器 → 最终 A2UI
        │    ├─ dev ArtifactValidator
        │    └─ ArtifactStore 保存 genui + 展开后的 TerseDSL-Nested-2
-       └─ 任一异常 → 原始 TerseDSL-Nested-2 流程
+       └─ 任一异常 → failed（禁止回退旧 TerseDSL-Nested-2 流程）
 ```
 
 ## 为什么先归档 Compact 再确定最终 A2UI
@@ -60,18 +60,36 @@ generateWidgetCardTerseDslNested2
 
 ## 失败与回退边界
 
-| 阶段 | 行为 | 原因 |
+| 阶段 | Compact | TerseDSL-Nested-2 |
 |---|---|---|
-| edit 请求 | 公开入口执行原协议流程 | 二次更新不重新选择模板 |
-| 无真实模型运行时 | 公开入口执行原协议流程 | 保持 dev mock 和既有测试行为 |
-| 第一层拒绝或异常 | 公开入口执行原协议流程 | 模板无法证明完整表达时保留原能力 |
-| 确定性覆盖失败 | 公开入口执行原协议流程 | 任一用户选定字段无法由模板表达 |
-| 第二层或模板编译失败 | 公开入口执行原协议流程 | 模板异常不阻断既有协议能力 |
-| 归档、Validator 或保存失败 | 公开入口执行原协议流程 | 不保存半成品，改走原协议重新生成 |
+| edit 请求 | 执行原 Compact 流程 | 返回 `failed` |
+| 无真实模型运行时 | 执行原 Compact 流程 | 返回 `failed` |
+| 第一层拒绝或确定性覆盖失败 | 执行原 Compact 流程 | 返回 `failed` |
+| 第二层、模板编译、归档、Validator 或保存失败 | 执行原 Compact 流程 | 返回 `failed` |
 
-`candidateOutputFields` 是可用候选集合，不是强制展示集合。第一层只能从候选集合中输出 query 实际要求的
-必显字段；服务端随后证明这些字段被所选模板直接绑定或作为派生参数来源消费。模板可以为了保持原始视觉
-额外展示其必需事实，但不得遗漏 query 必显事实。
+`candidateOutputFields` 只负责形成 TaskSpec 的候选数据投影，不等于本轮全部必须显示字段。第一层结合
+`userQuery` 与 TaskSpec 中的全量字段说明，在模型内部选出必须显示字段，再用 Provider 首层 MD 中的
+“高级组件 → TaskSpec 绝对路径”映射选择能够完整覆盖这些字段的组件。任一显式字段无法承载即失败；
+显式字段满足后，还必须检查模板 `requiredData` 在 TaskSpec 中全部存在。中间字段集合不回传，服务端继续
+确定性复核所选组件存在可从本轮 TaskSpec/CardSpec 展开的 Provider Template。
+
+第一层输出严格限制为：
+
+```json
+{"theme":"theme.id","component":["ComponentId"],"action":"event.id"}
+```
+
+不匹配时保留最匹配的候选 Theme，并固定输出
+`{"theme":"theme.id","component":[],"action":null}`。空 `component` 是模板失败标志；`action` 是批准的事件 ID，不是
+数据项；SystemPrompt 只保留这一通用语义和输出约束。Provider 首层 MD 描述“高级组件 → TaskSpec 数据
+路径”，Theme 首层 MD 描述主题适用场景；两类文档都只按本轮候选动态加载。第一层根据用户动作意图
+从 TaskSpec 事件候选中输出对应 `eventId`，不判断 Action 属于哪个组件；没有动作时输出 `null`。
+Action 不参与数据字段覆盖。
+
+第二层从所选 Provider 的二层 MD 读取具体业务模板、props 和素材使用规则。业务模板 ID 已表达 UI 形态，
+不再输出 Variant；组件骨架也通过 Layout Provider 的 `Template("...Layout@1", {}, ...children)` 表达。
+选中的 `eventId` 与业务组件解耦，统一生成布局模板末尾唯一的 `PillAction`。Python 只保留候选过滤、可信事实投影、事件 ID 校验、模板签名
+与编译校验，不再把全部领域规则拼入 SystemPrompt。
 
 旧 Python 模板流水线仅通过 `legacy_python.route_legacy_python_terse_generation(...)` 作为问题定位入口保留；
 生产默认入口不引用该函数。

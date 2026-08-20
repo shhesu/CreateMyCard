@@ -23,6 +23,7 @@ from services.template_generation.engine.advanced.scope_planner import (
     TemplateRouteNotApplicable,
     plan_template_route_with_llm,
     resolve_available_capability_ids,
+    task_spec_with_selected_action,
 )
 from services.template_generation.engine.advanced.ux_mixed_framer import (
     frame_ux_layout_root_children,
@@ -104,7 +105,7 @@ async def generate_template_a2ui(
         return await model_client.generate_json(prompt, phase=phase)
 
     try:
-        scope = await plan_template_route_with_llm(
+        selection = await plan_template_route_with_llm(
             selected_task_spec,
             data_shape,
             generate_json,
@@ -121,6 +122,11 @@ async def generate_template_a2ui(
         ) from exc
 
     try:
+        scope = selection.scope
+        selected_task_spec = task_spec_with_selected_action(
+            selected_task_spec,
+            selection.action_id,
+        )
         return await _generate_selected_templates(
             source_task_spec=selected_task_spec,
             card_spec=card_spec,
@@ -277,8 +283,17 @@ def _with_provider_template_binding_projection(
                 )
                 _set_pointer_value(schema, projection_path, component_projection)
                 changed = True
-            for binding in definition.bindings.values():
-                path = f"{root.rstrip('/')}{binding.path}"
+            provider_paths = tuple(
+                dict.fromkeys(
+                    (
+                        *definition.required_data,
+                        *definition.optional_data,
+                        *(binding.path for binding in definition.bindings.values()),
+                    )
+                )
+            )
+            for relative_path in provider_paths:
+                path = f"{root.rstrip('/')}{relative_path}"
                 value = _pointer_value(source.dataModelSchema, path)
                 if value is None:
                     continue

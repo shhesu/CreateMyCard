@@ -76,6 +76,7 @@ class TemplateNode(StrictModel):
     component: str
     values: tuple[TemplateValue, ...] = ()
     children: tuple[TemplateNode, ...] = ()
+    spread_children: bool = Field(default=False, alias="spreadChildren")
 
 
 class TemplateParameterRelation(StrictModel):
@@ -160,6 +161,10 @@ class TemplateDefinition(StrictModel):
     )
     provider_id: str | None = Field(default=None, alias="providerId")
     capability_id: str | None = Field(default=None, alias="capabilityId")
+    data_domain: str | None = Field(default=None, alias="dataDomain")
+    required_data: tuple[str, ...] = Field(default=(), alias="requiredData")
+    optional_data: tuple[str, ...] = Field(default=(), alias="optionalData")
+    accepts_children: bool = Field(default=False, alias="acceptsChildren")
     bindings: dict[str, TemplateBinding] = Field(default_factory=dict)
     bundle_digest: str | None = Field(default=None, alias="bundleDigest")
     source_format: Literal["registry-json", "cardtpl/1"] = Field(
@@ -182,6 +187,10 @@ class CardActionStyle(StrictModel):
     font_weight: Literal[400, 500, 600, 700] = Field(alias="fontWeight")
 
 
+class MarkdownRuleReference(StrictModel):
+    path: str = Field(min_length=1)
+
+
 class ThemeDefinition(StrictModel):
     theme_profile_id: str = Field(alias="themeProfileId")
     description: str
@@ -195,6 +204,7 @@ class ThemeDefinition(StrictModel):
     root_component: Literal["Column", "Stack"] = Field(alias="rootComponent")
     root_styles: dict[str, Any] = Field(alias="rootStyles")
     action_style: CardActionStyle | None = Field(default=None, alias="actionStyle")
+    first_layer_rule: MarkdownRuleReference = Field(alias="firstLayerRule")
 
 
 class TemplateCall(StrictModel):
