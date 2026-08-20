@@ -1,0 +1,65 @@
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_a921c2efe73f31::t_e1dfc77609e747 13
+  s_a921c2efe73f31::t_45bd645d093b27 16
+  s_a921c2efe73f31::t_b106c5282a8db5 11-12,14-15
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_a921c2efe73f31::t_5c56ab2c957a3c 368,411,882-883,953
+widget_service/cloud/services/template_generation/docs/README.md
+  s_a921c2efe73f31::t_e1dfc77609e747 24-25
+  s_a921c2efe73f31::t_b106c5282a8db5 26-27
+widget_service/cloud/services/template_generation/controls.py
+  s_a921c2efe73f31::t_abd0aed3e1775a 1-30,32-55
+  s_a921c2efe73f31::t_9b634754cef170 31
+docs/云侧方案设计.md
+  s_a921c2efe73f31::t_e1dfc77609e747 1103-1104
+  s_a921c2efe73f31::t_45bd645d093b27 1110
+  s_a921c2efe73f31::t_b106c5282a8db5 1105-1109
+widget_service/cloud/services/template_generation/config/template_controls.json
+  s_a921c2efe73f31::t_abd0aed3e1775a 1-8
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a921c2efe73f31::t_055121d9341caa 332-430,449
+  s_a921c2efe73f31::t_c05b549a34d835 54-57
+  s_a921c2efe73f31::t_188ac3abbd7e48 30,78-90,431-447,450
+  s_a921c2efe73f31::t_9bf794e7aba243 40
+  s_a921c2efe73f31::t_bfd56b7c3b9c0e 48
+  s_c533b235aa94b3::t_8fcf3fdd120f1a 91,448
+widget_service/README.md
+  s_a921c2efe73f31::t_e1dfc77609e747 25-27
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_a921c2efe73f31::t_edba8db0ec5c80 44-50,53-54,79,269-293,324-327,340-343,384,392-409,568,571
+  s_a921c2efe73f31::t_f0d4e10817971e 80-85
+  s_a921c2efe73f31::t_abd0aed3e1775a 15,567,569-570
+  s_a921c2efe73f31::t_031788a88914af 410
+widget_service/docs/method_usage.md
+  s_a921c2efe73f31::t_e1dfc77609e747 1317,1321
+  s_a921c2efe73f31::t_b106c5282a8db5 1318-1320
+  s_a921c2efe73f31::t_6fb5fb39f4eaaa 1322
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_a921c2efe73f31::t_5c56ab2c957a3c 277
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "bf769a98f8e67e70cf18f55a7856e2e7dd8dd498",
+  "prompts": {},
+  "sessions": {
+    "s_a921c2efe73f31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e36-05a4-7af1-9eb6-0f4dbaba19a9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 190
+    },
+    "s_c533b235aa94b3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e10-e169-7f71-ba25-e46260b5665b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 59
+    }
+  }
+}
