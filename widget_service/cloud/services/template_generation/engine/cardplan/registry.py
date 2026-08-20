@@ -23,7 +23,11 @@ from services.template_generation.engine.advanced.models import (
 )
 
 from .models import TemplateDefinition, TemplateVariant, ThemeDefinition
-from .provider_bundle import load_provider_templates
+from .provider_bundle import load_provider_template_catalog
+from .retrieval_index import (
+    TemplateVariantSearchRecord,
+    build_template_variant_search_records,
+)
 
 _WIRE_ID_RE = re.compile(r"^[A-Za-z][A-Za-z0-9-]{0,63}@[1-9][0-9]*$")
 _FORBIDDEN_KEYS = frozenset({"__proto__", "prototype", "constructor"})
@@ -55,11 +59,14 @@ class CardPlanRegistry:
             TemplateDefinition.model_validate(item)
             for item in template_payload.get("templates", [])
         )
-        provider_templates = load_provider_templates(self.source_root / "providers")
+        provider_templates = load_provider_template_catalog(self.source_root / "providers")
         themes = tuple(
             ThemeDefinition.model_validate(item) for item in theme_payload.get("themes", [])
         )
         self.templates = self._unique_by_wire_id((*templates, *provider_templates))
+        self.template_variant_search_records: tuple[TemplateVariantSearchRecord, ...] = (
+            build_template_variant_search_records(self.templates)
+        )
         self.provider_template_ids = tuple(item.wire_id for item in provider_templates)
         self.themes = self._unique_themes(themes)
         advanced_version = "advanced-component-registry/1"

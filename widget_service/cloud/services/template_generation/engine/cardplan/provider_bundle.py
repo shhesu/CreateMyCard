@@ -113,10 +113,18 @@ class _CompiledParameters:
     schema: dict[str, Any]
     asset_semantic_tags: dict[str, tuple[str, ...]]
     required_names: tuple[str, ...]
+    source_fields_by_name: dict[str, tuple[TemplateBinding, ...]]
 
 
 def load_provider_templates(providers_root: Path) -> tuple[TemplateDefinition, ...]:
     """Compile every registered Provider Bundle below one trusted source root."""
+    return load_provider_template_catalog(providers_root)
+
+
+def load_provider_template_catalog(
+    providers_root: Path,
+) -> tuple[TemplateDefinition, ...]:
+    """Load trusted Provider Templates once."""
     if not providers_root.is_dir():
         return ()
     definitions: list[TemplateDefinition] = []
@@ -175,7 +183,11 @@ def load_provider_bundle(bundle_root: Path) -> LoadedProviderBundle:
     if set(owners) != set(template_entries):
         missing = sorted(set(owners) - set(template_entries))
         raise ValueError(f"Provider capability references unknown Templates: {missing}")
-    return LoadedProviderBundle(manifest, tuple(definitions), bundle_digest)
+    return LoadedProviderBundle(
+        manifest,
+        tuple(definitions),
+        bundle_digest,
+    )
 
 
 def compile_card_template(
@@ -226,6 +238,7 @@ def compile_card_template(
             bindings=bindings,
             parameters_schema=parameters.schema,
             globally_required=parameters.required_names,
+            parameter_source_fields=parameters.source_fields_by_name,
             default_limits=default_limits,
             previous_variants=variants_by_name,
         )
@@ -278,6 +291,7 @@ def _compile_variant(
     bindings: dict[str, TemplateBinding],
     parameters_schema: dict[str, Any],
     globally_required: tuple[str, ...],
+    parameter_source_fields: dict[str, tuple[TemplateBinding, ...]],
     default_limits: tuple[int, int],
     previous_variants: dict[str, TemplateVariant],
 ) -> TemplateVariant:
@@ -398,6 +412,12 @@ def _compile_variant(
             "supportedRoles": _metadata_strings(metadata, "roles"),
             "requiredBindings": required_bindings,
             "optionalBindings": tuple(sorted(guarded_bindings - set(required_bindings))),
+            "requiredDataFields": _required_variant_data_fields(
+                required_bindings,
+                required_params,
+                bindings,
+                parameter_source_fields,
+            ),
             "root": root.model_dump(),
             "expandedNodeBudget": max_nodes,
             "expandedDepthBudget": max_depth,
@@ -563,6 +583,7 @@ def _compile_parameters(
     properties: dict[str, dict[str, Any]] = {}
     asset_tags: dict[str, tuple[str, ...]] = {}
     required: list[str] = []
+    source_fields_by_name: dict[str, tuple[TemplateBinding, ...]] = {}
     for name, raw_parameter in payload.items():
         if not isinstance(name, str) or not isinstance(raw_parameter, dict):
             raise ValueError("Provider Template parameter is invalid")
@@ -583,7 +604,11 @@ def _compile_parameters(
                 raise ValueError(f"invalid Provider Template asset tags: {name}")
             asset_tags[name] = tuple(tags)
         elif source_paths is not None:
-            _validate_parameter_source_paths(name, source_paths, output_schema)
+            source_fields_by_name[name] = _parameter_source_fields(
+                name,
+                source_paths,
+                output_schema,
+            )
         if parameter.get("type") not in {"string", "integer", "number", "boolean"}:
             raise ValueError(f"invalid Provider Template parameter type: {name}")
         properties[name] = parameter
@@ -598,25 +623,47 @@ def _compile_parameters(
         "additionalProperties": False,
     }
     Draft202012Validator.check_schema(schema)
-    return _CompiledParameters(schema, asset_tags, tuple(required))
+    return _CompiledParameters(
+        schema,
+        asset_tags,
+        tuple(required),
+        source_fields_by_name,
+    )
 
 
-def _validate_parameter_source_paths(
+def _parameter_source_fields(
     name: str,
     source_paths: Any,
     output_schema: dict[str, Any],
-) -> None:
+) -> tuple[TemplateBinding, ...]:
     if not isinstance(source_paths, list) or not source_paths:
         raise ValueError(f"Provider Template parameter sourcePaths must be non-empty: {name}")
     if any(not isinstance(source_path, str) for source_path in source_paths):
         raise ValueError(f"Provider Template parameter sourcePaths must be strings: {name}")
     if len(source_paths) != len(set(source_paths)):
         raise ValueError(f"Provider Template parameter sourcePaths must be unique: {name}")
+    fields: list[TemplateBinding] = []
     for source_path in source_paths:
         if not _binding_pointer_is_encodable(source_path):
             raise ValueError(f"Provider Template parameter sourcePath is invalid: {name}")
-        if _schema_leaf(output_schema, source_path) is None:
+        leaf = _schema_leaf(output_schema, source_path)
+        if leaf is None:
             raise ValueError(f"Provider Template parameter sourcePath is invalid: {name}")
+        fields.append(TemplateBinding(path=source_path, type=leaf.get("type")))
+    return tuple(fields)
+
+
+def _required_variant_data_fields(
+    required_bindings: tuple[str, ...],
+    required_params: tuple[str, ...],
+    bindings: dict[str, TemplateBinding],
+    parameter_source_fields: dict[str, tuple[TemplateBinding, ...]],
+) -> tuple[dict[str, Any], ...]:
+    fields = [bindings[name] for name in required_bindings]
+    for name in required_params:
+        fields.extend(parameter_source_fields.get(name, ()))
+    unique = {(field.path, field.data_type): field for field in fields}
+    return tuple(field.model_dump(by_alias=True) for _, field in sorted(unique.items()))
 
 
 def _binding_pointer_is_encodable(pointer: str) -> bool:
@@ -1276,15 +1323,18 @@ def _provider_variant_binding_admission(
     task_spec: TaskSpec,
     root: str,
 ) -> ProviderTemplateAdmission:
-    for name in variant.required_bindings:
-        binding = definition.bindings[name]
+    binding_names_by_field = {
+        (binding.path, binding.data_type): name for name, binding in definition.bindings.items()
+    }
+    for binding in variant.required_data_fields:
         path = f"{root.rstrip('/')}{binding.path}"
+        binding_name = binding_names_by_field.get((binding.path, binding.data_type))
         leaf = _task_spec_schema_leaf(task_spec.dataModelSchema, path)
         if leaf is None:
             return ProviderTemplateAdmission(
                 False,
                 "binding-path-unavailable",
-                binding_name=name,
+                binding_name=binding_name,
                 path=path,
                 expected_type=binding.data_type,
             )
@@ -1293,65 +1343,12 @@ def _provider_variant_binding_admission(
             return ProviderTemplateAdmission(
                 False,
                 "binding-type-mismatch",
-                binding_name=name,
+                binding_name=binding_name,
                 path=path,
                 expected_type=binding.data_type,
                 actual_type=str(actual_type),
             )
-    values_by_field = _provider_sample_values_by_field(task_spec.dataModelSchema)
-    properties = variant.parameters_schema.get("properties", {})
-    for name in variant.parameters_schema.get("required", ()):
-        if name in definition.asset_parameter_semantic_tags:
-            continue
-        candidates = list(dict.fromkeys(values_by_field.get(name, ())))
-        if len(candidates) != 1:
-            return ProviderTemplateAdmission(
-                False,
-                "parameter-value-unavailable",
-                binding_name=name,
-            )
-        expected_type = properties.get(name, {}).get("type")
-        if not _parameter_value_matches_type(candidates[0], expected_type):
-            return ProviderTemplateAdmission(
-                False,
-                "parameter-type-mismatch",
-                binding_name=name,
-                expected_type=str(expected_type),
-                actual_type=type(candidates[0]).__name__,
-            )
     return ProviderTemplateAdmission(True)
-
-
-def _provider_sample_values_by_field(value: object) -> dict[str, tuple[object, ...]]:
-    collected: dict[str, list[object]] = {}
-
-    def visit(current: object, field_name: str | None = None) -> None:
-        if isinstance(current, dict) and "sampleValue" in current and field_name:
-            sample = current["sampleValue"]
-            if sample is None or isinstance(sample, (str, int, float, bool)):
-                collected.setdefault(field_name, []).append(sample)
-            return
-        if isinstance(current, dict):
-            for key, child in current.items():
-                visit(child, key)
-        elif isinstance(current, list):
-            for child in current[:1]:
-                visit(child, field_name)
-
-    visit(value)
-    return {key: tuple(values) for key, values in collected.items()}
-
-
-def _parameter_value_matches_type(value: object, expected: object) -> bool:
-    if expected == "string":
-        return isinstance(value, str)
-    if expected == "boolean":
-        return isinstance(value, bool)
-    if expected == "integer":
-        return isinstance(value, int) and not isinstance(value, bool)
-    if expected == "number":
-        return isinstance(value, (int, float)) and not isinstance(value, bool)
-    return False
 
 
 def _provider_data_root(
