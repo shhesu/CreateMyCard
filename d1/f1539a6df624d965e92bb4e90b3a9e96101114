@@ -1,0 +1,80 @@
+docs/generateWidgetCardTerseDslNested2数据流.md
+  s_ecd92453e7cd3d::t_7a921254a0378c 128
+docs/generateWidgetCard数据流.md
+  s_ecd92453e7cd3d::t_4151cde659d35d 86-88
+docs/云侧方案设计.md
+  s_ecd92453e7cd3d::t_44f9834003c2f6 518
+skills/harmony-card-generation-compact-dsl-online/SKILL.md
+  s_ecd92453e7cd3d::t_15e0baad3e1c46 88-89,198,237-240,265
+skills/harmony-card-generation-compact-dsl-online/references/tools/com.omega_w_0823.hmservice__generateWidgetCardCompactDsl.json
+  s_ecd92453e7cd3d::t_9863943ba4796b 57
+skills/harmony-card-generation-design-compact-dsl-online/references/candidate-planning.md
+  s_ecd92453e7cd3d::t_fe84742a548180 154,164,175,178
+skills/harmony-card-generation-design-compact-dsl-online/references/orchestration-workflow.md
+  s_ecd92453e7cd3d::t_ba225ff6037128 24
+skills/harmony-card-generation-design-compact-dsl-online/references/tool-contracts.md
+  s_ecd92453e7cd3d::t_78ec3a8774c320 181,200,256
+skills/harmony-card-generation-online-directive/references/runtime-guide.md
+  s_ecd92453e7cd3d::t_f940824c43853b 110
+skills/harmony-card-generation-online/references/runtime-guide.md
+  s_ecd92453e7cd3d::t_69a1d39c2fefa4 129-130,132
+widget_service/README.md
+  s_ecd92453e7cd3d::t_9c08a742689a9a 77
+widget_service/cloud/api/artifact_routes.py
+  s_ecd92453e7cd3d::t_738e2b5cdb3b39 1-43
+widget_service/cloud/api/schemas.py
+  s_ecd92453e7cd3d::t_e199556e8f6859 6,12,203-205
+widget_service/cloud/config/config.py
+  s_ecd92453e7cd3d::t_d562831830a54a 49-54,69-71
+widget_service/cloud/custom/deepseek_http_client.py
+  s_ecd92453e7cd3d::t_e26199ff223a38 1-116
+widget_service/cloud/custom/llmclient.py
+  s_ecd92453e7cd3d::t_4f8837d93550ea 17,82,134
+widget_service/cloud/custom/model_runtime.py
+  s_ecd92453e7cd3d::t_0fb83ee80b2f65 11,50,57-59,77,143-148
+widget_service/cloud/custom/model_transport.py
+  s_ecd92453e7cd3d::t_81f6e486767a45 9
+widget_service/cloud/services/generation_preflight.py
+  s_ecd92453e7cd3d::t_f4bc2018894be9 14-19,42-112,337-338,342,350-378
+widget_service/cloud/services/widget_generation_service.py
+  s_ecd92453e7cd3d::t_488e5afc45d273 61-64,963,1105,1109-1112,1115-1117
+widget_service/cloud/start_websocket_server.py
+  s_ecd92453e7cd3d::t_ba5cbfec4aebe9 10,60
+widget_service/docs/latest_design_diff.md
+  s_ecd92453e7cd3d::t_3b8a2efe3ad6a8 25
+widget_service/docs/schemas/generateWidgetCard.schema.json
+  s_ecd92453e7cd3d::t_a8773a08027339 186,189
+widget_service/docs/schemas/generateWidgetCardCompactDsl.schema.json
+  s_ecd92453e7cd3d::t_8b4ead824784e7 185,188
+widget_service/docs/schemas/generateWidgetCardCompactDslWithDirective.schema.json
+  s_ecd92453e7cd3d::t_a43c8f2426edb3 185,188
+widget_service/tests/test_artifact_download.py
+  s_ecd92453e7cd3d::t_e5f42dbf73b19f 1-60
+widget_service/tests/test_generation_preflight.py
+  s_ecd92453e7cd3d::t_145a94db0d1e60 107-130
+widget_service/tests/test_model_routing.py
+  s_ecd92453e7cd3d::t_898b65da1edd58 14,28,47-112
+widget_service/tests/test_multi_round_edit.py
+  s_ecd92453e7cd3d::t_d146130e36c675 193-195,256,262-263,265,272,276-278,309-314,348,467,473-474,476,483,487-488,614-619,762,795-811
+widget_service/tests/test_service_units.py
+  s_ecd92453e7cd3d::t_4a378c571cde5a 99,109,174,228-245,277-289,311-313,3608-3630
+widget_service/tests/test_tool_dispatch_routes.py
+  s_ecd92453e7cd3d::t_27e703dea7e3fa 627-629,1004-1005,1041-1043,1047
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "d1f1539a6df624d965e92bb4e90b3a9e96101114",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
