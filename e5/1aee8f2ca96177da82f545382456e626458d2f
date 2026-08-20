@@ -87,6 +87,7 @@ widget_service/cloud/services/template_generation/tests/test_template_generation
   s_877731ca76c3b4::t_a706888784345e 964,1044,1047-1048,1060
   s_877731ca76c3b4::t_4b3986f2044dd7 151,158,161,172,174,176-183
   s_877731ca76c3b4::t_ad6a21e2637f1e 281-301
+  s_877731ca76c3b4::t_745896cbee1325 280
 widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
   s_877731ca76c3b4::t_22ccb4f7892065 657,1249-1250,1252-1254,1256-1260
   s_877731ca76c3b4::t_86fc7360b5b5c2 167,270,329,366,389,409,1078,1166,1205,1246
