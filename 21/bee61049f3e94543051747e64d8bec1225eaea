@@ -1,0 +1,58 @@
+docs/云侧方案设计.md
+  s_c533b235aa94b3::t_ba5ae26c358728 1109-1112
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_c533b235aa94b3::t_ba5ae26c358728 1251-1253
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_c533b235aa94b3::t_23828d610f0c96 663-780
+  s_c533b235aa94b3::t_6d2c7f2e7279aa 6,81,94,125-149,495-500
+  s_c533b235aa94b3::t_ea4e94d1e9c969 501
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_c533b235aa94b3::t_c8eab1d0fc38ca 74-76
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_c533b235aa94b3::t_b245a426896465 82,366,412-417,1003-1007,1803,1809-1815,1839-1840,2824
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_c533b235aa94b3::t_16ae62bd6eca93 11,18,20,24,28,37,40-43,45,50,56
+widget_service/cloud/services/template_generation/resources/source/advanced-component-ux-registry.json
+  s_c533b235aa94b3::t_f0007a82eed11d 422,496-497,507,511-512
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_c533b235aa94b3::t_b9bb071ca594e0 17
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_541a2ffbc3645c 13
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_6f46d2e185be9e 25
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_986425e62c6582 19-22
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_d2987767078331 23-25
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_c533b235aa94b3::t_87d2d308643c78 23-24
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_1aef3a381e22d9 21-22,34-40
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_c533b235aa94b3::t_5f68aac81b8b3d 35-36,57,67,79,91,198,208-230,241,252,264,276,289,302,312,322
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_c533b235aa94b3::t_8a54a324849f1b 23,32,37,65,74,79,109,118,123,143,160,197,206,211,236,253
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_c533b235aa94b3::t_aaab31fe8ea6a2 47-139
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_5d03902c7789e9 11
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_c533b235aa94b3::t_ce004727af6777 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "21bee61049f3e94543051747e64d8bec1225eaea",
+  "prompts": {},
+  "sessions": {
+    "s_c533b235aa94b3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e10-e169-7f71-ba25-e46260b5665b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    }
+  }
+}
