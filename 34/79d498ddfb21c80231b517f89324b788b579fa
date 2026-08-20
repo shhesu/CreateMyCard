@@ -1,0 +1,24 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_4ff20476d1e345::t_124167d6f7c8ec 303-340
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_4ff20476d1e345::t_124167d6f7c8ec 37,44,46,88,95,97,142,153,155,201,212,214
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_4ff20476d1e345::t_124167d6f7c8ec 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "3479d498ddfb21c80231b517f89324b788b579fa",
+  "prompts": {},
+  "sessions": {
+    "s_4ff20476d1e345": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01ffd-0d83-76c3-b03e-b1296c3d2069",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 13
+    }
+  }
+}
