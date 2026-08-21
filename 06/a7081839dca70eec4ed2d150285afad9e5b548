@@ -1,0 +1,24 @@
+widget_service/tests/test_service_units.py
+  s_9ebf6d74b5ae62::t_eb685922330862 172,226-227,259,275-276,281-282,3724,3738,3955-3959,4249,4304,4341
+widget_service/tests/test_multi_round_edit.py
+  s_9ebf6d74b5ae62::t_eb685922330862 256,261-267,269-271,273,280,283-288,290-301,332,339,367,486,490,492-499,501-503,505-508,515,518-521,523-531,657-658,801
+widget_service/tests/test_tool_dispatch_routes.py
+  s_9ebf6d74b5ae62::t_eb685922330862 1041-1042,1078-1086,1090,1105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "06a7081839dca70eec4ed2d150285afad9e5b548",
+  "prompts": {},
+  "sessions": {
+    "s_9ebf6d74b5ae62": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02364-0b1d-7e62-8297-eeaee8a5d384",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 225
+    }
+  }
+}
