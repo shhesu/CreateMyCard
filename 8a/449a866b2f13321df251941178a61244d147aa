@@ -1,0 +1,30 @@
+docs/云侧方案设计.md
+  s_366a1563ab3fca::t_507b6d3603f423 1098-1101
+docs/generateWidgetCardTerseDslNested2数据流.md
+  s_366a1563ab3fca::t_507b6d3603f423 121-123,131-134,136-137,147-148,281
+widget_service/cloud/services/widget_generation_service.py
+  s_366a1563ab3fca::t_1f3cc524ef29e2 259,436,438,465,525,528,533,563-564,570,573,581,587,609,616,618,646,651,1087,1096,1114-1117,1137,1147,1174,1189
+widget_service/tests/test_service_units.py
+  s_366a1563ab3fca::t_1549d7272726ab 3607,3610,3620,3623,3625,3628
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_366a1563ab3fca::t_1549d7272726ab 1744-1759,1763,2685
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_366a1563ab3fca::t_507b6d3603f423 50,52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "8a449a866b2f13321df251941178a61244d147aa",
+  "prompts": {},
+  "sessions": {
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 68
+    }
+  }
+}
