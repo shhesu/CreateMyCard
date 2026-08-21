@@ -1,0 +1,32 @@
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_366a1563ab3fca::t_29392bf4896a92 49,81-83,94-96
+widget_service/cloud/services/template_generation/docs/README.md
+  s_366a1563ab3fca::t_29392bf4896a92 35,68-69
+widget_service/cloud/services/template_generation/facade.py
+  s_366a1563ab3fca::t_967366db1fe852 15,40,44
+docs/generateWidgetCardCompactDsl数据流.md
+  s_366a1563ab3fca::t_29392bf4896a92 50,52
+widget_service/cloud/services/widget_generation_service.py
+  s_366a1563ab3fca::t_967366db1fe852 595-596,1118-1124,1168-1170,1172-1174,1178,1180
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_366a1563ab3fca::t_240166e011249d 1875-1932,2383
+docs/generateWidgetCardTerseDslNested2数据流.md
+  s_366a1563ab3fca::t_29392bf4896a92 28,36,38,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "670c885dfe87c61d8bef3796d54c7d1d1fbfb884",
+  "prompts": {},
+  "sessions": {
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 66
+    }
+  }
+}
