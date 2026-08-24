@@ -16,6 +16,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 from pydantic import Field
 
+from app.logger import json_for_log, logger
 from config.config import get_settings
 from models.generation import TaskSpec
 
@@ -57,6 +58,7 @@ _PROVIDER_ID_RE = re.compile(r"^[a-z][a-z0-9]*(?:\.[a-z][a-z0-9-]*)+$")
 _PROVIDER_VERSION_RE = re.compile(r"^[1-9][0-9]*\.[0-9]+\.[0-9]+(?:-[a-z0-9.-]+)?$")
 _MAX_BUNDLE_FILE_BYTES = 1_048_576
 _MAX_TEMPLATE_SOURCE_CHARS = 262_144
+_MODULE = "[Provider Template]"
 
 
 class ProviderDataSchema(StrictModel):
@@ -1359,22 +1361,61 @@ def _provider_data_root(
     capability_id: str,
 ) -> str | ProviderTemplateAdmission:
     if card_spec is None:
+        _log_provider_data_root_rejection(capability_id, "card-spec-unavailable")
         return ProviderTemplateAdmission(False, "card-spec-unavailable")
     raw_bindings = card_spec.get("dataBindings")
     if not isinstance(raw_bindings, list):
+        _log_provider_data_root_rejection(capability_id, "data-bindings-unavailable")
         return ProviderTemplateAdmission(False, "data-bindings-unavailable")
+    matching_bindings = [
+        item
+        for item in raw_bindings
+        if isinstance(item, dict) and item.get("capabilityId") == capability_id
+    ]
     roots = {
         item.get("writeResultTo")
-        for item in raw_bindings
-        if isinstance(item, dict)
-        and item.get("capabilityId") == capability_id
-        and _valid_runtime_data_root(item.get("writeResultTo"))
+        for item in matching_bindings
+        if _valid_runtime_data_root(item.get("writeResultTo"))
     }
+    invalid_root_count = sum(
+        not _valid_runtime_data_root(item.get("writeResultTo")) for item in matching_bindings
+    )
     if not roots:
+        _log_provider_data_root_rejection(
+            capability_id,
+            "capability-binding-unavailable",
+            matching_binding_count=len(matching_bindings),
+            invalid_root_count=invalid_root_count,
+        )
         return ProviderTemplateAdmission(False, "capability-binding-unavailable")
     if len(roots) > 1:
+        _log_provider_data_root_rejection(
+            capability_id,
+            "capability-binding-ambiguous",
+            matching_binding_count=len(matching_bindings),
+            valid_roots=tuple(sorted(roots)),
+            invalid_root_count=invalid_root_count,
+        )
         return ProviderTemplateAdmission(False, "capability-binding-ambiguous")
     return next(iter(roots))
+
+
+def _log_provider_data_root_rejection(
+    capability_id: str,
+    reason: str,
+    *,
+    matching_binding_count: int = 0,
+    valid_roots: tuple[str, ...] = (),
+    invalid_root_count: int = 0,
+) -> None:
+    logger.info(
+        f"{_MODULE} data_root_rejected "
+        f"capability_id={capability_id} reason={reason} "
+        f"matching_binding_count={matching_binding_count} "
+        f"valid_root_count={len(valid_roots)} "
+        f"valid_roots={json_for_log(valid_roots)} "
+        f"invalid_root_count={invalid_root_count}"
+    )
 
 
 def _valid_runtime_data_root(value: Any) -> bool:

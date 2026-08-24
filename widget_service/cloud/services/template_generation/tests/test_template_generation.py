@@ -39,6 +39,7 @@ from services.template_generation.engine.advanced.scope_planner import (
     build_advanced_scope_prompt,
     validate_template_request_coverage,
 )
+from services.template_generation.engine.cardplan import provider_bundle
 from services.template_generation.engine.cardplan.compiler import (
     _inject_resource_battery_title,
     _provider_layout_action_background,
@@ -94,6 +95,49 @@ def test_all_provider_templates_are_loaded_from_the_isolated_directory():
         "system-memory",
         "weather",
     }
+
+
+def test_provider_data_root_logs_unavailable_binding(monkeypatch):
+    messages: list[str] = []
+    monkeypatch.setattr(provider_bundle.logger, "info", messages.append)
+
+    result = provider_bundle._provider_data_root(
+        {"dataBindings": []},
+        "GetCalendarEvents",
+    )
+
+    assert result.admitted is False
+    assert result.reason == "capability-binding-unavailable"
+    assert len(messages) == 1
+    assert "capability_id=GetCalendarEvents" in messages[0]
+    assert "reason=capability-binding-unavailable" in messages[0]
+    assert "matching_binding_count=0" in messages[0]
+
+
+def test_provider_data_root_logs_ambiguous_roots(monkeypatch):
+    messages: list[str] = []
+    monkeypatch.setattr(provider_bundle.logger, "info", messages.append)
+    card_spec = {
+        "dataBindings": [
+            {
+                "capabilityId": "GetCalendarEvents",
+                "writeResultTo": "/data/calendar",
+            },
+            {
+                "capabilityId": "GetCalendarEvents",
+                "writeResultTo": "/data/schedule",
+            },
+        ]
+    }
+
+    result = provider_bundle._provider_data_root(card_spec, "GetCalendarEvents")
+
+    assert result.admitted is False
+    assert result.reason == "capability-binding-ambiguous"
+    assert len(messages) == 1
+    assert "reason=capability-binding-ambiguous" in messages[0]
+    assert "matching_binding_count=2" in messages[0]
+    assert 'valid_roots=["/data/calendar","/data/schedule"]' in messages[0]
 
 
 def test_phone_battery_binding_auto_includes_numeric_soc_for_template_rendering():
