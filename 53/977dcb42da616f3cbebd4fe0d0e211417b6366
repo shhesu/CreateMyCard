@@ -1,0 +1,20 @@
+docs/云侧方案设计.md
+  s_316721394d58f5::t_911be0befb1b14 1131-1133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "53977dcb42da616f3cbebd4fe0d0e211417b6366",
+  "prompts": {},
+  "sessions": {
+    "s_316721394d58f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0328c-3015-7cb0-aae8-16743dcaad99",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
