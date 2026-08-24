@@ -1,0 +1,96 @@
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_316721394d58f5::t_d11665d8fe0bb4 61,129
+  s_316721394d58f5::t_2d1321628baf6c 656,688,734
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/component-catalog.md
+  s_316721394d58f5::t_d11665d8fe0bb4 60,67
+  s_316721394d58f5::t_62b94c4c2d03b9 44,84
+widget_service/cloud/services/template_generation/__init__.py
+  s_316721394d58f5::t_2cc602f1948366 3-6,11-12
+skills/harmony-card-generation-online/scripts/validators/component_validator.py
+  s_316721394d58f5::t_7a5d7b55cd6ff8 3-8
+  s_316721394d58f5::t_4f87de55b8965f 66-74,174-176,189-191,195
+  s_316721394d58f5::t_7027e13c0172b1 58-60,63-65
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_316721394d58f5::t_d11665d8fe0bb4 150
+  s_316721394d58f5::t_d891b28ced689b 142-149,154
+  s_316721394d58f5::t_179305a97ea6d9 155-167
+  s_316721394d58f5::t_26ebe2d243e71d 151-153
+docs/云侧方案设计.md
+  s_316721394d58f5::t_0322f95c102d4b 1122-1128
+  s_316721394d58f5::t_62b94c4c2d03b9 1117
+  s_316721394d58f5::t_d891b28ced689b 1114-1116,1121
+  s_316721394d58f5::t_9b8c891fe346cd 1118
+  s_316721394d58f5::t_d11665d8fe0bb4 1119-1120
+skills/harmony-card-generation-online/scripts/rules/config/style.json
+  s_316721394d58f5::t_d11665d8fe0bb4 7
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_316721394d58f5::t_3b8baa5cebdfe0 4742-4755
+  s_316721394d58f5::t_e89fd76f349c6f 282,438
+  s_316721394d58f5::t_a5ccaa4d8327b1 59-62
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_316721394d58f5::t_983733f21cb45e 1,49
+  s_316721394d58f5::t_94a1e56259f6e4 2-48,50-72,74,76-80,82-132,134-143,145,147-150,152-197,199-218
+  s_316721394d58f5::t_62b94c4c2d03b9 73,75,144,146
+  s_316721394d58f5::t_d11665d8fe0bb4 81
+  s_316721394d58f5::t_382d39fea359e6 133
+  s_316721394d58f5::t_cab0280e4aa20e 151,198
+widget_service/cloud/services/card_validation/component_validator.py
+  s_316721394d58f5::t_62b94c4c2d03b9 59-64,178-180,184
+widget_service/cloud/data/validator_rules/config/protocol.json
+  s_316721394d58f5::t_62b94c4c2d03b9 29-31
+skills/harmony-card-generation-online/scripts/README.md
+  s_316721394d58f5::t_3d136d963473d1 359
+skills/harmony-card-generation-online/scripts/rules/config/protocol.json
+  s_316721394d58f5::t_4f87de55b8965f 29-31
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_316721394d58f5::t_2ba599918b27fc 578-579
+  s_316721394d58f5::t_9b8c891fe346cd 580
+  s_316721394d58f5::t_d3afb3efa6d342 158-159,161-163,568,570
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_316721394d58f5::t_d11665d8fe0bb4 248,261
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_316721394d58f5::t_cea786bddccdd0 36-37,107-154
+  s_316721394d58f5::t_dc10fef511d652 2646-2650,2658
+  s_316721394d58f5::t_d6494966248e07 67-73,404-429,433-438,443,445-476,478-492
+  s_316721394d58f5::t_48e882f13a6c9e 430-432
+  s_316721394d58f5::t_9b8c891fe346cd 477,2654,2694,2706
+  s_316721394d58f5::t_382d39fea359e6 2703
+  s_316721394d58f5::t_d11665d8fe0bb4 444,2711
+  s_316721394d58f5::t_d7035f283ea189 495-545,547-587
+  s_316721394d58f5::t_62b94c4c2d03b9 439-442,2656,2707-2710
+  s_316721394d58f5::t_35797deab6356c 546
+  s_316721394d58f5::t_735981e48896b0 2641-2645,2651-2652,2655,2657
+  s_316721394d58f5::t_954c5ee3fb3464 2663,2689-2693,2695-2699,2704-2705,2712-2713
+  s_316721394d58f5::t_387e48523a7704 23,493-494,588-613
+  s_316721394d58f5::t_65f91459d130b3 155-156
+  s_316721394d58f5::t_4d3fb740b51bfe 614-615
+widget_service/cloud/data/validator_rules/config/style.json
+  s_316721394d58f5::t_d11665d8fe0bb4 7
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_316721394d58f5::t_d11665d8fe0bb4 56,153
+  s_316721394d58f5::t_e967e4428af88e 2182-2185,2190-2195
+  s_316721394d58f5::t_eb42c9741cc387 2196-2197
+docs/鸿蒙桌面卡片A2UI协议完整规范.md
+  s_316721394d58f5::t_a5fb4f4b24ff0e 981-982
+widget_service/cloud/services/template_generation/engine/fusion_ball_a2ui_converter.py
+  s_316721394d58f5::t_2cc602f1948366 1-9,11-12,14-94,96-116,120-185
+  s_316721394d58f5::t_2a4ab7393c25f2 10,13,95,118,186-208
+  s_316721394d58f5::t_2c6280dad9593d 117,119
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "36ec7b71e37ab663921ea1d7de51738df0add6f1",
+  "prompts": {},
+  "sessions": {
+    "s_316721394d58f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0328c-3015-7cb0-aae8-16743dcaad99",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 107
+    }
+  }
+}
