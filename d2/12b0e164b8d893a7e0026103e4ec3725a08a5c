@@ -1,0 +1,42 @@
+widget_service/cloud/services/template_generation/engine/fusion_ball_a2ui_converter.py
+  s_4053a32d242cbc::t_3cbfa15f3133bd 33-37,46-48,91,224-234
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_4053a32d242cbc::t_146cc689a9ee2b 67,521-537,539-548
+  s_4053a32d242cbc::t_cd9307bd552a6b 75,408,412,417,422,427,432,435,440-441,443,445-446
+  s_4053a32d242cbc::t_69d7c0143fe88e 407,409-411,413-416,418-421,423-426,428-431,433-434,436-439,442,450-451,470-472,502-503,517-518,570,594-596,606,611,614,626,629-630,680,688,720
+  s_4053a32d242cbc::t_ff9944fd82282e 633-658,2795,2835-2837,2853
+  s_4053a32d242cbc::t_e818432a66edab 631-632
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_4053a32d242cbc::t_2ca3b78c118f6b 144-150,159,164-167,175
+  s_4053a32d242cbc::t_bc7b4c782e1898 151-152
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_4053a32d242cbc::t_3a42b7076da834 270-273
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_4053a32d242cbc::t_629187097d6347 1,23,30-35,39,42,86,88-89,115
+  s_4053a32d242cbc::t_b05cbc681233d5 37-38
+  s_4053a32d242cbc::t_bcfc895aca65fb 36
+widget_service/cloud/services/template_generation/resources/source/theme-profiles.json
+  s_4053a32d242cbc::t_3a42b7076da834 6,93,225,270,315
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_4053a32d242cbc::t_b05cbc681233d5 61,4752
+  s_4053a32d242cbc::t_b634b2ef89e94a 4753
+docs/云侧方案设计.md
+  s_4053a32d242cbc::t_2ca3b78c118f6b 1114-1123,1126-1127,1133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "d212b0e164b8d893a7e0026103e4ec3725a08a5c",
+  "prompts": {},
+  "sessions": {
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 220
+    }
+  }
+}
