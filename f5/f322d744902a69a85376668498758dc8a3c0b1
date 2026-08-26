@@ -1,0 +1,63 @@
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_4053a32d242cbc::t_8a97218c9fe703 8179-8181
+  s_4053a32d242cbc::t_e91a56cdcf51ab 598-605
+  s_4053a32d242cbc::t_d315e20333495a 917-927,930-933,936,948-958,962-963,967-988
+  s_4053a32d242cbc::t_c315805e4143f4 5744,5796-5800,6567-6568
+  s_4053a32d242cbc::t_614c0fbff091d0 5817
+  s_4053a32d242cbc::t_e18b939978e31f 959-961,964-966
+  s_4053a32d242cbc::t_d2bc64af8d3479 81-85,393,531,536-537
+  s_4053a32d242cbc::t_7b35bdafe51f49 7827,7835
+  s_4053a32d242cbc::t_809cd953ecb21f 7872-7883,8156-8165,8177-8178,8210-8212,8217-8235
+  s_4053a32d242cbc::t_92a7f3f3ec0346 989-990
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_4053a32d242cbc::t_4324c94a132f57 12
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_4053a32d242cbc::t_720d400e965805 187-202,209-210,212-214
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_4053a32d242cbc::t_7905983bb9f059 5,21-22,28-32
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_4053a32d242cbc::t_ddb6eb1e880ca5 189-215
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_4053a32d242cbc::t_424d7a41cb8e70 37,204-206,394-395,519-521,523,536,546-548
+  s_4053a32d242cbc::t_e7ff6e3259cc10 38,810
+docs/云侧方案设计.md
+  s_4053a32d242cbc::t_7ed1f62ef5f5ab 1167-1171,1178-1181,1223,1241-1242,1244-1246
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_4053a32d242cbc::t_4324c94a132f57 236-240
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_4053a32d242cbc::t_0f5e65ec4c3d68 20-26,63,151,218
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_4053a32d242cbc::t_4324c94a132f57 38
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_4053a32d242cbc::t_4324c94a132f57 21,39-41
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_4053a32d242cbc::t_1bd815cc8964b5 1-53
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_4053a32d242cbc::t_d1e990d9b6ba07 392-394
+widget_service/cloud/services/template_generation/resources/source/providers/action/provider.json
+  s_4053a32d242cbc::t_1bd815cc8964b5 1-22
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_4053a32d242cbc::t_ece7a30ed11e3d 2120-2124,2522,2524,2555-2559
+  s_4053a32d242cbc::t_5b4c70ffc6cbe0 2953
+  s_4053a32d242cbc::t_6dbb7bb6a17fc0 2151-2181
+  s_4053a32d242cbc::t_ff7510d13cf8ee 3217-3220,3222,3229
+  s_4053a32d242cbc::t_0fdcc5a4eeb6ea 2070,2108-2109,2459,2521,2523,3165
+  s_4053a32d242cbc::t_ccb8d5fa66cc2b 2126,2128-2130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "f5f322d744902a69a85376668498758dc8a3c0b1",
+  "prompts": {},
+  "sessions": {
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 196
+    }
+  }
+}
