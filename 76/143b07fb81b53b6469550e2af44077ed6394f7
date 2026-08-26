@@ -1,0 +1,39 @@
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_4053a32d242cbc::t_ae68def498d858 23,26,35,38,47,50,62,65,73-74,198,201,213,216,227,230,237
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_4053a32d242cbc::t_ae68def498d858 6-9,19-21
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_4053a32d242cbc::t_ae68def498d858 12
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_4053a32d242cbc::t_ae68def498d858 1,9-34,37-41,46,55-63,65-70,72-82,84-87,91,100,103-167,169-173,180,184-185,189-194,196-210,212-215,217-227,229-238,240,242-272,274-279,281-299
+widget_service/scripts/build_cardplan_bundle.py
+  s_4053a32d242cbc::t_ae68def498d858 25-26
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_4053a32d242cbc::t_aa06c883f75096 130
+  s_4053a32d242cbc::t_ae68def498d858 1,89,97,106-112,114-115,118-121,124-126,128-129,132-134,142,144-145,151-153,156-178
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_4053a32d242cbc::t_ae68def498d858 7,34,133-134,165,169-171
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_4053a32d242cbc::t_ae68def498d858 171-172,202-207
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_4053a32d242cbc::t_ae68def498d858 5,28-30
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_4053a32d242cbc::t_ae68def498d858 7289,7297,7538-7539
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "76143b07fb81b53b6469550e2af44077ed6394f7",
+  "prompts": {},
+  "sessions": {
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1716
+    }
+  }
+}
