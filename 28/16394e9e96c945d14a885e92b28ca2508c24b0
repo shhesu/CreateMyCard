@@ -1,0 +1,143 @@
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_4053a32d242cbc::t_4565ff5d10aa23 193-196
+  s_4053a32d242cbc::t_78c20b592b80f1 98-102
+  s_4053a32d242cbc::t_4fba4ad13c7459 171-173
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_4053a32d242cbc::t_82b4c31d5a62e6 10-11
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_f0304be39ce7ce::t_b668e1388b4e94 3233,3264,3329
+  s_4053a32d242cbc::t_9cd2a33eef219c 579-584,591,601,603-604,607-618,675,716,723,731,733,737,785-786,3052,3096,3128,3131-3136,3138
+  s_4053a32d242cbc::t_ec5399689b9f8e 714-715,717-720,734
+  s_4053a32d242cbc::t_68d824b2cabeac 407-414,417-418
+  s_4053a32d242cbc::t_49da21940794ac 1303,1456,1485
+  s_4053a32d242cbc::t_f130143f3fea74 1530,1533,1535-1539,2271
+  s_4053a32d242cbc::t_064197de9f562f 398
+  s_f0304be39ce7ce::t_0ef2a274f31dee 2460,2485,2533,2537,2542-2547
+  s_4053a32d242cbc::t_824f6af4c7df26 1286,1296-1297,1304-1306,1310-1311
+  s_4053a32d242cbc::t_61509d760a7a75 1540-1541
+  s_f0304be39ce7ce::t_ea7c8462d48dc5 1298,3238-3256
+  s_4053a32d242cbc::t_84e5f2e1d09e69 2262-2270,2272-2273
+  s_1b5fd5b18b017d::t_630dd3f6f297e3 405
+  s_1b5fd5b18b017d::t_06e6e31c18da20 374-397,399,402-404,406,419
+  s_4053a32d242cbc::t_f87d3832c661eb 400-401,415-416,686-687,694-695,3055-3056,3110-3111
+  s_4053a32d242cbc::t_30e603868946fc 1299-1301
+  s_f0304be39ce7ce::t_014506cd8c9993 1233-1234
+  s_4053a32d242cbc::t_12e1f91371c8ab 1302
+  s_4053a32d242cbc::t_431e12037fd20f 1451
+  s_4053a32d242cbc::t_802caf17c69bce 568-570,600,602,606,709,755,765-770,784,788,3137
+  s_f0304be39ce7ce::t_f44af07fe218d2 1409-1450,1452-1455,1459-1484,1486-1487
+  s_4053a32d242cbc::t_6dc69dcd7e6bed 3122-3123
+  s_f0304be39ce7ce::t_06cc916cdd5008 97,183,2530
+  s_4053a32d242cbc::t_10f546c7d36fc6 571-572
+  s_f0304be39ce7ce::t_cb6eb1b92855ac 3237
+  s_f0304be39ce7ce::t_d93273b8822420 3257-3258
+  s_4053a32d242cbc::t_9bb9f8cea5db39 1457-1458
+skills/harmony-card-generation-online/scripts/validators/protocol_validator.py
+  s_4053a32d242cbc::t_dc25a5defc0426 3-8,40
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_f0304be39ce7ce::t_a24e67a3002d0e 26,57,74,91,109
+  s_4053a32d242cbc::t_431e12037fd20f 42,50
+  s_4053a32d242cbc::t_ce5cbee6ef50ad 127,135
+docs/云侧方案设计.md
+  s_4053a32d242cbc::t_4fba4ad13c7459 1134-1137
+  s_4053a32d242cbc::t_78c20b592b80f1 1164-1168
+  s_4053a32d242cbc::t_4565ff5d10aa23 1143-1147
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_f0304be39ce7ce::t_2ff078fed21fb4 76-83,630,643-644,649-650,653-657,659-684,686-687,690-692,694-718
+  s_f0304be39ce7ce::t_891c4089b7cc1d 88,101-102,112,114,122-123,129,131-141,144-145,148-150,156,159-160,162-163
+  s_4053a32d242cbc::t_8e32619b7e635d 444
+  s_f0304be39ce7ce::t_c705484ffc7b4b 512,528-529,534-535,538-540,542-591,593-594,597-599,601-625
+  s_f0304be39ce7ce::t_f4909d89624b7a 1,15,25-28,36-37,43-55,58-59,62-65,67-74
+  s_4053a32d242cbc::t_429fc099419daa 634
+  s_f0304be39ce7ce::t_690ff72898bc90 401,417-418,423-424,427-429,431-443,445-473,475-476,479-481,483-507
+  s_f0304be39ce7ce::t_9396d5d07c4e4d 174,189-190,195-196,199-201,203-245,247-248,251-253,257-258,260,268-270,272-277
+  s_f0304be39ce7ce::t_5209fb3fa99ccd 299-300,305-306,309-311,314-315,317-322,324-327,329-333,335-348,350-361,364-365,368-370,372-396
+  s_f0304be39ce7ce::t_e2cf74a7712291 75
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_4053a32d242cbc::t_e7f3d838056094 65
+  s_4053a32d242cbc::t_7dc2716975f2d8 4226-4229,4262-4269,4315-4336
+  s_4053a32d242cbc::t_6602c21dbdbee5 6928,6930-6933
+  s_4053a32d242cbc::t_14f053cead4e10 891-896,6854-6863,6913-6927,6929,6934-6952
+  s_4053a32d242cbc::t_7dc2b7e06a0c07 862-870,874,880,884-888
+  s_4053a32d242cbc::t_82155351bb50f6 4817-4822
+  s_4053a32d242cbc::t_1104d9bc3c5c72 4337-4338
+  s_4053a32d242cbc::t_acdfc05565aadd 6953-6954
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_f0304be39ce7ce::t_a24e67a3002d0e 19
+  s_f0304be39ce7ce::t_d585aa4b8ff265 27-29
+  s_f0304be39ce7ce::t_07f770edc57a48 21,23
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_4053a32d242cbc::t_ce5cbee6ef50ad 27
+  s_4053a32d242cbc::t_431e12037fd20f 11
+  s_f0304be39ce7ce::t_a24e67a3002d0e 31-33
+widget_service/cloud/services/template_generation/engine/fusion_ball_a2ui_converter.py
+  s_4053a32d242cbc::t_82155351bb50f6 12-13,92-96,211,214-215,217,233,235-245
+  s_4053a32d242cbc::t_4fba4ad13c7459 31,234
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_4053a32d242cbc::t_9df0dc0d3d23c3 455-458,460,462-464
+  s_4053a32d242cbc::t_e7f3d838056094 23
+  s_4053a32d242cbc::t_82b4c31d5a62e6 78
+  s_4053a32d242cbc::t_cca9ef7538ee29 842-848,877-917
+  s_4053a32d242cbc::t_ad06f4dc52fede 1188-1189
+  s_4053a32d242cbc::t_eef4c9781fd484 918-919
+widget_service/cloud/services/template_generation/config/template_controls.json
+  s_4053a32d242cbc::t_63f90a77e75aae 12
+  s_4053a32d242cbc::t_987b8d60162761 15
+  s_4053a32d242cbc::t_7643543e9e5d10 9-11
+  s_4053a32d242cbc::t_3e9ccaa07d06ae 13-14
+  s_4053a32d242cbc::t_1962888b6f296f 16
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_f0304be39ce7ce::t_7a69e3b488c303 208-209
+  s_f0304be39ce7ce::t_7e6d4f3789e4a8 196
+  s_f0304be39ce7ce::t_5a08ba22b70e23 210
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_1b5fd5b18b017d::t_31e8cbc597da22 191-202
+  s_4053a32d242cbc::t_f130143f3fea74 67,94-99
+  s_4053a32d242cbc::t_fd8260b110b148 11,15-19,24,55-66,68-93,100-137,139-147
+  s_4053a32d242cbc::t_c5443cbb745776 5-6,138
+  s_1b5fd5b18b017d::t_06e6e31c18da20 12,153-190
+  s_1b5fd5b18b017d::t_79637e225eea73 203-205
+  s_4053a32d242cbc::t_b7ed51202c137f 148-152
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_4053a32d242cbc::t_4fba4ad13c7459 12,151-153
+  s_4053a32d242cbc::t_82155351bb50f6 10,92,111-115,132,135-136,138,144-150,154-158,160,164,170-171,173,176
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_4053a32d242cbc::t_343814100db070 10,30,61,81,96
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_4053a32d242cbc::t_3dc5b7134f682b 44,111,181,190,323,332,390,457,466,534,627,636,730,829,838
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "2816394e9e96c945d14a885e92b28ca2508c24b0",
+  "prompts": {},
+  "sessions": {
+    "s_1b5fd5b18b017d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a037b2-17ad-73a0-bdcb-4a9e86116e12",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 112
+    },
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 386
+    },
+    "s_f0304be39ce7ce": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a037ba-c433-7f72-b712-6c882fbe1a69",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 463
+    }
+  }
+}
