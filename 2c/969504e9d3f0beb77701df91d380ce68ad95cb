@@ -1,0 +1,113 @@
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_6526bbaece82d7::t_5dfb1284ab00db 117-129
+  s_6526bbaece82d7::t_a5eab72c246dd4 227-242
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_6526bbaece82d7::t_c6b71083330688 26
+  s_6526bbaece82d7::t_04548fd0d5de28 147
+  s_6526bbaece82d7::t_f13371e8d8535c 191-194
+  s_6526bbaece82d7::t_602f5f6cb65390 148,356-359
+  s_6526bbaece82d7::t_f53d7e0cf7934b 83,153-156,268-284
+  s_6526bbaece82d7::t_992c4322d7b410 82,107,149-152,221-267
+  s_6526bbaece82d7::t_f85ffc652db69c 84,92-95,104-106,198-220
+  s_6526bbaece82d7::t_2ed1ccb06f881c 285-286
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_6526bbaece82d7::t_f724acf387c297 2334,2339-2342,2344,2346-2347
+  s_6526bbaece82d7::t_61f6ebae2cb8c4 2322-2326
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_6526bbaece82d7::t_2a1443076beb3e 1884,1964-1968,1992,1997-1999
+  s_6526bbaece82d7::t_1ef6d41b81a3bc 52,2117-2133
+  s_6526bbaece82d7::t_dfbc16933a6a9b 1996,2000-2001
+  s_6526bbaece82d7::t_576c368f7886b9 1971-1980,1993-1995
+  s_6526bbaece82d7::t_3cf1386c9685a5 2134-2135
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_6526bbaece82d7::t_d2cbcbdd88f0e6 137,139,178,180
+  s_6526bbaece82d7::t_7829130115426d 200,246
+  s_6526bbaece82d7::t_04548fd0d5de28 129-130,161,231,249-253
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_6526bbaece82d7::t_3002f30ecdb4c4 5930-5941
+  s_6526bbaece82d7::t_f724acf387c297 5942-5950
+docs/云侧方案设计.md
+  s_6526bbaece82d7::t_3002f30ecdb4c4 1298-1299
+  s_6526bbaece82d7::t_3cfedd5741bec7 1293-1297
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_6526bbaece82d7::t_f85ffc652db69c 801-808
+  s_6526bbaece82d7::t_f53d7e0cf7934b 949-951
+  s_6526bbaece82d7::t_eabfb9f03c0123 453
+  s_6526bbaece82d7::t_f5e82f14388f9b 133
+  s_6526bbaece82d7::t_486bcf51bfbe83 129,137-143,397-400
+  s_6526bbaece82d7::t_aed95eb4c425be 395,409,412,414-417,440-452
+  s_6526bbaece82d7::t_6ba7016b450127 29,128,130-132,134-136,413,419-431,433-439,533-536
+  s_6526bbaece82d7::t_758dc3988cab21 32-33,114-126,151,168-170,197-206,209,218-223
+  s_6526bbaece82d7::t_fa814753f6a8d8 488,490,496-499,502,504-506,510,512-513,517,519-520,523-526,544-549,577,605-606,614,616
+  s_6526bbaece82d7::t_17e24b1325c46b 608,610-611,618-619,622-623,637,732-740
+  s_6526bbaece82d7::t_ea7142ca28be78 456
+  s_6526bbaece82d7::t_1220adf22837cf 329,335-353
+  s_6526bbaece82d7::t_727677cff7bca1 362-367,411,418,609,620-621,635-636,729-731
+  s_6526bbaece82d7::t_8873454d264593 834-860,943-948,978-992,997,1037-1039
+  s_6526bbaece82d7::t_449a31cc1db65e 144-150,454-455,457-483,566-571
+  s_6526bbaece82d7::t_91618e76a3bd19 633,656-658,660-728,741-742
+  s_6526bbaece82d7::t_a1649a8765a0ab 127
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_6526bbaece82d7::t_3cfedd5741bec7 237,240-241
+widget_service/cloud/api/schemas.py
+  s_6526bbaece82d7::t_f85ffc652db69c 159
+  s_6526bbaece82d7::t_f53d7e0cf7934b 158
+  s_6526bbaece82d7::t_992c4322d7b410 157
+widget_service/scripts/generate_provider_template_gallery.py
+  s_6526bbaece82d7::t_1f120f48a99735 8,67-100
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_6526bbaece82d7::t_bc25f5f0dcdf74 12-14,18,27-33,62-64,78-79
+  s_6526bbaece82d7::t_2cc260739306e2 34-35
+widget_service/cloud/services/widget_generation_service.py
+  s_6526bbaece82d7::t_f53d7e0cf7934b 1190,1223
+  s_6526bbaece82d7::t_f85ffc652db69c 1191-1193,1224-1226
+  s_6526bbaece82d7::t_992c4322d7b410 1187-1189,1220-1222
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_6526bbaece82d7::t_3cfedd5741bec7 127-128
+  s_6526bbaece82d7::t_3002f30ecdb4c4 129
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_6526bbaece82d7::t_5dfb1284ab00db 876-877,879,887-893
+  s_6526bbaece82d7::t_19d169543e5a7e 865
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_6526bbaece82d7::t_5068d49d050d20 377-388
+  s_6526bbaece82d7::t_4f5697eb9b151d 336,352-357,359-374
+  s_6526bbaece82d7::t_4b37b78c41099f 375-376
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_6526bbaece82d7::t_3369529f9ccc03 31-39,44-52,75-80,83-88,90-92,100,112-117,127-146,240,273
+  s_6526bbaece82d7::t_17e24b1325c46b 198-204
+  s_6526bbaece82d7::t_fdbbbcfabf9884 162-180
+  s_6526bbaece82d7::t_727677cff7bca1 205-211,274-275
+  s_6526bbaece82d7::t_99f16ece618b16 147-161,241-244
+  s_6526bbaece82d7::t_4c6d95523e00aa 53
+widget_service/cloud/services/template_generation/facade.py
+  s_6526bbaece82d7::t_f85ffc652db69c 37,52-55
+  s_6526bbaece82d7::t_f53d7e0cf7934b 36,50-51
+  s_6526bbaece82d7::t_dfbc16933a6a9b 47-49,61
+  s_6526bbaece82d7::t_992c4322d7b410 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "2c969504e9d3f0beb77701df91d380ce68ad95cb",
+  "prompts": {},
+  "sessions": {
+    "s_6526bbaece82d7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a029b1-b0ab-7a73-87a1-fbe2fcd0d0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 300
+    },
+    "s_a2d2ef2e014756": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03e5d-47b8-7902-ae93-abfb8b838308",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 654
+    }
+  }
+}
