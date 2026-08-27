@@ -138,6 +138,7 @@ widget_service/cloud/services/template_generation/docs/provider-template-e2e-gal
   s_99ebefb5bb2a48::t_cd971021cd4771 73
   s_99ebefb5bb2a48::t_1d96afc691cca5 98
   s_99ebefb5bb2a48::t_0e2d731e0ded6b 97
+  s_99ebefb5bb2a48::t_be4c8dfad73dfa 41-72,74-79,82-83,85,88-91,95,101,104-105,115,118,126-158,163,167
 ---
 {
   "schema_version": "authorship/3.0.0",
