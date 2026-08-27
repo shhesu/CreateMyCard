@@ -1,0 +1,42 @@
+widget_service/cloud/services/template_generation/tests/eval_fixture_migration.py
+  s_48755d158b202f::t_04c9e67e075278 46
+docs/云侧方案设计.md
+  s_48755d158b202f::t_04c9e67e075278 1196
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_48755d158b202f::t_558e80065006ff 30,73
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_48755d158b202f::t_5a98969920bdcf 139
+  s_48755d158b202f::t_04c9e67e075278 115,131,167,182,356,358
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_48755d158b202f::t_04c9e67e075278 394-397
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_48755d158b202f::t_04c9e67e075278 201
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_48755d158b202f::t_78aff4bc09c8ed 7,55,70-71
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_48755d158b202f::t_04c9e67e075278 8,10,31
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_48755d158b202f::t_04c9e67e075278 1881-1886,2140,2144,2629
+  s_48755d158b202f::t_5a98969920bdcf 220,1231-1232,1819-1820
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_48755d158b202f::t_04c9e67e075278 19,21,27-29
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_48755d158b202f::t_04c9e67e075278 75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "4d5204becced471c19791f624e53289362989118",
+  "prompts": {},
+  "sessions": {
+    "s_48755d158b202f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04256-e8ea-7f83-a9f2-b2e5d755a500",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 132
+    }
+  }
+}
