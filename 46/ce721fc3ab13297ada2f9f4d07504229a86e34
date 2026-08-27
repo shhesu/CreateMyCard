@@ -1,0 +1,26 @@
+widget_service/scripts/generate_provider_template_gallery.py
+  s_ee6557c82441df::t_fdeeca6812b1a5 62,64,94
+widget_service/cloud/services/widget_generation_service.py
+  s_ee6557c82441df::t_fdeeca6812b1a5 577-583,586,1132
+widget_service/tests/test_service_units.py
+  s_ee6557c82441df::t_fdeeca6812b1a5 331,335,337,364-365,3662-3664,3677-3678,3683-3684
+docs/云侧方案设计.md
+  s_ee6557c82441df::t_fdeeca6812b1a5 1125-1127,1134-1137,1211-1218,1372-1374
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "46ce721fc3ab13297ada2f9f4d07504229a86e34",
+  "prompts": {},
+  "sessions": {
+    "s_ee6557c82441df": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0439e-d5e9-7231-b2af-223bac60ee52",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 21
+    }
+  }
+}
