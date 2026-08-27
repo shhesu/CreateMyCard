@@ -1,0 +1,326 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_99ebefb5bb2a48::t_639c13f5fda828 2871-2882,2886
+  s_99ebefb5bb2a48::t_e4d94aa72c8fa3 297-307
+  s_99ebefb5bb2a48::t_9d0fd850f53791 386,418-429,654,686,1000,3413-3438,4827
+  s_99ebefb5bb2a48::t_aa2f7bc3573547 1493-1494,1573,1689,1980,2453
+  s_99ebefb5bb2a48::t_46e4ee74f90e31 1546-1547
+  s_99ebefb5bb2a48::t_5d6c1921a60393 1550-1560,3099-3159
+  s_99ebefb5bb2a48::t_4c03b8f2f0f473 2851-2854
+  s_99ebefb5bb2a48::t_8545a9b2f3a95e 4014-4022,4026-4037,4040-4043
+  s_99ebefb5bb2a48::t_8327d5c5ff66cf 2861-2870
+  s_99ebefb5bb2a48::t_e4b405c17ff175 105,220,3258,3998,4237,4435
+  s_99ebefb5bb2a48::t_b89969e55e762c 4023-4025,4392-4394
+  s_99ebefb5bb2a48::t_2e5ee63593a919 3160-3161
+  s_99ebefb5bb2a48::t_37ad7513710953 1904
+  s_99ebefb5bb2a48::t_0ef4f145cf8ee5 1900-1901,1903
+  s_99ebefb5bb2a48::t_2a56632100e1d3 3256,3263,3282,3394,3465,3475,3537
+  s_99ebefb5bb2a48::t_32b06eab82e439 3439
+  s_99ebefb5bb2a48::t_a36fcfae97b292 4384-4391,4395-4401
+  s_99ebefb5bb2a48::t_0fcd9d09e5632c 2849-2850,2855,2859-2860
+  s_99ebefb5bb2a48::t_6e26f37f951520 3956,4054-4057,4059,4061-4062,4068,4088-4091
+  s_99ebefb5bb2a48::t_f80d4850441f6c 2856-2858,2883-2885
+  s_99ebefb5bb2a48::t_eb75e584ad5fc0 1548-1549
+  s_99ebefb5bb2a48::t_c5b3f2ffb323ac 1902
+  s_99ebefb5bb2a48::t_a1510d7d34c26c 2838,2956,2995,3010,3080
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_99ebefb5bb2a48::t_0e2d731e0ded6b 175-176
+  s_99ebefb5bb2a48::t_1d96afc691cca5 177-180
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_99ebefb5bb2a48::t_1583ef2656ae6b 34,311
+  s_99ebefb5bb2a48::t_cd971021cd4771 356,358
+  s_99ebefb5bb2a48::t_e4b405c17ff175 115,167
+  s_99ebefb5bb2a48::t_39692d80bc4088 197
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/first-layer.md
+  s_99ebefb5bb2a48::t_c205b592e651c5 13-14
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_99ebefb5bb2a48::t_700f50f5b2075f 174-191
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_99ebefb5bb2a48::t_39692d80bc4088 26
+  s_99ebefb5bb2a48::t_8abe8ab61d193d 47,49-50
+  s_99ebefb5bb2a48::t_30cd3afb0ece8a 56,72
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_99ebefb5bb2a48::t_474d3831a59300 11-12,14-24
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_99ebefb5bb2a48::t_a1643ee38cb304 70-71
+  s_99ebefb5bb2a48::t_cc628c35e0afda 26-29,55-69
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_99ebefb5bb2a48::t_e4d94aa72c8fa3 8
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_99ebefb5bb2a48::t_47ef248b17b7ca 65-67,97-98,111-112
+  s_99ebefb5bb2a48::t_2349ca73e3e78f 146-150,152-154,177
+  s_99ebefb5bb2a48::t_d28e3dd5665ba8 113
+widget_service/cloud/services/template_generation/source_generator.py
+  s_99ebefb5bb2a48::t_1583ef2656ae6b 18
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/provider.json
+  s_99ebefb5bb2a48::t_e4d94aa72c8fa3 56-57
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_99ebefb5bb2a48::t_cdd09da3160f6f 379-380
+  s_99ebefb5bb2a48::t_e41497ef4dde00 284-301,363-372,377-378
+  s_99ebefb5bb2a48::t_29715b79b492d8 373-376
+  s_99ebefb5bb2a48::t_1583ef2656ae6b 46,497
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_99ebefb5bb2a48::t_39692d80bc4088 6
+  s_99ebefb5bb2a48::t_30cd3afb0ece8a 13,16
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_99ebefb5bb2a48::t_cd971021cd4771 8,10,12,31
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_99ebefb5bb2a48::t_a75984e10df52c 205-206
+  s_99ebefb5bb2a48::t_fca7d26e348883 73,134,201-204
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_99ebefb5bb2a48::t_6141e548a6d7dd 20-23,52-53,101-108
+  s_99ebefb5bb2a48::t_3a36ef618d8fe3 493-593
+  s_99ebefb5bb2a48::t_19fe5ebcf8cbb0 12-14
+  s_99ebefb5bb2a48::t_403946a1d0bc98 352-359,361,364-368,370-378,380-418,420-422,425-436,438,441,450-451,453,457-460,463-474,478-479,481,487
+  s_99ebefb5bb2a48::t_2458c433ba760b 360,362-363,419
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_99ebefb5bb2a48::t_be4c8dfad73dfa 41-72,74-79,82-83,85,88-91,95,101,104-105,115,118,126-158,163,167
+  s_99ebefb5bb2a48::t_1d96afc691cca5 98
+  s_99ebefb5bb2a48::t_cd971021cd4771 73
+  s_99ebefb5bb2a48::t_0e2d731e0ded6b 97
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_99ebefb5bb2a48::t_c46dd684effcd2 540-552,554-556,573-596,600-613
+  s_99ebefb5bb2a48::t_0fcd9d09e5632c 553,557-572
+  s_99ebefb5bb2a48::t_f80d4850441f6c 597-599
+widget_service/cloud/services/template_generation/docs/README.md
+  s_99ebefb5bb2a48::t_1d96afc691cca5 48-51
+  s_99ebefb5bb2a48::t_0e2d731e0ded6b 46-47
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_99ebefb5bb2a48::t_30cd3afb0ece8a 183-184
+  s_99ebefb5bb2a48::t_1583ef2656ae6b 303,943,1182
+  s_99ebefb5bb2a48::t_39692d80bc4088 182
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_99ebefb5bb2a48::t_47ef248b17b7ca 125-126,128-131
+  s_99ebefb5bb2a48::t_0e2d731e0ded6b 50
+  s_99ebefb5bb2a48::t_2349ca73e3e78f 137-138,178-181,235-237
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_99ebefb5bb2a48::t_39692d80bc4088 192
+  s_99ebefb5bb2a48::t_6b8cb0bd99358f 7,31,37,188,194-195
+  s_99ebefb5bb2a48::t_e4d94aa72c8fa3 48
+  s_99ebefb5bb2a48::t_8abe8ab61d193d 193
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_99ebefb5bb2a48::t_9d0fd850f53791 322-324,326-327,329-332,334-338
+  s_99ebefb5bb2a48::t_39692d80bc4088 441
+  s_99ebefb5bb2a48::t_0e2d731e0ded6b 82,128,201,257,357,386
+  s_99ebefb5bb2a48::t_3615d7f2d5ba9a 5,325,328,333
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_99ebefb5bb2a48::t_0803d0069038ca 534
+  s_99ebefb5bb2a48::t_a86ca301d7dc45 51-60,69-70,82,95,102,110-114,150,168-178,210,225,245,264-267,279-280,502,504,506,522-523,537-541,560-561,570-574,578
+  s_99ebefb5bb2a48::t_3173e1a2de469d 528-529
+  s_99ebefb5bb2a48::t_edea229f746360 547-548
+  s_99ebefb5bb2a48::t_d2c4e997d2f7dd 64
+  s_99ebefb5bb2a48::t_c098cfd84ba3ae 131
+  s_99ebefb5bb2a48::t_ae27a47e7c5bc5 261-263,268-270
+  s_99ebefb5bb2a48::t_a9aee65275e7e1 258-259
+  s_99ebefb5bb2a48::t_1f52c40bdc54b1 551-555
+  s_99ebefb5bb2a48::t_decd72b8c71ef1 185,192-196,206,233,271-273,489,500,535,545,550,556,565-566
+  s_99ebefb5bb2a48::t_42caa84dacb129 567-569
+  s_99ebefb5bb2a48::t_851e89069f64bd 286-287
+  s_99ebefb5bb2a48::t_d416613efd37f1 1,20-27,232,239,260,482-483,530,549
+  s_99ebefb5bb2a48::t_2491a721c18e23 234-238
+  s_99ebefb5bb2a48::t_7421e7d393ae51 484-488
+  s_99ebefb5bb2a48::t_2e1df72248f245 542-544
+  s_99ebefb5bb2a48::t_0e673ef99d4e5c 480-481
+  s_99ebefb5bb2a48::t_7052a4517f47da 230-231
+  s_99ebefb5bb2a48::t_f9e4b19e11ab66 274-276
+  s_99ebefb5bb2a48::t_b41ac051092e23 153-155,531-533
+  s_99ebefb5bb2a48::t_ddce50cf73d5d6 181,288-298,309,313,317,322,333,338-347,353,358,368,371-375,377-381,383-393,404,406,408,410,429,434-443,446-450,452-462,464,467-479,546,576
+  s_99ebefb5bb2a48::t_4ecc94d481e092 61-63
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_99ebefb5bb2a48::t_f9a10b38203602 21
+  s_99ebefb5bb2a48::t_e4b405c17ff175 19,23,27-29
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_99ebefb5bb2a48::t_30cd3afb0ece8a 4,12
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_99ebefb5bb2a48::t_1583ef2656ae6b 81
+  s_99ebefb5bb2a48::t_55cdce9c2db370 300-318,351-354
+  s_99ebefb5bb2a48::t_fca7d26e348883 91-93
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_99ebefb5bb2a48::t_abdd04ba26c51a 39-42
+  s_99ebefb5bb2a48::t_74417ccf8e6158 38
+  s_99ebefb5bb2a48::t_d6ee594db36665 164
+  s_99ebefb5bb2a48::t_cf8cb21969ea2e 65
+  s_99ebefb5bb2a48::t_05beb373a01d1a 10-23,25-28,30,32,201,211-214
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_99ebefb5bb2a48::t_6b23566569146a 20,144,191
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_99ebefb5bb2a48::t_30b3cf6075993a 73,178,233
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "5f9935b6cef12ea6a23f6e95819199521e300cc9",
+  "prompts": {},
+  "sessions": {
+    "s_0ecd48ff3b3572": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a017b6-ae88-76e3-8911-8b5047d3b872",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 77
+    },
+    "s_1b5fd5b18b017d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a037b2-17ad-73a0-bdcb-4a9e86116e12",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 112
+    },
+    "s_21f2d8f10f32b0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02a40-c107-75b3-b55d-05ad113d4fd2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 101
+    },
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 44
+    },
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 45
+    },
+    "s_46fa17422602e6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a013c1-6ad5-7613-ad9b-1e1ef081a1ec",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 14
+    },
+    "s_4751d9a037ec09": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01f91-7c57-75c0-92df-5def43846a64",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 190
+    },
+    "s_48755d158b202f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04256-e8ea-7f83-a9f2-b2e5d755a500",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    },
+    "s_6526bbaece82d7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a029b1-b0ab-7a73-87a1-fbe2fcd0d0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 17
+    },
+    "s_7f06310a340fe0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01cc5-26a0-7363-b5a3-fafd03d13297",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 101
+    },
+    "s_8040b7d8cc6e4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03e8f-7479-7bd3-9e55-be1eb6f50ec9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 964
+    },
+    "s_877731ca76c3b4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e70-1417-7152-a601-bf643967c959",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 17
+    },
+    "s_8824b2bf95969d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a041df-5c3c-7cf2-bc48-4b61694ebe65",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 560
+    },
+    "s_931eb5da6f128e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a033d9-2f24-7840-843c-103ebf0400c4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 2820
+    },
+    "s_99ebefb5bb2a48": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0423f-ff60-7473-9c5f-d2c2166952e9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 0
+    },
+    "s_a2d2ef2e014756": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03e5d-47b8-7902-ae93-abfb8b838308",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 24
+    },
+    "s_a921c2efe73f31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e36-05a4-7af1-9eb6-0f4dbaba19a9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 190
+    },
+    "s_c533b235aa94b3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e10-e169-7f71-ba25-e46260b5665b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 59
+    },
+    "s_d47dbf1a762c18": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01d76-687b-7530-a2b0-b65d7a6801b5",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 50
+    }
+  }
+}
