@@ -112,6 +112,8 @@ widget_service/cloud/services/template_generation/tests/test_template_generation
   s_a2d2ef2e014756::t_a566e03b669fa5 2311-2312
   s_6526bbaece82d7::t_704a8a9fd63fc6 2609-2610
   s_a2d2ef2e014756::t_ce2255d7664611 3560-3561
+  s_99ebefb5bb2a48::t_8cc6fb1cbe39ff 220,2089,2092,2098,2445
+  s_99ebefb5bb2a48::t_0e469a5e83e098 2438-2441
 widget_service/cloud/services/template_generation/resources/source/themes/digital-wellbeing-neutral-dark/first-layer.md
   s_a2d2ef2e014756::t_7a0722458d98f0 3
 widget_service/cloud/services/template_generation/resources/source/themes/fusion-sport-orange/theme.json
@@ -226,6 +228,10 @@ widget_service/cloud/services/template_generation/resources/source/themes/fusion
   s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
 widget_service/cloud/services/template_generation/resources/source/themes/fusion-sleep-violet/theme.json
   s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_99ebefb5bb2a48::t_0e469a5e83e098 23,32-33,44,48-59,63,74,78-79,83,87,90
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_99ebefb5bb2a48::t_361e063f20ceb4 8
 ---
 {
   "schema_version": "authorship/3.0.0",
