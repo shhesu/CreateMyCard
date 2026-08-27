@@ -1,0 +1,402 @@
+widget_service/cloud/services/template_generation/resources/source/themes/family-weather-care-blue/first-layer.md
+  s_a2d2ef2e014756::t_da2492a68b6709 3
+widget_service/cloud/services/template_generation/tests/test_tersel_protocol.py
+  s_a2d2ef2e014756::t_48773059834831 97,104-105,112
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_a2d2ef2e014756::t_d6a3eda823d70b 247-251,255-256,261-263
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-battery-teal/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/resources/source/themes/family-weather-care-blue/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 18
+  s_a2d2ef2e014756::t_da2492a68b6709 8-9,17
+widget_service/cloud/services/template_generation/resources/source/themes/digital-wellbeing-neutral-dark/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,24
+  s_a2d2ef2e014756::t_7a0722458d98f0 4,8-9,18
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_a2d2ef2e014756::t_cec15365e22ceb 9-18,20-27,29-36,52-57,121-130,132-139,141-148,196-205,209-215
+  s_a2d2ef2e014756::t_21180633d738e2 47,157,243
+  s_a2d2ef2e014756::t_746521cd7df87a 68-76,173-181,228-237
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_99ebefb5bb2a48::t_0e469a5e83e098 23,32-33,44,48-59,63,74,78-79,83,87,90
+widget_service/cloud/services/widget_generation_service.py
+  s_a2d2ef2e014756::t_dacbb4fe4a59fe 1124,1166
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_a2d2ef2e014756::t_36ca5795c8c887 17,32
+  s_99ebefb5bb2a48::t_e7956f04b17644 18-19,30-31
+  s_a2d2ef2e014756::t_da2492a68b6709 35-37
+  s_a2d2ef2e014756::t_4d05fe1d5d627b 45-47
+  s_a2d2ef2e014756::t_edc16211ea3beb 40-41
+  s_a2d2ef2e014756::t_c79f50c129f54b 34,42-44
+  s_a2d2ef2e014756::t_ff0130c61c384a 38-39
+  s_a2d2ef2e014756::t_9612d01328e2d5 24,33,51-53
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 48-50
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_a2d2ef2e014756::t_21180633d738e2 20,63,131,183,219
+widget_service/cloud/services/template_generation/resources/source/themes/sleep-night-violet/first-layer.md
+  s_a2d2ef2e014756::t_ff0130c61c384a 3
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_99ebefb5bb2a48::t_361e063f20ceb4 8
+widget_service/cloud/services/template_generation/resources/source/themes/race-night-violet/first-layer.md
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 3
+widget_service/cloud/services/template_generation/resources/source/themes/base/theme-base.json
+  s_a2d2ef2e014756::t_48773059834831 14
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-schedule-cool/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_99ebefb5bb2a48::t_e7956f04b17644 161-162
+  s_a2d2ef2e014756::t_36ca5795c8c887 115
+  s_8824b2bf95969d::t_11f2ad93440bcf 135
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_a2d2ef2e014756::t_1030a1002abed1 227-244
+  s_a2d2ef2e014756::t_a25773c5090394 246-252
+  s_6526bbaece82d7::t_0e8f6eb22abb7f 288
+  s_a2d2ef2e014756::t_c21060b9c4dfd5 145-160
+  s_a2d2ef2e014756::t_dacbb4fe4a59fe 28,34,40,311,324
+  s_a2d2ef2e014756::t_a50945a98b93bc 115,167,271-281,356-358
+  s_6526bbaece82d7::t_355c86262866d8 205-226,245
+widget_service/cloud/services/template_generation/resources/source/themes/race-night-violet/theme.json
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 4,6-7,9
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,23
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_8824b2bf95969d::t_d5cda659366c53 8,13,17-18,22-23,27-28,40,42,46,50,53,57,61,66,68,72,76,79,87,91-92,94,96,98,102,105,109,113,117-118,120,124,128,131,135,139,143-144,165
+widget_service/cloud/services/template_generation/resources/source/themes/meeting-paper-neutral/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 14,21
+  s_a2d2ef2e014756::t_4d05fe1d5d627b 4,8-10,12,20
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_8824b2bf95969d::t_87791322ab541b 389-390
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_8824b2bf95969d::t_87791322ab541b 15-17,97-99,102-104,106,108-110
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_a2d2ef2e014756::t_dacbe4343d5a85 10-18,20-25,27-33,43-51,55-61,64-71,87-92,94-100,103-110,114-120,123-130
+  s_a2d2ef2e014756::t_21180633d738e2 38
+  s_a2d2ef2e014756::t_edc16211ea3beb 75-83
+widget_service/cloud/services/template_generation/resources/source/themes/device-clean-blue-teal/theme.json
+  s_a2d2ef2e014756::t_48773059834831 4,6-10,19
+  s_99ebefb5bb2a48::t_e03366631a5e0c 14,25
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_99ebefb5bb2a48::t_dc191bfb0a9c01 2708,2756-2762
+  s_99ebefb5bb2a48::t_a23462fec601d0 467
+  s_a2d2ef2e014756::t_6333c2d8d031b8 1740-1767
+  s_8824b2bf95969d::t_b49dcb217faec1 245-247,364,1958,2432,2464,3383,3422
+  s_99ebefb5bb2a48::t_26b6e729131472 4077-4078
+  s_a2d2ef2e014756::t_edc16211ea3beb 399,708-721,800,1692-1709
+  s_a2d2ef2e014756::t_4d05fe1d5d627b 736-739,741-742
+  s_a2d2ef2e014756::t_48773059834831 388,763-768,770-779,795
+  s_99ebefb5bb2a48::t_0e469a5e83e098 2460-2463
+  s_a2d2ef2e014756::t_61a3cea3c0e25e 397,733-735,740,743-744,798
+  s_a2d2ef2e014756::t_a50945a98b93bc 1768-1791
+  s_6526bbaece82d7::t_704a8a9fd63fc6 2631-2632
+  s_a2d2ef2e014756::t_dacbb4fe4a59fe 4485,4494
+  s_99ebefb5bb2a48::t_e7956f04b17644 420-421,424-430,460,478-479,481-482,2828
+  s_a2d2ef2e014756::t_b4e03422f014b4 2824-2825,2832
+  s_99ebefb5bb2a48::t_12aee7771f16e0 3306,3321-3323
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 398,745-762,799,3097
+  s_a2d2ef2e014756::t_0f8e91841f1bb0 386,389,391-396,401,921
+  s_a2d2ef2e014756::t_f80a5b30182a8e 684-685
+  s_a2d2ef2e014756::t_577b97b2772337 2826-2827,2829-2831
+  s_a2d2ef2e014756::t_da2492a68b6709 390,686-696,793,796-797,802
+  s_a2d2ef2e014756::t_2dc1c80d258483 86,1738-1739,1794-1820
+  s_a2d2ef2e014756::t_d0f76924dd195a 323,331,624,672-673,675-683,927-928
+  s_99ebefb5bb2a48::t_b376e5cb395314 3836-3843
+  s_99ebefb5bb2a48::t_8cc6fb1cbe39ff 220,2111,2114,2120,2467
+  s_6526bbaece82d7::t_666a4d35b39e5b 77,929,2602-2630
+  s_a2d2ef2e014756::t_fbac41bb2a41f7 387,722-732,794,1719-1735,1737,1822-1823,1826,1850-1852
+  s_a2d2ef2e014756::t_ce2255d7664611 3579-3580
+  s_99ebefb5bb2a48::t_45baa8c7d4df56 3324,4079
+  s_a2d2ef2e014756::t_2f678298adbb3a 2837
+  s_a2d2ef2e014756::t_0e53d958f59e61 2295-2332
+  s_8824b2bf95969d::t_8aee5f54935ec8 298-318,2811-2812
+  s_a2d2ef2e014756::t_86b050cd914496 411,462,466,469,2132
+  s_a2d2ef2e014756::t_a566e03b669fa5 2333-2334
+  s_a2d2ef2e014756::t_f05468b15aef13 3186,3189-3190,3197,3199-3202,3214-3217,3225-3230,3235-3236,3540-3578
+  s_a2d2ef2e014756::t_2442d4c7aad824 1685-1691,1710-1718,1736,1821
+  s_99ebefb5bb2a48::t_41b1cfd81652c2 4121
+  s_a2d2ef2e014756::t_1ba4bed4851418 1471-1472,1538,1602,1654,1940,2413,2778,2865,2903,2940,2975,3302,3312,3374
+  s_a2d2ef2e014756::t_ff0130c61c384a 400,697-707,801
+  s_99ebefb5bb2a48::t_4c1348c0ab943f 438-439,457,461,464-465,483-493
+  s_a2d2ef2e014756::t_2afba7ef8fa722 1792-1793
+widget_service/cloud/services/template_generation/resources/source/themes/audio-product-neutral-violet/theme.json
+  s_a2d2ef2e014756::t_fbac41bb2a41f7 4,8-9,11,18
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,19
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_a2d2ef2e014756::t_0e53d958f59e61 854-856,4270-4271,4278-4285
+  s_6526bbaece82d7::t_355c86262866d8 1017-1022
+  s_99ebefb5bb2a48::t_e7956f04b17644 4908,4916,8383,8392
+  s_8824b2bf95969d::t_0631d31483ebef 5821-5822,5844,5874,5889-5893,5905-5908,5926-5936,5964-5967,5969
+widget_service/cloud/services/template_generation/resources/source/themes/audio-product-neutral-violet/first-layer.md
+  s_a2d2ef2e014756::t_c79f50c129f54b 3-4
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_a2d2ef2e014756::t_a25773c5090394 38
+  s_a2d2ef2e014756::t_c1c94f2356fe7a 37
+  s_a2d2ef2e014756::t_1030a1002abed1 40-45
+  s_8824b2bf95969d::t_ebe45244141625 6
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_99ebefb5bb2a48::t_b5a4934529e24d 224,267-282
+  s_a2d2ef2e014756::t_1ba4bed4851418 82,128,201,257,340,369
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_a2d2ef2e014756::t_219616d489f196 288-290
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_a2d2ef2e014756::t_e3e912351f77e2 82
+  s_a2d2ef2e014756::t_5026759d10b484 24-31,37-40,93-96,148-155,161-164,195-202,208-211,238-245,251-254,296-303,309-312,354-361,367-370,406-413,419-422,454-461,467-470,502-509,515-518,548-555,561-564,590-597,603-606,632-639,645-648,892-899,905-908
+widget_service/scripts/build_cardplan_bundle.py
+  s_8824b2bf95969d::t_1013a8e6358c7c 25
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_8824b2bf95969d::t_87791322ab541b 59-62,71-72
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_8824b2bf95969d::t_87791322ab541b 56-58
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_a2d2ef2e014756::t_21180633d738e2 73,106,203,236
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_a2d2ef2e014756::t_48773059834831 295-299,310
+  s_8824b2bf95969d::t_87791322ab541b 241-243
+widget_service/cloud/services/template_generation/resources/source/themes/sleep-night-violet/theme.json
+  s_a2d2ef2e014756::t_ff0130c61c384a 4,8-9,11,19
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,20
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_8824b2bf95969d::t_11f2ad93440bcf 28
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-sport-orange/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_8824b2bf95969d::t_6a3ef6e46681ce 194-195
+  s_8824b2bf95969d::t_f9e4eebc055b18 196
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_8824b2bf95969d::t_87791322ab541b 168
+  s_a2d2ef2e014756::t_82a8b23281ad05 46-53,196,218,223
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_a2d2ef2e014756::t_dacbb4fe4a59fe 54
+widget_service/cloud/services/template_generation/resources/source/themes/meeting-paper-neutral/first-layer.md
+  s_a2d2ef2e014756::t_4d05fe1d5d627b 3
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_a2d2ef2e014756::t_edc16211ea3beb 94-102,322-330
+  s_a2d2ef2e014756::t_7cb8cc33b9f7b4 7-15,19-25,59-67,116-123,125-134,162-168,182-191,193-200,229-238,240-247,285-293,346-352,366-372,388-395,397-406,413-419,440-446,450-459,461-468,497-506,508-515
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_8824b2bf95969d::t_11f2ad93440bcf 142,146-150,157-159,264-265
+  s_99ebefb5bb2a48::t_e7956f04b17644 191-192
+  s_a2d2ef2e014756::t_36ca5795c8c887 230
+widget_service/cloud/services/template_generation/engine/theme_reference.py
+  s_a2d2ef2e014756::t_48773059834831 11
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_8824b2bf95969d::t_4396db1e04b533 17-18
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_8824b2bf95969d::t_87791322ab541b 846,1189-1194,1196
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_6526bbaece82d7::t_486bcf51bfbe83 195
+  s_a2d2ef2e014756::t_a25773c5090394 204-207,519-524
+  s_a2d2ef2e014756::t_dacbb4fe4a59fe 302,938-943,945,1039,1181,1187-1190
+  s_a2d2ef2e014756::t_92c2f4922f0370 208
+  s_a2d2ef2e014756::t_1030a1002abed1 128-133,136-137,141-184,501,503
+  s_a2d2ef2e014756::t_c21060b9c4dfd5 134-135,138-140,194,463-464
+widget_service/cloud/services/template_generation/resources/source/themes/digital-wellbeing-neutral-dark/first-layer.md
+  s_a2d2ef2e014756::t_7a0722458d98f0 3
+widget_service/cloud/services/template_generation/resources/source/themes/race-sunrise-action/theme.json
+  s_a2d2ef2e014756::t_edc16211ea3beb 4,9
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,23
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 6
+docs/云侧方案设计.md
+  s_99ebefb5bb2a48::t_e7956f04b17644 1243-1244,1253-1254
+  s_a2d2ef2e014756::t_edc16211ea3beb 1289-1293
+  s_a2d2ef2e014756::t_4d05fe1d5d627b 1301-1302,1304
+  s_a2d2ef2e014756::t_ff0130c61c384a 1275,1285-1288
+  s_8824b2bf95969d::t_11f2ad93440bcf 1196-1200,1349
+  s_a2d2ef2e014756::t_9612d01328e2d5 1247-1248,1278-1279,1312-1317
+  s_a2d2ef2e014756::t_fbac41bb2a41f7 1294-1299
+  s_a2d2ef2e014756::t_d4b8d5dfc57f76 1305
+  s_a2d2ef2e014756::t_da2492a68b6709 1282-1284
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 1306-1311,1318
+  s_a2d2ef2e014756::t_262d43a08f37bf 1276-1277
+  s_a2d2ef2e014756::t_36ca5795c8c887 1240-1241,1280-1281
+  s_a2d2ef2e014756::t_61a3cea3c0e25e 1300,1303
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-sleep-violet/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_8824b2bf95969d::t_6fe77a1e7fd208 5,15-16,23-27
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-weather-blue/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_8824b2bf95969d::t_91ccb96fd3ac94 171
+  s_a2d2ef2e014756::t_96bdd8bfcc07ef 177-224
+widget_service/cloud/services/template_generation/resources/source/themes/device-clean-blue-teal/first-layer.md
+  s_a2d2ef2e014756::t_48773059834831 3
+widget_service/cloud/services/template_generation/resources/source/themes/race-sunrise-action/first-layer.md
+  s_a2d2ef2e014756::t_4e4b1bb37ff6a4 3
+widget_service/scripts/generate_provider_template_gallery.py
+  s_a2d2ef2e014756::t_dacbb4fe4a59fe 61-65,94
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_a2d2ef2e014756::t_5026759d10b484 19-26,32-35,80-87,93-96
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-schedule-warm/theme.json
+  s_99ebefb5bb2a48::t_e03366631a5e0c 13,22
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_a2d2ef2e014756::t_6b7d8b54266c23 27,64,139,169,203,284,314,348,393,419,449,483,533,557,597,621,661,685,726,750,777,818,842,869,911,935,962,1019,1046,1112,1139
+  s_a2d2ef2e014756::t_e5850d17d517d5 8-16,45-53,81-88,105-116,126-133,156-163,190-197,233-247,271-278,301-308,335-342,374-382,406-413,436-443,470-477,514-522,544-551,578-586,608-615,642-650,672-679,707-715,737-744,764-771,799-807,829-836,856-863,892-900,922-929,949-956,987-998,1006-1013,1033-1040,1073-1087,1099-1106,1126-1133
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_a2d2ef2e014756::t_99e34399291c33 277-279
+  s_a2d2ef2e014756::t_b30f61c2750a17 50-51
+  s_8824b2bf95969d::t_8aee5f54935ec8 437-457
+  s_a2d2ef2e014756::t_82a8b23281ad05 6,34-49
+  s_a2d2ef2e014756::t_60e9fd6f063d10 271
+  s_a2d2ef2e014756::t_6170bbdaa379b9 272-276,280-283,304
+  s_a2d2ef2e014756::t_48773059834831 85-86,107,121
+  s_8824b2bf95969d::t_b49dcb217faec1 288-289,293,387,393,399,405,411,417,425,432
+  s_a2d2ef2e014756::t_ee9b36b3397703 11-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "1eaa8a71813648b2d7289cc788075f7246f96885",
+  "prompts": {},
+  "sessions": {
+    "s_0ecd48ff3b3572": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a017b6-ae88-76e3-8911-8b5047d3b872",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 77
+    },
+    "s_1b5fd5b18b017d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a037b2-17ad-73a0-bdcb-4a9e86116e12",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 112
+    },
+    "s_21f2d8f10f32b0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02a40-c107-75b3-b55d-05ad113d4fd2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 101
+    },
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 44
+    },
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 45
+    },
+    "s_46fa17422602e6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a013c1-6ad5-7613-ad9b-1e1ef081a1ec",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 14
+    },
+    "s_4751d9a037ec09": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01f91-7c57-75c0-92df-5def43846a64",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 190
+    },
+    "s_6526bbaece82d7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a029b1-b0ab-7a73-87a1-fbe2fcd0d0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 17
+    },
+    "s_8040b7d8cc6e4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03e8f-7479-7bd3-9e55-be1eb6f50ec9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 964
+    },
+    "s_877731ca76c3b4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e70-1417-7152-a601-bf643967c959",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 17
+    },
+    "s_8824b2bf95969d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a041df-5c3c-7cf2-bc48-4b61694ebe65",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 560
+    },
+    "s_931eb5da6f128e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a033d9-2f24-7840-843c-103ebf0400c4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 2820
+    },
+    "s_99ebefb5bb2a48": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0423f-ff60-7473-9c5f-d2c2166952e9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 68
+    },
+    "s_a2d2ef2e014756": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03e5d-47b8-7902-ae93-abfb8b838308",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 15
+    },
+    "s_a921c2efe73f31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e36-05a4-7af1-9eb6-0f4dbaba19a9",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 190
+    },
+    "s_c533b235aa94b3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e10-e169-7f71-ba25-e46260b5665b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 59
+    },
+    "s_d47dbf1a762c18": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01d76-687b-7530-a2b0-b65d7a6801b5",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 50
+    }
+  }
+}
