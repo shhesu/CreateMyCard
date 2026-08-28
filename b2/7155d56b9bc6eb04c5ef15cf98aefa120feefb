@@ -1,0 +1,44 @@
+widget_service/cloud/services/generation_pipeline.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 8-12,19-22,33,117-122,137-141,146-149,159-163,166-167,171,186-230,235
+widget_service/tests/test_tool_dispatch_routes.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 195-199
+widget_service/cloud/services/protocol_registry.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 20
+widget_service/cloud/custom/mock.terse-dsl-nested-2.dat
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 1-8
+widget_service/cloud/custom/a2ui_model_client.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 33,254-256,260,316-317
+widget_service/cloud/services/prompt_builder.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 7-10,20-33
+widget_service/cloud/data/protocol_profiles/terse-dsl-nested-2/PROMPT.md
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 1-113
+widget_service/tests/test_service_units.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 50,52,79,110-114,123-172,174-197,199-210,212-261,277-278,283-284,318,508-509,634-663,705-707,841,856,917,921,963,1302-1342,1446,1450,1467,1471-1478,1533,1537-1539,1957-1961,1964-1965,1968,1994,2005,2009-2011,2074-2101,2103-2104,2106,2110-2114,2116-2120,2122,2138-2171,2352-2359,2450,2502,2830-2835,2841,2857-2864,3158,3757,3771,3988-3992,4111,4126-4132,4138,4155-4167,4282,4337,4374,4527,4552-4600,4621-4623,4627-4661
+widget_service/cloud/data/protocol_profiles/terse-dsl-nested-2/protocol.json
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 1-14
+widget_service/cloud/services/terse_dsl_nested2_converter.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 1-387
+docs/云侧方案设计.md
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 41-43,56,72-77,120,133,147,150-151,154-155,298-299,313,317,321,428,461,493-495,522,619,622-625,661,665,687,729-732,770,796,833-834,836-837,871,886,967,1100,1103,1120-1121,1124,1127-1128,1131-1132,1141,1186,1191-1192,1198-1201,1206,1234,1319,1384-1385,1412-1413
+widget_service/cloud/services/widget_generation_service.py
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 34,60,64,276,359,434-437,494,519,564-568,681-687,694-700,748-754,908-912,1106,1150-1151,1156,1166,1177,1179,1185-1203,1209,1213-1243,1434
+widget_service/docs/method_usage.md
+  s_8b7998d1c2dd02::t_4800f06ec3fb2b 56-57,91-92,107-108,122-134,199,778,859,948-950,1173-1174
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "b27155d56b9bc6eb04c5ef15cf98aefa120feefb",
+  "prompts": {},
+  "sessions": {
+    "s_8b7998d1c2dd02": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a045fe-acc3-7cb3-872f-28eb01448b43",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 678
+    }
+  }
+}
