@@ -1,0 +1,63 @@
+widget_service/cloud/services/template_generation/tests/eval_fixture_migration.py
+  s_772e1642396b76::t_d7b8ca7cda0375 37,92-100
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_772e1642396b76::t_17ad39f5889a9d 6-7,25-26
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_772e1642396b76::t_2e371cea2c2b67 4,6
+widget_service/cloud/services/template_generation/tests/test_template_retrieval_fixture_migration.py
+  s_772e1642396b76::t_d7b8ca7cda0375 65-76
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_772e1642396b76::t_e1ab1d24767367 75-76
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_772e1642396b76::t_17ad39f5889a9d 26,38,66,217,232,246
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_772e1642396b76::t_7f916f99e723bd 84
+  s_772e1642396b76::t_85096bf4777ed6 14,17,20-36,38-83,85,103-104,107,109-119,121-127,129-139,159,162,173,176-177,181,188,198
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_772e1642396b76::t_865839ea36710e 203-205,489-495
+  s_772e1642396b76::t_32d4f746926ea6 83
+  s_772e1642396b76::t_7d77e19bcb0bba 9,51-62,797,1049
+  s_772e1642396b76::t_597cc0d62ddba5 79
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_772e1642396b76::t_78fca06bced401 8,10-11,31
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_772e1642396b76::t_2e645947256fe6 160-172
+  s_772e1642396b76::t_12d93816cb4cc2 131,194,379,387,466-467,469
+  s_772e1642396b76::t_7d77e19bcb0bba 124-126,129,271-274,413-415,424
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/first-layer.md
+  s_772e1642396b76::t_2e371cea2c2b67 1,5,17-18,20
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_772e1642396b76::t_7f916f99e723bd 72,91
+  s_772e1642396b76::t_222e76772e1f0b 73-75
+  s_772e1642396b76::t_b3512f7936435a 90
+  s_772e1642396b76::t_8a1dd0fe4ba9fa 92-94
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_772e1642396b76::t_bad34f1d8d7f76 157-162,277
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_772e1642396b76::t_1d0d7241255d66 19,21-22,27-29
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_772e1642396b76::t_17ad39f5889a9d 6-8,20-22,26-27,29-30
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_772e1642396b76::t_68e3e0bc14aaf4 20,27,64,74,84,98,114,130,191,207,259,272,285,298,309,323,339,355,961,965,987,1021,1034,1095,1108,1148,1161,1222,1235,1277,1308,1321,1344,1375,1388,1432,1463,1476
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_772e1642396b76::t_ee99bcd8dc5e43 7,32,76-78,131-132,171-172
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_772e1642396b76::t_fcf3c382c33df0 282,436-441,1833-1901,2089,2091-2097,2109-2129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "f920525f502c24d5f0e2163534ec31cd325b66d4",
+  "prompts": {},
+  "sessions": {
+    "s_772e1642396b76": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0467e-0bb4-7843-9c0b-c5d30652632f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 798
+    }
+  }
+}
