@@ -1,0 +1,35 @@
+widget_service/tests/test_fusion_ball_expander.py
+  s_5e722b18d15956::t_09921f6e6aeb6e 12,58-64,67,105,107-109,117,137,184,218,220
+  s_5e722b18d15956::t_ce8ba1a98b309a 161-182
+docs/云侧方案设计.md
+  s_5e722b18d15956::t_f1251554090931 1007-1010,1371-1374
+widget_service/cloud/services/fusion_ball_expander.py
+  s_5e722b18d15956::t_09921f6e6aeb6e 16,97-99,101-105,175-179,182,195,222-225,234
+  s_5e722b18d15956::t_e07ffffe83572b 100
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_5e722b18d15956::t_e07ffffe83572b 963,1072
+  s_5e722b18d15956::t_09921f6e6aeb6e 5141,5164
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_5e722b18d15956::t_f1251554090931 279-280
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_5e722b18d15956::t_f1251554090931 194-196,208-209
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_5e722b18d15956::t_09921f6e6aeb6e 9,14,162,165,169,172
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "ad85902c51e8143cdd1b275e13c78230cece9f09",
+  "prompts": {},
+  "sessions": {
+    "s_5e722b18d15956": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04e09-7290-73f2-b7b5-b7feb152512c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 40
+    }
+  }
+}
