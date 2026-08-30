@@ -1,0 +1,29 @@
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_5e722b18d15956::t_f5ec050fcbfe50 189-192
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_5e722b18d15956::t_f5ec050fcbfe50 5000,5020
+docs/云侧方案设计.md
+  s_5e722b18d15956::t_f5ec050fcbfe50 1369-1370
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_5e722b18d15956::t_e83c39ace31996 28-29
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_5e722b18d15956::t_f5ec050fcbfe50 1027-1041,1043-1045,1059,3997,4061,4078-4087
+  s_5e722b18d15956::t_e83c39ace31996 1042,4016,4067,4072
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "0eb9b6e2962efb72cab07de555f83cd7cc78e1d9",
+  "prompts": {},
+  "sessions": {
+    "s_5e722b18d15956": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04e09-7290-73f2-b7b5-b7feb152512c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 13
+    }
+  }
+}
