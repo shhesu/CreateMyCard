@@ -1,0 +1,50 @@
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_068decaa60a210::t_c049219e89d7c7 5131,5137-5140,5144,5157
+  s_068decaa60a210::t_eac3333cb9c975 263,287
+  s_068decaa60a210::t_c26cc2eb88f932 685-688,3551-3555,3557,4957
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_068decaa60a210::t_e05eccb8e0ccdf 186,1150-1183
+  s_068decaa60a210::t_ffb15022172ec1 1184-1185
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_068decaa60a210::t_dda6aa5f97856c 141-142,166,186,219,258-264
+  s_068decaa60a210::t_3c4877420676e1 265-266
+  s_068decaa60a210::t_adfa2d3c9648a5 338,370,386,394-410
+widget_service/cloud/services/generation_preflight.py
+  s_068decaa60a210::t_8fc9ae0e1b2641 470
+  s_068decaa60a210::t_b55d981d832fc3 14-19,321-326,448-469,471-512,844-846,850-866
+  s_623d2724202cfc::t_f8c28b80217773 867
+widget_service/tests/test_generation_preflight.py
+  s_068decaa60a210::t_f410add5752a3b 285-305
+  s_068decaa60a210::t_5129cca4493acb 79-87,366,386-470,473-475
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_068decaa60a210::t_e05eccb8e0ccdf 31
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_068decaa60a210::t_4787339c0ffb8e 5439-5544
+  s_068decaa60a210::t_8f55a94a0fa8cc 5438
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "3f41d3628f805ad29d5ece023df1df2485851034",
+  "prompts": {},
+  "sessions": {
+    "s_068decaa60a210": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05077-c3fa-7a22-966a-85af1e43469e",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 883
+    },
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
