@@ -1,0 +1,38 @@
+widget_service/cloud/services/template_generation/feature_gates.py
+  s_19e282bd8282f9::t_b088765bdf5fc1 1-26
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_19e282bd8282f9::t_f198642eac5219 41-48,56-58,129-130,217-218
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_19e282bd8282f9::t_a049732a5ae401 114-115
+  s_19e282bd8282f9::t_10cf01abe05c71 5187-5191,6057,6061,6064-6069,6094-6107
+  s_19e282bd8282f9::t_442a8a94c2b493 116
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_19e282bd8282f9::t_f198642eac5219 7-8,44,118-119
+widget_service/cloud/services/template_generation/docs/README.md
+  s_19e282bd8282f9::t_f198642eac5219 46-50
+widget_service/cloud/services/template_generation/source_generator.py
+  s_19e282bd8282f9::t_b088765bdf5fc1 12,40,49
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_19e282bd8282f9::t_f198642eac5219 218-222
+widget_service/cloud/services/template_generation/tests/test_feature_gates.py
+  s_19e282bd8282f9::t_10cf01abe05c71 1-58
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_19e282bd8282f9::t_f198642eac5219 65,68,97-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "a99e8ebe7807c60fbde751691bb6c49507bdd349",
+  "prompts": {},
+  "sessions": {
+    "s_19e282bd8282f9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a056d1-0705-7343-a5fb-b2a9b06fccaf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 61
+    }
+  }
+}
