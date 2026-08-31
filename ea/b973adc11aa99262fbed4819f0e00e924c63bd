@@ -1,0 +1,50 @@
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_19e282bd8282f9::t_ee0fcd43c48e19 116,143,254,256,265,267,269-271,285,302,428-451,529-530,575,577,579,581,583-586,588,590-594,596,598-601,603,605-608,662,669-670,672-674,676,678,680,685,706-715,736-737,741,746,748-753,757,759-769,771-820,830,847,850,852,858,860-875,877-905,907,909-934,936-937,939-957,960-964,966-982,984-989,991-1001,1004-1021,1023,1025-1038,1040-1041,1043-1070,1073-1077,1079-1094,1096-1101,1103-1141,1144,1191,1232,1286
+widget_service/cloud/errors/_init_.py
+  s_19e282bd8282f9::t_6a0e791fab7ec3 1-2
+widget_service/cloud/errors/classifier.py
+  s_19e282bd8282f9::t_595241e976e41d 1-169
+widget_service/cloud/errors/codes.py
+  s_19e282bd8282f9::t_d15ce2e84848cc 175
+widget_service/cloud/errors/error_handler.py
+  s_19e282bd8282f9::t_cf4a39f3f3b60a 1-100
+widget_service/cloud/errors/errors.py
+  s_19e282bd8282f9::t_8391c097e5da4d 392
+widget_service/cloud/errors/executors.py
+  s_19e282bd8282f9::t_222e3ed9896e14 3-63,65-106,108-233
+widget_service/cloud/errors/retry.py
+  s_19e282bd8282f9::t_8460be9b09a396 1-143
+widget_service/cloud/errors/severity.py
+  s_19e282bd8282f9::t_9e4f39cf550891 1-19
+widget_service/cloud/errors/status_mapping.py
+  s_19e282bd8282f9::t_dd368f8a505527 172
+widget_service/cloud/models/generation.py
+  s_19e282bd8282f9::t_ffc4c4ddbe07cb 81
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_19e282bd8282f9::t_e8d076514b0b94 438-439,733,742,842-851,2793,2811
+widget_service/cloud/services/fusion_ball_expander.py
+  s_19e282bd8282f9::t_b09c1e3d3d60ea 3,23,32-39,75-82,84,86-87,131,133-135,151-153,189-191,200,207,211-280,324
+widget_service/cloud/services/generation_pipeline.py
+  s_19e282bd8282f9::t_abf1c9043eebd6 153
+widget_service/cloud/services/generation_preflight.py
+  s_19e282bd8282f9::t_171a5bdeb526d5 87
+widget_service/cloud/services/task_spec_builder.py
+  s_19e282bd8282f9::t_e9eb816b65bbbb 11,36,120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "eab973adc11aa99262fbed4819f0e00e924c63bd",
+  "prompts": {},
+  "sessions": {
+    "s_19e282bd8282f9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a056d1-0705-7343-a5fb-b2a9b06fccaf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
