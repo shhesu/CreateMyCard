@@ -1,0 +1,121 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a67f840eb656b7::t_63d7abb95132da 210,250-252,334-336,396
+  s_a67f840eb656b7::t_3068c458ae41a8 244-247,329-332
+  s_a67f840eb656b7::t_36f7f64cf4ebb6 248
+  s_a67f840eb656b7::t_d344d62c20ecc5 249,283-284,291-295,333
+  s_a67f840eb656b7::t_d856604bc3f3fb 242,327
+  s_a67f840eb656b7::t_625c8438d8da95 243,328
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_a67f840eb656b7::t_ac45091d253f95 25-27
+  s_a67f840eb656b7::t_40a8c864b4ed06 19
+  s_a67f840eb656b7::t_9bca0dd1cf9c3e 20-23
+  s_a67f840eb656b7::t_6cb64ca5313420 24
+  s_a67f840eb656b7::t_b900b98bd271e5 18
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_a67f840eb656b7::t_3068c458ae41a8 312-315
+  s_a67f840eb656b7::t_6c02c4ac2d43eb 474-483,485-498,534-535,565-576
+  s_a67f840eb656b7::t_fcfd6520770d50 593
+  s_a67f840eb656b7::t_d344d62c20ecc5 316,362,500-508
+  s_a67f840eb656b7::t_63d7abb95132da 317-319,509-533
+  s_a67f840eb656b7::t_d856604bc3f3fb 310,460
+  s_a67f840eb656b7::t_36f7f64cf4ebb6 347,351,357-359,363,423-424,499
+  s_a67f840eb656b7::t_625c8438d8da95 311,465-473,591-592,594-597
+  s_a67f840eb656b7::t_26044b121055cc 484
+  s_a67f840eb656b7::t_660e903a42ee47 577-590,598-599
+  s_a67f840eb656b7::t_6be93c5acf7959 360-361
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_a67f840eb656b7::t_06df92bee31bef 8
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_a67f840eb656b7::t_a9437c8cc11902 394-398,677-686,688-697,699-708
+  s_a67f840eb656b7::t_750c5d98505af6 54,392-393,399-400,402
+  s_a67f840eb656b7::t_b900b98bd271e5 654,657,709
+  s_a67f840eb656b7::t_46640c076eefce 660-672
+  s_a67f840eb656b7::t_625c8438d8da95 652-653,656,659,710
+  s_a67f840eb656b7::t_037b1b5669d6a3 161,171,627,639,651,655,658,673-676,687,698,716,722,725-726,733-735,737-739,756
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_a67f840eb656b7::t_db4b7f40bc4e61 57-63,67-78
+  s_a67f840eb656b7::t_1f64749d19bfe7 64-66
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_a67f840eb656b7::t_3306f75697fce7 19-24
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_a67f840eb656b7::t_a9437c8cc11902 874-876,5960-5973
+  s_a67f840eb656b7::t_46640c076eefce 5959,6003,6015
+  s_a67f840eb656b7::t_b900b98bd271e5 6014
+  s_a67f840eb656b7::t_9f7949049cc127 6387
+  s_a67f840eb656b7::t_2fa8797a398126 878,880-883,885
+  s_a67f840eb656b7::t_3306f75697fce7 83-85,89,1016-1017,1113,1131,1134,5614,5627,5630,5952-5957,8403,8405-8407
+  s_a67f840eb656b7::t_625c8438d8da95 5932-5936
+  s_a67f840eb656b7::t_9eebfdb28ee49e 866-873,877,879,884,5942-5951,5958,5974-5982
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_a67f840eb656b7::t_40a8c864b4ed06 246
+  s_a67f840eb656b7::t_9bca0dd1cf9c3e 247-250
+  s_a67f840eb656b7::t_ac45091d253f95 252-254
+  s_a67f840eb656b7::t_6cb64ca5313420 251
+  s_a67f840eb656b7::t_b900b98bd271e5 245
+widget_service/cloud/services/template_generation/resources/source/providers/action/provider.json
+  s_a67f840eb656b7::t_db4b7f40bc4e61 15-17,19
+  s_a67f840eb656b7::t_0733689ba403cf 18
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_a67f840eb656b7::t_ac45091d253f95 425-426
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_a67f840eb656b7::t_40a8c864b4ed06 104-123
+  s_a67f840eb656b7::t_c5c6758c4d1e56 124-194,198,202-205
+  s_a67f840eb656b7::t_7167f86b2f1247 206-220
+  s_a67f840eb656b7::t_54fd9f92dad427 221-252,255,262-277,279-285
+  s_a67f840eb656b7::t_b900b98bd271e5 93-103
+  s_a67f840eb656b7::t_2a05c6ff092fdb 195-197
+  s_a67f840eb656b7::t_e214d26a5c7c77 199-201
+  s_a67f840eb656b7::t_f956c22ed9ab9b 253-254
+  s_a67f840eb656b7::t_918bdb40221c8a 256-261
+  s_a67f840eb656b7::t_2c78391293642f 278
+widget_service/cloud/services/template_generation/engine/cardplan/parser.py
+  s_a67f840eb656b7::t_3306f75697fce7 29-31
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_a67f840eb656b7::t_363387c640e6f5 40-59,269-319,321-332
+  s_a67f840eb656b7::t_40a8c864b4ed06 35-39,240,242-268
+  s_a67f840eb656b7::t_7167f86b2f1247 60-64,234-239,333-347,384
+  s_a67f840eb656b7::t_2ac35b8266e5f1 65-78,348-383
+  s_a67f840eb656b7::t_b900b98bd271e5 28-34,194,202,204,217-233
+  s_a67f840eb656b7::t_101b159a504eae 241
+  s_a67f840eb656b7::t_8dac21121e40f6 320
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_a67f840eb656b7::t_06df92bee31bef 268,276-277
+  s_a67f840eb656b7::t_c8385cb2130e8a 273-275
+  s_a67f840eb656b7::t_65d7a6601ec172 257-258
+  s_a67f840eb656b7::t_d344d62c20ecc5 265-267,269
+  s_a67f840eb656b7::t_058784089e5604 270-272
+  s_a67f840eb656b7::t_d877400da2a076 256
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_a67f840eb656b7::t_9bca0dd1cf9c3e 61-64
+  s_a67f840eb656b7::t_b900b98bd271e5 59
+  s_a67f840eb656b7::t_40a8c864b4ed06 60
+  s_a67f840eb656b7::t_6cb64ca5313420 65
+  s_a67f840eb656b7::t_ac45091d253f95 66-68
+  s_a67f840eb656b7::t_b21e5ccaf16359 102,200-204
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_a67f840eb656b7::t_b21e5ccaf16359 27-29,31-38,45,53
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_a67f840eb656b7::t_3306f75697fce7 38,200-208,629,637-638,662-663
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_a67f840eb656b7::t_6cb64ca5313420 1195
+  s_a67f840eb656b7::t_9bca0dd1cf9c3e 1196
+  s_a67f840eb656b7::t_b900b98bd271e5 1191
+  s_a67f840eb656b7::t_ac45091d253f95 1194,1197-1201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.31.1604",
+  "base_commit_sha": "eccc37e7d810ab123ad1a357d413182c47af9f4b",
+  "prompts": {},
+  "sessions": {
+    "s_a67f840eb656b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd62b-46e7-7f60-9fa7-be6813d468b4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_deletions": 137
+    }
+  }
+}
