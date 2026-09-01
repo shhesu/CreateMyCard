@@ -6,6 +6,7 @@ widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
 widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
   s_19e282bd8282f9::t_505eb1fa6010e3 87,185
   s_19e282bd8282f9::t_77e8aa2c1a36a0 105,194,197
+  s_19e282bd8282f9::t_4c589a76cbac36 93
 widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
   s_19e282bd8282f9::t_77e8aa2c1a36a0 434
 widget_service/cloud/services/template_generation/tests/test_template_generation.py
