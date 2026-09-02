@@ -22,8 +22,12 @@ widget_service/cloud/services/template_generation/engine/cardplan/preview_datase
 widget_service/cloud/services/template_generation/tests/test_template_generation.py
   s_a67f840eb656b7::t_e9c2a47eab9832 284-293,324-326,333-337,479-488
   s_a67f840eb656b7::t_476e62082348d9 548
+  s_a67f840eb656b7::t_d53e6bce46e778 253
 widget_service/cloud/services/template_generation/docs/provider-template-contract.md
   s_a67f840eb656b7::t_c55646053d2175 314-315,317-318
+  s_a67f840eb656b7::t_d53e6bce46e778 327
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_a67f840eb656b7::t_d53e6bce46e778 8
 ---
 {
   "schema_version": "authorship/3.0.0",
