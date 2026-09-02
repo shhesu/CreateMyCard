@@ -1,0 +1,44 @@
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_a67f840eb656b7::t_bbe26cc632c0ff 629-630,632-633,657-658
+  s_a67f840eb656b7::t_39a8461bbf785e 37,190-198,619,628
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_a67f840eb656b7::t_f01647a1991dab 20-25
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_a67f840eb656b7::t_f01647a1991dab 1270,1276,1280-1285
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_a67f840eb656b7::t_f01647a1991dab 60-69,112,211-215
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_a67f840eb656b7::t_70e9dddf0443e6 18-27
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_a67f840eb656b7::t_e9c2a47eab9832 311-320,374,378,384-390,547-548,600,605-675,705-739
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_a67f840eb656b7::t_70e9dddf0443e6 87-89,93,885-904,1035-1036,1163,1181,1184,5786,5799,5802,6098-6102,6108-6138,6168,6178-6179,6551,8567,8569-8571
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_a67f840eb656b7::t_16e025b64236a7 186,833-834,841
+  s_a67f840eb656b7::t_bbe26cc632c0ff 753-754,855-857,864-866
+  s_a67f840eb656b7::t_c8eb95ea3dcd0f 55,64,174,185,706,745-752,755-798,800-803,842-854,858-863,867,970
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_a67f840eb656b7::t_f01647a1991dab 34,44,53,62
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a67f840eb656b7::t_e9c2a47eab9832 284-293,324-326,333-337,479-488
+  s_a67f840eb656b7::t_476e62082348d9 548
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_a67f840eb656b7::t_c55646053d2175 314-315,317-318
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.31.1604",
+  "base_commit_sha": "a618e06b51a7b633176a3b3dffd8aca472c847bb",
+  "prompts": {},
+  "sessions": {
+    "s_a67f840eb656b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd62b-46e7-7f60-9fa7-be6813d468b4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_deletions": 67
+    }
+  }
+}
