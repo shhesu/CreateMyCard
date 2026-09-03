@@ -1,0 +1,54 @@
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_465a1f42c3fab2::t_3578be734729bd 310-311,323-324,327-329
+  s_465a1f42c3fab2::t_e98511736ea0e8 330
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_465a1f42c3fab2::t_c3161d4a3ffe11 15-16,92-105
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_465a1f42c3fab2::t_7e834d1fd1b9b1 1-2,5-17,21-31,33-56
+  s_465a1f42c3fab2::t_eb88a3cb210fdd 3-4,18-20,32,57-58
+docs/云侧方案设计.md
+  s_465a1f42c3fab2::t_228d9bb41254eb 1173-1179
+widget_service/tests/test_contrast_validator.py
+  s_465a1f42c3fab2::t_7e834d1fd1b9b1 176
+  s_465a1f42c3fab2::t_b908502ecac6fb 174-175,187
+  s_465a1f42c3fab2::t_637228f88c75a7 2-4,50-173,177-186
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_465a1f42c3fab2::t_3df3b23327bf06 792-795,1313,1318,1323,1454,1457,1459,1461,4007-4021,4131-4136,4142-4143,4145,4156,4472-4476,4480-4485,5610,5623,5685-5690,5694-5695,5709,5711-5712,5719
+  s_465a1f42c3fab2::t_e1aa4fd1e1ecf3 4767
+widget_service/cloud/services/card_validation/contrast_validator.py
+  s_465a1f42c3fab2::t_c3161d4a3ffe11 12,80-82
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_465a1f42c3fab2::t_3df3b23327bf06 87,93,105,185,194,197
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_465a1f42c3fab2::t_3d8fa0f42b1369 102,5052,5103-5104
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_465a1f42c3fab2::t_bcac32ecad3aa6 442
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_465a1f42c3fab2::t_9693439ad2d10d 44-46,49-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "78281e546183609856c9535b3712bab937b53a61",
+  "prompts": {},
+  "sessions": {
+    "s_4030737f1bdfed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06260-04dd-72d0-a3fc-4f5b4649b0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 4
+    },
+    "s_465a1f42c3fab2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06606-5ccc-7420-a41a-266e983eb605",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 42
+    }
+  }
+}
