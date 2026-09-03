@@ -1,0 +1,77 @@
+widget_service/cloud/services/template_generation/engine/tersel_converter.py
+  s_4030737f1bdfed::t_74ceec45637ba8 41,358-364,502-505,729-730
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_4030737f1bdfed::t_901ea5ec198351 66-83,85-90,93-101
+  s_4030737f1bdfed::t_6503641d035f94 91-92
+  s_4030737f1bdfed::t_7ea92ac705e108 84
+widget_service/cloud/data/validator_rules/config/protocol.json
+  s_4030737f1bdfed::t_a723f3c7d489a4 20-21,24-25,31,44,78
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_4030737f1bdfed::t_1eef5a5ee2a542 5262-5264,7164-7166,8236-8238,8259-8261,9062-9063,9075-9077
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/protocol.md
+  s_4030737f1bdfed::t_e01543d1f079ba 29-31,36
+widget_service/cloud/services/card_validation/binding_validator.py
+  s_4030737f1bdfed::t_a723f3c7d489a4 97
+  s_4030737f1bdfed::t_a60151cdbce64e 8
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_4030737f1bdfed::t_1eef5a5ee2a542 246
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_4030737f1bdfed::t_74ceec45637ba8 950-951,1006-1017,1021-1022
+  s_4030737f1bdfed::t_7ea92ac705e108 1018-1020
+  s_4030737f1bdfed::t_86581334616b44 1023-1024
+widget_service/cloud/services/template_generation/tests/test_runtime_if.py
+  s_4030737f1bdfed::t_e84fc92fb3307c 1-9,11-22,24,26-27,29-30,39,41-75,77-251
+  s_4030737f1bdfed::t_6503641d035f94 288-290,295-299
+  s_4030737f1bdfed::t_a880b0d241c8e4 76
+  s_4030737f1bdfed::t_cf89260153ba42 10,23,25,28,31-38,40,252-287,291-294,300-347
+docs/云侧方案设计.md
+  s_4030737f1bdfed::t_78c91d337816d5 1008,1019-1028,1492-1494
+  s_4030737f1bdfed::t_6503641d035f94 1029-1030
+widget_service/cloud/services/a2ui_runtime_if.py
+  s_4030737f1bdfed::t_74ceec45637ba8 1-52
+  s_4030737f1bdfed::t_a723f3c7d489a4 53-57,59-60,64-67,73,82,88
+  s_4030737f1bdfed::t_b1ff55b040915c 58,61-63,68-72,74-81,83-87,89
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_4030737f1bdfed::t_bf5dab125ae115 1409-1410
+  s_4030737f1bdfed::t_53ceb77d06419a 46,51,1666-1674,1938-1939
+  s_4030737f1bdfed::t_a723f3c7d489a4 1717-1722,1726,1812-1813,1817-1825
+  s_4030737f1bdfed::t_7ea92ac705e108 1814-1816
+  s_4030737f1bdfed::t_6ce32865aecf92 17-22
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_4030737f1bdfed::t_c976a4e2323dbf 1171-1175,1177,2039-2040
+  s_4030737f1bdfed::t_17d9990b0456bf 12-13,36,42,1087-1095,2011-2012
+  s_4030737f1bdfed::t_9ad9d159353185 1176
+widget_service/cloud/services/card_validation/contrast_validator.py
+  s_4030737f1bdfed::t_a723f3c7d489a4 9-10,80-81,84-86,129,132
+  s_4030737f1bdfed::t_9ad9d159353185 82-83
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/component-catalog.md
+  s_4030737f1bdfed::t_e01543d1f079ba 16-17,42-47,61
+widget_service/cloud/services/template_generation/docs/tersel-protocol.md
+  s_4030737f1bdfed::t_901ea5ec198351 40-43
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_4030737f1bdfed::t_901ea5ec198351 5,29-30
+widget_service/cloud/services/card_validation/source_parser.py
+  s_4030737f1bdfed::t_a723f3c7d489a4 224
+  s_4030737f1bdfed::t_c292f0dbbcc800 9-10
+widget_service/cloud/services/card_validation/component_validator.py
+  s_4030737f1bdfed::t_a723f3c7d489a4 5-6,40-46,88-99
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_4030737f1bdfed::t_9d91016c66e430 198-200
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "1fea1163803d8160cbc62e71c4c9ecc03c6ed3ae",
+  "prompts": {},
+  "sessions": {
+    "s_4030737f1bdfed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06260-04dd-72d0-a3fc-4f5b4649b0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 52
+    }
+  }
+}
