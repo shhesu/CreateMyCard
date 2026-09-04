@@ -63,7 +63,7 @@ TaskSpec 后的绝对根路径；模板内的数据路径始终相对该根路�
 
 ## UI 模板语法
 
-业务模板 ID 必须以 `Support`、`Compact`、`Hero`、`Full`、`WideHero`、`WideFull` 之一结束。六类后缀分别表示：
+业务模板 ID 必须以 `Support`、`Compact`、`Hero`、`Full`、`WideHero`、`WideFull`、`WideHalf` 之一结束。七类后缀分别表示：
 
 - `Support`：约 `2x1`，保留给旧 LLM 选择器兼容测试和原子预览；事件按需绑定在 Support 内部，当前 Search 不可达；
 - `Compact`：约 `2x1`，只用于一个 Compact 加两个 PillAction；
@@ -71,6 +71,7 @@ TaskSpec 后的绝对根路径；模板内的数据路径始终相对该根路�
 - `Full`：完整 `2x2`，无 Action 时单独使用，或在存在语义匹配图标素材时加一个 IconAction；
 - `WideHero`：约 `4x1.7`，用于 `2x4` 的 WideHero 加一个 PillAction；
 - `WideFull`：完整 `4x2`，单独使用。
+- `WideHalf`：约 `4x1`，用于 `2x4` 的半高组合布局。
 
 业务模板不再重复声明 `supportedCardSizes` 和 `requiresLayoutAction`，Registry 直接从后缀推导。业务语义或
 需要区分的状态写在后缀前，例如 `BatteryOverviewChargingProgressHero@1`；同一结构能够覆盖不同状态时使用
@@ -323,8 +324,8 @@ Support CardTpl 使用 `onClick: EventAction(props?.actionId)`。微服务校验
 ## 当前迁移范围
 
 天气、日历、手机电量、耳机、健康运动、应用使用时长、倒计时和系统内存当前共有
-73 个无 Variant 的业务 UI 模板，其中 12 个是 Support；当前形成 11 个业务组。Layout Provider 另提供
-16 个支持 `...children` 的布局模板，Action Provider 提供 3 个动作模板，运行时 Registry 共 92 个模板。
+79 个无 Variant 的业务 UI 模板，其中 12 个是 Support；当前形成 11 个业务组。Layout Provider 另提供
+16 个支持 `...children` 的布局模板，Action Provider 提供 3 个动作模板，运行时 Registry 共 98 个模板。
 名称包含 `Wide` 的布局只用于 `2x4`，其余布局只用于 `2x2`，两类布局不得混用。
 新增或修改资源后执行：
 

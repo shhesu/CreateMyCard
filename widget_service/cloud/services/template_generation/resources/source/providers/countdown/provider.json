@@ -24,6 +24,36 @@
       "primaryData": ["/countdownDays"],
       "secondaryData": [],
       "optionalData": []
+    },
+    {
+      "templateId": "CountdownOverviewWideFull@1",
+      "businessId": "CountdownOverview",
+      "capabilityId": "GetCountdownDays",
+      "description": "通用事件的剩余天数 WideFull 摘要，左右分区展示可信标题和倒计时天数。",
+      "entry": "templates/countdown-overview.cardtpl",
+      "primaryData": ["/countdownDays"],
+      "secondaryData": [],
+      "optionalData": []
+    },
+    {
+      "templateId": "CountdownOverviewWideHero@1",
+      "businessId": "CountdownOverview",
+      "capabilityId": "GetCountdownDays",
+      "description": "通用事件的剩余天数 WideHero 摘要，突出可信标题和倒计时天数。",
+      "entry": "templates/countdown-overview.cardtpl",
+      "primaryData": ["/countdownDays"],
+      "secondaryData": [],
+      "optionalData": []
+    },
+    {
+      "templateId": "CountdownOverviewWideHalf@1",
+      "businessId": "CountdownOverview",
+      "capabilityId": "GetCountdownDays",
+      "description": "通用事件的剩余天数 WideHalf 摘要，用于 2x4 半高组合布局。",
+      "entry": "templates/countdown-overview.cardtpl",
+      "primaryData": ["/countdownDays"],
+      "secondaryData": [],
+      "optionalData": []
     }
   ],
   "compatibility": {

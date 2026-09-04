@@ -14,9 +14,14 @@
   - `WeatherOverviewHumidityFull@1`：以湿度为主焦点的完整天气摘要。
   - `WeatherOverviewUvFull@1`：以紫外线为主焦点的完整天气摘要。
   - `WeatherOverviewAirQualityHero@1`：以空气质量为主焦点的 Hero。
+  - `WeatherOverviewWideFull@1`：左右分区的完整天气摘要，可展示体感、湿度、空气、风况和当日预报。
+  - `WeatherOverviewWideHero@1`：以当前温度和天气现象为焦点，辅助展示体感与当日预报。
+  - `WeatherOverviewWideHalf@1`：适用于 2x4 组合布局的横向半高天气摘要。
 - Compact 只用于 `CompactTwoActionLayout@1` 加两个 `PillAction@1`；Hero 只用于
   `HeroActionLayout@1` 加一个 `PillAction@1`；Full 用于无 Action，或搭配一个语义匹配的
   `IconAction@1`。
+- WideHero 用于 `WideSingleFocusLayout@1` 并搭配一个 `PillAction@1`；WideFull 用于
+  `WideFullOnlyLayout@1` 或其他 Full 组合布局；WideHalf 用于对应的半高组合布局。
 - Support 仅供兼容 LLM 路径与原子预览使用，当前 Search 不可达；在兼容路径中只用于
   `TwoSupportLayout@1`。该业务有已批准事件时传入 `actionId`；没有对应事件时省略，模板根节点不生成
   `onClick`。

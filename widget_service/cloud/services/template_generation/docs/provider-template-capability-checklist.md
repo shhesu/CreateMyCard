@@ -4,7 +4,7 @@
 
 ## 整改总览
 
-- [x] 73 个业务模板全部使用 `Support`、`Compact`、`Hero`、`Full`、`WideHero`、`WideFull` 后缀。
+- [x] 79 个业务模板全部使用 `Support`、`Compact`、`Hero`、`Full`、`WideHero`、`WideFull`、`WideHalf` 后缀。
 - [x] 业务模板尺寸和动作组合由后缀推导，不再由 Provider 重复声明。
 - [x] Provider 数据统一拆为 `primaryData`、`secondaryData`、`optionalData`。
 - [x] `primaryData` 与 `secondaryData` 均参与模板准入硬校验。
@@ -24,6 +24,7 @@
 | Full | 完整 2x2；无 Action，或 Full + 1 个 IconAction | 2x2 |
 | WideHero | 约 4x1.7；WideHero + 1 个 PillAction | 2x4 |
 | WideFull | 完整 4x2；单 WideFull | 2x4 |
+| WideHalf | 约 4x1；用于 2x4 半高组合布局 | 2x4 |
 
 ## 业务与运行状态
 
@@ -36,7 +37,7 @@
 | earphone | `GetEarphoneInfo` | `/data/earphone` | 9 | 启用 |
 | health-sport | `GetHealthAndSportSummary` | `/data/healthSport` | 30 | 启用 |
 | system-memory | `GetSystemMemInfo` | `/data/systemMem` | 3 | 启用 |
-| weather | `ViewWeather` | `/data/weather` | 9 | 启用 |
+| weather | `ViewWeather` | `/data/weather` | 12 | 启用 |
 
 下方完整展开本轮调整的 Battery、Calendar、Countdown、Earphone 和 Weather；其他 Provider 保留基础形态摘要，
 精确全集以当前 `provider.json` 为准。Support 与 Compact 不要求一一对应；Support/TwoSupport 底层资源
@@ -91,11 +92,14 @@
 ## CountdownOverview
 
 - Provider：`com.huawei.countdown.cli`；运行状态：启用。
-- 数据能力：`GetCountdownDays`；模板数：1；当前没有 Support、Compact 或 Hero。
+- 数据能力：`GetCountdownDays`；模板数：4；当前没有 Support、Compact 或 2x2 Hero。
 
 | 状态 | 模板 | 布局场景 | 主数据 | 次要数据 | 可选数据 |
 | --- | --- | --- | --- | --- | --- |
 | ✅ | `CountdownOverviewFull@1` | 完整 2x2；无 Action，或加一个 IconAction | `/countdownDays` | 无 | 无 |
+| ✅ | `CountdownOverviewWideFull@1` | 完整 4x2；单 WideFull 或 Full 组合布局 | `/countdownDays` | 无 | 无 |
+| ✅ | `CountdownOverviewWideHero@1` | 约 4x1.7；WideHero + 1 个 PillAction | `/countdownDays` | 无 | 无 |
+| ✅ | `CountdownOverviewWideHalf@1` | 约 4x1；用于 2x4 半高组合布局 | `/countdownDays` | 无 | 无 |
 
 ## BluetoothDeviceOverview
 
@@ -181,7 +185,7 @@
 ## WeatherOverview
 
 - Provider：`com.huawei.weather.cli`；运行状态：启用。
-- 数据能力：`ViewWeather`；模板数：9。
+- 数据能力：`ViewWeather`；模板数：12。
 
 | 状态 | 模板 | 布局场景 | 主数据 | 次要数据 | 可选数据 |
 | --- | --- | --- | --- | --- | --- |
@@ -194,6 +198,9 @@
 | ✅ | `WeatherOverviewHumidityFull@1` | 完整 2x2；无 Action 的单 Full | `/current/humidityPercent` | `/current/condition`<br>`/current/temperatureText` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/airQuality`<br>`/current/coldLevel` |
 | ✅ | `WeatherOverviewUvFull@1` | 完整 2x2；无 Action 的单 Full | `/current/uvIndex` | `/current/condition`<br>`/current/temperatureText` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/airQuality`<br>`/current/coldLevel` |
 | ✅ | `WeatherOverviewAirQualityHero@1` | 约 2x1.7；Hero + 1 个 PillAction | `/current/airQuality` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/coldLevel` |
+| ✅ | `WeatherOverviewWideFull@1` | 完整 4x2；单 WideFull 或 Full 组合布局 | `/current/temperatureText` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/feelsLikeC`<br>`/current/humidityPercent`<br>`/current/airQuality`<br>`/current/windDirection`<br>`/current/windLevel`<br>`/daily/0/temperatureRangeText`<br>`/daily/0/rainProbabilityPercent` |
+| ✅ | `WeatherOverviewWideHero@1` | 约 4x1.7；WideHero + 1 个 PillAction | `/current/temperatureText` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/feelsLikeC`<br>`/daily/0/temperatureRangeText`<br>`/daily/0/rainProbabilityPercent` |
+| ✅ | `WeatherOverviewWideHalf@1` | 约 4x1；用于 2x4 半高组合布局 | `/current/temperatureText` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/airQuality`<br>`/daily/0/rainProbabilityPercent` |
 
 说明：最新天气 UX 中的日出日落与 AQI 数值不在当前 `ViewWeather` 数据契约内，本轮未生成伪数据模板。
 
