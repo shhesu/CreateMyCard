@@ -1,0 +1,46 @@
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_a67f840eb656b7::t_8cdbd65c5d4f64 66,74,327-328
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_a67f840eb656b7::t_827ca1833b0555 166-216
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_a67f840eb656b7::t_8cdbd65c5d4f64 8,14-16
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_a67f840eb656b7::t_f5141bef666b4c 188,201-203
+  s_a67f840eb656b7::t_8cdbd65c5d4f64 7,95,100-102
+  s_a67f840eb656b7::t_68ab58cdce7b5a 27,40
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_a67f840eb656b7::t_b37ad31354c24c 27-56
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_a67f840eb656b7::t_8cdbd65c5d4f64 19,25-27,29-31
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_a67f840eb656b7::t_b37ad31354c24c 5,8-10
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_a67f840eb656b7::t_827ca1833b0555 4,12
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_a67f840eb656b7::t_827ca1833b0555 17-19,23-24
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_a67f840eb656b7::t_5116624b480b19 225-226,241-251
+  s_a67f840eb656b7::t_ff489d0e6aa68b 99-181,196-199,214-224,252-335,350-428
+  s_a67f840eb656b7::t_2fc41b378fd5aa 182-195,200-213,227-240,336-349
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a67f840eb656b7::t_8cdbd65c5d4f64 253,265-267
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_a67f840eb656b7::t_b37ad31354c24c 39-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.31.1604",
+  "base_commit_sha": "3b2f96e20425987eae1b5715c26b05204191489b",
+  "prompts": {},
+  "sessions": {
+    "s_a67f840eb656b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd62b-46e7-7f60-9fa7-be6813d468b4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_deletions": 51
+    }
+  }
+}
