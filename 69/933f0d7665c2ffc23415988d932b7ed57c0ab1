@@ -1,0 +1,75 @@
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_f4e2d453ac486a 37-39
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_1568c3f5a7f2fe::t_65bbee222f64fd 4302
+  s_1568c3f5a7f2fe::t_a91841a62af59c 4390
+  s_1568c3f5a7f2fe::t_f223344c94eac4 1051
+  s_1568c3f5a7f2fe::t_c9e7aabff6a8b6 8225-8227
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_1568c3f5a7f2fe::t_65bbee222f64fd 86-87,92-93
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_1568c3f5a7f2fe::t_f223344c94eac4 12-14
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_1568c3f5a7f2fe::t_06489624dfdee6 69,84
+widget_service/cloud/services/template_generation/docs/provider-gallery-delivery-2026-09-06.md
+  s_1568c3f5a7f2fe::t_0471e556abb289 86-87
+  s_1568c3f5a7f2fe::t_dfae5509ae3121 135-139,148,155
+  s_1568c3f5a7f2fe::t_ff3584c02d6794 3-69
+  s_1568c3f5a7f2fe::t_59adb83ebcd03e 1-2,96-134,140-147,149-154
+  s_1568c3f5a7f2fe::t_057397993b877a 70-85,88-95
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_1568c3f5a7f2fe::t_f575173d68256a 208-210,417-419
+  s_1568c3f5a7f2fe::t_65bbee222f64fd 98,173-175,204-207,211-212,414-416,420-424
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_f4e2d453ac486a 44-46
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_1568c3f5a7f2fe::t_65bbee222f64fd 263-270
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_1568c3f5a7f2fe::t_84b00c8f2a97e8 210,212,215-217,228-230,551,553-554,557
+  s_1568c3f5a7f2fe::t_593a587d6e9e09 670-729
+  s_1568c3f5a7f2fe::t_b7948c06b0b45a 301
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_1568c3f5a7f2fe::t_06489624dfdee6 70
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_1568c3f5a7f2fe::t_3f0efb48f0bb3f 146-148,165
+  s_1568c3f5a7f2fe::t_f575173d68256a 11-14
+  s_1568c3f5a7f2fe::t_c9e7aabff6a8b6 1-10,15-145,149-164,166-233
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_1568c3f5a7f2fe::t_b7948c06b0b45a 1269,1272
+  s_1568c3f5a7f2fe::t_757b1cd86a1f84 976-981,1021-1053,1195-1218,1220-1268,1273-1284,1401-1403
+  s_1568c3f5a7f2fe::t_2ca90fe94c0413 791-793,1219
+  s_1568c3f5a7f2fe::t_f4e2d453ac486a 180-191,567-569,647-648
+  s_1568c3f5a7f2fe::t_bf84ba935c01b2 1270-1271
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_1568c3f5a7f2fe::t_b7948c06b0b45a 7,20-21,33,40-42,56,118-120,144
+  s_1568c3f5a7f2fe::t_f4e2d453ac486a 67-85
+  s_1568c3f5a7f2fe::t_829e775c36fee2 23,178-179,183-187,195-205
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/provider.json
+  s_1568c3f5a7f2fe::t_06489624dfdee6 97
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_1568c3f5a7f2fe::t_56f1ce11d33544 2790
+  s_1568c3f5a7f2fe::t_f2bd50db5d10e2 2783-2789,2791-2800
+  s_1568c3f5a7f2fe::t_f223344c94eac4 4035
+  s_1568c3f5a7f2fe::t_c9e7aabff6a8b6 167-168,173,198-199,204
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_1568c3f5a7f2fe::t_06489624dfdee6 325,338,381,394,409
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/provider.json
+  s_1568c3f5a7f2fe::t_06489624dfdee6 54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "69933f0d7665c2ffc23415988d932b7ed57c0ab1",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 49
+    }
+  }
+}
