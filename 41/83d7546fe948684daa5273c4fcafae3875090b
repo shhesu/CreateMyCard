@@ -1,0 +1,48 @@
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_a67f840eb656b7::t_bbe26cc632c0ff 630-631,633-634,658-659
+  s_a67f840eb656b7::t_39a8461bbf785e 37,190-198,619,629
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_a67f840eb656b7::t_f01647a1991dab 20-25
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_a67f840eb656b7::t_f01647a1991dab 1286,1292,1296-1301
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_a67f840eb656b7::t_f01647a1991dab 62-71,115,214-218
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_a67f840eb656b7::t_70e9dddf0443e6 19-28
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_a67f840eb656b7::t_e9c2a47eab9832 316-325,379,383,389-395,552-553,624,629-699,729-763
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_a67f840eb656b7::t_70e9dddf0443e6 87-89,93,885-904,1035-1036,1193,1211,1214,5825,5838,5841,6137-6141,6147-6177,6207,6217-6218,6590,8558,8560-8562
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_a67f840eb656b7::t_16e025b64236a7 195,886-887,894
+  s_a67f840eb656b7::t_bbe26cc632c0ff 806-807,908-910,917-919
+  s_a67f840eb656b7::t_c8eb95ea3dcd0f 55,64,174,194,752,798-805,808-851,853-856,895-907,911-916,920,1061
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_a67f840eb656b7::t_f01647a1991dab 36,46,57,68
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a67f840eb656b7::t_e9c2a47eab9832 308-317,352-354,361-365,560-569
+  s_a67f840eb656b7::t_476e62082348d9 629
+  s_a67f840eb656b7::t_d53e6bce46e778 257
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_a67f840eb656b7::t_c55646053d2175 386-387,389-390
+  s_a67f840eb656b7::t_d53e6bce46e778 399
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_a67f840eb656b7::t_d53e6bce46e778 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.31.1604",
+  "base_commit_sha": "4183d7546fe948684daa5273c4fcafae3875090b",
+  "prompts": {},
+  "sessions": {
+    "s_a67f840eb656b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd62b-46e7-7f60-9fa7-be6813d468b4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_deletions": 67
+    }
+  }
+}
