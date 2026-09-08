@@ -1,7 +1,10 @@
 widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
   s_1568c3f5a7f2fe::t_0d5c680e282ce2 969,974-980
+  s_1568c3f5a7f2fe::t_5aedf2c36015c8 969,974-980
 widget_service/cloud/services/template_generation/tests/test_provider_presence_match.py
   s_1568c3f5a7f2fe::t_c3c01d75fd8dec 14,33-60
+  s_1568c3f5a7f2fe::t_2e3b984489c557 14,33-58
+  s_1568c3f5a7f2fe::t_fd7d50705203ca 59-60
 ---
 {
   "schema_version": "authorship/3.0.0",
