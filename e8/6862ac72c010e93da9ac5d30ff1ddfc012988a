@@ -1,0 +1,35 @@
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_1568c3f5a7f2fe::t_fe0b620ecc016a 307,5436-5444,5456-5457,8619-8624,8629-8631
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_1568c3f5a7f2fe::t_fe0b620ecc016a 567,2259-2276
+  s_1568c3f5a7f2fe::t_f9684923802a48 2277-2278
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_dfcd31dbb5a343 45-47
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_1568c3f5a7f2fe::t_dfcd31dbb5a343 371-383
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_1568c3f5a7f2fe::t_082971bcec797d 192-193,223-224
+  s_1568c3f5a7f2fe::t_fe0b620ecc016a 168,189,198-199,212,220
+widget_service/cloud/services/template_generation/tests/test_image_color_policy.py
+  s_1568c3f5a7f2fe::t_24ef190e7baa18 1-15,17-20,23-53,56,61-74,76-122,185-262
+  s_1568c3f5a7f2fe::t_082971bcec797d 16,21-22,54-55,57-60,123-157,159-160,164-184
+  s_1568c3f5a7f2fe::t_b23d286cd895a9 158,161-163
+  s_1568c3f5a7f2fe::t_fe0b620ecc016a 75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "e86862ac72c010e93da9ac5d30ff1ddfc012988a",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 93
+    }
+  }
+}
