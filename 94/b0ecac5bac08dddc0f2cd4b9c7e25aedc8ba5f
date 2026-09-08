@@ -1,0 +1,24 @@
+widget_service/cloud/services/template_generation/tests/test_calendar_timeline_geometry.py
+  s_1568c3f5a7f2fe::t_f2136e8969d3d4 1-9,13-100,102-163
+  s_1568c3f5a7f2fe::t_6e655ff5290aad 10-12
+  s_1568c3f5a7f2fe::t_206b00f36eb8dc 101
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_1568c3f5a7f2fe::t_f2136e8969d3d4 185-194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "94b0ecac5bac08dddc0f2cd4b9c7e25aedc8ba5f",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 4
+    }
+  }
+}
