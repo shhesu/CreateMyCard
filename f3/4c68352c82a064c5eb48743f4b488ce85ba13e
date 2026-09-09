@@ -1,0 +1,48 @@
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_1568c3f5a7f2fe::t_6fe80f7c68901a 65-70,73-110,273
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_1568c3f5a7f2fe::t_d876d61d94c417 56
+widget_service/cloud/services/template_generation/engine/cardplan/template_plan_planner.py
+  s_1568c3f5a7f2fe::t_d59d13e16f9fee 22,217,530,532-535,539-540
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_1568c3f5a7f2fe::t_fef8b27aa959a9 228-242,257
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_c14e0ab3321a64 20-21
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_1568c3f5a7f2fe::t_1fb991d1464c83 149,160
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_1568c3f5a7f2fe::t_bf6d82ca758aaa 470,529-555,581
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_1568c3f5a7f2fe::t_42b3d11bdd52fb 574-589,674-687,734,755-759,1466
+widget_service/cloud/services/template_generation/test_support/template_examples.json
+  s_1568c3f5a7f2fe::t_a28ffc6de3af1f 1-75
+widget_service/cloud/services/template_generation/test_support/template_examples.py
+  s_1568c3f5a7f2fe::t_19f44a938b343b 1-157
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_1568c3f5a7f2fe::t_61d17ca86b218c 378-462
+widget_service/cloud/services/template_generation/tests/test_template_examples.py
+  s_1568c3f5a7f2fe::t_96fa133996f8f3 1-220
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_1568c3f5a7f2fe::t_831f0f15ce5bbc 4228,4243,4247,6112,6173,6205,7133,7175,7365,7367
+widget_service/cloud/services/template_generation/tests/test_template_plan_planner.py
+  s_1568c3f5a7f2fe::t_7cbbd33671ea8d 23,41-60
+widget_service/cloud/services/template_generation/tools/generate_provider_template_gallery.py
+  s_1568c3f5a7f2fe::t_677ebb139dd72a 33-36,79-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "f34c68352c82a064c5eb48743f4b488ce85ba13e",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    }
+  }
+}
