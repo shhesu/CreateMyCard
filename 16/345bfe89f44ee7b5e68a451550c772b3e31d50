@@ -1,0 +1,84 @@
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_1568c3f5a7f2fe::t_731ffb29b0b956 119,125,132,136-137,179-180,207,276-278
+docs/云侧方案设计.md
+  s_1568c3f5a7f2fe::t_97d03e224f31a9 1015-1019
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/FEWSHOT_2x2.md
+  s_1568c3f5a7f2fe::t_89a38b311de14f 1-183
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/FEWSHOT_2x4.md
+  s_1568c3f5a7f2fe::t_bf69088f811511 1-225
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_1568c3f5a7f2fe::t_45de7a90f53c47 7-8,113-124,126,138,162-164,257,290-291,303-304,337,339,381,454,470-471,473,476-486,566,568,624-625,631-632,634,640,645-648,658,679,686,700,716-717,726-729,738,767-768,773-774,784-787,798,806,809-811,816,818,820-822,824-830,832-838,840,842,844-849,851,853-856,858,860-863,869,873,890,893-895
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_1568c3f5a7f2fe::t_e99f758dba732a 17,93-96,152,201-202
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_1568c3f5a7f2fe::t_de46cab2a01ebd 38,319-325,328-329,331-332,343,353-354,650,670,711-793,797-798,808,820-830,1866,1868-1869,1871,1880,1884-1885,1945,1948,1975,2000-2001,2004,2088-2091,2116-2117,2180,2212,2215-2216,2471
+widget_service/cloud/services/fusion_ball_expander.py
+  s_1568c3f5a7f2fe::t_5d342cc66c8fb2 21,32,254,389
+widget_service/cloud/services/prompt_builder.py
+  s_1568c3f5a7f2fe::t_fbdf75e8e85eae 6,27-32,108,131,135
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_1568c3f5a7f2fe::t_c5c96d9ec79b9f 36,39,64,73-74,119,127,136
+widget_service/cloud/services/template_generation/docs/support-template-action-policy.md
+  s_1568c3f5a7f2fe::t_fdc465b9406600 28,36,72
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_1568c3f5a7f2fe::t_1981c35fb77a47 2542-2547,2639
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_1568c3f5a7f2fe::t_c829bdb95bbae6 450-455,1072,1102-1109,1145-1146,1149,7210-7211,7218-7220
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_1568c3f5a7f2fe::t_0a5b02a47b6a13 102-103,405
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_1568c3f5a7f2fe::t_b008ac883d44af 180-186,191
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_edea4b782ad33b 10-11,13-18,38-39
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_1568c3f5a7f2fe::t_620f2189259504 189,191-193,199-214,217-219,222
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_1568c3f5a7f2fe::t_3fda555dd2e8aa 51-52,119,124,131-143,175-242
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_6ac941dd61abd0 10-12,15-16,46-47
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_1568c3f5a7f2fe::t_57ed509d25a954 96,101-104,107,118,122-124
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_1568c3f5a7f2fe::t_6bd01f6021f646 444,446-447,456,462,464-468,470,472-500,502-527,529-535,537,543,574,586-599,604,611-623,625,652-659
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_7e35443ff6ec69 35-37
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_1568c3f5a7f2fe::t_03712df5d76e6f 291,304
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_1568c3f5a7f2fe::t_b391858b035aa5 184,192
+widget_service/cloud/services/template_generation/tests/test_image_color_policy.py
+  s_1568c3f5a7f2fe::t_410ea349440f28 11,220,224-234,251-254
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_1568c3f5a7f2fe::t_62b895e32ac71c 31,38,76,265,273,279
+widget_service/cloud/services/template_generation/tests/test_provider_component_markers.py
+  s_1568c3f5a7f2fe::t_0ac879ed18458f 149-150
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_1568c3f5a7f2fe::t_f95c52d7938b8e 206,295,630,633,761-763,789-790,793
+widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
+  s_1568c3f5a7f2fe::t_9d14961da3c5c4 73-77,101-103,408
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_1568c3f5a7f2fe::t_d716b7c8048db7 20-23,31,34,49-60,132-135,142-146,220,241,250,253,256-257,262-266,299-303,320-339,397,399,417-427,438,451-464
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_1568c3f5a7f2fe::t_35bbbeac6078a6 55
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_1568c3f5a7f2fe::t_ac5ea94653880d 261,272,725,1911,1939,2690,2711,2736,3087,3174-3175,3181-3187,4132-4133,4349-4472,7325
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_1568c3f5a7f2fe::t_4b5c8157cb00f4 19,23,30-32,104,106-112,114-128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "16345bfe89f44ee7b5e68a451550c772b3e31d50",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 7
+    }
+  }
+}
