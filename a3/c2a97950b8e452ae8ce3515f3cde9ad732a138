@@ -1,0 +1,20 @@
+widget_service/tests/test_display_units.py
+  s_1568c3f5a7f2fe::t_dbe78d74f5b1dc 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "a3c2a97950b8e452ae8ce3515f3cde9ad732a138",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 31
+    }
+  }
+}
