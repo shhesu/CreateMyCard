@@ -1,0 +1,20 @@
+widget_service/cloud/services/card_validation/pipeline.py
+  s_1568c3f5a7f2fe::t_1ae8df307b1f74 60-62,67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "d936d2cce9a423cd74f16c98b3da3efe4d73767d",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 9
+    }
+  }
+}
