@@ -1,0 +1,57 @@
+docs/云侧方案设计.md
+  s_9725f00022ef70::t_18e385ceb1a63c 1034-1038
+  s_9725f00022ef70::t_de8cfe06df992e 808
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_9725f00022ef70::t_4cdbd6bb8a2042 500-503
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_9725f00022ef70::t_f00e839a979e8a 36,38,123-129
+widget_service/cloud/services/template_generation/docs/template-search-planner-contract.md
+  s_9725f00022ef70::t_9d20aaf16c96cd 5,44,58,100,140,149-174
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_9725f00022ef70::t_69cf990ea62f1c 1532,1608-1609
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_9725f00022ef70::t_da95ae3fd5f4e7 288
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_9725f00022ef70::t_3b990ba1bdb213 15,95,128-129,265,423-425,634-635,1058-1062,1077,1088
+widget_service/cloud/services/template_generation/engine/cardplan/business_actions.py
+  s_9725f00022ef70::t_f65a6b8382c71d 36,39-47,88-99
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_9725f00022ef70::t_8f32e1de0cb076 68,4730,4733-4736,4743,4762-4766,4775,6693-6695
+widget_service/cloud/services/template_generation/engine/cardplan/generic_metrics.py
+  s_9725f00022ef70::t_c42a3623f516b4 1-9
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_9725f00022ef70::t_3d669d5a1dfa5e 82,96-97,112,117,136-164
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_9725f00022ef70::t_c81512c0956934 289-290,295
+widget_service/cloud/services/template_generation/engine/cardplan/template_plan_planner.py
+  s_9725f00022ef70::t_4f42cd26481215 31,75-85,123-129,141,210-212,533-534,566-582
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_9725f00022ef70::t_2c6b296baa84e0 53,112,189-190,205,228-230,269,276-278,601-605,696-700,981,1049-1050,1505-1507
+widget_service/cloud/services/template_generation/engine/cardplan/wide_template_planner.py
+  s_9725f00022ef70::t_662180e12d7f19 1-287
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_9725f00022ef70::t_bae6c5162d0a8b 153-189,316-321,327,336,446-447,499-500
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_9725f00022ef70::t_9e30065a2d6b92 25,111-142,146,150-151,155-159,161-165,167-171,174-184,186-196,198-199
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_9725f00022ef70::t_c9292512b7ae50 6468-6471
+widget_service/cloud/services/template_generation/tests/test_wide_template_planner.py
+  s_9725f00022ef70::t_17e4721e8c849f 1-485
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "76f56b7d38221d25dd64fbeac71227f22f31e301",
+  "prompts": {},
+  "sessions": {
+    "s_9725f00022ef70": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a571-cc95-7672-8d5b-ec9fc75902be",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    }
+  }
+}
