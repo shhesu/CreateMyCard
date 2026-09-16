@@ -913,6 +913,7 @@ def _expand_call(
         definition.asset_parameter_semantic_tags,
         contract,
         variant.parameters_schema,
+        template_id=wire_id,
     )
     _validate_business_template_action(definition, params, contract, task_spec.size)
     _validate_template_parameter_relations(params, variant.parameter_relations)
@@ -4367,6 +4368,8 @@ def _validate_template_params(
     asset_tags: dict[str, tuple[str, ...]],
     contract: HybridBodyContract,
     parameter_schema: dict[str, Any] | None = None,
+    *,
+    template_id: str | None = None,
 ) -> None:
     for key, value in params.items():
         if (
@@ -4390,6 +4393,18 @@ def _validate_template_params(
                     raise TerselConversionError(
                         f"Template asset semantics do not match {key}: {item}"
                     )
+            elif (
+                isinstance(item, str)
+                and parameter_schema
+                and _is_generic_metric_title_parameter(key, template_id)
+            ):
+                # Generic metric titles are display labels selected for the
+                # current field set. They are not executable content and must
+                # not be restricted to the card title/action allowlist.
+                if not item.strip() or "\n" in item or "\r" in item:
+                    raise TerselConversionError(
+                        f"Generic metric title is invalid: {key}"
+                    )
             elif isinstance(item, str) and not _is_trusted_template_literal(
                 item,
                 contract.trusted_literals,
@@ -4400,6 +4415,18 @@ def _validate_template_params(
             elif isinstance(item, (int, float)) and not isinstance(item, bool):
                 if item not in contract.trusted_numbers and item not in {0, 1, 100}:
                     raise TerselConversionError(f"Template number is not trusted: {item}")
+
+
+def _is_generic_metric_title_parameter(
+    name: str,
+    template_id: str | None,
+) -> bool:
+    template_name = template_id.rpartition("@")[0] if isinstance(template_id, str) else None
+    return (
+        isinstance(template_name, str)
+        and template_name in _GENERIC_METRIC_TEMPLATE_NAMES
+        and name in {"title", "firstTitle", "secondTitle"}
+    )
 
 
 def _validate_template_parameter_relations(
@@ -4675,15 +4702,42 @@ def _template_spread_parent(root: TemplateNode) -> str | None:
     return matches[0] if matches else None
 
 
-_GENERIC_HEALTH_LABELS = {
-    "/dailySteps": "步数",
-    "/sleepScore": "睡眠得分",
-    "/sleepStatus": "睡眠状态",
-    "/exerciseDurationText": "运动时长",
-    "/exerciseHeartRateAvg": "平均心率",
-    "/deepSleepDurationText": "深睡",
-    "/exerciseHeartRateMin": "最低心率",
-}
+_GENERIC_METRIC_TEMPLATE_NAMES = frozenset(
+    {
+        "GenericMetricOverviewCompact",
+        "GenericMetricOverviewDualCompact",
+        "GenericMetricOverviewWideSupport",
+        "GenericMetricOverviewDualWideSupport",
+    }
+)
+
+
+def _generic_metric_display_unit(leaf: dict[str, Any]) -> str | None:
+    """Return the unit declared by a provider field, when it is not included."""
+    units = leaf.get("displayUnits")
+    if (
+        isinstance(units, list)
+        and units
+        and leaf.get("unitIncluded") is False
+        and isinstance(units[0], str)
+        and units[0].strip()
+    ):
+        return units[0].strip()
+    description = leaf.get("description")
+    if not isinstance(description, str):
+        return None
+    # Some TaskSpec projections retain the unit rule only in prose, e.g.
+    # “必须在数值后追加‘步’”. Keep this extraction generic rather than
+    # coupling the template to a business field such as dailySteps.
+    patterns = (
+        r"(?:追加|添加)(?:展示)?(?:单位)?[“\"']([^”\"']+)[”\"']",
+        r"单位(?:为|是)[:：]?\s*[“\"']?([^”\"'，。；,\s]+)",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, description)
+        if match is not None and match.group(1).strip():
+            return match.group(1).strip("‘’'\"“” ，。；,")
+    return None
 
 
 def _expand_health_metric_generic_template(
@@ -4748,18 +4802,21 @@ def _expand_health_metric_generic_template(
         title = params.get(title_name)
         if not isinstance(title, str) or not title.strip():
             raise TerselConversionError(f"Generic metric title is invalid: {title_name}")
-        display_title = _GENERIC_HEALTH_LABELS.get(relative, title.strip())
+        # Generic templates must render the title supplied by their Invocation;
+        # do not replace it with a business-specific field-name lookup.
+        display_title = title.strip()
         display_value = placeholder
         sample = leaf.get("sampleValue") if isinstance(leaf, dict) else None
-        description = leaf.get("description", "") if isinstance(leaf, dict) else ""
-        if isinstance(sample, (int, float)) and not isinstance(sample, bool):
-            unit_match = re.search(r"单位(?:为|是)[:：]?([^，。；,\s]+)", description)
-            if unit_match is not None:
-                unit = unit_match.group(1).strip("‘’'\"“”")
-                if unit:
-                    display_value = normalize_tersel_expression(
-                        f"${{{absolute}}} + {_a2ui_expression_string(unit)}"
-                    ).value
+        numeric_field = leaf.get("type") in {"number", "integer"}
+        numeric_field = numeric_field or (
+            isinstance(sample, (int, float)) and not isinstance(sample, bool)
+        )
+        if numeric_field:
+            unit = _generic_metric_display_unit(leaf)
+            if unit:
+                display_value = normalize_tersel_expression(
+                    f"${{{absolute}}} + {_a2ui_expression_string(unit)}"
+                ).value
         selected.append((display_title, display_value))
     if not selected:
         raise TerselConversionError("Generic health metric requires at least one data path.")

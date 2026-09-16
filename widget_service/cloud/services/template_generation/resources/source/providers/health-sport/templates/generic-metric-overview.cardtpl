@@ -38,7 +38,7 @@ Row(
       }
     ),
     Text(
-      "",
+      props.title,
       {
         "fontSize": 10,
         "fontWeight": 400,
@@ -148,7 +148,7 @@ Column(
       "justifyContent": "spaceBetween",
       "alignItems": "center"
     },
-    Text("深睡", {
+    Text(props.firstTitle, {
       "fontSize": 12,
       "fontWeight": 400,
       "fontColor": $theme('supportContentColor'),
@@ -173,7 +173,7 @@ Column(
       "justifyContent": "spaceBetween",
       "alignItems": "center"
     },
-    Text("最低心率", {
+    Text(props.secondTitle, {
       "fontSize": 12,
       "fontWeight": 400,
       "fontColor": $theme('supportContentColor'),
@@ -221,7 +221,7 @@ Column(
       "justifyContent": "spaceBetween",
       "alignItems": "center"
     },
-    Text("深睡", {
+    Text(props.firstTitle, {
       "fontSize": 12,
       "fontWeight": 400,
       "fontColor": $theme('supportContentColor'),
@@ -246,7 +246,7 @@ Column(
       "justifyContent": "spaceBetween",
       "alignItems": "center"
     },
-    Text("最低心率", {
+    Text(props.secondTitle, {
       "fontSize": 12,
       "fontWeight": 400,
       "fontColor": $theme('supportContentColor'),

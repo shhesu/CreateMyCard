@@ -615,7 +615,18 @@ def build_template_prompt_contracts(
             parameter_sources: dict[str, dict[str, Any]] = {}
             for name, schema in properties.items():
                 value_kind = _parameter_value_kind(name, schema)
+                if (
+                    wire_id.startswith("GenericMetricOverview")
+                    and name in {"title", "firstTitle", "secondTitle"}
+                ):
+                    value_kind = "derived-label"
                 source_contract: dict[str, Any] = {"valueKind": value_kind}
+                if value_kind == "derived-label":
+                    source_contract["format"] = (
+                        "short display label selected for the corresponding data path; "
+                        "use a concise label derived from the current TaskSpec field, "
+                        "not a fixed business-specific label"
+                    )
                 if value_kind == "data-path":
                     source_contract["format"] = (
                         "copy one value from allowedPaths exactly as written; "

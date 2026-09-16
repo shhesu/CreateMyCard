@@ -18,6 +18,9 @@ contractVersion: hybrid-body-contract/0.5
    `return`、关键字参数、对象方法调用、JSX、数组 children 和任意其他函数。
 3. Props 必须是字面量对象，严格使用 templateContracts/layoutContracts/actionContracts 中的完整签名；
    不得新增字段、改写类型或伪造未批准值。
+   通用指标模板的 `title`、`firstTitle`、`secondTitle` 是 `derived-label`，应根据对应
+   `valuePath` 的当前 TaskSpec 字段生成简短展示标签；它们不受 `trustedStringLiterals` 的
+   卡片标题白名单限制，也不得写死为其它业务的标签。
 4. 根必须从 allowedUxLayouts 中选择一个与业务模板后缀及动作形态匹配的布局 Template。每个
    requiredLocalTemplateGroups 恰好选择一个业务 Template。普通 Action 按 selectedActionCandidates
    顺序作为根的连续末尾直接 children；仅当动态契约允许 TwoSupportLayout 时，布局不生成 Action child，
