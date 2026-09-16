@@ -708,7 +708,7 @@ def _normalize_redundant_2x4_health_scope(
     and HeartRateOverview for the same GetHealthAndSportSummary payload.  On a
     2x4 card these are alternative views of one right-hand slot, not three
     independent columns.  Keep the non-health business (for example countdown)
-    and let GenericMetricOverview's generic Support/Compact variants choose the fields.
+    and let GenericMetricOverview's generic compact variants choose the fields.
     """
     if task_spec.size != "2x4":
         return scope
@@ -1046,12 +1046,7 @@ def _required_parameter_is_satisfiable(
     template_name = template_id.rpartition("@")[0]
     if (
         template_name
-        in {
-            "GenericMetricOverviewCompact",
-            "GenericMetricOverviewDualCompact",
-            "GenericMetricOverviewWideSupport",
-            "GenericMetricOverviewDualWideSupport",
-        }
+        in {"GenericMetricOverviewCompact", "GenericMetricOverviewDualCompact"}
         and name in {"title", "firstTitle", "secondTitle"}
     ):
         # These labels are display metadata derived from the selected field's
@@ -1357,19 +1352,22 @@ def _layout_rank(layout_id: str, count: int, action_count: int) -> tuple[int, st
             "WideHeroActionFullLayout",
         ),
         (1, 2): ("CompactTwoActionLayout",),
-        (2, 0): ("TwoSupportLayout",),
+        (2, 0): ("TwoSupportLayout", "WideTwoFocusLayout"),
         (2, 1): (
             "HeroTitleContentActionLayout",
             "TwoSupportLayout",
             "WideFullHeroActionLayout",
             "WideHeroActionFullLayout",
+            "WideTwoFocusActionLayout",
         ),
         (2, 2): (
             "TwoSupportLayout",
             "WideFullHeroTwoActionLayout",
-            "WideHalfSupportTwoLargeActionLayout",
+            "WideTwoHeroActionLayout",
+            "WideHalfCompactTwoLargeActionLayout",
+            "WideTwoFocusTwoActionLayout",
         ),
-        (4, 0): ("WideFourSupportLayout",),
+        (4, 0): ("WideFourCompactLayout",),
     }
     order = preferred.get((count, action_count), ())
     return (order.index(layout_id) if layout_id in order else len(order), layout_id)

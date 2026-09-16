@@ -24,7 +24,8 @@
 - 标题日程 Hero 与地点日程 Hero 分开准入：前者要求标题和开始时间，后者要求地点和开始时间，结束时间均可选。
   每个候选必须独立覆盖用户显式要求的展示字段；同时显式要求标题和地点时，不得用其中任一 Hero 丢弃另一字段。
 - 日期、全天状态、时区、备注、提醒详情和日程总数只在相应专用模板的完整字段组合可用时展示，缺少字段时
-  不得用静态文案或其它日程字段补齐。`updatedAt` 只用于包含发起人、重要类型和提前提醒的提醒详情 Hero。
+  不得用静态文案或其它日程字段补齐。日程清点 Full 的完整字段组合为 `eventCount`、首项日程标题、
+  开始时间和全天状态（备注为可选展示）。`updatedAt` 只用于包含发起人、重要类型和提前提醒的提醒详情 Hero。
 - 系统当前日期、月/年、农历和相对日期不在当前模板范围内。
 - `oneClickServiceLink`、`oneClickServiceType`、`isServiceValid` 和 `entityId` 是日历 Action 的执行或选择参数，
   不是默认展示字段。用户要求“一键加入会议”或“查看日程”时，应选择语义匹配的 Action，不得因为 Action
@@ -44,4 +45,5 @@
   的字段覆盖来凑足一个槽位。
 - `2x2` 恰好包含两个数据业务和一个显式 Action 时，日历也可以在标题、起止时间和地点都可用且能完整
   使用 `ScheduleOverviewHeroContent@1` 时进入 HeroTitle + HeroContent 组合，并固定作为第二个业务位置。
-- 当前没有 Compact 模板，因此单业务双 Action 场景不进入模板路线。
+- 当前仅存在提醒 Compact（`ScheduleOverviewReminderCompact@1`），单业务双 Action 场景仅当显式
+  字段全部由该提醒模板覆盖时进入模板路线。

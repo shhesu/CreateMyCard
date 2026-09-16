@@ -33,10 +33,18 @@ def supports_business_action(
         if "actionId" in properties:
             accepts_action = True
             break
-    return accepts_action and _matches_business_data(definition, action)
+    return accepts_action and matches_business_data(definition, action)
 
 
-def _matches_business_data(definition: TemplateDefinition, action: ActionBinding) -> bool:
+def matches_business_data(
+    definition: TemplateDefinition,
+    action: ActionBinding,
+    *,
+    allow_static_target: bool = False,
+) -> bool:
+    """验证事件引用的数据对象；调用方必须先完成业务事件白名单检查。"""
+    if allow_static_target and _has_static_target(action):
+        return True
     if action.event_id == "event.open.weather":
         if definition.data_domain is None:
             return False
@@ -77,3 +85,15 @@ def _argument_references(value: Any) -> tuple[str, ...]:
             # 非法表达式不能用于证明业务对象归属，失效关闭。
             references = ()
     return tuple(dict.fromkeys(references))
+
+
+def _has_static_target(action: ActionBinding) -> bool:
+    """根按钮可打开已批准的固定入口；动态对象仍须匹配模板绑定。"""
+    value: Any = action.args.get("uri")
+    calendar = _CALENDAR_ARGUMENTS.get(action.event_id)
+    if calendar is not None and calendar[1] == "params":
+        params = action.args.get("params")
+        value = params.get("entityId") if isinstance(params, dict) else None
+    if not isinstance(value, str) or not value.strip():
+        return False
+    return "{{" not in value and "${" not in value

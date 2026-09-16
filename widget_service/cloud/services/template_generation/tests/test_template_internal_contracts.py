@@ -331,12 +331,17 @@ def test_checked_in_layout_templates_use_concrete_container_blueprints() -> None
         "WideHalfTwoSupportLayout@1": 3,
         "WideHalfSupportTwoLargeActionLayout@1": 4,
         "WideHalfFourLargeActionLayout@1": 5,
+        "WideTwoFocusLayout@1": 2,
+        "WideTwoFocusActionLayout@1": 3,
+        "WideTwoFocusTwoActionLayout@1": 4,
     }
     variable_children = {
         "SingleFocusLayout@1",
     }
     mirrored_slots = {
         "WideHeroActionFullLayout@1": [1, 2, 0],
+        "WideTwoFocusActionLayout@1": [0, 2, 1],
+        "WideTwoFocusTwoActionLayout@1": [0, 2, 1, 3],
     }
 
     for template_id in (*fixed_slots, *variable_children):
@@ -423,8 +428,12 @@ def test_checked_in_action_templates_expose_second_layer_props() -> None:
     assert large_icon_schema["required"] == ["actionId", "icon"]
     assert set(large_icon_schema["properties"]) == {"actionId", "icon"}
     large_options = large_icon.variants[0].root.values[0].properties
-    assert large_options["width"].value == 64
-    assert large_options["height"].value == 64
+    large_width = large_options.get("width")
+    large_height = large_options.get("height")
+    assert large_width is not None
+    assert large_height is not None
+    assert large_width.value == 59
+    assert large_height.value == 59
     assert large_options["borderRadius"].value == 16
     for definition in (pill, icon, large_icon):
         root = definition.variants[0].root
@@ -678,6 +687,53 @@ def test_provider_template_layout_suffix_combinations_are_enforced() -> None:
         (),
         "2x4",
     )
+    _validate_provider_template_layout_action_requirements(
+        "WideTwoFocusLayout",
+        (
+            template("WeatherOverviewConditionHero@1"),
+            template("BatteryOverviewStatusHero@1"),
+        ),
+        (),
+        "2x4",
+    )
+    with pytest.raises(TerselConversionError, match="slot combination is invalid"):
+        _validate_provider_template_layout_action_requirements(
+            "WideTwoFocusLayout",
+            (
+                template("WeatherOverviewConditionHero@1"),
+                template("BatteryOverviewStatusHero@1"),
+            ),
+            (pill_one,),
+            "2x4",
+        )
+    _validate_provider_template_layout_action_requirements(
+        "WideTwoFocusActionLayout",
+        (
+            template("WeatherOverviewConditionHero@1"),
+            template("BatteryOverviewStatusHero@1"),
+        ),
+        (pill_one,),
+        "2x4",
+    )
+    _validate_provider_template_layout_action_requirements(
+        "WideTwoFocusTwoActionLayout",
+        (
+            template("WeatherOverviewConditionHero@1"),
+            template("BatteryOverviewStatusHero@1"),
+        ),
+        (pill_one, pill_two),
+        "2x4",
+    )
+    with pytest.raises(TerselConversionError, match="slot combination is invalid"):
+        _validate_provider_template_layout_action_requirements(
+            "WideTwoFocusTwoActionLayout",
+            (
+                template("WeatherOverviewConditionHero@1"),
+                template("BatteryOverviewStatusHero@1"),
+            ),
+            (pill_one,),
+            "2x4",
+        )
     _validate_provider_template_layout_action_requirements(
         "WideFullHeroActionLayout",
         (template("WeatherOverviewFull@1"), template("BatteryOverviewNormalHero@1")),

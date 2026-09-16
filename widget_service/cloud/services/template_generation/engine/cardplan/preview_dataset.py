@@ -149,6 +149,7 @@ _SAMPLE_BY_BUSINESS_BINDING: dict[tuple[str, str], Any] = {
     ("CalendarOverview", "date"): "8月19日",
     ("CalendarOverview", "eventCount"): 1,
     ("CalendarOverview", "location"): "深圳市龙岗区五和大道",
+    ("CalendarOverview", "reminder"): "15",
     ("CalendarOverview", "start"): "14:00",
     ("CalendarOverview", "startDate"): "8月19日",
     ("CalendarOverview", "title"): "UI需求评审会",
@@ -292,11 +293,13 @@ def _build_case(
     theme = _preview_theme(definition, registry)
     parameters = _template_parameters(definition)
     if definition.business_id == "GenericMetricOverview":
+        if definition.data_domain is None:
+            raise ValueError("Generic preview requires a provider data domain")
         content = _expand_health_metric_generic_template(
             definition.wire_id,
             parameters,
             task_spec=task_spec,
-            provider_binding_roots={"GetHealthAndSportSummary": definition.data_domain},
+            provider_binding_roots={"GetHealthAndSportSummary": (definition.data_domain,)},
             theme_values=theme.reference_values,
         )
     else:

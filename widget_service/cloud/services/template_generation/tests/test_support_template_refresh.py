@@ -25,6 +25,7 @@ _CALENDAR_SUPPORTS = (
 
 # 主数值与同排单位都属于主文本；应用时长模板保留原有的辅助信息在上布局。
 _SUPPORT_PRIMARY_TEXT_INDEXES = {
+    "WeatherOverviewFeelsLikeWindSupport@1": (0,),
     "ActivityOverviewSupport@1": (0,),
     "AppUsageOverviewSupport@1": (1,),
     "BatteryOverviewSupport@1": (0,),
@@ -238,7 +239,7 @@ def test_support_ux_preserves_progress_and_inner_icon_sizes(
 def test_support_inventory_removes_deleted_templates() -> None:
     registry = get_cardplan_registry()
     supports = {key for key in registry.templates if key.endswith("Support@1")}
-    assert len(supports) == 19
+    assert len(supports) == 20
     assert not supports.intersection({
         "ScheduleOverviewSupport@1", "HeartRateOverviewUpdatedSupport@1",
         "HeartRateOverviewIconSupport@1", "HeartRateOverviewUpdatedIconSupport@1",

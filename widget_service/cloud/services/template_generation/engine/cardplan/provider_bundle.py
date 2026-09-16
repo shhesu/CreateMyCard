@@ -68,17 +68,21 @@ _LAYOUT_COMPONENTS = frozenset(
         "WideFullTwoSupportLayout",
         "WideFourSupportLayout",
         "WideFullHeroTwoActionLayout",
+        "WideTwoHeroActionLayout",
         "WideFullFourActionLayout",
         "WideTwoHalfLayout",
         "WideHalfTwoSupportLayout",
         "WideHalfSupportTwoLargeActionLayout",
         "WideHalfFourLargeActionLayout",
+        "WideTwoFocusLayout",
+        "WideTwoFocusActionLayout",
+        "WideTwoFocusTwoActionLayout",
     }
 )
 _CONDITIONAL_PARAMETER_COMPONENTS = frozenset({"IfParam", "IfMissingParam"})
 _SINGLE_CONDITIONAL_BINDING_COMPONENTS = frozenset({"IfBind", "IfMissingBind"})
 _GROUPED_CONDITIONAL_BINDING_COMPONENTS = frozenset(
-    {"IfAllBind", "IfAnyMissingBind"}
+    {"IfAllBind", "IfAnyMissingBind", "IfAnyBind", "IfAllMissingBind"}
 )
 _CONDITIONAL_BINDING_COMPONENTS = (
     _SINGLE_CONDITIONAL_BINDING_COMPONENTS
@@ -1361,13 +1365,23 @@ def _template_directive_components(content: str, line_number: int) -> tuple[str,
         if namespace == "props":
             return f'IfParam("{name}",', f'IfMissingParam("{name}",'
         return f'IfBind("{name}",', f'IfMissingBind("{name}",'
+    keyword = content.split(maxsplit=1)[0]
+    or_group = re.fullmatch(
+        r"#(?:if|elseif)[ \t]+data\.[A-Za-z_][A-Za-z0-9_]*"
+        r"(?:[ \t]*\|\|[ \t]*data\.[A-Za-z_][A-Za-z0-9_]*)+",
+        content,
+    )
+    if or_group is not None:
+        binding_names = re.findall(r"data\.([A-Za-z_][A-Za-z0-9_]*)", content)
+        if len(set(binding_names)) == len(binding_names):
+            encoded = json.dumps(binding_names, separators=(",", ":"))
+            return f"IfAnyBind({encoded},", f"IfAllMissingBind({encoded},"
     grouped = re.fullmatch(
         r"#(?:if|elseif)[ \t]+data\.([A-Za-z_][A-Za-z0-9_]*)[ \t]*&&[ \t]*"
         r"data\.([A-Za-z_][A-Za-z0-9_]*)",
         content,
     )
     if grouped is None or grouped.group(1) == grouped.group(2):
-        keyword = content.split(maxsplit=1)[0]
         raise ValueError(
             f"Provider Template {keyword} target is invalid at line {line_number}"
         )
@@ -1381,8 +1395,8 @@ def _remove_empty_template_conditionals(body: str) -> str:
         r'"[A-Za-z_][A-Za-z0-9_]*",\s*\),\s*'
     )
     grouped = (
-        r'(?:IfAllBind|IfAnyMissingBind)\(\["[A-Za-z_][A-Za-z0-9_]*",'
-        r'"[A-Za-z_][A-Za-z0-9_]*"\],\s*\),\s*'
+        r'(?:IfAllBind|IfAnyMissingBind|IfAnyBind|IfAllMissingBind)\('
+        r'\["[A-Za-z_][A-Za-z0-9_]*"(?:,"[A-Za-z_][A-Za-z0-9_]*")+\],\s*\),\s*'
     )
     result = body
     while True:
@@ -1543,7 +1557,7 @@ def _component_node(node: ast.AST) -> TemplateNode:
     if component in _GROUPED_CONDITIONAL_BINDING_COMPONENTS:
         if len(values) != 1 or not children:
             raise ValueError(
-                f"Provider Template {component} requires two binding names and children"
+                f"Provider Template {component} requires at least two binding names and children"
             )
         _grouped_conditional_binding_names(values[0])
     elif component in _CONDITIONAL_COMPONENTS:
@@ -1562,10 +1576,10 @@ def _component_node(node: ast.AST) -> TemplateNode:
     )
 
 
-def _grouped_conditional_binding_names(value: TemplateValue) -> tuple[str, str]:
-    if value.kind != "array" or len(value.items) != 2:
+def _grouped_conditional_binding_names(value: TemplateValue) -> tuple[str, ...]:
+    if value.kind != "array" or len(value.items) < 2:
         raise ValueError(
-            "Provider Template grouped conditional requires two binding names"
+            "Provider Template grouped conditional requires at least two binding names"
         )
     binding_names: list[str] = []
     for item in value.items:
@@ -1574,12 +1588,11 @@ def _grouped_conditional_binding_names(value: TemplateValue) -> tuple[str, str]:
                 "Provider Template grouped conditional binding must be a string"
             )
         binding_names.append(item.value)
-    first_name, second_name = binding_names
-    if first_name == second_name:
+    if len(set(binding_names)) != len(binding_names):
         raise ValueError(
             "Provider Template grouped conditional bindings must be different"
         )
-    return first_name, second_name
+    return tuple(binding_names)
 
 
 def _indexed_template_child(node: ast.AST) -> int | None:
@@ -2647,7 +2660,11 @@ def provider_template_context_admission(
     task_spec: TaskSpec,
 ) -> ProviderTemplateAdmission:
     """Apply Provider-owned constraints that depend on the selected generation context."""
-    if definition.requires_layout_action and not task_spec.eventCandidates:
+    if (
+        definition.requires_layout_action
+        and task_spec.size == "2x2"
+        and not task_spec.eventCandidates
+    ):
         return ProviderTemplateAdmission(False, "layout-action-required")
     return ProviderTemplateAdmission(True)
 

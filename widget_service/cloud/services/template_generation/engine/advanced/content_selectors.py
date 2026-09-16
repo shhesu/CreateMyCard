@@ -1529,6 +1529,7 @@ def project_content_component_facts(
     component_ids: tuple[str, ...],
     *,
     required_output_fields_by_capability: dict[str, tuple[str, ...]] | None = None,
+    generic_output_fields: tuple[str, ...] | None = None,
 ) -> TaskSpec:
     """Narrow the second-layer contract to selected component display facts.
 
@@ -1604,6 +1605,8 @@ def project_content_component_facts(
                 for name in requested_field_names
                 if name not in specialized_field_names
             )
+            if generic_output_fields is not None:
+                field_names = tuple(path.rsplit("/", 1)[-1] for path in generic_output_fields)
             source = _best_source_object(schema, field_names)
             selected = {
                 field_name: deepcopy(field)
@@ -2625,21 +2628,31 @@ def _bluetooth_facts_from_candidate(
     has_connection_and_case_battery = (
         is_connected is not None and case_battery_level is not None
     )
-    if not has_name_and_case_battery and not has_connection_and_case_battery and (
-        is_connected is None
-    ) != (
-        earphone_name is None
+    left_battery_level = _trusted_percentage_number(
+        _first_field(candidate, "leftBatteryLevel")
+    )
+    right_battery_level = _trusted_percentage_number(
+        _first_field(candidate, "rightBatteryLevel")
+    )
+    # Pair-ear templates (e.g. EarbudPairCompact) render the name and both ear
+    # batteries without any connection state, so a complete ear battery pair
+    # identifies the entity even when only one of isConnected/earphoneName is
+    # present.
+    has_complete_ear_battery = (
+        left_battery_level is not None and right_battery_level is not None
+    )
+    if (
+        not has_complete_ear_battery
+        and not has_name_and_case_battery
+        and not has_connection_and_case_battery
+        and (is_connected is None) != (earphone_name is None)
     ):
         return None
     facts = BluetoothDeviceOverviewFacts(
         is_connected=is_connected,
         earphone_name=earphone_name,
-        left_battery_level=_trusted_percentage_number(
-            _first_field(candidate, "leftBatteryLevel")
-        ),
-        right_battery_level=_trusted_percentage_number(
-            _first_field(candidate, "rightBatteryLevel")
-        ),
+        left_battery_level=left_battery_level,
+        right_battery_level=right_battery_level,
         left_charging_status=_trusted_string(
             _first_field(candidate, "leftChargingStatusDesc")
         ),

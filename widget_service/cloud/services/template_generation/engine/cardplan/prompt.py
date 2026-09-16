@@ -44,6 +44,7 @@ _PLAIN_LAYOUTS = ("card", "section", "compact", "between", "actions", "list", "d
 _ACTION_TEMPLATE_IDS = (
     "PillAction@1",
     "CompactAction@1",
+    "PlaylistCompactAction@1",
     "IconAction@1",
     "LargeIconAction@1",
 )
@@ -68,6 +69,10 @@ _ACTION_LABELS = {
     "event.startNavigate": "开始导航",
     "event.setPowerSavingMode": "省电模式",
 }
+_ACTION_SUBTITLES = {
+    "event.viewCalendarEvent": "日程详情",
+    "event.open.clock.alarm": "闹钟应用",
+}
 _ASSET_SEMANTIC_TERMS = {
     "calendar": ("calendar", "schedule", "日程", "日历"),
     "schedule": ("schedule", "日程"),
@@ -90,6 +95,9 @@ _ASSET_SEMANTIC_TERMS = {
     "call": ("call", "phone", "电话", "拨打"),
     "weather": ("weather", "天气"),
     "weather-condition": ("晴天", "天气降雨", "台风", "大风提醒"),
+    "weather-temperature-indicator": (
+        "weather_thermometer", "天气温度", "当前气温", "温度计", "温度指标", "温差变化", "冷热趋势",
+    ),
     "weather-indicator": (
         "晴天", "天气降雨", "台风", "大风提醒", "体感温度", "天气温度", "当前气温",
     ),
@@ -199,6 +207,7 @@ def build_hybrid_prompt(
             *binding_argument_literals,
             *(str(fact.value) for fact in facts if isinstance(fact.value, str)),
             *(_action_label(event) for event in task_spec.eventCandidates),
+            *(_action_subtitle(event) for event in task_spec.eventCandidates),
         ]
     )
     trusted_numbers = tuple(
@@ -1117,6 +1126,7 @@ def _provider_variant_matches_trusted_state(
         state_independent_variants = {
             "compact",
             "chargingDiagnosticsHero",
+            "chargingDiagnosticsWideFull",
             "chargingProgressFull",
             "chargingProgressHero",
             "chargingRingHero",
@@ -1169,6 +1179,8 @@ def _provider_variant_matches_trusted_state(
             return False
         if variant_name == "hero":
             return True
+        if variant_name == "musicFull":
+            return has_case
         if variant_name == "earbudPairCompact":
             return has_left and has_right
         if variant_name == "earbudPairFull":
@@ -1279,6 +1291,10 @@ def _action_label(event: Any) -> str:
     return _ACTION_LABELS.get(getattr(event, "id", "") or "", "打开详情")
 
 
+def _action_subtitle(event: Any) -> str:
+    return _ACTION_SUBTITLES.get(getattr(event, "id", "") or "", "")
+
+
 def _build_action_bindings(task_spec: TaskSpec) -> tuple[ActionBinding, ...]:
     event_counts: dict[str, int] = {}
     for event in task_spec.eventCandidates:
@@ -1308,6 +1324,7 @@ def _build_action_bindings(task_spec: TaskSpec) -> tuple[ActionBinding, ...]:
                 action_id=action_id,
                 event_id=event_id,
                 display_label=_action_label(event),
+                display_subtitle=_action_subtitle(event),
                 call=event.call,
                 args=event.args,
             )

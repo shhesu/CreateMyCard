@@ -19,17 +19,21 @@ _BUSINESS_TEMPLATE_SUPPORTED_LAYOUTS = (
     "WideSingleFocusLayout",
     "WideFullOnlyLayout",
     "WideTwoFullLayout",
-    "WideHeroSupportLayout",
+    "WideHeroCompactLayout",
     "WideFullHeroActionLayout",
     "WideHeroActionFullLayout",
-    "WideFullTwoSupportLayout",
-    "WideFourSupportLayout",
+    "WideFullTwoCompactLayout",
+    "WideFourCompactLayout",
     "WideFullHeroTwoActionLayout",
+    "WideTwoHeroActionLayout",
     "WideFullFourActionLayout",
     "WideTwoHalfLayout",
-    "WideHalfTwoSupportLayout",
-    "WideHalfSupportTwoLargeActionLayout",
+    "WideHalfTwoCompactLayout",
+    "WideHalfCompactTwoLargeActionLayout",
     "WideHalfFourLargeActionLayout",
+    "WideTwoFocusLayout",
+    "WideTwoFocusActionLayout",
+    "WideTwoFocusTwoActionLayout",
 )
 
 
@@ -53,6 +57,7 @@ class ActionBinding(StrictModel):
     action_id: str
     event_id: str = Field(exclude=True)
     display_label: str
+    display_subtitle: str = ""
     call: str
     args: dict[str, Any]
     importance: Literal["primary", "secondary"] = "primary"
@@ -75,6 +80,7 @@ class TemplatePlanBusinessSlot(StrictModel):
         default=(),
         alias="primaryMatchedFields",
     )
+    field_bindings: dict[str, str] = Field(default_factory=dict, alias="fieldBindings")
 
 
 class TemplatePlanActionAssignment(StrictModel):
@@ -88,8 +94,8 @@ class TemplatePlanActionAssignment(StrictModel):
     @model_validator(mode="after")
     def valid_consumer(self) -> TemplatePlanActionAssignment:
         if self.consumer == "root-action":
-            if self.business_position is not None or self.action_template_id is None:
-                raise ValueError("root Action must declare only actionTemplateId")
+            if self.action_template_id is None:
+                raise ValueError("root Action must declare actionTemplateId")
         elif self.business_position is None or self.action_template_id is not None:
             raise ValueError("business Action must declare only businessPosition")
         return self
@@ -128,18 +134,35 @@ class TemplatePlan(StrictModel):
             raise ValueError("Template Plan Action references an unknown business position")
         if len(business_positions) != len(set(business_positions)):
             raise ValueError("Template Plan business slot accepts at most one Action")
-        business_ids = tuple(slot.business_id for slot in self.business_slots)
-        duplicate_business_ids = {
-            business_id
-            for business_id in business_ids
-            if business_ids.count(business_id) > 1
-        }
-        if duplicate_business_ids and not self.layout_template_id.startswith("Wide"):
-            raise ValueError("Template Plan business slots must be unique")
-        if duplicate_business_ids - {"GenericMetricOverview"}:
-            raise ValueError(
-                "Only a wide Template Plan may repeat GenericMetricOverview business slots"
-            )
+        for assignment in self.action_assignments:
+            position = assignment.business_position
+            if position is not None and position not in valid_positions:
+                raise ValueError("Template Plan Action references an unknown business position")
+        fields_by_capability: dict[str, set[str]] = {}
+        for slot in self.business_slots:
+            fields = fields_by_capability.setdefault(slot.capability_id, set())
+            if slot.field_bindings:
+                paths = tuple(slot.field_bindings.values())
+                if len(paths) != len(set(paths)) or fields.intersection(paths):
+                    raise ValueError("Template Plan generic fields must be distinct")
+                if set(paths) != set(slot.covered_explicit_fields):
+                    raise ValueError("Template Plan generic fields must match slot coverage")
+                if any(not path.startswith("/") for path in paths):
+                    raise ValueError("Template Plan generic fields must be relative JSON Pointers")
+            fields.update(slot.covered_explicit_fields)
+        generic_fields: dict[str, set[str]] = {}
+        for slot in self.business_slots:
+            if slot.field_bindings:
+                generic_fields.setdefault(slot.capability_id, set()).update(
+                    slot.field_bindings.values()
+                )
+        for slot in self.business_slots:
+            if slot.field_bindings:
+                continue
+            if generic_fields.get(slot.capability_id, set()).intersection(
+                slot.covered_explicit_fields
+            ):
+                raise ValueError("Template Plan generic fields overlap specialized coverage")
         action_ids = tuple(item.action_id for item in self.action_assignments)
         if len(action_ids) != len(set(action_ids)):
             raise ValueError("Template Plan Action assignments must be unique")

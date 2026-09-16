@@ -25,6 +25,8 @@ contractVersion: hybrid-body-contract/0.5
    requiredLocalTemplateGroups 恰好选择一个业务 Template。普通 Action 按 selectedActionCandidates
    顺序作为根的连续末尾直接 children；仅当动态契约允许 TwoSupportLayout 时，布局不生成 Action child，
    已选事件必须各一次写入与语义业务匹配的 Support 模板可选 actionId Prop。
+   若 planCandidates 显式指定 business-template 消费操作，以该原子计划为准：将批准的 actionId
+   写入指定业务模板，不再添加根级 Action。WideFull 内置按钮的位置由模板固定，禁止外移。
 5. 当动态契约允许 HeroTitleContentActionLayout 时，根必须恰好有三个直接 children：位置 0 选择
    HeroTitle 业务模板，位置 1 选择 HeroContent 业务模板，位置 2 选择 PillAction；不得交换、重复或嵌套。
 6. 只能使用动态契约中的 Template ID、Action 值和素材源。禁止 `card@1`、基础组件、业务文本、

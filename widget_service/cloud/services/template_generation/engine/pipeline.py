@@ -45,7 +45,6 @@ from services.template_generation.engine.cardplan.registry import (
 )
 from services.template_generation.engine.cardplan.template_plan_planner import (
     plan_template_candidates,
-    plan_wide_template_candidates,
     planner_component_candidates,
     planner_required_template_groups,
     planner_scope,
@@ -55,9 +54,7 @@ from services.template_generation.engine.cardplan.template_retrieval import (
     TemplateRetrievalQuery,
     TemplateSearchIntent,
     build_template_retrieval_prompt,
-    restrict_query_to_preferred_templates,
     restrict_search_intent_to_preferred_templates,
-    retrieve_template_variants,
     search_template_variants,
 )
 from services.template_generation.engine.tersel_converter import (
@@ -153,94 +150,43 @@ async def generate_template_a2ui(
                 coverage_bindings,
             )
             raw_query = await generate_json(prompt, "template-retrieval-query")
-            if selected_task_spec.size == "2x4":
-                query = TemplateRetrievalQuery.model_validate(raw_query)
-                query = restrict_query_to_preferred_templates(
-                    query,
-                    registry,
-                    trusted_template_candidate_ids,
-                )
-                query = _restrict_template_intent_actions(
-                    query,
-                    trusted_template_action_ids,
-                    selected_task_spec,
-                )
-                selection = retrieve_template_variants(
-                    query,
-                    selected_task_spec,
-                    registry,
-                    coverage_bindings,
-                    card_spec,
-                    preferred_template_ids=trusted_template_candidate_ids,
-                )
-                template_plans = plan_wide_template_candidates(
-                    selection,
-                    selected_task_spec,
-                    registry,
-                )
-                if template_plans:
-                    selection = selection.model_copy(
-                        update={
-                            "scope": planner_scope(template_plans),
-                            "component_candidates": planner_component_candidates(
-                                template_plans
-                            ),
-                            "required_template_groups": planner_required_template_groups(
-                                template_plans
-                            ),
-                        }
-                    )
-                    plan_payload = [
-                        plan.model_dump(by_alias=True) for plan in template_plans
-                    ]
-                    logger.info(
-                        f"{_MODULE} wide_template_plans_resolved "
-                        f"plan_count={len(template_plans)} "
-                        "plans="
-                        f"{json_for_log(plan_payload)}"
-                    )
-                logger.info(
-                    f"{_MODULE} template_retrieval matched=True "
-                    f"component_count={len(selection.component_candidates)} "
-                    f"wide_plan_count={len(template_plans)}"
-                )
-            else:
-                intent = TemplateSearchIntent.model_validate(raw_query)
-                intent = restrict_search_intent_to_preferred_templates(
-                    intent,
-                    registry,
-                    trusted_template_candidate_ids,
-                )
-                intent = _restrict_template_intent_actions(
-                    intent,
-                    trusted_template_action_ids,
-                    selected_task_spec,
-                )
-                search_result = search_template_variants(
-                    intent,
-                    selected_task_spec,
-                    registry,
-                    coverage_bindings,
-                    card_spec,
-                    preferred_template_ids=trusted_template_candidate_ids,
-                )
-                template_plans = plan_template_candidates(
-                    intent,
-                    search_result,
-                    selected_task_spec,
-                    registry,
-                )
-                selection = TemplateRouteSelection(
-                    scope=planner_scope(template_plans),
-                    componentCandidates=planner_component_candidates(template_plans),
-                    actionIds=intent.action_ids,
-                    requiredTemplateGroups=planner_required_template_groups(template_plans),
-                )
-                logger.info(
-                    f"{_MODULE} template_retrieval matched=True "
-                    f"business_candidate_count={len(search_result.business_candidates)} "
-                    f"plan_count={len(template_plans)}"
-                )
+            intent = TemplateSearchIntent.model_validate(raw_query)
+            intent = restrict_search_intent_to_preferred_templates(
+                intent,
+                registry,
+                trusted_template_candidate_ids,
+            )
+            intent = _restrict_template_intent_actions(
+                intent,
+                trusted_template_action_ids,
+                selected_task_spec,
+            )
+            search_result = search_template_variants(
+                intent,
+                selected_task_spec,
+                registry,
+                coverage_bindings,
+                card_spec,
+                preferred_template_ids=trusted_template_candidate_ids,
+            )
+            template_plans = plan_template_candidates(
+                intent,
+                search_result,
+                selected_task_spec,
+                registry,
+            )
+            selection = TemplateRouteSelection(
+                scope=planner_scope(template_plans),
+                componentCandidates=planner_component_candidates(template_plans),
+                actionIds=intent.action_ids,
+                requiredTemplateGroups=planner_required_template_groups(template_plans),
+                requiredOutputFieldsByCapability=intent.required_output_fields_by_capability,
+            )
+            logger.info(
+                f"{_MODULE} template_retrieval matched=True "
+                f"business_candidate_count={len(search_result.business_candidates)} "
+                f"plan_count={len(template_plans)}"
+            )
     except TemplateRouteNotApplicable:
         raise
     except TemplateRetrievalMiss as exc:
@@ -367,11 +313,18 @@ async def _generate_selected_templates(
     model_client: Any,
     template_plans: tuple[TemplatePlan, ...] = (),
 ) -> TemplateEngineOutput:
+    generic_paths: list[str] = []
+    for plan in template_plans:
+        for slot in plan.business_slots:
+            for path in slot.field_bindings.values():
+                if path not in generic_paths:
+                    generic_paths.append(path)
     projected_task_spec = project_content_component_facts(
         source_task_spec,
         effective_capability_ids,
         scope.advanced_component_ids,
         required_output_fields_by_capability=required_output_fields_by_capability,
+        generic_output_fields=tuple(generic_paths) if template_plans else None,
     )
     projected_task_spec = _with_provider_template_runtime_data(
         source_task_spec,
@@ -380,6 +333,7 @@ async def _generate_selected_templates(
         scope.advanced_component_ids,
         component_candidates,
         registry,
+        generic_output_fields=tuple(generic_paths) if template_plans else None,
     )
     projection = build_ux_mixed_prompt(
         task_spec=projected_task_spec,
@@ -489,6 +443,8 @@ def _with_provider_template_runtime_data(
     component_ids: tuple[str, ...],
     component_candidates: tuple[TemplateComponentCandidate, ...],
     registry: CardPlanRegistry,
+    *,
+    generic_output_fields: tuple[str, ...] | None = None,
 ) -> TaskSpec:
     schema = deepcopy(projected.dataModelSchema)
     template_ids_by_component = {
@@ -540,6 +496,8 @@ def _with_provider_template_runtime_data(
                         )
                     )
                 )
+            if component_id == "GenericMetricOverview" and generic_output_fields is not None:
+                provider_paths = generic_output_fields
             for root in roots:
                 for relative_path in provider_paths:
                     path = f"{root.rstrip('/')}{relative_path}"

@@ -33,9 +33,9 @@ UX 模板编译不再因正文未包含 CardSpec `title` 而自动补充标题 T
 
 模板路线允许受控的 `2x2` 双业务单动作组合：两个业务必须分别具备完整覆盖显式字段的 `HeroTitle`
 与 `HeroContent` 模板，服务端按 `HeroTitle`、`HeroContent`、`PillAction` 的固定顺序组合，根布局为
-`HeroTitleContentActionLayout`。第二层模型只能消费确定性 Search 返回的候选，不得交换、重复或嵌套位置。
+`HeroTitleContentActionLayout`。第二层模型只能消费确定性 Planner 的完整计划，不得交换、重复或嵌套位置。
 
-`HeroContent` 是全局主题所属的主业务。Search 确定两个位置后，按该业务重新过滤主题候选；保留兼容的
+`HeroContent` 是全局主题所属的主业务。Planner 确定两个位置后，按该业务重新过滤主题候选；保留兼容的
 已选主题，否则确定性选择该业务的可用主题，沿用版本门禁及融球候选优先规则。第二层使用同一主题契约，
 `HeroTitle`、`HeroContent` 和 `PillAction` 统一应用其根样式、主辅内容色和动作色。主业务支持融球且
 版本门禁开启时，可信编译器为整卡只包装一次主业务融球背景；不得改用标题业务的融球，也不放开其它多业务布局。
@@ -120,3 +120,10 @@ Expr(data.start == "" ? "" : data.start + " - " + data.end)
 完整规则以方案总文档为准。
 
 回归覆盖普通模板、融球模板、预览模板、精确标识、非模板并列节点及其它校验继续生效。
+
+## 横版规划与字段填充
+
+2x4 的默认链路与 2x2 共用第一层意图、Search、Planner 和第二层填充契约。Search 报告数据可用性与
+字段覆盖，Planner 枚举完整布局、固定业务实例和按钮归属；第二层不再自行决定宽卡片组合。
+通用健康指标的每个路径参数随 Plan 固定，并在编译前校验。完整规则和兼容入口边界见
+[Search 与 Planner 交互契约](template-search-planner-contract.md#7-横版组合规则)。

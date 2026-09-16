@@ -21,7 +21,10 @@ _UX_ACTION_COMPONENTS = frozenset(
     {"PillAction", "IconAction", "LargeIconAction", "ActionTile"}
 )
 _UX_ACTION_TEMPLATE_IDS = frozenset(
-    {"PillAction@1", "CompactAction@1", "IconAction@1", "LargeIconAction@1"}
+    {
+        "PillAction@1", "CompactAction@1", "PlaylistCompactAction@1",
+        "IconAction@1", "LargeIconAction@1",
+    }
 )
 _UNQUOTED_TEMPLATE_CALL = re.compile(
     r"Template(\s*\(\s*)([A-Za-z][A-Za-z0-9_.-]*@[A-Za-z0-9_.-]+)(\s*,)"

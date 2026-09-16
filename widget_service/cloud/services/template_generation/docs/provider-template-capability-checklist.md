@@ -62,7 +62,7 @@
 ## BatteryOverview
 
 - Provider：`com.huawei.battery.cli`；运行状态：启用。
-- 数据能力：`GetPhoneBatteryInfo`；模板数：13。
+- 数据能力：`GetPhoneBatteryInfo`；模板数：14。
 
 | 状态 | 模板 | 布局场景 | 主数据 | 次要数据 | 可选数据 |
 | --- | --- | --- | --- | --- | --- |
@@ -77,6 +77,7 @@
 | ✅ | `BatteryOverviewHealthLevelHero@1` | 约 2x1.7；电池体检 Hero + 1 个 PillAction | `/healthStatusDesc` | `/batteryCapacityLevelDesc` | 无 |
 | ✅ | `BatteryOverviewChargingProgressFull@1` | 完整 2x2；充电进度单 Full | `/batterySOC` | `/chargingStatusDesc`<br>`/healthStatusDesc`<br>`/pluggedTypeDesc` | 无 |
 | ✅ | `BatteryOverviewChargingDiagnosticsHero@1` | 约 2x1.7；充电诊断 Hero + 1 个 PillAction | `/nowCurrentText`<br>`/voltageText` | `/batteryCapacityLevelDesc`<br>`/isBatteryPresentText` | 无 |
+| ✅ | `BatteryOverviewChargingDiagnosticsWideFull@1` | 完整 4x2；充电诊断 WideFull，标题+图标+电量进度条+三胶囊，无 Action | `/batterySOC` | `/nowCurrentText`<br>`/voltageText`<br>`/isBatteryPresentText` | 无 |
 | ✅ | `BatteryOverviewChargingRingHero@1` | 约 2x1.7；充电状态环 Hero + 1 个 PillAction | `/batterySOC` | `/chargingStatusDesc` | 无 |
 | ✅ | `BatteryOverviewTemperatureFull@1` | 完整 2x2；电池温度单 Full | `/batteryTemperatureText` | `/pluggedTypeDesc`<br>`/updatedAt` | 无 |
 

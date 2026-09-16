@@ -497,9 +497,10 @@ PillAction Props 包含 `actionId`、`label` 和可选 `icon`，IconAction Props
 原始 `call`、`args` 或 `onClick`。完整模块边界见
 [Search 与 Planner 交互契约](template-search-planner-contract.md)。
 
-2x4 保留宽卡片候选与槽位组合流程：第二层按候选组的槽位顺序选择业务模板，
-可用布局由服务端限定。组合布局支持 PillAction、CompactAction 和最多四个 LargeIconAction，
-各事件仍必须恰好消费一次；重复通用指标使用独立 Compact 槽位。
+2x4 默认同样使用 Search → Planner → FillData：Planner 固定布局、每个业务实例、字段路径及动作归属，
+第二层只能完整选择一个计划。组合布局支持 PillAction、CompactAction；用户明确要求四个快捷入口时，
+仅允许单业务加四个 LargeIconAction 的专用布局。重复通用指标按实例计数并锁定不同字段，不能替代其它
+业务的槽位；具体容量与排序见 [Search 与 Planner 交互契约](template-search-planner-contract.md)。
 
 ## 当前迁移范围
 

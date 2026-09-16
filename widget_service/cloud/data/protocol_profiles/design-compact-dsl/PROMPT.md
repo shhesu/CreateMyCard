@@ -193,15 +193,15 @@ Few-shot 只是演示，不授权额外字段、组件、路径、事件、素�
 
 生成组件行之前，必须先在内部完成 root 一级高度算账；算不清或结果大于安全内容区时禁止开始输出 DSL：
 
-1. `2x2` 和 `2x4` 的 root 可用高度都固定为 `136vp`，即 `160 - 12 - 12`。不得把 root 外部高度 `160vp` 当作内容高度。
+1. `2x2` 的 root 可用高度为 `136vp`（160 - 12 - 12）；`2x4` 为 `126vp`（150 - 12 - 12）。不得把外部画布高度当作内容高度。
 2. 对 root Column 的每个直接子节点确定最小占用高度 `H_i`。子节点显式写了 `height` 时使用该值；未写时，按其后代固定高度、上下 padding、上下 margin 和内部纵向间距求出最小高度。含 `36vp` 按钮的无高度 action 容器，其最小高度至少为 `36vp`，不能按 `0vp` 处理。
 3. `justifyContent` 为 `start|center|end` 时：`H_required = ΣH_i + Σ上下 margin + itemMargin × (子节点数 - 1)`。
 4. `justifyContent` 为 `spaceAround|spaceBetween|spaceEvenly` 时，`itemMargin` 表示必须保留的最小间距，仍然计入 `H_required`；只有扣除子节点、margin 和最小间距后剩余空间大于或等于 `0`，才能把剩余空间交给分布式对齐。不得仅因两者同时出现就判错，也不得假设分布式对齐会吞掉 `itemMargin`。
-5. `layoutWeight`、`flexShrink`、`clip` 和分布式对齐都不能抵消已经算出的固定高度。`H_required > 136` 时必须删除弱区域、合并标题、降低区域固定高度或改选更简单骨架。
+5. `layoutWeight`、`flexShrink`、`clip` 和分布式对齐都不能抵消已经算出的固定高度。`H_required > 当前尺寸的内容高度预算` 时必须删除弱区域、合并标题、降低区域固定高度或改选更简单骨架。
 
 以下两种结构无论截图是否暂时可见都必须判定失败：
 
-- `20 + 64 + 64 + 8 × 2 = 164 > 136`：标题行与 S4 纵堆双 `64vp` 区域不可共存；删除总标题，保留 `64 + 8 + 64 = 136`。
+- `20 + 64 + 64 + 8 × 2 = 164 > 136`：标题行与 S4 纵堆双 `64vp` 区域不可共存；2x2 删除总标题，保留 `64 + 8 + 64 = 136`；2x4 必须使用 `59 + 8 + 59 = 126`。
 - `64 + 40 + 36 + 8 × 2 = 156 > 136`：使用 `spaceBetween` 时仍须计入两个 `8vp` 最小间距；即使暂时忽略间距，固定高度 `140vp` 也已经放不下，必须先缩小或合并区域。
 
 # 四、极简协议结构
@@ -478,7 +478,7 @@ ActionUnit——卡级 CTA：
 - CardHeader 封装独立卡片标题和可选右上角辅助图标，只输出一行，不带 children、动作或布局样式；2x2 仅用于 S2/S4 有独立标题的布局，S1、S3 不使用；2x4 仅在布局确有独立卡级标题时使用，无标题布局和作为正文上下文的 kicker 不使用，也不预留空标题位。
 - 必填 `title`（非空文字、完整 Expression 或 PathBinding）、`fontColor`（本卡标题色）；可选 `icon`（候选原始 src）、`fillColor`（单色图标与标题完全同色，多色/品牌图标及位图省略）。不传 icon 就只显示标题，是否传入在布局前按 2.5 节决定，CardHeader 不自行增加图标。
 - 每卡最多一个。2x2 中必须是 root 的第一个且唯一父级的直接子组件，root 必须为 Column；2x4 中必须是 `root Stack` 下全尺寸前景 Column 的第一个且唯一父级的直接子组件。承载 CardHeader 的 Column 必须显式 `width:"matchParent"`、`height:"matchParent"`（2x4）、`padding:12`，并显式使用 `justifyContent:"start"` 或保证首项贴顶的 `"spaceBetween"`，不加 borderWidth。其他内容在标题下方布局，不得嵌套、重复、错序或用 center/spaceAround/spaceEvenly 移动标题。
-- 转换器固定标题行高度 `20vp`、不可收缩，2x2/2x4 宽度分别为 `136/296vp`，左上角均为 `(12,12)`。文字左对齐、垂直居中、`12fp/400`；有图标时文字槽宽分别为 `108/268vp`、间距 8vp，图标固定 20×20vp，左上角分别为 `(128,12)`/`(288,12)`；无图标时文字槽占满，不留空槽。
+- 转换器固定标题行高度 `20vp`、不可收缩，2x2/2x4 宽度分别为 `136/276vp`，左上角均为 `(12,12)`。文字左对齐、垂直居中、`12fp/400`；有图标时文字槽宽分别为 `108/248vp`、间距 8vp，图标固定 20×20vp，左上角分别为 `(128,12)`/`(268,12)`；无图标时文字槽占满，不留空槽。
 - 不接受 width/height/padding/margin/fontSize/fontWeight 等覆盖字段。保留完整标题文字要求，槽位不足时缩短非必要标题文案，不靠缩字号或截断掩盖；固定标题行计入 20vp 高度预算，长内容仍需做压力检查。
 - 转换器展开为同 id 的 Row，以及 `<id>_title`、可选 `<id>_icon`；源 DSL 不得再声明这些子组件 id。非法结构或定位属性报错并进入现有修复链路，不自动搬移组件。
 
@@ -558,10 +558,10 @@ ActionUnit——卡级 CTA：
 
 - 以下尺寸是生成阶段用于布局预算和压力检查的参考画布；端侧实际 surface 可随设备变化，不得假设参考画布就是所有设备的最终物理画布。
 - `2x2`：参考逻辑画布 `160vp × 160vp`。
-- `2x4`：参考逻辑画布 `320vp × 160vp`。
+- `2x4`：参考逻辑画布 `300vp × 150vp`。
 - root 固定 `padding: 12`。
 - `2x2` 参考安全内容区 `136vp × 136vp`。
-- `2x4` 参考安全内容区 `296vp × 136vp`。
+- `2x4` 参考安全内容区 `276vp × 126vp`。
 - 固定参考宽度的一级内容组不得锚定在设备实际画布的左边或右边：root `Column` 必须使用 `alignItems:"center"`；root `Row` 若直接承载固定参考宽度内容组，必须使用 `justifyContent:"center"`。这样设备实际画布比参考画布更宽或更窄时，额外空间或不可避免的差值在两侧对称分配，不得只堆到一侧。居中不能替代容量检查：所有内容仍必须在参考安全区内预算成立，也不得依赖较小设备上的对称裁切掩盖溢出。
 - `2x2` 的 S2/S4 有独立卡片标题时必须使用 5.15 的 CardHeader，不手写 Row + Text + Image 标题行；S1 居中说明、S3 主内容名称、分区内业务名称和无标题布局不套 CardHeader。S4 双业务纵堆不增加总标题。`2x4` 有独立卡级标题时同样必须使用 CardHeader；无标题或只有正文上下文时不套 CardHeader。
 - root 固定 `borderRadius: 20`、`clip: true`。
@@ -570,7 +570,7 @@ ActionUnit——卡级 CTA：
 ## 8.2 数值布局
 
 - 关键内部容器、图片、Progress、Button 使用数值宽高。
-- 对每个 Row/Column 分别计算两个轴的内部预算：`内部宽度 = 父宽度 - 左右 padding`，`内部高度 = 父高度 - 上下 padding`；子项的 width/height、四向 margin 和有效 `itemMargin` 都按所在轴计入。root 的直接内容预算必须固定按 `2x2: 136×136`、`2x4: 296×136` 检查，不能把 `160×160` 或 `320×160` 当成 padding 后仍可使用的空间。
+- 对每个 Row/Column 分别计算两个轴的内部预算：`内部宽度 = 父宽度 - 左右 padding`，`内部高度 = 父高度 - 上下 padding`；子项的 width/height、四向 margin 和有效 `itemMargin` 都按所在轴计入。root 的直接内容预算必须固定按 `2x2: 136×136`、`2x4: 276×126` 检查，不能把 `160×160` 或 `300×150` 当成 padding 后仍可使用的空间。
 - Row/Column 使用 `start|center|end` 时，主轴占用量为 `所有子项主轴尺寸 + 所有子项主轴 margin + 有效 itemMargin × 间隔数`，该值不得超过父容器主轴内部预算；交叉轴上每个子项的尺寸与 margin 也不得超过交叉轴内部预算。
 - Row/Column 使用 `spaceAround|spaceBetween|spaceEvenly` 时，先计算 `剩余主轴空间 = 父容器主轴内部预算 - 所有子项主轴尺寸 - 所有子项主轴 margin - itemMargin × 间隔数`，剩余空间必须大于或等于 `0`，再在最小 `itemMargin` 之外按分布规则分配。`itemMargin` 缺失时按 `0` 计算；分布式对齐不能压缩子项，也不能修复负剩余空间。
 - `spaceAround|spaceBetween|spaceEvenly` 只在全部主轴子项都有稳定尺寸时使用，不依赖分布式对齐修复不确定宽高，也不假设它会保留额外固定间距。
@@ -650,61 +650,63 @@ ActionUnit——卡级 CTA：
 
 ## 9.2 2x4 固定骨架（v0.3 W 骨架 · 按信息承载量 W1→W8）
 
-2x4 骨架按信息承载量从少到多编号；每张卡必须且只能选择一个骨架，允许在声明范围内微调，不得跨骨架拼接 region。通用约束：独立卡级标题可选，有则必须使用 20vp 高的 CardHeader 作为全尺寸前景 Column 首项，无则不生成标题及空槽；分栏一律等分或固定宽（146/144/140），侧栏固定宽统一 140vp；线性进度条一律 `strokeWidth:8`；弹性沉底用 `layoutWeight:1` 空容器占位（`flexShrink` 只收缩不拉伸，禁止用于沉底）；禁止 `justifyContent:"spaceBetween"` 制造三段均分（会把中部元素推离预期位置）。
+以下横版区域均受276×126vp内容预算约束。增加可选标题时必须从正文槽位扣除20vp及标题间距；例如W1双背板无标题时为59+8+59，有标题且间距2vp时改为48+8+48，单背板相应由126vp减为104vp。不能在满高区域上直接叠加标题。
+
+2x4 骨架按信息承载量从少到多编号；每张卡必须且只能选择一个骨架，允许在声明范围内微调，不得跨骨架拼接 region。通用约束：独立卡级标题可选，有则必须使用 20vp 高的 CardHeader 作为全尺寸前景 Column 首项，无则不生成标题及空槽；分栏一律等分或固定宽（136/134/130），侧栏固定宽统一 130vp；线性进度条一律 `strokeWidth:8`；弹性沉底用 `layoutWeight:1` 空容器占位（`flexShrink` 只收缩不拉伸，禁止用于沉底）；禁止 `justifyContent:"spaceBetween"` 制造三段均分（会把中部元素推离预期位置）。
 
 ### `W1-progress-aux`（进度 + 辅助区域）
 
 - 用于：倒计时、强提醒、单主指标进度 + 侧栏辅助（同构事项 / 说明背板 / 双入口）；承载 1 主数值 + 1 进度 + 辅助 0-2 项。
-- region：`content Row -> [progress_zone 146, aux_zone 140]` gap 10。progress_zone：`tag 12fp/400` 顶 → `count`（默认 30fp、最大 38fp 纯数字 + 12-16fp 单位，紧随 tag）→ `layoutWeight:1` spacer → 沉底 `Progress linear 146×8`（strokeWidth 8）+ 端标行（10fp/400/内容色 60%，条下方两端对齐）。aux_zone 三变体：var-a 双份区域（两张 64 高背板 + gap 8，内容色 10% 底、圆角 12，各「标题 12fp/400 + 副文 10fp/400」）；var-b 整体大区域（单背板 136 全高、圆角 14，标题 400 顶部 + 正文 400 沉底、中部留白，无动作）；var-c 双按钮（两枚 140×36 胶囊纵排 gap 10，沉底与进度条底对齐）。
+- region：`content Row -> [progress_zone 136, aux_zone 130]` gap 10。progress_zone：`tag 12fp/400` 顶 → `count`（默认 30fp、最大 38fp 纯数字 + 12-16fp 单位，紧随 tag）→ `layoutWeight:1` spacer → 沉底 `Progress linear 136×8`（strokeWidth 8）+ 端标行（10fp/400/内容色 60%，条下方两端对齐）。aux_zone 三变体：var-a 双份区域（两张 59 高背板 + gap 8，内容色 10% 底、圆角 12，各「标题 12fp/400 + 副文 10fp/400」）；var-b 整体大区域（单背板 126 全高、圆角 14，标题 400 顶部 + 正文 400 沉底、中部留白，无动作）；var-c 双按钮（两枚 130×36 胶囊纵排 gap 10，沉底与进度条底对齐）。
 - 槽位：恰好一个大数 + 一个进度语义；辅助区至多两个事项或两个动作。
 - 禁止：辅助区混排（背板+按钮）、progress_zone 放第二数据域、进度条细于 8vp。
 
 ### `W2-text-flow`（单列文本流 · 沉底）
 
 - 用于：单日程摘要、公告、说明型内容；纯文本无图形无动作，承载 3 单元。
-- region：`kicker 12fp/400` 顶 + `lower Column 113 justifyContent:end`：`event 76`（主内容标题 20fp/500 + 正文 10fp/400 两行）+ `date 10fp/400`（贴正文下方沉底）；kicker 与标题之间大留白（上空下实）。
+- region：`kicker 12fp/400` 顶 + `lower Column 103 justifyContent:end`：`event 76`（主内容标题 20fp/500 + 正文 10fp/400 两行）+ `date 10fp/400`（贴正文下方沉底）；kicker 与标题之间大留白（上空下实）。
 - 槽位：一个标题 + 一段正文（≤2 行）+ 一行元信息。
 - 禁止：标题悬空居中、正文三行以上、任何背板与图形。
 
 ### `W3-ring-detail`（大环 + 说明列）
 
 - 用于：百分比主指标（电量、完成度）+ 右侧说明，承载 1 环指标 + 3 行说明。
-- region：可选 `CardHeader 20vp` + `main Row 113`：`ringArea 144`（`Stack 92`：Progress ring strokeWidth 8 + 环心读数 20fp/700）+ `info 144`（说明标题 16fp/400 / 值 14fp/400 / 状态 12fp/400，居中）。有 CardHeader 时与 main 的间距使用 2vp，确保总高不超过 136vp。
+- region：可选 `CardHeader 20vp` + `main Row 104`：`ringArea 134`（`Stack 92`：Progress ring strokeWidth 8 + 环心读数 20fp/700）+ `info 134`（说明标题 16fp/400 / 值 14fp/400 / 状态 12fp/400，居中）。有 CardHeader 时与 main 的间距使用 2vp，确保总高不超过 126vp。
 - 槽位：一个环主指标；右侧至多三行说明。
 - 禁止：环径 <80、右侧第二数据域、环心空置。
 
 ### `W4-metric-triple`（三指标等分分割线）
 
 - 用于：三并列同构指标（健康概览等）。
-- region：可选 `CardHeader 20vp` + `metrics Row 84`：三列（88/96/88）+ 两条竖 `Divider 1×64` 居中；每列三行严格水平对齐——label 12fp/400 / value 24fp/700 / unit 12fp/400，列内 justifyContent center；文本型指标列（字段为文本无法拆数值/单位）允许「整行文本 20fp + 空单位占位」+ 顶对齐 10vp 阶梯补偿。
+- region：可选 `CardHeader 20vp` + `metrics Row 84`：三列（82/86/82）+ 两条竖 `Divider 1×64` 居中；每列三行严格水平对齐——label 12fp/400 / value 24fp/700 / unit 12fp/400，列内 justifyContent center；文本型指标列（字段为文本无法拆数值/单位）允许「整行文本 20fp + 空单位占位」+ 顶对齐 10vp 阶梯补偿。
 - 槽位：恰好三个指标；每列一个数值。
 - 禁止：列内行错位（三列 label/value/unit 各自同水平线）、第四列、数值行并单位换行。
 
 ### `W5-progress-detail`（数值 + 进度 + 双详情）
 
 - 用于：线性进度语义（恢复度、目标完成）+ 双详情背板。
-- region：可选 `CardHeader 20vp` + `body 108`：`progressSlot 50`（主数值行 20fp/700 + label 10fp/400 + `Progress linear 296×8 strokeWidth 8`）+ `details Row 50`（两背板 144×2 gap 8、圆角 10、内容色 10% 底，各「标题 12fp/400 + 值 10fp/400」）。
+- region：可选 `CardHeader 20vp` + 间隔2vp + `body 104`：`progressSlot 50`（主数值行 20fp/700 + label 10fp/400 + `Progress linear 276×8 strokeWidth 8`）+ 间隔8vp + `details Row 46`（两背板 134×2 gap 8、圆角 10、内容色 10% 底，各「标题 12fp/400 + 值 10fp/400」）。
 - 槽位：一个进度主指标 + 两个详情项。
-- 禁止：进度条细于 8vp、三背板、详情行高 >50。
+- 禁止：进度条细于 8vp、三背板、详情行高 >46。
 
 ### `W6-agenda-cta`（日程摘要 + 双入口）
 
 - 用于：下一日程/单事件 + 两个真实入口。
-- region：`kicker 12fp/400` + `event 48`（主内容标题 18fp/500 一行 + 时间 12fp/400）+ `actions Row 36`：两枚 140×36 胶囊（主色 20% 底 + 主色墨，spaceBetween 闭合 296），沉底。
+- region：`kicker 12fp/400` + `event 48`（主内容标题 18fp/500 一行 + 时间 12fp/400）+ `actions Row 36`：两枚 130×36 胶囊（主色 20% 底 + 主色墨，spaceBetween 闭合 276），沉底。
 - 槽位：一个日程对象 + 恰好两个动作；动作必须有注册事件。
 - 禁止：单按钮、三按钮、标题换行。
 
 ### `W7-list-rows`（三行等高列表）
 
 - 用于：近期日程/待办 3 行清单。
-- region：可选 `CardHeader 20vp` + `list 112`：三行背板 296×32（gap 8）、圆角 8、内容色 10% 底；每行文本 12fp/400，不附加装饰图标。
+- region：可选 `CardHeader 20vp` + 间隔2vp + `list 104`：三行背板 276×30（gap 7）、圆角 8、内容色 10% 底；每行文本 12fp/400，不附加装饰图标。
 - 槽位：恰好三行；每行一条文本。
 - 禁止：两行或四行、行内按钮、行高不一。
 
 ### `W8-quad-cells`（无标题四格）
 
 - 用于：四设备/四对象同构电量或占比，信息承载最重。
-- region：无标题；`grid 2×2`（格 144×64、gap 8）；每格 `Row padding 12 -> [文本列 64, ringStack 40]`：文本列「数值 16fp/700 + 状态 10fp」，ringStack 为 `Progress ring 40 strokeWidth 4`（弧=各格数值、底环主色 5%）+ 环心图标 20×20。
+- region：无标题；`grid 2×2`（格 134×59、gap 8）；每格 `Row padding {left:12,right:12,top:8,bottom:8}, itemMargin:6 -> [文本列 64, ringStack 40]`：文本列「数值 16fp/700 + 状态 10fp」，ringStack 为 `Progress ring 40 strokeWidth 4`（弧=各格数值、底环主色 5%）+ 环心图标 20×20。
 - 槽位：恰好四格；每格一个数值 + 一个环。
 - 禁止：标题行、格内双数值、实心图标替代环、第三行格。
 
@@ -891,7 +893,7 @@ ActionUnit——卡级 CTA：
 1. **输出与协议**：是否只有一个 `genui` 代码块和可解析的极简协议 JSONL；是否没有 createSurface/updateComponents/updateDataModel/surfaceId/catalogId；root、组件字段和枚举是否正确；融球是否满足第十二节的 2x2、单业务、最终信息项不超过 3、单内容组、显式动作不超过 1 和运行时条件，且 root 未同时写普通背景。
 2. **引用与数据**：组件是否唯一、可达且引用闭合；Expression、PathBinding、模板路径与首帧 DataModel 是否存在并类型一致；是否没有孤立组件、空胶囊、局部 Expression 或静态样例冒充动态绑定。
 3. **候选与事件**：是否只保留最小充分候选；显式动作是否绑定，隐式入口是否不抢占空间，未被明确要求的副作用动作是否已删除；同一动作是否只有一个点击容器。
-4. **骨架与预算**：是否只使用一个固定骨架；CardHeader 是否只用于 2x2 S2/S4 或 2x4 独立卡级标题、每卡最多一个且位于规定前景 Column 首项，无标题布局是否未留空槽，S1/S3 是否未加 CardHeader 或右上角辅助图标；root 宽高是否为 `"matchParent"`、padding 12、圆角 20、clip true；root Column 是否使用 `alignItems:"center"`，root Row 的固定参考宽度直接内容是否使用 `justifyContent:"center"`，且没有把 root 的整组居中误写成内部文字全部居中；是否已按 3.1 节逐项写出 root 直接子节点的最小高度、margin 和 `itemMargin` 并确认 `H_required <= 136vp`；分布式对齐是否只分配扣除最小间距后的非负剩余空间；所有 Row/Column 两轴预算是否非负，动态文字 Row 是否保留余量，点击热区是否至少 24vp。
+4. **骨架与预算**：是否只使用一个固定骨架；CardHeader 是否只用于 2x2 S2/S4 或 2x4 独立卡级标题、每卡最多一个且位于规定前景 Column 首项，无标题布局是否未留空槽，S1/S3 是否未加 CardHeader 或右上角辅助图标；root 宽高是否为 `"matchParent"`、padding 12、圆角 20、clip true；root Column 是否使用 `alignItems:"center"`，root Row 的固定参考宽度直接内容是否使用 `justifyContent:"center"`，且没有把 root 的整组居中误写成内部文字全部居中；是否已按 3.1 节逐项写出 root 直接子节点的最小高度、margin 和 `itemMargin` 并确认 `H_required <= 当前尺寸的内容高度预算（2x2 为136vp，2x4 为126vp）`；分布式对齐是否只分配扣除最小间距后的非负剩余空间；所有 Row/Column 两轴预算是否非负，动态文字 Row 是否保留余量，点击热区是否至少 24vp。
 5. **文字与图表**：卡片级标题是否默认不超过 8 个字符，超长例外是否已证明完整可读且不挤压其它内容；受保护文本和 CTA 是否完整；是否没有空白 Text、`textOverflow`、单独的 `°` 或近似温度单位；格式化值是否包含单位与符号并通过压力检查；纯数字是否默认 30fp 且不超过 38fp，文字及未拆分单位字符串是否默认 16fp 且不超过 20fp，单位是否为 12-16fp，卡片标题和按钮是否分别为 12fp/14fp；全卡字号是否不超过三档、同层级元素是否保持一致；Progress 是否只用于范围可靠的数值语义。
 6. **表面与素材**：逐个核对 Image 的实际用途，普通内容区必须为零，例外仅为环中心或 S4 分区主视觉；S4 每区最多 1 个，两个天气对象有合法素材时是否各有 1 个，重复 src 是否分别计数，辅助文字前后是否无图标；是否按最终图标实例计数、默认不超过 2 个且按 2.5 节预先分配；2x2/2x4 的所有图标是否均为 20×20vp 且没有主辅尺寸分档；是否仅为用户明确要求放宽数量，且未丢失动作或预留空图标槽；未有用户明确要求时，是否只使用五套固定浅色纯色或五套融球；业务映射和融球优先级是否正确；文字与单色图标、按钮、蒙版是否遵循本卡固定配色和透明度；进度与分隔线是否只更新颜色基准而保留原样式；是否保留多色图标与真实状态色例外，且没有旧渐变、特殊深色或自由取色残留。
 7. **最终简化**：是否只有一个主焦点、清晰对齐线和有限表面；并列分区的高度、视觉重量和留白是否均衡；是否已删除弱装饰、重复事实、无关字段、假交互、无意义单子容器和多余材质；若仍有任何不确定布局，是否已经回退到同尺寸更简单骨架。

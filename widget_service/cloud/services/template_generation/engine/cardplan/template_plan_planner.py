@@ -29,6 +29,7 @@ from .template_retrieval import (
     TemplateSearchIntent,
     TemplateSearchResult,
 )
+from .wide_template_planner import wide_plan_compositions
 
 _MAX_PLANS = 3
 _MAX_WIDE_OPTIONS_PER_SLOT = 8
@@ -75,6 +76,17 @@ def plan_template_candidates(
     drafts: list[_PlanDraft] = []
     sequence = 0
     group_options = tuple(groups_by_capability[item] for item in requested_capabilities)
+    if task_spec.size == "2x4":
+        for composition in wide_plan_compositions(intent, search_result, task_spec, registry):
+            plan = _make_plan(
+                composition.layout_template_id, composition.slots,
+                composition.assignments, registry,
+            )
+            if plan is not None:
+                score = _wide_plan_score(plan, intent, registry)
+                drafts.append(_PlanDraft(plan=plan, score=score, sequence=sequence))
+                sequence += 1
+        group_options = ()
     for selected_groups in product(*group_options):
         if len(selected_groups) == 1:
             new_drafts = _single_business_drafts(
@@ -112,7 +124,13 @@ def plan_template_candidates(
     drafts.sort(key=lambda item: (*tuple(-value for value in item.score), item.sequence))
     deduplicated = _deduplicate_drafts(drafts)
     top_theme = deduplicated[0].plan.theme_id
-    same_theme = [item for item in deduplicated if item.plan.theme_id == top_theme]
+    top_businesses = _plan_business_ids(deduplicated[0].plan)
+    same_theme = []
+    for item in deduplicated:
+        if item.plan.theme_id != top_theme:
+            continue
+        if _plan_business_ids(item.plan) == top_businesses:
+            same_theme.append(item)
     return tuple(
         item.plan.model_copy(update={"plan_id": f"plan-{index + 1}"})
         for index, item in enumerate(same_theme[:_MAX_PLANS])
@@ -616,6 +634,9 @@ def _selected_action_ids(
     intent: TemplateSearchIntent,
     task_spec: TaskSpec,
 ) -> tuple[str, ...]:
+    limit = 4 if task_spec.size == "2x4" else 2
+    if len(intent.action_ids) > limit:
+        raise TemplateRetrievalMiss("Planner Action count exceeds the card size budget")
     available_ids = {event.id for event in task_spec.eventCandidates if event.id}
     if not set(intent.action_ids).issubset(available_ids):
         raise TemplateRetrievalMiss("Planner Action is outside TaskSpec.eventCandidates")
@@ -936,7 +957,8 @@ def _deduplicate_drafts(drafts: list[_PlanDraft]) -> list[_PlanDraft]:
         signature = (
             plan.theme_id,
             plan.layout_template_id,
-            tuple(slot.template_id for slot in plan.business_slots),
+            tuple((slot.template_id, tuple(slot.field_bindings.items()))
+                  for slot in plan.business_slots),
             tuple(
                 (
                     item.action_id,
@@ -968,3 +990,20 @@ def _has_semantic_action_icon(task_spec: TaskSpec) -> bool:
         if any(keyword in normalized for keyword in keywords):
             return True
     return False
+
+
+def _wide_plan_score(
+    plan: TemplatePlan,
+    intent: TemplateSearchIntent,
+    registry: CardPlanRegistry,
+) -> tuple[int, ...]:
+    base = _plan_score(plan, intent, registry)
+    generic_count = sum(bool(slot.field_bindings) for slot in plan.business_slots)
+    embedded_count = sum(item.consumer == "business-template" for item in plan.action_assignments)
+    requested_order = tuple(intent.required_output_fields_by_capability)
+    actual_order = tuple(dict.fromkeys(slot.capability_id for slot in plan.business_slots))
+    order_matches = int(actual_order == requested_order)
+    return (
+        embedded_count, base[0], -generic_count, -len(plan.business_slots),
+        *base[1:], order_matches,
+    )

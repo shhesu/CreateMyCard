@@ -150,7 +150,7 @@ Column({
 },
   Column({
     "width": "matchParent",
-    "height": 92
+    "layoutWeight": 1
   }, children[0]),
   Column({
     "width": "matchParent",
@@ -190,7 +190,7 @@ Row({
 )
 #End
 
-#Template WideHeroSupportLayout@1(props: {}, ...children)
+#Template WideHeroCompactLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -206,7 +206,7 @@ Row({
     "justifyContent": "center",
     "alignItems": "start"
   },
-    Column({"width": "matchParent", "height": 64}, children[1])
+    Column({"width": "matchParent", "height": 59}, children[1])
   )
 )
 #End
@@ -222,7 +222,7 @@ Row({
 },
   Column({"layoutWeight": 1, "height": "matchParent"}, children[0]),
   Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
-    Column({"width": "matchParent", "height": 92}, children[1]),
+    Column({"width": "matchParent", "height": 82}, children[1]),
     Column({"width": "matchParent", "height": 36}, children[2])
   )
 )
@@ -238,7 +238,7 @@ Row({
   "itemMargin": 8
 },
   Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
-    Column({"width": "matchParent", "height": 92}, children[1]),
+    Column({"width": "matchParent", "height": 82}, children[1]),
     Column({"width": "matchParent", "height": 36}, children[2])
   ),
   Column({
@@ -256,7 +256,7 @@ Row({
 )
 #End
 
-#Template WideFullTwoSupportLayout@1(props: {}, ...children)
+#Template WideFullTwoCompactLayout@1(props: { compactRows?: boolean }, ...children)
 data = {
 }
 
@@ -266,14 +266,15 @@ Row({
   "itemMargin": 8
 },
   Column({"layoutWeight": 1, "height": "matchParent"}, children[0]),
-  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
-    Column({"width": "matchParent", "height": 64}, children[1]),
-    Column({"width": "matchParent", "height": 64}, children[2])
+  Column({"layoutWeight": 1, "height": #Expr(props.compactRows ? 126 : "matchParent"),
+    "itemMargin": #Expr(props.compactRows ? 12 : 8)},
+    Column({"width": "matchParent", "height": #Expr(props.compactRows ? 57 : 60)}, children[1]),
+    Column({"width": "matchParent", "height": #Expr(props.compactRows ? 57 : 60)}, children[2])
   )
 )
 #End
 
-#Template WideFourSupportLayout@1(props: {}, ...children)
+#Template WideFourCompactLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -283,19 +284,18 @@ Row({
   "itemMargin": 8
 },
   Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
-    Column({"width": "matchParent", "height": 64}, children[0]),
-    Column({"width": "matchParent", "height": 64}, children[1])
+    Column({"width": "matchParent", "height": 59}, children[0]),
+    Column({"width": "matchParent", "height": 59}, children[1])
   ),
   Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
-    Column({"width": "matchParent", "height": 64}, children[2]),
-    Column({"width": "matchParent", "height": 64}, children[3])
+    Column({"width": "matchParent", "height": 59}, children[2]),
+    Column({"width": "matchParent", "height": 59}, children[3])
   )
 )
 #End
 
 #Template WideFullHeroTwoActionLayout@1(props: {}, ...children)
-data = {
-}
+data = {}
 
 Row({
   "width": "matchParent",
@@ -304,7 +304,7 @@ Row({
 },
   Column({"layoutWeight": 1, "height": "matchParent"}, children[0]),
   Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
-    Column({"width": "matchParent", "height": 92}, children[1]),
+    Column({"width": "matchParent", "height": 82}, children[1]),
     Row({"width": "matchParent", "height": 36, "itemMargin": 8},
       Column({"layoutWeight": 1, "height": 36}, children[2]),
       Column({"layoutWeight": 1, "height": 36}, children[3])
@@ -329,13 +329,13 @@ Row({
     "justifyContent": "center",
     "itemMargin": 8
   },
-    Row({"width": "matchParent", "height": 64, "itemMargin": 8},
-      Column({"layoutWeight": 1, "height": 64, "alignItems": "center"}, children[1]),
-      Column({"layoutWeight": 1, "height": 64, "alignItems": "center"}, children[2])
+    Row({"width": "matchParent", "height": 59, "itemMargin": 8},
+      Column({"layoutWeight": 1, "height": 59, "alignItems": "center"}, children[1]),
+      Column({"layoutWeight": 1, "height": 59, "alignItems": "center"}, children[2])
     ),
-    Row({"width": "matchParent", "height": 64, "itemMargin": 8},
-      Column({"layoutWeight": 1, "height": 64, "alignItems": "center"}, children[3]),
-      Column({"layoutWeight": 1, "height": 64, "alignItems": "center"}, children[4])
+    Row({"width": "matchParent", "height": 59, "itemMargin": 8},
+      Column({"layoutWeight": 1, "height": 59, "alignItems": "center"}, children[3]),
+      Column({"layoutWeight": 1, "height": 59, "alignItems": "center"}, children[4])
     )
   )
 )
@@ -351,13 +351,13 @@ Column({
   "height": "matchParent",
   "itemMargin": 8
 },
-  Column({"width": "matchParent", "height": 64}, children[0]),
-  Column({"width": "matchParent", "height": 64}, children[1])
+  Column({"width": "matchParent", "height": 59}, children[0]),
+  Column({"width": "matchParent", "height": 59}, children[1])
 )
 #End
 
 
-#Template WideHalfTwoSupportLayout@1(props: {}, ...children)
+#Template WideHalfTwoCompactLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -366,16 +366,16 @@ Column({
   "height": "matchParent",
   "itemMargin": 8
 },
-  Column({"width": "matchParent", "height": 64}, children[0]),
-  Row({"width": "matchParent", "height": 64, "itemMargin": 8},
-    Column({"layoutWeight": 1, "height": 64}, children[1]),
-    Column({"layoutWeight": 1, "height": 64}, children[2])
+  Column({"width": "matchParent", "layoutWeight": 1}, children[0]),
+  Row({"width": "matchParent", "layoutWeight": 1, "itemMargin": 8},
+    Column({"layoutWeight": 1, "height": "matchParent"}, children[1]),
+    Column({"layoutWeight": 1, "height": "matchParent"}, children[2])
   )
 )
 #End
 
 
-#Template WideHalfSupportTwoLargeActionLayout@1(props: {}, ...children)
+#Template WideHalfCompactTwoLargeActionLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -384,19 +384,112 @@ Column({
   "height": "matchParent",
   "itemMargin": 8
 },
-  Column({"width": "matchParent", "height": 64}, children[0]),
-  Row({"width": "matchParent", "height": 64, "itemMargin": 8},
-    Column({"layoutWeight": 1, "height": 64}, children[1]),
+  Column({"width": "matchParent", "height": 59}, children[0]),
+  Row({"width": "matchParent", "height": 59, "itemMargin": 8},
+    Column({"layoutWeight": 1, "height": 59}, children[1]),
     Row({
       "layoutWeight": 1,
-      "height": 64,
+      "height": 59,
       "justifyContent": "center",
       "alignItems": "center",
       "itemMargin": 8
     },
-      Column({"width": 64, "height": 64}, children[2]),
-      Column({"width": 64, "height": 64}, children[3])
+      Column({"width": 59, "height": 59}, children[2]),
+      Column({"width": 59, "height": 59}, children[3])
     )
+  )
+)
+#End
+
+
+#Template WideTwoFocusLayout@1(props: {}, ...children)
+data = {
+}
+
+Row({
+  "width": "matchParent",
+  "height": "matchParent",
+  "itemMargin": 8
+},
+  Column({
+    "layoutWeight": 1,
+    "height": "matchParent",
+    "padding": {"left": 12, "top": 8, "right": 12, "bottom": 8},
+    "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+    "borderRadius": $theme("supportContentStyle.borderRadius")
+  }, children[0]),
+  Column({
+    "layoutWeight": 1,
+    "height": "matchParent",
+    "padding": {"left": 12, "top": 8, "right": 12, "bottom": 8},
+    "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+    "borderRadius": $theme("supportContentStyle.borderRadius")
+  }, children[1])
+)
+#End
+
+
+#Template WideTwoFocusActionLayout@1(props: {}, ...children)
+data = {
+}
+
+Row({
+  "width": "matchParent",
+  "height": "matchParent",
+  "itemMargin": 8
+},
+  Column({
+    "layoutWeight": 1,
+    "height": "matchParent",
+    "padding": {"left": 12, "top": 4, "right": 12, "bottom": 4},
+    "itemMargin": 4,
+    "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+    "borderRadius": $theme("supportContentStyle.borderRadius")
+  },
+    Column({"width": "matchParent", "layoutWeight": 1}, children[0]),
+    Column({"width": "matchParent", "height": 36}, children[2])
+  ),
+  Column({
+    "layoutWeight": 1,
+    "height": "matchParent",
+    "padding": {"left": 12, "top": 8, "right": 12, "bottom": 8},
+    "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+    "borderRadius": $theme("supportContentStyle.borderRadius")
+  }, children[1])
+)
+#End
+
+
+#Template WideTwoFocusTwoActionLayout@1(props: {}, ...children)
+data = {
+}
+
+Row({
+  "width": "matchParent",
+  "height": "matchParent",
+  "itemMargin": 8
+},
+  Column({
+    "layoutWeight": 1,
+    "height": "matchParent",
+    "padding": {"left": 12, "top": 8, "right": 12, "bottom": 8},
+    "itemMargin": 0,
+    "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+    "borderRadius": $theme("supportContentStyle.borderRadius")
+  },
+    Column({"width": "matchParent", "layoutWeight": 1}, children[0]),
+    Column({"width": "matchParent", "height": 36}, children[2])
+  ),
+  Column({
+    "layoutWeight": 1,
+    "height": "matchParent",
+    "padding": {"left": 12, "top": 8, "right": 12, "bottom": 8},
+    "itemMargin": 0,
+    "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+    "borderRadius": $theme("supportContentStyle.borderRadius")
+  },
+    Column({"width": "matchParent", "layoutWeight": 1}, children[1]),
+    Column({"width": "matchParent", "height": 36}, children[3])
   )
 )
 #End
@@ -411,12 +504,27 @@ Column({
   "height": "matchParent",
   "itemMargin": 8
 },
-  Column({"width": "matchParent", "height": 64}, children[0]),
-  Row({"width": "matchParent", "height": 64},
-    Column({"layoutWeight": 1, "height": 64, "alignItems": "center", "justifyContent": "center"}, children[1]),
-    Column({"layoutWeight": 1, "height": 64, "alignItems": "center", "justifyContent": "center"}, children[2]),
-    Column({"layoutWeight": 1, "height": 64, "alignItems": "center", "justifyContent": "center"}, children[3]),
-    Column({"layoutWeight": 1, "height": 64, "alignItems": "center", "justifyContent": "center"}, children[4])
+  Column({"width": "matchParent", "height": 59}, children[0]),
+  Row({"width": "matchParent", "height": 59},
+    Column({"layoutWeight": 1, "height": 59, "alignItems": "center", "justifyContent": "center"}, children[1]),
+    Column({"layoutWeight": 1, "height": 59, "alignItems": "center", "justifyContent": "center"}, children[2]),
+    Column({"layoutWeight": 1, "height": 59, "alignItems": "center", "justifyContent": "center"}, children[3]),
+    Column({"layoutWeight": 1, "height": 59, "alignItems": "center", "justifyContent": "center"}, children[4])
+  )
+)
+#End
+
+#Template WideTwoHeroActionLayout@1(props: {}, ...children)
+data = {}
+
+Row({"width": "matchParent", "height": "matchParent", "itemMargin": 12},
+  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
+    Column({"width": "matchParent", "layoutWeight": 1}, children[0]),
+    Column({"width": "matchParent", "height": 36}, children[2])
+  ),
+  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
+    Column({"width": "matchParent", "layoutWeight": 1}, children[1]),
+    Column({"width": "matchParent", "height": 36}, children[3])
   )
 )
 #End

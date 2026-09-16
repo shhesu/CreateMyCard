@@ -22,8 +22,8 @@ _REFERENCE_PATTERN = re.compile(r"\$\{(?P<path>[^{}]*)\}")
 _NON_EMPTY_CONTAINER_TYPES = frozenset({"Row", "Column", "List", "Stack"})
 _REFERENCE_CANVAS_HEIGHT = {
     "2x2": 160.0,
-    "2x4": 160.0,
-    "4x2": 160.0,
+    "2x4": 150.0,
+    "4x2": 150.0,
 }
 
 

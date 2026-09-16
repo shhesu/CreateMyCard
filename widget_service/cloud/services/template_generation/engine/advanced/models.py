@@ -25,11 +25,15 @@ UX_LAYOUT_COMPONENT_IDS = frozenset(
         "WideFullTwoSupportLayout",
         "WideFourSupportLayout",
         "WideFullHeroTwoActionLayout",
+        "WideTwoHeroActionLayout",
         "WideFullFourActionLayout",
         "WideTwoHalfLayout",
         "WideHalfTwoSupportLayout",
         "WideHalfSupportTwoLargeActionLayout",
         "WideHalfFourLargeActionLayout",
+        "WideTwoFocusLayout",
+        "WideTwoFocusActionLayout",
+        "WideTwoFocusTwoActionLayout",
     }
 )
 UX_DIRECT_BUSINESS_COMPONENT_IDS = frozenset(
@@ -281,7 +285,7 @@ class TemplateRouteSelection(StrictModel):
     component_candidates: tuple[TemplateComponentCandidate, ...] = Field(
         alias="componentCandidates"
     )
-    action_ids: tuple[str, ...] = Field(default=(), alias="actionIds", max_length=2)
+    action_ids: tuple[str, ...] = Field(default=(), alias="actionIds", max_length=4)
     required_template_groups: tuple[tuple[str, ...], ...] = Field(
         default=(),
         alias="requiredTemplateGroups",

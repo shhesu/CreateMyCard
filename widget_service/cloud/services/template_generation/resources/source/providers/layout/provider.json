@@ -49,8 +49,8 @@
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideHeroSupportLayout@1",
-      "description": "2x4 左侧 Hero、右侧垂直居中的 Support 组合布局。",
+      "templateId": "WideHeroCompactLayout@1",
+      "description": "2x4 左侧 Hero、右侧垂直居中的 Compact 组合布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -64,13 +64,13 @@
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideFullTwoSupportLayout@1",
-      "description": "2x4 左 Full、右侧上下两个 Support 布局。",
+      "templateId": "WideFullTwoCompactLayout@1",
+      "description": "2x4 左 Full、右侧上下两个 Compact 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideFourSupportLayout@1",
-      "description": "2x4 四个 Support 业务模板按两行两列排列的布局。",
+      "templateId": "WideFourCompactLayout@1",
+      "description": "2x4 四个 Compact 业务模板按两行两列排列的布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -89,18 +89,38 @@
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideHalfTwoSupportLayout@1",
-      "description": "2x4 上方 WideHalf、下方左右两个 Support 布局。",
+      "templateId": "WideHalfTwoCompactLayout@1",
+      "description": "2x4 上方 WideHalf、下方左右两个 Compact 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideHalfSupportTwoLargeActionLayout@1",
-      "description": "2x4 上方 WideHalf、下方左 Support、右侧两个 LargeIconAction 布局。",
+      "templateId": "WideHalfCompactTwoLargeActionLayout@1",
+      "description": "2x4 上方 WideHalf、下方左 Compact、右侧两个 LargeIconAction 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
       "templateId": "WideHalfFourLargeActionLayout@1",
       "description": "2x4 上方 WideHalf、下方横向四个 LargeIconAction 布局。",
+      "entry": "templates/layout.cardtpl"
+    },
+    {
+      "templateId": "WideTwoHeroActionLayout@1",
+      "description": "2x4 左 Full、右上 Hero、右下左右两个 Action 布局。",
+      "entry": "templates/layout.cardtpl"
+    },
+    {
+      "templateId": "WideTwoFocusLayout@1",
+      "description": "2x4 左右双焦点拼接布局，两个 2x2 风格圆角面板各承载一个无 Action 的 Hero 业务模板。",
+      "entry": "templates/layout.cardtpl"
+    },
+    {
+      "templateId": "WideTwoFocusActionLayout@1",
+      "description": "2x4 左右双焦点拼接布局，两个 2x2 风格圆角面板各承载一个 Hero 业务模板，左面板底部承载一个 PillAction。",
+      "entry": "templates/layout.cardtpl"
+    },
+    {
+      "templateId": "WideTwoFocusTwoActionLayout@1",
+      "description": "2x4 左右双焦点拼接布局，两个 2x2 风格圆角面板各承载一个 Hero 业务模板和一个底部 PillAction。",
       "entry": "templates/layout.cardtpl"
     }
   ],
@@ -345,164 +365,398 @@
       }
     },
     {
-      "name": "WideHeroSupportLayout",
-      "description": "仅用于 2x4；依次承载一个 Hero 和一个 Support，不接受 Action。",
-      "supportedCardSizes": ["2x4"],
+      "name": "WideHeroCompactLayout",
+      "description": "仅用于 2x4；依次承载一个 Hero 和一个 Compact，不接受 Action。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 2},
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
       "actionPolicy": "none",
-      "minActionChildrenBySize": {"2x4": 0},
-      "maxActionChildrenBySize": {"2x4": 0},
+      "minActionChildrenBySize": {
+        "2x4": 0
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 0
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "row"}
+      "loweringBySize": {
+        "2x4": "row"
+      }
     },
     {
       "name": "WideFullHeroActionLayout",
       "description": "仅用于 2x4；依次承载 Full、Hero 和一个 PillAction。",
-      "supportedCardSizes": ["2x4"],
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 2},
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
       "actionPolicy": "required",
-      "minActionChildrenBySize": {"2x4": 1},
-      "maxActionChildrenBySize": {"2x4": 1},
+      "minActionChildrenBySize": {
+        "2x4": 1
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 1
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "row"}
+      "loweringBySize": {
+        "2x4": "row"
+      }
     },
     {
       "name": "WideHeroActionFullLayout",
       "description": "仅用于 2x4；依次承载 Full、Hero 和一个 PillAction，视觉上将 Hero 与 Action 放在左侧。",
-      "supportedCardSizes": ["2x4"],
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 2},
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
       "actionPolicy": "required",
-      "minActionChildrenBySize": {"2x4": 1},
-      "maxActionChildrenBySize": {"2x4": 1},
+      "minActionChildrenBySize": {
+        "2x4": 1
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 1
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "row"}
+      "loweringBySize": {
+        "2x4": "row"
+      }
     },
     {
-      "name": "WideFullTwoSupportLayout",
-      "description": "仅用于 2x4；依次承载 Full/Hero、信息 Support，以及第二个信息 Support 或单行 Compact Action。",
-      "supportedCardSizes": ["2x4"],
-      "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 3},
+      "name": "WideFullTwoCompactLayout",
+      "description": "仅用于 2x4；依次承载 Full/Hero、信息 Compact，以及第二个信息 Compact 或单行 Compact Action；也支持 Full 与两个 CompactAction。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 1,
+      "maxChildrenBySize": {
+        "2x4": 3
+      },
       "actionPolicy": "optional",
-      "minActionChildrenBySize": {"2x4": 0},
-      "maxActionChildrenBySize": {"2x4": 1},
+      "minActionChildrenBySize": {
+        "2x4": 0
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 2
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {
+          "compactRows": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "row"
+      }
+    },
+    {
+      "name": "WideFourCompactLayout",
+      "description": "仅用于 2x4；依次承载四个 Compact，按左右两列、上下两行排列，不接受 Action。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 4,
+      "maxChildrenBySize": {
+        "2x4": 4
+      },
+      "actionPolicy": "none",
+      "minActionChildrenBySize": {
+        "2x4": 0
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 0
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "row"}
-    },
-    {
-      "name": "WideFourSupportLayout",
-      "description": "仅用于 2x4；依次承载四个 Support，按左右两列、上下两行排列，不接受 Action。",
-      "supportedCardSizes": ["2x4"],
-      "minChildren": 4,
-      "maxChildrenBySize": {"2x4": 4},
-      "actionPolicy": "none",
-      "minActionChildrenBySize": {"2x4": 0},
-      "maxActionChildrenBySize": {"2x4": 0},
-      "parametersSchema": {"type": "object", "properties": {}, "additionalProperties": false},
-      "loweringBySize": {"2x4": "row"}
+      "loweringBySize": {
+        "2x4": "row"
+      }
     },
     {
       "name": "WideFullHeroTwoActionLayout",
       "description": "仅用于 2x4；依次承载 Full、Hero 和左右两个 PillAction。",
-      "supportedCardSizes": ["2x4"],
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 2},
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
       "actionPolicy": "required",
-      "minActionChildrenBySize": {"2x4": 2},
-      "maxActionChildrenBySize": {"2x4": 2},
+      "minActionChildrenBySize": {
+        "2x4": 2
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 2
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "row"}
+      "loweringBySize": {
+        "2x4": "row"
+      }
     },
     {
       "name": "WideFullFourActionLayout",
       "description": "仅用于 2x4；左侧承载一个 Full，右侧承载四个 64x64 LargeIconAction。",
-      "supportedCardSizes": ["2x4"],
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 1,
-      "maxChildrenBySize": {"2x4": 1},
+      "maxChildrenBySize": {
+        "2x4": 1
+      },
       "actionPolicy": "required",
-      "minActionChildrenBySize": {"2x4": 4},
-      "maxActionChildrenBySize": {"2x4": 4},
+      "minActionChildrenBySize": {
+        "2x4": 4
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 4
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "row"}
+      "loweringBySize": {
+        "2x4": "row"
+      }
     },
     {
       "name": "WideTwoHalfLayout",
       "description": "仅用于 2x4；上下各承载一个全宽半高的 WideHalf，不接受 Action。",
-      "supportedCardSizes": ["2x4"],
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 2},
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
       "actionPolicy": "none",
-      "minActionChildrenBySize": {"2x4": 0},
-      "maxActionChildrenBySize": {"2x4": 0},
+      "minActionChildrenBySize": {
+        "2x4": 0
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 0
+      },
       "parametersSchema": {
         "type": "object",
         "properties": {},
         "additionalProperties": false
       },
-      "loweringBySize": {"2x4": "column"}
+      "loweringBySize": {
+        "2x4": "column"
+      }
     },
     {
-      "name": "WideHalfTwoSupportLayout",
-      "description": "仅用于 2x4；依次承载 WideHalf 和下方左右两个 Support，不接受 Action。",
-      "supportedCardSizes": ["2x4"],
-      "minChildren": 3,
-      "maxChildrenBySize": {"2x4": 3},
-      "actionPolicy": "none",
-      "minActionChildrenBySize": {"2x4": 0},
-      "maxActionChildrenBySize": {"2x4": 0},
-      "parametersSchema": {"type": "object", "properties": {}, "additionalProperties": false},
-      "loweringBySize": {"2x4": "column"}
-    },
-    {
-      "name": "WideHalfSupportTwoLargeActionLayout",
-      "description": "仅用于 2x4；依次承载 WideHalf、Support 和两个 LargeIconAction。",
-      "supportedCardSizes": ["2x4"],
+      "name": "WideHalfTwoCompactLayout",
+      "description": "2x4 上方 WideHalf，下方两个 Compact；允许右下槽位替换为一个 CompactAction。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 2,
-      "maxChildrenBySize": {"2x4": 2},
+      "maxChildrenBySize": {
+        "2x4": 3
+      },
+      "actionPolicy": "optional",
+      "minActionChildrenBySize": {
+        "2x4": 0
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 1
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "column"
+      }
+    },
+    {
+      "name": "WideHalfCompactTwoLargeActionLayout",
+      "description": "仅用于 2x4；依次承载 WideHalf、Compact 和两个 LargeIconAction。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 2,
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
       "actionPolicy": "required",
-      "minActionChildrenBySize": {"2x4": 2},
-      "maxActionChildrenBySize": {"2x4": 2},
-      "parametersSchema": {"type": "object", "properties": {}, "additionalProperties": false},
-      "loweringBySize": {"2x4": "column"}
+      "minActionChildrenBySize": {
+        "2x4": 2
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 2
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "column"
+      }
     },
     {
       "name": "WideHalfFourLargeActionLayout",
       "description": "仅用于 2x4；上方承载 WideHalf，下方横向承载四个 LargeIconAction。",
-      "supportedCardSizes": ["2x4"],
+      "supportedCardSizes": [
+        "2x4"
+      ],
       "minChildren": 1,
-      "maxChildrenBySize": {"2x4": 1},
+      "maxChildrenBySize": {
+        "2x4": 1
+      },
       "actionPolicy": "required",
-      "minActionChildrenBySize": {"2x4": 4},
-      "maxActionChildrenBySize": {"2x4": 4},
-      "parametersSchema": {"type": "object", "properties": {}, "additionalProperties": false},
-      "loweringBySize": {"2x4": "column"}
+      "minActionChildrenBySize": {
+        "2x4": 4
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 4
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "column"
+      }
+    },
+    {
+      "name": "WideTwoHeroActionLayout",
+      "description": "仅用于 2x4；依次承载 Full、Hero 和左右两个 PillAction。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 2,
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
+      "actionPolicy": "required",
+      "minActionChildrenBySize": {
+        "2x4": 2
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 2
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "row"
+      }
+    },
+    {
+      "name": "WideTwoFocusLayout",
+      "description": "仅用于 2x4；左右两个 2x2 风格圆角面板各承载一个 Hero 业务 child，不接受 Action。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 2,
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
+      "actionPolicy": "none",
+      "minActionChildrenBySize": {
+        "2x4": 0
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 0
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "row"
+      }
+    },
+    {
+      "name": "WideTwoFocusActionLayout",
+      "description": "仅用于 2x4；左右两个 2x2 风格圆角面板各承载一个 Hero 业务 child，左面板底部承载一个 PillAction child。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 2,
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
+      "actionPolicy": "required",
+      "minActionChildrenBySize": {
+        "2x4": 1
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 1
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "row"
+      }
+    },
+    {
+      "name": "WideTwoFocusTwoActionLayout",
+      "description": "仅用于 2x4；左右两个 2x2 风格圆角面板各承载一个 Hero 业务 child 和一个底部 PillAction child。",
+      "supportedCardSizes": [
+        "2x4"
+      ],
+      "minChildren": 2,
+      "maxChildrenBySize": {
+        "2x4": 2
+      },
+      "actionPolicy": "required",
+      "minActionChildrenBySize": {
+        "2x4": 2
+      },
+      "maxActionChildrenBySize": {
+        "2x4": 2
+      },
+      "parametersSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "loweringBySize": {
+        "2x4": "row"
+      }
     }
   ]
 }
