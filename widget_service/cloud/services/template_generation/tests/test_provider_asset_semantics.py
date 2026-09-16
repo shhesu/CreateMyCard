@@ -40,6 +40,7 @@ _SLOTS = (
     ("ScheduleOverviewLocationSupport@1", "calendarIcon", "calendar_fill.svg"),
     ("ScheduleOverviewStartTimeSupport@1", "calendarIcon", "calendar_fill.svg"),
     ("ScheduleOverviewDateSupport@1", "calendarIcon", "calendar_fill.svg"),
+    ("WeatherOverviewFeelsLikeWindSupport@1", "temperatureIcon", "icon_weather_thermometer.svg"),
 )
 
 
@@ -73,7 +74,7 @@ def test_every_support_asset_slot_has_executable_semantics(
         for name, tags in definition.asset_parameter_semantic_tags.items():
             assert tags, f"{definition.wire_id}.{name}"
             slot_count += 1
-    assert slot_count == 17
+    assert slot_count == 18
 
 
 @pytest.mark.parametrize(("template_id", "parameter", "filename"), _SLOTS)
@@ -89,7 +90,8 @@ def test_mixed_catalog_is_filtered_per_business_slot(
     allowed = _parameter_allowed_asset_sources(parameter, definition, catalog_contract)
     assert _SOURCE + filename in allowed
     assert _SOURCE + "drop_1.svg" not in allowed
-    assert _SOURCE + "icon_weather_temperature1.svg" not in allowed
+    if template_id != "WeatherOverviewFeelsLikeWindSupport@1":
+        assert _SOURCE + "icon_weather_temperature1.svg" not in allowed
     if template_id == "BluetoothDeviceOverviewEarbudsSupport@1":
         assert _SOURCE + "earphone_case_16644.svg" not in allowed
     if template_id == "BluetoothDeviceOverviewChargeSupport@1":
@@ -264,6 +266,7 @@ def test_gallery_both_slots_have_their_own_assets_and_cloudy_keeps_temperature_i
         "BatteryOverviewSupport@1": "asset.icon_phone",
         "BatteryOverviewStatusSupport@1": "asset.bolt_fill",
         "WeatherOverviewTemperatureSupport@1": "asset.icon_weather_thermometer",
+        "WeatherOverviewFeelsLikeWindSupport@1": "asset.icon_weather_thermometer",
         "ActivityOverviewSupport@1": "asset.figure_run",
         "WorkoutOverviewSupport@1": "asset.figure_run",
         "SleepOverviewSupport@1": "asset.moon_z_fill_1",
@@ -276,7 +279,7 @@ def test_gallery_both_slots_have_their_own_assets_and_cloudy_keeps_temperature_i
         "ScheduleOverviewStartTimeSupport@1": "asset.calendar_fill",
         "ScheduleOverviewDateSupport@1": "asset.calendar_fill",
     }
-    assert len(provider.cases) == 56
+    assert len(provider.cases) == 57
     for case in provider.cases:
         payload = json.loads((tmp_path / case.requestFile).read_text(encoding="utf-8"))
         content = payload.get("content")

@@ -49,8 +49,8 @@
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideHeroCompactLayout@1",
-      "description": "2x4 左侧 Hero、右侧垂直居中的 Compact 组合布局。",
+      "templateId": "WideHeroSupportLayout@1",
+      "description": "2x4 左侧 Hero、右侧垂直居中的 Support 组合布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -64,13 +64,13 @@
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideFullTwoCompactLayout@1",
-      "description": "2x4 左 Full、右侧上下两个 Compact 布局。",
+      "templateId": "WideFullTwoSupportLayout@1",
+      "description": "2x4 左 Full、右侧上下两个 Support 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideFourCompactLayout@1",
-      "description": "2x4 四个 Compact 业务模板按两行两列排列的布局。",
+      "templateId": "WideFourSupportLayout@1",
+      "description": "2x4 四个 Support 业务模板按两行两列排列的布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -89,13 +89,13 @@
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideHalfTwoCompactLayout@1",
-      "description": "2x4 上方 WideHalf、下方左右两个 Compact 布局。",
+      "templateId": "WideHalfTwoSupportLayout@1",
+      "description": "2x4 上方 WideHalf、下方左右两个 Support 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
-      "templateId": "WideHalfCompactTwoLargeActionLayout@1",
-      "description": "2x4 上方 WideHalf、下方左 Compact、右侧两个 LargeIconAction 布局。",
+      "templateId": "WideHalfSupportTwoLargeActionLayout@1",
+      "description": "2x4 上方 WideHalf、下方左 Support、右侧两个 LargeIconAction 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -345,8 +345,8 @@
       }
     },
     {
-      "name": "WideHeroCompactLayout",
-      "description": "仅用于 2x4；依次承载一个 Hero 和一个 Compact，不接受 Action。",
+      "name": "WideHeroSupportLayout",
+      "description": "仅用于 2x4；依次承载一个 Hero 和一个 Support，不接受 Action。",
       "supportedCardSizes": ["2x4"],
       "minChildren": 2,
       "maxChildrenBySize": {"2x4": 2},
@@ -393,8 +393,8 @@
       "loweringBySize": {"2x4": "row"}
     },
     {
-      "name": "WideFullTwoCompactLayout",
-      "description": "仅用于 2x4；依次承载 Full/Hero、信息 Compact，以及第二个信息 Compact 或单行 Compact Action。",
+      "name": "WideFullTwoSupportLayout",
+      "description": "仅用于 2x4；依次承载 Full/Hero、信息 Support，以及第二个信息 Support 或单行 Compact Action。",
       "supportedCardSizes": ["2x4"],
       "minChildren": 2,
       "maxChildrenBySize": {"2x4": 3},
@@ -409,8 +409,8 @@
       "loweringBySize": {"2x4": "row"}
     },
     {
-      "name": "WideFourCompactLayout",
-      "description": "仅用于 2x4；依次承载四个 Compact，按左右两列、上下两行排列，不接受 Action。",
+      "name": "WideFourSupportLayout",
+      "description": "仅用于 2x4；依次承载四个 Support，按左右两列、上下两行排列，不接受 Action。",
       "supportedCardSizes": ["2x4"],
       "minChildren": 4,
       "maxChildrenBySize": {"2x4": 4},
@@ -469,8 +469,8 @@
       "loweringBySize": {"2x4": "column"}
     },
     {
-      "name": "WideHalfTwoCompactLayout",
-      "description": "仅用于 2x4；依次承载 WideHalf 和下方左右两个 Compact，不接受 Action。",
+      "name": "WideHalfTwoSupportLayout",
+      "description": "仅用于 2x4；依次承载 WideHalf 和下方左右两个 Support，不接受 Action。",
       "supportedCardSizes": ["2x4"],
       "minChildren": 3,
       "maxChildrenBySize": {"2x4": 3},
@@ -481,8 +481,8 @@
       "loweringBySize": {"2x4": "column"}
     },
     {
-      "name": "WideHalfCompactTwoLargeActionLayout",
-      "description": "仅用于 2x4；依次承载 WideHalf、Compact 和两个 LargeIconAction。",
+      "name": "WideHalfSupportTwoLargeActionLayout",
+      "description": "仅用于 2x4；依次承载 WideHalf、Support 和两个 LargeIconAction。",
       "supportedCardSizes": ["2x4"],
       "minChildren": 2,
       "maxChildrenBySize": {"2x4": 2},

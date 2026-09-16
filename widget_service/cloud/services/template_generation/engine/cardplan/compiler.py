@@ -78,7 +78,10 @@ from .models import (
     TemplateVariant,
 )
 from .parser import ParsedCall, parse_hybrid_card, parse_ux_layout_card
-from .provider_bundle import provider_template_family_identity, provider_template_layout_kind
+from .provider_bundle import (
+    provider_template_family_identity,
+    provider_template_layout_kind,
+)
 from .registry import CardPlanRegistry
 
 _STANDARD_CONTAINERS = frozenset({"Row", "Column", "List", "Stack"})
@@ -913,23 +916,30 @@ def _expand_call(
     )
     _validate_business_template_action(definition, params, contract, task_spec.size)
     _validate_template_parameter_relations(params, variant.parameter_relations)
+    allowed_wide_child_kinds = (
+        {"WideFull"}
+        if ux_layout_id == "WideFullOnlyLayout"
+        else {"Full", "Hero", "Support"}
+    )
     standard_template_in_wide_composition = (
         ux_layout_id
         in {
+            "WideSingleFocusLayout",
+            "WideFullOnlyLayout",
             "WideTwoFullLayout",
-            "WideHeroCompactLayout",
+            "WideHeroSupportLayout",
             "WideFullHeroActionLayout",
             "WideHeroActionFullLayout",
-            "WideFullTwoCompactLayout",
-            "WideFourCompactLayout",
+            "WideFullTwoSupportLayout",
+            "WideFourSupportLayout",
             "WideFullHeroTwoActionLayout",
             "WideFullFourActionLayout",
-            "WideHalfTwoCompactLayout",
-            "WideHalfCompactTwoLargeActionLayout",
+            "WideHalfTwoSupportLayout",
+            "WideHalfSupportTwoLargeActionLayout",
             "WideHalfFourLargeActionLayout",
         }
         and task_spec.size == "2x4"
-        and provider_template_layout_kind(wire_id) in {"Full", "Hero", "Compact"}
+        and provider_template_layout_kind(wire_id) in allowed_wide_child_kinds
     )
     if (
         variant.supported_card_sizes
@@ -994,7 +1004,12 @@ def _expand_call(
             (dict(params),) if params else (),
             expanded_children,
         )
-    elif wire_id in {"GenericMetricOverviewCompact@1", "GenericMetricOverviewDualCompact@1"}:
+    elif wire_id in {
+        "GenericMetricOverviewCompact@1",
+        "GenericMetricOverviewDualCompact@1",
+        "GenericMetricOverviewWideSupport@1",
+        "GenericMetricOverviewDualWideSupport@1",
+    }:
         root = _expand_health_metric_generic_template(
             wire_id,
             params,
@@ -4662,6 +4677,8 @@ def _template_spread_parent(root: TemplateNode) -> str | None:
 
 _GENERIC_HEALTH_LABELS = {
     "/dailySteps": "步数",
+    "/sleepScore": "睡眠得分",
+    "/sleepStatus": "睡眠状态",
     "/exerciseDurationText": "运动时长",
     "/exerciseHeartRateAvg": "平均心率",
     "/deepSleepDurationText": "深睡",
@@ -4674,15 +4691,28 @@ def _expand_health_metric_generic_template(
     params: dict[str, Any],
     *,
     task_spec: TaskSpec,
-    provider_binding_roots: dict[str, str],
+    provider_binding_roots: dict[str, tuple[str, ...]],
     theme_values: dict[str, object],
 ) -> Nested2Node:
-    root = provider_binding_roots.get("GetHealthAndSportSummary")
-    if not isinstance(root, str):
-        raise TerselConversionError("Generic health metric requires a data binding root.")
+    raw_roots = provider_binding_roots.get("GetHealthAndSportSummary")
+    if isinstance(raw_roots, str):
+        root = raw_roots
+    elif isinstance(raw_roots, (tuple, list)) and len(raw_roots) == 1:
+        root = raw_roots[0]
+    else:
+        raise TerselConversionError(
+            "Generic health metric requires exactly one data binding root."
+        )
+    if not isinstance(root, str) or not root:
+        raise TerselConversionError(
+            "Generic health metric requires exactly one data binding root."
+        )
     path_names = (
         ("valuePath",)
-        if wire_id == "GenericMetricOverviewCompact@1"
+        if wire_id in {
+            "GenericMetricOverviewCompact@1",
+            "GenericMetricOverviewWideSupport@1",
+        }
         else ("firstValuePath", "secondValuePath")
     )
     selected: list[tuple[str, str]] = []
@@ -4738,7 +4768,10 @@ def _expand_health_metric_generic_template(
     support_radius = theme_values["supportContentStyle.borderRadius"]
     primary_color = theme_values["primaryColor"]
     support_color = theme_values["supportContentColor"]
-    if wire_id == "GenericMetricOverviewCompact@1":
+    if wire_id in {
+        "GenericMetricOverviewCompact@1",
+        "GenericMetricOverviewWideSupport@1",
+    }:
         label, placeholder = selected[0]
         rows = (
             Nested2Node(
@@ -6426,12 +6459,13 @@ def _validate_provider_template_layout_action_requirements(
             "UX Layout Wide marker does not match the target card size."
         )
     wide_composition_contracts = {
+        "WideFullOnlyLayout": (("WideFull",), ()),
         "WideTwoFullLayout": (("Full", "Full"), ()),
-        "WideHeroCompactLayout": (("Hero", "Compact"), ()),
+        "WideHeroSupportLayout": (("Hero", "Support"), ()),
         "WideFullHeroActionLayout": (("Full", "Hero"), ("PillAction",)),
         "WideHeroActionFullLayout": (("Full", "Hero"), ("PillAction",)),
-        "WideFullTwoCompactLayout": (("Full", "Compact", "Compact"), ()),
-        "WideFourCompactLayout": (("Compact",) * 4, ()),
+        "WideFullTwoSupportLayout": (("Full", "Support", "Support"), ()),
+        "WideFourSupportLayout": (("Support",) * 4, ()),
         "WideFullHeroTwoActionLayout": (
             ("Full", "Hero"),
             ("PillAction", "PillAction"),
@@ -6441,9 +6475,9 @@ def _validate_provider_template_layout_action_requirements(
             ("LargeIconAction",) * 4,
         ),
         "WideTwoHalfLayout": (("WideHalf", "WideHalf"), ()),
-        "WideHalfTwoCompactLayout": (("WideHalf", "Compact", "Compact"), ()),
-        "WideHalfCompactTwoLargeActionLayout": (
-            ("WideHalf", "Compact"),
+        "WideHalfTwoSupportLayout": (("WideHalf", "Support", "Support"), ()),
+        "WideHalfSupportTwoLargeActionLayout": (
+            ("WideHalf", "Support"),
             ("LargeIconAction", "LargeIconAction"),
         ),
         "WideHalfFourLargeActionLayout": (
@@ -6452,8 +6486,8 @@ def _validate_provider_template_layout_action_requirements(
         ),
     }
     wide_composition = wide_composition_contracts.get(layout_id)
-    if layout_id == "WideFullTwoCompactLayout" and action_names == ("CompactAction",):
-        if layout_kinds not in {("Full", "Compact"), ("Hero", "Compact")}:
+    if layout_id == "WideFullTwoSupportLayout" and action_names == ("CompactAction",):
+        if layout_kinds not in {("Full", "Support"), ("Hero", "Support")}:
             raise TerselConversionError(
                 f"{layout_id} Provider Template slot combination is invalid."
             )
@@ -6588,7 +6622,9 @@ def _validate_allowed_template_plan(
             continue
         definition = registry.require_template(child.name)
         params = child.values[0] if child.values and isinstance(child.values[0], dict) else {}
-        _validate_business_template_action(definition, params, contract, "2x2")
+        layout_id = _parsed_layout_template_id(composition, registry)
+        card_size = "2x4" if layout_id.startswith("Wide") else "2x2"
+        _validate_business_template_action(definition, params, contract, card_size)
     return matched_plan_ids[0]
 
 

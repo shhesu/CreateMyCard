@@ -62,16 +62,16 @@ _LAYOUT_COMPONENTS = frozenset(
         "WideSingleFocusLayout",
         "WideFullOnlyLayout",
         "WideTwoFullLayout",
-        "WideHeroCompactLayout",
+        "WideHeroSupportLayout",
         "WideFullHeroActionLayout",
         "WideHeroActionFullLayout",
-        "WideFullTwoCompactLayout",
-        "WideFourCompactLayout",
+        "WideFullTwoSupportLayout",
+        "WideFourSupportLayout",
         "WideFullHeroTwoActionLayout",
         "WideFullFourActionLayout",
         "WideTwoHalfLayout",
-        "WideHalfTwoCompactLayout",
-        "WideHalfCompactTwoLargeActionLayout",
+        "WideHalfTwoSupportLayout",
+        "WideHalfSupportTwoLargeActionLayout",
         "WideHalfFourLargeActionLayout",
     }
 )
@@ -247,6 +247,12 @@ class ProviderTemplateEntry(StrictModel):
     def supported_card_sizes(self) -> tuple[Literal["2x2", "2x4"], ...]:
         if self.capability_id is None:
             return ()
+        # ``WideSupport`` is an explicit 2x4 wire ID.  Its semantic slot kind
+        # is still ``Support``; the name carries the size without a conversion
+        # layer or a card-size-dependent rewrite.
+        template_base = self.template_id.rpartition("@")[0]
+        if template_base.endswith("WideSupport"):
+            return ("2x4",)
         layout_kind = _provider_template_layout_kind(self.template_id)
         return (
             ("2x4",)

@@ -19,16 +19,16 @@ _BUSINESS_TEMPLATE_SUPPORTED_LAYOUTS = (
     "WideSingleFocusLayout",
     "WideFullOnlyLayout",
     "WideTwoFullLayout",
-    "WideHeroCompactLayout",
+    "WideHeroSupportLayout",
     "WideFullHeroActionLayout",
     "WideHeroActionFullLayout",
-    "WideFullTwoCompactLayout",
-    "WideFourCompactLayout",
+    "WideFullTwoSupportLayout",
+    "WideFourSupportLayout",
     "WideFullHeroTwoActionLayout",
     "WideFullFourActionLayout",
     "WideTwoHalfLayout",
-    "WideHalfTwoCompactLayout",
-    "WideHalfCompactTwoLargeActionLayout",
+    "WideHalfTwoSupportLayout",
+    "WideHalfSupportTwoLargeActionLayout",
     "WideHalfFourLargeActionLayout",
 )
 
@@ -104,12 +104,12 @@ class TemplatePlan(StrictModel):
     business_slots: tuple[TemplatePlanBusinessSlot, ...] = Field(
         alias="businessSlots",
         min_length=1,
-        max_length=2,
+        max_length=4,
     )
     action_assignments: tuple[TemplatePlanActionAssignment, ...] = Field(
         default=(),
         alias="actionAssignments",
-        max_length=2,
+        max_length=4,
     )
 
     @model_validator(mode="after")
@@ -129,8 +129,17 @@ class TemplatePlan(StrictModel):
         if len(business_positions) != len(set(business_positions)):
             raise ValueError("Template Plan business slot accepts at most one Action")
         business_ids = tuple(slot.business_id for slot in self.business_slots)
-        if len(business_ids) != len(set(business_ids)):
+        duplicate_business_ids = {
+            business_id
+            for business_id in business_ids
+            if business_ids.count(business_id) > 1
+        }
+        if duplicate_business_ids and not self.layout_template_id.startswith("Wide"):
             raise ValueError("Template Plan business slots must be unique")
+        if duplicate_business_ids - {"GenericMetricOverview"}:
+            raise ValueError(
+                "Only a wide Template Plan may repeat GenericMetricOverview business slots"
+            )
         action_ids = tuple(item.action_id for item in self.action_assignments)
         if len(action_ids) != len(set(action_ids)):
             raise ValueError("Template Plan Action assignments must be unique")

@@ -31,6 +31,12 @@
 - 用户只要求天气概览时，若本轮提供 `temperatureText` 则优先以温度为主焦点；仅提供 `condition` 时，
   使用天气现象 Hero。用户明确要求湿度、紫外线或空气质量时，切换到对应主数据模板。
 - 用户明确要求天气预警和更新时间，且 `alertLevel`、`updatedAt` 均可用时，使用天气预警 Full。
+- 用户要求常规温度天气摘要且需要预警信息时，优先使用 `WeatherOverviewAlertInfoFull@1`；预警字段缺失或为空时，模板底部显示“无预警信息”。
+- 用户要求同时展示体感温度和预警信息时，使用 `WeatherOverviewFeelsLikeAlertFull@1`；该模板要求 `feelsLikeC`，预警字段缺失或为空时显示“无预警信息”。
+- 用户要求同时展示湿度和风向时，使用 `WeatherOverviewHumidityWindFull@1`；该模板要求 `humidityPercent` 和 `windDirection`。
+- 用户要求同时展示体感温度和风力时，使用 `WeatherOverviewFeelsLikeWindSupport@1`；该模板要求 `feelsLikeC`、`windLevel` 和温度计图标。
+- 用户要求展示日期、温度范围、降雨概率和空气质量时，使用 `WeatherOverviewDailySummaryFull@1`；该模板要求 `daily[1]` 的日期、星期、温度范围、降雨概率和空气质量。
+- 用户要求突出紫外线强度并保留感冒风险时，使用 `WeatherOverviewUvColdFull@1`；该模板要求 `uvIndex`，感冒风险可选。
 - 用户明确要求城市、风向、风力和更新时间，且对应字段均可用时，使用风况天气 Hero。
 - 2x2 请求同时包含 `ViewWeather` 与其他数据能力，且 `userQuery`、`title` 或 `description` 明确要求展示天气、温度、天气现象、紫外线或空气质量时，必须保留 `WeatherOverview`，不得因为另一个业务组件可单独成卡而丢弃天气。
 - 2x2 恰好包含两个数据业务和一个显式 Action 时，天气可使用 `WeatherOverviewHeroTitle@1`，

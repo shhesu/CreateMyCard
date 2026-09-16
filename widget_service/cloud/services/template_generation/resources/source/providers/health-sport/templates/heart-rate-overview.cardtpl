@@ -150,7 +150,67 @@ Column(
 )
 #End
 
+#Template HeartRateOverviewWideSupport@1(props: {})
+data = {
+    average: $path("/exerciseHeartRateAvg")
+}
+
+Column(
+  {"_advancedComponent": "HeartRateOverview", "width": "matchParent", "height": "matchParent", "itemMargin": 4, "justifyContent": "start", "alignItems": "start", "constraintSize": {"minWidth": 0, "minHeight": 0}},
+  Row(
+      {"width": "matchParent", "itemMargin": 4, "justifyContent": "start", "alignItems": "top", "constraintSize": {"minWidth": 0, "minHeight": 0}},
+      Text(
+            "运动平均心率",
+            {"fontSize": 12, "fontWeight": 400, "fontColor": $theme('supportContentColor'), "maxLines": 1, "textOverflow": "ellipsis", "constraintSize": {"minWidth": 0, "minHeight": 0}, "width": "matchParent"}
+          )
+    ),
+  Row(
+      {"width": "matchParent", "itemMargin": 4, "justifyContent": "start", "alignItems": "bottom", "constraintSize": {"minWidth": 0, "minHeight": 0}},
+      Text(
+            data.average,
+            {"fontSize": 20, "fontWeight": 700, "fontColor": $theme('primaryColor'), "maxLines": 1, "textOverflow": "ellipsis", "constraintSize": {"minWidth": 0, "minHeight": 0}}
+          ),
+      Text(
+            "次/分钟",
+            {"fontSize": 12, "fontWeight": 400, "fontColor": $theme('supportContentColor'), "maxLines": 1, "textOverflow": "ellipsis", "constraintSize": {"minWidth": 0, "minHeight": 0}, "margin": { "bottom": 3 }}
+          )
+    )
+)
+#End
+
 #Template HeartRateOverviewIconCompact@1(props: { sourceIcon: asset })
+data = {
+    average: $path("/exerciseHeartRateAvg")
+}
+
+Column(
+  {"_advancedComponent": "HeartRateOverview", "width": "matchParent", "height": "matchParent", "itemMargin": 4, "justifyContent": "start", "alignItems": "start", "constraintSize": {"minWidth": 0, "minHeight": 0}},
+  Row(
+      {"width": "matchParent", "itemMargin": 4, "justifyContent": "spaceBetween", "alignItems": "top", "constraintSize": {"minWidth": 0, "minHeight": 0}},
+      Text(
+            "运动平均心率",
+            {"fontSize": 12, "fontWeight": 400, "fontColor": $theme('supportContentColor'), "maxLines": 1, "textOverflow": "ellipsis", "constraintSize": {"minWidth": 0, "minHeight": 0}}
+          ),
+      Image(
+            props.sourceIcon,
+            {"width": 20, "height": 20, "fillColor": $theme('supportContentColor'), "objectFit": "contain", "flexShrink": 0}
+          )
+    ),
+  Row(
+      {"width": "matchParent", "itemMargin": 4, "justifyContent": "start", "alignItems": "bottom", "constraintSize": {"minWidth": 0, "minHeight": 0}},
+      Text(
+            data.average,
+            {"fontSize": 20, "fontWeight": 700, "fontColor": $theme('primaryColor'), "maxLines": 1, "textOverflow": "ellipsis", "constraintSize": {"minWidth": 0, "minHeight": 0}}
+          ),
+      Text(
+            "次/分钟",
+            {"fontSize": 12, "fontWeight": 500, "fontColor": $theme('supportContentColor'), "maxLines": 1, "textOverflow": "ellipsis", "constraintSize": {"minWidth": 0, "minHeight": 0}, "margin": { "bottom": 3 }}
+          )
+    )
+)
+#End
+
+#Template HeartRateOverviewIconWideSupport@1(props: { sourceIcon: asset })
 data = {
     average: $path("/exerciseHeartRateAvg")
 }

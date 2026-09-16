@@ -457,6 +457,92 @@ Column(
 )
 #End
 
+#Template BatteryOverviewWideSupport@1(props: { batteryIcon?: asset })
+data = {
+    percent: $path("/batterySOC"),
+    charging: $path("/chargingStatusDesc")
+}
+
+Column(
+  {
+    "_advancedComponent": "BatteryOverview",
+    "width": "matchParent",
+    "height": "matchParent",
+    "itemMargin": 0,
+    "justifyContent": "start",
+    "alignItems": "start",
+    "clip": true,
+    "constraintSize": {"minWidth": 0, "minHeight": 0}
+  },
+  Row(
+    {
+      "width": "matchParent",
+      "height": 36,
+      "itemMargin": 8,
+      "justifyContent": "start",
+      "alignItems": "center",
+      "constraintSize": {"minWidth": 0, "minHeight": 0}
+    },
+    Stack(
+      {"width": 36, "height": 36, "alignContent": "center", "flexShrink": 0},
+      Progress(
+        {
+          "value": data.percent,
+          "total": 100,
+          "type": "ring",
+          "color": $theme('progressColor'),
+          "backgroundColor": $theme('progressBackgroundColor'),
+          "width": 36,
+          "height": 36,
+          "strokeWidth": 6
+        }
+      ),
+      #if props.batteryIcon
+      Image(
+        props.batteryIcon,
+        {
+          "width": 12,
+          "height": 12,
+          "objectFit": "contain",
+          "fillColor": $theme('supportContentColor')
+        }
+      )
+      #endif
+    ),
+    Column(
+      {
+        "itemMargin": 4,
+        "justifyContent": "start",
+        "alignItems": "start",
+        "constraintSize": {"minWidth": 0, "minHeight": 0}
+      },
+      Text(
+        Expr("电量 " + data.percent + "%"),
+        {
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fontColor": $theme('primaryColor'),
+          "maxLines": 1,
+          "textOverflow": "ellipsis",
+          "constraintSize": {"minWidth": 0, "minHeight": 0}
+        }
+      ),
+      Text(
+        data.charging,
+        {
+          "fontSize": 12,
+          "fontWeight": 400,
+          "fontColor": $theme('supportContentColor'),
+          "maxLines": 1,
+          "textOverflow": "ellipsis",
+          "constraintSize": {"minWidth": 0, "minHeight": 0}
+        }
+      )
+    )
+  )
+)
+#End
+
 #Template BatteryOverviewHealthLevelHero@1(props: {})
 data = {
     health: $path("/healthStatusDesc"),

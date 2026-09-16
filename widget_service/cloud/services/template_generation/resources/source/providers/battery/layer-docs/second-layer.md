@@ -33,7 +33,7 @@
 - props 只能使用本次 Prompt 下发的可信文本、数值或素材；不得输出数据路径。
 - 选择能够完整表达用户显式要求字段且自身 `primaryData` 与 `secondaryData` 全部可用的模板。
 - 除下述 Support 设备标识规则外，`batteryIcon` 表达电池、电量或当前充电状态，不得使用动作图标或其他设备品类图标替代；它不绑定固定素材 ID，只在本轮素材候选中匹配。模板将该参数声明为必选时必须传入匹配素材；声明为可选时仅在存在匹配素材时传入，否则省略。
-- 通用 Full、Hero、WideFull 和 Compact 同时覆盖普通、充电中和低电量状态，不再根据状态选择重复模板 ID。
+- 通用 Full、Hero、WideFull 和 Support 同时覆盖普通、充电中和低电量状态，不再根据状态选择重复模板 ID。
 - 选择 `BatteryOverviewCompact@1` 时，必须同时具备 `/batterySOC` 与 `/chargingStatusDesc`；`batteryIcon` 为可选参数，仅在本轮存在匹配的电量素材时传入。
 - 选择 `BatteryOverviewSupport@1` 时，`/batterySOC` 必需；`/chargingStatusDesc` 可用则作为辅行，
   缺失时回退展示可选 `/batteryTemperatureText`，都缺失时省略辅行。

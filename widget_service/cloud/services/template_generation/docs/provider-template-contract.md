@@ -504,9 +504,9 @@ PillAction Props 包含 `actionId`、`label` 和可选 `icon`，IconAction Props
 ## 当前迁移范围
 
 天气、日历、手机电量、耳机、健康运动、应用使用时长、倒计时和系统内存当前共有
-115 个无 Variant 的业务 UI 模板，其中 19 个是 Support，另保留通用指标 Compact 模板。
+136 个无 Variant 的业务 UI 模板，其中 35 个是 Support，另保留 2x2 专用 Compact 模板；2x4 小业务槽位使用明确的 WideSupport 模板 ID。
 Layout Provider 提供 20 个支持 `...children` 的布局模板，Action Provider 提供 4 个动作模板，
-运行时 Registry 共 139 个模板。
+运行时 Registry 共 160 个模板。
 名称包含 `Wide` 的布局只用于 `2x4`，其余布局只用于 `2x2`，两类布局不得混用。
 新增或修改资源后执行：
 

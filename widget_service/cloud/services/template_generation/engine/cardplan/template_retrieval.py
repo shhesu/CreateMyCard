@@ -423,10 +423,14 @@ def retrieve_template_variants(
     # Specialized health components can all match the same summary capability.
     # Prefer the specialized component whose single Template covers the most
     # requested fields, then use GenericMetricOverview only for the residual
-    # fields.  Generic is a bounded fallback slot, never the primary business.
-    repeated_generic_compact_slots = False
+    # fields. Generic is normally a bounded fallback slot; the capacity-aware
+    # dual route below may promote it to the primary health slot.
+    repeated_generic_support_slots = False
     primary_health: str | None = None
     primary_template_ids: set[str] = set()
+    generic_dual_template_id: str | None = None
+    generic_dual_requested_field_count = 0
+    generic_requested_field_count = 0
     if task_spec.size == "2x4":
         health_ids = {
             "ActivityOverview", "WorkoutOverview", "HeartRateOverview",
@@ -477,6 +481,19 @@ def retrieve_template_variants(
                 by_component[primary_health].intersection_update(primary_template_ids)
 
             generic_ids = by_component["GenericMetricOverview"]
+            # The residual pass below narrows Generic to a single Support
+            # template. Preserve the dual candidate's pre-pass coverage so a
+            # capacity-aware route can still consolidate the whole health
+            # payload into one business slot.
+            dual_generic_name = "GenericMetricOverviewDualWideSupport@1"
+            if dual_generic_name in generic_ids:
+                generic_dual_template_id = dual_generic_name
+                generic_dual_requested_field_count = sum(
+                    dual_generic_name in group for group in required_groups
+                )
+                generic_requested_field_count = sum(
+                    bool(generic_ids.intersection(group)) for group in required_groups
+                )
             residual_groups: list[tuple[str, ...]] = []
             generic_field_count = 0
             for group in required_groups:
@@ -500,20 +517,24 @@ def retrieve_template_variants(
                     f"residual_field_count={generic_field_count} capacity=2"
                 )
                 raise TemplateRetrievalMiss(
-                    "generic compact capacity cannot cover all residual requested fields"
+                    "generic Support capacity cannot cover all residual requested fields"
                 )
             if generic_field_count == 0:
                 by_component.pop("GenericMetricOverview", None)
                 generic_ids = set()
-            preferred_generic_name = "GenericMetricOverviewCompact@1"
+            preferred_generic_name = (
+                "GenericMetricOverviewWideSupport@1"
+                if task_spec.size == "2x4"
+                else "GenericMetricOverviewCompact@1"
+            )
             if generic_ids and preferred_generic_name in generic_ids:
-                # Generic Compact is repeatable. For two residual metrics, keep
-                # two separate Compact slots so 2x4 can use the existing
-                # WideFullTwoCompactLayout instead of a dedicated Full+Compact
+                # Generic Support is repeatable. For two residual metrics, keep
+                # two separate Support slots so 2x4 can use the existing
+                # WideFullTwoSupportLayout instead of a dedicated Full+Support
                 # layout. The repeated slot marker is materialized below in
                 # required_groups; componentCandidates remains de-duplicated.
                 by_component["GenericMetricOverview"] = {preferred_generic_name}
-                repeated_generic_compact_slots = generic_field_count >= 2
+                repeated_generic_support_slots = generic_field_count >= 2
             logger.info(
                 "[Template Retrieval] specialized_primary_selected "
                 f"component_id={primary_health} coverage={primary_coverage} "
@@ -521,28 +542,72 @@ def retrieve_template_variants(
                 f"generic_residual_count={generic_field_count}"
             )
 
-            # Current 2x4 layouts provide three visible slots in total.  With
-            # an explicit Action, only two slots remain for business content.
-            # Do not silently discard the specialized primary or pretend that
-            # a bounded Generic Compact covers an arbitrary number of fields.
+            # In the mixed layouts considered here, an explicit Action leaves
+            # at most two business positions. Do not silently discard the
+            # specialized primary or pretend that a bounded Generic Support
+            # covers an arbitrary number of fields.
             required_slot_count = len(by_component) + action_count
             if action_count and len(by_component) > 2:
-                requested_fields = {
-                    capability_id: list(paths)
-                    for capability_id, paths in query.required_output_fields_by_capability.items()
-                }
-                logger.info(
-                    "[Template Retrieval] layout_capacity_exceeded "
-                    f"card_size=2x4 available_slot_count=3 "
-                    f"required_slot_count={required_slot_count} "
-                    f"business_components={sorted(by_component)} "
-                    f"action_count={action_count} "
-                    f"requested_fields={json_for_log(requested_fields)}"
-                )
-                raise TemplateRetrievalMiss(
-                    "2x4 layout capacity is insufficient for the specialized primary, "
-                    "generic residual metrics, and selected Action"
-                )
+                # A mixed 2x4 card has two business positions when one Action
+                # is present. If the Generic dual Support covered every field
+                # that was eligible for Generic before residual narrowing,
+                # consolidate the specialized health route into that one slot.
+                # This enables the existing Hero + Support + CompactAction
+                # form of WideFullTwoSupportLayout@1.
+                if (
+                    generic_dual_template_id is not None
+                    and generic_dual_requested_field_count == 2
+                    and generic_dual_requested_field_count == generic_requested_field_count
+                ):
+                    consolidated_components = sorted(
+                        component_id
+                        for component_id in selected_health
+                        if component_id != "GenericMetricOverview"
+                    )
+                    for component_id in selected_health:
+                        by_component.pop(component_id, None)
+                    by_component["GenericMetricOverview"] = {generic_dual_template_id}
+                    required_slot_count = len(by_component) + action_count
+                    if required_slot_count > 3:
+                        requested_fields = {
+                            capability_id: list(paths)
+                            for capability_id, paths in query.required_output_fields_by_capability.items()
+                        }
+                        logger.info(
+                            "[Template Retrieval] layout_capacity_exceeded "
+                            f"card_size=2x4 available_slot_count=3 "
+                            f"required_slot_count={required_slot_count} "
+                            f"business_components={sorted(by_component)} "
+                            f"action_count={action_count} "
+                            f"requested_fields={json_for_log(requested_fields)}"
+                        )
+                        raise TemplateRetrievalMiss(
+                            "2x4 layout capacity is insufficient after Generic dual consolidation"
+                        )
+                    logger.info(
+                        "[Template Retrieval] generic_dual_capacity_route "
+                        f"template_id={generic_dual_template_id} "
+                        f"removed_specialized_components={json_for_log(consolidated_components)} "
+                        f"covered_field_count={generic_dual_requested_field_count} "
+                        f"required_slot_count={required_slot_count}"
+                    )
+                else:
+                    requested_fields = {
+                        capability_id: list(paths)
+                        for capability_id, paths in query.required_output_fields_by_capability.items()
+                    }
+                    logger.info(
+                        "[Template Retrieval] layout_capacity_exceeded "
+                        f"card_size=2x4 available_slot_count=3 "
+                        f"required_slot_count={required_slot_count} "
+                        f"business_components={sorted(by_component)} "
+                        f"action_count={action_count} "
+                        f"requested_fields={json_for_log(requested_fields)}"
+                    )
+                    raise TemplateRetrievalMiss(
+                        "2x4 layout capacity is insufficient for the specialized primary, "
+                        "generic residual metrics, and selected Action"
+                    )
 
     candidates = tuple(
         TemplateComponentCandidate(
@@ -566,7 +631,7 @@ def retrieve_template_variants(
             for candidate in candidates
         )
         required_groups = [candidate.available_template_ids for candidate in candidates]
-        if repeated_generic_compact_slots and primary_health is not None:
+        if repeated_generic_support_slots and primary_health is not None:
             primary_group = next(
                 (
                     candidate.available_template_ids
@@ -589,7 +654,7 @@ def retrieve_template_variants(
         "[Template Retrieval] candidate_groups_resolved "
         f"group_count={len(required_groups)} "
         f"groups={json_for_log([list(group) for group in required_groups])} "
-        f"repeated_generic_compact_slots={repeated_generic_compact_slots}"
+        f"repeated_generic_support_slots={repeated_generic_support_slots}"
     )
     selected_template_ids: list[str] = []
     for candidate in candidates:
@@ -614,13 +679,13 @@ def retrieve_template_variants(
 def _component_candidate_order_key(
     item: tuple[str, set[str]],
 ) -> tuple[int, str]:
-    """Place the visually larger business before Compact-only support slots."""
+    """Place the visually larger business before Support-only slots."""
     component_id, template_ids = item
-    compact_only = all(
-        provider_template_layout_kind(template_id) == "Compact"
+    support_only = all(
+        provider_template_layout_kind(template_id) in {"Compact", "Support"}
         for template_id in template_ids
     )
-    return (1 if compact_only else 0, component_id)
+    return (1 if support_only else 0, component_id)
 
 
 def restrict_query_to_preferred_templates(
@@ -958,7 +1023,7 @@ def _component_templates_for_capability(
             if not _template_required_fields_are_available(record, task_spec, card_spec):
                 continue
             if business_id == "GenericMetricOverview" and task_spec.size == "2x4":
-                # Generic Compact templates deliberately have no fixed field
+                # Generic Support templates deliberately have no fixed field
                 # allowlist in the 2x4 residual-composition route. Their path
                 # props are constrained by the current candidate output fields
                 # and the token type check above. Generic is deliberately not
@@ -1138,15 +1203,16 @@ def _template_can_participate_in_size(
     card_size: str,
 ) -> bool:
     """Allow standard business shapes inside a 2x4 composition layout."""
+    layout_kind = provider_template_layout_kind(record.template_id)
+    if card_size == "2x4" and layout_kind not in {"Full", "Hero", "Support"}:
+        # 2x4 receives only templates whose registered suffix is valid for a
+        # wide composition. There is no Compact-to-Support conversion layer.
+        return False
     if not record.supported_card_sizes or card_size in record.supported_card_sizes:
         return True
     if card_size != "2x4":
         return False
-    return provider_template_layout_kind(record.template_id) in {
-        "Full",
-        "Hero",
-        "Compact",
-    }
+    return layout_kind in {"Full", "Hero", "Support"}
 
 
 def _template_query_discriminator_is_requested(
@@ -1351,16 +1417,15 @@ def _log_action_param_fields_dropped(
     data_root: str,
     dropped_paths: set[str],
 ) -> None:
+    diagnostics = {
+        "capabilityId": capability_id,
+        "dataRoot": data_root,
+        "droppedFields": sorted(dropped_paths),
+        "reason": "event args bind these fields; templates never render them",
+    }
     logger.info(
         "[Template Retrieval] action_param_fields_dropped "
-        f"diagnostics={json_for_log(
-            {
-                'capabilityId': capability_id,
-                'dataRoot': data_root,
-                'droppedFields': sorted(dropped_paths),
-                'reason': 'event args bind these fields; templates never render them',
-            }
-        )}"
+        f"diagnostics={json_for_log(diagnostics)}"
     )
 
 

@@ -190,7 +190,7 @@ Row({
 )
 #End
 
-#Template WideHeroCompactLayout@1(props: {}, ...children)
+#Template WideHeroSupportLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -256,7 +256,7 @@ Row({
 )
 #End
 
-#Template WideFullTwoCompactLayout@1(props: {}, ...children)
+#Template WideFullTwoSupportLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -273,7 +273,7 @@ Row({
 )
 #End
 
-#Template WideFourCompactLayout@1(props: {}, ...children)
+#Template WideFourSupportLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -357,7 +357,7 @@ Column({
 #End
 
 
-#Template WideHalfTwoCompactLayout@1(props: {}, ...children)
+#Template WideHalfTwoSupportLayout@1(props: {}, ...children)
 data = {
 }
 
@@ -375,7 +375,7 @@ Column({
 #End
 
 
-#Template WideHalfCompactTwoLargeActionLayout@1(props: {}, ...children)
+#Template WideHalfSupportTwoLargeActionLayout@1(props: {}, ...children)
 data = {
 }
 

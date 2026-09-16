@@ -4,7 +4,7 @@
 
 ## 整改总览
 
-- [x] 115 个业务模板全部使用 `HeroTitle`、`HeroContent`、`Support`、`Compact`、`Hero`、`Full`、`WideHero`、`WideFull`、`WideHalf` 后缀。
+- [x] 136 个业务模板全部使用 `HeroTitle`、`HeroContent`、`Support`、`Compact`、`Hero`、`Full`、`WideHero`、`WideFull`、`WideHalf` 后缀；2x4 小业务槽位使用明确的 `WideSupport` 模板 ID。
 - [x] 业务模板尺寸和动作组合由后缀推导，不再由 Provider 重复声明。
 - [x] Provider 数据统一拆为 `primaryData`、`secondaryData`、`optionalData`。
 - [x] `primaryData` 与 `secondaryData` 均参与模板准入硬校验。
@@ -206,7 +206,7 @@
 ## WeatherOverview
 
 - Provider：`com.huawei.weather.cli`；运行状态：启用。
-- 数据能力：`ViewWeather`；模板数：23。
+- 数据能力：`ViewWeather`；模板数：31。
 
 | 状态 | 模板 | 布局场景 | 主数据 | 次要数据 | 可选数据 |
 | --- | --- | --- | --- | --- | --- |
@@ -215,6 +215,8 @@
 | ✅ | `WeatherOverviewUvCompact@1` | 约 2x1；单 Compact + 2 个 PillAction | `/current/temperatureText`<br>`/current/uvIndex` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName` |
 | ✅ | `WeatherOverviewTemperatureSupport@1` | 约 2x1；双 Support，事件在模板内部 | `/current/condition` | 无 | `/current/temperatureText`<br>`/current/temperatureC`<br>`/current/feelsLikeC`<br>`/location/prefectureName`<br>`/location/districtName` |
 | ✅ | `WeatherOverviewTemperatureUvSupport@1` | 约 2x1；双 Support，事件在模板内部 | `/current/temperatureText` | `/current/condition`<br>`/current/uvIndex` | `/location/prefectureName`<br>`/location/districtName` |
+| ✅ | `WeatherOverviewFeelsLikeWindSupport@1` | 约 2x1；左侧体感温度和风力两行，右侧 24vp 温度计图标 | `/current/feelsLikeC` | `/current/windLevel` | 无 |
+| ✅ | `WeatherOverviewDailySummaryFull@1` | 完整 2x2；展示日期、温度范围、降雨概率和空气质量 | `/daily/1/temperatureRangeText` | `/daily/1/date`<br>`/daily/1/weekday`<br>`/daily/1/rainProbabilityPercent`<br>`/daily/1/airQuality` | `/location/prefectureName`<br>`/location/districtName` |
 | ✅ | `WeatherOverviewHero@1` | 约 2x1.7；可选天气图标；Hero + 1 个 PillAction | `/current/temperatureText` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/coldLevel` |
 | ✅ | `WeatherOverviewFull@1` | 完整 2x2；可选天气图标；无 Action 的单 Full | `/current/temperatureText` | `/current/condition` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/airQuality`<br>`/current/coldLevel` |
 | ✅ | `WeatherOverviewHumidityFull@1` | 完整 2x2；无 Action 的单 Full | `/current/humidityPercent` | `/current/condition`<br>`/current/temperatureText` | `/location/prefectureName`<br>`/location/districtName`<br>`/current/airQuality`<br>`/current/coldLevel` |

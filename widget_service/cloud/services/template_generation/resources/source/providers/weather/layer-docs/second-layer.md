@@ -17,9 +17,16 @@
     基础 Support 以天气现象为必需数据，温度、体感、城市和区县可选；另两种 Support 仍以温度为主数据，
     天气现象及各自风险指数为次要数据；城市和区县可选，
     可接收 `location` 兜底。不能让基础温度模板覆盖不存在的紫外线或感冒风险展示。
+  - `WeatherOverviewFeelsLikeWindSupport@1`：左侧两行展示体感温度和风力，右侧使用 24vp 温度计图标；
+    要求 `feelsLikeC`、`windLevel` 和 `temperatureIcon`。
+  - `WeatherOverviewDailySummaryFull@1`：展示城市、日期、温度范围、降雨概率和空气质量的日期天气摘要 Full。
   - `WeatherOverviewHero@1`：温度天气 Hero；可选 `conditionIcon`。
   - `WeatherOverviewConditionHero@1`：以当前天气现象为主焦点的 Hero；城市与 `conditionIcon` 可选。
   - `WeatherOverviewFull@1`：完整温度天气摘要；可选 `conditionIcon`。
+  - `WeatherOverviewAlertInfoFull@1`：完整温度天气摘要，将底部感冒风险行替换为预警信息；预警缺失时显示“无预警信息”，可选 `conditionIcon`。
+  - `WeatherOverviewFeelsLikeAlertFull@1`：完整温度天气摘要，倒数第二行展示体感温度，最后一行展示预警信息；预警缺失时显示“无预警信息”，可选 `conditionIcon`。
+  - `WeatherOverviewHumidityWindFull@1`：完整温度天气摘要，倒数第二行展示湿度，最后一行展示风向，可选 `conditionIcon`。
+  - `WeatherOverviewUvColdFull@1`：完整温度天气摘要，倒数第二行展示紫外线强度，最后一行展示感冒风险，可选 `conditionIcon`。
   - `WeatherOverviewHumidityFull@1`：以湿度为主焦点的完整天气摘要。
   - `WeatherOverviewUvFull@1`：以紫外线为主焦点的完整天气摘要。
   - `WeatherOverviewAirQualityHero@1`：以空气质量为主焦点的 Hero。

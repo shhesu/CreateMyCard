@@ -183,6 +183,7 @@ _SUPPORT_ASSET_IDS_BY_TEMPLATE = {
     "BatteryOverviewSupport@1": ("asset.icon_phone",),
     "BatteryOverviewStatusSupport@1": ("asset.bolt_fill",),
     "WeatherOverviewTemperatureSupport@1": ("asset.icon_weather_thermometer",),
+    "WeatherOverviewFeelsLikeWindSupport@1": ("asset.icon_weather_thermometer",),
     "ActivityOverviewSupport@1": ("asset.figure_run",),
     "WorkoutOverviewSupport@1": ("asset.figure_run",),
     "SleepOverviewSupport@1": ("asset.moon_z_fill_1",),

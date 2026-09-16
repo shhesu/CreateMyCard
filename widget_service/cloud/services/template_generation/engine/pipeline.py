@@ -45,6 +45,7 @@ from services.template_generation.engine.cardplan.registry import (
 )
 from services.template_generation.engine.cardplan.template_plan_planner import (
     plan_template_candidates,
+    plan_wide_template_candidates,
     planner_component_candidates,
     planner_required_template_groups,
     planner_scope,
@@ -172,9 +173,36 @@ async def generate_template_a2ui(
                     card_spec,
                     preferred_template_ids=trusted_template_candidate_ids,
                 )
+                template_plans = plan_wide_template_candidates(
+                    selection,
+                    selected_task_spec,
+                    registry,
+                )
+                if template_plans:
+                    selection = selection.model_copy(
+                        update={
+                            "scope": planner_scope(template_plans),
+                            "component_candidates": planner_component_candidates(
+                                template_plans
+                            ),
+                            "required_template_groups": planner_required_template_groups(
+                                template_plans
+                            ),
+                        }
+                    )
+                    plan_payload = [
+                        plan.model_dump(by_alias=True) for plan in template_plans
+                    ]
+                    logger.info(
+                        f"{_MODULE} wide_template_plans_resolved "
+                        f"plan_count={len(template_plans)} "
+                        "plans="
+                        f"{json_for_log(plan_payload)}"
+                    )
                 logger.info(
                     f"{_MODULE} template_retrieval matched=True "
-                    f"component_count={len(selection.component_candidates)}"
+                    f"component_count={len(selection.component_candidates)} "
+                    f"wide_plan_count={len(template_plans)}"
                 )
             else:
                 intent = TemplateSearchIntent.model_validate(raw_query)

@@ -283,7 +283,7 @@ def test_all_provider_templates_are_loaded_from_the_isolated_directory():
         if path.is_dir()
     }
 
-    assert len(registry.provider_template_ids) == 139
+    assert len(registry.provider_template_ids) == 160
     assert {
         "ActivityOverviewFull@1",
         "AppUsageOverviewFull@1",
@@ -339,6 +339,12 @@ def test_all_provider_templates_are_loaded_from_the_isolated_directory():
         "WeatherOverviewDailyRainFull@1",
         "WeatherOverviewDualCityFull@1",
         "WeatherOverviewFull@1",
+        "WeatherOverviewAlertInfoFull@1",
+        "WeatherOverviewFeelsLikeAlertFull@1",
+        "WeatherOverviewHumidityWindFull@1",
+        "WeatherOverviewUvColdFull@1",
+        "WeatherOverviewFeelsLikeWindSupport@1",
+        "WeatherOverviewDailySummaryFull@1",
         "WeatherOverviewHero@1",
         "WeatherOverviewHumidityFull@1",
         "WeatherOverviewUvFull@1",
@@ -351,13 +357,13 @@ def test_all_provider_templates_are_loaded_from_the_isolated_directory():
         "WideTwoFullLayout@1",
         "WideFullHeroActionLayout@1",
         "WideHeroActionFullLayout@1",
-        "WideFullTwoCompactLayout@1",
-        "WideFourCompactLayout@1",
+        "WideFullTwoSupportLayout@1",
+        "WideFourSupportLayout@1",
         "WideFullHeroTwoActionLayout@1",
         "WideFullFourActionLayout@1",
         "WideTwoHalfLayout@1",
-        "WideHalfTwoCompactLayout@1",
-        "WideHalfCompactTwoLargeActionLayout@1",
+        "WideHalfTwoSupportLayout@1",
+        "WideHalfSupportTwoLargeActionLayout@1",
         "WideHalfFourLargeActionLayout@1",
     }.issubset(registry.provider_template_ids)
     assert provider_directories == {
@@ -644,6 +650,233 @@ def test_weather_alert_full_falls_back_when_alert_is_empty() -> None:
     rendered = repr(root)
     assert "无预警信息" in rendered
     assert "${/data/weather/current/alertLevel}" in rendered
+
+
+def test_weather_alert_info_full_reuses_weather_full_and_replaces_cold_risk() -> None:
+    definition = get_cardplan_registry().require_template(
+        "WeatherOverviewAlertInfoFull@1"
+    )
+    variant = definition.variants[0]
+
+    assert definition.primary_data == ("/current/temperatureText",)
+    assert definition.secondary_data == ("/current/condition",)
+    assert definition.optional_data == (
+        "/location/prefectureName",
+        "/location/districtName",
+        "/current/airQuality",
+        "/current/alertLevel",
+    )
+    assert variant.required_bindings == ("temperature", "condition")
+    assert variant.optional_bindings == (
+        "city",
+        "district",
+        "airQuality",
+        "alertLevel",
+    )
+
+    root = _instantiate_blueprint(
+        variant.root,
+        {},
+        {
+            "temperature": "${data.weather.current.temperatureText}",
+            "condition": "${data.weather.current.condition}",
+        },
+        {
+            "primaryColor": "#FF000000",
+            "supportContentColor": "#99000000",
+        },
+    )
+    rendered = repr(root)
+    assert "无预警信息" in rendered
+
+
+def test_weather_feels_like_alert_full_requires_feels_like_and_renders_alert_fallback() -> None:
+    definition = get_cardplan_registry().require_template(
+        "WeatherOverviewFeelsLikeAlertFull@1"
+    )
+    variant = definition.variants[0]
+
+    assert definition.primary_data == ("/current/temperatureText",)
+    assert definition.secondary_data == ("/current/feelsLikeC",)
+    assert definition.optional_data == (
+        "/location/prefectureName",
+        "/location/districtName",
+        "/current/alertLevel",
+    )
+    assert variant.required_bindings == ("temperature", "feelsLike")
+    assert variant.optional_bindings == ("city", "district", "alertLevel")
+
+    root = _instantiate_blueprint(
+        variant.root,
+        {},
+        {
+            "temperature": "${data.weather.current.temperatureText}",
+            "feelsLike": "${data.weather.current.feelsLikeC}",
+        },
+        {
+            "primaryColor": "#FF000000",
+            "supportContentColor": "#99000000",
+        },
+    )
+    rendered = repr(root)
+    assert "体感" in rendered
+    assert "无预警信息" in rendered
+
+
+def test_weather_humidity_wind_full_requires_humidity_and_wind_direction() -> None:
+    definition = get_cardplan_registry().require_template(
+        "WeatherOverviewHumidityWindFull@1"
+    )
+    variant = definition.variants[0]
+
+    assert definition.primary_data == ("/current/temperatureText",)
+    assert definition.secondary_data == (
+        "/current/humidityPercent",
+        "/current/windDirection",
+    )
+    assert definition.optional_data == (
+        "/location/prefectureName",
+        "/location/districtName",
+    )
+    assert variant.required_bindings == ("temperature", "humidity", "windDirection")
+    assert variant.optional_bindings == ("city", "district")
+
+    root = _instantiate_blueprint(
+        variant.root,
+        {},
+        {
+            "temperature": "${data.weather.current.temperatureText}",
+            "humidity": "${data.weather.current.humidityPercent}",
+            "windDirection": "${data.weather.current.windDirection}",
+        },
+        {
+            "primaryColor": "#FF000000",
+            "supportContentColor": "#99000000",
+        },
+    )
+    rendered = repr(root)
+    assert "湿度" in rendered
+    assert "风向" in rendered
+
+
+def test_weather_uv_cold_full_requires_uv_and_renders_cold_risk() -> None:
+    definition = get_cardplan_registry().require_template(
+        "WeatherOverviewUvColdFull@1"
+    )
+    variant = definition.variants[0]
+
+    assert definition.primary_data == ("/current/temperatureText",)
+    assert definition.secondary_data == ("/current/uvIndex",)
+    assert definition.optional_data == (
+        "/location/prefectureName",
+        "/location/districtName",
+        "/current/coldLevel",
+    )
+    assert variant.required_bindings == ("temperature", "uvIndex")
+    assert variant.optional_bindings == ("city", "district", "coldLevel")
+
+    root = _instantiate_blueprint(
+        variant.root,
+        {},
+        {
+            "temperature": "${data.weather.current.temperatureText}",
+            "uvIndex": "${data.weather.current.uvIndex}",
+            "coldLevel": "${data.weather.current.coldLevel}",
+        },
+        {
+            "primaryColor": "#FF000000",
+            "supportContentColor": "#99000000",
+        },
+    )
+    rendered = repr(root)
+    assert "紫外线强度" in rendered
+    assert "感冒风险" in rendered
+
+
+def test_weather_feels_like_wind_support_uses_two_line_text_and_thermometer() -> None:
+    definition = get_cardplan_registry().require_template(
+        "WeatherOverviewFeelsLikeWindSupport@1"
+    )
+    variant = definition.variants[0]
+
+    assert definition.primary_data == ("/current/feelsLikeC",)
+    assert definition.secondary_data == ("/current/windLevel",)
+    assert definition.optional_data == ()
+    assert variant.required_bindings == ("feelsLike", "windLevel")
+    assert variant.parameters_schema["required"] == ["temperatureIcon"]
+    assert definition.asset_parameter_semantic_tags == {
+        "temperatureIcon": ("weather-temperature-indicator",)
+    }
+
+    root = _instantiate_blueprint(
+        variant.root,
+        {"temperatureIcon": "resources/base/media/icon_weather_thermometer.svg"},
+        {
+            "feelsLike": "${data.weather.current.feelsLikeC}",
+            "windLevel": "${data.weather.current.windLevel}",
+        },
+        {
+            "primaryColor": "#FF000000",
+            "supportContentColor": "#99000000",
+        },
+    )
+    text_column, icon = root.children
+    first_text, second_text = text_column.children
+    assert first_text.values[-1]["fontSize"] == 14
+    assert first_text.values[-1]["fontWeight"] == 700
+    assert first_text.values[-1]["height"] == 19
+    assert second_text.values[-1]["fontSize"] == 10
+    assert second_text.values[-1]["fontWeight"] == 400
+    assert second_text.values[-1]["height"] == 13
+    assert icon.component_type == "Image"
+    assert icon.values[-1]["width"] == icon.values[-1]["height"] == 24
+
+
+def test_weather_daily_summary_full_renders_date_temperature_rain_and_air_quality() -> None:
+    definition = get_cardplan_registry().require_template(
+        "WeatherOverviewDailySummaryFull@1"
+    )
+    variant = definition.variants[0]
+
+    assert definition.primary_data == ("/daily/1/temperatureRangeText",)
+    assert definition.secondary_data == (
+        "/daily/1/date",
+        "/daily/1/weekday",
+        "/daily/1/rainProbabilityPercent",
+        "/daily/1/airQuality",
+    )
+    assert definition.optional_data == (
+        "/location/prefectureName",
+        "/location/districtName",
+    )
+    assert variant.required_bindings == (
+        "date",
+        "weekday",
+        "temperatureRange",
+        "rainProbability",
+        "airQuality",
+    )
+    assert variant.optional_bindings == ("city", "district")
+
+    root = _instantiate_blueprint(
+        variant.root,
+        {},
+        {
+            "date": "${data.weather.daily.1.date}",
+            "weekday": "${data.weather.daily.1.weekday}",
+            "temperatureRange": "${data.weather.daily.1.temperatureRangeText}",
+            "rainProbability": "${data.weather.daily.1.rainProbabilityPercent}",
+            "airQuality": "${data.weather.daily.1.airQuality}",
+        },
+        {
+            "primaryColor": "#FF000000",
+            "supportContentColor": "#99000000",
+        },
+    )
+    rendered = repr(root)
+    assert "温度" in rendered
+    assert "降雨" in rendered
+    assert "空气质量" in rendered
 
 
 def test_q004_alert_fields_are_renderable_weather_facts() -> None:
@@ -977,16 +1210,16 @@ def test_layout_template_wide_marker_drives_exclusive_card_size() -> None:
         "WideSingleFocusLayout": ("2x4",),
         "WideFullOnlyLayout": ("2x4",),
         "WideTwoFullLayout": ("2x4",),
-        "WideHeroCompactLayout": ("2x4",),
+        "WideHeroSupportLayout": ("2x4",),
         "WideFullHeroActionLayout": ("2x4",),
         "WideHeroActionFullLayout": ("2x4",),
-        "WideFullTwoCompactLayout": ("2x4",),
-        "WideFourCompactLayout": ("2x4",),
+        "WideFullTwoSupportLayout": ("2x4",),
+        "WideFourSupportLayout": ("2x4",),
         "WideFullHeroTwoActionLayout": ("2x4",),
         "WideFullFourActionLayout": ("2x4",),
         "WideTwoHalfLayout": ("2x4",),
-        "WideHalfTwoCompactLayout": ("2x4",),
-        "WideHalfCompactTwoLargeActionLayout": ("2x4",),
+        "WideHalfTwoSupportLayout": ("2x4",),
+        "WideHalfSupportTwoLargeActionLayout": ("2x4",),
         "WideHalfFourLargeActionLayout": ("2x4",),
     }
 

@@ -93,6 +93,9 @@ _ASSET_SEMANTIC_TERMS = {
     "weather-indicator": (
         "晴天", "天气降雨", "台风", "大风提醒", "体感温度", "天气温度", "当前气温",
     ),
+    "weather-temperature-indicator": (
+        "weather_thermometer", "天气温度", "当前气温", "温度计", "温度指标", "温差变化", "冷热趋势",
+    ),
     "sleep": ("sleep", "睡眠", "月亮"),
     "alert": ("alert", "warning", "预警", "警告"),
     "product": ("product", "earphone", "headphone", "耳机"),
@@ -675,7 +678,11 @@ def build_template_prompt_contracts(
                     ),
                     "description": definition.description,
                     "layoutKind": (
-                        provider_template_layout_kind(wire_id) if ux_layout_root else None
+                        (
+                            provider_template_layout_kind(wire_id)
+                            if ux_layout_root
+                            else None
+                        )
                     ),
                     "propsSchema": variant.parameters_schema,
                     "parameterSources": parameter_sources,
@@ -703,7 +710,7 @@ def _composition_rules(ux_layout_root: bool) -> tuple[str, ...]:
             "当前业务，"
             "可在业务内容区使用；若局部 Template 或事实已表达则省略，"
             "禁止从 request 截取标题。",
-            "Action 类型由业务模板后缀和布局共同决定：Compact/Hero/WideHero 使用 "
+            "Action 类型由业务模板后缀和布局共同决定：2x2 Compact、Hero/WideHero 使用 "
             'Template("PillAction@1", props)，Full 仅在 FullIconActionLayout 中使用 '
             'Template("IconAction@1", props)，需要大型图标操作槽的 2x4 布局使用 '
             'Template("LargeIconAction@1", props)，WideFull 仅可在对应组合布局中使用 Action；'

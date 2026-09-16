@@ -323,13 +323,13 @@ def test_checked_in_layout_templates_use_concrete_container_blueprints() -> None
         "WideTwoFullLayout@1": 2,
         "WideFullHeroActionLayout@1": 3,
         "WideHeroActionFullLayout@1": 3,
-        "WideFullTwoCompactLayout@1": 3,
-        "WideFourCompactLayout@1": 4,
+        "WideFullTwoSupportLayout@1": 3,
+        "WideFourSupportLayout@1": 4,
         "WideFullHeroTwoActionLayout@1": 4,
         "WideFullFourActionLayout@1": 5,
         "WideTwoHalfLayout@1": 2,
-        "WideHalfTwoCompactLayout@1": 3,
-        "WideHalfCompactTwoLargeActionLayout@1": 4,
+        "WideHalfTwoSupportLayout@1": 3,
+        "WideHalfSupportTwoLargeActionLayout@1": 4,
         "WideHalfFourLargeActionLayout@1": 5,
     }
     variable_children = {
@@ -660,6 +660,15 @@ def test_provider_template_layout_suffix_combinations_are_enforced() -> None:
         (),
         "2x4",
     )
+    # WideFull 槽位只接受显式声明为 WideFull 的业务模板；2x2 Full
+    # 模板不能再通过隐式兼容规则参与该槽位。
+    with pytest.raises(TerselConversionError, match="slot combination is invalid"):
+        _validate_provider_template_layout_action_requirements(
+            "WideFullOnlyLayout",
+            (template("SleepOverviewFull@1"),),
+            (),
+            "2x4",
+        )
     _validate_provider_template_layout_action_requirements(
         "WideTwoFullLayout",
         (
@@ -682,11 +691,11 @@ def test_provider_template_layout_suffix_combinations_are_enforced() -> None:
         "2x4",
     )
     _validate_provider_template_layout_action_requirements(
-        "WideFullTwoCompactLayout",
+        "WideFullTwoSupportLayout",
         (
             template("WeatherOverviewFull@1"),
-            template("BatteryOverviewProgressCompact@1"),
-            template("SleepOverviewCompact@1"),
+            template("BatteryOverviewSupport@1"),
+            template("SleepOverviewSupport@1"),
         ),
         (),
         "2x4",
@@ -713,20 +722,20 @@ def test_provider_template_layout_suffix_combinations_are_enforced() -> None:
         "2x4",
     )
     _validate_provider_template_layout_action_requirements(
-        "WideHalfTwoCompactLayout",
+        "WideHalfTwoSupportLayout",
         (
             template("WeatherOverviewWideHalf@1"),
-            template("BatteryOverviewProgressCompact@1"),
-            template("SleepOverviewCompact@1"),
+            template("BatteryOverviewSupport@1"),
+            template("SleepOverviewSupport@1"),
         ),
         (),
         "2x4",
     )
     _validate_provider_template_layout_action_requirements(
-        "WideHalfCompactTwoLargeActionLayout",
+        "WideHalfSupportTwoLargeActionLayout",
         (
             template("WeatherOverviewWideHalf@1"),
-            template("BatteryOverviewProgressCompact@1"),
+            template("BatteryOverviewSupport@1"),
         ),
         (large_one, large_two),
         "2x4",
@@ -916,12 +925,12 @@ def test_model_response_json_extraction_uses_complete_outer_object() -> None:
 def test_wide_repeated_generic_slots_keep_distinct_ordered_groups() -> None:
     candidates = {
         "SleepOverview": ("SleepOverviewFull@1", "SleepOverviewHero@1"),
-        "GenericMetricOverview": ("GenericMetricOverviewCompact@1",),
+        "GenericMetricOverview": ("GenericMetricOverviewWideSupport@1",),
     }
     required_groups = (
         ("SleepOverviewFull@1",),
-        ("GenericMetricOverviewCompact@1",),
-        ("GenericMetricOverviewCompact@1",),
+        ("GenericMetricOverviewWideSupport@1",),
+        ("GenericMetricOverviewWideSupport@1",),
     )
     task_spec = TaskSpec(userQuery="睡眠、步数和心率", size="2x4", dataModelSchema={"data": {}})
     scope = AdvancedScopeBrief(
@@ -945,11 +954,11 @@ def test_wide_repeated_generic_slots_keep_distinct_ordered_groups() -> None:
         for component_id, template_ids in filtered.items()
     )
     prompt_groups = _candidate_groups_for_prompt(component_candidates, groups)
-    assert selection.layout_ids == ("WideFullTwoCompactLayout",)
+    assert selection.layout_ids == ("WideFullTwoSupportLayout",)
     assert groups == required_groups
     assert [group.get("slotIndex") for group in prompt_groups] == [0, 1, 2]
     assert [group.get("componentId") for group in prompt_groups] == [
         "SleepOverview", "GenericMetricOverview", "GenericMetricOverview",
     ]
-    option = _layout_output_option("WideFullTwoCompactLayout@1", groups, (), ())
+    option = _layout_output_option("WideFullTwoSupportLayout@1", groups, (), ())
     assert option.get("businessTemplateIdsByPosition") == required_groups
