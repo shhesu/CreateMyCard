@@ -50,7 +50,7 @@
     },
     {
       "templateId": "WideHeroCompactLayout@1",
-      "description": "2x4 左侧 Hero、右侧垂直居中的 Compact 组合布局。",
+      "description": "2x4 左侧 Hero、右侧垂直居中的 Support（历史 Template ID 仍可能使用 Compact 后缀）组合布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -65,12 +65,12 @@
     },
     {
       "templateId": "WideFullTwoCompactLayout@1",
-      "description": "2x4 左 Full、右侧上下两个 Compact 布局。",
+      "description": "2x4 左 Full、右侧上下两个 Support（历史 Template ID 仍可能使用 Compact 后缀）布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
       "templateId": "WideFourCompactLayout@1",
-      "description": "2x4 四个 Compact 业务模板按两行两列排列的布局。",
+      "description": "2x4 四个 Support（历史 Template ID 仍可能使用 Compact 后缀）业务模板按两行两列排列的布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -90,12 +90,12 @@
     },
     {
       "templateId": "WideHalfTwoCompactLayout@1",
-      "description": "2x4 上方 WideHalf、下方左右两个 Compact 布局。",
+      "description": "2x4 上方 WideHalf、下方左右两个 Support（历史 Template ID 仍可能使用 Compact 后缀）布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
       "templateId": "WideHalfCompactTwoLargeActionLayout@1",
-      "description": "2x4 上方 WideHalf、下方左 Compact、右侧两个 LargeIconAction 布局。",
+      "description": "2x4 上方 WideHalf、下方左 Support（历史 Template ID 仍可能使用 Compact 后缀）、右侧两个 LargeIconAction 布局。",
       "entry": "templates/layout.cardtpl"
     },
     {
@@ -366,7 +366,7 @@
     },
     {
       "name": "WideHeroCompactLayout",
-      "description": "仅用于 2x4；依次承载一个 Hero 和一个 Compact，不接受 Action。",
+      "description": "仅用于 2x4；依次承载一个 Hero 和一个 Support（历史 Template ID 仍可能使用 Compact 后缀），不接受 Action。",
       "supportedCardSizes": [
         "2x4"
       ],
@@ -444,7 +444,7 @@
     },
     {
       "name": "WideFullTwoCompactLayout",
-      "description": "仅用于 2x4；依次承载 Full/Hero、信息 Compact，以及第二个信息 Compact 或单行 Compact Action；也支持 Full 与两个 CompactAction。",
+      "description": "仅用于 2x4；依次承载 Full/Hero、信息 Support（历史 Template ID 仍可能使用 Compact 后缀），以及第二个信息 Support 或单行 Compact Action；也支持 Full 与两个 CompactAction。",
       "supportedCardSizes": [
         "2x4"
       ],
@@ -474,7 +474,7 @@
     },
     {
       "name": "WideFourCompactLayout",
-      "description": "仅用于 2x4；依次承载四个 Compact，按左右两列、上下两行排列，不接受 Action。",
+      "description": "仅用于 2x4；依次承载四个 Support（历史 Template ID 仍可能使用 Compact 后缀），按左右两列、上下两行排列，不接受 Action。",
       "supportedCardSizes": [
         "2x4"
       ],
@@ -578,7 +578,7 @@
     },
     {
       "name": "WideHalfTwoCompactLayout",
-      "description": "2x4 上方 WideHalf，下方两个 Compact；允许右下槽位替换为一个 CompactAction。",
+      "description": "2x4 上方 WideHalf，下方两个 Support（历史 Template ID 仍可能使用 Compact 后缀）；允许右下槽位替换为一个 CompactAction。",
       "supportedCardSizes": [
         "2x4"
       ],
@@ -604,7 +604,7 @@
     },
     {
       "name": "WideHalfCompactTwoLargeActionLayout",
-      "description": "仅用于 2x4；依次承载 WideHalf、Compact 和两个 LargeIconAction。",
+      "description": "仅用于 2x4；依次承载 WideHalf、Support（历史 Template ID 仍可能使用 Compact 后缀）和两个 LargeIconAction。",
       "supportedCardSizes": [
         "2x4"
       ],

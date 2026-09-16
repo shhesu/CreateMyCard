@@ -20,6 +20,7 @@ from .template_retrieval import (
 )
 
 _GENERIC_BUSINESS = "GenericMetricOverview"
+_WIDE_SUPPORT_KINDS = frozenset({"Support", "Compact"})
 _CALENDAR_COUNTDOWN_FULL_IDS = frozenset(
     {
         "CountdownOverviewTargetDetailFull@1",
@@ -43,26 +44,26 @@ _WIDE_LAYOUTS = (
     WideLayoutOption("WideTwoFocusLayout", ("Hero", "Hero")),
     WideLayoutOption("WideTwoFullLayout", ("Full", "Full")),
     WideLayoutOption("WideTwoHalfLayout", ("WideHalf", "WideHalf")),
-    WideLayoutOption("WideHeroCompactLayout", ("Hero", "Compact")),
-    WideLayoutOption("WideFullTwoCompactLayout", ("Full", "Compact", "Compact")),
-    WideLayoutOption("WideHalfTwoCompactLayout", ("WideHalf", "Compact", "Compact")),
-    WideLayoutOption("WideFourCompactLayout", ("Compact",) * 4),
+    WideLayoutOption("WideHeroCompactLayout", ("Hero", "Support")),
+    WideLayoutOption("WideFullTwoCompactLayout", ("Full", "Support", "Support")),
+    WideLayoutOption("WideHalfTwoCompactLayout", ("WideHalf", "Support", "Support")),
+    WideLayoutOption("WideFourCompactLayout", ("Support",) * 4),
     WideLayoutOption("WideSingleFocusLayout", ("WideHero",), ("PillAction",), (None,)),
     WideLayoutOption("WideTwoFocusActionLayout", ("Hero", "Hero"), ("PillAction",), (0,)),
     WideLayoutOption("WideFullHeroActionLayout", ("Full", "Hero"), ("PillAction",), (1,)),
     WideLayoutOption("WideHeroActionFullLayout", ("Full", "Hero"), ("PillAction",), (1,)),
     WideLayoutOption(
-        "WideHalfTwoCompactLayout", ("WideHalf", "Compact"), ("CompactAction",), (None,)
+        "WideHalfTwoCompactLayout", ("WideHalf", "Support"), ("CompactAction",), (None,)
     ),
-    WideLayoutOption("WideFullTwoCompactLayout", ("Full", "Compact"), ("CompactAction",), (None,)),
-    WideLayoutOption("WideFullTwoCompactLayout", ("Hero", "Compact"), ("CompactAction",), (None,)),
+    WideLayoutOption("WideFullTwoCompactLayout", ("Full", "Support"), ("CompactAction",), (None,)),
+    WideLayoutOption("WideFullTwoCompactLayout", ("Hero", "Support"), ("CompactAction",), (None,)),
     WideLayoutOption("WideTwoFocusTwoActionLayout", ("Hero", "Hero"), ("PillAction",) * 2, (0, 1)),
     WideLayoutOption("WideTwoHeroActionLayout", ("Hero", "Hero"), ("PillAction",) * 2, (0, 1)),
     WideLayoutOption("WideFullHeroTwoActionLayout", ("Full", "Hero"), ("PillAction",) * 2, (1, 1)),
     WideLayoutOption("WideFullTwoCompactLayout", ("Full",), ("CompactAction",) * 2, (None, None)),
     WideLayoutOption(
         "WideHalfCompactTwoLargeActionLayout",
-        ("WideHalf", "Compact"),
+        ("WideHalf", "Support"),
         ("LargeIconAction",) * 2,
         (None, None),
     ),
@@ -211,7 +212,7 @@ def _may_pair_with_selected(
     if slot.field_bindings:
         return False
     kind = provider_template_layout_kind(slot.template_id)
-    if kind not in {"Full", "Compact"}:
+    if kind not in {"Full", "Support", "Compact"}:
         return False
     same_business = [
         item
@@ -221,7 +222,7 @@ def _may_pair_with_selected(
     if len(same_business) != 1:
         return False
     other_kind = provider_template_layout_kind(same_business[0].template_id)
-    return other_kind in {"Full", "Compact"} and other_kind != kind
+    return other_kind in {"Full", "Support", "Compact"} and other_kind != kind
 
 
 def _generic_field_options(
@@ -250,7 +251,10 @@ def _ordered_slots(
 ) -> Iterator[tuple[TemplatePlanBusinessSlot, ...]]:
     seen: set[tuple[str, ...]] = set()
     for ordered in permutations(slots):
-        if tuple(slot.layout_role for slot in ordered) != roles:
+        if not all(
+            _slot_role_matches(slot.layout_role, expected)
+            for slot, expected in zip(ordered, roles, strict=True)
+        ):
             continue
         key = tuple(_slot_key(slot) for slot in ordered)
         if key in seen:
@@ -259,6 +263,13 @@ def _ordered_slots(
         yield tuple(
             slot.model_copy(update={"position": index}) for index, slot in enumerate(ordered)
         )
+
+
+def _slot_role_matches(actual: str, expected: str) -> bool:
+    """Match the canonical 2x4 Support role and legacy Compact IDs."""
+    if expected == "Support":
+        return actual in _WIDE_SUPPORT_KINDS
+    return actual == expected
 
 
 def _action_assignments(

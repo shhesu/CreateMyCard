@@ -29,6 +29,7 @@ from .retrieval_index import FieldToken, TemplateVariantSearchRecord
 
 _MAX_COMPONENT_TEMPLATE_CANDIDATES = 24
 _GENERIC_SCALAR_TYPES = frozenset({"string", "integer", "number", "boolean"})
+_WIDE_SUPPORT_KINDS = frozenset({"Support", "Compact"})
 _TEMPLATE_QUERY_DISCRIMINATORS = {
     "WeatherOverviewAlertFull@1": frozenset({"/current/alertLevel"}),
 }
@@ -676,7 +677,7 @@ def _prefer_half_compact_pair(
             if provider_template_layout_kind(template_id) == "WideHalf":
                 half_ids.append(template_id)
         for template_id in compact.available_template_ids:
-            if provider_template_layout_kind(template_id) == "Compact":
+            if provider_template_layout_kind(template_id) in _WIDE_SUPPORT_KINDS:
                 compact_ids.append(template_id)
         if half_ids and compact_ids:
             return (
@@ -689,13 +690,13 @@ def _prefer_half_compact_pair(
 def _component_candidate_order_key(
     item: tuple[str, set[str]],
 ) -> tuple[int, str]:
-    """Place the visually larger business before Compact-only support slots."""
+    """Place the visually larger business before Support-only slots."""
     component_id, template_ids = item
-    compact_only = all(
-        provider_template_layout_kind(template_id) == "Compact"
+    support_only = all(
+        provider_template_layout_kind(template_id) in _WIDE_SUPPORT_KINDS
         for template_id in template_ids
     )
-    return (1 if compact_only else 0, component_id)
+    return (1 if support_only else 0, component_id)
 
 
 def restrict_query_to_preferred_templates(
@@ -998,7 +999,7 @@ def _candidate_with_complete_field_coverage_or_pair(
     """Cover one slot with a single template, or split it into a Full+Compact pair.
 
     Returns ``(narrowed_candidate, None)`` when one template covers every
-    demanded group, or ``(split_candidate, (full_ids, compact_ids))`` when no
+    demanded group, or ``(split_candidate, (full_ids, support_ids))`` when no
     single template does but a Full + Compact pair's union of field bindings
     does. ``provider_template_layout_kind`` maps ``Wide*`` ids to their own
     kinds, so only natively 2x2-sized shapes enter the pair.
@@ -1020,22 +1021,22 @@ def _candidate_with_complete_field_coverage_or_pair(
             for template_id in candidate.available_template_ids
             if provider_template_layout_kind(template_id) == "Full"
         )
-        compact_ids = sorted(
+        support_ids = sorted(
             template_id
             for template_id in candidate.available_template_ids
-            if provider_template_layout_kind(template_id) == "Compact"
+            if provider_template_layout_kind(template_id) in _WIDE_SUPPORT_KINDS
         )
-        pair_ids = set(full_ids) | set(compact_ids)
+        pair_ids = set(full_ids) | set(support_ids)
         if (
             not full_ids
-            or not compact_ids
+            or not support_ids
             or not component_groups
             or not all(group.intersection(pair_ids) for group in component_groups)
         ):
             raise TemplateRetrievalMiss(
                 f"template candidates cannot cover one {candidate.component_id} slot"
             )
-        slots = (tuple(full_ids), tuple(compact_ids))
+        slots = (tuple(full_ids), tuple(support_ids))
         return (
             candidate.model_copy(
                 update={"available_template_ids": tuple(sorted(pair_ids))}
@@ -1281,7 +1282,12 @@ def _template_can_participate_in_size(
     record: TemplateVariantSearchRecord,
     card_size: str,
 ) -> bool:
-    """Allow standard business shapes inside a 2x4 composition layout."""
+    """Allow 2x2 business shapes, including Support, inside a 2x4 slot.
+
+    A 2x4 layout's narrow 1x2 slots are Support slots.  ``Compact`` remains
+    accepted here for existing provider templates whose historical IDs use
+    that suffix for the same physical slot shape.
+    """
     if not record.supported_card_sizes or card_size in record.supported_card_sizes:
         return True
     if card_size != "2x4":
@@ -1290,6 +1296,7 @@ def _template_can_participate_in_size(
         "Full",
         "Hero",
         "Compact",
+        "Support",
     }
 
 

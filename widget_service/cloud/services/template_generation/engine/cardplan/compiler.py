@@ -954,7 +954,12 @@ def _expand_call(
             "WideTwoFocusTwoActionLayout",
         }
         and task_spec.size == "2x4"
-        and provider_template_layout_kind(wire_id) in {"Full", "Hero", "Compact"}
+        and provider_template_layout_kind(wire_id) in {
+            "Full",
+            "Hero",
+            "Compact",
+            "Support",
+        }
     )
     if (
         variant.supported_card_sizes
@@ -6532,11 +6537,11 @@ def _validate_provider_template_layout_action_requirements(
         )
     wide_composition_contracts = {
         "WideTwoFullLayout": (("Full", "Full"), ()),
-        "WideHeroCompactLayout": (("Hero", "Compact"), ()),
+        "WideHeroCompactLayout": (("Hero", "Support"), ()),
         "WideFullHeroActionLayout": (("Full", "Hero"), ("PillAction",)),
         "WideHeroActionFullLayout": (("Full", "Hero"), ("PillAction",)),
-        "WideFullTwoCompactLayout": (("Full", "Compact", "Compact"), ()),
-        "WideFourCompactLayout": (("Compact",) * 4, ()),
+        "WideFullTwoCompactLayout": (("Full", "Support", "Support"), ()),
+        "WideFourCompactLayout": (("Support",) * 4, ()),
         "WideFullHeroTwoActionLayout": (
             ("Full", "Hero"),
             ("PillAction", "PillAction"),
@@ -6547,9 +6552,9 @@ def _validate_provider_template_layout_action_requirements(
         ),
         "WideTwoHeroActionLayout": (("Hero", "Hero"), ("PillAction", "PillAction")),
         "WideTwoHalfLayout": (("WideHalf", "WideHalf"), ()),
-        "WideHalfTwoCompactLayout": (("WideHalf", "Compact", "Compact"), ()),
+        "WideHalfTwoCompactLayout": (("WideHalf", "Support", "Support"), ()),
         "WideHalfCompactTwoLargeActionLayout": (
-            ("WideHalf", "Compact"),
+            ("WideHalf", "Support"),
             ("LargeIconAction", "LargeIconAction"),
         ),
         "WideHalfFourLargeActionLayout": (
@@ -6571,18 +6576,24 @@ def _validate_provider_template_layout_action_requirements(
             )
         return
     if layout_id == "WideFullTwoCompactLayout" and action_names == ("CompactAction",):
-        if layout_kinds not in {("Full", "Compact"), ("Hero", "Compact")}:
+        if not any(
+            _wide_slot_kinds_match(layout_kinds, expected)
+            for expected in (("Full", "Support"), ("Hero", "Support"))
+        ):
             raise TerselConversionError(
                 f"{layout_id} Provider Template slot combination is invalid."
             )
         return
     if layout_id == "WideHalfTwoCompactLayout" and action_names == ("CompactAction",):
-        if layout_kinds != ("WideHalf", "Compact"):
-            raise TerselConversionError(f"{layout_id} requires WideHalf, Compact and one Action.")
+        if not _wide_slot_kinds_match(layout_kinds, ("WideHalf", "Compact")):
+            raise TerselConversionError(f"{layout_id} requires WideHalf, Support and one Action.")
         return
     if wide_composition is not None:
         expected_kinds, expected_action_names = wide_composition
-        if layout_kinds != expected_kinds or action_names != expected_action_names:
+        if (
+            not _wide_slot_kinds_match(layout_kinds, expected_kinds)
+            or action_names != expected_action_names
+        ):
             raise TerselConversionError(
                 f"{layout_id} Provider Template slot combination is invalid."
             )
@@ -6647,6 +6658,20 @@ def _validate_provider_template_layout_action_requirements(
         raise TerselConversionError(
             f"{layout_kind} Provider Template requires {expected_layout_id}."
         )
+
+
+def _wide_slot_kinds_match(
+    actual: tuple[str, ...],
+    expected: tuple[str, ...],
+) -> bool:
+    """Match 2x4 Support slots, retaining Compact as a legacy template suffix."""
+    if len(actual) != len(expected):
+        return False
+    return all(
+        value == wanted
+        or (wanted in {"Compact", "Support"} and value in {"Compact", "Support"})
+        for value, wanted in zip(actual, expected, strict=True)
+    )
 
 
 def _parsed_layout_template_id(
