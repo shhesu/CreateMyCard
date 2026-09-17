@@ -1,0 +1,34 @@
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_046bdf8b785adb::t_7421c257c89305 2424-2431
+widget_service/cloud/services/template_generation/tests/test_non_fusion_overflow_marker.py
+  s_046bdf8b785adb::t_5bbd2a2bc3ee67 171
+  s_046bdf8b785adb::t_a0064cb88d1d6d 156
+  s_046bdf8b785adb::t_ed2756b37eb967 1,15-17,24-30,37,39,66,86,105,107,110,113,117-155,157-170,172-183
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_046bdf8b785adb::t_4698124cc4717d 406-408,444,446,451-455
+docs/云侧方案设计.md
+  s_046bdf8b785adb::t_4698124cc4717d 1263-1265
+widget_service/cloud/services/template_generation/tests/test_wide_countdown_case_routing.py
+  s_046bdf8b785adb::t_28d922cfb0bd9b 465-478,519,625,756
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_046bdf8b785adb::t_4698124cc4717d 121,123,125-128,144-145
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_046bdf8b785adb::t_f33d6e325ac58c 1,131-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "c89527b420078d26a53f07f451de3f44ee72b0ec",
+  "prompts": {},
+  "sessions": {
+    "s_046bdf8b785adb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ae11-e5f3-71d1-8cbd-e945685233fc",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 34
+    }
+  }
+}
