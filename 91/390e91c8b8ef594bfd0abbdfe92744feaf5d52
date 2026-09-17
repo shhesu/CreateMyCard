@@ -1,0 +1,41 @@
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_046bdf8b785adb::t_0240823d9b8fc8 8,113,133-138,337-342,359-360,363-367,370-376,382
+  s_046bdf8b785adb::t_b202366b39634f 377-381
+  s_046bdf8b785adb::t_998e7b57517596 383
+widget_service/tests/test_display_units.py
+  s_046bdf8b785adb::t_8a94450bba4509 95,112
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_046bdf8b785adb::t_b6112987f4aae1 15-16
+docs/云侧方案设计.md
+  s_046bdf8b785adb::t_b6112987f4aae1 1258
+  s_046bdf8b785adb::t_78255bfab95f05 1713
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_046bdf8b785adb::t_a5ca1f45408cc2 4817-4827
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_046bdf8b785adb::t_597c64dbf1e777 841,849,857-858,901
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_046bdf8b785adb::t_12f599e34348ec 130-135,137,139-146,149-167,169-174,176-180,182-189,191-281,754,775,796-800,805,820,841-845,850
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/generic-metric-overview.cardtpl
+  s_046bdf8b785adb::t_4ec84dc72bfbc2 26-38
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_046bdf8b785adb::t_f518b89316ba12 289-290
+widget_service/cloud/services/widget_generation_service.py
+  s_046bdf8b785adb::t_d65be9104d95a7 596,612,721
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "91390e91c8b8ef594bfd0abbdfe92744feaf5d52",
+  "prompts": {},
+  "sessions": {
+    "s_046bdf8b785adb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ae11-e5f3-71d1-8cbd-e945685233fc",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 161
+    }
+  }
+}
