@@ -1,0 +1,83 @@
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_046bdf8b785adb::t_f518b89316ba12 289-290
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_046bdf8b785adb::t_b6112987f4aae1 465-467
+widget_service/tests/test_display_units.py
+  s_046bdf8b785adb::t_9903f7d41d55e5 195-197,204,227-228
+  s_046bdf8b785adb::t_8a94450bba4509 5-6,97,114,189-194,198-203,205-226,229-230
+  s_046bdf8b785adb::t_62205f9a831358 231-232
+widget_service/cloud/services/widget_generation_service.py
+  s_046bdf8b785adb::t_d65be9104d95a7 596,612,721
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_046bdf8b785adb::t_0240823d9b8fc8 7,9,21-23,112,118,122,143,166-180,363-368,385-386,389-393,396-402,408
+  s_046bdf8b785adb::t_998e7b57517596 409
+  s_046bdf8b785adb::t_9903f7d41d55e5 119-121
+  s_046bdf8b785adb::t_b202366b39634f 403-407
+docs/云侧方案设计.md
+  s_046bdf8b785adb::t_32f3b64e1d19d0 1269-1270
+  s_046bdf8b785adb::t_b6112987f4aae1 1258,1266-1268,1271
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_046bdf8b785adb::t_b6112987f4aae1 44-46
+  s_046bdf8b785adb::t_7b22f4fc6f4782 279
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_046bdf8b785adb::t_7b22f4fc6f4782 141-142
+  s_046bdf8b785adb::t_b6112987f4aae1 15-16
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_046bdf8b785adb::t_12f599e34348ec 130-135,137,139-146,149-167,169-174,176-180,182-189,191-281,754,775,796-800,805,820,841-845,850
+widget_service/tests/test_compact_dsl_validator.py
+  s_046bdf8b785adb::t_32f3b64e1d19d0 11-12,151,153,168-169,192-200
+  s_046bdf8b785adb::t_7b22f4fc6f4782 147-150,152,154-167,170-172,177-191,201-204,209-224,229-232
+  s_046bdf8b785adb::t_9903f7d41d55e5 173-176,205-208,225-228
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/generic-metric-overview.cardtpl
+  s_046bdf8b785adb::t_4ec84dc72bfbc2 26-38
+widget_service/cloud/services/card_validation/display_unit_validator.py
+  s_046bdf8b785adb::t_0240823d9b8fc8 5-6,15-16,26-28
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_046bdf8b785adb::t_597c64dbf1e777 841,849,857-858,901
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_046bdf8b785adb::t_a5ca1f45408cc2 4817-4827
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "8a0f34143507c4c3dab183f96565df1852ac0a5e",
+  "prompts": {},
+  "sessions": {
+    "s_046bdf8b785adb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ae11-e5f3-71d1-8cbd-e945685233fc",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 161
+    },
+    "s_772e1642396b76": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0467e-0bb4-7843-9c0b-c5d30652632f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 1
+    },
+    "s_9725f00022ef70": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a571-cc95-7672-8d5b-ec9fc75902be",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    },
+    "s_c1658d2558b6ae": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ad10-c3aa-7b61-bde4-0c460346a843",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 47
+    }
+  }
+}
