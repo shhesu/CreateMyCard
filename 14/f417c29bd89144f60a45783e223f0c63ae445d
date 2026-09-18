@@ -1,0 +1,56 @@
+docs/云侧方案设计.md
+  s_803e95f0956320::t_3c99914b785722 1211-1213
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_803e95f0956320::t_6be3b6db195421 7,47
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_803e95f0956320::t_e06b840209302c 513-514,516
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_803e95f0956320::t_9907b26c696c1b 198-200
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_803e95f0956320::t_33dc4978e7186d 8,12-13,15-17,34,39
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_803e95f0956320::t_ac83dddfa96849 8-11
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_803e95f0956320::t_8f4213d9b71ab7 324
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_803e95f0956320::t_f31baf65d20f49 34-36,39-40
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_803e95f0956320::t_790c79b44a37a3 76,321
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_803e95f0956320::t_a97291ca967fda 206,210,299,634,636,640,776-777,803,805
+widget_service/cloud/services/template_generation/tests/test_retired_app_usage.py
+  s_803e95f0956320::t_17903ed223081b 1-78
+widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
+  s_803e95f0956320::t_f8b037062770cc 318,355,359,412
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_803e95f0956320::t_840e255ab57f16 26,257,373,375
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_803e95f0956320::t_f09c5fdb7c7c5f 58
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_803e95f0956320::t_63a92696e96985 260,1072,1080,1106,1176,1287,1348,1519,1895,2053,2056-2057,2060-2061,2880,3909-3910,3912-3913,3921-3923,3932,3936-3937,3943-3955,6086,6089-6090,6098-6100,6115,6124-6125,6127-6128,6134-6135
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_803e95f0956320::t_97b00f08538683 619,625,647,654
+widget_service/cloud/services/template_generation/tests/test_template_plan_planner.py
+  s_803e95f0956320::t_21be68756b8b6d 362,385,404-406,409-410,565,578
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_803e95f0956320::t_5e5b4aa4f98bda 19,23-28,30-32
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_803e95f0956320::t_f179b19892b759 2009,2012-2014
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "14f417c29bd89144f60a45783e223f0c63ae445d",
+  "prompts": {},
+  "sessions": {
+    "s_803e95f0956320": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b390-5e83-70e2-8263-950132f0bc88",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
