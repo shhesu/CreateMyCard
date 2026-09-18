@@ -1,0 +1,20 @@
+widget_service/cloud/services/card_validation/contrast_validator.py
+  s_7caa058e1c1202::t_e29bccffc52325 218
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "ee4afd8f94cfa767c5f395eb431ab202ca019203",
+  "prompts": {},
+  "sessions": {
+    "s_7caa058e1c1202": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b336-def2-7d02-924d-3e73c7953713",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
