@@ -1,0 +1,22 @@
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_2bba558b5d25dc::t_3060236459f15d 1686
+  s_2bba558b5d25dc::t_f47fba6116adb9 1638
+  s_2bba558b5d25dc::t_c0b16828ab3479 1684-1685,1687-1694
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.31.1604",
+  "base_commit_sha": "c80c50b156f0335ce3082779f74c14ec8650cfff",
+  "prompts": {},
+  "sessions": {
+    "s_2bba558b5d25dc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0aea0-98e8-7151-a2bf-8ef3e096dd13",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_deletions": 7
+    }
+  }
+}
