@@ -1,0 +1,35 @@
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_803e95f0956320::t_0d3e561901614e 1314,1411
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_803e95f0956320::t_67ece73d73d2a8 79,143,224,229
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_7caa058e1c1202::t_3a0368e274263c 564-571,573,695-697
+widget_service/cloud/services/template_generation/tests/test_gallery_validation_regressions.py
+  s_803e95f0956320::t_e4eee81b83b7f9 1-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "c8f1f382e9c68949e15d86a015d73f53c1df0177",
+  "prompts": {},
+  "sessions": {
+    "s_7caa058e1c1202": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b336-def2-7d02-924d-3e73c7953713",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    },
+    "s_803e95f0956320": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b390-5e83-70e2-8263-950132f0bc88",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
