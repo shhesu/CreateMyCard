@@ -1,0 +1,41 @@
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_fb29ffe3561f53::t_ee4b4ea77b929f 952,956,961,1065,1072,1075,1541,1550,1552
+widget_service/tests/test_display_unit_siblings.py
+  s_fb29ffe3561f53::t_dfbba4024826b4 7,31,37-38,51
+docs/云侧方案设计.md
+  s_fb29ffe3561f53::t_30af216f24c2d8 1225-1227,1247
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_fb29ffe3561f53::t_5296dfb7a44702 57,61
+widget_service/cloud/services/template_generation/tests/test_travel_weather_templates.py
+  s_fb29ffe3561f53::t_90270bf9331dc0 297,316,393,413
+widget_service/tests/test_display_units.py
+  s_fb29ffe3561f53::t_0feebe7d1dc414 211-295
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_fb29ffe3561f53::t_30af216f24c2d8 283
+widget_service/cloud/services/card_validation/display_unit_validator.py
+  s_fb29ffe3561f53::t_dfbba4024826b4 6,22,30,69
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_fb29ffe3561f53::t_30af216f24c2d8 143-146
+  s_fb29ffe3561f53::t_dfbba4024826b4 19
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_fb29ffe3561f53::t_9de1bd4b22e162 33,87
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_fb29ffe3561f53::t_7d2166c07bde06 3003-3005
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "b24ce33d654b3701d8e71319f4ee8b1ef446fa2c",
+  "prompts": {},
+  "sessions": {
+    "s_fb29ffe3561f53": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af8f-20fd-7cc0-9d28-d5a50c68d9c8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 7
+    }
+  }
+}
