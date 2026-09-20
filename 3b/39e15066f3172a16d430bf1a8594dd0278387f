@@ -1,0 +1,26 @@
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_fb29ffe3561f53::t_14117373b576ba 59,207,235,264,301
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_fb29ffe3561f53::t_14117373b576ba 98,376
+docs/云侧方案设计.md
+  s_fb29ffe3561f53::t_f6aa2e8e7777e9 1364-1365
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_fb29ffe3561f53::t_d53bd07a9c1ccf 145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "3b39e15066f3172a16d430bf1a8594dd0278387f",
+  "prompts": {},
+  "sessions": {
+    "s_fb29ffe3561f53": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af8f-20fd-7cc0-9d28-d5a50c68d9c8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 74
+    }
+  }
+}
