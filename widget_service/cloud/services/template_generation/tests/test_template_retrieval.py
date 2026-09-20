@@ -7,7 +7,6 @@ from typing import Any
 import pytest
 
 from models.generation import CandidateDataBinding, EventAction, TaskSpec
-from services.card_validation.compact_dsl_validator import validate_compact_dsl
 from services.protocol_registry import A2UI_FORM_PROTOCOL_PROFILE_ID, A2UIProtocolRegistry
 from services.template_generation.engine.advanced.content_selectors import (
     apply_content_selectors,
@@ -37,6 +36,7 @@ from services.template_generation.engine.cardplan.template_retrieval import (
 )
 from services.template_generation.engine.compact_dsl_a2ui_converter import (
     convert_a2ui_to_compact_dsl,
+    validate_compact_dsl_context,
 )
 
 _WEATHER_FIELDS = (
@@ -2022,12 +2022,12 @@ def test_optional_data_is_available_but_not_required_for_second_containment() ->
     record = next(
         item
         for item in get_cardplan_registry().template_variant_search_records
-        if item.template_id == "AppUsageOverviewFull@1"
+        if item.template_id == "WeatherOverviewFull@1"
     )
 
-    assert "/updatedAt" in record.available_paths
-    assert "/updatedAt" not in record.required_paths
-    assert any(token.path == "/updatedAt" for token in record.field_tokens)
+    assert "/current/airQuality" in record.available_paths
+    assert "/current/airQuality" not in record.required_paths
+    assert any(token.path == "/current/airQuality" for token in record.field_tokens)
 
 
 def test_search_rejects_weather_and_battery_businesses() -> None:
@@ -2409,7 +2409,7 @@ def test_weather_battery_2x4_composes_two_focus_panels(
         enable_data_bindings=True,
     )
     compact_dsl = convert_a2ui_to_compact_dsl(compilation.a2ui, size=task.size)
-    validate_compact_dsl(
+    validate_compact_dsl_context(
         compact_dsl,
         task_spec=task.model_dump(mode="json"),
         card_spec=_weather_battery_card_spec(),
@@ -2421,13 +2421,14 @@ def test_weather_battery_2x4_composes_two_focus_panels(
     by_id = {component.get("id"): component for component in components}
     root = by_id.get("root")
     assert isinstance(root, dict)
-    row = next(
-        by_id[child_id]
-        for child_id in root.get("children", [])
-        if by_id.get(child_id, {}).get("component") == "Row"
-        and len(by_id.get(child_id, {}).get("children", [])) == 2
-    )
-    row_children = row["children"]
+    assert root.get("children") == ["template_root"]
+    foreground = by_id.get("template_root")
+    assert isinstance(foreground, dict)
+    assert foreground.get("children") == ["__genui_render_component__root_1"]
+    row = by_id.get("__genui_render_component__root_1")
+    assert isinstance(row, dict)
+    assert row.get("component") == "Row"
+    row_children = row.get("children")
     assert isinstance(row_children, list) and len(row_children) == 2
 
     def descendant_ids(node_id: str) -> set[str]:
@@ -2592,7 +2593,7 @@ def test_earphone_battery_2x4_composes_two_focus_panels_with_two_actions() -> No
         enable_data_bindings=True,
     )
     compact_dsl = convert_a2ui_to_compact_dsl(compilation.a2ui, size=task.size)
-    validate_compact_dsl(
+    validate_compact_dsl_context(
         compact_dsl,
         task_spec=task.model_dump(mode="json"),
         card_spec=card_spec,

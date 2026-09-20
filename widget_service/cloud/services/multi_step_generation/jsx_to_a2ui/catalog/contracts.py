@@ -93,9 +93,10 @@ CONTRACTS = {
     "Icon": contract(optional=("name", "src", "size", "alt", "decorative")),
     "AppIcon": contract(optional=("name", "src", "alt")),
     "WeatherIcon": contract(optional=("name", "src", "alt")),
-    "SingleLineTitle": contract(required=("title",), optional=("icon", "iconAlt", "iconFit", "invertIcon", "dataIds")),
+    "SingleLineTitle": contract(required=("title",), optional=("titleTemplate", "dataIds")),
     "DoubleLineTitle": contract(
-        required=("title", "secondaryInfo"), optional=("icon", "iconAlt", "iconFit", "invertIcon", "dataIds")
+        required=("title", "secondaryInfo"),
+        optional=("titleTemplate", "secondaryInfoTemplate", "dataIds"),
     ),
     "Badge": contract(
         required=("value",),
@@ -104,16 +105,15 @@ CONTRACTS = {
     ),
     "DataDisplay": contract(required=("label", "value", "supportingText"), optional=("dataIds",)),
     "InfoBlock": contract(
-        required=("primaryText", "secondaryText", "visual"),
-        optional=("unit", "dataIds"),
+        required=("primaryText", "secondaryText"),
+        optional=("unit", "visual", "dataIds"),
     ),
     "TopTextBottomValue": contract(required=("items",)),
     "TableText": contract(required=("items",)),
     "TextBlock": contract(required=("items",)),
     "EmphasizedData": contract(optional=("unit", "dataIds"), required_one_of=("value", "items")),
-    "EmphasisText": contract(required=("mainText", "secondaryText"), optional=("dataIds",)),
-    "SecondaryBody": contract(optional=("separator", "dataIds"), required_one_of=("body", "items")),
-    "Summary": contract(optional=("separator", "dataIds"), required_one_of=("content", "items")),
+    "EmphasisText": contract(required=("mainText",), optional=("secondaryText", "dataIds")),
+    "SecondaryBody": contract(required=("items",), optional=("separator",)),
     "WeatherSummaryCard": contract(
         required=("city", "temperature", "condition", "airQuality", "high", "low", "icon"), optional=("ariaLabel",)
     ),
@@ -148,7 +148,11 @@ CONTRACTS = {
     ),
     "ProgressCircleSingle": contract(
         required=("value", "icon", "label"),
-        optional=("displayValue", "secondaryLabel", "ariaLabel", "appearance", "trackColor", "barColor", "dataIds"),
+        optional=(
+            "displayValue", "secondaryLabel", "ariaLabel", "appearance",
+            "size", "trackColor", "barColor", "dataIds",
+        ),
+        size=("compact",),
     ),
     "ProgressCircle": contract(
         required=("icon", "externalText"),
@@ -158,7 +162,11 @@ CONTRACTS = {
     "NumericRatio": contract(required=("icon", "value"), optional=("unit", "appearance", "dataIds")),
     "NumericRatioStack": contract(required=("items",), optional=("appearance",)),
     "ChecklistItem": contract(required=("title", "meta"), optional=("done", "dataIds")),
-    "EventCard": contract(required=("title", "time"), optional=("location", "dataIds")),
+    "EventCard": contract(
+        required_one_of=("items", "title"),
+        optional=("time", "location", "density", "dataIds"),
+        density=("compact",),
+    ),
     "PillButton": contract(
         required=("label",),
         optional=("icon", "appearance", "disabled", "variant", "color", "actionId"),
@@ -230,6 +238,31 @@ def collect_jsx_component_errors(
     for name, allowed in (item.enums or {}).items():
         if name in node.props and node.props[name] not in allowed:
             errors.append(f"<{node.tag}> prop {name} has invalid value {node.props[name]!r}")
+    template_props = {
+        "SingleLineTitle": {"titleTemplate": "title"},
+        "DoubleLineTitle": {
+            "titleTemplate": "title",
+            "secondaryInfoTemplate": "secondaryInfo",
+        },
+    }.get(node.tag, {})
+    for template_prop, value_prop in template_props.items():
+        if template_prop not in node.props:
+            continue
+        template = node.props[template_prop]
+        if not isinstance(template, str) or template.count("{value}") != 1:
+            errors.append(
+                f"<{node.tag}> prop {template_prop} must be a string containing exactly one {{value}} placeholder"
+            )
+        data_ids = node.props.get("dataIds")
+        if not isinstance(data_ids, dict) or not isinstance(data_ids.get(value_prop), str) or not data_ids[value_prop]:
+            errors.append(
+                f"<{node.tag}> prop {template_prop} requires dataIds.{value_prop} to bind one non-empty data ID"
+            )
+        data_value_maps = node.props.get("dataValueMaps")
+        if isinstance(data_value_maps, dict) and value_prop in data_value_maps:
+            errors.append(
+                f"<{node.tag}> prop {template_prop} cannot be combined with dataValueMaps.{value_prop}"
+            )
     errors.extend(collect_display_prop_type_errors(node))
     return list(dict.fromkeys(errors))
 

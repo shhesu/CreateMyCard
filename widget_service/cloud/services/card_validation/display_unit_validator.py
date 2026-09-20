@@ -2,13 +2,18 @@
 # Copyright (c) Huawei Technologies Co., Ltd. 2026-2026. All rights reserved.
 from __future__ import annotations
 
+import logging
+
 from .base import BaseValidator, expression_references
 from .display_unit_rules import (
     collect_bound_display_unit_rules,
     matching_unit_literal_count,
     static_text_contains_rule,
+    static_text_exactly_matches_rule,
     unit_rule_for_path,
 )
+
+_LOGGER = logging.getLogger(__name__)
 
 
 class DisplayUnitValidator(BaseValidator):
@@ -19,6 +24,9 @@ class DisplayUnitValidator(BaseValidator):
 
     def validate(self, context, rules, reporter) -> None:
         del rules
+        if context.has_fusion_template_root():
+            _LOGGER.info("semantic_validation_skipped reason=template_root validator=display_unit")
+            return
         unit_rules = collect_bound_display_unit_rules(
             context.cardspec,
             context.effective_data_capabilities,
@@ -114,6 +122,12 @@ class DisplayUnitValidator(BaseValidator):
     ) -> int:
         sibling_ids: set[str] = set()
         for parent in parents_by_child.get(component_id, []):
+            parent_kind = parent.get("component")
+            if parent_kind not in {"Row", "Column"}:
+                continue
+            matches_unit = static_text_exactly_matches_rule
+            if parent_kind == "Row":
+                matches_unit = static_text_contains_rule
             children = parent.get("children")
             if not isinstance(children, list):
                 continue
@@ -123,14 +137,15 @@ class DisplayUnitValidator(BaseValidator):
                 child_id = children[child_index]
                 if not isinstance(child_id, str):
                     break
-                sibling_content = components_by_id.get(child_id, {}).get("content")
-                # 单位扫描只统计锚点 Text 之后的连续静态文案；遇到无 content 的
-                # 兄弟组件（Row/Image 等非 Text 节点）即结束扫描。
+                sibling = components_by_id.get(child_id)
+                if not isinstance(sibling, dict) or sibling.get("component") != "Text":
+                    break
+                sibling_content = sibling.get("content")
                 if not isinstance(sibling_content, str):
                     break
                 if expression_references(sibling_content):
                     break
-                if not static_text_contains_rule(sibling_content, rule):
+                if not matches_unit(sibling_content, rule):
                     break
                 sibling_ids.add(child_id)
         return len(sibling_ids)

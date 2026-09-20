@@ -14,6 +14,7 @@ from models.generation import ModelRequestContext
 
 from ..jsx_runner.agent import JsxA2UIAgent
 from ..jsx_runner.data_processing import prepare_task
+from ..jsx_runner.resources import GenerationResources
 from .input_adapter import task_spec_payload
 from .model_adapter import PlatformChatClient
 from .options import BridgeOptions
@@ -77,11 +78,15 @@ class JsxA2UIBridge:
             max_tokens=resolved.max_tokens,
             thinking_mode=resolved.thinking_mode,
             request_timeout=resolved.request_timeout,
-            max_validation_repairs=resolved.max_browser_repairs,
+            max_validation_repairs=resolved.browser_fallback_after,
             browser_validation=resolved.browser_validation,
             validation_enabled=resolved.validation_enabled,
-            layout_budget_validation=resolved.layout_budget_validation,
+            # 与 phone 入口一致：几何检查交给浏览器，不启用 Python 尺寸估算。
+            layout_budget_validation=False,
             validate_dynamic_values=resolved.validate_dynamic_values,
+            enable_dynamic_data_binding=resolved.enable_dynamic_data_binding,
+            plan_max_tokens=resolved.plan_max_tokens,
+            resources=GenerationResources(include_few_shot=resolved.include_few_shot),
             submit_mode=resolved.submit_mode,
             verbose=resolved.verbose,
             client=client,
@@ -143,7 +148,7 @@ class JsxA2UIBridge:
                 trace_data,
                 result,
                 prepared.prompt_task,
-                prepared.compile_context,
+                result.get("compile_context", prepared.compile_context),
             )
 
         logger.info(
@@ -214,6 +219,9 @@ class JsxA2UIBridge:
                 "reasoning_trace": trace_data.get("reasoning_trace", []),
                 "turn_trace": trace_data.get("turn_trace", []),
                 "validation_reports": trace_data.get("validation_reports", []),
+                "plan": result.get("plan", trace_data.get("plan")),
+                "decision": result.get("decision", trace_data.get("decision")),
+                "warnings": result.get("warnings", trace_data.get("warnings", [])),
                 "turns": result.get("turns", 0),
                 "elapsed_seconds": result.get("elapsed_seconds", 0.0),
                 "coverage": result.get("coverage", []),
@@ -259,8 +267,12 @@ class JsxA2UIBridge:
                 rejected_path.write_text(rejected_jsx, encoding="utf-8")
                 rejected_count += 1
 
-            # context.json：编译上下文（数据绑定 + 动作绑定）
-            if compile_context and (compile_context.get("data") or compile_context.get("actions")):
+            # 纯静态卡片也要保存实测排版，供同一 JSX 再次转换时复用。
+            context_fields = ("data", "actions", "assets", "renderedLayout")
+            has_context = compile_context and any(
+                compile_context.get(key) for key in context_fields
+            )
+            if has_context:
                 context_path = dump_directory / f"raw_context_{component_name}.json"
                 context_path.write_text(
                     json.dumps(compile_context, ensure_ascii=False, indent=2),
@@ -283,6 +295,9 @@ class JsxA2UIBridge:
             "loaded_resources",
             "resource_reads",
             "validation_reports",
+            "plan",
+            "decision",
+            "warnings",
         ):
             value = getattr(error, key, None)
             if value is not None:

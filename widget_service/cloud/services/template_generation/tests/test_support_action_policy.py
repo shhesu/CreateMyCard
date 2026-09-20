@@ -66,6 +66,10 @@ _APPROVED = {
     "WeatherOverviewTemperaturecoldLevelSupport@1": [
         "event.open.weather"
     ],
+    "WeatherOverviewDaily2TravelSupport@1": [],
+    "WeatherOverviewTravelSupport@1": [
+        "event.open.weather"
+    ],
     "BatteryOverviewSupport@1": [
         "event.open.settings.battery",
         "event.open.settings.batteryHealth",
@@ -93,6 +97,9 @@ _APPROVED = {
         "event.enter.meeting"
     ],
     "CountdownOverviewSupport@1": [],
+    "CountdownOverviewTravelSupport@1": [
+        "event.open.clock.alarm"
+    ],
     "BluetoothDeviceOverviewEarbudsSupport@1": [
         "event.open.settings.bluetooth"
     ],
@@ -113,9 +120,6 @@ _APPROVED = {
     ],
     "SleepOverviewSupport@1": [
         "event.open.health.sleep"
-    ],
-    "AppUsageOverviewSupport@1": [
-        "event.open.settings.parentControl"
     ],
     "ResourceUsageOverviewSupport@1": [
         "event.clean.memory"
@@ -312,7 +316,7 @@ def test_event_instances_keep_type_identity_and_request_numbering() -> None:
 
 def test_planner_never_places_weather_action_on_other_business() -> None:
     plans = _plans(
-        ("WeatherOverviewTemperatureSupport@1", "AppUsageOverviewSupport@1"),
+        ("WeatherOverviewTemperatureSupport@1", "BatteryOverviewSupport@1"),
         ("event.open.weather",),
     )
     assert 1 <= len(plans) <= 3
@@ -349,11 +353,11 @@ def test_countdown_cannot_use_alarm_as_a_related_event() -> None:
 
 def test_compiler_rechecks_policy_even_if_the_plan_is_forged() -> None:
     plans = _plans(
-        ("WeatherOverviewTemperatureSupport@1", "AppUsageOverviewSupport@1"),
+        ("WeatherOverviewTemperatureSupport@1", "BatteryOverviewSupport@1"),
         ("event.open.weather",),
     )
     plan = plans[0]
-    target = next(slot for slot in plan.business_slots if slot.business_id == "AppUsageOverview")
+    target = next(slot for slot in plan.business_slots if slot.business_id == "BatteryOverview")
     assignment = plan.action_assignments[0].model_copy(
         update={"business_position": target.position},
     )
@@ -406,7 +410,7 @@ def test_prompt_projects_only_matching_action_instances() -> None:
 def test_gallery_support_events_come_from_each_template_allowlist(tmp_path: Path) -> None:
     manifest = provider_gallery.write_gallery_input_dataset(tmp_path)
     provider = next(item for item in manifest.providers if item.providerSlug == "two-support")
-    assert len(provider.cases) == 42
+    assert len(provider.cases) == 63
     countdown_cases = []
     for case in provider.cases:
         payload = json.loads((tmp_path / case.requestFile).read_text(encoding="utf-8"))
@@ -423,9 +427,8 @@ def test_gallery_support_events_come_from_each_template_allowlist(tmp_path: Path
         if case.targetTemplateId == "CountdownOverviewSupport@1":
             countdown_cases.append(case.scenarioId)
             assert all(event.get("capabilityId") == "event.open.weather" for event in events)
-    # NOTE(gallery-counts): the shipped generator emits only the content
-    # scenario for the countdown support pair.
-    assert set(countdown_cases) == {"dual-support-content"}
+    # 通用倒计时无动作，搭档天气仍可消费一个显式事件。
+    assert set(countdown_cases) == {"dual-support-content", "dual-support-one-action"}
 
 
 @pytest.mark.parametrize(

@@ -462,6 +462,20 @@ def _assert_target_height_budget(compilation: HybridCompilation) -> None:
     assert compilation.stats.space_constrained is False
 
 
+def _content_layout(components_by_id: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    root = components_by_id.get("root")
+    foreground = components_by_id.get("template_root")
+    layout = components_by_id.get("__genui_render_component__root_1")
+    assert root is not None
+    assert foreground is not None
+    assert layout is not None
+    assert root.get("children") == ["template_root"]
+    assert root.get("styles", {}).get("padding") == 0
+    assert foreground.get("children") == ["__genui_render_component__root_1"]
+    assert foreground.get("styles", {}).get("padding") == 12
+    return layout
+
+
 def test_q068_routes_two_fulls_and_embeds_the_calendar_action() -> None:
     case = _calendar_countdown_case()
     routed = _route(case)
@@ -502,7 +516,7 @@ def test_q068_routes_two_fulls_and_embeds_the_calendar_action() -> None:
     _assert_target_height_budget(compilation)
 
     components_by_id = _components_by_id(compilation)
-    layout_root = components_by_id["template_root"]
+    layout_root = _content_layout(components_by_id)
     assert layout_root.get("itemMargin") == 8
     assert len(layout_root["children"]) == 2
     for panel_id in layout_root["children"]:
@@ -608,7 +622,7 @@ def test_weather_full_and_countdown_hero_keep_the_action_at_the_layout_root(
     _assert_target_height_budget(compilation)
 
     components_by_id = _components_by_id(compilation)
-    layout_root = components_by_id["template_root"]
+    layout_root = _content_layout(components_by_id)
     hero_action_column = components_by_id[layout_root["children"][0]]
     assert hero_action_column.get("itemMargin") == 8
     hero_slot = components_by_id[hero_action_column["children"][0]]
@@ -739,7 +753,7 @@ def test_q084_routes_health_full_countdown_compact_and_compact_action() -> None:
     _assert_target_height_budget(compilation)
 
     components_by_id = _components_by_id(compilation)
-    layout_root = components_by_id["template_root"]
+    layout_root = _content_layout(components_by_id)
     health_slot = components_by_id[layout_root["children"][0]]
     compact_column = components_by_id[layout_root["children"][1]]
     assert compact_column.get("itemMargin") == 12

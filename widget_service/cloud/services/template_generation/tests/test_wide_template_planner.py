@@ -170,6 +170,7 @@ def test_wide_first_layer_has_no_ui_decision():
         "requiredOutputFieldsByCapability",
         "primaryOutputFieldByCapability",
         "action",
+        "allowCalendarViewFallback",
     }
     assert "themes" not in json.loads(messages[1].get("content", "{}"))
     action = properties.get("action")

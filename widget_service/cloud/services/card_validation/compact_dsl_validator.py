@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import logging
 import re
 from dataclasses import dataclass
 from typing import Any
@@ -17,6 +18,10 @@ from services.compact_dsl_a2ui_converter import (
     validate_card_header_layout,
 )
 
+from .compact_dual_action_validator import collect_dual_action_errors
+from .context import ValidationContext
+
+_LOGGER = logging.getLogger(__name__)
 _EXPRESSION_PATTERN = re.compile(r"^\{\{\s*(?P<body>.*?)\s*\}\}$")
 _REFERENCE_PATTERN = re.compile(r"\$\{(?P<path>[^{}]*)\}")
 _NON_EMPTY_CONTAINER_TYPES = frozenset({"Row", "Column", "List", "Stack"})
@@ -25,6 +30,55 @@ _REFERENCE_CANVAS_HEIGHT = {
     "2x4": 150.0,
     "4x2": 150.0,
 }
+_NUMERIC_SCHEMA_TYPES = frozenset({"integer", "number"})
+_COMMON_DISPLAY_UNITS = frozenset(
+    {
+        "%",
+        "°C",
+        "℃",
+        "°F",
+        "天",
+        "小时",
+        "分钟",
+        "分",
+        "秒",
+        "毫秒",
+        "步",
+        "次",
+        "件",
+        "个",
+        "条",
+        "项",
+        "人",
+        "级",
+        "公里",
+        "千米",
+        "米",
+        "厘米",
+        "毫米",
+        "km",
+        "m",
+        "cm",
+        "mm",
+        "kg",
+        "g",
+        "mg",
+        "kcal",
+        "千卡",
+        "cal",
+        "mL",
+        "ml",
+        "L",
+        "A",
+        "mA",
+        "V",
+        "W",
+        "kW",
+        "kWh",
+        "bpm",
+        "次/分钟",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -56,17 +110,44 @@ def validate_compact_dsl(
         raise CompactDslValidationError([str(exc)]) from exc
 
     components = [row for row in rows if isinstance(row, ComponentRow)]
+    is_template = _has_template_root(components)
     data_rows = [row for row in rows if isinstance(row, DataRow)]
     binding_paths: list[str] = []
+    visible_binding_paths: list[str] = []
     errors: list[str] = []
     _collect_component_contract_errors(components, task_spec, errors)
+    if is_template:
+        _LOGGER.info(
+            "compact_validation_skipped reason=template_root rules=hero_value,layout_route"
+        )
+    else:
+        _collect_hero_value_errors(components, task_spec, errors)
     _collect_height_budget_errors(components, task_spec, card_spec, errors)
+    size = card_spec.get("suggestSize") or task_spec.get("size")
+    collect_dual_action_errors(components, size, errors)
     for component in components:
         location = f"component {component.component_id}.props"
         _collect_binding_context(
             component.props,
             location,
             binding_paths,
+            errors,
+        )
+        visible_props = {
+            key: value for key, value in component.props.items() if key != "onClick"
+        }
+        _collect_binding_context(
+            visible_props,
+            location,
+            visible_binding_paths,
+            [],
+        )
+
+    if not is_template:
+        _collect_layout_route_errors(
+            components,
+            task_spec,
+            visible_binding_paths,
             errors,
         )
 
@@ -83,6 +164,252 @@ def validate_compact_dsl(
 
     warnings = _unused_data_capability_warnings(binding_paths, card_spec)
     return CompactDslValidationResult(warnings=tuple(warnings))
+
+
+def _has_template_root(components: list[ComponentRow]) -> bool:
+    """将 Compact 的 ID/子节点投影到现有对比度豁免判定。"""
+    context = ValidationContext(root_id="root")
+    for component in components:
+        component_id = component.component_id
+        if component_id in context.components_by_id:
+            context.duplicate_component_ids.add(component_id)
+        context.components_by_id[component_id] = {
+            "id": component_id,
+            "children": list(component.children),
+        }
+    context.root_component = context.components_by_id.get("root")
+    return context.has_fusion_template_root()
+
+
+def _collect_hero_value_errors(
+    components: list[ComponentRow],
+    task_spec: dict[str, Any],
+    errors: list[str],
+) -> None:
+    components_by_id = {
+        component.component_id: component for component in components
+    }
+    data_model_schema = task_spec.get("dataModelSchema")
+    if not isinstance(data_model_schema, dict):
+        return
+
+    numeric_paths: dict[str, str | None] = {}
+    for component in components:
+        if component.component_type != "Text":
+            continue
+        font_size = _non_negative_number(component.props.get("fontSize"))
+        if font_size is None or font_size <= 18:
+            continue
+        path = _pure_numeric_binding_path(
+            component.props.get("content"),
+            data_model_schema,
+        )
+        numeric_paths[component.component_id] = path
+        if path is not None:
+            continue
+        if _is_readable_formatted_hero(component, components, task_spec, font_size):
+            numeric_paths.pop(component.component_id)
+            continue
+        errors.append(
+            f"component {component.component_id}: fontSize {_format_vp(font_size)} "
+            "is reserved for a pure number/integer value. Text, formatted values, "
+            "names, dates, times, and statuses must use at most 18fp on their own line; "
+            "a directly bound temperature, duration, or percentage may use 20/24fp "
+            "only in a single-business full-width column with a sufficient text budget."
+        )
+
+    for component in components:
+        if component.component_type != "Row":
+            continue
+        for index, child_id in enumerate(component.children[:-1]):
+            if child_id not in numeric_paths:
+                continue
+            numeric_path = numeric_paths[child_id]
+            suffix = components_by_id.get(component.children[index + 1])
+            if suffix is None or suffix.component_type != "Text":
+                continue
+            content = suffix.props.get("content")
+            if _is_allowed_display_unit(
+                content,
+                numeric_path or "",
+                data_model_schema,
+            ):
+                continue
+            value_source = numeric_path or "the preceding value"
+            errors.append(
+                f"component {component.component_id}: Text {suffix.component_id} "
+                f"after the large numeric value must contain only a real unit for "
+                f"{value_source}. Move labels or descriptions to a separate line."
+            )
+
+
+def _is_readable_formatted_hero(
+    component: ComponentRow,
+    components: list[ComponentRow],
+    task_spec: dict[str, Any],
+    font_size: float,
+) -> bool:
+    """仅放行全宽、单行且通过保守压力预算的格式化主读数。"""
+    if font_size not in (20.0, 24.0):
+        return False
+    schema = task_spec.get("dataModelSchema")
+    if not isinstance(schema, dict):
+        return False
+    data = schema.get("data")
+    if not isinstance(data, dict) or len(data) != 1:
+        return False
+    content = component.props.get("content")
+    if not isinstance(content, dict) or set(content) != {"path"}:
+        return False
+    path = content.get("path")
+    if not isinstance(path, str):
+        return False
+    node = _schema_node_at_path(schema, path)
+    if not isinstance(node, dict) or node.get("type") != "string":
+        return False
+    sample = node.get("sampleValue")
+    description = node.get("description")
+    if not isinstance(sample, str) or not isinstance(description, str):
+        return False
+    pressure = _formatted_hero_pressure(sample, description)
+    if pressure is None:
+        return False
+    if task_spec.get("size") not in ("2x2", "2x4"):
+        return False
+    expected_width = 136.0 if task_spec.get("size") == "2x2" else 276.0
+    props = component.props
+    if props.get("width") != expected_width or props.get("maxLines") != 1:
+        return False
+    height = _non_negative_number(props.get("height"))
+    if height is None or height < font_size * 1.4:
+        return False
+    if props.get("padding", 0) != 0 or props.get("margin", 0) != 0:
+        return False
+    parents = []
+    for parent in components:
+        if component.component_id in parent.children:
+            parents.append(parent)
+    if len(parents) != 1:
+        return False
+    parent = parents[0]
+    if parent.component_type != "Column" or parent.props.get("width") != expected_width:
+        return False
+    if parent.props.get("padding", 0) != 0:
+        return False
+    estimated = 0.0
+    for character in pressure:
+        estimated += font_size * (0.6 if character.isascii() else 1.0)
+    return estimated * 1.2 <= expected_width
+
+
+def _formatted_hero_pressure(sample: str, description: str) -> str | None:
+    """保留单位，不求值任意表达式，不把名称或日期误当作主读数。"""
+    temperature = "温度" in description
+    temperature = temperature and re.fullmatch(
+        r"[+-]?\d+(?:\.\d+)?\s*(?:°C|℃|°F)", sample
+    ) is not None
+    duration = any(word in description for word in ("时长", "持续时间"))
+    duration = duration and re.fullmatch(
+        r"\d+小时(?:\d+分)?|\d+(?:分钟|分|秒)", sample
+    ) is not None
+    percentage = any(word in description for word in ("百分比", "百分率"))
+    percentage = percentage and re.fullmatch(r"\d+(?:\.\d+)?%", sample) is not None
+    pressure: str | None = None
+    if temperature or duration or percentage:
+        pressure = re.sub(r"\d+", lambda match: "9" * max(2, len(match.group())), sample)
+        if temperature:
+            pressure = re.sub(
+                r"(?<![\d.])\d+", lambda match: "9" * max(2, len(match.group())), sample
+            )
+            pressure = "-" + pressure.lstrip("+-")
+        elif percentage:
+            pressure = "100%"
+            if "." in sample:
+                decimals = sample.split(".", 1)[1].removesuffix("%")
+                pressure = "100." + "9" * len(decimals) + "%"
+    return pressure
+
+
+def _pure_numeric_binding_path(
+    content: Any,
+    data_model_schema: dict[str, Any],
+) -> str | None:
+    path: str | None = None
+    if isinstance(content, dict) and set(content) == {"path"}:
+        candidate = content.get("path")
+        path = candidate if isinstance(candidate, str) else None
+    elif isinstance(content, str):
+        match = _EXPRESSION_PATTERN.fullmatch(content.strip())
+        if match is not None:
+            reference = _REFERENCE_PATTERN.fullmatch(match.group("body").strip())
+            if reference is not None:
+                path = reference.group("path").strip()
+        elif re.fullmatch(r"[+-]?\d+(?:\.\d+)?", content.strip()):
+            return ""
+    if path is None:
+        return None
+    schema_node = _schema_node_at_path(data_model_schema, path)
+    if _schema_type(schema_node) not in _NUMERIC_SCHEMA_TYPES:
+        return None
+    return path
+
+
+def _is_allowed_display_unit(
+    content: Any,
+    numeric_path: str,
+    data_model_schema: dict[str, Any],
+) -> bool:
+    if not isinstance(content, str):
+        return False
+    unit = content.strip()
+    if not unit:
+        return False
+    if unit in _COMMON_DISPLAY_UNITS:
+        return True
+    schema_node = _schema_node_at_path(data_model_schema, numeric_path)
+    if not isinstance(schema_node, dict):
+        return False
+    description = schema_node.get("description")
+    return isinstance(description, str) and unit in description
+
+
+def _collect_layout_route_errors(
+    components: list[ComponentRow],
+    task_spec: dict[str, Any],
+    visible_binding_paths: list[str],
+    errors: list[str],
+) -> None:
+    if task_spec.get("size") != "2x4":
+        return
+    data_roots = {
+        parts[1]
+        for path in visible_binding_paths
+        if len(parts := path.strip("/").split("/")) >= 2 and parts[0] == "data"
+    }
+    if len(data_roots) != 2:
+        return
+
+    components_by_id = {
+        component.component_id: component for component in components
+    }
+    root = components_by_id.get("root")
+    if root is not None and root.component_type == "Row" and len(root.children) == 2:
+        backboards = [components_by_id.get(child_id) for child_id in root.children]
+        if all(
+            backboard is not None
+            and backboard.component_type == "Column"
+            and backboard.props.get("width") == 134
+            and backboard.props.get("height") == 126
+            for backboard in backboards
+        ):
+            return
+
+    roots = ", ".join(sorted(data_roots))
+    errors.append(
+        f"2x4 card displays two data roots ({roots}) and must use W9: root must "
+        "be a Row with exactly two direct 134x126 Column backboards. Do not use "
+        "a shared title, a shared action area, or stacked full-width business rows."
+    )
 
 
 def _collect_component_contract_errors(

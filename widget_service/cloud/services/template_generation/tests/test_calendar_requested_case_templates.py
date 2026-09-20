@@ -343,7 +343,10 @@ def test_real_case_retrieves_and_projects_target_template(case: CalendarCase) ->
     complete_template_ids = set(candidate.available_template_ids)
     for group in selection.required_template_groups:
         complete_template_ids.intersection_update(group)
-    assert complete_template_ids == _EXPECTED_COMPLETE.get(case.case_id, {case.template_id})
+    expected_ids = set(_EXPECTED_COMPLETE.get(case.case_id, {case.template_id}))
+    if case.case_id == "Q024":
+        expected_ids.add("ScheduleOverviewReminderDetailsFull@1")
+    assert complete_template_ids == expected_ids
 
     capabilities = {_CAPABILITY_ID}
     selected = apply_content_selectors(task, capabilities)
@@ -430,8 +433,11 @@ def test_title_and_location_are_mutually_exclusive_for_new_hero_templates() -> N
         "/events/0/title /events/0/eventLocation /events/0/dtStart",
         "event.open.clock.alarm",
     )
-    with pytest.raises(TemplateRetrievalMiss):
-        _selection(case)
+    selection = _selection(case)
+    complete = set(selection.component_candidates[0].available_template_ids)
+    for group in selection.required_template_groups:
+        complete.intersection_update(group)
+    assert complete == {"ScheduleOverviewNextEventLocationFull@1"}
 
 
 def test_q006_keeps_two_event_indices_distinct_and_rejects_short_array() -> None:
@@ -447,7 +453,7 @@ def test_q006_keeps_two_event_indices_distinct_and_rejects_short_array() -> None
     assert len(root.children) == 2
     assert all(
         panel.component_type == "Stack"
-        and _options(panel).items() >= {"width": 136, "height": 64}.items()
+        and _options(panel).items() >= {"width": "matchParent", "layoutWeight": 1}.items()
         for panel in root.children
     )
 

@@ -264,7 +264,14 @@ Column({"width": "matchParent", "itemMargin": 4},
 - 两个可选数据字段必须同时存在时，可写 `#if data.first && data.second`。仅当两个字段都存在时展开
   存在分支；任一字段缺失时进入 `#else`。`&&` 只允许连接两个直接的 `data.xxx`，表示编译期存在性
   “与”，不表示运行时逻辑表达式。存在分支可以安全引用这两个字段，缺失分支不得引用它们。
-- `#elseif` 支持与 `#if` 相同的三种条件：`data.xxx`、`props.xxx`、`data.first && data.second`。
+- `#if data.first || data.second` 与对应 `#elseif` 保留横版模板的编译期存在性“或”：
+  允许两个及以上互不重复的直接 `data.xxx`，任一字段存在时命中，全部缺失时进入 `#else`。
+  命中分支不保证每个字段存在，引用具体可选字段仍需单独保护；不得混入 `props` 或其它表达式。
+- `#if` 和 `#elseif` 也支持 `!data.xxx`、`!props.xxx`，表示编译期不存在，而非运行时值为假；
+  `!` 后允许空格。否定分支不得直接引用缺失字段；对应 `#else` 可以引用该字段。
+  混合数据与参数的条件使用嵌套指令，例如 `#if !data.feelsLikeC` 内再写 `#if props.conditionIcon`；
+  不支持单个 `&`、混合命名空间的 `&&`、重复取反或任意逻辑表达式。
+- `#elseif` 支持与 `#if` 相同的上述条件。
   从上到下只展开首个命中分支；即使该分支为空，也不继续匹配。没有命中时使用 `#else`，未声明
   `#else` 时不生成内容。每个条件块最多一个 `#else`，其后不能再声明 `#elseif`；嵌套块独立匹配和闭合。
   所有分支仍需通过绑定、参数、动作等校验，后续分支不能借用先前分支的可选数据存在性保证。
@@ -396,8 +403,9 @@ Provider 模板作者侧声明，不进入最终 Tersel 语法。最终产物不
 `fusionBallStyle` 的 Theme 在首层 Prompt 构造前即从请求级 Registry 视图移除，检索、二层组合和编译也不能
 再查找或接受这些 Theme。
 
-模板 Search 当前整体不支持 `2x4`，此尺寸在任何首层 Prompt 或模型调用前直接判定模板不适用。Wide
-Provider 和 Layout 资源只作后续能力预留，当前不进入生产模板链。
+`2x4` 沿用 Search → Planner → FillData 的宽版规划链路，具体组合规则见
+[模板生成专项方案](template-generation-design.md#横版规划与字段填充)。内容根包装不改变布局准入规则，
+也不扩展融球背景的启用尺寸。
 
 融球背景由模板可信编译器展开为标准 Tersel 组件树，不属于业务 Provider，也不交给二层模型选择。每套融球 Theme
 在自身 `themes/<theme-id>/theme.json` 的 `fusionBallStyle` 中保存允许的 `businessIds` 以及大、中、小球真实
@@ -415,7 +423,7 @@ Action 和 Layout 模板不参与业务数量计算。主题适用能力还必�
 该业务及能力必须匹配主题；版本门禁开启时为整卡统一展开一次背景，标题与动作继承该主题。
 `WideHero`、`WideFull`、无业务和其它多业务组合均不应用融球包装。
 
-`2x2` 模板中间根节点使用 `Stack("card", ...)`，ID 为 `root`，两个直接子节点依次为标准融球背景树和内容
+融球 `2x2` 模板中间根节点使用 `Stack("card", ...)`，ID 为 `root`，两个直接子节点依次为标准融球背景树和内容
 前景 Stack `template_root`。`template_root` 使用 `padding: 12`，其唯一子节点是防溢出 Stack
 `__genui_render_component__template_root`；防溢出 Stack 的唯一子节点是原布局骨架 `root_1`，骨架自身不加
 防溢出前缀。模板编译器根据 Theme 中的三个 `#AARRGGBB` 颜色直接展开球体、定位容器和玻璃层。
@@ -429,18 +437,34 @@ PillAction 模板使用 `$theme('actionStyle.backgroundColor')` 和 `$theme('act
 
 融球树在模板 CardPlan/Tersel 阶段已经由标准组件组成：`Stack` 承载定位层，三球和玻璃层使用无 children
 约束的 `Divider` 视觉叶节点，并在进入 A2UI-Compact 前完成。玻璃层使用 5% 白色和
-`backdropBlur: {"radius": 120}`。模板路径在 `template_root` 与 `root_1` 之间注入 ID 为
+`backdropBlur: {"radius": 120}`。融球模板路径在 `template_root` 与 `root_1` 之间注入 ID 为
 `__genui_render_component__template_root` 的标准 Stack，以启用端侧内容层防溢出能力；`root_1` 保持普通布局
 骨架 ID。A2UI-Compact 不声明 `FusionBall` 组件能力，任何残留均按不支持组件拒绝。
 
-非融球模板和预览数据集同样保留 `root → template_root`，公共校验根始终为 `root`。
-`template_root` 是模板内容层的固定标识：公共调度器确认根同时直接引用该节点和实际存在的
-`fusionBallBackground` 且 ID 无重复时，
-跳过整卡 quality 阶段；hard、semantic 和转换前校验不变。取消对比度校验器的模板局部豁免，
-直接调用对比度校验器同样遵循公共双标记整卡豁免；未命中时模板节点及子树正常检查。
+非融球 `2x2`、`2x4` 固定布局模板使用
+`root → template_root → __genui_render_component__root_1`。防溢出标识直接放在原布局骨架
+（Column、Row 或 Stack）上，不额外插入防溢出 Stack，适用于单业务和多业务布局，不按主题筛选。
+根节点保留 Theme 原有背景，`padding` 调整为 `0`，原安全边距移动到 `template_root`，避免重复留白；
+骨架自身的布局属性、业务数据绑定及事件保持不变。融球结构不受此调整影响。
+自动生成的子节点 ID 使用去掉防溢出前缀后的骨架 ID 编号，显式子节点 ID 保持不变；防溢出标识不传播到
+文本、图标和业务容器。外层转换为 Stack 时移除 Column 专用的间距与对齐属性。
+`2x4` 保留 300×150vp 画布及 276×126vp 内容预算，不改变业务、动作的尺寸、次序或绑定。
+融球启用范围仍限于既有 `2x2` 场景；选中融球 Theme 的 `2x4` 使用该 Theme 原有纯色或渐变背景，
+内容层同样使用上述非融球结构。
+不含单一布局骨架的旧 CardPlan shell 和独立模板预览不应用此包装；预览数据集仍为
+`root → template_root`。公共校验根始终为 `root`。
+`template_root` 是模板内容层的固定标识：公共根 `root` 的 `children` 数组直接引用该真实节点，
+且组件 ID 无重复时，即跳过整卡 quality 阶段，不再要求存在 `fusionBallBackground`。
+非融球、融球和预览使用同一规则；hard、semantic 和转换前校验不变。
+直接调用对比度校验器同样遵循模板根整卡豁免；未命中时所有节点及子树正常检查。
 组件、表达式、数据、事件和素材校验不受影响。
 
 ## 首层 Search、确定性检索与第二层 LLM 规则
+
+模板编译产物转为 A2UI-Compact 后，使用模板引擎的 `validate_compact_dsl_context` 检查组件树、
+数据绑定、数据类型、动作及素材。公共 Compact 校验沿用对比度校验的有效 `template_root` 判定，
+仅跳过 W9 固定骨架、大字号及其相邻标签限制；展示单位校验复用同一判定并跳过。
+其它检查、现有高度检查及单位后处理保持不变；无有效标记时执行原规则。
 
 当前默认配置 `firstLayerComponentSelector: "search"`。第一层模型不直接选择业务组件或模板，只输出
 `TemplateSearchIntent`，顶层字段为 `requiredOutputFieldsByCapability`、
@@ -504,10 +528,10 @@ PillAction Props 包含 `actionId`、`label` 和可选 `icon`，IconAction Props
 
 ## 当前迁移范围
 
-天气、日历、手机电量、耳机、健康运动、应用使用时长、倒计时和系统内存当前共有
-115 个无 Variant 的业务 UI 模板，其中 19 个是 Support，另保留通用指标 Compact 模板。
-Layout Provider 提供 20 个支持 `...children` 的布局模板，Action Provider 提供 4 个动作模板，
-运行时 Registry 共 139 个模板。
+天气、日历、手机电量、耳机、健康运动、倒计时和系统内存当前共有
+149 个无 Variant 的业务 UI 模板，其中 22 个是 Support，另保留通用指标模板。
+Layout Provider 提供 24 个支持 `...children` 的布局模板，Action Provider 提供 5 个动作模板，
+运行时 Registry 共 178 个模板。应用使用时长能力已下线，对应模板不再进入运行目录。
 名称包含 `Wide` 的布局只用于 `2x4`，其余布局只用于 `2x2`，两类布局不得混用。
 新增或修改资源后执行：
 

@@ -14,7 +14,9 @@ node_modules/
 playwright-browsers/
 package-lock.json
 preview/
+resources/
 scripts/build-jsx-run-gallery.js
+scripts/layout-pattern-audit.js
 
 # Python/test caches
 __pycache__/
