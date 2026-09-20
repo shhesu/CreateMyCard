@@ -1,0 +1,53 @@
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_fb29ffe3561f53::t_fec9b56b9ded64 1591-1592
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_fb29ffe3561f53::t_ea66f7a0102734 229
+  s_fb29ffe3561f53::t_fec9b56b9ded64 78-79,143,224
+docs/云侧方案设计.md
+  s_fb29ffe3561f53::t_513e7c82e4b1fe 1355-1356
+  s_fb29ffe3561f53::t_ea66f7a0102734 1351,1353-1354
+  s_fb29ffe3561f53::t_b64a58d41a9ecb 1352
+widget_service/tests/test_design_compact_few_shots.py
+  s_fb29ffe3561f53::t_4e0c84738beae7 233,245-257
+  s_fb29ffe3561f53::t_f75e200a77db2b 258-259
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_fb29ffe3561f53::t_fec9b56b9ded64 1314,1411
+widget_service/tests/test_compact_hero_typography.py
+  s_fb29ffe3561f53::t_ea66f7a0102734 13,38,46,63,67
+  s_fb29ffe3561f53::t_c122294a1d8437 1-12,14-37,39-45,47-62,64-66,68-115
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_fb29ffe3561f53::t_d783e616d13a67 362-363
+  s_fb29ffe3561f53::t_fec9b56b9ded64 56,60,185,189,267,366,420,424
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_fb29ffe3561f53::t_fec9b56b9ded64 770,857,899,996,1144-1145,1160-1161,1226,1240,1330-1332,1486-1487,1585,1801,1904,2006-2007
+  s_fb29ffe3561f53::t_d783e616d13a67 1070,1223,1237
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_fb29ffe3561f53::t_fec9b56b9ded64 525,883
+  s_fb29ffe3561f53::t_ea66f7a0102734 537
+  s_fb29ffe3561f53::t_3b2c8108b01ebf 485
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_fb29ffe3561f53::t_fec9b56b9ded64 59
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_fb29ffe3561f53::t_513e7c82e4b1fe 236-237,253-255,269-271,273,281-339,350
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_fb29ffe3561f53::t_bdb255ebf8342f 421
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_fb29ffe3561f53::t_c23dbe5a31bd10 669,671,673-675,757,775,783
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "c5685431f3cf6f217d1313d9d1745821ffcc0cc5",
+  "prompts": {},
+  "sessions": {
+    "s_fb29ffe3561f53": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af8f-20fd-7cc0-9d28-d5a50c68d9c8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 191
+    }
+  }
+}
