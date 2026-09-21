@@ -1,0 +1,38 @@
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_c81febb8faad26::t_c6b5f4d747f16e 22-24,135-136,139-147,153
+docs/云侧方案设计.md
+  s_c81febb8faad26::t_c6b5f4d747f16e 1243-1253,1268,1390
+widget_service/tests/test_compact_hero_typography.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 3,120-123,131-132,135-142
+widget_service/cloud/services/card_validation/pipeline.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 76-78
+widget_service/tests/test_contrast_validator.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 367-369,371,375-377
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 7,24,122,129-131,218-226,235-236
+widget_service/cloud/services/card_validation/context.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 35
+widget_service/tests/test_display_units.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 282,293
+widget_service/tests/test_template_validation_skip.py
+  s_c81febb8faad26::t_c6b5f4d747f16e 1-178
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_c81febb8faad26::t_c6b5f4d747f16e 38,41-44,46-50,298
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "32694e2503aa9d01f8fe9b769e73209c2322d465",
+  "prompts": {},
+  "sessions": {
+    "s_c81febb8faad26": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c2d0-3d52-7591-bbe4-3dc1d5c444b5",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 52
+    }
+  }
+}
