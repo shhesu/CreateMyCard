@@ -1,0 +1,62 @@
+docs/云侧方案设计.md
+  s_963bc43714a3de::t_7b881b64173397 1038-1045
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_963bc43714a3de::t_f8eb2f61cc2eca 428-429,498-500,510-512
+widget_service/cloud/services/template_generation/docs/template-search-planner-contract.md
+  s_963bc43714a3de::t_b053df65077641 77-79,103-107,168-172,195
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_963bc43714a3de::t_b0f6ff7fa5272c 569-571
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_963bc43714a3de::t_4773132ad37a1d 96,1008-1009,1011,8685-8686,8696
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_963bc43714a3de::t_02c98dd36af33d 199-201
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_963bc43714a3de::t_c00a02fc6c1612 688-689
+widget_service/cloud/services/template_generation/engine/cardplan/template_plan_planner.py
+  s_963bc43714a3de::t_3145bccc7223d7 238,284,316,481,487-492,505
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_963bc43714a3de::t_9024e08aee7af9 31,94,470-475,1378-1403
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_963bc43714a3de::t_b3112a89d1daa4 30
+widget_service/cloud/services/template_generation/resources/source/providers/action/provider.json
+  s_963bc43714a3de::t_3ae43fe7439bd4 8
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_963bc43714a3de::t_f07ed7cd9e3ac4 1,5,10-12,14
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_963bc43714a3de::t_92c439083a31cd 84-85
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-detail-full.cardtpl
+  s_963bc43714a3de::t_5aadccbbd2309f 10-38,40-51,53-74,76-105,119-147,149-160,162-183,185-214
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_963bc43714a3de::t_5349e7eb92afaf 662,666,668,675,677,679-682,684,686,688-699,701-710,712-753,1759,1765,1770,1774,1776-1779,1783,1785-1795,1798-1820,1822-1844,1846-1857
+widget_service/cloud/services/template_generation/tests/test_calendar_field_paths.py
+  s_963bc43714a3de::t_f4fcbd01d15838 363,379-393
+widget_service/cloud/services/template_generation/tests/test_image_color_policy.py
+  s_963bc43714a3de::t_bf113cb78f40b1 116,130
+widget_service/cloud/services/template_generation/tests/test_pill_action_text_only.py
+  s_963bc43714a3de::t_7f473114ad1365 1-145
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_963bc43714a3de::t_543f2875bc0378 1291,1293,1299-1300,1303,1343-1345,1355-1362,3567,3647,3658,3683-3688,3773,3791,3834,5396-5399,5402-5408,5423,5485-5487
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_963bc43714a3de::t_40220918efc127 394-396,399,401-407
+widget_service/cloud/services/template_generation/tests/test_template_plan_data_usage.py
+  s_963bc43714a3de::t_ded0237223cb95 1-204
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_963bc43714a3de::t_1ba0e59aca2afa 1104-1106,1108-1109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "7d1304fd57c6978d9b702e1a2f7cfbfbb603fb48",
+  "prompts": {},
+  "sessions": {
+    "s_963bc43714a3de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c3e5-fd13-7be1-be85-b06ae0d22065",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
