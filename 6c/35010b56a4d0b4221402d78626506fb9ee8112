@@ -1,0 +1,27 @@
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-detail-full.cardtpl
+  h_0be6075e5d5e14 10-38,40-51,53-74,76-105,119-147,149-160,162-183,185-214
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  h_0be6075e5d5e14 662,666,668,675,677,679-682,684,686,688-699,701-710,712-753,1759,1765,1770,1774,1776-1779,1783,1785-1795,1798-1820,1822-1844,1846-1857
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "6c35010b56a4d0b4221402d78626506fb9ee8112",
+  "prompts": {},
+  "humans": {
+    "h_0be6075e5d5e14": {
+      "author": "yan_shuifeng <yanshuifeng@huawei.com>"
+    }
+  },
+  "sessions": {
+    "s_c81febb8faad26": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c2d0-3d52-7591-bbe4-3dc1d5c444b5",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 153
+    }
+  }
+}
