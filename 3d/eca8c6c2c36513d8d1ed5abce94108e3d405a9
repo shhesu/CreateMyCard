@@ -1,0 +1,84 @@
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_c81febb8faad26::t_78f6ee644251a0 133-147
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_c81febb8faad26::t_78f6ee644251a0 1,5,10-12,14
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_c81febb8faad26::t_78f6ee644251a0 569-571
+widget_service/tests/test_compact_hero_typography.py
+  s_c81febb8faad26::t_772b0817995539 15,53,89,114-119,125,127,132,134
+  s_c81febb8faad26::t_78f6ee644251a0 54-64
+  s_c81febb8faad26::t_a7d58df996ef3f 65-67
+widget_service/cloud/services/card_validation/display_unit_validator.py
+  s_c81febb8faad26::t_78f6ee644251a0 30-32,58,71,87
+widget_service/cloud/services/card_validation/context.py
+  s_c81febb8faad26::t_772b0817995539 44,47
+  s_c81febb8faad26::t_78f6ee644251a0 8-13,39,41-42,45-46,48-54
+widget_service/cloud/services/card_validation/pipeline.py
+  s_c81febb8faad26::t_78f6ee644251a0 76-77,84-89,92-93
+widget_service/cloud/services/template_generation/tests/test_calendar_field_paths.py
+  s_c81febb8faad26::t_78f6ee644251a0 363,379-393
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_c81febb8faad26::t_78f6ee644251a0 38-52
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_c81febb8faad26::t_78f6ee644251a0 428-429,498-500,510-512
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_c81febb8faad26::t_78f6ee644251a0 1104-1106,1108-1109
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_c81febb8faad26::t_78f6ee644251a0 31,94,470-475,1378-1401
+  s_c81febb8faad26::t_91ba67694f0264 1402-1403
+widget_service/cloud/services/template_generation/tests/test_pill_action_text_only.py
+  s_c81febb8faad26::t_78f6ee644251a0 1-145
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_c81febb8faad26::t_772b0817995539 22,138-151,153-154,173-179,182-189
+  s_c81febb8faad26::t_78f6ee644251a0 132-137
+widget_service/cloud/services/card_validation/validation_policy.py
+  s_c81febb8faad26::t_78f6ee644251a0 1-77
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_c81febb8faad26::t_78f6ee644251a0 394-396,399,401-407
+widget_service/tests/test_template_validation_policy.py
+  s_c81febb8faad26::t_78f6ee644251a0 1-151
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_c81febb8faad26::t_78f6ee644251a0 96,1008-1009,1011,8685-8686,8696
+widget_service/cloud/services/template_generation/docs/template-search-planner-contract.md
+  s_c81febb8faad26::t_78f6ee644251a0 77-79,103-107,168-172,195
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_c81febb8faad26::t_78f6ee644251a0 688-689
+widget_service/tests/test_contrast_validator.py
+  s_c81febb8faad26::t_772b0817995539 213
+  s_c81febb8faad26::t_78f6ee644251a0 189,199,201
+widget_service/cloud/services/template_generation/engine/cardplan/template_plan_planner.py
+  s_c81febb8faad26::t_78f6ee644251a0 238,284,316,481,487-492,505
+widget_service/cloud/services/template_generation/resources/source/providers/action/provider.json
+  s_c81febb8faad26::t_78f6ee644251a0 8
+widget_service/cloud/services/template_generation/tests/test_image_color_policy.py
+  s_c81febb8faad26::t_78f6ee644251a0 116,130
+widget_service/cloud/services/template_generation/tests/test_template_plan_data_usage.py
+  s_c81febb8faad26::t_78f6ee644251a0 1-204
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_c81febb8faad26::t_78f6ee644251a0 199-201
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_c81febb8faad26::t_78f6ee644251a0 30
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_c81febb8faad26::t_78f6ee644251a0 84-85
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_c81febb8faad26::t_78f6ee644251a0 1291,1293,1299-1300,1303,1343-1345,1355-1362,3567,3647,3658,3683-3688,3773,3791,3834,5396-5399,5402-5408,5423,5485-5487
+docs/云侧方案设计.md
+  s_c81febb8faad26::t_78f6ee644251a0 1037-1044,1243-1261
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "3deca8c6c2c36513d8d1ed5abce94108e3d405a9",
+  "prompts": {},
+  "sessions": {
+    "s_c81febb8faad26": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c2d0-3d52-7591-bbe4-3dc1d5c444b5",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 241
+    }
+  }
+}
