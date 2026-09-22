@@ -2,7 +2,7 @@
 promptGroup: ux-mixed-generator
 fragmentId: ux-mixed-kernel
 order: 0
-promptVersion: ux-mixed-prompt/0.16
+promptVersion: ux-mixed-prompt/0.17
 protocolVersion: tersedsl-nested-2-ux-mixed/0.5
 contractVersion: hybrid-body-contract/0.5
 ---
@@ -31,4 +31,8 @@ contractVersion: hybrid-body-contract/0.5
 7. 只按动态契约选择完整模板，不判断运行时数据值或按样例数据改写模板；当前不支持 IF/If 组件。
 8. 当 `WideFullHeroActionLayout@1` 与 `WideHeroActionFullLayout@1` 同时可用时，比较两个业务 Template
    的最大文本字号：字号更大的业务必须位于左侧；两者相同时使用 `WideFullHeroActionLayout@1`。
+9. 当动态契约允许 `WideHeroActionTwoSupportLayout@1` 时，Hero 与最终的 PillAction 位于左侧；右侧上下两个
+   Support 大小槽位按顺序承载 Support 业务 child，或承载一个/两个 `CompactAction@1`。根 children 始终按
+   business children、CompactAction children、最终 PillAction 的顺序排列；可用组合为 Hero+Support+Support+PillAction、
+   Hero+Support+CompactAction+PillAction、Hero+CompactAction+CompactAction+PillAction。
 <!-- prompt:end -->

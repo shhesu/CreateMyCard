@@ -57,12 +57,14 @@ _MODULE = "[WS Router]"
 INTERFACE_TYPE = {
     "getWidgetCapabilityOverview": "getWidgetCapabilityOverviewInterfaceTime",
     "getDataCapabilitySchemas": "getDataCapabilitySchemasInterfaceTime",
-    "generateWidgetCardCompactDsl": "generateWidgetCardCompactDslInterfaceTime"
+    "generateWidgetCardCompactDsl": "generateWidgetCardCompactDslInterfaceTime",
+    "generateWidgetCardTerseDslNested2": "generateWidgetCardTerseDslNested2InterfaceTime",
 }
 
 INTERFACE_PARAMETER_ERROR_TYPE = {
     "getDataCapabilitySchemas": "getDataCapabilitySchemasInterfaceParamError",
-    "generateWidgetCardCompactDsl": "generateWidgetCardCompactDslInterfaceParamError"
+    "generateWidgetCardCompactDsl": "generateWidgetCardCompactDslInterfaceParamError",
+    "generateWidgetCardTerseDslNested2": "generateWidgetCardTerseDslNested2InterfaceParamError",
 }
 
 router = APIRouter(prefix="/api/v1")

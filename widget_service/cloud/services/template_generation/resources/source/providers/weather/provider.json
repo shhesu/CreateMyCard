@@ -597,17 +597,15 @@
       }
     },
     {
-      "templateId": "WeatherOverviewFeelsLikeAlertFull@1",
+      "templateId": "WeatherOverviewFeelsLikeAlertHero@1",
       "businessId": "WeatherOverview",
       "capabilityId": "ViewWeather",
-      "description": "体感温度天气 Full，沿用完整温度天气摘要布局，倒数第二行展示体感温度，最后一行展示预警信息；没有预警时显示无预警信息。",
+      "description": "体感温度天气 Hero，展示体感温度和天气预警；没有预警时显示无预警信息。",
       "entry": "templates/weather-overview.cardtpl",
       "primaryData": [
-        "/current/temperatureText"
-      ],
-      "secondaryData": [
         "/current/feelsLikeC"
       ],
+      "secondaryData": [],
       "optionalData": [
         "/location/prefectureName",
         "/location/districtName",
@@ -646,24 +644,20 @@
       "templateId": "WeatherOverviewUvColdFull@1",
       "businessId": "WeatherOverview",
       "capabilityId": "ViewWeather",
-      "description": "紫外线天气 Full，沿用完整温度天气摘要布局，倒数第二行展示紫外线强度，并保留感冒风险行。",
+      "description": "天气风险与健康指标 Full，展示当前天气预警，以及次日空气质量、紫外线强度和感冒指数；适用于同时请求预警与次日健康指标的天气卡片。",
       "entry": "templates/weather-overview.cardtpl",
       "primaryData": [
-        "/current/temperatureText"
+        "/current/alertLevel"
       ],
       "secondaryData": [
-        "/current/uvIndex"
+        "/daily/0/airQuality",
+        "/daily/0/uvIndex",
+        "/daily/0/coldLevel"
       ],
       "optionalData": [
         "/location/prefectureName",
-        "/location/districtName",
-        "/current/coldLevel"
-      ],
-      "assetParameterSemanticTags": {
-        "conditionIcon": [
-          "weather-condition"
-        ]
-      }
+        "/location/districtName"
+      ]
     },
     {
       "templateId": "WeatherOverviewFeelsLikeWindSupport@1",

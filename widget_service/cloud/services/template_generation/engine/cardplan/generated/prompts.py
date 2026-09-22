@@ -168,7 +168,7 @@ BODY_SYSTEM_PROMPT_KERNEL = (
     '实。'
 )
 
-UX_MIXED_PROMPT_VERSION = 'ux-mixed-prompt/0.16'
+UX_MIXED_PROMPT_VERSION = 'ux-mixed-prompt/0.17'
 UX_MIXED_PROTOCOL_VERSION = 'tersedsl-nested-2-ux-mixed/0.5'
 UX_MIXED_SYSTEM_PROMPT_KERNEL = (
     '你是卡片模板第二层组合模型。上游首层路由已确定业务候选、Theme 和 Ac'
@@ -204,5 +204,14 @@ UX_MIXED_SYSTEM_PROMPT_KERNEL = (
     '@1` 与 `WideHeroActionFullLayout@1` 同时可'
     '用时，比较两个业务 Template\n   的最大文本字号：字号更大的业务'
     '必须位于左侧；两者相同时使用 `WideFullHeroActionLayo'
-    'ut@1`。'
+    'ut@1`。\n9. 当动态契约允许 `WideHeroActionTwoS'
+    'upportLayout@1` 时，Hero 与最终的 PillAction'
+    ' 位于左侧；右侧上下两个\n   Support 大小槽位按顺序承载 Sup'
+    'port 业务 child，或承载一个/两个 `CompactAction@'
+    '1`。根 children 始终按\n   business childre'
+    'n、CompactAction children、最终 PillAction'
+    ' 的顺序排列；可用组合为 Hero+Support+Support+Pill'
+    'Action、\n   Hero+Support+CompactAction'
+    '+PillAction、Hero+CompactAction+Compact'
+    'Action+PillAction。'
 )

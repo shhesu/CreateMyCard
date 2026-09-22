@@ -1366,8 +1366,10 @@ def _layout_rank(layout_id: str, count: int, action_count: int) -> tuple[int, st
             "WideTwoHeroActionLayout",
             "WideHalfCompactTwoLargeActionLayout",
             "WideTwoFocusTwoActionLayout",
+            "WideHeroActionTwoSupportLayout",
         ),
-        (4, 0): ("WideFourCompactLayout",),
+        (3, 1): ("WideFourSupportLayout", "WideHeroActionTwoSupportLayout"),
+        (4, 0): ("WideFourSupportLayout", "WideFourCompactLayout"),
     }
     order = preferred.get((count, action_count), ())
     return (order.index(layout_id) if layout_id in order else len(order), layout_id)

@@ -924,6 +924,10 @@ def _expand_call(
     params = _normalize_charging_settings_button(
         wire_id, params, provider_binding_roots, task_spec.size
     )
+    if wire_id == "CompactAction@1" and ux_layout_id == "WideFourSupportLayout":
+        # The Support-sized action is inset by the layout surface.  Do not
+        # add CompactAction's own horizontal inset on top of that surface.
+        params["noInnerPadding"] = True
     _validate_business_template_action(definition, params, contract, task_spec.size)
     _validate_template_parameter_relations(params, variant.parameter_relations)
     standard_template_in_wide_composition = (
@@ -933,8 +937,10 @@ def _expand_call(
             "WideHeroCompactLayout",
             "WideFullHeroActionLayout",
             "WideHeroActionFullLayout",
+            "WideHeroActionTwoSupportLayout",
             "WideFullTwoCompactLayout",
             "WideFourCompactLayout",
+            "WideFourSupportLayout",
             "WideFullHeroTwoActionLayout",
             "WideTwoHeroActionLayout",
             "WideFullFourActionLayout",
@@ -6538,8 +6544,13 @@ def _validate_provider_template_layout_action_requirements(
         "WideHeroCompactLayout": (("Hero", "Support"), ()),
         "WideFullHeroActionLayout": (("Full", "Hero"), ("PillAction",)),
         "WideHeroActionFullLayout": (("Full", "Hero"), ("PillAction",)),
+        "WideHeroActionTwoSupportLayout": (
+            ("Hero", "Support", "Support"),
+            ("PillAction",),
+        ),
         "WideFullTwoCompactLayout": (("Full", "Support", "Support"), ()),
         "WideFourCompactLayout": (("Support",) * 4, ()),
+        "WideFourSupportLayout": (("Support",) * 4, ()),
         "WideFullHeroTwoActionLayout": (
             ("Full", "Hero"),
             ("PillAction", "PillAction"),
@@ -6567,6 +6578,32 @@ def _validate_provider_template_layout_action_requirements(
         ),
     }
     wide_composition = wide_composition_contracts.get(layout_id)
+    if layout_id == "WideHeroActionTwoSupportLayout":
+        # The right-hand Support-sized slots can be business Support children
+        # or root CompactAction children.  The blueprint expects any
+        # CompactAction children before the final left-side PillAction.
+        expected_by_actions = {
+            ("PillAction",): ("Hero", "Support", "Support"),
+            ("CompactAction", "PillAction"): ("Hero", "Support"),
+            ("CompactAction", "CompactAction", "PillAction"): ("Hero",),
+        }
+        expected_kinds = expected_by_actions.get(action_names)
+        if expected_kinds is None or not _wide_slot_kinds_match(layout_kinds, expected_kinds):
+            raise TerselConversionError(
+                f"{layout_id} Provider Template slot combination is invalid."
+            )
+        return
+    if layout_id == "WideFourSupportLayout":
+        expected_by_actions = {
+            (): ("Support",) * 4,
+            ("CompactAction",): ("Support",) * 3,
+        }
+        expected_kinds = expected_by_actions.get(action_names)
+        if expected_kinds is None or not _wide_slot_kinds_match(layout_kinds, expected_kinds):
+            raise TerselConversionError(
+                f"{layout_id} Provider Template slot combination is invalid."
+            )
+        return
     if layout_id == "WideFullTwoCompactLayout" and action_names == ("CompactAction",) * 2:
         if layout_kinds != ("Full",):
             raise TerselConversionError(
@@ -9088,6 +9125,16 @@ def _lower_ux_action(
         foreground=foreground,
         default=background,
     )
+    # CompactAction occupies the same narrow Support slot as a business
+    # Support template.  Keep its surface treatment identical to that slot
+    # instead of applying the primary PillAction background (which is often a
+    # different alpha/color in the selected theme).  The trusted
+    # CompactAction blueprint already uses supportContentStyle for its radius;
+    # this override keeps the lowered A2UI background in sync as well.
+    if node.component_type == "CompactAction" and params.get("noInnerPadding") is True:
+        # WideFourSupportLayout supplies the visible plate.  The action must
+        # remain transparent so it does not paint a second nested rectangle.
+        background = "#00000000"
     icon = params.get("icon")
     if node.component_type in {"IconAction", "LargeIconAction"}:
         if not isinstance(icon, str):

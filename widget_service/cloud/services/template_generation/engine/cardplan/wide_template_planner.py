@@ -47,11 +47,40 @@ _WIDE_LAYOUTS = (
     WideLayoutOption("WideHeroCompactLayout", ("Hero", "Support")),
     WideLayoutOption("WideFullTwoCompactLayout", ("Full", "Support", "Support")),
     WideLayoutOption("WideHalfTwoCompactLayout", ("WideHalf", "Support", "Support")),
+    # Canonical four-support layout. Keep the legacy Compact-named option
+    # immediately after it so old persisted plans remain renderable while new
+    # plans use the unambiguous Support terminology.
+    WideLayoutOption("WideFourSupportLayout", ("Support",) * 4),
+    # A Support-sized root action occupies the fourth slot (bottom-right).
+    # The same card template also handles the four-business-Support variant.
+    WideLayoutOption("WideFourSupportLayout", ("Support",) * 3, ("CompactAction",), (None,)),
     WideLayoutOption("WideFourCompactLayout", ("Support",) * 4),
     WideLayoutOption("WideSingleFocusLayout", ("WideHero",), ("PillAction",), (None,)),
     WideLayoutOption("WideTwoFocusActionLayout", ("Hero", "Hero"), ("PillAction",), (0,)),
     WideLayoutOption("WideFullHeroActionLayout", ("Full", "Hero"), ("PillAction",), (1,)),
     WideLayoutOption("WideHeroActionFullLayout", ("Full", "Hero"), ("PillAction",), (1,)),
+    WideLayoutOption(
+        "WideHeroActionTwoSupportLayout",
+        ("Hero", "Support", "Support"),
+        ("PillAction",),
+        (0,),
+    ),
+    # The two right-hand Support-sized slots may be occupied by a business
+    # Support, a CompactAction, or both.  Keep PillAction last so the layout
+    # blueprint can place it in the left action slot while the preceding
+    # CompactAction children fill the right-hand slots.
+    WideLayoutOption(
+        "WideHeroActionTwoSupportLayout",
+        ("Hero", "Support"),
+        ("CompactAction", "PillAction"),
+        (None, 0),
+    ),
+    WideLayoutOption(
+        "WideHeroActionTwoSupportLayout",
+        ("Hero",),
+        ("CompactAction", "CompactAction", "PillAction"),
+        (None, None, 0),
+    ),
     WideLayoutOption(
         "WideHalfTwoCompactLayout", ("WideHalf", "Support"), ("CompactAction",), (None,)
     ),

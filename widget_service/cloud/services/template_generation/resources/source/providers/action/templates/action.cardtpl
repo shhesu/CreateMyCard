@@ -33,7 +33,7 @@ Stack({
 )
 #End
 
-#Template CompactAction@1(props: { actionId: string, label: string, icon: asset, subtitle?: string, prominent?: boolean })
+#Template CompactAction@1(props: { actionId: string, label: string, icon: asset, subtitle?: string, prominent?: boolean, noInnerPadding?: boolean })
 data = {
 }
 
@@ -91,11 +91,16 @@ Stack({
       "fillColor": $theme("supportContentColor")
     })
   )
-#else
+  #else
   Row({
     "width": "matchParent",
     "height": "matchParent",
-    "padding": {"left": 12, "top": 0, "right": 16, "bottom": 0},
+    "padding": {
+      "left": #Expr(props.noInnerPadding ? 0 : 12),
+      "top": 0,
+      "right": #Expr(props.noInnerPadding ? 0 : 16),
+      "bottom": 0
+    },
     "justifyContent": "spaceBetween",
     "alignItems": "center"
   },

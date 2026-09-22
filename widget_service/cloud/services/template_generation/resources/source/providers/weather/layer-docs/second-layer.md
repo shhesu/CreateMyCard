@@ -45,9 +45,9 @@
   - `WeatherOverviewDailyCompareFull@1`：双日天气对比 Full，并列展示 `daily[0]`、`daily[1]` 的天气现象和空气质量。
   - `WeatherOverviewDailyHealthFull@1`：明日健康指数 Full，突出紫外线等级，并展示空气质量和感冒指数。
   - `WeatherOverviewAlertInfoFull@1`：完整温度天气摘要，空气质量行下追加预警信息行；无预警时显示“无预警信息”。可选 `conditionIcon`。
-  - `WeatherOverviewFeelsLikeAlertFull@1`：完整温度天气摘要，倒数第二行展示体感温度，最后一行展示预警信息；无预警时显示“无预警信息”。可选 `conditionIcon`。
+  - `WeatherOverviewFeelsLikeAlertHero@1`：Hero 展示体感温度和天气预警；无预警时显示“无预警信息”。可选 `conditionIcon`。
   - `WeatherOverviewHumidityWindFull@1`：完整温度天气摘要，倒数第二行展示湿度，最后一行展示风向。可选 `conditionIcon`。
-  - `WeatherOverviewUvColdFull@1`：完整温度天气摘要，展示紫外线强度行，并保留感冒风险行。可选 `conditionIcon`。
+  - `WeatherOverviewUvColdFull@1`：天气风险与健康指标 Full，展示当前天气预警，以及次日空气质量、紫外线强度和感冒指数。可选地点文本和 `uvIcon`。
   - `WeatherOverviewFeelsLikeWindSupport@1`：左侧两行展示体感温度和风力等级，右侧固定 24vp 温度计图标（`temperatureIcon`）。
   - `WeatherOverviewDailySummaryFull@1`：日期天气摘要 Full，展示城市、日期、星期、温度范围、降雨概率和空气质量。
   - `WeatherOverviewThreeDayForecastFull@1`：三日天气 Full，按顺序完整展示 `daily[0..2]` 每天的

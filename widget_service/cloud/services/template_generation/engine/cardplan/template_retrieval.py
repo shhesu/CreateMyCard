@@ -1662,16 +1662,17 @@ def _log_action_param_fields_dropped(
     data_root: str,
     dropped_paths: set[str],
 ) -> None:
+    diagnostics = json_for_log(
+        {
+            "capabilityId": capability_id,
+            "dataRoot": data_root,
+            "droppedFields": sorted(dropped_paths),
+            "reason": "event args bind these fields; templates never render them",
+        }
+    )
     logger.info(
         "[Template Retrieval] action_param_fields_dropped "
-        f"diagnostics={json_for_log(
-            {
-                'capabilityId': capability_id,
-                'dataRoot': data_root,
-                'droppedFields': sorted(dropped_paths),
-                'reason': 'event args bind these fields; templates never render them',
-            }
-        )}"
+        f"diagnostics={diagnostics}"
     )
 
 

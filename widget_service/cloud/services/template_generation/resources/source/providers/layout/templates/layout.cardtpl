@@ -274,6 +274,26 @@ Row({
 )
 #End
 
+#Template WideHeroActionTwoSupportLayout@1(props: {}, ...children)
+data = {
+}
+
+Row({
+  "width": "matchParent",
+  "height": "matchParent",
+  "itemMargin": 8
+},
+  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
+    Column({"width": "matchParent", "height": 82}, children[0]),
+    Column({"width": "matchParent", "height": 36}, children[3])
+  ),
+  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 12},
+    Column({"width": "matchParent", "height": 57}, children[1]),
+    Column({"width": "matchParent", "height": 57}, children[2])
+  )
+)
+#End
+
 #Template WideFullTwoCompactLayout@1(props: { compactRows?: boolean }, ...children)
 data = {
 }
@@ -308,6 +328,58 @@ Row({
   Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
     Column({"width": "matchParent", "height": 59}, children[2]),
     Column({"width": "matchParent", "height": 59}, children[3])
+  )
+)
+#End
+
+#Template WideFourSupportLayout@1(props: {}, ...children)
+data = {
+}
+
+Row({
+  "width": "matchParent",
+  "height": "matchParent",
+  "itemMargin": 8
+},
+  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
+    Column({"width": "matchParent", "height": "matchParent", "layoutWeight": 1},
+      Stack({
+        "width": "matchParent",
+        "height": "matchParent",
+        "padding": 12,
+        "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+        "borderRadius": $theme("supportContentStyle.borderRadius")
+      }, children[0])
+    ),
+    Column({"width": "matchParent", "height": "matchParent", "layoutWeight": 1},
+      Stack({
+        "width": "matchParent",
+        "height": "matchParent",
+        "padding": 12,
+        "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+        "borderRadius": $theme("supportContentStyle.borderRadius")
+      }, children[1])
+    )
+  ),
+  Column({"layoutWeight": 1, "height": "matchParent", "itemMargin": 8},
+    Column({"width": "matchParent", "height": "matchParent", "layoutWeight": 1},
+      Stack({
+        "width": "matchParent",
+        "height": "matchParent",
+        "padding": 12,
+        "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+        "borderRadius": $theme("supportContentStyle.borderRadius")
+      }, children[2])
+    ),
+    Column({"width": "matchParent", "height": "matchParent", "layoutWeight": 1},
+      Stack({
+        "width": "matchParent",
+        "height": "matchParent",
+        "padding": 12,
+        "backgroundColor": $theme("supportContentStyle.backgroundColor"),
+        "borderRadius": $theme("supportContentStyle.borderRadius")
+      }, children[3])
+    )
   )
 )
 #End
