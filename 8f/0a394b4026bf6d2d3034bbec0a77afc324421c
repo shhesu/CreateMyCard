@@ -1,0 +1,71 @@
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_6d88f0f5e0b783::t_d4ed911cf8c407 349-350
+  s_6d88f0f5e0b783::t_2bc4c9c094d72c 346-348
+  s_6d88f0f5e0b783::t_3c720839293f71 133
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_6d88f0f5e0b783::t_487247c628c21e 22-24,142-144,147-150
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_6d88f0f5e0b783::t_3c720839293f71 2966-2974,2977,2991-2998,3031,6868
+widget_service/cloud/services/template_generation/docs/tersel-data-flow.md
+  s_6d88f0f5e0b783::t_2bc4c9c094d72c 61-62
+  s_6d88f0f5e0b783::t_487247c628c21e 129-131
+widget_service/cloud/services/template_generation/tests/test_runtime_if_deferred.py
+  s_6d88f0f5e0b783::t_3c720839293f71 10-14,155-157,159-162,202
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_6d88f0f5e0b783::t_487247c628c21e 33,44-49
+  s_6d88f0f5e0b783::t_2bc4c9c094d72c 278-279,307-310
+  s_6d88f0f5e0b783::t_4666a13519c870 164-165,168-169
+  s_6d88f0f5e0b783::t_2980718d7c002d 311
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_6d88f0f5e0b783::t_cbee529622d918 544
+  s_6d88f0f5e0b783::t_3c720839293f71 540-543,545-555,580,702-706
+docs/云侧方案设计.md
+  s_6d88f0f5e0b783::t_4e6d1fd0a4547c 1245,1247
+  s_6d88f0f5e0b783::t_b2a50959012a6e 1238-1243,1255-1263,1266,1402-1403
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_6d88f0f5e0b783::t_2bc4c9c094d72c 19-22,51,240-241
+  s_6d88f0f5e0b783::t_487247c628c21e 195-197,200-201
+widget_service/cloud/services/template_generation/docs/compact-dsl-data-flow.md
+  s_6d88f0f5e0b783::t_487247c628c21e 139,142,152-156
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_6d88f0f5e0b783::t_2bc4c9c094d72c 393-394
+  s_6d88f0f5e0b783::t_2cd8ec7a84d0e8 6,17-19,21,387-392,395-444
+  s_2979ec1ea42d44::t_8447066d166254 445-446
+widget_service/cloud/services/template_generation/docs/post-processing-validation.md
+  s_6d88f0f5e0b783::t_607c7e557a05c4 94-103
+  s_6d88f0f5e0b783::t_487247c628c21e 1-38,41-93,104-115
+  s_6d88f0f5e0b783::t_4666a13519c870 39-40
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_6d88f0f5e0b783::t_3c720839293f71 1402,1462,1883
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_6d88f0f5e0b783::t_4666a13519c870 305-307
+  s_6d88f0f5e0b783::t_d4ed911cf8c407 71-78,206-208,236
+widget_service/cloud/services/template_generation/docs/README.md
+  s_6d88f0f5e0b783::t_487247c628c21e 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "8f0a394b4026bf6d2d3034bbec0a77afc324421c",
+  "prompts": {},
+  "sessions": {
+    "s_2979ec1ea42d44": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cebb-d8c3-7f02-8b03-07e491a1cf7b",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    },
+    "s_6d88f0f5e0b783": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cea2-a34d-7742-a454-9c5aa334d7d4",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 86
+    }
+  }
+}
