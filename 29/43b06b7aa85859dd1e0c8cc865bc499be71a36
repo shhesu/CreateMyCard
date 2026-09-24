@@ -1,0 +1,30 @@
+widget_service/cloud/services/template_generation/engine/cardplan/template_plan_planner.py
+  s_c2233810d21f9f::t_1f9653163eef15 111,354,400,432,595,601-606,619,680,682
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_c2233810d21f9f::t_bf8f19165fc17e 20,23,30-33,36,40-57,105-117,121-167,176-184,212-213,215-220,242-246,284-358,367-371,376-389,391,406-409,414-417,424-432,453-3817,3819-3820,3822-3823,3825,3827,3829-3883,3885-3939,3941-3947,3949-3951,3954-3962,3965-3982,3985,3988-3992,3994-3997,4000,4005-4009,4011-4051,4053-4057,4059-4089,4091-4190,4198,4203-4206,4215-4242,4590-4597,4600-4604,4619-4627,4629-4644,4646-4652
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_c2233810d21f9f::t_fb35715d913587 229-232,274,958,1055,1060-1061,1185-1278,1622,1655,1660
+widget_service/tests/test_compact_dsl_validator.py
+  s_c2233810d21f9f::t_e068af1ab640ef 37-159,219-495,511-512,517,522,525-531,547,550,593-599,629,642-878
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_c2233810d21f9f::t_f9a5af3d58fb0a 104-109,1099-1100,1102,1173,1299-1300,1305-1307,4682-4687,4689-4699,9122-9124,9154-9155,9165
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_c2233810d21f9f::t_ccd131fe349ba6 749-751,1119
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "2943b06b7aa85859dd1e0c8cc865bc499be71a36",
+  "prompts": {},
+  "sessions": {
+    "s_c2233810d21f9f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0d132-f0e9-7da2-872d-d559b8166ad6",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 244
+    }
+  }
+}
