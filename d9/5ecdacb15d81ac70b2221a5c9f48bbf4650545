@@ -1,0 +1,61 @@
+widget_service/cloud/services/template_generation/test_support/gallery_model_runtime.py
+  s_f3e9e255ad7171::t_6980d514ed14a1 1-4,6-33,39-64,66,69-93
+  s_f3e9e255ad7171::t_8a0bf947df84a7 35-38
+  s_f3e9e255ad7171::t_b0b9c1db22a913 5,34,65,67-68
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_wide.py
+  s_f3e9e255ad7171::t_8a0bf947df84a7 94-96
+  s_f3e9e255ad7171::t_f139ce6d1a66ed 1-93,97-107
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_f3e9e255ad7171::t_99d6452ac9b126 1511-1515
+  s_f3e9e255ad7171::t_daebba41c7ea2e 14,219,407,901-902,904-908,1049-1057,1505-1507,1611-1612,1655-1659,1727,1777
+  s_f3e9e255ad7171::t_dfa1a13df33ee1 166-173,574-575,703-704
+  s_f3e9e255ad7171::t_61ac47b7ed06ac 699-702
+  s_f3e9e255ad7171::t_6980d514ed14a1 1799,1802
+  s_f3e9e255ad7171::t_2f7c39ab23629b 187
+docs/云侧方案设计.md
+  s_f3e9e255ad7171::t_f02f343e27b4cb 1203-1215
+  s_f3e9e255ad7171::t_cbb35e8d596e7c 1202,1216
+  s_f3e9e255ad7171::t_dfa1a13df33ee1 1217-1221
+widget_service/cloud/services/template_generation/tests/test_gallery_model_runtime.py
+  s_f3e9e255ad7171::t_563b8cba61342c 1-77
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_f3e9e255ad7171::t_2e2a3970640b0c 77-82
+  s_f3e9e255ad7171::t_450502d8112e72 117,120,138,212,649,652
+  s_f3e9e255ad7171::t_c33f97d6eb9c1d 301
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_context.py
+  s_f3e9e255ad7171::t_61ac47b7ed06ac 164-173
+  s_f3e9e255ad7171::t_e67a80f6282e90 141-143
+  s_f3e9e255ad7171::t_2f7c39ab23629b 107
+  s_f3e9e255ad7171::t_a4aabc419aac24 1-106,108-140,144-163
+widget_service/cloud/services/template_generation/tools/generate_provider_template_gallery.py
+  s_f3e9e255ad7171::t_6980d514ed14a1 27-29,76,80-85,109-113,121
+  s_f3e9e255ad7171::t_c33f97d6eb9c1d 91-92
+  s_f3e9e255ad7171::t_99d6452ac9b126 26,37-44,93-96
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_f3e9e255ad7171::t_dfa1a13df33ee1 88-92
+  s_f3e9e255ad7171::t_2f7c39ab23629b 93
+  s_f3e9e255ad7171::t_f02f343e27b4cb 5,7,10-30
+  s_f3e9e255ad7171::t_9c96ae75c6e92b 66,70-71,75-78,94-98
+  s_f3e9e255ad7171::t_5d0bb1f6a150dc 31
+  s_f3e9e255ad7171::t_27802118807209 87
+widget_service/cloud/services/template_generation/test_support/provider_gallery_wide.py
+  s_f3e9e255ad7171::t_8a0bf947df84a7 72-74
+  s_f3e9e255ad7171::t_4bfdbb55460e59 1-71,75-180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "d95ecdacb15d81ac70b2221a5c9f48bbf4650545",
+  "prompts": {},
+  "sessions": {
+    "s_f3e9e255ad7171": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e71a-2b33-7742-bf00-7f2c1c119d30",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 6
+    }
+  }
+}
