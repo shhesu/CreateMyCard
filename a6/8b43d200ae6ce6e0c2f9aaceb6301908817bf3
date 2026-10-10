@@ -1,0 +1,113 @@
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_0be4a9e45017f0::t_9c314b3a500715 7,26-30,33,39,339,341
+  s_0be4a9e45017f0::t_fd2592bc36225a 11,375-378,384-393,395
+  s_0be4a9e45017f0::t_606867b71369ff 355-365,369-374
+  s_0be4a9e45017f0::t_1de2510b620844 379-383,394,396-403
+  s_0be4a9e45017f0::t_0e8e9ec6391ac3 25,31-32,37-38,40,45-46,55,366-368
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_0be4a9e45017f0::t_f42194bf38518c 691
+  s_0be4a9e45017f0::t_9c2d2524bb0006 690
+widget_service/cloud/services/template_generation/tests/test_runtime_if_deferred.py
+  s_0be4a9e45017f0::t_8deb96678dbe1d 205-206
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_0be4a9e45017f0::t_1de2510b620844 133-134
+  s_0be4a9e45017f0::t_9c314b3a500715 152,160-163,346-351,353-357,373,376,379-383,385,391-392,404-405
+  s_0be4a9e45017f0::t_0e8e9ec6391ac3 370-371,377-378
+  s_0be4a9e45017f0::t_ed620f1a161a7f 12,20,26-32,457-469,564-565
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_0be4a9e45017f0::t_b1ca0de29af01d 479-493
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_0be4a9e45017f0::t_606867b71369ff 304,334-346
+docs/云侧方案设计.md
+  s_0be4a9e45017f0::t_ed620f1a161a7f 1099-1100
+  s_0be4a9e45017f0::t_6003602ee48f12 542-544
+  s_0be4a9e45017f0::t_f42194bf38518c 1096
+  s_0be4a9e45017f0::t_cf5a23e83ab9e7 1102
+  s_0be4a9e45017f0::t_b1ca0de29af01d 1728-1731
+  s_0be4a9e45017f0::t_59569906489c02 1095,1101,1103-1104
+  s_0be4a9e45017f0::t_0e8e9ec6391ac3 1097-1098
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_0be4a9e45017f0::t_3cd83c26927e28 8286-8287
+  s_0be4a9e45017f0::t_5b7a3c75095252 1203-1204,3387-3388
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_0be4a9e45017f0::t_0e8e9ec6391ac3 58
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_0be4a9e45017f0::t_b4e28c019cd1b6 375-388,435-437,548-550
+  s_0be4a9e45017f0::t_cb016412776590 417-418
+  s_0be4a9e45017f0::t_b1ca0de29af01d 416,419-426,434,438-444,547,551-558
+widget_service/cloud/services/template_generation/tests/test_template_required_only_render.py
+  s_0be4a9e45017f0::t_5abacef423a2d1 121-122,152-153
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_0be4a9e45017f0::t_c33760ee6f0f69 27,35-37,893,895-907,980
+  s_0be4a9e45017f0::t_ed620f1a161a7f 31-34,757-761,781
+  s_0be4a9e45017f0::t_59569906489c02 142-143,145-148,193,215-218,703-708
+  s_0be4a9e45017f0::t_a378305ecf230c 750-753,800,802,1206-1207
+  s_0be4a9e45017f0::t_5abacef423a2d1 882,894,1152,1161,1238-1240,1362-1364
+widget_service/cloud/services/asset_url_mapper.py
+  s_0be4a9e45017f0::t_6003602ee48f12 98,104-117
+  s_356582f5685ed2::t_d735bd6ccb8600 118
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_0be4a9e45017f0::t_5b7a3c75095252 413-414
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_0be4a9e45017f0::t_59569906489c02 452-456
+  s_0be4a9e45017f0::t_f42194bf38518c 451
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_0be4a9e45017f0::t_59569906489c02 1457-1460
+widget_service/cloud/services/template_generation/test_support/template_examples.py
+  s_0be4a9e45017f0::t_cf5a23e83ab9e7 81
+widget_service/cloud/custom/mock.design-compact-dsl-2x4.dat
+  s_0be4a9e45017f0::t_55850b9e9dce75 3
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_0be4a9e45017f0::t_fd32788909ea12 106-108,216-218
+  s_0be4a9e45017f0::t_cf5a23e83ab9e7 105
+  s_0be4a9e45017f0::t_f42194bf38518c 95
+  s_0be4a9e45017f0::t_0e8e9ec6391ac3 96-97
+  s_0be4a9e45017f0::t_1de2510b620844 98
+  s_0be4a9e45017f0::t_606867b71369ff 202
+  s_0be4a9e45017f0::t_ed620f1a161a7f 99
+  s_0be4a9e45017f0::t_c33760ee6f0f69 92-94,100-104,109,230
+  s_0be4a9e45017f0::t_618de2bcf36b2b 155
+widget_service/cloud/services/template_generation/tests/test_gallery_generation_regressions.py
+  s_0be4a9e45017f0::t_949f7797d73c64 1-11,21-23,31-36,42-45,47-111,166-170,172-193,206-208,210-230,235-282
+  s_0be4a9e45017f0::t_fd2592bc36225a 24-25,30,128-149,152,154-165
+  s_0be4a9e45017f0::t_00fce5b692afa1 196,198-199,204
+  s_0be4a9e45017f0::t_a1d991cbdaa4c3 150-151,153
+  s_0be4a9e45017f0::t_5abacef423a2d1 201-203,205,209
+  s_0be4a9e45017f0::t_17a762285c051c 194-195,197,200
+  s_0be4a9e45017f0::t_9c2d2524bb0006 171,231-234
+  s_0be4a9e45017f0::t_b4e28c019cd1b6 12,15-16,18,41,292-294,323-333
+  s_0be4a9e45017f0::t_5259605ac2bc35 13-14,17,19-20,26-29,37-40,283-291,295-322
+  s_0be4a9e45017f0::t_cf5a23e83ab9e7 46,112-127
+widget_service/cloud/services/template_generation/tests/test_reviewed_wide_spacing.py
+  s_0be4a9e45017f0::t_8deb96678dbe1d 6,117-120
+widget_service/cloud/custom/mock.design-compact-dsl-2x2.dat
+  s_0be4a9e45017f0::t_55850b9e9dce75 2
+widget_service/cloud/services/template_generation/tests/fixtures/calendar_existing_preview_hashes.json
+  s_0be4a9e45017f0::t_f0c48b0ba758dc 3,10,15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "a68b43d200ae6ce6e0c2f9aaceb6301908817bf3",
+  "prompts": {},
+  "sessions": {
+    "s_0be4a9e45017f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12506-0044-70f1-b5a6-5466d9399f79",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 77
+    },
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
