@@ -1,0 +1,49 @@
+widget_service/cloud/services/template_generation/tests/test_travel_weather_templates.py
+  s_f3e9e255ad7171::t_e002afea5707b5 249
+widget_service/cloud/services/template_generation/tests/test_non_fusion_overflow_marker.py
+  s_f3e9e255ad7171::t_990f28efcf28a4 283-298
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_f3e9e255ad7171::t_e002afea5707b5 1278-1282,1284
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_f3e9e255ad7171::t_e002afea5707b5 46-49
+widget_service/cloud/services/template_generation/tests/test_image_color_policy.py
+  s_f3e9e255ad7171::t_0cc3136ae7d7c7 108,245,376
+widget_service/cloud/services/template_generation/tests/test_calendar_meeting_centered.py
+  s_f3e9e255ad7171::t_d33d773d0b9c21 96-104,107-109,118-119,151-160,165-166,170-171
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_f3e9e255ad7171::t_d33d773d0b9c21 34-36
+docs/云侧方案设计.md
+  s_f3e9e255ad7171::t_e002afea5707b5 1062-1064
+  s_f3e9e255ad7171::t_d33d773d0b9c21 1055-1057
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_f3e9e255ad7171::t_d33d773d0b9c21 84,1540,1686,1808,1821,4092,4095-4096
+  s_f3e9e255ad7171::t_0bb93578b19728 81-83
+  s_f3e9e255ad7171::t_b68aa4050c987d 85-87
+  s_f3e9e255ad7171::t_66d1a3eb6b2d57 1537-1539
+  s_f3e9e255ad7171::t_a4cb5429007ac6 1541-1543
+  s_f3e9e255ad7171::t_10590f69a69c95 1687-1689
+  s_f3e9e255ad7171::t_eb351a00b8c95e 1805-1807
+  s_f3e9e255ad7171::t_ba169a978139c7 1809-1811,1818-1820
+  s_f3e9e255ad7171::t_76489b71fc0006 1822-1824
+  s_f3e9e255ad7171::t_954bd72615e5d3 4097-4099
+  s_f3e9e255ad7171::t_ec0d049475e490 11-13,19-21,23-80,88-178,194-201,203,205-293,295-298,300-303,305-308,1523-1536,1544-1672,1677,1684,1690,1696-1697,1705,1708-1709,1717,1735-1793,1795-1804,1812-1817,1825-1857,1859-1873,1875,4079-4080,4090,4100-4124
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_f3e9e255ad7171::t_1014f4a0dbc2b4 551
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "34385dcecdca5deb13a8159322cea219029c8f69",
+  "prompts": {},
+  "sessions": {
+    "s_f3e9e255ad7171": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e71a-2b33-7742-bf00-7f2c1c119d30",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 45
+    }
+  }
+}
