@@ -1,0 +1,50 @@
+widget_service/tests/test_asset_mapping_generation.py
+  s_356582f5685ed2::t_a7daf0ed40bf9a 31-33
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_356582f5685ed2::t_88c16c12265adc 1521
+widget_service/tests/test_compact_dsl_interface_retry_routes.py
+  s_356582f5685ed2::t_1ae9782599019f 285
+widget_service/tests/test_compact_dsl_validator.py
+  s_356582f5685ed2::t_9552cb9b8217f4 400-412,423,434-442,706-719,722-731,747,760,791-799
+widget_service/tests/test_compact_hero_typography.py
+  s_356582f5685ed2::t_0d06c0bca4109c 137,157
+widget_service/tests/test_compact_layout_runtime.py
+  s_356582f5685ed2::t_5651c9787f41fc 68,74,99,267
+widget_service/tests/test_debug_batch_validation_failure_gallery.py
+  s_356582f5685ed2::t_50b5244181513f 330,333-334,337
+widget_service/tests/test_debug_quality_score.py
+  s_356582f5685ed2::t_ad3d74fe3be200 14
+widget_service/tests/test_debug_quality_workflow.py
+  s_356582f5685ed2::t_c7b1d0fc987e7f 17
+widget_service/tests/test_deepseek_official_http_transport.py
+  s_356582f5685ed2::t_7ce7f8963df4e0 190,195
+widget_service/tests/test_design_compact_few_shots.py
+  s_356582f5685ed2::t_ef2217eb639748 263
+widget_service/tests/test_fusion_ball_version_gate.py
+  s_356582f5685ed2::t_0fb7c491cebb3d 48
+widget_service/tests/test_model_routing.py
+  s_356582f5685ed2::t_6885f28d095ff8 246,285,304
+widget_service/tests/test_multi_round_edit.py
+  s_356582f5685ed2::t_ecb44b45888376 485-486
+widget_service/tests/test_service_units.py
+  s_356582f5685ed2::t_dbb7f006bd7baa 40-41,222,539,546-548,869,875,888-890,892,894-895,2833,3135-3153,3155-3176,3893,3905,3948
+widget_service/tests/test_template_ring_geometry.py
+  s_356582f5685ed2::t_cef84d90cb8638 64,215
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "85494f6589313445da33b1b7be24e0902291a0e1",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 4
+    }
+  }
+}
