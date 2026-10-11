@@ -1,0 +1,24 @@
+widget_service/cloud/services/template_generation/tests/test_earbud_full_optional_charging.py
+  s_356582f5685ed2::t_aa3a568977ef9f 207,292,376,459
+widget_service/cloud/services/template_generation/tests/test_reviewed_wide_spacing.py
+  s_356582f5685ed2::t_1451393725182b 6,117-121
+widget_service/cloud/services/template_generation/tests/test_runtime_if_deferred.py
+  s_356582f5685ed2::t_f394c0b6c8da3b 189,205
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "db3c237d2749604c7c9330931ae5132a710ff6d4",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 4
+    }
+  }
+}
