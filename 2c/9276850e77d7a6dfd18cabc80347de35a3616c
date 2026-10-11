@@ -1,0 +1,26 @@
+docs/云侧方案设计.md
+  s_356582f5685ed2::t_03f323d3713d31 1103-1104
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_356582f5685ed2::t_f6eb6fbcd93e04 180,696-698
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_356582f5685ed2::t_d79151cd4000a6 313,352-358
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_356582f5685ed2::t_5b49ff80a02bca 878-914
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "2c9276850e77d7a6dfd18cabc80347de35a3616c",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
