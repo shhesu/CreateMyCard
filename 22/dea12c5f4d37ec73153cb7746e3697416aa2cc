@@ -1,0 +1,26 @@
+docs/云侧方案设计.md
+  s_0be4a9e45017f0::t_659e32550f1dbe 1303-1304
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_0be4a9e45017f0::t_2749ddf1c5a571 617,625,748
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_0be4a9e45017f0::t_df05cc030ac0a3 479,491-500
+widget_service/cloud/services/template_generation/tests/test_gallery_generation_regressions.py
+  s_0be4a9e45017f0::t_e1d9e3b28fc1fc 266-290
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "22dea12c5f4d37ec73153cb7746e3697416aa2cc",
+  "prompts": {},
+  "sessions": {
+    "s_0be4a9e45017f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12506-0044-70f1-b5a6-5466d9399f79",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
