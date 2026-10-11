@@ -1,0 +1,42 @@
+docs/云侧方案设计.md
+  s_356582f5685ed2::t_49041021dd1e6c 1877-1879
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_356582f5685ed2::t_1d32346b3a24e0 192,196-198
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_356582f5685ed2::t_2f4836e38cf088 97-98,377-379,381-382,414,417,517,524,971-973,982-983,1114-1117,1121-1122,1126-1131,1149-1151,1168,1406-1407,1417-1420
+widget_service/cloud/services/generation_pipeline.py
+  s_356582f5685ed2::t_394f9732d73e56 159,275
+widget_service/cloud/services/template_generation/tests/test_battery_action_policy.py
+  s_356582f5685ed2::t_ca8727a1657b57 482,555,653
+widget_service/cloud/services/template_generation/tests/test_battery_case_extensions.py
+  s_356582f5685ed2::t_d459b2eb2203d1 82,175,252,477,596,635,693,734
+widget_service/cloud/services/template_generation/tests/test_earbud_full_optional_charging.py
+  s_356582f5685ed2::t_c6a847d349f7e1 207,292,376,459
+widget_service/cloud/services/template_generation/tests/test_runtime_if_deferred.py
+  s_356582f5685ed2::t_35bf06401d6345 189,205
+widget_service/cloud/services/template_generation/tests/test_template_compact_boundary.py
+  s_356582f5685ed2::t_6544461fae1081 1-62
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_356582f5685ed2::t_adef371fb3e316 8284,8384,8392,8412,8489
+widget_service/cloud/services/template_generation/tests/test_template_text_heights.py
+  s_356582f5685ed2::t_0d27ef11c7cde1 77-79
+widget_service/cloud/services/widget_generation_service.py
+  s_356582f5685ed2::t_04c147458aebea 1031-1033
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "ac1f79d932570963028f237d4763ddd14fcf5951",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
