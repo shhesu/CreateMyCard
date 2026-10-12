@@ -1,0 +1,50 @@
+docs/云侧方案设计.md
+  s_356582f5685ed2::t_5fa5be3ba5d131 1083-1085
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_356582f5685ed2::t_f74905b2939e0a 10,13-14,16
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_356582f5685ed2::t_8aaf09abf40ec1 136-137,573-583
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_356582f5685ed2::t_7aacd4f6b502d6 4
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_356582f5685ed2::t_aaa97e2fa171e5 378
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_356582f5685ed2::t_a8b8174b7146b6 206
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_356582f5685ed2::t_7160db735a625a 17,23-24
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_356582f5685ed2::t_6d89d259142f0e 169
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_356582f5685ed2::t_bd89d9d40e0c51 883,1171,1182
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_356582f5685ed2::t_52d1a59d3a0873 4
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_356582f5685ed2::t_a26ef3e51e346c 61
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_356582f5685ed2::t_8d76e54f0f5cfb 3069
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_356582f5685ed2::t_f30cd474df1b18 178-179,693-696
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_356582f5685ed2::t_a2767be596bd21 83,311,348-351
+widget_service/cloud/services/template_generation/tests/test_support_template_extensions.py
+  s_356582f5685ed2::t_f5536129ca5694 18-21,98-99,101-105,107-110,113-114,134,182-183,190,197-238
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_356582f5685ed2::t_f0606e4f7f036f 417,419-420
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "e5a23d0c0c4d1c94efb3f3a71743920afd8d8310",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

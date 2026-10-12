@@ -1,0 +1,28 @@
+widget_service/tests/test_asset_mapping_generation.py
+  s_356582f5685ed2::t_698be670060537 33
+widget_service/tests/test_compact_hero_typography.py
+  s_356582f5685ed2::t_50c78b7c2d4ee4 137,157
+widget_service/tests/test_design_compact_few_shots.py
+  s_356582f5685ed2::t_162e57c75fc2ca 340
+widget_service/tests/test_service_units.py
+  s_356582f5685ed2::t_4ed2e82077571b 40-41,852,858,871-873,875,877-878
+widget_service/tests/test_template_ring_geometry.py
+  s_356582f5685ed2::t_ab4b37ea871862 108,147,154-156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "b7e7fa674c71a054ad22d351c0c6adf0d60ee217",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
