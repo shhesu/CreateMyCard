@@ -1,0 +1,60 @@
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_05907ce230aad1::t_1d3f5a97366259 8-9,28,33-35
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_05907ce230aad1::t_ab58057ec1fc7b 155-157
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_05907ce230aad1::t_5d37c1f16b106c 9747-9754,9757-9758,9761-9766
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_05907ce230aad1::t_aefd8560068ead 407-416
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_05907ce230aad1::t_89790f18f15d18 200-208,233-245,306-307
+widget_service/cloud/services/template_generation/engine/cardplan/wide_template_planner.py
+  s_05907ce230aad1::t_a32aacbb777249 16,55-57,85-98,178-179,192-362
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_05907ce230aad1::t_ed2fbb900d327b 84,210
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/phone-text-compact.cardtpl
+  s_05907ce230aad1::t_25648f781d1ca7 3-4
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_05907ce230aad1::t_0e97c703f186b6 10,12
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_05907ce230aad1::t_c73679825f7942 2014
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-type-duration-compact.cardtpl
+  s_05907ce230aad1::t_ff5800ca342dd8 6-7
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_05907ce230aad1::t_ad0d907e093be7 8,43,48,58,63,78,83,108,113,317,343,369,421,477,503,529,555,659,685
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_05907ce230aad1::t_f3870234920280 94,103,193,199,205,211,233-237,254,262,267-273,290,294,300,304,321-330,345-354,357-366,380-387,453-462,479-483,511,514-519,523,526-531,549,559,562-567,585,596,630-637,641-648
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_05907ce230aad1::t_cea2776078b92d 128
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_05907ce230aad1::t_6da0a2975fd27c 546-548,806,872
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_05907ce230aad1::t_051c12b1e911a6 3752,3978
+widget_service/cloud/services/template_generation/tests/test_reviewed_wide_spacing.py
+  s_05907ce230aad1::t_88767974e9ad9a 75-78,83,88,92
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_05907ce230aad1::t_b718265053bc34 425-427,437,452-462,3428
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_05907ce230aad1::t_38e3e7d6be0c13 35,51-60
+widget_service/cloud/services/template_generation/tests/test_template_required_only_render.py
+  s_05907ce230aad1::t_cc218b7b304084 64-65
+widget_service/cloud/services/template_generation/tests/test_wide_template_planner.py
+  s_05907ce230aad1::t_a2d3ba4750dc7f 14-18,31-35,173-241
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "61e179b419f2c531197b00287513b7331eb7557b",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
