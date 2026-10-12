@@ -1,0 +1,202 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_05907ce230aad1::t_ac0f9888081762 3148-3152
+  s_05907ce230aad1::t_c0af0c898a6744 3128-3138,3199
+widget_service/cloud/services/generation_pipeline.py
+  s_05907ce230aad1::t_174333746bf5b4 18,21-24,79,162-167,189,230-238,242,247-267,273,275-283,314-320,351-354,418-422
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_174333746bf5b4 655-659,1067,1202-1211,1347-1349,1367-1369,1390-1393,1396-1399,1401-1402,1409-1421,1432-1452,1477-1478,1488-1491,2232-2233,2725-2728
+  s_05907ce230aad1::t_ac0f9888081762 2238-2240
+  s_05907ce230aad1::t_e159d2b0fae32a 2241
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_05907ce230aad1::t_174333746bf5b4 417-493,1066-1069,1085,1088-1092,1127-1128
+widget_service/tests/test_trusted_template_components.py
+  s_05907ce230aad1::t_e159d2b0fae32a 166-167
+  s_05907ce230aad1::t_d0e2344c697a9a 178-181
+  s_05907ce230aad1::t_2adeb2e33c191c 14,145-165,168-177
+  s_05907ce230aad1::t_ef6a01c9fcf7d7 182
+widget_service/cloud/services/template_generation/tests/test_template_svg_colors.py
+  s_05907ce230aad1::t_2adeb2e33c191c 1-53
+debug_tools/card_renderer/fixtures/a2ui-visual-parity.jsonl
+  s_05907ce230aad1::t_8baa4a3f53a47e 1-2
+debug_tools/card_renderer/frontend/src/fixtures.ts
+  s_05907ce230aad1::t_6972f1af8be235 17,25
+debug_tools/card_renderer/frontend/src/render.tsx
+  s_05907ce230aad1::t_236cb78500e6db 15,87-88
+debug_tools/card_renderer/frontend/tests/renderer-runtime-parity.test.ts
+  s_05907ce230aad1::t_c00fd4e7930502 1-51
+debug_tools/card_renderer/runtime/SOURCE.md
+  s_05907ce230aad1::t_19ebd8f6ed19d5 11-15,52-61,81-82,84,87-88,91,119
+debug_tools/card_renderer/runtime/components/src/extended/ExtendedMisc.tsx
+  s_05907ce230aad1::t_d6e787b5acc266 13-21,23-24,26-27
+debug_tools/card_renderer/runtime/renderer/src/cloud-a2ui.ts
+  s_05907ce230aad1::t_e135143ee96f97 1-23
+debug_tools/card_renderer/runtime/renderer/src/index.ts
+  s_05907ce230aad1::t_1688a6e358bc2f 11
+debug_tools/card_renderer/runtime/scripts/render-a2ui-static.ts
+  s_05907ce230aad1::t_e81cab1cf59cdf 1-95
+debug_tools/card_renderer/runtime/scripts/sync-runtime.mjs
+  s_05907ce230aad1::t_585738dfbaa0ca 1-152
+debug_tools/card_renderer/runtime/scripts/tsconfig.debug-parity.json
+  s_05907ce230aad1::t_8aea378391e878 1-24
+debug_tools/card_renderer/runtime/scripts/tsconfig.platform-parity.json
+  s_05907ce230aad1::t_79e8ab22d3a359 1-24
+debug_tools/dist/assets/index-BfKZLSvq.js
+  s_05907ce230aad1::t_99eebed0046eca 76,78,80-83,86
+debug_tools/dist/index.html
+  s_05907ce230aad1::t_a0ed8e6553f963 8
+debug_tools/package.json
+  s_05907ce230aad1::t_d519f1f1ca8f0d 14-15,18
+debug_tools/paths.py
+  s_05907ce230aad1::t_5f31a678b1aa6b 5,8-11
+render/genui-sdk/renderer/src/cloud-a2ui.ts
+  s_05907ce230aad1::t_7a9ca39764b75b 1-23
+render/genui-sdk/renderer/src/index.ts
+  s_05907ce230aad1::t_64ad44ed24c407 11
+render/platform/README.md
+  s_05907ce230aad1::t_b292a34bb2b385 1-41
+render/platform/app/api/compact-convert/route.ts
+  s_05907ce230aad1::t_b1e06f8817273f 1-36
+render/platform/app/globals.css
+  s_05907ce230aad1::t_4d57f77e7e59e6 38-40
+render/platform/lib/compact-components.ts
+  s_05907ce230aad1::t_86aba67876cf27 10-11,368-387,1345,1350,1413-1421
+render/platform/lib/mini-renderer.ts
+  s_05907ce230aad1::t_2c23b4a84c9b13 2-3,21-51,142-145,170,179-180,211-218,221-223,226-228,231-233,275-279
+render/platform/lib/python-converter.ts
+  s_05907ce230aad1::t_491d2420224cdb 1-98
+render/platform/src/App.tsx
+  s_05907ce230aad1::t_4db8b084a3386d 2,5-8,32-55,79,105-118,136-137,148
+render/platform/src/ComponentGallery.module.css
+  s_05907ce230aad1::t_468b3c5007bae2 25-26
+render/platform/src/ComponentGallery.tsx
+  s_05907ce230aad1::t_8a11895066d29a 3,6,41-56,59-62,65-68,97
+render/platform/src/component-gallery-data.ts
+  s_05907ce230aad1::t_d17a9387b0703b 74,154-158
+render/platform/tests/component-gallery.test.ts
+  s_05907ce230aad1::t_0f73957eb5f162 55
+render/platform/tests/high-level-components.test.ts
+  s_05907ce230aad1::t_02c38710d6ffdd 192-203,231-233
+render/platform/tests/python-converter.test.ts
+  s_05907ce230aad1::t_f16ff8d93cdef6 1-102
+skills/harmony-card-design-generation/references/capability/data-capability/weather.md
+  s_05907ce230aad1::t_51cfbdc4d45c10 127-128
+skills/harmony-card-generation-offline/reference/capability/data-capability/weather.md
+  s_05907ce230aad1::t_47f0be0e8e34d4 127-128,197
+skills/harmony-card-generation-offline/scripts/rules/schemas/capability.weather.schema.json
+  s_05907ce230aad1::t_f4f2f9a5d13172 60
+skills/harmony-card-generation-online/scripts/rules/schemas/capability.weather.schema.json
+  s_05907ce230aad1::t_d307c0132c242f 60
+skills/harmony-card-template-generation/references/capability/data-capability/weather.md
+  s_05907ce230aad1::t_d78afadb0244fb 127-128
+skills/harmony-card-template-generation/scripts/rules/schemas/capability.weather.schema.json
+  s_05907ce230aad1::t_90d7e7a403356f 60
+testdata/taskspec/taskspec_cases.json
+  s_05907ce230aad1::t_16885733bdcc98 361
+widget_service/cloud/custom/a2ui_model_client.py
+  s_05907ce230aad1::t_defd2f77a0c980 580-582
+widget_service/cloud/data/capabilities/app-11.7.7.300_rom-7.0/data_capabilities.json
+  s_05907ce230aad1::t_c682979061df13 176-178,182
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/components/2x2.md
+  s_05907ce230aad1::t_8bdebaf34e058e 46,82,90
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/components/2x4.md
+  s_05907ce230aad1::t_67c57d9623b2ac 50,81,89,118-120
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/components/common.md
+  s_05907ce230aad1::t_2607b7ec1869ef 39,61,262-264,281-282,295,596-597
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/layouts/2x4.md
+  s_05907ce230aad1::t_da1d6dd8a0c142 183
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/plan.md
+  s_05907ce230aad1::t_9bf7e971d78a3a 7,19-24,72-73,93
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/repair.md
+  s_05907ce230aad1::t_7735b9678c1e06 21-29,33-34,52-54,85-86,101-117,121-122,157-158
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/runtime/layout-contracts-v1.json
+  s_05907ce230aad1::t_3fae4662051357 38-44
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/runtime/visual-recipes-v1.json
+  s_05907ce230aad1::t_32a7a7ac3679aa 1585-1586
+widget_service/cloud/data/validator_rules/schemas/capability.weather.schema.json
+  s_05907ce230aad1::t_9a3eed8ac06311 102
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_05907ce230aad1::t_3b0a59dc3ce299 14-18
+widget_service/cloud/services/compact_composition_planner.py
+  s_05907ce230aad1::t_73c1787c0e0847 552-557
+widget_service/cloud/services/compact_dsl_protocol.py
+  s_05907ce230aad1::t_01fd0d87ea0cb2 531
+widget_service/cloud/services/compact_high_level_components.py
+  s_05907ce230aad1::t_9c15f62eb7bfd6 662-668,675,2661-2670,2689,2695,3019,3034,3038-3040
+widget_service/cloud/services/compact_layout_runtime.py
+  s_05907ce230aad1::t_bfece04db94750 134-139,141,147,149-150,179-209,506,519-553
+widget_service/cloud/services/compact_plan.py
+  s_05907ce230aad1::t_1f3e94134a0b6f 36,39,134-149,164-172,212-241,246,249-250,323,555,573-576,594-617,648-650,701-702,718-721,796-813,835-915,917,919,922-926,929-930,932-933,948-1071,1193-1199,1202,1265-1266
+widget_service/cloud/services/compact_repair_strategy.py
+  s_05907ce230aad1::t_bbe9a441807769 8,11-17,32-45,67-69,94-107,135-168,174-177,207-209,217,245,250,253-266,276,284-288,293,331-332,338-372,410-474,478-482,490-524,530-532,551-577,580-635,642-643,645-703,726,728,733,746,752-760
+widget_service/cloud/services/prompt_builder.py
+  s_05907ce230aad1::t_24f48d3f161997 62-88,1741-1747,1750,1928,1955-1961,1971-1979
+widget_service/cloud/services/response_planner.py
+  s_05907ce230aad1::t_13ab7437e40747 18,28,44-47,51,53,56-69
+widget_service/cloud/services/retry_controller.py
+  s_05907ce230aad1::t_9d2986feface66 49,54,57,63
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_05907ce230aad1::t_c2e467983237d6 261,270,275,279,289
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_05907ce230aad1::t_3ca29a4f39db21 1881
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_05907ce230aad1::t_97bc0abfd86e33 3422,3468,3641,3687
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_05907ce230aad1::t_7cb8b0c04bf93c 442,445,496,499,554,557,626,677,680,731,734,789,792,1821,1871,1874,1923,1926,2215,2218,2267,2270
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_05907ce230aad1::t_61b1823c74bcd5 78,187,231,276,328,489,572,833,907,952
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_05907ce230aad1::t_8a0fef328593a0 221,263,624
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_05907ce230aad1::t_4f9f6db72095e4 16-17
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_05907ce230aad1::t_328c20d747068d 205,535,629,772,1340,3307,3423,3471,3519,3608,3928
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_05907ce230aad1::t_4e331539836641 352-399
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_05907ce230aad1::t_e67ea9ad99fcd1 483
+widget_service/cloud/services/template_generation/tests/test_travel_weather_templates.py
+  s_05907ce230aad1::t_ff48171cd0e143 255-256,276,329
+widget_service/cloud/services/template_generation/tests/test_wide_countdown_case_routing.py
+  s_05907ce230aad1::t_35924a264ef66f 220,277
+widget_service/cloud/services/template_generation/tests/test_wide_template_planner.py
+  s_05907ce230aad1::t_758a4d36817802 512
+widget_service/cloud/services/widget_generation_service.py
+  s_05907ce230aad1::t_824a0d2ca5ca8a 3,47-51,729,731-733,836-838,1067-1068,1111-1114,1122-1131,1140-1148,1219-1222,1632-1652,1660
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_05907ce230aad1::t_4da799a209b0a2 20,1394-1428,1486-1487,1523-1524,1593,1605,3753-3810
+widget_service/tests/test_compact_dsl_protocol.py
+  s_05907ce230aad1::t_6b9d8c880e215f 357,955,987
+widget_service/tests/test_compact_layout_runtime.py
+  s_05907ce230aad1::t_d5334d92cbc121 437-487
+widget_service/tests/test_compact_plan.py
+  s_05907ce230aad1::t_381bc7dae987f0 12,14-15,85-142,160-211,357-382,559-732,765-789,829,839-840,844,854-859,879-901,903-907
+widget_service/tests/test_compact_plan_generation.py
+  s_05907ce230aad1::t_7be329f05035cf 45,47,68,111,115-213
+widget_service/tests/test_compact_prompt_bundle.py
+  s_05907ce230aad1::t_cef40530cf90da 92-99,358-365
+widget_service/tests/test_compact_repair_strategy.py
+  s_05907ce230aad1::t_98ae932fedade7 14-15,20,22,28-66,89,94,108-111,114-134,139-163,168-175,180-497,541
+widget_service/tests/test_compact_runtime_prompt_context.py
+  s_05907ce230aad1::t_e332b30093229b 46-54,90-92,116-120,133-134,136-138
+widget_service/tests/test_design_compact_repair_prompt.py
+  s_05907ce230aad1::t_9150f94bdae830 20,22-28,99,160-238
+widget_service/tests/test_service_units.py
+  s_05907ce230aad1::t_326f20ed49525a 3888,3903-3906,3910-3914,4275-4278,4492-4498,4504-4505,4609-4632
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "dfb4380a11112d5cdc641ec2bc53e45294224371",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 65
+    }
+  }
+}
