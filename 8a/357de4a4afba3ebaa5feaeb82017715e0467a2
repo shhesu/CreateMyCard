@@ -1,0 +1,36 @@
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_05907ce230aad1::t_0c76b03a59a3d7 45-49
+widget_service/tests/test_template_calendar_count_validation.py
+  s_05907ce230aad1::t_936f30ea4d6468 46-48
+  s_05907ce230aad1::t_056b2776cd96d8 68-70
+  s_05907ce230aad1::t_0c76b03a59a3d7 1-45,49-67,71-72
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_05907ce230aad1::t_f18d3be08cba2b 262,1137-1138,1165-1166
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_f18d3be08cba2b 2252-2255
+docs/模板校验修复验证报告.md
+  s_05907ce230aad1::t_c8949da682fac3 7-8,13,24-26,101,106-108,188-222
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-list-no-action-full.cardtpl
+  s_05907ce230aad1::t_fbce2ce6edbc1b 128-144,284-300
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-no-action-full.cardtpl
+  s_05907ce230aad1::t_49627cf39a758d 214-230
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_05907ce230aad1::t_b9ebd218f33690 4152-4153,4155-4156,4158-4163,4170-4180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "8a357de4a4afba3ebaa5feaeb82017715e0467a2",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 5
+    }
+  }
+}
