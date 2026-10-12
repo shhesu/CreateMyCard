@@ -1,0 +1,68 @@
+widget_service/requirements.txt
+  s_356582f5685ed2::t_5a4e05482f96cf 11-12
+widget_service/tests/test_debug_quality_score.py
+  s_356582f5685ed2::t_5a4e05482f96cf 15
+  s_356582f5685ed2::t_f8499fb221ba5f 10
+widget_service/tests/test_debug_quality_workflow.py
+  s_356582f5685ed2::t_5a4e05482f96cf 18
+  s_356582f5685ed2::t_d4fe26b8749b0b 7
+widget_service/tests/test_template_compact_boundary.py
+  s_356582f5685ed2::t_95c060bccaf8be 1-62
+docs/云侧方案设计.md
+  s_356582f5685ed2::t_eaa8943d55946d 1716-1720,1722-1724
+widget_service/cloud/custom/mock.design-compact-dsl-2x2.dat
+  s_356582f5685ed2::t_e66b4d9b9fae87 2
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_356582f5685ed2::t_1ebc9d5eb49a92 192,196-198
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_356582f5685ed2::t_6ac2dabaa8271f 97-98,377-379,381-382,414,417,517,524,971-973,982-983,1114-1117,1121-1122,1126-1131,1149-1151,1168,1406-1407,1417-1420
+widget_service/cloud/services/generation_pipeline.py
+  s_356582f5685ed2::t_ea65135497fe1e 159,275
+widget_service/cloud/services/template_generation/tests/test_battery_action_policy.py
+  s_356582f5685ed2::t_a2a2877693d19d 491,564,662
+widget_service/cloud/services/template_generation/tests/test_battery_case_extensions.py
+  s_356582f5685ed2::t_09ec63ddbdf5a4 82,175,252,477,596,635,693,734
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_356582f5685ed2::t_3e61b4c8ddbd37 8352,8452,8460,8480,8557
+widget_service/cloud/services/template_generation/tests/test_template_required_only_render.py
+  s_356582f5685ed2::t_67890af2eb3283 120-121,152-153
+widget_service/tests/test_asset_mapping_generation.py
+  s_356582f5685ed2::t_6289bab78cc0a9 31-38
+widget_service/tests/test_compact_dsl_interface_retry_routes.py
+  s_356582f5685ed2::t_78a513704a5675 285-287
+widget_service/tests/test_compact_dsl_validator.py
+  s_356582f5685ed2::t_0505c478e09434 436-441,452,463-467,770-779,782-787,803,816,847-851
+widget_service/tests/test_compact_hero_typography.py
+  s_356582f5685ed2::t_a8668d5947d53c 128,137,139,159-166
+widget_service/tests/test_deepseek_official_http_transport.py
+  s_356582f5685ed2::t_99ca66783b4399 190,195
+widget_service/tests/test_fusion_ball_version_gate.py
+  s_356582f5685ed2::t_62981b40626834 48-50
+widget_service/tests/test_generation_trace_recorder.py
+  s_356582f5685ed2::t_b343e2077b35e5 387
+widget_service/tests/test_model_routing.py
+  s_356582f5685ed2::t_3a6991344bf183 246-251,290-295,314-319,340-341,376-377
+widget_service/tests/test_multi_round_edit.py
+  s_356582f5685ed2::t_24ede405301908 485-486
+widget_service/tests/test_service_units.py
+  s_356582f5685ed2::t_db9d70ba53a8c9 220,537,544-546,870,879,885,898-900,902,2841,3095,3144-3158,3160-3175,3898,3910,3953
+widget_service/tests/test_template_ring_geometry.py
+  s_356582f5685ed2::t_ee4d5b4529b631 64-66,217-219
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "5a1f0a7491e464e3d650916e8945d408bbd93a9b",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 2
+    }
+  }
+}
