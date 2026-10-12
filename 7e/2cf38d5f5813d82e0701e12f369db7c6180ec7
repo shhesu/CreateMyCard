@@ -1,0 +1,30 @@
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_b3b6650853a903 2240-2241
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_05907ce230aad1::t_3efaedeb828455 1881
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_05907ce230aad1::t_45856193632a9b 3551,3641,3687
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_05907ce230aad1::t_d3ac9ecccf1d79 78,187,231,276,328,489,572,833,907,952
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_05907ce230aad1::t_c5afebeec71037 221,263,624
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_05907ce230aad1::t_9c7791e9543b05 3148,3152,3204,3220,8715-8738
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "7e2cf38d5f5813d82e0701e12f369db7c6180ec7",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
