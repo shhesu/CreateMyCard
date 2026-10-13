@@ -1,67 +1,99 @@
 docs/云侧方案设计.md
   s_858ae21fe762df::t_5c6913e59f62e1 1360-1368
+  s_858ae21fe762df::t_0c3c2784742f02 2064-2072
 widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
   s_858ae21fe762df::t_12739f5dabd36d 7,40,42-45,51-52
+  s_858ae21fe762df::t_91eb4cac258c00 42,44,51-52
 widget_service/cloud/services/template_generation/docs/provider-template-contract.md
   s_858ae21fe762df::t_65c8e4946275ac 30-31,545-546,548
+  s_858ae21fe762df::t_01c68ee640aa83 30-31,545
 widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
   s_858ae21fe762df::t_0ef4a3758eb103 7,48,52,132,159,198-202,231
+  s_858ae21fe762df::t_2b935bee3c5dd0 7,48,52,132,159,200-202,231
 widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
   s_858ae21fe762df::t_17a9c903d9d49b 8,12-17,35,40
+  s_858ae21fe762df::t_b7c390d69dc722 13-14,16-17
 widget_service/cloud/services/template_generation/docs/support-template-action-policy.md
   s_858ae21fe762df::t_6a64b3f4459cf6 24,28-30,35-49,51-60,63-64,66,87-90
+  s_858ae21fe762df::t_352d425add055c 24,29-30,35,38-49,51-52,54-60,63-64,66,87-90
 widget_service/cloud/services/template_generation/docs/template-generation-design.md
   s_858ae21fe762df::t_8c032beeee1c68 20-29
+  s_858ae21fe762df::t_1bcbd08f46bba1 20-29
 widget_service/cloud/services/template_generation/resources/source/providers/README.md
   s_858ae21fe762df::t_8561b7690b87e4 34-39,41,43-44
+  s_858ae21fe762df::t_1cb190929e9185 35,37-38,41,43-44
 widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
   s_858ae21fe762df::t_d0d84f672ef5d1 16-17
+  s_858ae21fe762df::t_362aab89294f5d 16-17
 widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
   s_858ae21fe762df::t_7522d3a94cbf60 16-17
+  s_858ae21fe762df::t_d805e976bf876a 16-17
 widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
   s_858ae21fe762df::t_8b778c33f08c14 20-25
+  s_858ae21fe762df::t_bdf635c2c917cf 20-25
 widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
   s_858ae21fe762df::t_6f310e63934050 37-42
+  s_858ae21fe762df::t_0613f5a79eceac 37-42
 widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
   s_858ae21fe762df::t_7a1044d8070959 16-17,137-140
+  s_858ae21fe762df::t_d1d10ac3621642 16-17,137-140
 widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
   s_858ae21fe762df::t_0612429dbbd9b4 143-148
+  s_858ae21fe762df::t_84b4e22bf30dcd 143-148
 widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
   s_858ae21fe762df::t_8150f1a6b812a2 90-95
+  s_858ae21fe762df::t_cbb37ab3d9de76 90-95
 widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
   s_858ae21fe762df::t_cd14c1f4b436af 16-17,119-120,163-164,188-189,195-196,218-219
+  s_858ae21fe762df::t_85e89a45508025 16-17,119-120,195-196,218-219
 widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
   s_858ae21fe762df::t_91edbbec738da9 41-47
+  s_858ae21fe762df::t_7adaac39224d70 41-47
 widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
   s_858ae21fe762df::t_167bdc3c8e2fb9 83-89
+  s_858ae21fe762df::t_431b69876afa77 83-89
 widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
   s_858ae21fe762df::t_ef88f8c8988ad1 16-17,276-280,301-305,586-589,607-611,633-636
+  s_858ae21fe762df::t_aa3aed097c90dc 16-17,276-280,301-305,586-589,607-611,633-636
 widget_service/cloud/services/template_generation/test_support/provider_gallery.py
   s_858ae21fe762df::t_c742fc17a5c8b9 35-36,46,97,103,107-108,111,115,117,120,123
+  s_858ae21fe762df::t_c72f5b1b7eb302 35-36,46,97,103,107-108,111,115,117,120,123
 widget_service/cloud/services/template_generation/tests/test_battery_non_fusion_palette.py
   s_858ae21fe762df::t_b15ea019546a80 1,31-35,44
+  s_858ae21fe762df::t_523c245b50b61d 1,31-35,44
 widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
   s_858ae21fe762df::t_f81f13cb480411 27,83,157,164,332
+  s_858ae21fe762df::t_1910b717aed89f 27
 widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
   s_858ae21fe762df::t_1c4e2e33948235 16,42-60,256,260-262,353,581,703,705,709,845-846,872,874
+  s_858ae21fe762df::t_f7ab5de67bf87f 16,42-60,256,581,705,709,874
 widget_service/cloud/services/template_generation/tests/test_retired_app_usage.py
   s_858ae21fe762df::t_e31c95189c1993 79-91
+  s_858ae21fe762df::t_a8f8760ff0fc87 79-91
 widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
   s_858ae21fe762df::t_3093f043b4e58a 55,63-68,119,122,125,128,131-132,135-137,140-141,225-242,442,462-475,478,480-481,497-506,508,520-521,525-526,544-549
+  s_858ae21fe762df::t_42d94580fc3a58 55,60-62,119,122,125,128,131-132,135-137,140-141,225-242,462-465,470-475,478,480-481,498-506,508,520-521,526,544-549
 widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
   s_858ae21fe762df::t_040316b95f7fe4 263
 widget_service/cloud/services/template_generation/tests/test_template_contrast.py
   s_858ae21fe762df::t_8210e19a71af6d 58
 widget_service/cloud/services/template_generation/tests/test_template_examples.py
   s_858ae21fe762df::t_6f928206331fc9 44
+  s_858ae21fe762df::t_7c8db8b0aa1977 44
 widget_service/cloud/services/template_generation/tests/test_template_generation.py
   s_858ae21fe762df::t_0c781e2908f3fa 284,1242,1250,1276,1456,1501,1507,1511,1516,1689,2092,3289,3307-3308,6388
+  s_858ae21fe762df::t_c7f66700f37413 1242,1250,1276,1456,1501,1507,1511,1516,1689,2092,3289,3307-3308,6388
 widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
   s_858ae21fe762df::t_65a845ff58c1bc 651
+  s_858ae21fe762df::t_283e9373c3a1e8 651
 widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
   s_858ae21fe762df::t_5af9d7526b6a25 23,27-28,30,35-36,45
+  s_858ae21fe762df::t_ab6e7153390d6a 28
 widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
   s_858ae21fe762df::t_62cc7cbb6e353a 914-918,920-922,924-927,941-945,951,956-957
+  s_858ae21fe762df::t_185ba984b50339 914-918,920-922,924-927,941-945,951,956-957
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_858ae21fe762df::t_16de0449276927 16-17
 ---
 {
   "schema_version": "authorship/3.0.0",
