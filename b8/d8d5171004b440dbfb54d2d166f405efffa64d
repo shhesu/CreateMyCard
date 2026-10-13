@@ -1,0 +1,82 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_05907ce230aad1::t_f3033abefd683d 3206-3216,3226-3230,3277,3282,3298,3428,8417,8421,8438,8512,8527,8549,8632,8785-8808
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_a6f8eb7da90089 2208-2211,2253-2280
+widget_service/cloud/services/asset_url_mapper.py
+  s_05907ce230aad1::t_af532413fa2482 85-86
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_05907ce230aad1::t_8f7f6f3eadbae5 45-48
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_05907ce230aad1::t_67396dc773708b 105,111,384-386,388-390,417-419,423-425,429-432,499,502-504,604,611-613,1069,1079-1081,1218-1221,1231-1233,1251-1254,1271,1509-1510,1520-1523
+widget_service/cloud/services/generation_pipeline.py
+  s_05907ce230aad1::t_061f2f6b3ebd02 167,174,345,351,367
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_05907ce230aad1::t_e086794907c019 175-199,333-334
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_05907ce230aad1::t_b7014a40cc4d39 76,83,182,546
+widget_service/cloud/services/template_generation/model_client.py
+  s_05907ce230aad1::t_ed5c46381ae4a9 5,7,15,18,41-49,80-81,89-115
+widget_service/cloud/services/template_generation/postprocessing.py
+  s_05907ce230aad1::t_fadf3b065645dc 1-45
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-charging-level-summary-hero.cardtpl
+  s_05907ce230aad1::t_d032eb7f723b3a 22
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_05907ce230aad1::t_aec17262bcfd69 1881
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-status-level-summary-hero.cardtpl
+  s_05907ce230aad1::t_8bb550de11c23f 22
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-status-summary-hero.cardtpl
+  s_05907ce230aad1::t_cfdfd63c15fade 22
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_05907ce230aad1::t_d3b6b045fb779f 3418,3464,3547,3637,3683
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_05907ce230aad1::t_56320b110823d9 442,445,496,499,554,557,626,677,680,731,734,789,792,1820,1870,1873,1922,1925,2214,2217,2266,2269
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_05907ce230aad1::t_c973f91e0c3bd7 78,187,231,276,328,488,571,832,906,951
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_05907ce230aad1::t_af33d813fcd914 1721
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_05907ce230aad1::t_96b54f487e8bd8 221,263,623
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_05907ce230aad1::t_bc5242bde0bd24 1973,4201,4205
+widget_service/cloud/services/template_generation/tests/fixtures/template_validation_recovery.json
+  s_05907ce230aad1::t_48e524e88cbb13 1-1534
+widget_service/cloud/services/template_generation/tests/public_processing.py
+  s_05907ce230aad1::t_2bbfa77c91ea1f 1-21
+widget_service/cloud/services/template_generation/tests/test_battery_action_policy.py
+  s_05907ce230aad1::t_4a053d7dfaa47e 33-35,491,563,660
+widget_service/cloud/services/template_generation/tests/test_battery_case_extensions.py
+  s_05907ce230aad1::t_f4c811f3b8493e 12,27-29,47-59,96,100,189,193,266,270,490,496,610,614,649,653,707,711,748,752
+widget_service/cloud/services/template_generation/tests/test_earbud_full_optional_charging.py
+  s_05907ce230aad1::t_f74519cf0dd638 15-17,206,290,373,455
+widget_service/cloud/services/template_generation/tests/test_output_postprocessing.py
+  s_05907ce230aad1::t_6084c9335ea133 1-96
+widget_service/cloud/services/template_generation/tests/test_redundant_date_intent.py
+  s_05907ce230aad1::t_e47e6c23839a73 1-58
+widget_service/cloud/services/template_generation/tests/test_template_svg_colors.py
+  s_05907ce230aad1::t_7ab2a4e89547f2 1-53
+widget_service/cloud/services/template_generation/tests/test_template_text_heights.py
+  s_05907ce230aad1::t_fc0ccd23011ba3 64,77-79
+widget_service/cloud/services/template_generation/tests/test_template_validation_recovery.py
+  s_05907ce230aad1::t_29647d0ab5ab8c 1-60
+widget_service/cloud/services/widget_generation_service.py
+  s_05907ce230aad1::t_125b12736f4279 1053-1055
+widget_service/tests/test_asset_url_mapper.py
+  s_05907ce230aad1::t_476cc0aa409d98 71-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "b8d8d5171004b440dbfb54d2d166f405efffa64d",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 25
+    }
+  }
+}
