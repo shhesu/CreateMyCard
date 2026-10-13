@@ -1,0 +1,71 @@
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_a67f840eb656b7::t_1b342a51668642 661,663
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_a67f840eb656b7::t_b934b310515d2d 84,210
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_a67f840eb656b7::t_3960b1c2d5c773 2361,2363
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_a67f840eb656b7::t_e72091f7f44161 9747-9754,9757-9758,9761-9766
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/phone-text-compact.cardtpl
+  s_a67f840eb656b7::t_593a7e1ebe9558 3-4
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_a67f840eb656b7::t_d5d53f368587c9 10,12
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_a67f840eb656b7::t_07070ee444a3bd 2014
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-type-duration-compact.cardtpl
+  s_a67f840eb656b7::t_b46e5467ba4c06 6-7
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_a67f840eb656b7::t_03de9d3c023bb2 8,43,48,58,63,78,83,108,113,317,343,369,421,477,503,529,555,659,685
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_a67f840eb656b7::t_6bf44b74509941 94,103,193,199,205,211,233-237,254,262,267-273,290,294,300,304,321-330,345-354,357-366,380-387,453-462,479-483,511,514-519,523,526-531,549,559,562-567,585,596,630-637,641-648
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_a67f840eb656b7::t_c53d33f3e7990a 128
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_a67f840eb656b7::t_935e3362c24fbc 806,872
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_a67f840eb656b7::t_0a1229f9e404f7 3752,3978
+widget_service/cloud/services/template_generation/tests/test_reviewed_wide_spacing.py
+  s_a67f840eb656b7::t_f6dd8910559d39 76-79,84,89,93
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a67f840eb656b7::t_41e2d051a1f076 3433
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.1",
+  "base_commit_sha": "cec0fbe3890ace1355001f9ff76e6414bd0c6f6b",
+  "prompts": {},
+  "sessions": {
+    "s_a67f840eb656b7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd62b-46e7-7f60-9fa7-be6813d468b4",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_additions": 6,
+      "total_deletions": 29,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_1b342a51668642": "gpt-5.6-luna",
+        "t_2ee83c83a13e73": "gpt-5.6-luna",
+        "t_3960b1c2d5c773": "gpt-5.6-luna",
+        "t_6237ec3f8dd503": "gpt-5.6-luna",
+        "t_62d97a5f3df831": "gpt-5.6-luna",
+        "t_7f899f2f9f1f15": "gpt-5.6-luna",
+        "t_906047c7de99b1": "gpt-5.6-luna",
+        "t_a162eae0c711f2": "gpt-5.6-luna",
+        "t_abafb9a5c36448": "gpt-5.6-luna",
+        "t_b934b310515d2d": "gpt-5.6-luna",
+        "t_e35046655e63df": "gpt-5.6-luna",
+        "t_fdf165f9007e94": "gpt-5.6-luna",
+        "t_fe92fe42d26dad": "gpt-5.6-luna"
+      },
+      "model_totals": {
+        "gpt-5.6-luna": {
+          "additions": 6,
+          "deletions": 29
+        }
+      }
+    }
+  }
+}
