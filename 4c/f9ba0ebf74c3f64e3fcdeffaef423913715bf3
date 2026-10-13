@@ -1,0 +1,24 @@
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_4f5bd1e814f8fc 2271-2275
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_05907ce230aad1::t_520052a7ecc5d8 1721
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_05907ce230aad1::t_959a363db918f0 4201,4203-4204,4207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "4cf9ba0ebf74c3f64e3fcdeffaef423913715bf3",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
