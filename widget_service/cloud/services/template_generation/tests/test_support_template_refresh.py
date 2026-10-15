@@ -49,6 +49,7 @@ _SUPPORT_PRIMARY_TEXT_INDEXES = {
     "WeatherOverviewTemperatureSupport@1": (0, 1),
     "WeatherOverviewTemperatureUvSupport@1": (0, 1),
     "WeatherOverviewTemperaturecoldLevelSupport@1": (0, 1),
+    "WeatherOverviewHumiditySupport@1": (0,),
     "WeatherOverviewDaily2TravelSupport@1": (0,),
     "WeatherOverviewTravelSupport@1": (0,),
     "WorkoutOverviewSupport@1": (0,),
@@ -61,6 +62,7 @@ _SUPPORT_OPTIONAL_SECONDARY_TEXT_TEMPLATES = {
     "BatteryOverviewSupport@1",
     "BluetoothDeviceOverviewChargeSupport@1",
     "BluetoothDeviceOverviewConnectionSupport@1",
+    "WeatherOverviewHumiditySupport@1",
 }
 
 # 温度文本改为可选绑定的温度 Support：无可选数据时主行仅剩城市文本。
@@ -154,6 +156,7 @@ def test_support_ux_spacing_typography_and_right_icon(
             "CountdownOverviewTravelSupport@1",
             "WeatherOverviewDaily2TravelSupport@1",
             "WeatherOverviewTravelSupport@1",
+            "WeatherOverviewHumiditySupport@1",
         } else 12
         font_size = 14 if primary else subtitle_size
         # 上游新增的纯文本电量和温湿度模板使用 16fp 主读数。
@@ -262,7 +265,7 @@ def test_support_ux_preserves_progress_and_inner_icon_sizes(
 def test_support_inventory_removes_deleted_templates() -> None:
     registry = get_cardplan_registry()
     supports = {key for key in registry.templates if key.endswith("Support@1")}
-    assert len(supports) == 27
+    assert len(supports) == 28
     assert not supports.intersection({
         "CountdownOverviewSupport@1",
         "ScheduleOverviewSupport@1", "HeartRateOverviewUpdatedSupport@1",
