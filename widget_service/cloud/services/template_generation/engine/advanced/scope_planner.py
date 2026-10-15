@@ -15,6 +15,7 @@ from services.template_generation.engine.cardplan.prompt import (
     admitted_provider_template_variants,
 )
 from services.template_generation.engine.cardplan.registry import CardPlanRegistry
+from services.template_generation.engine.cardplan.template_retrieval import TemplateMatch
 
 from . import content_selectors as _content_selectors
 from .content_selectors import (
@@ -48,7 +49,7 @@ from .content_selectors import (
 from .models import (
     AdvancedScopeBrief,
     DataShape,
-    TemplateRouteDecision,
+    TemplateRetrievalQuery,
     UxBusinessComponentCapability,
 )
 
@@ -59,7 +60,7 @@ _REDUNDANT_2X2_SUPPORTS = {
 
 
 class TemplateRouteNotApplicable(ValueError):
-    """首层判断无法证明模板能完整覆盖本轮数据需求。"""
+    """用户强诉求无法检索到可完整覆盖的单个模板 Variant。"""
 
 
 def build_advanced_scope_prompt(
@@ -67,9 +68,6 @@ def build_advanced_scope_prompt(
     data_shape: DataShape,
     registry: CardPlanRegistry,
     available_capability_ids: tuple[str, ...] | None = None,
-    *,
-    template_route_decision: bool = False,
-    candidate_output_fields: dict[str, tuple[str, ...]] | None = None,
     card_spec: dict[str, Any] | None = None,
 ) -> list[dict[str, str]]:
     """构造不含 Template、布局源码和整卡置信度信息的新第一层 Prompt。"""
@@ -79,20 +77,6 @@ def build_advanced_scope_prompt(
         available_capability_ids,
     )
     component_candidates = _component_candidates(task_spec, data_shape, registry, effective_ids)
-    if template_route_decision:
-        # Template routing may only expose components that have a matching
-        # Provider Template; UX-only context components cannot be archived here.
-        component_candidates = tuple(
-            capability
-            for capability in component_candidates
-            if _component_template_coverage_options(
-                capability,
-                task_spec,
-                registry,
-                effective_ids,
-                card_spec,
-            )
-        )
     if not component_candidates:
         raise ValueError("no provider-backed UX Business Component candidate")
     candidate_ids = {item.name for item in component_candidates}
@@ -127,56 +111,23 @@ def build_advanced_scope_prompt(
                 candidate_ids,
                 registry,
                 card_spec,
-                include_template_coverage=template_route_decision,
+                include_template_coverage=False,
             )
             for capability in component_candidates
         ],
         "maxAdvancedComponents": registry.ux_size_budgets[task_spec.size].max_business_components,
         "temporaryDataAdmissionBypass": admission_relaxed,
     }
-    if template_route_decision:
-        user_payload["candidateOutputFieldsByCapability"] = candidate_output_fields or {}
-        schema = TemplateRouteDecision.model_json_schema(by_alias=True)
-        scope_instruction = (
-            "你是第四接口的首层模板路由判断器。只输出 JSON；routeVersion 固定为"
-            " template-route-decision/2。candidateOutputFieldsByCapability 是本轮可用候选，不是"
-            "全部必显字段。requiredOutputFieldsByCapability 中的每一个路径都必须从同一 capability"
-            " 的 candidateOutputFieldsByCapability 数组中逐字复制，必须保留开头斜杠、大小写和"
-            "数组下标；禁止输出 /_advancedSelectors、/data、writeResultTo 前缀、展示别名，或任何"
-            "自行拼接、缩写和改写后的路径。只选择 userQuery 明确要求展示的候选字段，不要因为"
-            "模板内部需要其他数据而把全部候选字段都列为 query 必显字段。"
-            "对于 WeatherOverview，city、temperature、condition、airQuality、temperatureRange"
-            "只是语义名称，不是允许输出的路径；必须分别从候选数组中选择实际 Provider 路径，"
-            "通常对应 /location/districtName、/current/temperatureText、/current/condition、"
-            "/current/airQuality、/daily/0/temperatureRangeText，且只能选择本轮候选数组中真实存在"
-            "的项。例如 query 为'看看是否下雨、现在多少度'时，只应复制候选中的"
-            " /current/condition 和 /current/temperatureText，不得输出"
-            " /_advancedSelectors/weather/condition 或 /_advancedSelectors/weather/temperature。"
-            "如果 userQuery 包含天气组件的意图（如"
-            "'天气小组件'、'天气卡片'、'今天天气怎么样'等），则认为 WeatherOverview 适用，"
-            "完全忽略 userQuery 中对体感温度、湿度、风力、紫外线、感冒指数、预警等的提及，"
-            "这些舒适度提及不纳入 requiredOutputFieldsByCapability，也不影响 "
-            "templateUsable 的判断。"
-            "不得纳入 query 未要求的候选字段，也不得输出候选以外的路径。"
-            "只有一个或多个 advancedComponents 的 templateCoverageByCapability 能完整覆盖"
-            "全部必显数据"
-            "时，templateUsable 才能为 true，并同时输出 themeId 与 advancedComponentIds。"
-            "只要有一个数据无法映射或呈现，或存在歧义、缺字段、缺模板，必须输出 "
-            "templateUsable=false、themeId=null、advancedComponentIds=[]、"
-            "requiredOutputFieldsByCapability={}。不得让标准组件、静态文案、推测值或后续模型"
-            "补齐模板不支持的数据。不得输出理由或额外字段。"
-        )
-    else:
-        schema = AdvancedScopeBrief.model_json_schema(by_alias=True)
-        scope_instruction = (
-            "你是第五接口独立的 Advanced Scope Planner。只输出 JSON，且只决定 themeId "
-            "与 advancedComponentIds；scopeVersion 固定为 advanced-scope-brief/1。不得输出"
-            "整卡置信度、整卡参数、局部模板候选、布局选择、组件参数、颜色、尺寸、"
-            "Action、理由或任何额外字段。advancedComponentIds 只能从 advancedComponents 选择，"
-            "必须覆盖用户主要业务语义，并遵守 maxAdvancedComponents；选择多个组件时必须"
-            "互相出现在 compatibleWith 中。themeId 只能从 themes 选择，并且必须出现在每个"
-            "所选高级组件的 themeIds 合集中。"
-        )
+    schema = AdvancedScopeBrief.model_json_schema(by_alias=True)
+    scope_instruction = (
+        "你是第五接口独立的 Advanced Scope Planner。只输出 JSON，且只决定 themeId "
+        "与 advancedComponentIds；scopeVersion 固定为 advanced-scope-brief/1。不得输出"
+        "整卡置信度、整卡参数、局部模板候选、布局选择、组件参数、颜色、尺寸、"
+        "Action、理由或任何额外字段。advancedComponentIds 只能从 advancedComponents 选择，"
+        "必须覆盖用户主要业务语义，并遵守 maxAdvancedComponents；选择多个组件时必须"
+        "互相出现在 compatibleWith 中。themeId 只能从 themes 选择，并且必须出现在每个"
+        "所选高级组件的 themeIds 合集中。"
+    )
     return [
         {
             "role": "system",
@@ -278,6 +229,57 @@ def build_advanced_scope_prompt(
     ]
 
 
+def build_template_retrieval_prompt(
+    task_spec: TaskSpec,
+    data_shape: DataShape,
+    registry: CardPlanRegistry,
+    candidate_output_fields: dict[str, tuple[str, ...]],
+) -> list[dict[str, str]]:
+    """Build the first-layer prompt that extracts requirements without choosing Templates."""
+
+    schema = TemplateRetrievalQuery.model_json_schema(by_alias=True)
+    user_payload = {
+        "userQuery": task_spec.userQuery,
+        "size": task_spec.size,
+        "dataShape": data_shape.model_dump(exclude={"fields"}),
+        "fields": [
+            {
+                "path": field.path,
+                "name": field.name,
+                "dataType": field.data_type,
+                "description": field.description,
+                "roles": field.roles,
+            }
+            for field in data_shape.fields
+        ],
+        "themes": [
+            {
+                "id": theme.theme_profile_id,
+                "description": theme.description,
+            }
+            for theme in registry.themes.values()
+        ],
+        "candidateOutputFieldsByCapability": candidate_output_fields,
+    }
+    instruction = (
+        "你是第四接口的首层用户强诉求提取器。只输出 JSON；routeVersion 固定为 "
+        "template-retrieval-query/1。你不判断模板是否可用，不选择模板、Variant、高级组件或布局。"
+        "themeId 必须从 themes 中选择。requiredOutputFieldsByCapability 只保留用户明确要求"
+        "必须呈现的"
+        "数据字段，路径必须来自 candidateOutputFieldsByCapability，不得补造字段。若任一用户强诉求"
+        "无法完整映射到候选字段，或诉求跨越多个 capability，则输出空的 "
+        "requiredOutputFieldsByCapability。不得输出 templateUsable、advancedComponentIds、"
+        "理由或额外字段。"
+    )
+    return [
+        {
+            "role": "system",
+            "content": instruction + "\n" + json.dumps(schema, ensure_ascii=False),
+        },
+        {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
+    ]
+
+
 def _scope_candidate_prompt_payload(
     capability: UxBusinessComponentCapability,
     task_spec: TaskSpec,
@@ -374,10 +376,7 @@ def _requested_output_fields_by_capability(
     for binding in coverage_bindings:
         values = fields.setdefault(binding.capabilityId, [])
         values.extend(binding.candidateOutputFields)
-    return {
-        capability_id: tuple(dict.fromkeys(paths))
-        for capability_id, paths in fields.items()
-    }
+    return {capability_id: tuple(dict.fromkeys(paths)) for capability_id, paths in fields.items()}
 
 
 def validate_template_request_coverage(
@@ -416,8 +415,7 @@ def validate_template_request_coverage(
         )
         if not options:
             raise ValueError(
-                "Template route component has no applicable Provider Template: "
-                f"{component_id}"
+                f"Template route component has no applicable Provider Template: {component_id}"
             )
         component_options.append(options)
     for selected_options in product(*component_options):
@@ -494,38 +492,59 @@ async def plan_advanced_scope_with_llm(
     return scope
 
 
-async def plan_template_route_with_llm(
+async def extract_template_retrieval_query_with_llm(
     task_spec: TaskSpec,
     data_shape: DataShape,
     generate_json: Callable[[list[dict[str, str]], str], Awaitable[dict[str, Any]]],
     registry: CardPlanRegistry,
     coverage_bindings: tuple[CandidateDataBinding, ...],
-    available_capability_ids: tuple[str, ...] | None = None,
-    card_spec: dict[str, Any] | None = None,
-) -> AdvancedScopeBrief:
-    """由首层 LLM 决定模板路由，并用 Provider 契约做确定性完整覆盖复核。"""
+) -> TemplateRetrievalQuery:
+    """Use the first-layer LLM only to extract Theme and query-required fields."""
+
     candidate_fields = _requested_output_fields_by_capability(coverage_bindings)
-    prompt = build_advanced_scope_prompt(
+    prompt = build_template_retrieval_prompt(
         task_spec,
         data_shape,
         registry,
-        available_capability_ids,
-        template_route_decision=True,
-        candidate_output_fields=candidate_fields,
-        card_spec=card_spec,
+        candidate_fields,
     )
-    raw = await generate_json(prompt, "template-route-decision")
+    raw = await generate_json(prompt, "template-retrieval-query")
     try:
-        decision = TemplateRouteDecision.model_validate(raw)
+        return TemplateRetrievalQuery.model_validate(raw)
     except ValidationError as exc:
-        raise TemplateRouteNotApplicable("invalid TemplateRouteDecision") from exc
-    if not decision.template_usable:
-        raise TemplateRouteNotApplicable("first-layer LLM rejected the Template route")
-    scope = AdvancedScopeBrief(
-        themeId=decision.theme_id or "",
-        advancedComponentIds=decision.advanced_component_ids,
+        raise TemplateRouteNotApplicable("invalid TemplateRetrievalQuery") from exc
+
+
+def adapt_template_match_to_scope(
+    match: TemplateMatch,
+    task_spec: TaskSpec,
+    data_shape: DataShape,
+    registry: CardPlanRegistry,
+    available_capability_ids: tuple[str, ...] | None = None,
+) -> AdvancedScopeBrief:
+    """Map a retrieval result to the legacy internal component scope outside retrieval."""
+
+    effective_ids = resolve_available_capability_ids(
+        task_spec,
+        registry,
+        available_capability_ids,
     )
-    scope = _normalize_redundant_2x2_support(scope, task_spec)
+    components = tuple(
+        component
+        for component in _component_candidates(
+            task_spec,
+            data_shape,
+            registry,
+            effective_ids,
+        )
+        if match.template_id in component.local_template_ids
+    )
+    if len(components) != 1:
+        raise TemplateRouteNotApplicable("matched Template has no unique component adapter")
+    scope = AdvancedScopeBrief(
+        themeId=match.theme_id,
+        advancedComponentIds=(components[0].name,),
+    )
     try:
         validate_advanced_scope(
             scope,
@@ -533,14 +552,7 @@ async def plan_template_route_with_llm(
             data_shape,
             registry,
             available_capability_ids,
-        )
-        validate_template_request_coverage(
-            scope,
-            task_spec,
-            registry,
-            coverage_bindings,
-            decision.required_output_fields_by_capability,
-            card_spec,
+            enforce_theme=False,
         )
     except ValueError as exc:
         raise TemplateRouteNotApplicable(str(exc)) from exc
@@ -608,6 +620,8 @@ def validate_advanced_scope(
     data_shape: DataShape,
     registry: CardPlanRegistry,
     available_capability_ids: tuple[str, ...] | None = None,
+    *,
+    enforce_theme: bool = True,
 ) -> None:
     del data_shape
     effective_ids = resolve_available_capability_ids(
@@ -648,7 +662,7 @@ def validate_advanced_scope(
     if any(task_spec.size not in item.supported_card_sizes for item in components):
         raise ValueError("AdvancedScopeBrief selected a component unsupported by card size")
     allowed_themes = set(_theme_ids_for_components(components, registry))
-    if scope.theme_id not in allowed_themes:
+    if enforce_theme and scope.theme_id not in allowed_themes:
         raise ValueError("AdvancedScopeBrief selected a Theme outside component palettes")
     if not resolve_scope_layout_ids(scope, task_spec, registry):
         raise ValueError("AdvancedScopeBrief has no compatible UX layout")
@@ -760,11 +774,7 @@ def resolve_scope_layout_ids(
         {"ActivityOverview", "HeartRateOverview"},
         {"ActivityOverview", "WorkoutOverview"},
     )
-    if (
-        health_component_names
-        and count > 1
-        and component_names not in approved_health_compositions
-    ):
+    if health_component_names and count > 1 and component_names not in approved_health_compositions:
         return ()
     if "AppUsageOverview" in component_names:
         action_count = len(approved_app_usage_action_ids(task_spec))
@@ -783,9 +793,7 @@ def resolve_scope_layout_ids(
     )
     if schedule_owned_scope and any(item.name == "ScheduleOverview" for item in components):
         action_count = len(approved_schedule_action_ids(task_spec))
-    battery_owned_scope = component_names.issubset(
-        {"BatteryOverview", "BluetoothDeviceOverview"}
-    )
+    battery_owned_scope = component_names.issubset({"BatteryOverview", "BluetoothDeviceOverview"})
     if component_names == {"BatteryOverview", "BluetoothDeviceOverview"}:
         action_count = 0
     elif battery_owned_scope and "BatteryOverview" in component_names:
@@ -829,9 +837,7 @@ def resolve_scope_layout_ids(
             if layout_id not in {"HeroSupportLayout", "HeroSupportActionLayout"}:
                 continue
         if component_names == {"BatteryOverview", "BluetoothDeviceOverview"}:
-            expected_layout = (
-                "PeerPairLayout" if task_spec.size == "2x2" else "HeroSupportLayout"
-            )
+            expected_layout = "PeerPairLayout" if task_spec.size == "2x2" else "HeroSupportLayout"
             if layout_id != expected_layout:
                 continue
         if component_names == {"BluetoothDeviceOverview"}:
@@ -846,10 +852,16 @@ def resolve_scope_layout_ids(
         has_weather = any(item.name == "WeatherOverview" for item in components)
         if has_weather and layout_id == "WeatherNowForecastLayout":
             continue
-        if has_weather and count > 1 and task_spec.size == "2x2" and layout_id not in {
-            "HeroSupportLayout",
-            "HeroSupportActionLayout",
-        }:
+        if (
+            has_weather
+            and count > 1
+            and task_spec.size == "2x2"
+            and layout_id
+            not in {
+                "HeroSupportLayout",
+                "HeroSupportActionLayout",
+            }
+        ):
             continue
         allowed.append(layout_id)
     return tuple(sorted(allowed, key=lambda item: _layout_rank(item, count, has_action)))

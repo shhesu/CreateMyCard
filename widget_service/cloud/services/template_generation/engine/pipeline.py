@@ -21,7 +21,8 @@ from services.template_generation.engine.advanced.content_selectors import (
 from services.template_generation.engine.advanced.data_shape import extract_data_shape
 from services.template_generation.engine.advanced.scope_planner import (
     TemplateRouteNotApplicable,
-    plan_template_route_with_llm,
+    adapt_template_match_to_scope,
+    extract_template_retrieval_query_with_llm,
     resolve_available_capability_ids,
 )
 from services.template_generation.engine.advanced.ux_mixed_framer import (
@@ -36,6 +37,11 @@ from services.template_generation.engine.cardplan.registry import (
     CardPlanRegistry,
     get_cardplan_registry,
 )
+from services.template_generation.engine.cardplan.template_retrieval import (
+    TemplateMatch,
+    TemplateRetrievalMiss,
+    retrieve_template_variant,
+)
 from services.template_generation.engine.terse_dsl_nested2_converter import (
     TerseDslNested2ConversionError,
 )
@@ -45,7 +51,7 @@ _MAX_BODY_REPAIRS = 2
 
 
 class TemplateGenerationError(RuntimeError):
-    """第一层已确认模板可用后，模板生成或展开失败。"""
+    """检索已锁定模板 Variant 后，模板生成或展开失败。"""
 
 
 @dataclass(frozen=True)
@@ -89,8 +95,7 @@ async def generate_template_a2ui(
             separators=(",", ":"),
         )
         selected_task_spec_message = (
-            f"{_MODULE} task_spec_after_content_selectors "
-            f"payload={selected_task_spec_payload}"
+            f"{_MODULE} task_spec_after_content_selectors payload={selected_task_spec_payload}"
         )
         print(selected_task_spec_message, flush=True)
         logger.info(selected_task_spec_message)
@@ -104,21 +109,38 @@ async def generate_template_a2ui(
         return await model_client.generate_json(prompt, phase=phase)
 
     try:
-        scope = await plan_template_route_with_llm(
+        query = await extract_template_retrieval_query_with_llm(
             selected_task_spec,
             data_shape,
             generate_json,
             registry,
             coverage_bindings,
-            available_capability_ids,
+        )
+        match = retrieve_template_variant(
+            query,
+            selected_task_spec,
+            registry,
+            coverage_bindings,
             card_spec,
         )
+        scope = adapt_template_match_to_scope(
+            match,
+            selected_task_spec,
+            data_shape,
+            registry,
+            available_capability_ids,
+        )
+        logger.info(
+            f"{_MODULE} template_retrieval matched=True "
+            f"template_id={match.template_id} variant={match.variant_name}"
+        )
+    except TemplateRetrievalMiss as exc:
+        logger.info(f"{_MODULE} template_retrieval matched=False reason={exc}")
+        raise TemplateRouteNotApplicable(str(exc)) from exc
     except TemplateRouteNotApplicable:
         raise
     except (RuntimeError, ValueError) as exc:
-        raise TemplateRouteNotApplicable(
-            f"template first-layer decision failed: {exc}"
-        ) from exc
+        raise TemplateRouteNotApplicable(f"template retrieval decision failed: {exc}") from exc
 
     try:
         return await _generate_selected_templates(
@@ -126,6 +148,7 @@ async def generate_template_a2ui(
             card_spec=card_spec,
             effective_capability_ids=effective_capability_ids,
             scope=scope,
+            match=match,
             registry=registry,
             model_client=model_client,
         )
@@ -141,6 +164,7 @@ async def _generate_selected_templates(
     card_spec: dict[str, Any],
     effective_capability_ids: set[str],
     scope: Any,
+    match: TemplateMatch,
     registry: CardPlanRegistry,
     model_client: Any,
 ) -> TemplateEngineOutput:
@@ -161,6 +185,8 @@ async def _generate_selected_templates(
         card_spec=card_spec,
         scope=scope,
         registry=registry,
+        selected_template_id=match.template_id,
+        selected_variant_name=match.variant_name,
     )
     protocol_profile = A2UIProtocolRegistry.read_design_protocol_profile(
         TERSE_DSL_NESTED2_PROFILE_ID
@@ -237,8 +263,7 @@ async def _generate_hybrid_body(
     generate = model_client.generate
     parameters = inspect.signature(generate).parameters
     accepts_keywords = any(
-        parameter.kind == inspect.Parameter.VAR_KEYWORD
-        for parameter in parameters.values()
+        parameter.kind == inspect.Parameter.VAR_KEYWORD for parameter in parameters.values()
     )
     kwargs = {"phase": phase, "suppress_prompt_log": True} if accepts_keywords else {}
     result = generate(messages, profile, **kwargs)
@@ -268,16 +293,17 @@ def _with_provider_template_binding_projection(
             if root is None:
                 continue
             data = schema.get("data")
-            component_projection = (
-                data.pop(component_id, None) if isinstance(data, dict) else None
-            )
+            component_projection = data.pop(component_id, None) if isinstance(data, dict) else None
             if isinstance(component_projection, dict):
-                projection_path = (
-                    f"{root.rstrip('/')}/_templateProjection/{component_id}"
-                )
+                projection_path = f"{root.rstrip('/')}/_templateProjection/{component_id}"
                 _set_pointer_value(schema, projection_path, component_projection)
                 changed = True
-            for binding in definition.bindings.values():
+            required_fields = {
+                (field.path, field.data_type): field
+                for variant in definition.variants
+                for field in variant.required_data_fields
+            }
+            for binding in required_fields.values():
                 path = f"{root.rstrip('/')}{binding.path}"
                 value = _pointer_value(source.dataModelSchema, path)
                 if value is None:
@@ -359,8 +385,7 @@ def _set_pointer_parts(current: Any, parts: tuple[str, ...], value: Any) -> None
 
 def _pointer_parts(pointer: str) -> tuple[str, ...]:
     return tuple(
-        part.replace("~1", "/").replace("~0", "~")
-        for part in pointer.removeprefix("/").split("/")
+        part.replace("~1", "/").replace("~0", "~") for part in pointer.removeprefix("/").split("/")
     )
 
 
