@@ -1,0 +1,40 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.3",
+  "base_commit_sha": "e3ef8fa3de60693a029b781db714791a691b0ddf",
+  "prompts": {},
+  "humans": {
+    "h_0be6075e5d5e14": {
+      "author": "yan_shuifeng <yanshuifeng@huawei.com>"
+    }
+  },
+  "sessions": {
+    "s_8810ca00e3961b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13ec6-8da2-7c00-b4de-342c0c9c53bd",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"gpt-6-astra\":{\"additions\":294194,\"deletions\":263}}",
+        "stats_total_additions": "174",
+        "stats_turn_models": "{\"t_05406edc9efbd4\":\"gpt-6-astra\",\"t_09982b26bbb7a4\":\"gpt-6-astra\",\"t_0a9f2249624d6e\":\"gpt-6-astra\",\"t_0c3ee3fa75f2c0\":\"gpt-6-astra\",\"t_0f3404f5e28f4a\":\"gpt-6-astra\",\"t_10f9eb8f24f10b\":\"gpt-6-astra\",\"t_141322dd24ab0c\":\"gpt-6-astra\",\"t_1bf663b5222670\":\"gpt-6-astra\",\"t_2aa652c0dbeabb\":\"gpt-6-astra\",\"t_415306fe369fd4\":\"gpt-6-astra\",\"t_4a5c6da0870874\":\"gpt-6-astra\",\"t_4f4133084a3a4b\":\"gpt-6-astra\",\"t_51b6fd66c830d3\":\"gpt-6-astra\",\"t_5b69e68c5bd4af\":\"gpt-6-astra\",\"t_5bfc36fda49e72\":\"gpt-6-astra\",\"t_662cb5a098656f\":\"gpt-6-astra\",\"t_67a868b5565fbd\":\"gpt-6-astra\",\"t_6be7df3c4428c0\":\"gpt-6-astra\",\"t_72c2086ce6843a\":\"gpt-6-astra\",\"t_7c7440b3679d23\":\"gpt-6-astra\",\"t_7de1c80a3ccf3d\":\"gpt-6-astra\",\"t_82e6b423b68b74\":\"gpt-6-astra\",\"t_89b8fbd76ea0fe\":\"gpt-6-astra\",\"t_8c7a811f0c8291\":\"gpt-6-astra\",\"t_8cc3ba0ba21973\":\"gpt-6-astra\",\"t_8e3206170168a6\":\"gpt-6-astra\",\"t_8f8cc6c45e320f\":\"gpt-6-astra\",\"t_91e16eb8a3ea45\":\"gpt-6-astra\",\"t_932aab3b5a18bd\":\"gpt-6-astra\",\"t_98208990ac37c8\":\"gpt-6-astra\",\"t_a5a5d65ef53753\":\"gpt-6-astra\",\"t_a6c05fc9ea96bc\":\"gpt-6-astra\",\"t_ba4ae35bf40809\":\"gpt-6-astra\",\"t_bae3b72d186054\":\"gpt-6-astra\",\"t_c3b5e83101f2f5\":\"gpt-6-astra\",\"t_c9b58cc1e21267\":\"gpt-6-astra\",\"t_dd262bfd41680f\":\"gpt-6-astra\",\"t_deb41f83c898d6\":\"gpt-6-astra\",\"t_eb08c8cec5d850\":\"gpt-6-astra\",\"t_f52e0079c5ca85\":\"gpt-6-astra\",\"t_f72895f2174949\":\"gpt-6-astra\",\"t_f9417fc65d5606\":\"gpt-6-astra\",\"t_ffee8bc0521c13\":\"gpt-6-astra\"}"
+      }
+    },
+    "s_fa35300a76e5dc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1343f-82e9-7173-8dab-10593f9c762a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"gpt-6-astra\":{\"additions\":235,\"deletions\":0}}",
+        "stats_total_additions": "235",
+        "stats_turn_models": "{\"t_d828703b2feefc\":\"gpt-6-astra\"}"
+      }
+    }
+  }
+}
