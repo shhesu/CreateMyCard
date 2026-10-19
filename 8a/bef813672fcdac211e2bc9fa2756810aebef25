@@ -1,0 +1,31 @@
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_0097d0da92da38::t_77ce171fa54a1e 140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.1",
+  "base_commit_sha": "8abef813672fcdac211e2bc9fa2756810aebef25",
+  "prompts": {},
+  "sessions": {
+    "s_0097d0da92da38": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a15337-3a64-74a1-8b61-2965ed7d5005",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "h00471646 <hesu1@huawei.com>",
+      "total_additions": 1,
+      "total_deletions": 1,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_77ce171fa54a1e": "gpt-5.6-luna"
+      },
+      "model_totals": {
+        "gpt-5.6-luna": {
+          "additions": 1,
+          "deletions": 1
+        }
+      }
+    }
+  }
+}
