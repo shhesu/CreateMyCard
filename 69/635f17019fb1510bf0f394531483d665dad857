@@ -1,0 +1,129 @@
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_5e722b18d15956::t_59f3154ee4cd43 109-138,143,155,169,181,243-294
+widget_service/docs/method_usage.md
+  s_5e722b18d15956::t_59f3154ee4cd43 1444-1447,1514
+skills/harmony-card-template-generation/references/capability/event-capability/click-event.md
+  s_5e722b18d15956::t_59f3154ee4cd43 10,28,32,38,43,50,83,87,91,95,99,103,116,123,129,142,146,159,163,171,189,196,201,205,209,216,220,224,228,250
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_5e722b18d15956::t_59f3154ee4cd43 78-93,255-267
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
+  s_5e722b18d15956::t_59f3154ee4cd43 11,13-14
+widget_service/cloud/services/retry_controller.py
+  s_5e722b18d15956::t_59f3154ee4cd43 5,9,11-12
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_5e722b18d15956::t_59f3154ee4cd43 66,93,110,118,316,334,351,359
+widget_service/cloud/app/logger.py
+  s_5e722b18d15956::t_59f3154ee4cd43 11,13,15,20,25-75,160,163-164,170,175,190,219-222,275,318,320,322,326,330-334,338,342,347,351,355,359,363,367,371,374,378,391,395,399,411,415,431-436,538-539,559-560,577-580,582-583
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_5e722b18d15956::t_59f3154ee4cd43 1027-1035
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_5e722b18d15956::t_59f3154ee4cd43 10,21,23-24,29
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_5e722b18d15956::t_59f3154ee4cd43 10-11,13-16,18-26,28-32,35-36,38-40,42-63,65-70,72-73,82-121,123-125,128-193
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_5e722b18d15956::t_59f3154ee4cd43 19,21-22,27-29,57,80-94
+widget_service/cloud/config/config.py
+  s_5e722b18d15956::t_59f3154ee4cd43 39
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_5e722b18d15956::t_59f3154ee4cd43 308-315
+harmony-card-dsl-validation/references/capability/event-capability/click-event.md
+  s_5e722b18d15956::t_59f3154ee4cd43 10,28,32,38,43,50,83,87,91,95,99,103,116,123,129,142,146,159,163,171,189,196,201,205,209,216,220,224,228,250
+widget_service/cloud/services/template_generation/config/template_controls.json
+  s_5e722b18d15956::t_59f3154ee4cd43 3
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_5e722b18d15956::t_59f3154ee4cd43 255,257,259-260,262-263
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_5e722b18d15956::t_59f3154ee4cd43 1027,1276
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_5e722b18d15956::t_59f3154ee4cd43 1818-1821
+widget_service/cloud/services/template_generation/engine/tersel_converter.py
+  s_5e722b18d15956::t_59f3154ee4cd43 40
+docs/云侧方案设计.md
+  s_5e722b18d15956::t_59f3154ee4cd43 619-626,629-660,667-672,1000-1001
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_5e722b18d15956::t_59f3154ee4cd43 243,266-274
+widget_service/cloud/data/capabilities/app-11.7.5.205_rom-6.0/event_capabilities.json
+  s_5e722b18d15956::t_59f3154ee4cd43 5,18,38,60,100,153,206,259,312,365,418,431,457,480,533,586,639,696,753,766,792,811,824,844,866,883,911,955,970,1004
+widget_service/cloud/utils/file.py
+  s_5e722b18d15956::t_59f3154ee4cd43 3-8,10,13-99,101-146,148-150,152,154-217,219-227
+widget_service/cloud/services/widget_generation_service.py
+  s_5e722b18d15956::t_59f3154ee4cd43 61,1116,1174,1557-1560,1562,1567
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_5e722b18d15956::t_59f3154ee4cd43 48,50,81-82,212,222-223,544-561,862,864-878,881,930,939-945,960,965,1045-1046,1465,1472,1476-1478,1636-1641,1703-1708,1732,2145-2150,2467-2472,2476,2478,2910,2960-3025,3041-3055,3220-3404,3454-3457,3466-3561,5071-5077,5085-5090,5113,5115-5117,5119-5127,5135-5155
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_5e722b18d15956::t_59f3154ee4cd43 1,10-11,31-35,37-68,72,78,96,101,106-147
+widget_service/cloud/custom/llmclient.py
+  s_5e722b18d15956::t_59f3154ee4cd43 12,88-89,122-123,139-159
+widget_service/cloud/api/routes.py
+  s_5e722b18d15956::t_59f3154ee4cd43 384-391,697-698,717
+skills/harmony-card-generation-offline/reference/capability/event-capability/click-event.md
+  s_5e722b18d15956::t_59f3154ee4cd43 10,28,32,38,45,78,82,86,90,94,98,111,118,124,137,141,154,158,171,179,197,200,205,210,214,218,225,229,233,237,259
+widget_service/tests/test_tool_dispatch_routes.py
+  s_5e722b18d15956::t_59f3154ee4cd43 4,481-482,942,983-984,987
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_5e722b18d15956::t_59f3154ee4cd43 47,66-68,77,79,82,294-297
+widget_service/tests/test_service_units.py
+  s_5e722b18d15956::t_59f3154ee4cd43 45,339-346,350-352,357-369,504-507,1395,1403-1418,1444-1445
+.github/CODEOWNERS
+  s_5e722b18d15956::t_59f3154ee4cd43 1
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_5e722b18d15956::t_59f3154ee4cd43 110,244-245,249,252-254,258-260,273-277,1222-1230,1911-1915,1926-1929,2348,2362,2364-2366,2379-2380,2392-2397,2399,2878
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_5e722b18d15956::t_59f3154ee4cd43 27
+widget_service/cloud/services/template_generation/docs/tersel-data-flow.md
+  s_5e722b18d15956::t_59f3154ee4cd43 56,60,113-115
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_5e722b18d15956::t_59f3154ee4cd43 73,106,203,236,260-389
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_5e722b18d15956::t_59f3154ee4cd43 128,191,462-465
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_5e722b18d15956::t_59f3154ee4cd43 75-76,99
+widget_service/cloud/services/template_generation/docs/tersel-protocol.md
+  s_5e722b18d15956::t_59f3154ee4cd43 41-42
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_5e722b18d15956::t_59f3154ee4cd43 185,192-194,203-206
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_5e722b18d15956::t_59f3154ee4cd43 36,119,198
+widget_service/cloud/services/template_generation/tests/test_tersel_protocol.py
+  s_5e722b18d15956::t_59f3154ee4cd43 140,147-148
+widget_service/cloud/services/template_generation/tools/generate_template_preview_dataset.py
+  s_5e722b18d15956::t_59f3154ee4cd43 14
+widget_service/cloud/services/template_generation/docs/compact-dsl-data-flow.md
+  s_5e722b18d15956::t_59f3154ee4cd43 46,144-146
+widget_service/cloud/custom/deepseek_platform_client.py
+  s_5e722b18d15956::t_59f3154ee4cd43 29-33,40-42,49-52,55-58,62,64-65,78-110,124-125,141-143,162-164,205-208,234-238,247-269,272-273,284-288,298
+.gitignore
+  s_5e722b18d15956::t_59f3154ee4cd43 68-79
+skills/harmony-card-design-generation/references/capability/event-capability/click-event.md
+  s_5e722b18d15956::t_59f3154ee4cd43 10,28,32,38,43,50,83,87,91,95,99,103,116,123,129,142,146,159,163,171,189,196,201,205,209,216,220,224,228,250
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_5e722b18d15956::t_59f3154ee4cd43 34,107-108,116,127,217
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_5e722b18d15956::t_59f3154ee4cd43 65,1043-1061,1063,5020
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_5e722b18d15956::t_59f3154ee4cd43 173-177
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_5e722b18d15956::t_59f3154ee4cd43 38-131,317-384
+  s_5e722b18d15956::t_235635ca7481d5 385
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_5e722b18d15956::t_59f3154ee4cd43 12-17,22-25,37
+widget_service/cloud/app/__init__.py
+  s_5e722b18d15956::t_59f3154ee4cd43 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "69635f17019fb1510bf0f394531483d665dad857",
+  "prompts": {},
+  "sessions": {
+    "s_5e722b18d15956": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04e09-7290-73f2-b7b5-b7feb152512c",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1147
+    }
+  }
+}

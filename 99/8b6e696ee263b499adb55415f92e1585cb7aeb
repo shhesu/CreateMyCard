@@ -1,0 +1,33 @@
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_19e282bd8282f9::t_6223bd6c0ac782 42,44,48-50,52
+  s_19e282bd8282f9::t_148def2e3f2a18 43,47,51
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_19e282bd8282f9::t_77e8aa2c1a36a0 97,4974,5025-5026
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_19e282bd8282f9::t_505eb1fa6010e3 68,155
+  s_19e282bd8282f9::t_77e8aa2c1a36a0 73,82,164,167
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_19e282bd8282f9::t_77e8aa2c1a36a0 431
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_19e282bd8282f9::t_148def2e3f2a18 1092,1097,1100,1224,1227,1229,1231,3645-3646,3649-3654,3764-3765,3767,3769,3775-3776,3778-3779,4089-4090,4092,4097-4101,5155,5168,5230,5232-5234
+  s_19e282bd8282f9::t_af59d9caa90677 3640-3644,3647-3648
+  s_19e282bd8282f9::t_e5a5df3749f561 616-619
+  s_19e282bd8282f9::t_1c30bb1bca2e3f 3766,3768,4091,4093,4102,5231,5235,5239-5240,5254,5256-5257,5264
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "998b6e696ee263b499adb55415f92e1585cb7aeb",
+  "prompts": {},
+  "sessions": {
+    "s_19e282bd8282f9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a056d1-0705-7343-a5fb-b2a9b06fccaf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 159
+    }
+  }
+}

@@ -1,0 +1,23 @@
+widget_service/cloud/services/fusion_ball_expander.py
+  s_19e282bd8282f9::t_5b93202462ab77 30-33,151,153
+widget_service/tests/test_fusion_ball_version_gate.py
+  s_19e282bd8282f9::t_5b93202462ab77 1,17,19,101-146
+  s_19e282bd8282f9::t_bb6cc1e9818ae7 147-148
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "92abf279ce6c5ecf66e24e56f2389a64c63aa520",
+  "prompts": {},
+  "sessions": {
+    "s_19e282bd8282f9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a056d1-0705-7343-a5fb-b2a9b06fccaf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 12
+    }
+  }
+}

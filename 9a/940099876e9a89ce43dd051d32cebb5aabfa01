@@ -1,0 +1,53 @@
+docs/云侧方案设计.md
+  s_046bdf8b785adb::t_4698124cc4717d 1728
+  s_046bdf8b785adb::t_567bfb9ffc9393 1258-1273
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_046bdf8b785adb::t_fec97f47f2442c 8,102-125,137-138,158-164,360,364-365,367,383-385,388-398,401-450
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_046bdf8b785adb::t_24365e0d4beabf 48-54,224-225,263,288
+widget_service/cloud/services/generation_pipeline.py
+  s_046bdf8b785adb::t_a61d821f56bbb6 67,117-120,135-138
+widget_service/cloud/services/task_spec_builder.py
+  s_046bdf8b785adb::t_61d740ed2842f2 109-111
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_046bdf8b785adb::t_fea7db468259b1 467-474
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_046bdf8b785adb::t_8dc1421971603b 15-17
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_046bdf8b785adb::t_2ebc6984f1f11b 4766-4801,4853,4900-4908
+widget_service/cloud/services/template_generation/processor.py
+  s_046bdf8b785adb::t_a81a08ada58949 1-84
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_046bdf8b785adb::t_95901ef977878e 841,849,857-858,901
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_046bdf8b785adb::t_1081a596d313a5 129-134,136-138,140-166,168-170,173-180,182-188,190-192,194-205,207-209,682,703-704,725,730,745-746,767,772
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/generic-metric-overview.cardtpl
+  s_046bdf8b785adb::t_4aa2222667dd5a 26-41
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_046bdf8b785adb::t_b283ddd78be4bf 289-290
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_046bdf8b785adb::t_d7d8472f13ddad 8132,8155,8222,8228,8240,8267,8349
+widget_service/cloud/services/template_generation/tests/test_template_processing.py
+  s_046bdf8b785adb::t_d569fca5a8c81e 1-394
+widget_service/cloud/services/widget_generation_service.py
+  s_046bdf8b785adb::t_6840c05348c532 9,595,598,600,615-617,681-682,728-732
+widget_service/tests/test_display_units.py
+  s_046bdf8b785adb::t_eb9091f2a7e478 95,112-116,121-122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "9a940099876e9a89ce43dd051d32cebb5aabfa01",
+  "prompts": {},
+  "sessions": {
+    "s_046bdf8b785adb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ae11-e5f3-71d1-8cbd-e945685233fc",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 34
+    }
+  }
+}

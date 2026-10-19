@@ -1,0 +1,39 @@
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_fb29ffe3561f53::t_a0da45e2774109 1102-1118,1141,1155-1156
+widget_service/tests/test_template_ring_geometry.py
+  s_fb29ffe3561f53::t_a0da45e2774109 1-219
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-detail-full.cardtpl
+  s_fb29ffe3561f53::t_36d7604de25dbd 16,21,77,82,139,144
+widget_service/cloud/services/template_generation/docs/compact-dsl-data-flow.md
+  s_fb29ffe3561f53::t_22cd28875c5faa 148-152
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_fb29ffe3561f53::t_36d7604de25dbd 683,697,830,889,956,961,1016,1021,1076,1123,1128,1189,1194
+  s_fb29ffe3561f53::t_5a0fc6e91a09ec 1398,1409,1423,1551,1562,1576,1828,1842
+docs/云侧方案设计.md
+  s_fb29ffe3561f53::t_14898ce167a334 1366-1367
+  s_fb29ffe3561f53::t_22cd28875c5faa 1231-1234
+widget_service/cloud/services/template_generation/tests/fixtures/calendar_existing_preview_hashes.json
+  s_fb29ffe3561f53::t_20c452f2015bc6 2,4,6,8-9,12-13,17-20
+widget_service/cloud/services/template_generation/tests/test_template_text_heights.py
+  s_fb29ffe3561f53::t_365b58d8ab021f 12-14,16-18
+  s_fb29ffe3561f53::t_fbdc708f42d91a 41,48-49,58,60-63,72-75,86-89
+  s_fb29ffe3561f53::t_4684622aea0086 1-7,10-11,15,19-40,42-47,50-53,66-71,76-85,90-91
+  s_fb29ffe3561f53::t_20c452f2015bc6 8-9,54-57,59,64-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "9ef4957ae3f2b5e8c6ae39cf425083e79c634fe9",
+  "prompts": {},
+  "sessions": {
+    "s_fb29ffe3561f53": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af8f-20fd-7cc0-9d28-d5a50c68d9c8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 21
+    }
+  }
+}

@@ -1,0 +1,49 @@
+widget_service/cloud/services/template_generation/model_client.py
+  s_05907ce230aad1::t_7da8f03bbafca4 5,7,15,18,41-49,80-81,89-114
+  s_05907ce230aad1::t_134da57e8a94d1 115
+widget_service/tests/test_template_empty_output_retry.py
+  s_05907ce230aad1::t_29f1293e245d7d 47-48,76-77,117-124
+  s_05907ce230aad1::t_2eee1173beea89 125-126
+widget_service/cloud/services/template_generation/postprocessing.py
+  s_05907ce230aad1::t_29f1293e245d7d 9,11-13,35
+widget_service/cloud/services/template_generation/tests/test_output_postprocessing.py
+  s_05907ce230aad1::t_29f1293e245d7d 14-17,73-75
+  s_05907ce230aad1::t_5f69fbf90a9ed2 1,4,8-13,20-24,36,45,49,53,58-72,76-97
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_3c589f74880c48 2189-2192,2235,2240-2244,2249,2251-2252
+widget_service/cloud/custom/official_http_client.py
+  s_05907ce230aad1::t_8d60f07f14529c 164
+widget_service/cloud/custom/unified_model_client.py
+  s_05907ce230aad1::t_5a1b0f6c5d2709 150,214
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_05907ce230aad1::t_600f511fa3f1b5 262,537,782,887,1055,1163,1806,2125
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_05907ce230aad1::t_2b26cde13154f3 45-47
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_05907ce230aad1::t_e28d3f98df5e3e 83,546
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_05907ce230aad1::t_1bb56588413e9f 3428,8417,8438-8440,8514,8636
+widget_service/cloud/services/template_generation/tests/test_template_validation_recovery.py
+  s_05907ce230aad1::t_77b839d68d286d 57
+widget_service/cloud/services/widget_generation_service.py
+  s_05907ce230aad1::t_4141aa50398dd5 1222
+widget_service/tests/test_template_calendar_count_validation.py
+  s_05907ce230aad1::t_a718f0b18d6c39 1,8,11,13,16-21,25-26,28-31,34,36-38,40-50,53-56,58,62-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "987c4f7912a60394288c4537a14a7fa9ab8c6f7a",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 22
+    }
+  }
+}

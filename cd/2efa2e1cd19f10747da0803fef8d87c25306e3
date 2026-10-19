@@ -1,0 +1,23 @@
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_ecd92453e7cd3d::t_9f6f65e77afff6 15,718
+  s_ecd92453e7cd3d::t_d7e7b6d505cb59 16-20
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_d7e7b6d505cb59 19-22,207-208
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "cd2efa2e1cd19f10747da0803fef8d87c25306e3",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 8
+    }
+  }
+}

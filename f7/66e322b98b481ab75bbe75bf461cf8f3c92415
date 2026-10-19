@@ -1,0 +1,48 @@
+docs/generateWidgetCardTerseDslNested2数据流.md
+  s_366a1563ab3fca::t_82cf08b0d7aaf3 10-11,35,38-40,50-52,59
+  s_366a1563ab3fca::t_c5eed01801a08f 121-122,124,131-136,145-146,151-153,156-157
+  s_366a1563ab3fca::t_08e7e7205b66fa 425
+  s_366a1563ab3fca::t_e18c38c14df641 264,266-267,269,272-275,278-280,282,284-286,288-289,291,293,296-299,302-303,325-326,330,334-335,339,348,350,366-367
+  s_366a1563ab3fca::t_8047dfbb42ea49 427-429,435-436
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_366a1563ab3fca::t_7c75b28779caee 24-25,51-53,67-68,75-76,80-82
+widget_service/cloud/services/template_generation/source_adapter.py
+  s_366a1563ab3fca::t_c4c1736611ec88 38
+widget_service/cloud/services/widget_generation_service.py
+  s_366a1563ab3fca::t_993631e63a3f63 1116
+  s_366a1563ab3fca::t_c4a207d536b876 435-450,480,482,542-543,546,551,581-582,588,591,599,605,627-630,633,637-640,667,672,1138,1188-1190,1195
+  s_366a1563ab3fca::t_6fdbd06e904a74 452,454
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_366a1563ab3fca::t_376e91467b6af0 1743,1903
+  s_366a1563ab3fca::t_6400f505b2d13f 1960
+  s_366a1563ab3fca::t_9f9c4ddae430ce 2399,2401-2402,2413,2416,2494-2496,2498-2505
+  s_366a1563ab3fca::t_d08c5ac62dcbc6 2112,2124,2137-2143,2147-2156
+  s_366a1563ab3fca::t_6cbb56c7491373 2510-2514,2516,2589,2600,2612
+  s_366a1563ab3fca::t_1ea4f726854707 2497
+  s_366a1563ab3fca::t_650b4cebc8b646 1747,1839-1885,1887-1888,1890,1919-1926,1934
+docs/云侧方案设计.md
+  s_366a1563ab3fca::t_54c6ad91dd97cd 1099-1102,1107-1109,1112,1170
+widget_service/cloud/services/template_generation/docs/README.md
+  s_366a1563ab3fca::t_54c6ad91dd97cd 35-36,44-47
+widget_service/tests/test_service_units.py
+  s_366a1563ab3fca::t_4811bdc2961251 3621
+widget_service/tests/test_tool_dispatch_routes.py
+  s_366a1563ab3fca::t_4811bdc2961251 1002-1003,1039-1041
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "f766e322b98b481ab75bbe75bf461cf8f3c92415",
+  "prompts": {},
+  "sessions": {
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 354
+    }
+  }
+}

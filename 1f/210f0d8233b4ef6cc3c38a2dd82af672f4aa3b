@@ -1,0 +1,92 @@
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_f3e9e255ad7171::t_31d580a5b8d925 544
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/first-layer.md
+  s_f3e9e255ad7171::t_0d073262899d18 64-65
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_f3e9e255ad7171::t_744099aa1f8c3e 27-56
+docs/云侧方案设计.md
+  s_f3e9e255ad7171::t_e147d092404470 1048-1049
+  s_f3e9e255ad7171::t_31d580a5b8d925 1050-1051
+  s_f3e9e255ad7171::t_744099aa1f8c3e 1052-1053
+  s_f3e9e255ad7171::t_0d073262899d18 1045-1046
+  s_f3e9e255ad7171::t_1c13c40eef611a 1047
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_f3e9e255ad7171::t_ac028973933291 14,210,1681,1728-1729,1733
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_f3e9e255ad7171::t_0d073262899d18 102
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_f3e9e255ad7171::t_1c13c40eef611a 1047-1050
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_f3e9e255ad7171::t_2e8a7db307608a 2821-2823,2845-2846,2887-2895
+  s_f3e9e255ad7171::t_7bfe2add44528f 2791
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_f3e9e255ad7171::t_e147d092404470 4032-4039,4042-4043,4045-4049,4052-4056,4058-4065,4068-4072
+  s_f3e9e255ad7171::t_0d073262899d18 10,177,307,365,423,483,693,817,971,1151,1405,1616,1730,1848,1986,2169,2351,2503,2567,2738,2907,3050,3189,3298,3474,3697,4020
+  s_f3e9e255ad7171::t_36eaa3071c82d6 11-12
+  s_f3e9e255ad7171::t_1d786fe87178bd 178-180
+  s_f3e9e255ad7171::t_5b5616f28a779f 308-310
+  s_f3e9e255ad7171::t_15f9e92de05b90 366-368
+  s_f3e9e255ad7171::t_ce65d5b411656c 424-426
+  s_f3e9e255ad7171::t_44a3a332bb7601 816
+  s_f3e9e255ad7171::t_9e0db1fbf4cdc0 818-820
+  s_f3e9e255ad7171::t_d7fcebed6cd1a9 1148-1150
+  s_f3e9e255ad7171::t_8e77d1d654824e 1406-1408
+  s_f3e9e255ad7171::t_5755736754c8c4 1615
+  s_f3e9e255ad7171::t_ec30c15f94862e 1617-1619
+  s_f3e9e255ad7171::t_097466d8e47b51 1729
+  s_f3e9e255ad7171::t_bd1bcfb5803e44 1731-1733
+  s_f3e9e255ad7171::t_bf3db0c71c7d23 1847
+  s_f3e9e255ad7171::t_7a14cb45a9fd26 1849-1851
+  s_f3e9e255ad7171::t_55bd042d4f0a1c 1985
+  s_f3e9e255ad7171::t_f2a2380ebdbf6e 1987-1989
+  s_f3e9e255ad7171::t_994ce343851d37 2166-2168
+  s_f3e9e255ad7171::t_a5972a1f1318c3 2170-2172
+  s_f3e9e255ad7171::t_ef5ff4d8ce2a17 2352
+  s_f3e9e255ad7171::t_2406649d279d1a 2504-2506
+  s_f3e9e255ad7171::t_bf632585dd4e91 2568
+  s_f3e9e255ad7171::t_5fc3c62570985f 2739
+  s_f3e9e255ad7171::t_4d9fa7794034d1 2908-2909
+  s_f3e9e255ad7171::t_eccf570a92f055 3297
+  s_f3e9e255ad7171::t_d21d9e0ff67525 3299-3301
+  s_f3e9e255ad7171::t_cface87e3c0f4c 3473
+  s_f3e9e255ad7171::t_b120a492c3b4ce 3475-3477
+  s_f3e9e255ad7171::t_9c29749d1a100c 3698
+  s_f3e9e255ad7171::t_3985f0c0d2e834 4021-4022
+  s_f3e9e255ad7171::t_7c23ba136e4d29 4030-4031
+  s_f3e9e255ad7171::t_0ac8d5fb41136a 4073-4075
+widget_service/cloud/services/template_generation/tests/test_calendar_timeline_geometry.py
+  s_f3e9e255ad7171::t_0d073262899d18 116-117
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_f3e9e255ad7171::t_31d580a5b8d925 32-33
+  s_f3e9e255ad7171::t_0d073262899d18 28-30
+  s_f3e9e255ad7171::t_e147d092404470 31,34
+widget_service/cloud/services/template_generation/tests/test_calendar_meeting_centered.py
+  s_f3e9e255ad7171::t_93c83eac9e3046 1-12,16-22,24,27-50,75-86,88-93,97,103-106,112-128,131,133-134,139-151
+  s_f3e9e255ad7171::t_31d580a5b8d925 87,102,129-130
+  s_f3e9e255ad7171::t_a773053619a426 23,110-111
+  s_f3e9e255ad7171::t_2e8a7db307608a 25,61-74
+  s_f3e9e255ad7171::t_e147d092404470 94-96,98-101,132,135-138
+  s_f3e9e255ad7171::t_1c13c40eef611a 13-15,51-56,59-60
+  s_f3e9e255ad7171::t_f396b0a7225c08 107-109
+  s_f3e9e255ad7171::t_0beff75f26cb57 57-58
+  s_f3e9e255ad7171::t_6e4effef8ce2b9 26
+widget_service/cloud/services/template_generation/tests/test_calendar_requested_case_templates.py
+  s_f3e9e255ad7171::t_0d073262899d18 386
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "1f210f0d8233b4ef6cc3c38a2dd82af672f4aa3b",
+  "prompts": {},
+  "sessions": {
+    "s_f3e9e255ad7171": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e71a-2b33-7742-bf00-7f2c1c119d30",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 95
+    }
+  }
+}

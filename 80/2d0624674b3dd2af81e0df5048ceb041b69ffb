@@ -1,0 +1,109 @@
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_a2d2ef2e014756::t_0e9a8c022a1898 79-80,88
+widget_service/cloud/services/template_generation/facade.py
+  s_a2d2ef2e014756::t_0e9a8c022a1898 34,37-38,49,60
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_a2d2ef2e014756::t_49572c8e9c6d31 44-46,390-391,395-405,763-769
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_a2d2ef2e014756::t_231d9c6e83103a 831-832,834-838,840-842,844
+  s_a2d2ef2e014756::t_e280ac70977fe0 2627,2657-2663,2695-2696
+  s_a2d2ef2e014756::t_c670a7540c7fd1 2687-2693
+  s_a2d2ef2e014756::t_32eba1d7b2c04e 2694
+  s_a2d2ef2e014756::t_4f156e4f7f8b80 77,689,717,722
+  s_a2d2ef2e014756::t_664b26a901fc15 3299,3340,3343,3346-3351,3358-3359,3369
+  s_a2d2ef2e014756::t_cd3d976a61c0e8 610-630
+  s_a2d2ef2e014756::t_58b28432f7122b 805-806,809,813,817-820,825,828,848-850,852-868,897,899-902,905-907,918,921-931,934,957,962,974,976-979,982-983,986-989,992
+  s_a2d2ef2e014756::t_465a3d5e0bc424 6,116-122
+  s_a2d2ef2e014756::t_72c3ebbfd7eeb1 78,143-162
+  s_a2d2ef2e014756::t_b4df44c2d271de 2619-2626,2628-2656,2664-2686,2697-2720
+  s_a2d2ef2e014756::t_3e7aa0cee07cc4 3059-3065,3087,3099,3116-3117,3119
+  s_a2d2ef2e014756::t_0e9a8c022a1898 3149
+  s_a2d2ef2e014756::t_92c027b227127c 631,633,635-637,639-640,698-701,800-801
+  s_a2d2ef2e014756::t_dd70e7aa6672fb 123-124
+widget_service/cloud/services/template_generation/tests/test_tersel_protocol.py
+  s_a2d2ef2e014756::t_0315100dfdebe7 19-24,148-155,158-163,174-193
+  s_a2d2ef2e014756::t_641ff6e1c79210 156-157,164-173,194
+  s_a2d2ef2e014756::t_34e6f1f5665d4e 195-197
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_a2d2ef2e014756::t_d8218e7458c507 1,30-31,33,35,45,72
+  s_a2d2ef2e014756::t_4f156e4f7f8b80 39
+  s_a2d2ef2e014756::t_2c21079badc3f5 34
+widget_service/cloud/services/template_generation/docs/compact-dsl-data-flow.md
+  s_a2d2ef2e014756::t_4f7f6d0a0ab88f 46-47,140,143-146
+  s_a2d2ef2e014756::t_58a17abac9e2b5 147
+widget_service/cloud/services/template_generation/docs/tersel-protocol.md
+  s_a2d2ef2e014756::t_4f7f6d0a0ab88f 41-50
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_a2d2ef2e014756::t_4f156e4f7f8b80 262
+  s_6526bbaece82d7::t_0c7dae948b8bf9 50-54,125-126,208,211-212
+  s_a2d2ef2e014756::t_4f7f6d0a0ab88f 38,263,265
+widget_service/cloud/services/template_generation/engine/fusion_ball_a2ui_converter.py
+  s_a2d2ef2e014756::t_34a007bf0dc79b 9,65,131,212-224
+  s_a2d2ef2e014756::t_e716314a6754a6 55,138,148-160,175-178,202,205-211
+  s_a2d2ef2e014756::t_ec08ec7067bca4 35-36
+  s_a2d2ef2e014756::t_428d7497bebcf5 1,11-13,30,33-34,43-44,46-54,56-62,64,66,68-69,102,104-105,108,112-130,132-134,136-137,139-147,161-174,181,183-199,227,229-232,234-244
+widget_service/cloud/services/template_generation/docs/tersel-data-flow.md
+  s_a2d2ef2e014756::t_4f7f6d0a0ab88f 60-61,114-117
+  s_a2d2ef2e014756::t_5df96caf18c65b 118
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_a2d2ef2e014756::t_4f156e4f7f8b80 62,4979
+widget_service/cloud/services/terse_dsl_nested2_converter.py
+  s_a2d2ef2e014756::t_49572c8e9c6d31 34-36,38,252-253,257-267,643-649
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_a2d2ef2e014756::t_0315100dfdebe7 1399-1456
+widget_service/cloud/services/template_generation/docs/README.md
+  s_6526bbaece82d7::t_0c7dae948b8bf9 41,45-46
+  s_6526bbaece82d7::t_fd0876bc87e5b0 47
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_a2d2ef2e014756::t_60661a0e7f48e2 34,45,47,1382-1384,1406-1420
+  s_a2d2ef2e014756::t_59f900313c97d8 1052-1053
+  s_a2d2ef2e014756::t_e797436492ba7e 1421-1422
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_a2d2ef2e014756::t_0e9a8c022a1898 46,48-49,63-67,81-85,123,460-461,466
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_6526bbaece82d7::t_0c7dae948b8bf9 63-67,93-95,104-105
+  s_a2d2ef2e014756::t_4f7f6d0a0ab88f 155-159,176
+  s_6526bbaece82d7::t_b7835869177a03 106
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_a2d2ef2e014756::t_60661a0e7f48e2 34,45,47,1388-1389,1398-1418
+  s_a2d2ef2e014756::t_d4190cd801f2c7 759-761,770,1942,1951,2133,2179,2217,2221
+  s_a2d2ef2e014756::t_59f900313c97d8 1385-1386
+  s_a2d2ef2e014756::t_19af6b89abf0d5 1419-1420
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_a2d2ef2e014756::t_4f7f6d0a0ab88f 174,181-183,191-194,202,205-209
+  s_6526bbaece82d7::t_0c7dae948b8bf9 171-173
+docs/云侧方案设计.md
+  s_a2d2ef2e014756::t_79d6bc8d1b0b00 1124-1131
+  s_a2d2ef2e014756::t_302664ebafa92d 1137-1153,1155-1156
+  s_a2d2ef2e014756::t_dc8e919729d18c 1154
+widget_service/cloud/services/widget_generation_service.py
+  s_a2d2ef2e014756::t_7e153227887e82 60-64,698
+  s_a2d2ef2e014756::t_917ad7f66020de 71-95
+  s_a2d2ef2e014756::t_0e9a8c022a1898 1212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "802d0624674b3dd2af81e0df5048ceb041b69ffb",
+  "prompts": {},
+  "sessions": {
+    "s_6526bbaece82d7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a029b1-b0ab-7a73-87a1-fbe2fcd0d0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 870
+    },
+    "s_a2d2ef2e014756": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03e5d-47b8-7902-ae93-abfb8b838308",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 654
+    }
+  }
+}

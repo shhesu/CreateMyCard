@@ -1,0 +1,84 @@
+docs/云侧方案设计.md
+  s_858ae21fe762df::t_0c3c2784742f02 2064-2072
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_858ae21fe762df::t_91eb4cac258c00 7,38-40,47-48
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_858ae21fe762df::t_01c68ee640aa83 30-31,543-544,546
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_858ae21fe762df::t_2b935bee3c5dd0 7,48,52,132,159,198-202,231
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_858ae21fe762df::t_b7c390d69dc722 8,13-17,35,40
+widget_service/cloud/services/template_generation/docs/support-template-action-policy.md
+  s_858ae21fe762df::t_352d425add055c 24,28-29,34-46,48-56,59-60,62,83-86
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_858ae21fe762df::t_1bcbd08f46bba1 8-17
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_858ae21fe762df::t_1cb190929e9185 34-39,41,43-44
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_858ae21fe762df::t_362aab89294f5d 16-17
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_858ae21fe762df::t_d805e976bf876a 16-17
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_858ae21fe762df::t_bdf635c2c917cf 20-25
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_858ae21fe762df::t_0613f5a79eceac 37-42
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_858ae21fe762df::t_d1d10ac3621642 16-17,137-140
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
+  s_858ae21fe762df::t_84b4e22bf30dcd 143-148
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_858ae21fe762df::t_cbb37ab3d9de76 83-88
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_858ae21fe762df::t_85e89a45508025 16-17,119-120,141-142,164-165
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_858ae21fe762df::t_7adaac39224d70 41-47
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_858ae21fe762df::t_431b69876afa77 83-89
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_858ae21fe762df::t_aa3aed097c90dc 16-17,276-280,301-305,586-589,607-611,633-636
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_858ae21fe762df::t_16de0449276927 16-17
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_858ae21fe762df::t_c72f5b1b7eb302 35-36,46,97,103,107-108,111,115,117,120,123
+widget_service/cloud/services/template_generation/tests/test_battery_non_fusion_palette.py
+  s_858ae21fe762df::t_523c245b50b61d 1,31-35,44
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_858ae21fe762df::t_1910b717aed89f 27,316
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_858ae21fe762df::t_f7ab5de67bf87f 16,42-60,256,266,357,585,707,709,713,849-850,876,878
+widget_service/cloud/services/template_generation/tests/test_retired_app_usage.py
+  s_858ae21fe762df::t_a8f8760ff0fc87 79-91
+widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
+  s_858ae21fe762df::t_42d94580fc3a58 55,59-63,105,108,111,114,117-118,121-123,126-127,211-228,428,448-457,460,462-463,479-488,490,502-503,507-508,526-531
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_858ae21fe762df::t_14d8d224b29c01 249
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_858ae21fe762df::t_8a69ae6deb8465 58
+widget_service/cloud/services/template_generation/tests/test_template_examples.py
+  s_858ae21fe762df::t_7c8db8b0aa1977 44
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_858ae21fe762df::t_c7f66700f37413 284,1164,1172,1198,1378,1423,1429,1433,1438,1611,2014,3216,3234-3235,6317
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_858ae21fe762df::t_283e9373c3a1e8 651
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_858ae21fe762df::t_ab6e7153390d6a 23,27-28,30,35-36,45
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_858ae21fe762df::t_185ba984b50339 912-916,918-920,922-925,939-943,949,954-955
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "817b39488287a1820d3809c85703f7699d0884a9",
+  "prompts": {},
+  "sessions": {
+    "s_858ae21fe762df": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12ee5-61f1-70b3-aa16-ebd3ec218891",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

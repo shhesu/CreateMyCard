@@ -1,0 +1,35 @@
+widget_service/cloud/models/generation.py
+  s_19e282bd8282f9::t_8b045aebf92802 6-7,82,86-97
+widget_service/cloud/services/generation_preflight.py
+  s_19e282bd8282f9::t_8b045aebf92802 87
+widget_service/tests/test_fusion_ball_version_gate.py
+  s_19e282bd8282f9::t_c0035d0aaae39e 19-23,122-160
+  s_19e282bd8282f9::t_19304cfe3c345b 1-18,24-121,161-197
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_19e282bd8282f9::t_8b045aebf92802 741
+widget_service/cloud/services/task_spec_builder.py
+  s_19e282bd8282f9::t_8b045aebf92802 35,119
+widget_service/.env.example
+  s_19e282bd8282f9::t_8b045aebf92802 3
+widget_service/cloud/services/fusion_ball_expander.py
+  s_19e282bd8282f9::t_8b045aebf92802 15-16,18,77-83,85-86,88-89,136
+widget_service/cloud/services/generation_pipeline.py
+  s_19e282bd8282f9::t_8b045aebf92802 149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "6fcea007f4952b42696a51754acba45047ea07cc",
+  "prompts": {},
+  "sessions": {
+    "s_19e282bd8282f9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a056d1-0705-7343-a5fb-b2a9b06fccaf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 53
+    }
+  }
+}

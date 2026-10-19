@@ -1,0 +1,27 @@
+widget_service/cloud/services/template_generation/docs/README.md
+  s_a8a49068386080::t_9ba8840386fe75 97-98
+widget_service/cloud/services/template_generation/tests/test_cardtpl_formatter.py
+  s_a8a49068386080::t_244761d34a6350 30-40,52,97-125,129-145
+  s_a8a49068386080::t_1e89b5a4e4fa7c 146-147
+widget_service/cloud/services/template_generation/tools/format_cardtpl.py
+  s_a8a49068386080::t_9ba8840386fe75 9,253-285,371,376-377,428-434
+widget_service/cloud/services/template_generation/tests/fixtures/cardtpl_formatter/weather.expected.cardtpl
+  s_a8a49068386080::t_244761d34a6350 77,106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "90cc76d11f7b342cb4d93b6861032650d92327f3",
+  "prompts": {},
+  "sessions": {
+    "s_a8a49068386080": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a94b-9139-7ac1-a5db-f07f97c1f211",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 8
+    }
+  }
+}

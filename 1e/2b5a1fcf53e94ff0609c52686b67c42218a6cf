@@ -1,0 +1,22 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_623d2724202cfc::t_9ce954912b9daf 2013,2018
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_623d2724202cfc::t_9ce954912b9daf 30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "1e2b5a1fcf53e94ff0609c52686b67c42218a6cf",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    }
+  }
+}

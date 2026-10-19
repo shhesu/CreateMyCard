@@ -1,0 +1,52 @@
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_ecd92453e7cd3d::t_c3146349ddec0f 50,196
+widget_service/cloud/services/template_generation/archive.py
+  s_ecd92453e7cd3d::t_c3146349ddec0f 29,60-107,110,112,114
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_296ddaf812b7ef 1,5-7,31-44,73-76,79-80
+widget_service/tests/test_service_units.py
+  s_ecd92453e7cd3d::t_c912478d5244c1 175,256-258,284,293-294
+  s_ecd92453e7cd3d::t_42ed4762a352f7 259
+  s_ecd92453e7cd3d::t_8bf212c295a527 3603-3620
+widget_service/cloud/services/template_generation/legacy_python.py
+  s_ecd92453e7cd3d::t_f55760746352f8 1-28
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_4c4e1a15436868 21,24-27,95-110,238-272,380-459
+widget_service/tests/test_advanced_component_pipeline.py
+  s_ecd92453e7cd3d::t_03f7223dc99862 3248,3256,3309-3313
+  s_ecd92453e7cd3d::t_98ee7828cbe177 20
+widget_service/tests/test_multi_round_edit.py
+  s_ecd92453e7cd3d::t_7cccd6e4aaf3f6 291,297-298,300,307,311-313,344-349,383,502,508-509,511,518,522-523,649-654,797,830-846
+widget_service/cloud/services/widget_generation_service.py
+  s_ecd92453e7cd3d::t_641cab0d43c69f 73-76
+  s_ecd92453e7cd3d::t_eac9b6d4669ca8 1348-1352
+widget_service/cloud/services/template_generation/docs/README.md
+  s_ecd92453e7cd3d::t_296ddaf812b7ef 3-4,18-24,34-38,44-45
+widget_service/tests/test_tool_dispatch_routes.py
+  s_ecd92453e7cd3d::t_ef564f545d4548 1030
+  s_ecd92453e7cd3d::t_0b705331d7a6af 991-992,1029,1031,1035
+widget_service/cloud/services/template_generation/__init__.py
+  s_ecd92453e7cd3d::t_f55760746352f8 1,3-4,6-10
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_292596eada3375 17,24,93-108,110-146,156-158,160-164,227-229,269,297-309
+  s_ecd92453e7cd3d::t_4c35955eb584db 1,109
+  s_ecd92453e7cd3d::t_60ec1b2d313998 12,159
+  s_ecd92453e7cd3d::t_6d8f0cc3302949 310-311
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "d524c3b3d57e64a156365bcef3b57b34633b1dd4",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 172
+    }
+  }
+}

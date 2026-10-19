@@ -1,0 +1,56 @@
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_3fdaba39417f3b 2234-2235,2237-2242
+widget_service/cloud/services/asset_url_mapper.py
+  s_05907ce230aad1::t_3929449845f2b9 86
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_05907ce230aad1::t_2858d6def383a3 196
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_05907ce230aad1::t_9a04eca860bfc6 46
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_05907ce230aad1::t_ecf044c3db69c6 385,389,418,424,431,499,503,604,612,1069,1080,1220,1232,1253,1271,1510,1521
+widget_service/cloud/services/generation_pipeline.py
+  s_05907ce230aad1::t_cd649662eea11a 164,171,296-297,360
+widget_service/cloud/services/template_generation/tests/public_processing.py
+  s_05907ce230aad1::t_1232507e689d8c 1-21
+widget_service/cloud/services/template_generation/tests/test_battery_action_policy.py
+  s_05907ce230aad1::t_0843cd822717fa 33-35,491,563,660
+widget_service/cloud/services/template_generation/tests/test_battery_case_extensions.py
+  s_05907ce230aad1::t_4c294301571a8c 27-29,52,96,189,266,490,610,649,707,748
+widget_service/cloud/services/template_generation/tests/test_earbud_full_optional_charging.py
+  s_05907ce230aad1::t_c4c7db3c44ebf0 15-17,206,290,373,455
+widget_service/cloud/services/template_generation/tests/test_output_postprocessing.py
+  s_05907ce230aad1::t_8763302b0d19ce 86
+widget_service/cloud/services/template_generation/tests/test_runtime_if_deferred.py
+  s_05907ce230aad1::t_8658d1e3ba6e2e 205
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_05907ce230aad1::t_b522043c7a7565 8417,8438,8512,8527,8549,8632
+widget_service/cloud/services/template_generation/tests/test_template_svg_colors.py
+  s_05907ce230aad1::t_a3a212db59878c 41,44
+widget_service/cloud/services/template_generation/tests/test_template_text_heights.py
+  s_05907ce230aad1::t_8d241cc1c2373b 78
+widget_service/cloud/services/template_generation/tests/test_template_validation_recovery.py
+  s_05907ce230aad1::t_1b776160676400 56
+widget_service/cloud/services/widget_generation_service.py
+  s_05907ce230aad1::t_b2b0aaea9ee9c5 766,918,920,939,1051,1053,1217
+widget_service/tests/test_template_calendar_count_validation.py
+  s_05907ce230aad1::t_8be3886782d781 1,27,41,51,55,67
+widget_service/tests/test_trusted_template_components.py
+  s_05907ce230aad1::t_0e9077d3a26cdb 58,61,64,67,71,74,78,93,106,109,112,117,120,142,146,149,159,166,168-170,175-177,182,184,188-191,194,197,200-201,204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "fa8963aed4ad6ea79b6495e3265efd7539c46e02",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 22
+    }
+  }
+}

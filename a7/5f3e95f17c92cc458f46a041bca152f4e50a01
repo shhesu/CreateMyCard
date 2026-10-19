@@ -1,0 +1,35 @@
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_681dd3776ecd69 99-102
+widget_service/cloud/services/template_generation/__init__.py
+  s_ecd92453e7cd3d::t_0bf606dc39f1ae 3
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_4968392749908d 1342,1373-1377,1391,1396,1401-1404,1407-1411,1421
+widget_service/cloud/services/template_generation/docs/README.md
+  s_ecd92453e7cd3d::t_681dd3776ecd69 25,31-32
+widget_service/tests/test_service_units.py
+  s_ecd92453e7cd3d::t_4968392749908d 281,287-288,3626
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_0bf606dc39f1ae 12
+widget_service/cloud/services/widget_generation_service.py
+  s_ecd92453e7cd3d::t_e63c6f4c707ba5 1128-1132
+  s_ecd92453e7cd3d::t_0bf606dc39f1ae 61,1108-1127,1133-1134
+widget_service/cloud/services/template_generation/docs/migration-notes.md
+  s_ecd92453e7cd3d::t_681dd3776ecd69 9-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "a75f3e95f17c92cc458f46a041bca152f4e50a01",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 88
+    }
+  }
+}

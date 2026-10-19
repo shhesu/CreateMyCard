@@ -1,0 +1,84 @@
+widget_service/tests/test_advanced_component_pipeline.py
+  s_eb7827b49a5bb3::t_96056b693cd6bf 32,119-127,163-164,209-228,234-244,248-249,259-260,270-271,281-282,292-293,303-304,314-315,323-344,347-348,356,412,418,444,448-600,627,657,714-726,728,733-735,3036,3113,3141,3194,3232,3282
+  s_eb7827b49a5bb3::t_ecdac8155a9474 54
+widget_service/tests/test_cardplan_template.py
+  s_eb7827b49a5bb3::t_96056b693cd6bf 2683,2694-2697
+widget_service/tests/test_service_units.py
+  s_eb7827b49a5bb3::t_53751b89d28440 2210,2212
+widget_service/cloud/services/advanced_component_pipeline/ui_planner.py
+  s_eb7827b49a5bb3::t_96056b693cd6bf 19-43,62,77-89,130-134,171-196,202,214,226,239,251,264,277,285-296,316,333,350
+widget_service/cloud/services/advanced_component_pipeline/pipeline.py
+  s_eb7827b49a5bb3::t_96056b693cd6bf 23-24,521-536,540,542
+widget_service/cloud/models/generation.py
+  s_eb7827b49a5bb3::t_061b57a9f249c0 134
+widget_service/cloud/services/advanced_component_pipeline/component_selector.py
+  s_eb7827b49a5bb3::t_0791dc35c332e1 11-56,91-92,108-113,116,118-125,127
+widget_service/cloud/services/advanced_component_pipeline/components/dual_duration_action/__init__.py
+  s_eb7827b49a5bb3::t_485add829cc79e 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/dual_duration_action/plugin.py
+  s_eb7827b49a5bb3::t_8bbabce1003311 23-25,33
+widget_service/cloud/services/advanced_component_pipeline/components/dual_ring_primary_action/__init__.py
+  s_eb7827b49a5bb3::t_91c786e61bd653 1
+widget_service/cloud/services/advanced_component_pipeline/components/dual_ring_primary_action/plugin.py
+  s_eb7827b49a5bb3::t_579b49ec126af7 1-216
+widget_service/cloud/services/advanced_component_pipeline/components/hero_countdown/__init__.py
+  s_eb7827b49a5bb3::t_d0e6a3bcb59be5 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/hero_countdown/plugin.py
+  s_eb7827b49a5bb3::t_e1aca79d639adc 15,18-25,29-31,33-35,38,41-43,50-52,57,80-129,137,139,141-142,148-149
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_action/__init__.py
+  s_eb7827b49a5bb3::t_4936ed0f401915 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_action/plugin.py
+  s_eb7827b49a5bb3::t_408e018d575fb3 1,19-22,27-29,33,35-36,40,48-51,53,108-121,134-136,142-143
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_icon_action/__init__.py
+  s_eb7827b49a5bb3::t_43652b46a4805c 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_icon_action/plugin.py
+  s_eb7827b49a5bb3::t_fc1aad78ba48b5 1-200
+widget_service/cloud/services/advanced_component_pipeline/components/status_ring_action/__init__.py
+  s_eb7827b49a5bb3::t_fb021cd78aa6dd 1
+widget_service/cloud/services/advanced_component_pipeline/components/status_ring_action/plugin.py
+  s_eb7827b49a5bb3::t_dcb05e2eeb3d05 10,16-21,28-30,38,152
+widget_service/cloud/services/advanced_component_pipeline/components/timeline_event_action/__init__.py
+  s_eb7827b49a5bb3::t_a6d7ec6678501a 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/timeline_event_action/plugin.py
+  s_eb7827b49a5bb3::t_a69ad8c0a06599 25-27,35
+widget_service/cloud/services/advanced_component_pipeline/components/upcoming_event_action/__init__.py
+  s_eb7827b49a5bb3::t_00e8b6debcac25 1
+widget_service/cloud/services/advanced_component_pipeline/components/upcoming_event_action/plugin.py
+  s_eb7827b49a5bb3::t_8769be5085c16c 23-25,33
+widget_service/cloud/services/advanced_component_pipeline/components/usage_summary_action/__init__.py
+  s_eb7827b49a5bb3::t_18318177a08485 1
+widget_service/cloud/services/advanced_component_pipeline/components/usage_summary_action/plugin.py
+  s_eb7827b49a5bb3::t_e69b9bd6116f20 23-25,32
+widget_service/cloud/services/advanced_component_pipeline/models.py
+  s_eb7827b49a5bb3::t_7e0de4f9153f20 384,391-392,397-415,432-433,450-451,485-537,556,572
+widget_service/cloud/services/widget_generation_service.py
+  s_eb7827b49a5bb3::t_abf00fd6b3a9e0 1009-1024
+widget_service/tools/run_ws_cases.py
+  s_eb7827b49a5bb3::t_0c6766063649fd 1-273
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "8365d679250e8add6959887e8d3bf9809c3ae276",
+  "prompts": {},
+  "sessions": {
+    "s_7834fcd34f1ef0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff116-48a2-7863-a226-e715d80d8bc1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 129
+    },
+    "s_eb7827b49a5bb3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff509-cf2d-7cd0-af43-1efcb3fe2fa7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 41
+    }
+  }
+}

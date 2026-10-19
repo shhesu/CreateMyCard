@@ -1,0 +1,24 @@
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_05907ce230aad1::t_292d223621f021 1808,1856,1866,1975
+widget_service/cloud/services/generation_pipeline.py
+  s_05907ce230aad1::t_aba78db71c8619 202
+widget_service/cloud/services/widget_generation_service.py
+  s_05907ce230aad1::t_b6ceae8dffa293 766,918,920,939,1051,1053,1217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "06c82d0e7d160980ea2e940d55a21375a6014341",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 22
+    }
+  }
+}

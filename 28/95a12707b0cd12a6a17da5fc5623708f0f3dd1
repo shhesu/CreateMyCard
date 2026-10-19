@@ -1,0 +1,168 @@
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_623d2724202cfc::t_649bed0fc6c102 134-141,151,159-163,173-174,177-179
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_623d2724202cfc::t_039ab4221df3bb 48-50,119-120,123-124,206
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_623d2724202cfc::t_d0662890dddc91 7,11,14,20-21,23,31-33,35-42,47,53,60,72-76,81-83,87,89-94,99,103,108,112,114-120,125,131,140,149,157-160,165,173,178,183,188,192-195,206-207
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_623d2724202cfc::t_5da4decc5c6559 66,68-69,71,77-115,122-124,184,231-234,236-239,250-252,280,283-284,286-288,297-299,302-304,309-310
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_623d2724202cfc::t_a8db2eb81cda40 6-7,26-27,30-45,50,88-89,104-105,114-116,127,129-130
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_623d2724202cfc::t_f95efeaf70f7bb 8,10-13,32
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_623d2724202cfc::t_b028870bfc0409 1928
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_623d2724202cfc::t_a17b390000b1fc 15,17
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_623d2724202cfc::t_ed6dfc44ff6c13 107-110,128-129,131,133-137,146,194,204,284,308,343,351,530,554,619,670-698,744,764-766,875-881,888-889,891,897-910,1182-1194,1244-1262,1264-1265,1271-1276,1278-1280
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_623d2724202cfc::t_cb3cef6f385024 6,22-24,42,44,63,76,110-155
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_623d2724202cfc::t_4b5904eb3e7e5b 53-62,169,174-178,182,185-189,416,490,493-494,499,588,591-593,600-609,613-663,667-668,671,675-676,681-695,703,707-738,741-745,749,751-767,773-778,780-793,798,804,806,819-861,863-880
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_623d2724202cfc::t_1d5b4236dd6505 261-266,268,292,294,296-297,401,405,412-416,442-447,461,463-464,696-699,1035,1037,1039,1073-1081,1088-1098,1104-1114,1116,1118,1120-1124,3570-3574,3576,4380,4426,4532,4540-4541,4557,4559-4564,4572-4578,4585,4986,5021,5026-5027,5029,5040,5043,5045,5047-5049,5054-5068,5070-5074,5175,5181-5184,5188,5201,5738-5742,5799-5801,5803,5806,5994-5995,5997,6003-6012
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_623d2724202cfc::t_35d4dbb7b1cd45 5-8,12-14,67-86,144,153-172
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_623d2724202cfc::t_7572189c606f1c 185-194
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_623d2724202cfc::t_7633e5d903d9ee 31,68,244,246,269-273,298,312-315,320-330,337-338
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_623d2724202cfc::t_a23013b619dce0 27-34,36-43,45,53
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_623d2724202cfc::t_54e25db12746c0 185,612-615,620-623,649-650,1027-1031,1036-1039,1044-1048,1146-1181
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_623d2724202cfc::t_feba958fd304bb 56,58,78,94,739,747-751,963-966,1024-1041,1043,1278,1313-1324,1365-1371
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_623d2724202cfc::t_8a955f1c1e839e 244,251-278,359-391,486-487,498-507
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_623d2724202cfc::t_190ee10f934b72 4-5,78,98,105,110-112,117-118,142-144,146-147,171,188,192,195-202,214,225-257,266,276,278-282,287,299,301,303,305,309-318,320,325-328,331,333,393,425,441,449-465
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_623d2724202cfc::t_2333b4765e955e 46,145-149
+widget_service/cloud/services/template_generation/engine/theme_reference.py
+  s_623d2724202cfc::t_09038e98b117f9 14-15
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_623d2724202cfc::t_d759037d9e2945 5-6,21-24
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_623d2724202cfc::t_70a30ce19ba4cf 52-53
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_623d2724202cfc::t_edb84155fac8e0 8
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/provider.json
+  s_623d2724202cfc::t_29176a23dfd682 56,94-106
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_623d2724202cfc::t_0dba42f17f0f9b 230-280
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_623d2724202cfc::t_1badbaf2e06744 18-23,28-29
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_623d2724202cfc::t_31943f8b531b96 260,272,286-385
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_623d2724202cfc::t_555b2a40d72965 921-1371
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/first-layer.md
+  s_623d2724202cfc::t_011d86261b872a 5,17,23
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_623d2724202cfc::t_fd8ef3bececaa7 3,5-6,8-38
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_623d2724202cfc::t_c99b89c6ad1b5c 5-6,22-25,30,36,38,42-43,49,56-57,59-60,63,66,69,74-77,83,86-87,90,94,97,100,107-108,110,116,123-124,126,132,139-142
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_623d2724202cfc::t_f78c7d2fa57da6 4-6,49,80,84,96,99-105,107,273,277-279,291,300,314,330,346,353,358,364,382,403,415,418-423,425-458,465,468-469,471,479,483,492,506,513,522,528,531,533,538,544-545,550,555-556,574,589,595,607,610-615,617-650
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_623d2724202cfc::t_d021533e096bd6 7
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_623d2724202cfc::t_5c3dabb5256583 3,5-12
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_623d2724202cfc::t_c7086779a2eae6 5-6,22,24-26
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_623d2724202cfc::t_7fcfc330ea7b70 7,11-14,18-19,21,23-32
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_623d2724202cfc::t_1b14394016c445 3,6-29
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_623d2724202cfc::t_086ccca1d28873 5-6,19,22,25,32,38,44-48,54,57,59-60,68,71,74-75,77-80,85,88,93-95,98,101,104-105,108,111-112,118,121-122,128-129,132,135,138,143-144,150,153-154,161
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_623d2724202cfc::t_7ee5a317aea862 1,4-6,21-32,34-35,38-53,55,57,59-62,64-80,82-89,91-96,98-107,109,465-503,507-509,513-514,521-530,532-534,536,538-545,547-561,563-569,571-585,587-593,595-609,611,712,714,720-721,724-726,728-732,734-797,799
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_623d2724202cfc::t_c3323caad95f73 6,12,18-21,28
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_623d2724202cfc::t_2cbd0c1f7bdf99 337-429
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_623d2724202cfc::t_927ab3eaacfbce 298-371
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_623d2724202cfc::t_1b1ecd4b9d573f 62-267
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_623d2724202cfc::t_ae9cf908e06f3e 205-285
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_623d2724202cfc::t_76ff04b9a52278 197-273
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_623d2724202cfc::t_16ba108aa556f0 16-20,27-28,95-120,148-149
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_623d2724202cfc::t_50ca135ab2a0a8 32-45,77,88-92,96-100
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/second-layer.md
+  s_623d2724202cfc::t_a25710d9bdb61c 7
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/provider.json
+  s_623d2724202cfc::t_851ac3605e6554 51-65
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_623d2724202cfc::t_cddc3433f81c3a 121-193
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_623d2724202cfc::t_39e8be9b6a45ef 4,12-14
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_623d2724202cfc::t_285e1fc1c75fb8 3,6-26
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_623d2724202cfc::t_38bdba892c8bed 5-6,22,24,29-30,33,36,39-40,43,46,49,52,54,56,58,60,63,66,69,73-74,76,82,84,89-90,96,98,104-105,111,113,117,120-121,127,129,133,136-137,143,145,150-151
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_623d2724202cfc::t_a0844578a3a2fc 80,82-83,85,88,92-94,99-106,108-109,111,116-123,125-127,130,132-141,143,145,148-152,154-155,159,162,164,169,171,173,175-176,179-186,188,191,193,196-208,210-225,228-229,235,239,242,249,251,253,255-256,259-266,268,271,273,276-288,290-305,308-309,315
+widget_service/cloud/services/template_generation/resources/source/themes/2x2-two-support/first-layer.md
+  s_623d2724202cfc::t_bb831cbc27df5d 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/2x2-two-support/theme.json
+  s_623d2724202cfc::t_7e6f49f0175000 2-22,24-26,28-31
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_623d2724202cfc::t_d75fcde472b9c0 6,21-24,28-29,37-39
+widget_service/cloud/services/template_generation/resources/source/themes/base/theme-base.json
+  s_623d2724202cfc::t_c2753c941f8913 16-18
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-battery-teal/first-layer.md
+  s_623d2724202cfc::t_7dcaba29ac7842 3-6
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-battery-teal/theme.json
+  s_623d2724202cfc::t_fcad7640a6e5ee 4,6,26
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-sleep-violet/first-layer.md
+  s_623d2724202cfc::t_ed6df9dce3fb9a 3-4
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-sport-orange/first-layer.md
+  s_623d2724202cfc::t_0fcd872825068e 3-4
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-weather-blue/first-layer.md
+  s_623d2724202cfc::t_0da319bbcc856d 3-4
+widget_service/cloud/services/template_generation/source_generator.py
+  s_623d2724202cfc::t_c03bf262a6b853 10,40,49
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_623d2724202cfc::t_46574c2647e449 24,33,36,42,145,153,157,175-185,193,199-204,207-209,226-229,302-327,386-394,443,488-503,541-543,546-549,558,569,625,628,631,634,636,653-665,675,677,679,686,695-702,711,725-726,782,799-800,816,843,853-865,871,877,880,907,916,920-930,932-972,974-981,983-988,990-1002,1116-1131,1155,1159-1160,1180-1194,1279-1289,1302-1312,1321,1339-1340,1361-1364,1376-1377,1424,1437
+widget_service/cloud/services/template_generation/tests/eval_fixture_migration.py
+  s_623d2724202cfc::t_df878254dc50e1 37-43,46
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_623d2724202cfc::t_bbc9e979bcd059 16-17,33-40,48,64,74-96,113-117,136-165,171,180-182,184-185,201,220-246,252,285-290,297,361,365,367-368,370,386,398-399,402-403,405-406,408,412,414,416,418-419,421-422,429-430,435,439-449,459,476,514,516-517,519-520,523,526,531-532,542-590,603-606
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_623d2724202cfc::t_c3619846f01e7a 65-66,70-72,92,115-138,242,251,258,304,340,342,397-398,403,427,449-495,508-526,640,651-654,937,995,997-1001,1004-1005,1009-1010,1015-1031,1052-1067,1123-1142,1147,1155,1163-1169,1185-1192,1619,1621,1649,1841,1900,1934,1941-1942,2020-2022,2024,2028-2037,2047-2052,2058-2059,2187,2327-2328,2357-2358,2363,2365,2368-2372,2377,2382-2383,2432-2434,2437-2438,2441-2444,2446-2449,2453-2457,2459-2460,2462-2469,2695-2737,2741-2754,2820-2823,2834-2838,2842-2851,2863-2887,3121-3142,3176-3184,3189-3196,3208,3375-3380,3406-3411,3415,3435-3436,3440,3476,3478-3484,3487-3488,3494-3507,3529,3533-3538,3557-3558,3569-3574,3578,3592,3608-3611,3704-3705,3707-3708,3711-3715,4000,4019,4064,4070,4075,4081-4090,5170,5181-5187,5207,5209-5211,5233,5269,5284,5292,5438-5439,5450-5455,5473-5478,5510,5523-5610,5794-5801,6040-6076
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_623d2724202cfc::t_169cb5703b22c7 308,310,334-359,382-478,537,539-540,545-554,567-572
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_623d2724202cfc::t_4bc44fd65fca0f 19,21-24,28-30,91,93,95-100
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_623d2724202cfc::t_e5ec3765549074 27,100-122,213,223-228,233-238,256,302,352-353,357-358,378,380-383,385-392,394-408,410-423,425-434,436-437,470-494,523-525,569-570,580,719,732,749,762,790,796,799,802,873,879,884,917-943,945
+widget_service/cloud/services/template_generation/tests/test_template_retrieval_fixture_migration.py
+  s_623d2724202cfc::t_581517f99004d0 77-94
+widget_service/cloud/services/template_generation/tools/generate_provider_template_gallery.py
+  s_623d2724202cfc::t_8d7aa327b4c4ab 33-38,82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "2895a12707b0cd12a6a17da5fc5623708f0f3dd1",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

@@ -1,0 +1,26 @@
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_f3e9e255ad7171::t_02b45e10a1d025 551
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_f3e9e255ad7171::t_bde828052e7d24 29,33,35-36
+widget_service/cloud/services/template_generation/tests/test_calendar_meeting_centered.py
+  s_f3e9e255ad7171::t_bde828052e7d24 94,108,111,115,161-170,177
+docs/云侧方案设计.md
+  s_f3e9e255ad7171::t_bde828052e7d24 1051,1054,1056
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "07acd9722c7ada0be31a8775c93b64ada14b3b9f",
+  "prompts": {},
+  "sessions": {
+    "s_f3e9e255ad7171": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e71a-2b33-7742-bf00-7f2c1c119d30",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 47
+    }
+  }
+}

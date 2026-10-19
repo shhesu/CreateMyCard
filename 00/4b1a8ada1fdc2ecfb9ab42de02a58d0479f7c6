@@ -1,0 +1,83 @@
+widget_service/tests/test_advanced_component_pipeline.py
+  s_6d7c9a526b8e3e::t_13e8930368f7b9 385-386,388
+  s_6d7c9a526b8e3e::t_184e5dbb099feb 387
+  s_6d7c9a526b8e3e::t_e5626c3a0f2198 22,30-33,45-46,75,77,82-86,88-91,98-100,103-105,115-121,129-378,402-408,415-416,419-423,434,438-441,1595-1601,1603,1664-1665,1672-1678,1700,1704-1708,1802-1804,1807-1809,1814,1816-1817,1819-1824,1829
+  s_6d7c9a526b8e3e::t_87ef54dcf5c1d8 70
+widget_service/cloud/services/advanced_component_pipeline/component_selector.py
+  s_6d7c9a526b8e3e::t_55b6ec1b90d6a9 23-24,28-47,64,66-84
+widget_service/cloud/services/advanced_component_pipeline/components/a2ui_base.py
+  s_6d7c9a526b8e3e::t_414b3a824f0ef9 97-148
+widget_service/cloud/services/advanced_component_pipeline/components/current_meeting/__init__.py
+  s_6d7c9a526b8e3e::t_62c912489708ea 1
+widget_service/cloud/services/advanced_component_pipeline/components/current_meeting/plugin.py
+  s_6d7c9a526b8e3e::t_bcc347f396d7f0 1-162
+widget_service/cloud/services/advanced_component_pipeline/components/digital_wellbeing/__init__.py
+  s_6d7c9a526b8e3e::t_6395e131785f35 1
+widget_service/cloud/services/advanced_component_pipeline/components/digital_wellbeing/plugin.py
+  s_6d7c9a526b8e3e::t_298eb7104173db 1-148
+widget_service/cloud/services/advanced_component_pipeline/components/family_care/__init__.py
+  s_6d7c9a526b8e3e::t_2823b00f3053f6 1
+widget_service/cloud/services/advanced_component_pipeline/components/family_care/plugin.py
+  s_6d7c9a526b8e3e::t_89daf4275cd49b 1,9-11,15-20,24-25,27-35,40-45,47,50-53,57,60-62,67,70-72,77,80-81,85,87,90-91,93,102-105,113,118-123,128,143
+widget_service/cloud/services/advanced_component_pipeline/components/focus_mode/__init__.py
+  s_6d7c9a526b8e3e::t_84018a9b40edc2 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/focus_mode/plugin.py
+  s_6d7c9a526b8e3e::t_1cd3c1e50c40a9 1-141
+widget_service/cloud/services/advanced_component_pipeline/components/low_power/__init__.py
+  s_6d7c9a526b8e3e::t_47336a88113bfe 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/low_power/plugin.py
+  s_6d7c9a526b8e3e::t_637bd8d31c4bb3 1-169
+widget_service/cloud/services/advanced_component_pipeline/components/race_countdown/__init__.py
+  s_6d7c9a526b8e3e::t_6ea4900e90eff3 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/race_countdown/plugin.py
+  s_6d7c9a526b8e3e::t_8866b01b900b83 1,9-11,15-19,23-24,26-34,39-43,45-46,48-51,53-57,59-62,64-72,74-80,82-86,88-91,93-96,98-103,105-110,115-118,123-124,138
+widget_service/cloud/services/advanced_component_pipeline/components/scene_helpers.py
+  s_6d7c9a526b8e3e::t_a89d6ec7139e30 1-62
+widget_service/cloud/services/advanced_component_pipeline/components/sleep_coach/__init__.py
+  s_6d7c9a526b8e3e::t_14d2240691f951 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/sleep_coach/plugin.py
+  s_6d7c9a526b8e3e::t_532114c06a4e3f 1,3,9-11,15-19,23-24,26-35,40-44,46,48,51-54,57,60-62,67,69,72,75-77,82,84,87-88,90-98,101-102,104-107,116-117,125,130-133,138,152
+widget_service/cloud/services/advanced_component_pipeline/models.py
+  s_6d7c9a526b8e3e::t_6ee7b4504b151a 351-407,451,462-471
+widget_service/cloud/services/advanced_component_pipeline/pipeline.py
+  s_6d7c9a526b8e3e::t_9140731931602c 413
+widget_service/cloud/services/advanced_component_pipeline/styles.py
+  s_6d7c9a526b8e3e::t_1ea35cf52fbac5 8-41,112-116
+widget_service/cloud/services/advanced_component_pipeline/ui_planner.py
+  s_6d7c9a526b8e3e::t_25d5c978c1a6ed 35-37,49-51,127-222,226-229,242-246,258-261
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "004b1a8ada1fdc2ecfb9ab42de02a58d0479f7c6",
+  "prompts": {},
+  "sessions": {
+    "s_6d7c9a526b8e3e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd7ef-851e-7242-a2dc-0da5b3c412f2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 225
+    },
+    "s_f25b25d2e7012c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fefaa-97b3-7d43-bd00-1b02365bf175",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null,
+      "total_deletions": 5
+    },
+    "s_fde0e10c0bc616": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fefaf-d37b-77c1-aa7a-0890d831ae91",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 409
+    }
+  }
+}

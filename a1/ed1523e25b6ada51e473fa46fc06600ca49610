@@ -1,0 +1,26 @@
+widget_service/cloud/services/widget_generation_service.py
+  s_366a1563ab3fca::t_e14c6a07d1e2ff 1163-1169
+  s_366a1563ab3fca::t_e4f7f89bdcbc6c 267-268,555-557,615-623,1136,1145-1155
+  s_366a1563ab3fca::t_e102bcde0a32d4 32,66,1182,1184
+  s_366a1563ab3fca::t_53ffc0231ccef3 526-527
+  s_366a1563ab3fca::t_4edc59fa26adc0 1172-1179
+docs/generateWidgetCardCompactDsl数据流.md
+  s_366a1563ab3fca::t_cacd640e959b0e 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "a1ed1523e25b6ada51e473fa46fc06600ca49610",
+  "prompts": {},
+  "sessions": {
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 98
+    }
+  }
+}

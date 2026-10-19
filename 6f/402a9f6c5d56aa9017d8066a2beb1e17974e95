@@ -1,0 +1,31 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_8be7de727ace6a::t_411be86ed2e853 361-400,1857-1882
+  s_8be7de727ace6a::t_5852ed8db86ebe 5850-5853
+  s_8be7de727ace6a::t_ebb306ba65fa8d 360
+  s_8be7de727ace6a::t_d52e514144aa0c 1883-1884
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_8be7de727ace6a::t_0cd1a9c97d8ae1 564,569-570,599-600,606-623,678-685,693,698-699,728-729,735-752,807-814,822,826-827,846-847,851-868
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_8be7de727ace6a::t_0cd1a9c97d8ae1 182,253-254
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_8be7de727ace6a::t_0cd1a9c97d8ae1 127-128,145-146,161-165
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_8be7de727ace6a::t_0cd1a9c97d8ae1 194-196
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "6f402a9f6c5d56aa9017d8066a2beb1e17974e95",
+  "prompts": {},
+  "sessions": {
+    "s_8be7de727ace6a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05bc9-1e06-7d83-bf31-367f1627ba1d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 44
+    }
+  }
+}

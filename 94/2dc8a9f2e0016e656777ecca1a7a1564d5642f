@@ -1,0 +1,58 @@
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_803e95f0956320::t_ad278e06ce1d30 7
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_803e95f0956320::t_c31b7a2a3e7ca6 514,516
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_803e95f0956320::t_abdbfd3d13b600 198-199
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_803e95f0956320::t_40002fac191737 8,14,34
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_803e95f0956320::t_605962903fb809 2594-2607,2612-2613
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_803e95f0956320::t_89b60486eff357 1156-1161
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_803e95f0956320::t_964f40a3c8e8ac 31,191-195,197-219,230-231,236-237,248-302,336-360
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_803e95f0956320::t_0499b43413f853 173-176
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
+  s_803e95f0956320::t_5c4b799431617d 1,5-142
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_803e95f0956320::t_49636b73192ad5 6-7
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_803e95f0956320::t_40e4a15ac48c36 22-31
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_803e95f0956320::t_249aad15aaa034 1-62,116,906,1256,1353
+widget_service/cloud/services/template_generation/tests/test_earbud_pair_hero.py
+  s_803e95f0956320::t_8942eb0a737d4d 1-90
+widget_service/cloud/services/template_generation/tests/test_earbud_pair_projection.py
+  s_803e95f0956320::t_44a18cc0a34524 1-167
+widget_service/cloud/services/template_generation/tests/test_earphone_case_intent.py
+  s_803e95f0956320::t_42a7d488f76535 1-159
+widget_service/cloud/services/template_generation/tests/test_earphone_prompt_reference.py
+  s_803e95f0956320::t_ff2914969d687f 1-55
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_803e95f0956320::t_9fdf5d7ccc3191 210,299,634,637
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_803e95f0956320::t_1241c29d4b444a 58
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_803e95f0956320::t_00bdf05375da8f 260,2803-2804
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_803e95f0956320::t_5d961e2c313b93 19,25,30-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "942dc8a9f2e0016e656777ecca1a7a1564d5642f",
+  "prompts": {},
+  "sessions": {
+    "s_803e95f0956320": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0b390-5e83-70e2-8263-950132f0bc88",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

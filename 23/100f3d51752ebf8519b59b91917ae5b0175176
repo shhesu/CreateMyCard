@@ -1,0 +1,47 @@
+docs/模板校验修复验证报告.md
+  s_05907ce230aad1::t_17ee4933f35ee5 1-114
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_d43279fcb49f45 2244-2250
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_05907ce230aad1::t_d43279fcb49f45 546
+  s_05907ce230aad1::t_8b633a34c825a3 76,83,182
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_05907ce230aad1::t_8b633a34c825a3 175-199,333-334
+widget_service/cloud/services/template_generation/postprocessing.py
+  s_05907ce230aad1::t_d43279fcb49f45 1-43
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-list-no-action-full.cardtpl
+  s_05907ce230aad1::t_98fce5dcb9f490 128-130,270-272
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-no-action-full.cardtpl
+  s_05907ce230aad1::t_57293f1a5879c7 214-216
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_05907ce230aad1::t_2fbe511f5fae0b 4152-4160,4162-4163,4165
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_05907ce230aad1::t_da8179a5016805 1721
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_05907ce230aad1::t_eba7d611c5efef 1973,4201,4205
+widget_service/cloud/services/template_generation/tests/fixtures/template_validation_recovery.json
+  s_05907ce230aad1::t_84b5db5add5038 1-1534
+widget_service/cloud/services/template_generation/tests/test_output_postprocessing.py
+  s_05907ce230aad1::t_f4b700aadd08e9 1-45
+widget_service/cloud/services/template_generation/tests/test_redundant_date_intent.py
+  s_05907ce230aad1::t_aac2f672b57db4 1-58
+widget_service/cloud/services/template_generation/tests/test_template_validation_recovery.py
+  s_05907ce230aad1::t_228775f460d7c5 1-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "23100f3d51752ebf8519b59b91917ae5b0175176",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 258
+    }
+  }
+}

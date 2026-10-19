@@ -1,0 +1,42 @@
+widget_service/tests/test_service_units.py
+  s_623d2724202cfc::t_68c49e6401c1cb 2225,2230,2603,2609
+docs/云侧方案设计.md
+  s_623d2724202cfc::t_ab3680174e378b 844,851-854,1007-1010,1365-1375,1468-1470
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_623d2724202cfc::t_d7f0e3ab03052b 142,166,274-280,516,813
+widget_service/cloud/models/generation.py
+  s_623d2724202cfc::t_ab2803a906aab9 81
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_623d2724202cfc::t_6099fda5458429 17-22,733,739-743,762-769
+widget_service/cloud/services/fusion_ball_expander.py
+  s_623d2724202cfc::t_09880e1bfb72cd 1-350
+widget_service/cloud/services/generation_pipeline.py
+  s_623d2724202cfc::t_e0fd98d06b77e7 153
+widget_service/cloud/services/generation_preflight.py
+  s_623d2724202cfc::t_0959f54930b454 14-19,89,322-327,449-513,845-847,851-868
+widget_service/cloud/services/task_spec_builder.py
+  s_623d2724202cfc::t_6b2fe996fe3ff6 11,36,120
+widget_service/tests/test_fusion_ball_expander.py
+  s_623d2724202cfc::t_d2c87535810246 1-220
+widget_service/tests/test_generation_preflight.py
+  s_623d2724202cfc::t_da6b8b5c2b9bb8 79-87,107,286-306,367,387-471,474-476
+widget_service/tests/test_tool_dispatch_routes.py
+  s_623d2724202cfc::t_5922f7fd12ed41 619,624
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "4574e496cd48f0f6fcdd3f0babd7bfbe78440980",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

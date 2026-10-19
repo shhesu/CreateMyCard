@@ -1,0 +1,52 @@
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_465a1f42c3fab2::t_1e594e25b51334 5,9-21,23-26,28-30,32-35,37,40,45
+widget_service/cloud/services/template_generation/tests/test_weather_hero_title.py
+  s_465a1f42c3fab2::t_cd4fe44ec4d6c7 53-54
+  s_465a1f42c3fab2::t_05a8cdefb47ae8 1-52,55-102
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_465a1f42c3fab2::t_1e594e25b51334 46-48,50-51
+  s_465a1f42c3fab2::t_c530497d5c6c7c 49
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_465a1f42c3fab2::t_1e594e25b51334 185,197-198
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/first-layer.md
+  s_465a1f42c3fab2::t_1e594e25b51334 14,18-22
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_465a1f42c3fab2::t_1e594e25b51334 22,24,29
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_465a1f42c3fab2::t_f44d1cf33d4ed1 602-603
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_465a1f42c3fab2::t_cd4fe44ec4d6c7 912,1060-1086
+  s_465a1f42c3fab2::t_f44d1cf33d4ed1 820,833,848-865,888,911,913-916,921,990,996,998-1023,1048-1052
+  s_465a1f42c3fab2::t_c4f324aaf1643b 1087-1089
+  s_465a1f42c3fab2::t_66a5f8efe4a2e1 1090-1091
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_465a1f42c3fab2::t_ee45e6ea429bd7 88-96
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_465a1f42c3fab2::t_1e594e25b51334 6,24-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "fd30e75683a5a3e0487a41446c6370aede1c1bfe",
+  "prompts": {},
+  "sessions": {
+    "s_4030737f1bdfed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06260-04dd-72d0-a3fc-4f5b4649b0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 4
+    },
+    "s_465a1f42c3fab2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06606-5ccc-7420-a41a-266e983eb605",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 61
+    }
+  }
+}

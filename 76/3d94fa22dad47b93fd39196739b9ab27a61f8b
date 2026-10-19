@@ -1,0 +1,105 @@
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_623d2724202cfc::t_99e8fe22e61c93 244,251-278,377-378,498-507
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_623d2724202cfc::t_99e8fe22e61c93 142-144,188,195-202,214
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_623d2724202cfc::t_99e8fe22e61c93 530,554,619,670-698,744,764-766,875-881,897-910,1182-1194,1247-1265
+  s_623d2724202cfc::t_90beaf95ffad10 1266-1267
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_623d2724202cfc::t_2dd69835078177 140-141,162-163,173-174,177-178
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_623d2724202cfc::t_0bb72aacedd97e 7,14,33-35,38,40-42,81-83,87,89-94,99,103,108,112,114-120,188,193-195,206-207
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_623d2724202cfc::t_e873f873b74818 78-86,101-105,116-118,294-296
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_623d2724202cfc::t_e1c98375ef1a09 32,75-76
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_623d2724202cfc::t_4a8b08a0accff2 8,10-13,32
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_623d2724202cfc::t_8bedf7a4ddf7b9 1928
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_623d2724202cfc::t_4135542499f534 1070-1078,1085-1095,1101-1111,1113,1115,1117-1121,4377,4423,4529,4537-4538,4554,4556-4561,4569-4575,4582,5735-5739,5796-5798,5800,5803
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_623d2724202cfc::t_2d9eab8b674dd8 68,269-273,298,312-315,320-330,337-338
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_623d2724202cfc::t_94e980b7a79038 1027-1031,1036-1039,1044-1048
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_623d2724202cfc::t_c83c6ad67b2225 78,739,747-751,963-966,1024-1041,1043,1278,1313-1324,1365-1371
+widget_service/cloud/services/template_generation/engine/theme_reference.py
+  s_623d2724202cfc::t_81441c8cd7dfe8 14-15
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_623d2724202cfc::t_a5442d1532d6b5 52-53
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/first-layer.md
+  s_623d2724202cfc::t_7941c38d4ab125 5,17,23
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_623d2724202cfc::t_b3f9c83fe1c397 3,5-6,8-38
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_623d2724202cfc::t_42f3eef97ffde6 5-6,22-25,30,36,38,42-43,49,56-57,59-60,63,66,69,74-77,83,86-87,90,94,97,100,107-108,110,116,123-124,126,132,139-140,142
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_623d2724202cfc::t_9e21da8edc9527 4-6,49,80,84,96,99-105,107,273,277-279,291,300,314,330,346,353,358,364,382,403,415,418-423,425-458,465,468-469,471,479,483,492,506,513,522,528,531,533,538,544-545,550,555-556,574,589,595,607,610-615,617-650
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_623d2724202cfc::t_7400596dbb3837 7
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_623d2724202cfc::t_acbd886996e3ef 3,5-12
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_623d2724202cfc::t_d4a08dcbaa833b 5-6,22,24-26
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_623d2724202cfc::t_b0ffd1c0e11b5f 7,11-14,18-19,22-26,28-31
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_623d2724202cfc::t_89ce8bd034c928 3,6-29
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_623d2724202cfc::t_c8ec61b4ef2610 5-6,19,22,25,32,38,44-48,54,57,59-60,68,71,74-75,77-80,85,88,93-95,98,101,104-105,108,111-112,118,121-122,129,132,135,138,143-144,147,150,156,161
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_623d2724202cfc::t_f831e0c893f5de 1,4-6,21-32,34-35,38-53,55,57,59-62,64-80,82-89,91-96,98-107,109,465,467-468,471-492,494-498,500,503,507,513-514,521-536,538-545,547-561,563-611,712,714,720-721,724-726,728-732,734-797,799
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_623d2724202cfc::t_f6a6df88c0a04e 88-92,96-100
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_623d2724202cfc::t_88ebd9d5f3416c 4,12-14
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_623d2724202cfc::t_31b33ea64352f3 3,6-26
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_623d2724202cfc::t_be7604765b8a3f 5-6,22,24,29-30,33,36,39-40,43,46,49,52,54,56,58,60,63,66,69,73-74,76,82,84,89-90,96,98,104-105,111,113,117,120-121,127,129,133,137,140,143,145,151
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_623d2724202cfc::t_a28da85d58e054 80,82-83,85,88,92-94,99-106,108-109,111,116-123,125-127,130,132-141,143,145,148-152,154-155,159,162,164,169,171,173,175-176,179-186,188,191,193,196-208,210-225,228-229,235,239,242,249,251,253,255-256,259-266,268,271,273,276-288,290-305,308-309,315
+widget_service/cloud/services/template_generation/resources/source/themes/2x2-two-support/first-layer.md
+  s_623d2724202cfc::t_c0863cb7d998f0 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/2x2-two-support/theme.json
+  s_623d2724202cfc::t_d51b8d5d25ba52 2-22,24-26,28-31
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_623d2724202cfc::t_0d7cfe05919455 6,23-24,28-29,37-39
+widget_service/cloud/services/template_generation/resources/source/themes/base/theme-base.json
+  s_623d2724202cfc::t_e613850a539dd6 16-18
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_623d2724202cfc::t_9ea1a05b507aa1 150,154,172-182,199,204
+widget_service/cloud/services/template_generation/tests/eval_fixture_migration.py
+  s_623d2724202cfc::t_2c7bdf92c3562b 37-43,46
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_623d2724202cfc::t_e76ee1e7a5c521 126,182-187,194,258,262,264-265,267,296,299-300,302-303,305,314-315,320,324-334,344,361,400,402-403,406-409,435,437-438
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_623d2724202cfc::t_e85845a9d4b34c 65-66,214,223,230,369-370,399,421-467,593,604-607,890,1077,1082,1554,1556,1584,1776,1835,1869,1876-1877,1955-1957,1959,1963-1972,1982-1987,1993-1994,2122,2262-2263,2292-2293,2298,2300,2303-2307,2312,2317-2318,2367-2369,2372-2373,2376-2379,2381-2384,2388-2392,2394-2395,2397-2404,2629-2670,2807-2820,3089-3097,3102-3109,3121,3288-3293,3319-3324,3328,3348-3349,3389,3391-3397,3401,3415,3442,3446-3451,3470-3471,3482-3487,3491,3505,3521-3524,5171,5186,5194,5340-5341,5352-5357,5375-5380,5412
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_623d2724202cfc::t_8a4a6d1bf6d1fa 357-359,365,367,371-452,513
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_623d2724202cfc::t_96cf7881079bad 19,21-24,28-30,91,93,95-100
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_623d2724202cfc::t_2d31f8506cf519 189,199-204,209-214,232,328-329,356-359,361-368,374-384,389,394-395,402,405,470,695,708,725,738,772,775,778,849,860,893-919,921
+widget_service/cloud/services/template_generation/tests/test_template_retrieval_fixture_migration.py
+  s_623d2724202cfc::t_27960a28be3567 77-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "763d94fa22dad47b93fd39196739b9ab27a61f8b",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 16
+    }
+  }
+}

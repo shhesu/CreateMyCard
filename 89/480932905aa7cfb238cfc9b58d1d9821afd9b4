@@ -1,0 +1,87 @@
+docs/云侧方案设计.md
+  s_1568c3f5a7f2fe::t_ac11db03d45dca 1201-1205
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_1568c3f5a7f2fe::t_e46fe79d361245 53-61,71-73
+  s_1568c3f5a7f2fe::t_fc33a4e397b72b 74
+widget_service/cloud/services/template_generation/tests/test_template_contrast.py
+  s_1568c3f5a7f2fe::t_8b28b17b865299 58
+widget_service/cloud/api/routes.py
+  s_1568c3f5a7f2fe::t_bb566e98ab4593 53,812,966,1035
+widget_service/cloud/custom/deepseek_platform_client.py
+  s_1568c3f5a7f2fe::t_169d64b57305a7 18,69,72,115-129
+widget_service/cloud/custom/llmclient.py
+  s_1568c3f5a7f2fe::t_4ecd9ed31e4b11 18-19,132,135,139,164-182,185
+widget_service/cloud/custom/model_runtime.py
+  s_1568c3f5a7f2fe::t_db2e7d04b33f25 16,88,164,222
+widget_service/cloud/services/generation_pipeline.py
+  s_1568c3f5a7f2fe::t_389a9f805c50bc 19,137
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_1568c3f5a7f2fe::t_da1804bd55d4f1 114-115,206,214-215
+widget_service/cloud/services/template_generation/docs/support-template-action-policy.md
+  s_1568c3f5a7f2fe::t_8c15b25c3d1e2d 27-28,36,49-50,76
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_1568c3f5a7f2fe::t_20656a7ad032d6 108-115
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_1568c3f5a7f2fe::t_e12537933fcf52 122
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_1568c3f5a7f2fe::t_4eface057b76b9 2731,2735-2746,2751
+widget_service/cloud/services/template_generation/engine/cardplan/runtime_expression.py
+  s_1568c3f5a7f2fe::t_3a380b2731de13 119-120,123-124,126
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_1568c3f5a7f2fe::t_496b4af197b99a 539-550,553
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_1568c3f5a7f2fe::t_73fb0bbef90171 7-9
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_3784136dff30e9 10-12,14-19
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_1568c3f5a7f2fe::t_63968ce38d8f90 43,47-64
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_1568c3f5a7f2fe::t_04224864c0e8e8 37-108,118,150,162,171-183
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/first-layer.md
+  s_1568c3f5a7f2fe::t_1be8115e445eae 30-34,47-49
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_6ab7c9f64e4fdb 32-37,69-72
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_1568c3f5a7f2fe::t_20e4cfd4fb5c1f 37-78
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_1568c3f5a7f2fe::t_8af11675bd9a89 49-291
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_1568c3f5a7f2fe::t_5002c5848b0c1c 186-189,1086-1090
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_1568c3f5a7f2fe::t_719c950d29a1a5 76,115,135-140,175-206,305-308,321
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_1568c3f5a7f2fe::t_c9efed6eb2e91a 85-90,210,299,634,637,648-685,700,702-705,734-740,745-747,775-777,803-804,807
+widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
+  s_1568c3f5a7f2fe::t_d58da7c45cd021 68-71,99-101,415
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_1568c3f5a7f2fe::t_1580455a884d0a 36,47-48,137-143,146-147,151-157,258
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_1568c3f5a7f2fe::t_62220fe9496500 261,3327-3331
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_1568c3f5a7f2fe::t_0f02ea9ea34ea0 19,23,30-32,76-77,98-107
+widget_service/cloud/services/template_generation/tests/test_travel_weather_templates.py
+  s_1568c3f5a7f2fe::t_feb399d409dd23 1-447
+widget_service/cloud/services/widget_generation_service.py
+  s_1568c3f5a7f2fe::t_b5ad551450b212 63,108,290,422,580,611,614-618,656,735,789,920,942,1004
+widget_service/cloud/utils/ops_metrics.py
+  s_1568c3f5a7f2fe::t_48792351d1b3aa 4,7-9,11-13,15,18-56,58-69,72-106,109,116-117,129,131
+widget_service/tests/test_ops_metrics.py
+  s_1568c3f5a7f2fe::t_59cbd418bbc081 1-211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "89480932905aa7cfb238cfc9b58d1d9821afd9b4",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 2
+    }
+  }
+}

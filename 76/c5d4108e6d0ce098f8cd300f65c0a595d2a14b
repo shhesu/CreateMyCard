@@ -1,0 +1,50 @@
+docs/云侧方案设计.md
+  s_fb29ffe3561f53::t_5d0619d3013ee2 1029-1031,1355-1357,1386-1388,1392,1394,1397,1402
+skills/harmony-card-generation-online/SKILL.md
+  s_fb29ffe3561f53::t_49bd09eaf0135e 101
+skills/harmony-card-generation-online/references/runtime-guide.md
+  s_fb29ffe3561f53::t_d406aab9ebd991 66
+widget_service/cloud/data/capabilities/app-11.7.7.300_rom-7.0/asset_capabilities.json
+  s_fb29ffe3561f53::t_4858c124c652d6 1111,1122,1133,1144,1155,1166,1177,1188,1199,1210,1221,1232,1243,1254,1265,1276,1287,1298
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/FEWSHOT_2x2.md
+  s_fb29ffe3561f53::t_9eabce59d89d83 9-25,44,52-53,55,58,64-65,76,78-79,81-82,115,124-134,164,167,171-172,175-176,179-180,193-194,196-197,199
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/FEWSHOT_2x4.md
+  s_fb29ffe3561f53::t_e26ed86cc0d431 5-11,15-30,52,59,61,65-66,68-70,129,136,138,141-143,145-147,149-150,226-227,238,264-267,286-363
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_fb29ffe3561f53::t_c4d640551a3aee 11,13-21,53-66,146,157,164,233-235,255,362,630-631,647,678,718-719,744,746,814-817,851,921,943,950,979,1022,1025,1027
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_fb29ffe3561f53::t_3451e125582042 18,25-27,119,181-188,239-274,281,288,291-292,295,299-309,317-334,349-357,367-430,463,466-467,474-525,545-1103,1110-1111,1113-1128,1133-1186,1189-1235,1238-1254,1257-1260,1264-1369,1375,1380-1383,1392-1419,1767-1774,1777-1781,1796-1804,1806-1821,1823-1829
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_fb29ffe3561f53::t_31c15a85f65d58 653,830-875
+widget_service/cloud/services/fusion_ball_expander.py
+  s_fb29ffe3561f53::t_b4afa155c58dff 32-33,35-36,389-390
+widget_service/cloud/services/prompt_builder.py
+  s_fb29ffe3561f53::t_72ca6d3c688cfd 46-167,170-207,216-218,225-226,239-336,338-371,373-431,440,448-510,551,635-637
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_fb29ffe3561f53::t_7eefd90428ac14 1156
+widget_service/docs/generateWidgetCardCompactDsl数据流.md
+  s_fb29ffe3561f53::t_03b68ef54fb5f5 359-369
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_fb29ffe3561f53::t_7b6bf17630f53b 1179-1272
+widget_service/tests/test_design_compact_few_shots.py
+  s_fb29ffe3561f53::t_2f27d49ee6afef 189-206,260-282,295-453
+widget_service/tests/test_fusion_ball_version_gate.py
+  s_fb29ffe3561f53::t_94c0bdce82b857 140-170,176,184,188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "76c5d4108e6d0ce098f8cd300f65c0a595d2a14b",
+  "prompts": {},
+  "sessions": {
+    "s_fb29ffe3561f53": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0af8f-20fd-7cc0-9d28-d5a50c68d9c8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

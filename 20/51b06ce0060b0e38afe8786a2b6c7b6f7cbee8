@@ -1,0 +1,35 @@
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_1568c3f5a7f2fe::t_e40fe9e324f148 74
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_1568c3f5a7f2fe::t_1749c982b1e2dc 189,202
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_1568c3f5a7f2fe::t_1749c982b1e2dc 102-103
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_1568c3f5a7f2fe::t_1749c982b1e2dc 74,86-88
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_1568c3f5a7f2fe::t_1749c982b1e2dc 183
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_1568c3f5a7f2fe::t_5b0566cc0fa400 30,95-105,262
+  s_1568c3f5a7f2fe::t_b9c0f72e93dfb1 106-107
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_1568c3f5a7f2fe::t_1749c982b1e2dc 10,29,34-35
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_1568c3f5a7f2fe::t_5b0566cc0fa400 351
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "2051b06ce0060b0e38afe8786a2b6c7b6f7cbee8",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 10
+    }
+  }
+}

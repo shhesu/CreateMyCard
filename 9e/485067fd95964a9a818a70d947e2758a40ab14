@@ -1,0 +1,38 @@
+docs/云侧方案设计.md
+  s_c81febb8faad26::t_f12a40ce0bdb2d 1041
+  s_c81febb8faad26::t_ea60144e5ea5c1 1022
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-detail-full.cardtpl
+  s_c81febb8faad26::t_66a131c8d3a326 33,43,57,145,155,169
+  s_c81febb8faad26::t_7d8db452135558 33,43,57,145,155,169
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_c81febb8faad26::t_88b374bc468524 681,691,705,1781,1791,1805
+  s_c81febb8faad26::t_583e74d8aeac03 681,691,705,1781,1791,1805
+widget_service/cloud/services/template_generation/tests/fixtures/calendar_existing_preview_hashes.json
+  s_c81febb8faad26::t_a9e92d2dbd4917 8,12
+  s_c81febb8faad26::t_2cfb01fa7c060d 8,12
+widget_service/cloud/services/template_generation/tests/test_calendar_full_extensions.py
+  s_c81febb8faad26::t_c31a697f71fe68 121-127,138-146,151
+  s_c81febb8faad26::t_fe16b9ce460bcd 121-124,138-146,151
+  s_c81febb8faad26::t_ffd63f67ed047a 125-127
+widget_service/cloud/services/template_generation/tests/test_calendar_timeline_geometry.py
+  s_c81febb8faad26::t_b7d2ce7bf49b83 1,9-10,17-24,33,39,51-100,145,164-167,189-191,195,198,209-231,233,249-273
+  s_c81febb8faad26::t_e426c14cfda6db 1,9-10,17-24,33,39,51-100,145,164-167,198,209-231,233,249-273
+  s_c81febb8faad26::t_e7acf4cb8ac22b 189-191,195
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "9e485067fd95964a9a818a70d947e2758a40ab14",
+  "prompts": {},
+  "sessions": {
+    "s_c81febb8faad26": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c2d0-3d52-7591-bbe4-3dc1d5c444b5",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

@@ -1,0 +1,294 @@
+widget_service/tests/test_tool_dispatch_routes.py
+  s_eb7827b49a5bb3::t_c38f83fd60e7d4 11,54,62-106,301,309,354,552-554,556-559,671,687,724,727,736,738,744-745,758,844,864,866,883,890-894,928,959,994,1045,1144,1152,1160,1300,1364,1382,1405,1422,1442,1471,1475,1493,1533,1627-1734
+widget_service/cloud/api/routes.py
+  s_eb7827b49a5bb3::t_e47192d29c1f50 877,884-887,897
+  s_eb7827b49a5bb3::t_c38f83fd60e7d4 5,12-13,38-45,148-311,674-724,733-734,750-752,803,828,919-944,965,990-1011,1026,1047-1068,1083,1102-1164,1256-1268,1280-1281
+widget_service/cloud/services/widget_generation_service.py
+  s_eb7827b49a5bb3::t_c38f83fd60e7d4 5-6,10,33,37-44,92,136,281,309,345,537-541,549,554-556,560,572,579,590-673,708-715,725,727-746,752,779-800,844,877-879,897,916-921,977-981,1009-1024,1046,1071-1087,1097-1109,1127,1131-1146,1151-1168,1214,1341,1397-1401,1415-1417,1502,1576,1595,1619-1623
+widget_service/tests/test_service_units.py
+  s_eb7827b49a5bb3::t_98d5fcfca5653f 2737-2739
+  s_eb7827b49a5bb3::t_e3af27f0cdb3e6 1633-1634,2187
+  s_eb7827b49a5bb3::t_c38f83fd60e7d4 37,73-77,85,145-147,186-213,228,235-236,259,284-299,317,319-320,353,421-423,437-442,452,462-477,554,558,567-573,575-576,578,582-592,708,829,860,938,1127,1413,1423-1428,1434-1438,1467,1472,1480,1563,1573,1588,1598,1621,1690,1712,1882,1895,1970-1973,2119-2186,2188-2210,2258,2287,2289,2291-2334,2353,2527,2660,2707-2710,2731-2736,2740-2774,2853-2856,2874-2875,2893,2896-2897,2907-2909,2911,2922,2949,2967,2994,3025,3078,3293-3321,3465,3514,3828,3979,4027,4035,4058,4084,4356,4378,4380,4386-4387,4480,4511,4539,4545,4551-4552,4574
+  s_eb7827b49a5bb3::t_4b944f995955d5 4556,4631
+docs/云侧方案设计.md
+  s_eb7827b49a5bb3::t_682f45d3c42ee7 5,7,17,23,46-47,50-58,60-72,102-104,114,144-157,191,193,195,219,236-318,321-330,358,363,383,423,430,438,492,499-544,567,598,652-655,684,687,714,725,727,744,764,849,922,986-987,990,995-999,1005,1007,1035-1071,1177,1195-1244,1261,1273,1276,1280,1284,1306,1317-1516,1525,1527-1529,1553,1561,1568,1588-1591,1601,1625,1662,1666,1685-1757,1761-1766,1804-1814,1840
+.dockerignore
+  s_eb7827b49a5bb3::t_cc5fc0cd6b635c 1-16
+docs/generateWidgetCardTerseDslNested2数据流.md
+  s_eb7827b49a5bb3::t_149ea1a6dc97ec 10,15,36-45,58-77
+skills/harmony-card-generation-online/scripts/rules/config/protocol.json
+  s_eb7827b49a5bb3::t_fad9e2324e7e9a 4
+skills/harmony-card-generation-online/scripts/rules/schemas/capability.countdown.schema.json
+  s_eb7827b49a5bb3::t_b35250d2de8098 1-24
+widget_service/.env.example
+  s_eb7827b49a5bb3::t_c315273ca670b3 22-31,46,54,59-61
+widget_service/Dockerfile
+  s_eb7827b49a5bb3::t_6c4cd765e09181 1-37
+widget_service/README.md
+  s_eb7827b49a5bb3::t_9ce95fa761ca15 21-30,40-43,89-96,105-114,196-199,207-239
+widget_service/cloud/api/schemas.py
+  s_eb7827b49a5bb3::t_389248b9620e35 157,285-292
+widget_service/cloud/app/logger.py
+  s_eb7827b49a5bb3::t_7eb5f8ad0c4c34 78-133,139,142,151-154,157-160,168-175
+widget_service/cloud/config/config.py
+  s_eb7827b49a5bb3::t_12a4215635477e 23,40-50,67,75,80-83,212-227,238,241
+widget_service/cloud/custom/a2ui_model_client.py
+  s_eb7827b49a5bb3::t_2a2104ce24e14e 7,103,118,201-240,249-251,254-267,269-305,325-326,330,369,409-411,429,439,485,497,628
+widget_service/cloud/custom/deepseek_call_budget.py
+  s_eb7827b49a5bb3::t_b595bc6bc19c70 1-90
+widget_service/cloud/custom/deepseek_platform_client.py
+  s_eb7827b49a5bb3::t_eae79ab6676b2b 38,46,202-212
+widget_service/cloud/custom/llmclient.py
+  s_eb7827b49a5bb3::t_f97ebb59833a8a 14,18,33,51-54,59-62,90,96-98,110-111,131-132,146-214
+widget_service/cloud/custom/mock.dat
+  s_eb7827b49a5bb3::t_12b46b6fab77b9 1
+widget_service/cloud/custom/model_runtime.py
+  s_eb7827b49a5bb3::t_69d266757f91e3 20-23,25,28-31,42,61-62,69-70,105,109,112-119,189-193,195-208,211-213,226,231-263
+widget_service/cloud/custom/unified_model_client.py
+  s_eb7827b49a5bb3::t_a827953ac21b1c 10,48-51,81-82,146-147,178-183
+widget_service/cloud/data/capabilities/app-11.7.5.205_rom-6.0/asset_capabilities.json
+  s_eb7827b49a5bb3::t_8a449f85cf23fc 207-208,617-619,643-645,653-655,799-802
+widget_service/cloud/data/cardplan_template/source/advanced-component-registry.json
+  s_eb7827b49a5bb3::t_1a84ecabf94dc4 1-1341
+widget_service/cloud/data/cardplan_template/source/advanced-component-ux-registry.json
+  s_eb7827b49a5bb3::t_2b4ac5e4b7d12d 1-538
+widget_service/cloud/data/cardplan_template/source/prompts/card-template-planner/00-chrome-kernel.md
+  s_eb7827b49a5bb3::t_e2075b50f1c413 1-14
+widget_service/cloud/data/cardplan_template/source/prompts/card-template-planner/10-dsl-and-boundary.md
+  s_eb7827b49a5bb3::t_96e6672fabe266 1-21
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/00-hybrid-kernel.md
+  s_eb7827b49a5bb3::t_97711e9cc3d149 1-14
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/10-template-composition.md
+  s_eb7827b49a5bb3::t_eabf22256fa7f0 1-54
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/20-action-and-budget.md
+  s_eb7827b49a5bb3::t_2c9533b3aba113 1-18
+widget_service/cloud/data/cardplan_template/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_eb7827b49a5bb3::t_0d72148178ed12 1-33
+widget_service/cloud/data/cardplan_template/source/template-registry.json
+  s_eb7827b49a5bb3::t_ea4931a6554ec6 1-13866
+widget_service/cloud/data/cardplan_template/source/theme-profiles.json
+  s_eb7827b49a5bb3::t_b068b6f15dffd8 1-476
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/component-catalog.md
+  s_eb7827b49a5bb3::t_44dada3cffe59c 15
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/protocol.md
+  s_eb7827b49a5bb3::t_edcf65fb35c14d 15
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/protocol.json
+  s_eb7827b49a5bb3::t_e88fe436ed4efb 3
+widget_service/cloud/data/protocol_profiles/terse-dsl-nested-2/protocol.json
+  s_eb7827b49a5bb3::t_8b151e66f7578a 3
+widget_service/cloud/data/validator_rules/config/protocol.json
+  s_eb7827b49a5bb3::t_d2487d1bc5dae4 4
+widget_service/cloud/models/generation.py
+  s_eb7827b49a5bb3::t_ab33afa8708a3c 3-4,8,46-91,106,115-116,134
+widget_service/cloud/services/advanced_component_pipeline/__init__.py
+  s_eb7827b49a5bb3::t_8e0a6dc39e553e 1-20
+widget_service/cloud/services/advanced_component_pipeline/argument_mapper.py
+  s_eb7827b49a5bb3::t_2368ce2bc03170 1-124
+widget_service/cloud/services/advanced_component_pipeline/compiler.py
+  s_eb7827b49a5bb3::t_102eefda2241d3 1-59
+widget_service/cloud/services/advanced_component_pipeline/component_registry.py
+  s_eb7827b49a5bb3::t_b01d713c25e119 1-86
+widget_service/cloud/services/advanced_component_pipeline/component_selector.py
+  s_eb7827b49a5bb3::t_1b2e305cf4f5bf 1-158
+widget_service/cloud/services/advanced_component_pipeline/components/__init__.py
+  s_eb7827b49a5bb3::t_92e498ac0689c5 1
+widget_service/cloud/services/advanced_component_pipeline/components/a2ui_base.py
+  s_eb7827b49a5bb3::t_8fccfd7538379f 1-148
+widget_service/cloud/services/advanced_component_pipeline/components/base.py
+  s_eb7827b49a5bb3::t_69e48045ae96c3 1-202
+widget_service/cloud/services/advanced_component_pipeline/components/dual_duration_action/__init__.py
+  s_eb7827b49a5bb3::t_ce7dd3265b5b77 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/dual_duration_action/plugin.py
+  s_eb7827b49a5bb3::t_7f2db7242aff55 1-154
+widget_service/cloud/services/advanced_component_pipeline/components/dual_ring_primary_action/__init__.py
+  s_eb7827b49a5bb3::t_bdfd8027a1f4d8 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/dual_ring_primary_action/plugin.py
+  s_eb7827b49a5bb3::t_167c177e21c0f4 1-216
+widget_service/cloud/services/advanced_component_pipeline/components/hero_countdown/__init__.py
+  s_eb7827b49a5bb3::t_a40d973a6d5eab 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/hero_countdown/plugin.py
+  s_eb7827b49a5bb3::t_047a4147541f5b 1-163
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_action/__init__.py
+  s_eb7827b49a5bb3::t_9f1fa5245c09db 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_action/plugin.py
+  s_eb7827b49a5bb3::t_6632a6ab3783a7 1-158
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_icon_action/__init__.py
+  s_eb7827b49a5bb3::t_f581501d36f97d 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/hero_metric_icon_action/plugin.py
+  s_eb7827b49a5bb3::t_c0a76eeb0fce35 1-200
+widget_service/cloud/services/advanced_component_pipeline/components/scene_helpers.py
+  s_eb7827b49a5bb3::t_e1738a3d73f6e3 1-62
+widget_service/cloud/services/advanced_component_pipeline/components/status_ring_action/__init__.py
+  s_eb7827b49a5bb3::t_e529feca6b05aa 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/status_ring_action/plugin.py
+  s_eb7827b49a5bb3::t_6469deb91f774f 1-175
+widget_service/cloud/services/advanced_component_pipeline/components/timeline_event_action/__init__.py
+  s_eb7827b49a5bb3::t_52c54e104cc31e 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/timeline_event_action/plugin.py
+  s_eb7827b49a5bb3::t_336aa3dc2f16ef 1-164
+widget_service/cloud/services/advanced_component_pipeline/components/upcoming_event_action/__init__.py
+  s_eb7827b49a5bb3::t_0a0f6c5dd46a93 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/upcoming_event_action/plugin.py
+  s_eb7827b49a5bb3::t_7651a7fe75e2a9 1-143
+widget_service/cloud/services/advanced_component_pipeline/components/usage_summary_action/__init__.py
+  s_eb7827b49a5bb3::t_c677a26df333c4 1-5
+widget_service/cloud/services/advanced_component_pipeline/components/usage_summary_action/plugin.py
+  s_eb7827b49a5bb3::t_205e967233d2b5 1-150
+widget_service/cloud/services/advanced_component_pipeline/composition.py
+  s_eb7827b49a5bb3::t_1319b431191b5b 1-382
+widget_service/cloud/services/advanced_component_pipeline/content_selectors.py
+  s_eb7827b49a5bb3::t_e61513029df5f3 1-3175
+widget_service/cloud/services/advanced_component_pipeline/data_shape.py
+  s_eb7827b49a5bb3::t_48e3d8a9b186fc 1-98
+widget_service/cloud/services/advanced_component_pipeline/domain_rules.py
+  s_eb7827b49a5bb3::t_a937b76a42963b 1-225
+widget_service/cloud/services/advanced_component_pipeline/models.py
+  s_eb7827b49a5bb3::t_51ac3fad1c6c8c 1-627
+widget_service/cloud/services/advanced_component_pipeline/pipeline.py
+  s_eb7827b49a5bb3::t_3e3016965b829a 1-724
+widget_service/cloud/services/advanced_component_pipeline/scope_planner.py
+  s_eb7827b49a5bb3::t_19a382a3fc982e 1-946
+widget_service/cloud/services/advanced_component_pipeline/styles.py
+  s_eb7827b49a5bb3::t_28e4bf5949afb8 1-122
+widget_service/cloud/services/advanced_component_pipeline/ui_planner.py
+  s_eb7827b49a5bb3::t_681977fcbc80f0 1-389
+widget_service/cloud/services/advanced_component_pipeline/ux_mixed_framer.py
+  s_eb7827b49a5bb3::t_82340757cac2be 1-335
+widget_service/cloud/services/advanced_component_pipeline/ux_mixed_prompt.py
+  s_eb7827b49a5bb3::t_28a4459e513a8f 1-602
+widget_service/cloud/services/card_validator.py
+  s_eb7827b49a5bb3::t_3dbf0fcc758e81 64
+widget_service/cloud/services/cardplan_template/__init__.py
+  s_eb7827b49a5bb3::t_5e511b87bc307d 1-15
+widget_service/cloud/services/cardplan_template/compiler.py
+  s_eb7827b49a5bb3::t_cae9bdeb344357 1-8098
+widget_service/cloud/services/cardplan_template/framer.py
+  s_eb7827b49a5bb3::t_60ef4a6a1117b8 1-83
+widget_service/cloud/services/cardplan_template/generated/prompt-manifest.json
+  s_eb7827b49a5bb3::t_b4526c3d74d047 1-30
+widget_service/cloud/services/cardplan_template/generated/prompts.py
+  s_eb7827b49a5bb3::t_4f8f28c8480787 1-19
+widget_service/cloud/services/cardplan_template/models.py
+  s_eb7827b49a5bb3::t_096fb8e575d34c 1-197
+widget_service/cloud/services/cardplan_template/parser.py
+  s_eb7827b49a5bb3::t_744bb805af56af 1-295
+widget_service/cloud/services/cardplan_template/prompt.py
+  s_eb7827b49a5bb3::t_3ee309ded7f5d1 1-870
+widget_service/cloud/services/cardplan_template/registry.py
+  s_eb7827b49a5bb3::t_e702258059d02f 1-355
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_eb7827b49a5bb3::t_2b58ebc796754d 10,14-15,31,42-47,117,286-287,289,292,405-408,410-416,457,459,480,497,509,553-574,581,586-587,589-590,594,600-602,606-609,631-633,636-638,650,652-654,659,673-678,681-682,686,701,730,738,747-753,810,832,847-848,889-892,900,917,923,925,934,938-947,949,952-965,967-984,987-989,991-1004,1006-1007,1010-1024,1027-1029,1032-1056,1058-1068,1071-1073,1076-1087,1090-1091,1094-1115,1118-1125,1128-1135,1137,1139-1140,1142,1144-1148,1151-1170,1173-1179,1181-1183,1186-1191,1193-1201,1203-1291,1295-1307,1310-1342,1349-1353,1356-1369,1371-1389,1392-1411,1414-1425,1428-1430,1436-1437,1439,1441-1456,1458,1460-1476,1502-1504,1508-1510,1539,1545-1546,1557-1559,1562,1564,1614,1616,1618,1644,1647-1648,1667,1692-1706,1708,1712-1716,1718,1758,1783-1785,1814-1816,1837,1854-1867,1877-1902,1978-1990,1999,2022-2029,2031-2036,2053-2074,2085-2087,2089,2179,2182,2187-2199,2215
+widget_service/cloud/services/device_capability_resolver.py
+  s_eb7827b49a5bb3::t_a7400919ec64be 162
+widget_service/cloud/services/protocol_registry.py
+  s_eb7827b49a5bb3::t_d940a9a7a32aba 92
+widget_service/cloud/services/task_spec_builder.py
+  s_eb7827b49a5bb3::t_4c98cadbc77e5b 33-34,45-59,65-76,80-81,86,89-90,102-107,127-132,137-180
+widget_service/cloud/services/terse_dsl_nested2_converter.py
+  s_eb7827b49a5bb3::t_8527780db9ebff 32-33,41,91,94-97,99,113-120,131,133,141-157,200,211,214,235,284-285,296-306,332,341,363,403,411-415
+widget_service/cloud/services/widget_batch_store.py
+  s_eb7827b49a5bb3::t_535078079af746 1-383
+widget_service/cloud/start_websocket_server.py
+  s_eb7827b49a5bb3::t_96841b23cb61fa 10,59
+widget_service/docs/advanced-business-components-wiki.md
+  s_eb7827b49a5bb3::t_6c44a1b7593ff6 1-679
+widget_service/docs/advanced-content-components-alignment.md
+  s_eb7827b49a5bb3::t_6f5ffb831dbf9c 1-387
+widget_service/docs/advanced-layout-components-wiki.md
+  s_eb7827b49a5bb3::t_b23bbf7e0a49c0 1-862
+widget_service/docs/cardplan_template_production.md
+  s_eb7827b49a5bb3::t_c717e20febfe96 1-339
+widget_service/docs/design-token-a2ui-mapping.md
+  s_eb7827b49a5bb3::t_0526adacad3703 15,301
+widget_service/docs/method_usage.md
+  s_eb7827b49a5bb3::t_a0b8ad95505d1b 125-137
+widget_service/docs/nested2-batch-e2e-fix-wiki.md
+  s_eb7827b49a5bb3::t_a9fb32fd7f539e 1-132
+widget_service/docs/schemas/generateWidgetCardTerseDslNested2.schema.json
+  s_eb7827b49a5bb3::t_feb23a2c0b6f32 5,23-30,34-43
+widget_service/docs/widget-service-architecture-wiki.md
+  s_eb7827b49a5bb3::t_e8f28c44afc331 1-791
+widget_service/pyproject.toml
+  s_eb7827b49a5bb3::t_8a2f457278648f 16,37-44
+widget_service/requirements-runtime.txt
+  s_eb7827b49a5bb3::t_a28cd5cff8b9f6 1-16
+widget_service/requirements.txt
+  s_eb7827b49a5bb3::t_e2a5989e35d1e0 10
+widget_service/scripts/build_cardplan_bundle.py
+  s_eb7827b49a5bb3::t_7b8f3d2831585d 1-126
+widget_service/scripts/evaluate_cardplan_golden.py
+  s_eb7827b49a5bb3::t_0cc87448190a54 1-792
+widget_service/scripts/export_cardplan_baseline.ts
+  s_eb7827b49a5bb3::t_f70853fb15946f 1-80
+widget_service/scripts/export_cardplan_golden_fixture.ts
+  s_eb7827b49a5bb3::t_cdf4c8f37e2c4d 1-153
+widget_service/scripts/reanalyze_cardplan_golden.py
+  s_eb7827b49a5bb3::t_e889a1b2fcb4c4 1-205
+widget_service/test_reports/getWidgetCapabilityOverview.md
+  s_eb7827b49a5bb3::t_f0ebcaea7def5b 61
+widget_service/tests/fixtures/cardplan_golden_scenarios.json
+  s_eb7827b49a5bb3::t_c41ea6b9de03df 1-1070
+widget_service/tests/fixtures/cardplan_ux_v2_scenarios.json
+  s_eb7827b49a5bb3::t_888cd4ab76724a 1-995
+widget_service/tests/overview_test_support.py
+  s_eb7827b49a5bb3::t_395199e8f2b586 1-67
+widget_service/tests/test_activity_overview.py
+  s_eb7827b49a5bb3::t_efc0a20597c773 1-328
+widget_service/tests/test_advanced_component_admission_bypass.py
+  s_eb7827b49a5bb3::t_73535873c1b3a5 1-119
+widget_service/tests/test_advanced_component_composition.py
+  s_eb7827b49a5bb3::t_be23ccd676b82f 1-704
+widget_service/tests/test_advanced_component_pipeline.py
+  s_eb7827b49a5bb3::t_6f3f6531b3b5ff 1-3442
+widget_service/tests/test_app_usage_overview.py
+  s_eb7827b49a5bb3::t_cfad1741d48b5f 1-561
+widget_service/tests/test_battery_overview.py
+  s_eb7827b49a5bb3::t_4188a745a3465e 1-554
+widget_service/tests/test_bluetooth_device_overview.py
+  s_eb7827b49a5bb3::t_4f277aeab4bfec 1-573
+widget_service/tests/test_cardplan_template.py
+  s_eb7827b49a5bb3::t_75ccdfa14bad76 1-2697
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_eb7827b49a5bb3::t_f3b9c6602e3629 23,31,96,266,284,524-525,551,564,579,716,739-740,926,1070,1126
+widget_service/tests/test_date_overview.py
+  s_eb7827b49a5bb3::t_b83e44c0e4a0b2 1-388
+widget_service/tests/test_heart_rate_overview.py
+  s_eb7827b49a5bb3::t_21e970bd952bff 1-212
+widget_service/tests/test_model_routing.py
+  s_eb7827b49a5bb3::t_65a887d38ba787 87-96,150-153,257-262,279-284,302-307,325,332,360,367,408,414
+widget_service/tests/test_multi_round_edit.py
+  s_eb7827b49a5bb3::t_7bf666b2010d64 26-30,32,37,114-146
+widget_service/tests/test_resource_usage_overview.py
+  s_eb7827b49a5bb3::t_c57d22c8682e2a 1-680
+widget_service/tests/test_schedule_overview.py
+  s_eb7827b49a5bb3::t_47efb708832c4a 1-557
+widget_service/tests/test_sleep_overview.py
+  s_eb7827b49a5bb3::t_7f51866a9eb8e6 1-574
+widget_service/tests/test_widget_batch_routes.py
+  s_eb7827b49a5bb3::t_42931e6cdd5bfb 1-154
+widget_service/tests/test_widget_batch_store.py
+  s_eb7827b49a5bb3::t_41be1eb6e6018a 1-139
+widget_service/tests/test_workout_overview.py
+  s_eb7827b49a5bb3::t_37ea1f0323698e 1-307
+widget_service/tools/a2ui_renderer.html
+  s_eb7827b49a5bb3::t_d66a51b57d32ff 1-239
+widget_service/tools/run_ws_cases.py
+  s_eb7827b49a5bb3::t_f5254e8d7b0b67 1-273
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "66501ab9f49d8782b056c866f4127d5adb49b841",
+  "prompts": {},
+  "sessions": {
+    "s_eb7827b49a5bb3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ff509-cf2d-7cd0-af43-1efcb3fe2fa7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 703
+    }
+  }
+}

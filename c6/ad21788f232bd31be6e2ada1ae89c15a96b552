@@ -1,0 +1,20 @@
+widget_service/cloud/services/template_generation/tests/test_template_text_heights.py
+  s_356582f5685ed2::t_f0c4f73512edb1 77-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "c6ad21788f232bd31be6e2ada1ae89c15a96b552",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 1
+    }
+  }
+}

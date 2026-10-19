@@ -1,0 +1,64 @@
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_4751d9a037ec09::t_e94115ab639219 17-18
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_4751d9a037ec09::t_e94115ab639219 1,3-5,56,72,83,86-88,139,155,191,193-195,226,242,252,255-257,288,304,339,342-344,375,391,426,428-430,478,494,508-510,558,574,610,613-615,663,679
+  s_4751d9a037ec09::t_38cf8a8492b3d2 505
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_4751d9a037ec09::t_c86484525342cd 42,45
+  s_4751d9a037ec09::t_d409e5bc4cd011 21-22,30
+  s_4751d9a037ec09::t_fd12c7f611a073 20,28-29,31,41
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_4751d9a037ec09::t_e94115ab639219 11-12
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_4751d9a037ec09::t_520ba4b8816d98 43,54,66,79,91,104,117,129,142,155
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_4751d9a037ec09::t_6571457951d0fc 199,209,220,232,243,254,265,277,289,302,315,325,335
+docs/云侧方案设计.md
+  s_4751d9a037ec09::t_b8e5d45713ec9a 1117,1120,1123
+  s_4751d9a037ec09::t_e94115ab639219 1118-1119,1121-1122,1124-1127
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_4751d9a037ec09::t_b8e5d45713ec9a 64-68,175-243,861-886,1001-1005,1007,1010,1806-1808
+  s_4751d9a037ec09::t_1aeaf978346a0b 106
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_4751d9a037ec09::t_e94115ab639219 32-33
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_4751d9a037ec09::t_b8e5d45713ec9a 75,109-110
+  s_4751d9a037ec09::t_e94115ab639219 72-74,106-108
+  s_4751d9a037ec09::t_1d52a0011f7a57 111
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_4751d9a037ec09::t_1aeaf978346a0b 249-265,267-269,271-273
+  s_4751d9a037ec09::t_4bb5c99b48f1ff 1,137,281,347,414,490,583,685,784,892,933
+  s_4751d9a037ec09::t_17a8db4a2bcb8f 42,47,180,185,189,194,322,327,331,336,389,394,456,461,465,470,533,538,626,631,635,640,729,734,828,833,837,842,918,923,959,964,968,973
+  s_4751d9a037ec09::t_c343b6da292f61 3,139,283,349-350,416-417,492,585,688,787,894,935
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_4751d9a037ec09::t_23a7d73aa24446 386-388
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_4751d9a037ec09::t_292a813e6b6626 58,280,434,8234,8238,8277,8645-8656
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_4751d9a037ec09::t_71388a3cef76d2 198,203,299,304,308-311,317-318,326-332
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_4751d9a037ec09::t_3f99e723455c6f 28,33-35,100-110,353,372,381-463
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/provider.json
+  s_4751d9a037ec09::t_d617c435c15ead 39,52,65,78
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_4751d9a037ec09::t_68e7a1ad211fb7 1,4,35,52,55,86,103,106,140,162,165,199
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/date-overview.cardtpl
+  s_4751d9a037ec09::t_ac09acf0c30b5e 1,3,10,15,22,24,31,36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "e5ddf581df6ff81aa8ba973c1671bfaccc676fc3",
+  "prompts": {},
+  "sessions": {
+    "s_4751d9a037ec09": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01f91-7c57-75c0-92df-5def43846a64",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 190
+    }
+  }
+}

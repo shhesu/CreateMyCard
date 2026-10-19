@@ -1,0 +1,18 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "2da052ace611f29fe8a633ed748b783c4b7742f8",
+  "prompts": {},
+  "sessions": {
+    "s_94ce3b9fd3de35": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05c16-6a35-7532-9093-677bfb9deeb8",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 17
+    }
+  }
+}

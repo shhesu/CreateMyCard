@@ -1,0 +1,39 @@
+docs/云侧方案设计.md
+  s_877731ca76c3b4::t_219be319a8deef 1161-1163
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_877731ca76c3b4::t_219be319a8deef 152
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_877731ca76c3b4::t_219be319a8deef 18-20,970-971
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_877731ca76c3b4::t_4b7ae25c2a78c8 48
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_877731ca76c3b4::t_219be319a8deef 139,316-318,1914-1916,1949-1951,1967-1974
+  s_877731ca76c3b4::t_9509b1648072b0 1975-1976
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_877731ca76c3b4::t_976ad1c1186feb 1405,1407-1408
+  s_877731ca76c3b4::t_f4c081994eec11 1427-1430
+  s_877731ca76c3b4::t_d48ef1d160d0a1 48,1345-1404,1406,1409-1426,1431
+  s_877731ca76c3b4::t_e86f8a9a36b0b5 1432-1433
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_877731ca76c3b4::t_219be319a8deef 5706-5710,5738-5753
+  s_877731ca76c3b4::t_8f0e8b5c89a19d 5754-5755
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_877731ca76c3b4::t_82530b9dad61b4 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "5a65d447126654f6f65235462d10ca629f31da51",
+  "prompts": {},
+  "sessions": {
+    "s_877731ca76c3b4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a01e70-1417-7152-a601-bf643967c959",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 17
+    }
+  }
+}

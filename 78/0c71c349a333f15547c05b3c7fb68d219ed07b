@@ -1,0 +1,40 @@
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_b7192af58dbb0e 11,13,46-92
+  s_ecd92453e7cd3d::t_e5a31422796fce 93-94
+widget_service/cloud/services/widget_generation_service.py
+  s_ecd92453e7cd3d::t_b7192af58dbb0e 61-64
+  s_ecd92453e7cd3d::t_4b55a65aafc2ed 1109-1112,1115-1117
+widget_service/cloud/services/template_generation/__init__.py
+  s_ecd92453e7cd3d::t_b7192af58dbb0e 3-6,11
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_b7192af58dbb0e 7,33,43,63,65-68
+widget_service/cloud/services/template_generation/docs/README.md
+  s_ecd92453e7cd3d::t_b7192af58dbb0e 25,31-32
+widget_service/tests/test_service_units.py
+  s_ecd92453e7cd3d::t_fab2d2f722017a 278-279,281-289,311-313
+  s_ecd92453e7cd3d::t_d30f25504fc2f9 99,109,174,228-245
+  s_ecd92453e7cd3d::t_7f7b704e482936 3608-3630
+widget_service/tests/test_multi_round_edit.py
+  s_ecd92453e7cd3d::t_7f7b704e482936 256,262-263,265,272,276-278,309-314,348,467,473-474,476,483,487-488,614-619,762,795-811
+widget_service/tests/test_tool_dispatch_routes.py
+  s_ecd92453e7cd3d::t_7f7b704e482936 1004-1005,1041-1043,1047
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_b7192af58dbb0e 1329,1335,1342,1353-1383,1387,1394-1397,1400,1408-1409
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "780c71c349a333f15547c05b3c7fb68d219ed07b",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 171
+    }
+  }
+}

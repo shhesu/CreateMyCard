@@ -1,0 +1,20 @@
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_1568c3f5a7f2fe::t_fb3ec7162dbe23 66-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "a7d52ec56814ba10912ff689eea9911e69070887",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 42
+    }
+  }
+}

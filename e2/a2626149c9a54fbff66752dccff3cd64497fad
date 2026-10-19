@@ -1,0 +1,37 @@
+widget_service/tests/test_official_http_observability.py
+  s_05907ce230aad1::t_06f0993b11aed1 16-21,23-25,32-48,52-53,57-58,61-78,93-95,98-105,117-119,122-123,133-135
+  s_05907ce230aad1::t_9da8f9efd81e93 1-15,22,26-31,49-51,54-56,59-60,79-92,96-97,106-116,120-121,124-132,136-141
+widget_service/tests/test_template_empty_output_retry.py
+  s_05907ce230aad1::t_9da8f9efd81e93 1-53,57-80,84-102,106-119,128-138
+  s_05907ce230aad1::t_06f0993b11aed1 54-56,81-83,103-105,120-127
+widget_service/cloud/custom/official_http_client.py
+  s_05907ce230aad1::t_c380a17f11644c 15-17,99-145,214-218
+widget_service/cloud/custom/model_runtime.py
+  s_05907ce230aad1::t_f5db7c850f9475 43,46-49
+widget_service/cloud/services/template_generation/model_client.py
+  s_05907ce230aad1::t_f5db7c850f9475 72-74
+docs/模板校验修复验证报告.md
+  s_05907ce230aad1::t_4e52344de00193 8,115-183
+widget_service/cloud/custom/unified_model_client.py
+  s_05907ce230aad1::t_f5db7c850f9475 64,67-68,98,153,155,219-226
+docs/云侧方案设计.md
+  s_05907ce230aad1::t_f5db7c850f9475 2189-2190,2193-2194
+  s_05907ce230aad1::t_06f0993b11aed1 2191-2192
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "e2a2626149c9a54fbff66752dccff3cd64497fad",
+  "prompts": {},
+  "sessions": {
+    "s_05907ce230aad1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1308c-8a53-71e1-a776-6c32661b5731",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 30
+    }
+  }
+}

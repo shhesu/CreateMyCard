@@ -1,0 +1,28 @@
+AGENTS.md
+  s_1568c3f5a7f2fe::t_eecce848adc95e 82-84
+widget_service/cloud/services/template_generation/docs/README.md
+  s_1568c3f5a7f2fe::t_aed58162e6c62f 101-126
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_1568c3f5a7f2fe::t_be19770ebf11e8 1329,1339-1347,1349-1356
+widget_service/cloud/services/template_generation/tests/test_provider_elseif.py
+  s_1568c3f5a7f2fe::t_3be1cb5b44718a 5-6,20,29-76
+widget_service/pyproject.toml
+  s_1568c3f5a7f2fe::t_761ed8b3f6c7c6 30,49-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "6a5ed2737caad3ee29554c451615edf09240f324",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

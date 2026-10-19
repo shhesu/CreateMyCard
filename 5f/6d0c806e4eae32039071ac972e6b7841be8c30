@@ -1,0 +1,76 @@
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_ecd92453e7cd3d::t_4f92eff54d84d2 788-792
+  s_ecd92453e7cd3d::t_8a4382d981cef1 220-224,237,240-241,249,484,504,693,695,697,699,701,704
+  s_ecd92453e7cd3d::t_fd72a7748ab39c 242-243
+  s_ecd92453e7cd3d::t_5af31ae5edf095 238,760
+  s_ecd92453e7cd3d::t_7c47919c5e973e 761
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_ecd92453e7cd3d::t_bd71ad9a88ec03 19
+widget_service/cloud/services/template_generation/resources/source/providers/earphone-cli/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 10
+widget_service/cloud/services/template_generation/resources/source/providers/battery-cli/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 10
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_ecd92453e7cd3d::t_5af31ae5edf095 5
+  s_ecd92453e7cd3d::t_e2b11969e3ee91 11,13-23,25-31
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_ecd92453e7cd3d::t_ceb40a4f9b287c 26,126,128
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_ecd92453e7cd3d::t_20cfd0dcd3f6e8 227,565-566,571-573
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_ecd92453e7cd3d::t_8d35e2ab4945d9 682,923-924,928,942,6617
+  s_ecd92453e7cd3d::t_32349bf055da96 5334-5335,5339
+  s_ecd92453e7cd3d::t_7ecfc844b96248 5598-5599
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_ecd92453e7cd3d::t_753535b1aabb59 2304
+  s_ecd92453e7cd3d::t_c4f3b75edfe1f5 2096
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage-cli/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 8
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_ecd92453e7cd3d::t_17ba046f65e6a1 30,74-76
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_ba3a7e3e5d7aa9 11,52
+  s_ecd92453e7cd3d::t_5d1d3031076544 17
+  s_ecd92453e7cd3d::t_3703d38e868c67 18,20,24,37,41,48
+widget_service/cloud/services/template_generation/resources/source/advanced-component-ux-registry.json
+  s_ecd92453e7cd3d::t_54290cedf9c64a 39,203,218,252,321
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_17ba046f65e6a1 79,82,84-86,88-90
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_fd72a7748ab39c 125
+  s_ecd92453e7cd3d::t_5af31ae5edf095 853-854,994-996,1043-1059
+  s_ecd92453e7cd3d::t_c3eaf077d428d9 124,126-128,350,394,398,405,529,546,580,638-639,643-644,653,664,957-960,962-965,984-991
+  s_ecd92453e7cd3d::t_7d1250e7a701ce 992
+  s_ecd92453e7cd3d::t_df66cd31c61be3 997-1033,1041-1042
+  s_ecd92453e7cd3d::t_d5576c04b01ebd 993
+  s_ecd92453e7cd3d::t_54290cedf9c64a 783,790-794,801,806-810,961
+widget_service/cloud/services/template_generation/resources/source/providers/weather-cli/README.md
+  s_ecd92453e7cd3d::t_0e6cde84d2dc5a 7
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport-cli/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 12
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_ecd92453e7cd3d::t_17ba046f65e6a1 36-37
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_ecd92453e7cd3d::t_0047cd8b4e8b3e 281,293,297,299,302-311,317,326
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_ecd92453e7cd3d::t_ceb40a4f9b287c 29,102-104,106,315-317
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory-cli/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_d7fc30376c78d9 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "5f6d0c806e4eae32039071ac972e6b7841be8c30",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 256
+    }
+  }
+}

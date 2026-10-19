@@ -1,0 +1,247 @@
+widget_service/cloud/services/template_generation/engine/advanced/data_shape.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-98
+widget_service/cloud/services/template_generation/engine/cardplan/framer.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-86
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/20-action-and-budget.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-18
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-97
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-95
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/date-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-41
+widget_service/cloud/services/template_generation/resources/source/prompts/card-template-planner/00-chrome-kernel.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-14
+widget_service/tests/test_multi_round_edit.py
+  s_9ebf6d74b5ae62::t_08ee04285dd414 256,262-263,265,272,276-278,309-314,348
+  s_9ebf6d74b5ae62::t_b8f6f02c083b4e 467,473-474,476,483,487-488
+  s_9ebf6d74b5ae62::t_8a94990e41def5 614-619,762,795-811
+widget_service/cloud/services/template_generation/resources/source/providers/weather/samples/sunny.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-15
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-219
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/schemas/get-system-mem-info.schema.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-10
+widget_service/cloud/services/template_generation/resources/source/providers/weather/schemas/view-weather.output.schema.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-60
+widget_service/cloud/services/template_generation/docs/README.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-79
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3047
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-590
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-33
+widget_service/cloud/services/template_generation/resources/source/themes/audio-product-neutral-violet/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/facade.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-58
+widget_service/cloud/services/template_generation/resources/source/themes/device-clean-blue-teal/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/docs/migration-notes.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-31
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-79
+widget_service/tests/test_service_units.py
+  s_9ebf6d74b5ae62::t_2d57008595733e 3754,3756,3758-3759,3769,3771-3772,3774-3777
+  s_9ebf6d74b5ae62::t_bdf799719a6d68 99,109,174,228-245,277-289,309-312
+widget_service/cloud/services/template_generation/resources/source/advanced-component-registry.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-1341
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/10-template-composition.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-54
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-20
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-713
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-14
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-315
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-441
+widget_service/cloud/services/template_generation/engine/advanced/models.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-335
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_9ebf6d74b5ae62::t_5e91abc73ee6eb 369-374,378,840,842-846,848
+  s_9ebf6d74b5ae62::t_23f1f963ca99a7 867
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-368,375-377,379-839,841,847,849-866,868-2716
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-551
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-12
+widget_service/scripts/build_cardplan_bundle.py
+  s_9ebf6d74b5ae62::t_274f50db487590 44-48,50-52,54-58,87,91,94
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-43,59-86,88-90,92-93,95-124
+  s_9ebf6d74b5ae62::t_835d3fcc3e4ea7 49,53
+widget_service/cloud/services/template_generation/source_adapter.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-112
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-341
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-472
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-8
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-38
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-290
+widget_service/cloud/services/template_generation/legacy_python.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-28
+widget_service/cloud/services/template_generation/engine/__init__.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1
+widget_service/cloud/services/template_generation/resources/source/prompts/card-template-planner/10-dsl-and-boundary.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-21
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-15
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-13
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-39
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-40
+widget_service/cloud/services/template_generation/resources/source/themes/race-night-violet/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-173
+widget_service/cloud/services/template_generation/resources/source/advanced-component-ux-registry.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-80
+widget_service/cloud/services/template_generation/engine/advanced/__init__.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1
+widget_service/cloud/services/template_generation/model_client.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-103
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-11
+widget_service/cloud/services/template_generation/engine/cardplan/retrieval_index.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-83
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-2645
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-26
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-23
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-54
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-119
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-13
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-278
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-26
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-1278
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-245
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-742
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-161
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-11
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-1017
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-88
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-1653
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-1032
+widget_service/cloud/services/template_generation/resources/source/themes/system-low-power-blue/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-220
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-325
+widget_service/cloud/services/template_generation/engine/cardplan/parser.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-304
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-13
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-176
+widget_service/cloud/services/template_generation/engine/cardplan/__init__.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-15
+widget_service/cloud/services/template_generation/resources/source/providers/weather/README.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-40
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/00-hybrid-kernel.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-14
+widget_service/cloud/services/template_generation/resources/source/template-registry.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-13866
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-25
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-8601
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-377
+widget_service/cloud/services/template_generation/resources/source/theme-profiles.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-487
+widget_service/cloud/services/template_generation/resources/source/themes/meeting-paper-neutral/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/sleep-night-violet/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_9ebf6d74b5ae62::t_9ee0c89c04f9df 5,36,41,159,163,197
+  s_9ebf6d74b5ae62::t_85f352fd7fbdc9 6-35,42-158,164-196
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-4,37-40,160-162
+widget_service/cloud/services/template_generation/binding_dependencies.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-53
+widget_service/cloud/services/template_generation/config/template_controls.json
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-9
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-980
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-11
+docs/云侧方案设计.md
+  s_9ebf6d74b5ae62::t_012e494d502a75 1135-1155
+widget_service/tests/test_tool_dispatch_routes.py
+  s_9ebf6d74b5ae62::t_6ed9cae63e1ad1 1041-1042,1078-1080,1084
+widget_service/cloud/services/template_generation/resources/source/themes/focus-warm-amber/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/race-sunrise-action/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/widget_generation_service.py
+  s_9ebf6d74b5ae62::t_1b2ed59f481674 60,64,256-257,591-614,1106-1107,1116,1134-1139,1143-1151,1156-1157,1166-1167,1169,1178-1204,1209-1210
+widget_service/cloud/services/template_generation/tests/test_template_retrieval_fixture_migration.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-64
+widget_service/cloud/services/template_generation/tests/eval_fixture_migration.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-113
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-68
+widget_service/cloud/services/template_generation/controls.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-59
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-419
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-9
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-586
+widget_service/cloud/services/template_generation/resources/source/themes/digital-wellbeing-neutral-dark/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/themes/family-weather-care-blue/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/providers/layout/templates/layout.cardtpl
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-69
+widget_service/cloud/services/template_generation/__init__.py
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-9
+widget_service/cloud/services/template_generation/resources/source/themes/rainy-commute-gray-blue/first-layer.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-3
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_9ebf6d74b5ae62::t_b1245f79ae8212 1-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "26e58817248b8776cbee61b5857d3734741c68ea",
+  "prompts": {},
+  "sessions": {
+    "s_9ebf6d74b5ae62": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02364-0b1d-7e62-8297-eeaee8a5d384",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 197
+    }
+  }
+}

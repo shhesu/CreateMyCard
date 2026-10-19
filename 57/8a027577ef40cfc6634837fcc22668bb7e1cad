@@ -1,0 +1,20 @@
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_623d2724202cfc::t_df714aac63919b 142,166,509,806
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "578a027577ef40cfc6634837fcc22668bb7e1cad",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 11
+    }
+  }
+}

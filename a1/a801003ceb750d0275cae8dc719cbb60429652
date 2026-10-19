@@ -1,0 +1,72 @@
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_b84c4c5935540d::t_6db37251d61ba2 38,52,63,65,78,91,132,146,157,238,249,317,328,360,370,381,396,408,420,466,475,486,513,525,537-538,543,590,645,650-651,656-664,712,767,772-773,778-786,821,858,870,882
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_b84c4c5935540d::t_ae65150764761e 4452-4458,4460
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_b84c4c5935540d::t_e93accd090e362 1349-1353,1355-1390,1393-1395,1397-1402
+  s_b84c4c5935540d::t_8fc70f2b525a1c 1391-1392,1396
+  s_b84c4c5935540d::t_33d45c9f745f47 1354
+  s_b84c4c5935540d::t_fcb05f026c90ee 1653,1659
+  s_b84c4c5935540d::t_ae65150764761e 980,982,989,991,1578-1581,1683-1684,1696-1697,1711-1712
+  s_b84c4c5935540d::t_058384123e680e 921-924,931
+  s_b84c4c5935540d::t_de81b3b4c4595e 472,740,748-836
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_b84c4c5935540d::t_9ce0625c371208 491
+  s_b84c4c5935540d::t_fc36bdf1c26389 302-307,452-462
+  s_b84c4c5935540d::t_9f9301601049e2 487-490,493-502,504-506
+  s_b84c4c5935540d::t_4177597baed47f 465-486
+  s_b84c4c5935540d::t_28a5f0667a87c2 492,503
+  s_b84c4c5935540d::t_c87b0ac4218dbb 463-464
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_b84c4c5935540d::t_761687f8eaf171 144,150-156,168-176,186-188,192-193,197-198
+docs/云侧方案设计.md
+  s_b84c4c5935540d::t_761687f8eaf171 1013-1015
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_b84c4c5935540d::t_6918a0f2bad4db 17,24
+widget_service/cloud/services/template_generation/resources/source/providers/app-usage/templates/app-usage-overview.cardtpl
+  s_b84c4c5935540d::t_29858eb68730b0 23-28,38-46,65-70,81-86,119-124,128-136,169-174,178-186,212-217,248-253,256,268
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_b84c4c5935540d::t_b9203e2164bf37 33-41,86-94,149-157,196,201-202,207-208
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_b84c4c5935540d::t_bf7f3aaf86f2cc 30,44,58-59,70,181,195,209,339,353,367,494,508,522,764,778,792-793,804,916-951,997-1032
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_b84c4c5935540d::t_1ba1d193aebfe8 8,13,18
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_b84c4c5935540d::t_784fa1d6af8feb 63,68,73,87,92,97,132-142,145-161,163,165-189,191,193-234,264-269,273-289,291,293-317,319,321-362,364-369,454,459,463,475,480,484,496,501,505,539-544,562-567,588-593,649,654,659,673,678,683,738-743,764-769
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/activity-overview.cardtpl
+  s_b84c4c5935540d::t_3db95ad9e92d82 75,80,182-228,231,233-274,276,278-280,334-339,342,354,383,388,488-499,525-563,565,567-608,610,612-614
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/heart-rate-overview.cardtpl
+  s_b84c4c5935540d::t_51eebf3c9e1197 61,73,113,125,164,176,220,232
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_b84c4c5935540d::t_98997b5c8e698f 34-39,48-60,64-81,85,89-90,93-94,137-142,151-166,168-171,174-194,233-238,298-303,307,319
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_b84c4c5935540d::t_98e62f523e64e6 34-39,143-148,177-182,258-263,266,278
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_b84c4c5935540d::t_2ea3637c82a99e 28-48,86-94,144-152,174,186
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "a1a801003ceb750d0275cae8dc719cbb60429652",
+  "prompts": {},
+  "sessions": {
+    "s_94ce3b9fd3de35": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05c16-6a35-7532-9093-677bfb9deeb8",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 21
+    },
+    "s_b84c4c5935540d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06292-3e5c-7760-8626-2db3c977fe01",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 173
+    }
+  }
+}

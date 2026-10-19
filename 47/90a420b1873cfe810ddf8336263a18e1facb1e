@@ -1,0 +1,53 @@
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_f3e9e255ad7171::t_a47b49ecea0bc7 193-198
+  s_f3e9e255ad7171::t_7585fbb47d8c66 251,253
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_f3e9e255ad7171::t_323b443c9f72c7 7,11-12
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_f3e9e255ad7171::t_1a8de146402c96 3899,3902,3906,3908,3910-3958
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_f3e9e255ad7171::t_7585fbb47d8c66 241,688,691,829-831,857-858,861
+  s_f3e9e255ad7171::t_f98768466b8401 332
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_f3e9e255ad7171::t_323b443c9f72c7 61
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_f3e9e255ad7171::t_323b443c9f72c7 29,33-35
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_f3e9e255ad7171::t_7585fbb47d8c66 285
+  s_f3e9e255ad7171::t_a47b49ecea0bc7 3526,3594,3600-3601,3604
+widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
+  s_f3e9e255ad7171::t_a47b49ecea0bc7 339,341,404-405,427
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_f3e9e255ad7171::t_323b443c9f72c7 551
+widget_service/cloud/services/template_generation/tests/test_calendar_meeting_centered.py
+  s_f3e9e255ad7171::t_b226c46e6e04e0 165
+  s_f3e9e255ad7171::t_9768041da438f9 1,49-50,79,86-96,105-111,147-149,151-153
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_f3e9e255ad7171::t_f98768466b8401 26
+  s_f3e9e255ad7171::t_323b443c9f72c7 27,29
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_f3e9e255ad7171::t_a47b49ecea0bc7 77,316
+docs/云侧方案设计.md
+  s_f3e9e255ad7171::t_323b443c9f72c7 1051,1054-1057,1059-1060
+widget_service/cloud/services/template_generation/tests/test_travel_weather_templates.py
+  s_f3e9e255ad7171::t_a47b49ecea0bc7 231-232,246,250
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_f3e9e255ad7171::t_7585fbb47d8c66 23,27,35-36,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "4790a420b1873cfe810ddf8336263a18e1facb1e",
+  "prompts": {},
+  "sessions": {
+    "s_f3e9e255ad7171": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e71a-2b33-7742-bf00-7f2c1c119d30",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 813
+    }
+  }
+}

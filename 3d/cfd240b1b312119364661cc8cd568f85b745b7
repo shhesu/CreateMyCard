@@ -1,0 +1,77 @@
+widget_service/tests/test_advanced_component_composition.py
+  s_6d7c9a526b8e3e::t_a752a134780775 20,79-92
+  s_6d7c9a526b8e3e::t_42674fa7e5e517 1-5,7-19,21-41,43-78,93-94,137-228,232-262,307-351,353-370,378-381,383-410,421-426
+  s_6d7c9a526b8e3e::t_e60945f0ded857 6,95-136,229-231,352,371-377,382,411-420
+  s_6d7c9a526b8e3e::t_9680ccc49ca070 42,263-306
+widget_service/cloud/services/cardplan_template/prompt.py
+  s_6d7c9a526b8e3e::t_10db5f6c7d491c 201-209
+widget_service/cloud/services/cardplan_template/registry.py
+  s_6d7c9a526b8e3e::t_d05ab5b5a850d1 30,49-52
+  s_6d7c9a526b8e3e::t_e8ecb4d0a46189 13-17,37,53-71,153-198,205-222
+  s_6d7c9a526b8e3e::t_a752a134780775 199-204
+  s_6d7c9a526b8e3e::t_484828e967cf53 223
+widget_service/cloud/services/advanced_component_pipeline/domain_rules.py
+  s_6d7c9a526b8e3e::t_ca504a4ded54fb 1-225
+widget_service/cloud/services/advanced_component_pipeline/pipeline.py
+  s_6d7c9a526b8e3e::t_10db5f6c7d491c 44,70-75,82,89-98,185,252
+  s_6d7c9a526b8e3e::t_3a66b38ae6a684 21,264
+.dockerignore
+  s_6d7c9a526b8e3e::t_77001d40c64fc6 5
+widget_service/cloud/services/advanced_component_pipeline/composition.py
+  s_6d7c9a526b8e3e::t_10db5f6c7d491c 86-87,330,332
+  s_6d7c9a526b8e3e::t_1cea2071ffd5e4 302-307
+  s_6d7c9a526b8e3e::t_a752a134780775 20-22,109,128-130,167-169,173-175,178-180,211,233-235,243-245,260-273
+  s_6d7c9a526b8e3e::t_e8ecb4d0a46189 1-19,23-46,48-85,88-108,110-127,131-166,170-172,176-177,181-210,212-232,236-242,246-259,274-301,308-329,331
+  s_6d7c9a526b8e3e::t_066583f3a08f1b 47
+  s_6d7c9a526b8e3e::t_aede4f574176e4 333-334
+widget_service/cloud/services/advanced_component_pipeline/models.py
+  s_6d7c9a526b8e3e::t_e8ecb4d0a46189 8-48,50-52,56-83,85,87-116,118-133,182-187,275
+  s_6d7c9a526b8e3e::t_a752a134780775 49,53-55,84,86,117
+widget_service/cloud/services/advanced_component_pipeline/__init__.py
+  s_6d7c9a526b8e3e::t_365d9131454952 8-20
+widget_service/cloud/services/advanced_component_pipeline/ui_planner.py
+  s_6d7c9a526b8e3e::t_10db5f6c7d491c 19,53-54,66,69-75,94,97-101,105,114,117,127-128,138-159
+  s_6d7c9a526b8e3e::t_1ba670d64d6f53 37-39,55
+  s_6d7c9a526b8e3e::t_3c620335e268f6 160
+docs/云侧方案设计.md
+  s_6d7c9a526b8e3e::t_4f3223bca4d6e5 992,1156,1296-1322,1470
+widget_service/scripts/build_cardplan_bundle.py
+  s_6d7c9a526b8e3e::t_41b40da5d7c5e7 21
+  s_6d7c9a526b8e3e::t_d05ab5b5a850d1 67,78-83,85-86,102
+widget_service/scripts/export_cardplan_baseline.ts
+  s_6d7c9a526b8e3e::t_66782c3fd64093 9-14,58-63
+  s_6d7c9a526b8e3e::t_4bcd1fdd9f452c 8
+  s_6d7c9a526b8e3e::t_d4d389b067216f 64
+widget_service/docs/cardplan_template_production.md
+  s_6d7c9a526b8e3e::t_4f3223bca4d6e5 22,32-45
+  s_6d7c9a526b8e3e::t_ff645ea8328409 46
+widget_service/cloud/data/cardplan_template/source/advanced-component-registry.json
+  s_6d7c9a526b8e3e::t_009f1855b9134f 1-1328
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/00-hybrid-kernel.md
+  s_6d7c9a526b8e3e::t_5bb011a59957ee 5
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/10-template-composition.md
+  s_6d7c9a526b8e3e::t_653a59dbf25c67 5,17-18
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/20-action-and-budget.md
+  s_6d7c9a526b8e3e::t_049dc7427cebcb 5
+widget_service/cloud/services/cardplan_template/generated/prompt-manifest.json
+  s_6d7c9a526b8e3e::t_627cc17874ac38 4,10,13-15,20
+widget_service/cloud/services/cardplan_template/generated/prompts.py
+  s_6d7c9a526b8e3e::t_5a0115201b3391 10,13-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "3dcfd240b1b312119364661cc8cd568f85b745b7",
+  "prompts": {},
+  "sessions": {
+    "s_6d7c9a526b8e3e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd7ef-851e-7242-a2dc-0da5b3c412f2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 78
+    }
+  }
+}

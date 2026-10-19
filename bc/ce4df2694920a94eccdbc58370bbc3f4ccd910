@@ -1,0 +1,32 @@
+docs/云侧方案设计.md
+  s_356582f5685ed2::t_9c149fdce0117c 1296-1297,1300
+widget_service/cloud/services/template_generation/tests/test_template_required_only_render.py
+  s_356582f5685ed2::t_7da30030b58be3 120-121,152-153
+widget_service/tests/test_asset_mapping_generation.py
+  s_356582f5685ed2::t_fdd12195b16f5f 33
+widget_service/tests/test_compact_hero_typography.py
+  s_356582f5685ed2::t_d4046f87ac2c57 128,137,139,159-166
+widget_service/tests/test_design_compact_few_shots.py
+  s_356582f5685ed2::t_e594515a0125ee 340-341
+widget_service/tests/test_service_units.py
+  s_356582f5685ed2::t_0327d0e8bcaa92 842,851,857,870-872,874
+widget_service/tests/test_template_ring_geometry.py
+  s_356582f5685ed2::t_e0b20cada866a8 108,147,154-158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "bcce4df2694920a94eccdbc58370bbc3f4ccd910",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

@@ -1,0 +1,89 @@
+widget_service/cloud/services/card_validation/display_unit_validator.py
+  s_623d2724202cfc::t_0ebc71ce3c8876 127-150
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_623d2724202cfc::t_a577dc9e66ff30 27,100-120
+  s_623d2724202cfc::t_8b6c9b17a55550 121-122
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_623d2724202cfc::t_3d0f9b0dceb514 92,3122-3123,3125-3126,3128-3129,3131-3139
+  s_623d2724202cfc::t_cc3507d50d6649 508-526
+  s_623d2724202cfc::t_b84661ee1351c8 5577
+  s_623d2724202cfc::t_2cd32c0dca2bdd 3121,3124,3127,3130
+  s_623d2724202cfc::t_db4e05e8ffe096 70-72,115-138
+  s_623d2724202cfc::t_3b8d24e7328445 3140,5524-5525,5531,5534,5536-5540,5545-5549,5552-5553,5555-5558,5562-5565,5567-5570,5583-5588,5592-5593,5600,5602-5606,5608
+  s_623d2724202cfc::t_d29acd4b733317 5574-5576,5578-5579
+  s_623d2724202cfc::t_600aec5d68eee5 3141-3142
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_623d2724202cfc::t_2cd32c0dca2bdd 861
+  s_623d2724202cfc::t_a0f443e3e4bca3 488-503,711,782,799-800,853-854,856-858,860,865,871,880,916,920-930,932-972,974-978,980-981,983-988,990-1002
+  s_623d2724202cfc::t_beca3ad19b50db 36,42,226-229,302-325
+  s_623d2724202cfc::t_365e2067bad24b 541-543
+  s_623d2724202cfc::t_f515f618d4670f 24,1155,1159-1160,1180-1194,1424,1437
+  s_623d2724202cfc::t_22ec4609bf1319 33
+  s_623d2724202cfc::t_1eb1016eea14bb 145
+  s_623d2724202cfc::t_9adc88d14070bd 193,443,546-549,653-665,675,677,679,686,695-702
+  s_623d2724202cfc::t_05954bc7cc8a24 855,859,862-863,979
+  s_623d2724202cfc::t_2aa2373cdc5613 1116-1131,1279-1289,1302-1312,1321,1339-1340,1361-1364,1376-1377
+  s_623d2724202cfc::t_27e6752cf8ce44 326-327
+  s_623d2724202cfc::t_7d5eb36ec5c63f 864
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_623d2724202cfc::t_db4e05e8ffe096 6,22-24,42,44,63,76,110-153
+  s_623d2724202cfc::t_2481d145ea2ea0 154-155
+widget_service/tests/test_display_units.py
+  s_623d2724202cfc::t_0ebc71ce3c8876 84-142,247-299
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_623d2724202cfc::t_a577dc9e66ff30 225-257
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_623d2724202cfc::t_3b8d24e7328445 77-78
+  s_623d2724202cfc::t_f83d10f6622d2b 113-115
+  s_623d2724202cfc::t_c2961a0848e5e6 116
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_623d2724202cfc::t_2cd32c0dca2bdd 1035,1037,1039
+docs/云侧方案设计.md
+  s_623d2724202cfc::t_f83d10f6622d2b 1468-1470
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_623d2724202cfc::t_38a0d8268d03df 412-423
+  s_623d2724202cfc::t_c00ab5b93d3c71 136-154,157-165,573-574,580
+  s_623d2724202cfc::t_2cd32c0dca2bdd 85,236
+  s_623d2724202cfc::t_05954bc7cc8a24 78-84,86-89,237-244
+  s_623d2724202cfc::t_5c7f82ed553618 155-156
+  s_623d2724202cfc::t_63c5d631c27d56 201,297,515,517-520,523,603,605-606
+  s_623d2724202cfc::t_99220bd8bdc80e 398
+  s_623d2724202cfc::t_613c39ef741567 252,386
+  s_623d2724202cfc::t_0d6d7a1ca1e50c 16-17,33-40,48,64,74-77,90-96,113-117,171,180-182,184-185,220-235,245-246,514,525-527,532,542-572,575-579,581-588
+  s_623d2724202cfc::t_f8c8be2eb33877 524
+  s_623d2724202cfc::t_8c7cb0c17fa2c4 589-590
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_623d2724202cfc::t_a577dc9e66ff30 46,145-149
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-battery-teal/theme.json
+  s_623d2724202cfc::t_490f79a42921cb 4,6,26
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_623d2724202cfc::t_22ec4609bf1319 129-130
+  s_623d2724202cfc::t_238f7539350091 6-7,35-39,41,46,115-116,127
+  s_623d2724202cfc::t_85a6c4ad394a94 104-105,114
+  s_623d2724202cfc::t_2cd32c0dca2bdd 40,43,45
+  s_623d2724202cfc::t_05954bc7cc8a24 42,44
+  s_623d2724202cfc::t_63c5d631c27d56 88-89
+widget_service/cloud/services/template_generation/tools/generate_provider_template_gallery.py
+  s_623d2724202cfc::t_f515f618d4670f 34-38,82
+  s_623d2724202cfc::t_bc3ea9f3c99aaa 33
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-battery-teal/first-layer.md
+  s_623d2724202cfc::t_490f79a42921cb 3
+  s_623d2724202cfc::t_3b8d24e7328445 4-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "320aebcf613ef251c4a5716b78989db9d0e0b360",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 217
+    }
+  }
+}

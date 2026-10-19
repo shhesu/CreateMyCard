@@ -1,0 +1,30 @@
+docs/云侧方案设计.md
+  s_623d2724202cfc::t_b6bbc663759c8a 1009-1010,1371-1375
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_623d2724202cfc::t_5616e4da34b0ad 142,166,274-280,516,813
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_623d2724202cfc::t_08c6ec16aedb92 17-22,733,739-743,762-769
+widget_service/cloud/services/fusion_ball_expander.py
+  s_623d2724202cfc::t_e2709cdaa8af17 7-8,17-25,27,29-57,116-350
+widget_service/cloud/services/generation_pipeline.py
+  s_623d2724202cfc::t_dea3989b095be9 153
+widget_service/tests/test_fusion_ball_expander.py
+  s_623d2724202cfc::t_a17be7ee703667 3-5,9,14-15,18,37,43-44,48-50,63-220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "ef441a226d9a888df15a32e650f46870d498d73f",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

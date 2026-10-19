@@ -1,0 +1,60 @@
+docs/云侧方案设计.md
+  s_c1c95e6a02cb2f::t_68f0624fa1eb57 1009-1010
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_c1c95e6a02cb2f::t_0395ca5a613918 185,197-198
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_c1c95e6a02cb2f::t_78b227061317f0 286-291,310,313-315
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_c1c95e6a02cb2f::t_25a895ec0d73c0 53-55
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_c1c95e6a02cb2f::t_2f268c4b134ca3 38-42,46-51,93-94
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_c1c95e6a02cb2f::t_4a1d8d95216eb2 209-210,212,214,512-513
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_c1c95e6a02cb2f::t_0a005f964a9df4 5113,5125,5127-5134
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_c1c95e6a02cb2f::t_59819976f9a8c5 21-25,255-293
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_c1c95e6a02cb2f::t_7e0be02166a77b 117,230-236
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/first-layer.md
+  s_c1c95e6a02cb2f::t_af5f966af524ad 14,18-22
+widget_service/cloud/services/template_generation/resources/source/providers/weather/layer-docs/second-layer.md
+  s_c1c95e6a02cb2f::t_6e73f1ed6f3dce 6,24-27
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_c1c95e6a02cb2f::t_aea6ed8830558f 22,24,29
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_c1c95e6a02cb2f::t_36d053fdc6ea23 5,9-21,23-26,28-30,32-35,37,40,45
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_c1c95e6a02cb2f::t_711ade2349fd20 21-24,50-52,60,62-63
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-schedule-cool/first-layer.md
+  s_c1c95e6a02cb2f::t_b42810c54c5655 3-6
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_c1c95e6a02cb2f::t_d1bfbdab7c0a50 959,1080,1114-1116,1128,1130
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_c1c95e6a02cb2f::t_b60e61ce4f4c44 93-98,590-592,602-603,646
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_c1c95e6a02cb2f::t_98d2825a3020b7 159,993,1050,1053-1060,1086,1093-1098,1128,1413-1438,1446,2039,2051-2052,2054,2073-2074,2129,2132-2135,2139-2146,2221-2224,2246,2255,2262-2288,2301-2309,2311-2326,2331-2333,5591
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_c1c95e6a02cb2f::t_27b910b2892294 88-96
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_c1c95e6a02cb2f::t_3b7359bef41182 48-98,820-827,830-833,848-865,886,888,910-916,921,973-1041,1048-1052,1060-1091
+widget_service/cloud/services/template_generation/tests/test_weather_hero_title.py
+  s_c1c95e6a02cb2f::t_41e79c3a04639f 1-102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "e7834a006f143df4cb0adb9bac20ebf0fbac74d1",
+  "prompts": {},
+  "sessions": {
+    "s_c1c95e6a02cb2f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06617-3093-76e3-9f07-8c2a4bc36836",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

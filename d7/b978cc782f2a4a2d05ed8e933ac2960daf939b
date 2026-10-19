@@ -1,0 +1,84 @@
+docs/云侧方案设计.md
+  s_1b5fd5b18b017d::t_b6090be0872c2a 1066-1068,1070-1073,1075-1076
+  s_1b5fd5b18b017d::t_4c1d26a3ae7515 1078
+  s_1b5fd5b18b017d::t_a70811edabcc7b 1069
+  s_4053a32d242cbc::t_4459da2b90878c 1184-1186
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_1b5fd5b18b017d::t_a70811edabcc7b 110-111,143
+  s_1b5fd5b18b017d::t_b6090be0872c2a 112-114,142
+widget_service/tests/test_service_units.py
+  s_1b5fd5b18b017d::t_06e6e31c18da20 159-192
+  s_1b5fd5b18b017d::t_31e8cbc597da22 193-210
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_1b5fd5b18b017d::t_da43f040282c74 15-19,102,105-112,116,120,126-133,268-274,283,289-294,297-298,307-310,312-316,334-338,345-366,373,382,389-396,399-403,406-424,426,428,431-435,439-446,472-492,530-534
+  s_1b5fd5b18b017d::t_d978ba093d4534 523,535
+widget_service/cloud/services/terse_dsl_nested2_converter.py
+  s_1b5fd5b18b017d::t_f6665b2c488fbf 10,15-19,36-39,98,100-107,109-116,229-235,244,252-257,260-261,270-273,275-279,297-301,308-329,335-336,341-345,351-358,472-476,479-497,499,501,504-508,512-519,545-589
+  s_1b5fd5b18b017d::t_dfbb44ef3d1ded 590-591
+widget_service/docs/method_usage.md
+  s_1b5fd5b18b017d::t_2887bad042c644 92-93
+widget_service/cloud/data/protocol_profiles/terse-dsl-nested-2/PROMPT.md
+  s_1b5fd5b18b017d::t_b6090be0872c2a 68-82,95-96,105,108-109,114-115
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_1b5fd5b18b017d::t_7719e31a67eaea 15,4368-4373,4395,4397-4398
+  s_1b5fd5b18b017d::t_4c97143e7e4a1b 4399-4401
+  s_4053a32d242cbc::t_28061e189334bd 4402
+widget_service/tests/test_a2ui_expression.py
+  s_1b5fd5b18b017d::t_06e6e31c18da20 1-6,9-11,25-28,30-32,34-65
+  s_1b5fd5b18b017d::t_ceee3e84eef87a 7-8,12-24,66-129
+  s_1b5fd5b18b017d::t_66c953d7c1f91b 29,33
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_1b5fd5b18b017d::t_45fcb387424080 1633-1641,1731-1735
+  s_1b5fd5b18b017d::t_01bb2bc74d6f9f 1736
+widget_service/cloud/services/a2ui_expression.py
+  s_1b5fd5b18b017d::t_a70811edabcc7b 68-69,116,134,171,187,219
+  s_1b5fd5b18b017d::t_66c953d7c1f91b 14-15,208,318
+  s_1b5fd5b18b017d::t_2512420c5e190a 1-7,9-13,16-67,70-115,117-133,135-170,172-186,188-207,209-218,220-317
+  s_1b5fd5b18b017d::t_95f339015bce58 8
+widget_service/docs/schemas/generateWidgetCardTerseDslNested2.schema.json
+  s_1b5fd5b18b017d::t_18f87a6b117be3 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "d7b978cc782f2a4a2d05ed8e933ac2960daf939b",
+  "prompts": {},
+  "sessions": {
+    "s_1b5fd5b18b017d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a037b2-17ad-73a0-bdcb-4a9e86116e12",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 112
+    },
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 386
+    },
+    "s_931eb5da6f128e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a033d9-2f24-7840-843c-103ebf0400c4",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 2820
+    },
+    "s_f0304be39ce7ce": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a037ba-c433-7f72-b712-6c882fbe1a69",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 463
+    }
+  }
+}

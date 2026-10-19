@@ -1,0 +1,25 @@
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_1568c3f5a7f2fe::t_0d5c680e282ce2 969,974-980
+  s_1568c3f5a7f2fe::t_5aedf2c36015c8 969,974-980
+widget_service/cloud/services/template_generation/tests/test_provider_presence_match.py
+  s_1568c3f5a7f2fe::t_c3c01d75fd8dec 14,33-60
+  s_1568c3f5a7f2fe::t_2e3b984489c557 14,33-58
+  s_1568c3f5a7f2fe::t_fd7d50705203ca 59-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "eba78e11ea9b6339576cfad36a558fff592beace",
+  "prompts": {},
+  "sessions": {
+    "s_1568c3f5a7f2fe": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06b27-41b9-7743-9a03-339ce641d333",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

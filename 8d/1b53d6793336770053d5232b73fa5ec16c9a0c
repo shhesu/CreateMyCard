@@ -1,0 +1,38 @@
+docs/云侧方案设计.md
+  s_c81febb8faad26::t_ab71db14ef1d3e 1213-1223,1238,1374
+widget_service/cloud/services/card_validation/compact_dsl_validator.py
+  s_c81febb8faad26::t_74b6cf89045ca1 7,24,169,176-178,265-273,282-283
+widget_service/cloud/services/card_validation/context.py
+  s_c81febb8faad26::t_f5de90df63f4f6 35
+widget_service/cloud/services/card_validation/pipeline.py
+  s_c81febb8faad26::t_baa680ab781e6e 16-17,31-32,78-80
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_c81febb8faad26::t_99ac8daae7e5ea 38,41-44,46-50,292
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_c81febb8faad26::t_60ba58ec17c41a 22-24,135-136,139-147,153
+widget_service/tests/test_compact_hero_typography.py
+  s_c81febb8faad26::t_9bb85a89440e3f 3,120-123,131-132,135-142
+widget_service/tests/test_contrast_validator.py
+  s_c81febb8faad26::t_d82f00ec6d4869 367-369,371,375-377
+widget_service/tests/test_display_units.py
+  s_c81febb8faad26::t_dd22e7b0abab5a 246,257
+widget_service/tests/test_template_validation_skip.py
+  s_c81febb8faad26::t_29906a1d850f28 1-95,97-178
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "8d1b53d6793336770053d5232b73fa5ec16c9a0c",
+  "prompts": {},
+  "sessions": {
+    "s_c81febb8faad26": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c2d0-3d52-7591-bbe4-3dc1d5c444b5",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

@@ -1,0 +1,20 @@
+widget_service/tests/test_debug_batch_validation_failure_gallery.py
+  s_356582f5685ed2::t_4d26b7aa8f4962 330-334,337-347,350-351
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "55ac12b2d47a2272159c59674c0d23d9f1a8d230",
+  "prompts": {},
+  "sessions": {
+    "s_356582f5685ed2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12809-f8b5-73a1-9b49-3aad67b53c54",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 4
+    }
+  }
+}

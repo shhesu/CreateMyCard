@@ -1,0 +1,49 @@
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_4030737f1bdfed::t_57728dae18a5a3 2289,2754,2793-2797,4207,4232,4243,4249-4255,4263,4292-4293
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_4030737f1bdfed::t_1321c569e3cf59 509
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/layer-docs/second-layer.md
+  s_4030737f1bdfed::t_27aa1dbea8a619 12
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_4030737f1bdfed::t_1321c569e3cf59 74,83,116,142,211,213,215,220-221,239,244,253,259,271,276,279-280,364,366,373,406,428-429,432-433,512,516,518,525-526,549,558,580-581,584-585,631,633,640,673,695-696,699-700,781,783,790,823,845-846,849-850,870,872,879,912,934-935,938
+  s_4030737f1bdfed::t_b45b331c2911f4 939
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_4030737f1bdfed::t_5cc908183022f4 250-251,274,276,284,287,291-299,302,345
+  s_4030737f1bdfed::t_1321c569e3cf59 249,283
+widget_service/cloud/services/template_generation/tests/test_provider_runtime_expression.py
+  s_4030737f1bdfed::t_8a8e4849b18627 232-275
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_4030737f1bdfed::t_93ed3d3b767b85 101
+  s_4030737f1bdfed::t_5cc908183022f4 102-105,110,120
+  s_4030737f1bdfed::t_1321c569e3cf59 108
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_4030737f1bdfed::t_27aa1dbea8a619 36
+widget_service/cloud/services/template_generation/tests/test_provider_component_markers.py
+  s_4030737f1bdfed::t_27aa1dbea8a619 123,129
+  s_4030737f1bdfed::t_e924b616782f58 150
+  s_4030737f1bdfed::t_8a8e4849b18627 93-101,103-108,111-122,124-128,130
+  s_4030737f1bdfed::t_93ed3d3b767b85 102,109-110
+  s_4030737f1bdfed::t_5cc908183022f4 131-149
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_4030737f1bdfed::t_93ed3d3b767b85 13-15,26
+  s_4030737f1bdfed::t_5cc908183022f4 10-12,16-17,25,27
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_4030737f1bdfed::t_48c8498ee2e3fb 321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "198bfc69275fdf7212829c5d4399af998cdf68da",
+  "prompts": {},
+  "sessions": {
+    "s_4030737f1bdfed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06260-04dd-72d0-a3fc-4f5b4649b0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 174
+    }
+  }
+}

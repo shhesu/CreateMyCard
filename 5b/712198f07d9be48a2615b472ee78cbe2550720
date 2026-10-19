@@ -1,0 +1,188 @@
+widget_service/scripts/reanalyze_cardplan_golden.py
+  s_6d7c9a526b8e3e::t_2bff2e643eaf12 51
+  s_6d7c9a526b8e3e::t_ca742520f0dea4 23-32,136-140
+  s_6d7c9a526b8e3e::t_8d271cb3ca3fbc 1-22,33-50,52-135,141-199
+widget_service/requirements.txt
+  s_6d7c9a526b8e3e::t_ddcfb86864384e 10
+widget_service/cloud/config/config.py
+  s_6d7c9a526b8e3e::t_82f5af63224489 205-212
+  s_6d7c9a526b8e3e::t_8da275b3128d04 225
+  s_6d7c9a526b8e3e::t_25bd3f06eb9999 43-45,75-76
+widget_service/cloud/custom/deepseek_call_budget.py
+  s_6d7c9a526b8e3e::t_bd5abd3433712d 1-36,38-45,48-79,81-86
+  s_6d7c9a526b8e3e::t_08f4b5f3ce38a9 37
+  s_6d7c9a526b8e3e::t_fa45f8b9d6f8f0 46-47
+  s_6d7c9a526b8e3e::t_b9c86d5544da58 80
+widget_service/scripts/export_cardplan_golden_fixture.ts
+  s_6d7c9a526b8e3e::t_288122c4eb7cb2 72-74
+  s_6d7c9a526b8e3e::t_42a3eccd124370 146-153
+  s_6d7c9a526b8e3e::t_97086238a0ebe5 1-4,6-71,75-145
+  s_6d7c9a526b8e3e::t_e907339119aeaa 5
+widget_service/scripts/export_cardplan_baseline.ts
+  s_6d7c9a526b8e3e::t_8331c60269bcbc 7,12,15
+  s_6d7c9a526b8e3e::t_42a3eccd124370 20,22-26,28-32,64
+  s_6d7c9a526b8e3e::t_ce9cfbed525a51 1-6,8-11,13-14,16-19,21,27,33-63,65-66
+docs/云侧方案设计.md
+  s_6d7c9a526b8e3e::t_674a78e9a31873 1457-1465,1469-1474
+  s_6d7c9a526b8e3e::t_3d1ed08b7e0098 1026-1032,1040-1045
+  s_6d7c9a526b8e3e::t_855652fade406e 506-523
+  s_6d7c9a526b8e3e::t_f08ca7384eb5eb 1046
+widget_service/cloud/services/cardplan_template/__init__.py
+  s_6d7c9a526b8e3e::t_7527a2f3f6d69b 1-15
+widget_service/scripts/build_cardplan_bundle.py
+  s_6d7c9a526b8e3e::t_4aa0ef578348ba 1-75,77-99,105-116
+  s_6d7c9a526b8e3e::t_b9c86d5544da58 76,100-104
+widget_service/cloud/services/cardplan_template/models.py
+  s_6d7c9a526b8e3e::t_6f7b14b5bac4de 58-59,65,76-82,94-101
+  s_6d7c9a526b8e3e::t_90d37868a25c0c 123-127
+  s_6d7c9a526b8e3e::t_7527a2f3f6d69b 1-57,60-64,66-75,83-93,102-122,128-151,156-168
+  s_6d7c9a526b8e3e::t_bcd778776edd9d 152-154
+  s_6d7c9a526b8e3e::t_83f792b546dceb 155
+widget_service/cloud/services/cardplan_template/prompt.py
+  s_6d7c9a526b8e3e::t_b9c86d5544da58 280-283
+  s_6d7c9a526b8e3e::t_bc557a54506df3 70,83,359-363
+  s_6d7c9a526b8e3e::t_a2a2f8203fa88d 255-258
+  s_6d7c9a526b8e3e::t_1202382314afb5 230-233,253
+  s_6d7c9a526b8e3e::t_9c24c88b7ee5c4 251-252
+  s_6d7c9a526b8e3e::t_ab0093852beb22 1-69,71-82,84-89,112-136,139-229,234-250,254,259-279,284-317,322-358
+  s_6d7c9a526b8e3e::t_fa45f8b9d6f8f0 318-321
+  s_6d7c9a526b8e3e::t_66982fe3ce6c59 105-109
+  s_6d7c9a526b8e3e::t_bcd778776edd9d 90-104,110-111,137-138
+widget_service/tests/test_cardplan_template.py
+  s_6d7c9a526b8e3e::t_bc7a0e4a6b8be9 1-7,9-21,27,29-30,32-121,123-162,164-241,253-254,277-358,377-389
+  s_6d7c9a526b8e3e::t_b81081d615a8db 247
+  s_6d7c9a526b8e3e::t_18173159105ee6 255-260,275-276
+  s_6d7c9a526b8e3e::t_08f4b5f3ce38a9 8,31,122,163
+  s_6d7c9a526b8e3e::t_a01a91942557e1 22-26,261-274
+  s_6d7c9a526b8e3e::t_9c24c88b7ee5c4 28,242-246,248-252
+  s_6d7c9a526b8e3e::t_a8a60a28e0fcf6 359-376
+widget_service/cloud/services/cardplan_template/framer.py
+  s_6d7c9a526b8e3e::t_964217196fa901 1-83
+widget_service/cloud/custom/deepseek_platform_client.py
+  s_6d7c9a526b8e3e::t_5bf6054e8e14ec 38,46,202-212
+widget_service/scripts/evaluate_cardplan_golden.py
+  s_6d7c9a526b8e3e::t_5bf6054e8e14ec 26-29,53,55,117-118,120,124-127,131-133
+  s_6d7c9a526b8e3e::t_2d86a8d5bb7365 526,528-532,545,549,570,575
+  s_6d7c9a526b8e3e::t_288122c4eb7cb2 10,265-272,293,309,321-325
+  s_6d7c9a526b8e3e::t_d8bfdf124a6024 364,388-389,411,443,584-590
+  s_6d7c9a526b8e3e::t_c5218d100d60c4 395,422-426,539-543,551
+  s_6d7c9a526b8e3e::t_3c8bb3a9cc386a 1-9,11-25,30-52,54,56-116,119,121-123,134-264,273-292,294-308,310-320,326-363,365-387,390-394,396-410,412-421,427-442,444-474,494-525,527,533-538,544,546-548,550,552-569,571-574,576-583,591-594
+  s_6d7c9a526b8e3e::t_7ea55d67f58e3f 128-130
+  s_6d7c9a526b8e3e::t_8d271cb3ca3fbc 475-493
+widget_service/tests/test_model_routing.py
+  s_6d7c9a526b8e3e::t_94fed7c82ff812 87-96,150-153
+widget_service/cloud/custom/unified_model_client.py
+  s_6d7c9a526b8e3e::t_3f833af8e2ce51 10,48-51,81-82,146-147,178-183
+widget_service/.env.example
+  s_6d7c9a526b8e3e::t_dfebe8848273e6 22-24,52-53
+  s_6d7c9a526b8e3e::t_3330117e8eb337 39
+widget_service/docs/cardplan_template_production.md
+  s_6d7c9a526b8e3e::t_3330117e8eb337 120-131,135-140
+  s_6d7c9a526b8e3e::t_b2a9fb9779a315 1-119,132-134,141-162
+widget_service/cloud/services/cardplan_template/compiler.py
+  s_6d7c9a526b8e3e::t_79639d0ad9a1aa 512,518-520,522,527
+  s_6d7c9a526b8e3e::t_1a590dd2c77288 1-5,7-24,51-64,66-78,81,83-87,90-97,101-108,113-130,135-168,179-197,203-217,219-225,229-243,246-277,279-297,299-306,347-356,360-390,416-447,451-485,488-489,539-548
+  s_6d7c9a526b8e3e::t_e59a68df75da58 26-31,198-202,508-511,521
+  s_6d7c9a526b8e3e::t_3e4168b2081435 32,278,298,307
+  s_6d7c9a526b8e3e::t_8e689ff9e84cab 33
+  s_6d7c9a526b8e3e::t_53b2abc1366747 325-327
+  s_6d7c9a526b8e3e::t_2d2c9a0076b1c1 98-100
+  s_6d7c9a526b8e3e::t_bcd778776edd9d 6,25,36,48-50,88,109-112,131-133,357,391-415,490-507,528-538
+  s_6d7c9a526b8e3e::t_719cb3c1b46489 34-35,37-47,523-526
+  s_6d7c9a526b8e3e::t_a2a2f8203fa88d 79-80,82,169-178,244-245
+  s_6d7c9a526b8e3e::t_b9c86d5544da58 448-450,486-487
+  s_6d7c9a526b8e3e::t_9c24c88b7ee5c4 513-517
+  s_6d7c9a526b8e3e::t_83f792b546dceb 65,89,134,218,226-228,308-324,328-346
+  s_6d7c9a526b8e3e::t_66982fe3ce6c59 358-359
+widget_service/tests/test_advanced_component_pipeline.py
+  s_6d7c9a526b8e3e::t_235461e54426b6 118-123,220,226-230,618
+widget_service/cloud/services/advanced_component_pipeline/ui_planner.py
+  s_6d7c9a526b8e3e::t_16576c667a9c92 16-17,22-28,35,41-44
+  s_6d7c9a526b8e3e::t_e3f8ceb6afb3b9 60,63-70
+widget_service/cloud/app/logger.py
+  s_6d7c9a526b8e3e::t_d5052090574c55 78-92,119-132,168
+  s_6d7c9a526b8e3e::t_26a6401efa9f2d 93-118,133,139,142,151-154,157-160,169-175
+widget_service/cloud/services/advanced_component_pipeline/pipeline.py
+  s_6d7c9a526b8e3e::t_e21d388fa62436 8,76-77,199
+  s_6d7c9a526b8e3e::t_92f4a44d72def8 16,90-94
+  s_6d7c9a526b8e3e::t_ddcfb86864384e 11,15,41,68-69
+  s_6d7c9a526b8e3e::t_b9c86d5544da58 50-51
+  s_6d7c9a526b8e3e::t_53b2abc1366747 6,65,171
+  s_6d7c9a526b8e3e::t_64683c362eba24 5,104-107,126-127,229-248,250-254
+  s_6d7c9a526b8e3e::t_f2f3579b11de63 13-14,36-38,49,56-57,61,88-89,95-103,108-120,122-125,128-164,167-168,224-228
+widget_service/pyproject.toml
+  s_6d7c9a526b8e3e::t_d2017a1d63885f 37-44
+  s_6d7c9a526b8e3e::t_ddcfb86864384e 16
+widget_service/docs/schemas/generateWidgetCardTerseDslNested2.schema.json
+  s_6d7c9a526b8e3e::t_6049a4dcad2f38 5,23-30,34-43
+widget_service/cloud/services/cardplan_template/registry.py
+  s_6d7c9a526b8e3e::t_284dc40396da13 1-129
+widget_service/cloud/custom/a2ui_model_client.py
+  s_6d7c9a526b8e3e::t_d5052090574c55 295,404
+widget_service/cloud/services/cardplan_template/parser.py
+  s_6d7c9a526b8e3e::t_fa45f8b9d6f8f0 34,200-202
+  s_6d7c9a526b8e3e::t_9c24c88b7ee5c4 112-121
+  s_6d7c9a526b8e3e::t_964217196fa901 1-33,35-111,122-179,184-199,203-215,223-233,235,240-241
+  s_6d7c9a526b8e3e::t_53b2abc1366747 180,234,236-239
+  s_6d7c9a526b8e3e::t_75102a37b5d7b4 181-183
+  s_6d7c9a526b8e3e::t_b9c86d5544da58 216-222
+widget_service/README.md
+  s_6d7c9a526b8e3e::t_19507ab42e21ec 21-27,90-91
+  s_6d7c9a526b8e3e::t_d94ea645b4bd3e 92
+widget_service/docs/method_usage.md
+  s_6d7c9a526b8e3e::t_6049a4dcad2f38 120-130
+widget_service/cloud/custom/llmclient.py
+  s_6d7c9a526b8e3e::t_7ea55d67f58e3f 53-54,60,110-111,131-132,152-153,190-191,195-198
+widget_service/cloud/models/generation.py
+  s_6d7c9a526b8e3e::t_25bd3f06eb9999 67-68
+  s_6d7c9a526b8e3e::t_bc557a54506df3 58
+widget_service/cloud/services/widget_generation_service.py
+  s_6d7c9a526b8e3e::t_d5052090574c55 539-541
+  s_6d7c9a526b8e3e::t_64683c362eba24 588-590
+  s_6d7c9a526b8e3e::t_660bd08dba6fe0 576-579
+  s_6d7c9a526b8e3e::t_5af55d60d5f839 5,580,585-586,612-615,717-721,727-738,1014-1030
+  s_6d7c9a526b8e3e::t_fc20db63f6e086 596-606
+  s_6d7c9a526b8e3e::t_ddcfb86864384e 31,336
+  s_6d7c9a526b8e3e::t_56cdd7932bdd69 1031
+widget_service/cloud/custom/model_runtime.py
+  s_6d7c9a526b8e3e::t_7ea55d67f58e3f 20-23,27-32,72-73,113,116-123,194-207,210-212
+widget_service/cloud/services/advanced_component_pipeline/models.py
+  s_6d7c9a526b8e3e::t_8751c4c0773d0e 5,49-52,63-72,129-139
+widget_service/cloud/data/cardplan_template/source/prompts/card-template-planner/00-chrome-kernel.md
+  s_6d7c9a526b8e3e::t_30ecc96043ab43 1-14
+widget_service/cloud/data/cardplan_template/source/prompts/card-template-planner/10-dsl-and-boundary.md
+  s_6d7c9a526b8e3e::t_78a20226a64980 1-21
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/00-hybrid-kernel.md
+  s_6d7c9a526b8e3e::t_22e325b48f1405 1-14
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/10-template-composition.md
+  s_6d7c9a526b8e3e::t_48fe126b4d4260 1-52
+widget_service/cloud/data/cardplan_template/source/prompts/hybrid-body-generator/20-action-and-budget.md
+  s_6d7c9a526b8e3e::t_b7616bdd1a8b45 1-18
+widget_service/cloud/data/cardplan_template/source/template-registry.json
+  s_6d7c9a526b8e3e::t_4411456a006503 1-8330
+widget_service/cloud/data/cardplan_template/source/theme-profiles.json
+  s_6d7c9a526b8e3e::t_d513a1e3de98b4 1-425
+widget_service/cloud/services/cardplan_template/generated/prompt-manifest.json
+  s_6d7c9a526b8e3e::t_6235f9c8c54a39 1-23
+widget_service/cloud/services/cardplan_template/generated/prompts.py
+  s_6d7c9a526b8e3e::t_089534c93429ef 1-14
+widget_service/tests/fixtures/cardplan_golden_scenarios.json
+  s_6d7c9a526b8e3e::t_ca371f8701ede4 1-1066
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "5b712198f07d9be48a2615b472ee78cbe2550720",
+  "prompts": {},
+  "sessions": {
+    "s_6d7c9a526b8e3e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd7ef-851e-7242-a2dc-0da5b3c412f2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 214
+    }
+  }
+}

@@ -1,0 +1,50 @@
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_19e282bd8282f9::t_7026a8bfb8f9cf 116,143,254,256,265,267,269-271,285,302,428-451,529-530,575,577,579,581,583-586,588,590-594,596,598-601,603,605-608,662,669-670,672-674,676,678,680,685,706-715,736-737,741,746,748-753,757,759-769,771-820,830,847,850,852,858,860-875,877-905,907,909-934,936-937,939-957,960-964,966-982,984-989,991-1001,1004-1021,1023,1025-1038,1040-1041,1043-1070,1073-1077,1079-1094,1096-1101,1103-1141,1144,1191,1232,1286
+widget_service/cloud/models/generation.py
+  s_19e282bd8282f9::t_f872c3e461293c 81
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_19e282bd8282f9::t_51c17e9f0bed7d 438-439,733,742,842-851,2793,2811
+widget_service/cloud/services/fusion_ball_expander.py
+  s_19e282bd8282f9::t_e849e83b9983ec 3,23,32-39,75-82,84,86-87,131,133-135,151-153,189-191,200,207,211-280,324
+widget_service/cloud/services/generation_pipeline.py
+  s_19e282bd8282f9::t_5f9a1d72e2f888 153
+widget_service/cloud/services/generation_preflight.py
+  s_19e282bd8282f9::t_0791b5df602017 87
+widget_service/cloud/services/task_spec_builder.py
+  s_19e282bd8282f9::t_9df2862c52cb71 11,36,120
+widget_service/cloud/services/template_generation/docs/README.md
+  s_19e282bd8282f9::t_42b808d8490f5f 46-50
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_19e282bd8282f9::t_4490e28a34f76e 65,68,97-100
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_19e282bd8282f9::t_51a2c51afd0b73 41-48,56-58,129-130,217-218
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_19e282bd8282f9::t_9bd9da8c412542 218-222
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_19e282bd8282f9::t_9422916d91c50a 7-8,44,118-119
+widget_service/cloud/services/template_generation/feature_gates.py
+  s_19e282bd8282f9::t_d16e659305ab25 1-26
+widget_service/cloud/services/template_generation/source_generator.py
+  s_19e282bd8282f9::t_1dc9cda185286f 12,40,49
+widget_service/cloud/services/template_generation/tests/test_feature_gates.py
+  s_19e282bd8282f9::t_1b96c48eef92a3 1,3-5,10,17,19,25,28-39,47-48,52-54
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_19e282bd8282f9::t_263b104c152cd2 114-116,5187-5191,6057,6061,6064-6069,6094-6107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "4564c01b2cd1abd704c121e0206455fc32af6d7a",
+  "prompts": {},
+  "sessions": {
+    "s_19e282bd8282f9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a056d1-0705-7343-a5fb-b2a9b06fccaf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

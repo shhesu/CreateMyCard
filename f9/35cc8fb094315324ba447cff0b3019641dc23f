@@ -1,0 +1,105 @@
+widget_service/cloud/generate_dsl_from_task_spec.py
+  s_623d2724202cfc::t_2e5fc514bd0423 39
+widget_service/cloud/services/fusion_ball_expander.py
+  s_623d2724202cfc::t_d3ea36979a1b23 130,133
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_623d2724202cfc::t_d3ea36979a1b23 733,742
+widget_service/cloud/repair_compact_dsl.py
+  s_623d2724202cfc::t_2e5fc514bd0423 121
+docs/云侧方案设计.md
+  s_623d2724202cfc::t_1585ee1a77d03d 1378
+  s_623d2724202cfc::t_71e12d6379bf40 850,1362
+  s_623d2724202cfc::t_c79275202cc777 851-852,1374-1375
+  s_623d2724202cfc::t_8820e8a6190bb3 853,1376-1377
+  s_623d2724202cfc::t_50c6e126b3d091 856
+  s_623d2724202cfc::t_7382e1e0895048 860-861
+  s_623d2724202cfc::t_e853e5409f54bb 857-859
+  s_623d2724202cfc::t_185c2b3c6c4232 854-855
+widget_service/cloud/services/template_generation/docs/README.md
+  s_623d2724202cfc::t_71e12d6379bf40 47,50-52
+  s_623d2724202cfc::t_c79275202cc777 46
+  s_623d2724202cfc::t_1585ee1a77d03d 48-49
+widget_service/cloud/services/generation_pipeline.py
+  s_623d2724202cfc::t_d3ea36979a1b23 61,154
+widget_service/cloud/models/artifact.py
+  s_623d2724202cfc::t_2e5fc514bd0423 23
+widget_service/tests/test_service_units.py
+  s_623d2724202cfc::t_ab8129fac5c0c3 4302
+widget_service/docs/generateWidgetCardCompactDsl数据流.md
+  s_623d2724202cfc::t_1585ee1a77d03d 179
+  s_623d2724202cfc::t_c79275202cc777 175-176
+  s_623d2724202cfc::t_e853e5409f54bb 180
+  s_623d2724202cfc::t_8820e8a6190bb3 177-178
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_623d2724202cfc::t_c79275202cc777 218
+  s_623d2724202cfc::t_71e12d6379bf40 219,222-223
+  s_623d2724202cfc::t_1585ee1a77d03d 220-221
+widget_service/tests/test_fusion_ball_expander.py
+  s_623d2724202cfc::t_ab8129fac5c0c3 124,143,157,232
+widget_service/cloud/services/prompt_builder.py
+  s_623d2724202cfc::t_2e5fc514bd0423 40,104
+widget_service/tests/test_generation_preflight.py
+  s_623d2724202cfc::t_ab8129fac5c0c3 113,118
+widget_service/cloud/services/widget_generation_service.py
+  s_623d2724202cfc::t_501cc18f14e0ef 273-274,1269-1270
+  s_623d2724202cfc::t_8fcb491dc1e6d3 39,449,591,1352,1367
+  s_623d2724202cfc::t_1127151bf35c20 521,588,944
+  s_623d2724202cfc::t_92f6f4b6788b18 260,281-284,1268,1271,1280,1290,1299
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_623d2724202cfc::t_2a97f014d8da3e 6019,6030-6033,6052,6054,6058,6085-6088
+  s_623d2724202cfc::t_28ffb075dec5ba 5174-5181
+  s_623d2724202cfc::t_92f6f4b6788b18 6053
+docs/CardSpec与TaskSpec设计说明.md
+  s_623d2724202cfc::t_1585ee1a77d03d 157
+  s_623d2724202cfc::t_c79275202cc777 154-156
+  s_623d2724202cfc::t_71e12d6379bf40 98,152-153,180
+widget_service/docs/method_usage.md
+  s_623d2724202cfc::t_1585ee1a77d03d 951-952
+  s_623d2724202cfc::t_c79275202cc777 948-950
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_623d2724202cfc::t_71e12d6379bf40 98,101-102
+  s_623d2724202cfc::t_1585ee1a77d03d 99-100
+  s_623d2724202cfc::t_c79275202cc777 97
+widget_service/cloud/services/template_generation/docs/modules.md
+  s_623d2724202cfc::t_185c2b3c6c4232 52-53
+  s_623d2724202cfc::t_50c6e126b3d091 54
+  s_623d2724202cfc::t_c79275202cc777 48-50,124-125
+  s_623d2724202cfc::t_f03b5e71d2053a 55
+  s_623d2724202cfc::t_1585ee1a77d03d 51
+  s_623d2724202cfc::t_71e12d6379bf40 126-127,213-214
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_623d2724202cfc::t_71e12d6379bf40 7,37,42-44,119
+  s_623d2724202cfc::t_9eefd53f9dbf6a 135-136
+  s_623d2724202cfc::t_1585ee1a77d03d 120
+  s_623d2724202cfc::t_c79275202cc777 118
+widget_service/cloud/services/template_generation/source_generator.py
+  s_623d2724202cfc::t_d3ea36979a1b23 18,48
+widget_service/tests/test_tool_dispatch_routes.py
+  s_623d2724202cfc::t_92f6f4b6788b18 935
+  s_623d2724202cfc::t_1fe57abeaddc7e 813-816
+  s_623d2724202cfc::t_7034518cbf457e 821-826
+  s_623d2724202cfc::t_8ce342a8a1a995 856
+  s_623d2724202cfc::t_089a11b5a2520a 920-923,940-944
+widget_service/docs/generateWidgetCard数据流.md
+  s_623d2724202cfc::t_c79275202cc777 263-265
+  s_623d2724202cfc::t_1585ee1a77d03d 266-267
+  s_623d2724202cfc::t_71e12d6379bf40 269
+  s_623d2724202cfc::t_c01f0021a674f7 268
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "f935cc8fb094315324ba447cff0b3019641dc23f",
+  "prompts": {},
+  "sessions": {
+    "s_623d2724202cfc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05098-c11e-7022-819d-c70ea83be651",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 223
+    }
+  }
+}

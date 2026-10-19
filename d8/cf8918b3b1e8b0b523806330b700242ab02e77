@@ -1,0 +1,90 @@
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_4030737f1bdfed::t_75e0339cea0dd2 1,10,36,41,46-57,59,682
+docs/云侧方案设计.md
+  s_4030737f1bdfed::t_e8915540270874 1018-1023,1480-1481
+  s_4030737f1bdfed::t_fdc344bc2f1826 1034-1037,1477
+  s_4030737f1bdfed::t_22960c8b0d203e 1025-1031,1039,1478-1479
+  s_4030737f1bdfed::t_dcd8a773fb06e9 755-756,1476
+  s_4030737f1bdfed::t_0ad1ea2bdbb625 1482-1484
+  s_4030737f1bdfed::t_6a8490ee121186 1032-1033
+widget_service/cloud/services/template_generation/tests/test_provider_component_markers.py
+  s_4030737f1bdfed::t_06442e4733d056 68
+  s_4030737f1bdfed::t_fdc344bc2f1826 1-67,70-76,79-92
+  s_4030737f1bdfed::t_d3916c01eb8934 77-78
+  s_4030737f1bdfed::t_75f19d9b1a3629 69
+widget_service/cloud/services/template_generation/tests/test_runtime_if.py
+  s_4030737f1bdfed::t_6dfd9484037b1a 148-149
+  s_4030737f1bdfed::t_132611c75a9e1d 150
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_4030737f1bdfed::t_3620e75abe597b 2615-2618
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_4030737f1bdfed::t_6dfd9484037b1a 19-22
+  s_4030737f1bdfed::t_fdc344bc2f1826 27-30,34-35,39,41
+  s_4030737f1bdfed::t_e8915540270874 23-25
+  s_4030737f1bdfed::t_70e5180e077ce2 26
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_4030737f1bdfed::t_0ad1ea2bdbb625 30,210
+  s_4030737f1bdfed::t_5b181b05e43f02 1045,1096-1101,1112-1134
+  s_4030737f1bdfed::t_1f6de9b36fc2c3 266-287,776-780,952-961,972-1044,1046-1090,1094-1095,1102-1111,1135-1137,1253,1352-1355,1420-1423,1477
+  s_4030737f1bdfed::t_c438797a224ffe 1091-1093
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_4030737f1bdfed::t_8e04ab816c5346 280-287,780-781,783-785,788,796,799-807,809,811-818,820,822-823,826-827,830,835-852,855,864,869,871
+  s_4030737f1bdfed::t_1d8a5d3f730428 37,91,970,977-978,1162-1166
+  s_4030737f1bdfed::t_2fc965e93eb05c 762-765
+  s_4030737f1bdfed::t_f5f00db9a4b260 754-761,766-775
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_4030737f1bdfed::t_e8915540270874 211-213,219-222,257-271
+  s_4030737f1bdfed::t_31e10ce9c63422 84
+  s_4030737f1bdfed::t_6dfd9484037b1a 240-241,243-250,305-306
+  s_4030737f1bdfed::t_3064ca0991ad05 209-210
+  s_4030737f1bdfed::t_89e24b8836df72 272
+widget_service/cloud/services/template_generation/resources/source/providers/system-memory/templates/resource-usage-overview.cardtpl
+  s_4030737f1bdfed::t_75e0339cea0dd2 40,99,157
+widget_service/cloud/services/template_generation/tests/test_provider_runtime_expression.py
+  s_4030737f1bdfed::t_6dfd9484037b1a 1-65,70-92,101-119,123-126,129-145,174-188,204-208,213,216-225,228-229
+  s_4030737f1bdfed::t_c7316d1c6534ee 66-69,120,122,146-160,162-173
+  s_4030737f1bdfed::t_132611c75a9e1d 93-100,121,127-128,189-203,209-212,214-215
+  s_4030737f1bdfed::t_2fc965e93eb05c 161,226-227,230-231
+widget_service/cloud/services/template_generation/tests/test_ux_title_policy.py
+  s_4030737f1bdfed::t_dcd8a773fb06e9 1-28,30-70
+  s_4030737f1bdfed::t_45c7b662f45428 29
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_4030737f1bdfed::t_c438797a224ffe 19-20,32,35-39,53,96-97,120,141-143,157
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_4030737f1bdfed::t_f9556213e33321 6,16-17,205-206,216,302,537,540,543-566,569-586,590-626,630-655
+  s_4030737f1bdfed::t_133b542b0e05e6 567-568
+  s_4030737f1bdfed::t_c438797a224ffe 587-589,627-629
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_4030737f1bdfed::t_ae38b564b28792 381
+  s_4030737f1bdfed::t_75e0339cea0dd2 35,75,99,134,139,168,196,228,261,296,324,356,366,400,442,465,486,507,537,571,597,603,662,686,720,747,773
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-overview.cardtpl
+  s_4030737f1bdfed::t_75e0339cea0dd2 15,26,34,36,47,49,75,82,96,105,115-116,132,135-141,889
+widget_service/cloud/services/template_generation/tests/test_provider_elseif.py
+  s_4030737f1bdfed::t_3064ca0991ad05 104,121-123
+  s_4030737f1bdfed::t_e8915540270874 1-103,105-120,124-224
+  s_4030737f1bdfed::t_5b479ff454484e 225-237
+widget_service/cloud/services/template_generation/engine/cardplan/runtime_expression.py
+  s_4030737f1bdfed::t_1d8a5d3f730428 1-123,128-198
+  s_4030737f1bdfed::t_2fc965e93eb05c 124-127
+widget_service/cloud/services/template_generation/docs/tersel-protocol.md
+  s_4030737f1bdfed::t_6dfd9484037b1a 114-115
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_4030737f1bdfed::t_dcd8a773fb06e9 768-771,823,872,898-902
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "d8cf8918b3b1e8b0b523806330b700242ab02e77",
+  "prompts": {},
+  "sessions": {
+    "s_4030737f1bdfed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06260-04dd-72d0-a3fc-4f5b4649b0e3",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 256
+    }
+  }
+}

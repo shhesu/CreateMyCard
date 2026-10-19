@@ -1,0 +1,22 @@
+widget_service/cloud/custom/deepseek_http_client.py
+  s_ecd92453e7cd3d::t_ccd1f9c1a80185 65-71
+widget_service/tests/test_model_routing.py
+  s_ecd92453e7cd3d::t_ccd1f9c1a80185 78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "13b62daa60e24c784491ded9e36ac35bdab5fa5c",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

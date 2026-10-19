@@ -1,0 +1,35 @@
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_ecd92453e7cd3d::t_2b0483208bbc19 1298-1301
+  s_ecd92453e7cd3d::t_7e82f8d9e1f9d5 1305-1314,2160-2162,2192-2198
+  s_ecd92453e7cd3d::t_0ea7f1528a28b5 2199-2201
+  s_ecd92453e7cd3d::t_43c7c3693d9080 2202
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_ecd92453e7cd3d::t_8da5683c258831 251-260
+  s_ecd92453e7cd3d::t_7e82f8d9e1f9d5 100-102
+  s_ecd92453e7cd3d::t_5085414a71ed08 12-15
+  s_ecd92453e7cd3d::t_89f3ed02afb86e 54,203
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_a157844247c801 76-77,140-166
+  s_ecd92453e7cd3d::t_7e82f8d9e1f9d5 28-29,95,104,167-174
+  s_ecd92453e7cd3d::t_1e176a86356765 175
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_1bee3c4abff0a7 81,132
+  s_ecd92453e7cd3d::t_89f3ed02afb86e 229-232,238,248
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "07e67806f72829e9ba71777dcc5a42d3c8c32a04",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 7
+    }
+  }
+}

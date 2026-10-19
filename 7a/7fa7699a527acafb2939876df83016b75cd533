@@ -1,0 +1,53 @@
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_b0e75d64641ed8::t_a6ea32be61b90c 331,2549-2550,2552-2555,2567,2576
+widget_service/cloud/services/template_generation/engine/advanced/scope_planner.py
+  s_b0e75d64641ed8::t_6db6c62d83804b 901-902
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_framer.py
+  s_b0e75d64641ed8::t_eb46d16572df93 94,126
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_b0e75d64641ed8::t_8f8b2fb03d559d 69,514,517-522,566-572,599-603,605-607,610,620,903,1279,1288,1291,1293,4508-4510,4566-4571,4579-4581,4745-4752,4792-4796,4798-4800,4825-4828,5169,5464,5835,5939,6359-6360,6650-6652,7316,7573-7577,7579,7644-7673,7691,7698,7744
+widget_service/cloud/services/template_generation/engine/cardplan/parser.py
+  s_b0e75d64641ed8::t_f9725de6eeedb6 219,286
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_b0e75d64641ed8::t_b28b7c4d2181b7 1,22,417-421,876,967-969
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_b0e75d64641ed8::t_54915c8c0c0a8e 78,211-223,367-369,377,402-411,550-551,561,593-598,604,610-611,622,645-650,729-730,734,740,748,757,793-796,809-814,816,1049,1692
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_366a1563ab3fca::t_0162db0531421f 204,206,211,213
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_b0e75d64641ed8::t_5d9520724a9ba6 503,780,784,1549-1551,1591,1763,2539,2541
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_b0e75d64641ed8::t_a1e3697ffc6c52 10,81,83,96,98,171-180
+widget_service/cloud/services/template_generation/engine/terse_dsl_nested2_converter.py
+  s_b0e75d64641ed8::t_b2cb98aaffaf70 165-168,172,220
+widget_service/cloud/services/template_generation/model_client.py
+  s_b0e75d64641ed8::t_752c646ca2299c 82-84,86
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_b0e75d64641ed8::t_546c76e035a46d 1-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "7a7fa7699a527acafb2939876df83016b75cd533",
+  "prompts": {},
+  "sessions": {
+    "s_366a1563ab3fca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02036-9989-7821-89c1-da4db4dd2b59",
+        "model": "unknown"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    },
+    "s_b0e75d64641ed8": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a02038-bacd-7b22-bc21-ed645791492a",
+        "model": "unknown"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}

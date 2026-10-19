@@ -1,0 +1,58 @@
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_316721394d58f5::t_0cba880f167389 159-162,175
+  s_316721394d58f5::t_7c11a69012476f 164-171
+  s_4053a32d242cbc::t_499b4997bad861 151-153
+  s_316721394d58f5::t_dc746cdac78032 163
+widget_service/cloud/data/protocol_profiles/design-compact-dsl/PROMPT.md
+  s_4053a32d242cbc::t_15a902fff6db66 261-262
+widget_service/cloud/services/template_generation/engine/cardplan/fusion_ball_background.py
+  s_4053a32d242cbc::t_15a902fff6db66 80
+widget_service/cloud/data/protocol_profiles/a2ui-form-rom6.0-v1/component-catalog.md
+  s_4053a32d242cbc::t_15a902fff6db66 60,67-68
+widget_service/cloud/services/template_generation/engine/fusion_ball_a2ui_converter.py
+  s_316721394d58f5::t_f88aa34cd3af19 37-38,77,79
+  s_316721394d58f5::t_8ea7a53c82d8a9 1-4,8,11,28-30,81,179-290,292-309
+  s_316721394d58f5::t_dcad8a28c95ae4 178
+widget_service/cloud/services/template_generation/engine/compact_dsl_a2ui_converter.py
+  s_4053a32d242cbc::t_15a902fff6db66 1221-1223,1247-1261
+  s_4053a32d242cbc::t_8825fc1dedb339 1262-1263
+docs/鸿蒙桌面卡片A2UI协议完整规范.md
+  s_4053a32d242cbc::t_15a902fff6db66 981
+docs/云侧方案设计.md
+  s_4053a32d242cbc::t_23c9e56a2fd9a1 1118,1121
+  s_4053a32d242cbc::t_15a902fff6db66 1119-1120
+  s_316721394d58f5::t_0cba880f167389 1124-1129
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_316721394d58f5::t_7c11a69012476f 5,10,558-559,561-574
+  s_316721394d58f5::t_050d4d966449f8 8,560,575-587
+  s_4053a32d242cbc::t_15a902fff6db66 448,546-548,2692,2745-2747
+  s_316721394d58f5::t_4fc996ca757daf 500,502,518,542,550,553,556-557,619
+  s_316721394d58f5::t_e9d4984732f6c3 503-507,509
+  s_4053a32d242cbc::t_b140f2cc7d3ddc 428,544
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "e606b215a13b28a477638c36f29ed805085389c7",
+  "prompts": {},
+  "sessions": {
+    "s_316721394d58f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0328c-3015-7cb0-aae8-16743dcaad99",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 81
+    },
+    "s_4053a32d242cbc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03300-fb20-7810-a9de-7e9fc6eb8a18",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 37
+    }
+  }
+}

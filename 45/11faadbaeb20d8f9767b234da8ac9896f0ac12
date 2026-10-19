@@ -1,0 +1,44 @@
+widget_service/cloud/services/template_generation/__init__.py
+  s_ecd92453e7cd3d::t_899508476e3c1a 3-6,11
+widget_service/cloud/services/template_generation/docs/README.md
+  s_ecd92453e7cd3d::t_55622fab7fd962 25,31-32
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_ecd92453e7cd3d::t_d45c76f90becd0 7,33,43,63,65-68
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_ecd92453e7cd3d::t_df620dce415365 317-318,324-325,788-799,1489-1496,1685-1691,1694,2711,2719-2720,2723-2728,2733-2734,2859-2864
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_ecd92453e7cd3d::t_f2b61f5dd73df5 1294
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompt-manifest.json
+  s_ecd92453e7cd3d::t_08898e5e9e1afb 11,40-42,46
+widget_service/cloud/services/template_generation/facade.py
+  s_ecd92453e7cd3d::t_7b9db4847df40e 11,13,19,46-94,108-114
+widget_service/cloud/services/template_generation/resources/source/advanced-component-ux-registry.json
+  s_ecd92453e7cd3d::t_af422f35d8ce42 435
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_ecd92453e7cd3d::t_221ed79552bcae 10-14
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_ecd92453e7cd3d::t_047b2cc4d31526 10
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_ecd92453e7cd3d::t_070fee4aeab28b 93,96,98,102
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_ecd92453e7cd3d::t_679a551202ae07 1,3-4,6,12-18,20-29,32-42,45-54,57-64
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_ecd92453e7cd3d::t_33411ea8320dab 34,119-231,1329,1335,1342,1353-1355,1359-1387,1394-1397,1400,1408-1409
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.27.1714",
+  "base_commit_sha": "4511faadbaeb20d8f9767b234da8ac9896f0ac12",
+  "prompts": {},
+  "sessions": {
+    "s_ecd92453e7cd3d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffe04-e1b5-7863-9e56-d1a68237f557",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "total_deletions": 0
+    }
+  }
+}
