@@ -1,0 +1,31 @@
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_6c5290694a2c20::t_b81ce9a482b00f 376-378
+widget_service/cloud/services/template_generation/test_support/gallery_case_contracts.py
+  s_6c5290694a2c20::t_0f7d4208e443c7 13-18
+widget_service/cloud/services/template_generation/test_support/gallery_replay.py
+  s_6c5290694a2c20::t_3db93e30a06db7 12,111-127,156
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_6c5290694a2c20::t_46d7a8b30639ef 33,682-687
+widget_service/cloud/services/template_generation/tests/test_gallery_replay.py
+  s_6c5290694a2c20::t_3a174c959c1492 202-216
+docs/云侧方案设计.md
+  s_6c5290694a2c20::t_378cde0567c69c 1249
+widget_service/cloud/services/template_generation/resources/source/providers/current-time/templates/current-time-overview.cardtpl
+  s_6c5290694a2c20::t_a826466c693c9f 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.7",
+  "base_commit_sha": "36f5d34b0025c2615ed62496353ada7ee2424ad8",
+  "prompts": {},
+  "sessions": {
+    "s_6c5290694a2c20": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1390d-4d9a-7343-b499-f005a795710d",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>"
+    }
+  }
+}
