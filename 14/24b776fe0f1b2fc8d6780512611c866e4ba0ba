@@ -1,0 +1,1839 @@
+widget_service/cloud/services/template_generation/tests/test_gallery_replay.py
+  s_6c5290694a2c20::t_896490977267d1 1-51,55-57,62-124,160-201
+  s_6c5290694a2c20::t_5367d5439124d2 52-54,58-61,125-159
+widget_service/cloud/services/template_generation/engine/cardplan/registry.py
+  s_6c5290694a2c20::t_80349d701ed848 57-61,397-398,401-411
+  s_6c5290694a2c20::t_4710b5a78961df 21
+widget_service/cloud/services/template_generation/test_support/provider_gallery.py
+  s_6c5290694a2c20::t_9f2841641a8b1f 75,87,97,109,115,119-121,124,128,130,133-134,137,185-188,244,277,332,471-477,486,488,774-779,1110-1112,1160,1163-1168,1602-1603,1665,1831,1875
+widget_service/cloud/services/template_generation/engine/cardplan/template_plan_planner.py
+  s_6c5290694a2c20::t_f066a29692dcaa 38-40,460-462,692-693,716-733,838-839,859-871,877-878
+widget_service/cloud/services/template_generation/tests/test_provider_gallery_batch.py
+  s_6c5290694a2c20::t_f066a29692dcaa 16,42-60,74,260-266,271-275,361,373-378,522-528,601,723,725-727,862,865-868,894
+  s_6c5290694a2c20::t_0672a32999ff90 895-896,898,951
+widget_service/cloud/services/template_generation/engine/cardplan/prompt_guidance.py
+  s_6c5290694a2c20::t_80349d701ed848 1-36
+widget_service/cloud/services/template_generation/test_support/gallery_replay.py
+  s_6c5290694a2c20::t_9f2841641a8b1f 1-229
+  s_6c5290694a2c20::t_0a8c0ad9132f6c 230-252
+widget_service/cloud/services/template_generation/engine/advanced/ux_mixed_prompt.py
+  s_6c5290694a2c20::t_80349d701ed848 12-15,60,81-91,450-454,583-584,609,693-700,789,791,795,822,872,1126,1128
+docs/云侧方案设计.md
+  s_6c5290694a2c20::t_f066a29692dcaa 7-9,154-158,223-224,226-238,397-398,568-574,1087-1132,1146-1156,1168-1169,1171-1184,1191-1195,1201-1202,1245-1254,1272,1275-1277,1332-1391,1401-1402,1412-1466,1469-1476,1480-1504,1508-1512,1515-1528,1564-1567,1612-1630,1633-1647,1664-1666,1730-1737,1761-1773,1776-1785,1794-1806,1810-1817,1824-1825,1828-1832,1848-1860,1943-1951,2163-2165,2167,2191,2194,2196-2201,2245,2283-2287,2311-2314,2447-2474,2529-2531,2631-2648,2651-2787,2823,2825-2826,2870,2875-2876,2902-2947,2977-3001,3043-3053,3057,3196-3200,3204-3632,3654,3656-3658,3893-3894,3904-3905
+widget_service/cloud/services/template_generation/engine/cardplan/calendar_no_action_policy.py
+  s_6c5290694a2c20::t_f066a29692dcaa 29-30,56-84,115-120,129-144,283-294,302-304
+.gitignore
+  s_6c5290694a2c20::t_7349a2f20b2c64 21,65,81-83
+AGENTS.md
+  s_6c5290694a2c20::t_15850c8ac5c52a 22-25,45-49,56-59,72-73,93-96,99-102,128-133,142-144
+debug_tools/Datasets/20261015_open_domain/Q001.json
+  s_6c5290694a2c20::t_6bfab9e0881f80 1-51
+debug_tools/Datasets/20261015_open_domain/Q002.json
+  s_6c5290694a2c20::t_c3dcae3288b37e 1-51
+debug_tools/Datasets/20261015_open_domain/Q003.json
+  s_6c5290694a2c20::t_b0a997af27c6fb 1
+debug_tools/Datasets/20261015_open_domain/Q004.json
+  s_6c5290694a2c20::t_a38cb07b52b480 1
+debug_tools/Datasets/20261015_open_domain/Q005.json
+  s_6c5290694a2c20::t_448c8768ea4e13 1
+debug_tools/Datasets/20261015_open_domain/Q006.json
+  s_6c5290694a2c20::t_20a71f6ce26322 1
+debug_tools/Datasets/20261015_open_domain/Q007.json
+  s_6c5290694a2c20::t_acd1e19efd4d5f 1
+debug_tools/Datasets/20261015_open_domain/Q008.json
+  s_6c5290694a2c20::t_9efc8f7eb2d078 1
+debug_tools/Datasets/20261015_open_domain/Q009.json
+  s_6c5290694a2c20::t_37d236bf74b224 1
+debug_tools/Datasets/20261015_open_domain/Q010.json
+  s_6c5290694a2c20::t_6c1f87cd1329a3 1
+debug_tools/Datasets/20261015_open_domain/Q011.json
+  s_6c5290694a2c20::t_520e431c35311b 1
+debug_tools/Datasets/20261015_open_domain/Q012.json
+  s_6c5290694a2c20::t_9f2b5c84a8a48a 1
+debug_tools/Datasets/20261015_open_domain/Q013.json
+  s_6c5290694a2c20::t_553cb9b8b0d8f6 1
+debug_tools/Datasets/20261015_open_domain/Q014.json
+  s_6c5290694a2c20::t_9495c6a519ea1a 1-51
+debug_tools/Datasets/20261015_open_domain/Q015.json
+  s_6c5290694a2c20::t_22f8beff617b22 1
+debug_tools/Datasets/20261015_open_domain/Q016.json
+  s_6c5290694a2c20::t_638a5769868b78 1
+debug_tools/Datasets/20261015_open_domain/Q017.json
+  s_6c5290694a2c20::t_dd081aadfe65b2 1
+debug_tools/Datasets/20261015_open_domain/Q018.json
+  s_6c5290694a2c20::t_beaaaf62b444d1 1
+debug_tools/Datasets/20261015_open_domain/Q019.json
+  s_6c5290694a2c20::t_d841f6ed3bdea4 1
+debug_tools/Datasets/20261015_open_domain/Q020.json
+  s_6c5290694a2c20::t_9e794ac7310ca1 1
+debug_tools/Datasets/20261015_open_domain/Q021.json
+  s_6c5290694a2c20::t_f11b431156efc6 1
+debug_tools/Datasets/20261015_open_domain/Q022.json
+  s_6c5290694a2c20::t_c82e37a72c0bdc 1
+debug_tools/Datasets/20261015_open_domain/Q023.json
+  s_6c5290694a2c20::t_fcb624b4a478d8 1
+debug_tools/Datasets/20261015_open_domain/Q024.json
+  s_6c5290694a2c20::t_f849bedbf38a97 1
+debug_tools/Datasets/20261015_open_domain/Q025.json
+  s_6c5290694a2c20::t_eb620bfa355542 1
+debug_tools/Datasets/20261015_open_domain/Q026.json
+  s_6c5290694a2c20::t_f06b823e304a64 1
+debug_tools/Datasets/20261015_open_domain/Q027.json
+  s_6c5290694a2c20::t_d620ce424be923 1
+debug_tools/Datasets/20261015_open_domain/Q028.json
+  s_6c5290694a2c20::t_dde8bc1ad933c6 1
+debug_tools/Datasets/20261015_open_domain/Q029.json
+  s_6c5290694a2c20::t_fff07adeb1ee54 1
+debug_tools/Datasets/20261015_open_domain/Q030.json
+  s_6c5290694a2c20::t_ad843cf71e2084 1
+debug_tools/Datasets/20261015_open_domain/Q031.json
+  s_6c5290694a2c20::t_9cd7a1f07e02f4 1
+debug_tools/Datasets/20261015_open_domain/Q032.json
+  s_6c5290694a2c20::t_940750637c9b7a 1
+debug_tools/Datasets/20261015_open_domain/Q033.json
+  s_6c5290694a2c20::t_1fbbf172f5b856 1
+debug_tools/Datasets/20261015_open_domain/Q034.json
+  s_6c5290694a2c20::t_87dd120a4f2a34 1
+debug_tools/Datasets/20261015_open_domain/Q035.json
+  s_6c5290694a2c20::t_f4dff8f3415862 1
+debug_tools/Datasets/20261015_open_domain/Q036.json
+  s_6c5290694a2c20::t_f1e23f8c833d0f 1
+debug_tools/Datasets/20261015_open_domain/Q037.json
+  s_6c5290694a2c20::t_514b952ec84564 1
+debug_tools/Datasets/20261015_open_domain/Q038.json
+  s_6c5290694a2c20::t_edec4a441ef536 2-42,45-51
+debug_tools/Datasets/20261015_open_domain/Q039.json
+  s_6c5290694a2c20::t_f4e1d309ce9d92 1
+debug_tools/Datasets/20261015_open_domain/Q040.json
+  s_6c5290694a2c20::t_0d1d8d735efb7f 1
+debug_tools/Datasets/20261015_open_domain/Q041.json
+  s_6c5290694a2c20::t_e14907662bedbb 1
+debug_tools/Datasets/20261015_open_domain/Q042.json
+  s_6c5290694a2c20::t_cd32748e793abf 1
+debug_tools/Datasets/20261015_open_domain/Q043.json
+  s_6c5290694a2c20::t_f369d595ee0301 1
+debug_tools/Datasets/20261015_open_domain/Q044.json
+  s_6c5290694a2c20::t_a8ed17e0a647e5 1
+debug_tools/Datasets/20261015_open_domain/Q045.json
+  s_6c5290694a2c20::t_852128eb9edfa8 1
+debug_tools/Datasets/20261015_open_domain/Q046.json
+  s_6c5290694a2c20::t_0dd78acbd947e3 1
+debug_tools/Datasets/20261015_open_domain/Q047.json
+  s_6c5290694a2c20::t_59a82f4218ad7b 1
+debug_tools/Datasets/20261015_open_domain/Q048.json
+  s_6c5290694a2c20::t_087224bea77f8c 1
+debug_tools/Datasets/20261015_open_domain/Q049.json
+  s_6c5290694a2c20::t_b3ab137c162a76 2-42,45-51
+debug_tools/Datasets/20261015_open_domain/Q050.json
+  s_6c5290694a2c20::t_b3e0c67c42f835 1
+debug_tools/Datasets/20261015_open_domain/Q051.json
+  s_6c5290694a2c20::t_b7b63b92bbbbce 1
+debug_tools/Datasets/20261015_open_domain/Q052.json
+  s_6c5290694a2c20::t_3531e93c0aa852 1
+debug_tools/Datasets/20261015_open_domain/Q053.json
+  s_6c5290694a2c20::t_d89b3dc0ed3af6 1
+debug_tools/Datasets/20261015_open_domain/Q054.json
+  s_6c5290694a2c20::t_323faa79da9673 1
+debug_tools/Datasets/20261015_open_domain/Q055.json
+  s_6c5290694a2c20::t_d927adbabfe932 1
+debug_tools/Datasets/20261016_online_updated/Q001.json
+  s_6c5290694a2c20::t_03499e0a7525db 4,8,11-13,15-16,19-25,29-30,38-39,45,47,49-51,60,62,69,79,84,88,91-93,95-96,99-105,109-110,118-119,125,127,129-131
+debug_tools/Datasets/20261016_online_updated/Q002.json
+  s_6c5290694a2c20::t_baa886d9af532d 4,7,9,11-12,17,20,22-24,33,42,52,57,60,62,64-65,70,73,75-77
+debug_tools/Datasets/20261016_online_updated/Q003.json
+  s_6c5290694a2c20::t_8cc69c9e49a68c 4,12-16,20,29-30,36,38,47,49,56,66,71,79-83,87,96-97,103,105
+debug_tools/Datasets/20261016_online_updated/Q004.json
+  s_6c5290694a2c20::t_8fe82f2ba495ae 1-75
+debug_tools/Datasets/20261016_online_updated/Q005.json
+  s_6c5290694a2c20::t_f4b44926df5459 4,9,11,17,19,21,23,27,30,32-33,42,51,61,66,71,73,79,81,83,85,89,92-93
+debug_tools/Datasets/20261016_online_updated/Q006.json
+  s_6c5290694a2c20::t_ea2a12db168285 4,7,9,11-15,19,23,27-30,35,39-42,47,49-50,60,62,69,79,84,87,89,91-95,99,103,107-110,115,119-122,127-128
+debug_tools/Datasets/20261016_online_updated/Q007.json
+  s_6c5290694a2c20::t_393f4c2df09376 4,8,12-14,19,23,27-30,35,39-42,47,50-51,60,62,69,79,84,88,92-94,99,103,107-110,115,119-122,127-128
+debug_tools/Datasets/20261016_online_updated/Q008.json
+  s_6c5290694a2c20::t_3d41eb6f2224a7 1-129
+debug_tools/Datasets/20261016_online_updated/Q009.json
+  s_6c5290694a2c20::t_1142330b000e37 4,6-15,18,21,24,28-29,40,48,50-52,62,64,71,81,86,88-97,100,103,106,110-111,122,130-131
+debug_tools/Datasets/20261016_online_updated/Q010.json
+  s_6c5290694a2c20::t_3c3a2ba2a0838c 4,7-9,11-15,19,28-29,35,37-38,47,56,66,71,74-76,78-82,86,95-96,102,104-105
+debug_tools/Datasets/20261016_online_updated/Q011.json
+  s_6c5290694a2c20::t_f9f2fc84649961 1-75
+debug_tools/Datasets/20261016_online_updated/Q012.json
+  s_6c5290694a2c20::t_603eff4278175d 1-103
+debug_tools/Datasets/20261016_online_updated/Q013.json
+  s_6c5290694a2c20::t_1bc5fe20d4d84e 4,8,12-14,19,28-29,35,47,56,66,71,75,79-81,86,95-96,102
+debug_tools/Datasets/20261016_online_updated/Q014.json
+  s_6c5290694a2c20::t_af45131fef5966 4,8,11,13-15,17-20,24,34,40,42,51,53,60,70,75,79,82,84-86,88-91,95,105,111,113
+debug_tools/Datasets/20261016_online_updated/Q015.json
+  s_6c5290694a2c20::t_e498a7ff424b36 1-81
+debug_tools/Datasets/20261016_online_updated/Q016.json
+  s_6c5290694a2c20::t_2c4f77282a5af2 4,8,11-13,17,20,22-24,33,42,52,57,61,64-66,70,73-74
+debug_tools/Datasets/20261016_online_updated/Q017.json
+  s_6c5290694a2c20::t_40470fd1e467b2 4,11-14,22-23,25-36,50,52-55,64,73,83,88-94
+debug_tools/Datasets/20261016_online_updated/Q018.json
+  s_6c5290694a2c20::t_4b54248abbb43c 4,8,11,13-14,18,20-34,36-37,47,49,56,66,71,75,78,80-81,85,88-89
+debug_tools/Datasets/20261016_online_updated/Q019.json
+  s_6c5290694a2c20::t_e309b622041cad 4,8,11-14,18,21,23-25,34,43,53,58,62,65-68,72,75-76
+debug_tools/Datasets/20261016_online_updated/Q020.json
+  s_6c5290694a2c20::t_439ef6c137f882 1-91
+debug_tools/Datasets/20261016_online_updated/Q021.json
+  s_6c5290694a2c20::t_4b98a4d251734c 1-91
+debug_tools/Datasets/20261016_online_updated/Q022.json
+  s_6c5290694a2c20::t_d27c9446a65a55 4,8,11-13,17-18,20,22-24,33,42,52,57,61,64-66,70-71,73-74
+debug_tools/Datasets/20261016_online_updated/Q023.json
+  s_6c5290694a2c20::t_f8ae2a35361514 4,11-12,17,35,38,47,49,56,66,71,78-79,84,102,105
+debug_tools/Datasets/20261016_online_updated/Q024.json
+  s_6c5290694a2c20::t_e54d553bb0b4e1 1-73
+debug_tools/Datasets/20261016_online_updated/Q025.json
+  s_6c5290694a2c20::t_0462e9dffae475 4,11-13,17-18,35,38,47,49,56,66,71,78-80,84-85,102-103
+debug_tools/Datasets/20261016_online_updated/Q026.json
+  s_6c5290694a2c20::t_806351c327b333 4,8,11-22,26,29,33,42,51,61,66,70,73-84,88,91,95
+debug_tools/Datasets/20261016_online_updated/Q027.json
+  s_6c5290694a2c20::t_a0d7f96b6a6dfe 1-99
+debug_tools/Datasets/20261016_online_updated/Q028.json
+  s_6c5290694a2c20::t_37c797541eb44d 4,8,12,14-17,21,37,40-41,50,52,59,69,74,78,82,84-87,91,93-94,97-98
+debug_tools/Datasets/20261016_online_updated/Q029.json
+  s_6c5290694a2c20::t_21ded042f5d954 1-105
+debug_tools/Datasets/20261016_online_updated/Q030.json
+  s_6c5290694a2c20::t_c4cc2cee1e8f7b 1-90
+debug_tools/Datasets/20261016_online_updated/Q031.json
+  s_6c5290694a2c20::t_348f619177a0e5 4,8,12-13,15-18,22-23,38,40,42-57,62,65-66,75,84,94,99,103,107-108,110-113,117-118,133-145,147,149-152,157,160-161
+debug_tools/Datasets/20261016_online_updated/Q032.json
+  s_6c5290694a2c20::t_6692e11cc429ba 1-68
+debug_tools/Datasets/20261016_online_updated/Q033.json
+  s_6c5290694a2c20::t_e09ec6a1327cc7 1-81
+debug_tools/Datasets/20261016_online_updated/Q034.json
+  s_6c5290694a2c20::t_2c58923e56c6f0 4,8,11-13,16-17,22,38,40-41,50,52,59,69,74-76,78-80
+debug_tools/Datasets/20261016_online_updated/Q035.json
+  s_6c5290694a2c20::t_0d48978c9c8751 1-64
+debug_tools/Datasets/20261016_online_updated/Q036.json
+  s_6c5290694a2c20::t_3d2ef0a13b063d 4-6,10-24,28,30-32,38,40-41,50,59,69,74-76,78-80
+debug_tools/Datasets/20261016_online_updated/Q037.json
+  s_6c5290694a2c20::t_bc8d654757f00e 1-97
+debug_tools/Datasets/20261016_online_updated/Q038.json
+  s_6c5290694a2c20::t_bf3589d57bb883 1-97
+debug_tools/Datasets/20261016_online_updated/Q039.json
+  s_6c5290694a2c20::t_d85a3a20096fe5 1-87
+debug_tools/Datasets/20261016_online_updated/Q040.json
+  s_6c5290694a2c20::t_e3258f4ddbca51 1-81
+debug_tools/Datasets/20261016_online_updated/Q041.json
+  s_6c5290694a2c20::t_b7cf72e0f341a0 1-87
+debug_tools/Datasets/20261016_online_updated/Q042.json
+  s_6c5290694a2c20::t_19259360f65605 4,7,9,11-17,21,23,25-26,31,34-45,59,61-62,71,80,90,95-97,99-101
+debug_tools/Datasets/20261016_online_updated/Q043.json
+  s_6c5290694a2c20::t_6b20fee2fb3d3e 4,8,12-16,25-27,31,59,61,71,73,80,90,95-97,99-101
+debug_tools/Datasets/20261016_online_updated/Q044.json
+  s_6c5290694a2c20::t_613dddb6644d28 4,7,9,11-17,21,23,25-27,31,34,36-37,46,55,65,70-72,75-76
+debug_tools/Datasets/20261016_online_updated/Q045.json
+  s_6c5290694a2c20::t_2f0590024c7988 1-67
+debug_tools/Datasets/20261016_online_updated/Q046.json
+  s_6c5290694a2c20::t_59f2b6a5477491 1-68
+debug_tools/Datasets/20261016_online_updated/Q047.json
+  s_6c5290694a2c20::t_e40c959b1f9d7e 1-76
+debug_tools/Datasets/20261016_online_updated/Q048.json
+  s_6c5290694a2c20::t_82e1a57de0e048 4,8,11-16,21,30-31,37,39-41,50,59,69,74,78,81-86,91,100-101,107,109-111
+debug_tools/Datasets/20261016_online_updated/Q049.json
+  s_6c5290694a2c20::t_f7bfff3e52c31c 1-113
+debug_tools/Datasets/20261016_online_updated/Q050.json
+  s_6c5290694a2c20::t_f9a6cc3eb6c282 1-139
+debug_tools/Datasets/20261016_online_updated/Q051.json
+  s_6c5290694a2c20::t_ee3e0be7129275 4,7-9,11-18,23,26,28-31,35-36,44-45,51,54-56,65,67,74,84,89,92-94,96-103,108,111,113-116,120-121,129-130,136,139-141
+debug_tools/Datasets/20261016_online_updated/Q052.json
+  s_6c5290694a2c20::t_e88b5b98f4deaa 4,8,11-17,21,31,37,39-40,50,52,59,69,74,78,81-87,91,101,107,109-110
+debug_tools/Datasets/20261016_online_updated/Q053.json
+  s_6c5290694a2c20::t_288956915d6130 4,11,16,34,37,46,48,55,65,70,77,82,100-101
+debug_tools/Datasets/20261016_online_updated/Q054.json
+  s_6c5290694a2c20::t_9d403bbd816432 1-100
+debug_tools/Datasets/20261016_online_updated/Q055.json
+  s_6c5290694a2c20::t_72056ce97e78c5 1-77
+debug_tools/Datasets/20261016_online_updated/Q056.json
+  s_6c5290694a2c20::t_c651fef50ec707 4,6-15,18,22,26-27,29,32,41,50,60,65,67-76,79,83,87-88,90,93
+debug_tools/Datasets/20261016_online_updated/Q057.json
+  s_6c5290694a2c20::t_bf10ee76782b23 1-77
+debug_tools/Datasets/20261016_online_updated/Q058.json
+  s_6c5290694a2c20::t_3fee2422cfbb06 1-73
+debug_tools/Datasets/20261016_online_updated/Q059.json
+  s_6c5290694a2c20::t_d15bad5b9c5aee 1-70
+debug_tools/Datasets/20261016_online_updated/Q060.json
+  s_6c5290694a2c20::t_98fa268b56bed9 4,8,11-13,17,19-37,39-40,50,59,69,74-76,79-80
+debug_tools/Datasets/20261016_online_updated/Q061.json
+  s_6c5290694a2c20::t_dd62d0717c0952 4,11-13,20,22-38,41,50,52,59,69,74-76,79-80
+debug_tools/Datasets/20261016_online_updated/Q062.json
+  s_6c5290694a2c20::t_41921ff5b2b487 4,11-12,15-18,22,26,30-33,38,43-45,50,53-55,64,73,83,88,95-96,99-102,106,110,114-117,122,127-129,134,137-139
+debug_tools/Datasets/20261016_online_updated/Q063.json
+  s_6c5290694a2c20::t_6792b84a2e05ee 4,11-13,15-16,20,24,29-31,36,38,40,49,51,58,68,73,80-82,84-85,89,93,98-100,105,107,109
+debug_tools/Datasets/20261016_online_updated/Q064.json
+  s_6c5290694a2c20::t_e0a85aca6f7b58 4-6,18,26,28,39,48,58,63-65,77,85,87
+debug_tools/Datasets/20261016_online_updated/Q065.json
+  s_6c5290694a2c20::t_47ee33f2ce3898 1-91
+debug_tools/Datasets/20261016_online_updated/Q066.json
+  s_6c5290694a2c20::t_344520548db830 4,12-14,20-21,29-30,36,38-40,49,51,58,68,73,81-83,89-90,98-99,105,107-109
+debug_tools/Datasets/20261016_online_updated/Q067.json
+  s_6c5290694a2c20::t_f815559b00de17 1-111
+debug_tools/Datasets/20261016_online_updated/Q068.json
+  s_6c5290694a2c20::t_5922e21d957a08 4,13-14,16,20-21,29-30,36,38-41,51,53,60,70,75,84-85,87,91-92,100-101,107,109-112
+debug_tools/Datasets/20261016_online_updated/Q069.json
+  s_6c5290694a2c20::t_b61b858cee5109 1-63
+debug_tools/Datasets/20261016_online_updated/Q070.json
+  s_6c5290694a2c20::t_d3f8e3f09354b5 4,8,11-14,16,20,29-30,36,47,56,66,71,75,78-81,83,87,96-97,103
+debug_tools/Datasets/20261016_online_updated/Q071.json
+  s_6c5290694a2c20::t_a70e314e1d11a6 4,8,11-12,14,16-27,31,34,37,46,55,65,70-72,75-76
+debug_tools/Datasets/20261016_online_updated/Q072.json
+  s_6c5290694a2c20::t_e57a282c0bd36c 4,8,11,13-25,29,32,35,44,53,63,68-70,73-74
+debug_tools/Datasets/20261016_online_updated/Q073.json
+  s_6c5290694a2c20::t_41992ab38f7cff 1-65
+debug_tools/Datasets/20261016_online_updated/Q074.json
+  s_6c5290694a2c20::t_276f6f89f3794c 4-6,10,17,22,24,33,42,52,57-59,61-63
+debug_tools/Datasets/20261016_online_updated/Q075.json
+  s_6c5290694a2c20::t_05cd79be4954f2 1-65
+debug_tools/Datasets/20261016_online_updated/Q076.json
+  s_6c5290694a2c20::t_4561bfdb4f11b7 1-77
+debug_tools/Datasets/20261016_online_updated/Q077.json
+  s_6c5290694a2c20::t_5bdb5077af3480 1-81
+debug_tools/Datasets/20261016_online_updated/Q078.json
+  s_6c5290694a2c20::t_b8026182673f95 1-81
+debug_tools/Datasets/20261016_online_updated/Q079.json
+  s_6c5290694a2c20::t_58e810e35eba3e 1-81
+debug_tools/Datasets/20261016_online_updated/Q080.json
+  s_6c5290694a2c20::t_2bdaefbb1a3c96 1-76
+debug_tools/Datasets/20261016_online_updated/Q081.json
+  s_6c5290694a2c20::t_bfb2e070ead5f4 1-113
+debug_tools/Datasets/20261016_online_updated/Q082.json
+  s_6c5290694a2c20::t_43f9602fe04af2 1-76
+debug_tools/Datasets/20261016_online_updated/Q083.json
+  s_6c5290694a2c20::t_81035bf3d0f174 1-113
+debug_tools/Datasets/20261016_online_updated/Q084.json
+  s_6c5290694a2c20::t_124a7096bc47fc 1-139
+debug_tools/Datasets/20261016_online_updated/Q085.json
+  s_6c5290694a2c20::t_82eee7c35fac01 4,6-20,23,27-31,35-36,44-45,51,54-56,65,67,74,84,89,91-105,108,112-116,120-121,129-130,136,139-141
+debug_tools/Datasets/20261016_online_updated/Q086.json
+  s_6c5290694a2c20::t_633e8934f6c722 1-62
+debug_tools/Datasets/20261016_online_updated/Q087.json
+  s_6c5290694a2c20::t_fef19bf43125af 1-60
+debug_tools/Datasets/20261016_online_updated/Q088.json
+  s_6c5290694a2c20::t_81552af09b4103 1-100
+debug_tools/Datasets/20261016_online_updated/Q089.json
+  s_6c5290694a2c20::t_a9b02d1210932b 4,6-15,18,21-25,27,31,34,36-37,46,55,65,70-72,75-76
+debug_tools/Datasets/20261016_online_updated/Q093.json
+  s_6c5290694a2c20::t_19bbb7e45b0377 4,8-9,11-17,22,25-31,38,40-41,50,52,59,69,74-75,79-80
+debug_tools/Datasets/20261016_online_updated/Q095.json
+  s_6c5290694a2c20::t_cc041ba9157907 1-112
+debug_tools/Datasets/20261016_online_updated/Q096.json
+  s_6c5290694a2c20::t_8f0ffa3b95086c 1-95
+debug_tools/Datasets/20261016_online_updated/Q097.json
+  s_6c5290694a2c20::t_1928ec7fbdeb1f 1-81
+debug_tools/Datasets/20261016_online_updated/Q098.json
+  s_6c5290694a2c20::t_fbd33c9cef19a2 1-106
+debug_tools/Datasets/20261016_online_updated/Q099.json
+  s_6c5290694a2c20::t_9af17909c48ed5 4,8,13-30,34,37,39-40,49,51,58,68,73,77,82-99,103,106-107
+debug_tools/Datasets/20261016_online_updated/Q100.json
+  s_6c5290694a2c20::t_7c75102be9f242 1-62
+debug_tools/Datasets/20261016_online_updated/Q101.json
+  s_6c5290694a2c20::t_7ae4b784bac053 1-62
+debug_tools/Datasets/20261016_online_updated/Q102.json
+  s_6c5290694a2c20::t_a54ec1caad1543 1-91
+debug_tools/Datasets/20261016_online_updated/Q103.json
+  s_6c5290694a2c20::t_84c8a066e4e86b 1-65
+debug_tools/Datasets/20261016_online_updated/Q104.json
+  s_6c5290694a2c20::t_995119d67c823e 1-111
+debug_tools/Datasets/20261016_online_updated/Q105.json
+  s_6c5290694a2c20::t_332f7da93b2d08 1-62
+debug_tools/Datasets/20261016_online_updated/Q106.json
+  s_6c5290694a2c20::t_9769433530e911 1-62
+debug_tools/Datasets/20261016_online_updated/Q107.json
+  s_6c5290694a2c20::t_4fc40d740f7ab2 1-62
+debug_tools/Datasets/20261016_online_updated/Q108.json
+  s_6c5290694a2c20::t_f5df0a25a35aee 4,9,17-20,22,31,40,50,55,60,68-72
+debug_tools/Datasets/20261016_online_updated/Q109.json
+  s_6c5290694a2c20::t_4356cee7f488f8 1-73
+debug_tools/Datasets/20261016_online_updated/Q110.json
+  s_6c5290694a2c20::t_9833f4e5f2e1af 1-77
+debug_tools/Datasets/20261016_online_updated/Q112.json
+  s_6c5290694a2c20::t_6f1b0b95bb2543 1-81
+debug_tools/Datasets/20261016_online_updated/Q113.json
+  s_6c5290694a2c20::t_900b6b7cb88b4f 1-81
+debug_tools/Datasets/20261016_online_updated/Q114.json
+  s_6c5290694a2c20::t_b530c4be078efc 1-81
+debug_tools/Datasets/20261016_online_updated/Q115.json
+  s_6c5290694a2c20::t_443b3b4ab0d366 1-81
+debug_tools/Datasets/20261016_online_updated/Q116.json
+  s_6c5290694a2c20::t_7bd61faee88fbe 1-73
+debug_tools/Datasets/20261016_online_updated/Q117.json
+  s_6c5290694a2c20::t_813f9281a9dfa4 1-81
+debug_tools/Datasets/20261016_online_updated/Q118.json
+  s_6c5290694a2c20::t_5c27e0cb393bfc 1-67
+debug_tools/Datasets/20261016_online_updated/Q119.json
+  s_6c5290694a2c20::t_fefc1c18115627 1-63
+debug_tools/Datasets/20261016_online_updated/Q120.json
+  s_6c5290694a2c20::t_bddcde94dddcf4 1-68
+debug_tools/Datasets/20261016_online_updated/Q121.json
+  s_6c5290694a2c20::t_0b1c4a972447a4 1-77
+debug_tools/Datasets/20261016_online_updated/Q122.json
+  s_6c5290694a2c20::t_bf3d020609d1c9 1-76
+debug_tools/Datasets/20261016_online_updated/Q123.json
+  s_6c5290694a2c20::t_d9c8fec83ef1ad 1-81
+debug_tools/Datasets/20261016_online_updated/Q124.json
+  s_6c5290694a2c20::t_f4b03f3b72ee38 1-77
+debug_tools/Datasets/20261016_request_baseline/Q003.json
+  s_6c5290694a2c20::t_c4b77ffd3d4cff 47,49,125,127
+debug_tools/Datasets/20261016_request_baseline/Q004.json
+  s_6c5290694a2c20::t_4abb3ef665806f 24,78
+debug_tools/Datasets/20261016_request_baseline/Q006.json
+  s_6c5290694a2c20::t_b94b4c65066060 26,82
+debug_tools/Datasets/20261016_request_baseline/Q007.json
+  s_6c5290694a2c20::t_2bc681dcdca32a 26,81
+debug_tools/Datasets/20261016_request_baseline/Q008.json
+  s_6c5290694a2c20::t_73ab2f906f90ce 34,36,100,102
+debug_tools/Datasets/20261016_request_baseline/Q011.json
+  s_6c5290694a2c20::t_087243732ae04c 21,23,73,75
+debug_tools/Datasets/20261016_request_baseline/Q012.json
+  s_6c5290694a2c20::t_fd3e6c8bec8499 25,79
+debug_tools/Datasets/20261016_request_baseline/Q013.json
+  s_6c5290694a2c20::t_cb2e4b3db18b4b 50,129
+debug_tools/Datasets/20261016_request_baseline/Q015.json
+  s_6c5290694a2c20::t_78c49c1ec5c026 25,79
+debug_tools/Datasets/20261016_request_baseline/Q016.json
+  s_6c5290694a2c20::t_306e677a628f4e 26,81
+debug_tools/Datasets/20261016_request_baseline/Q018.json
+  s_6c5290694a2c20::t_1216a4a505fe10 42,114
+debug_tools/Datasets/20261016_request_baseline/Q023.json
+  s_6c5290694a2c20::t_85ac60f01993bf 26,82
+debug_tools/Datasets/20261016_request_baseline/Q024.json
+  s_6c5290694a2c20::t_99f4d541974ff1 40,109
+debug_tools/Datasets/20261016_request_baseline/Q025.json
+  s_6c5290694a2c20::t_7ec8f8079c0cd8 40,110
+debug_tools/Datasets/20261016_request_baseline/Q026.json
+  s_6c5290694a2c20::t_fdd453d4c231fa 49,130
+debug_tools/Datasets/20261016_request_baseline/Q029.json
+  s_6c5290694a2c20::t_f3c219f42f609b 50,53,132,135
+debug_tools/Datasets/20261016_request_baseline/Q030.json
+  s_6c5290694a2c20::t_7cb554e30420ae 39,107
+debug_tools/Datasets/20261016_request_baseline/Q034.json
+  s_6c5290694a2c20::t_01aebe47ca58be 36,102
+debug_tools/Datasets/20261016_request_baseline/Q035.json
+  s_6c5290694a2c20::t_45e901cd761324 40,109
+debug_tools/Datasets/20261016_request_baseline/Q036.json
+  s_6c5290694a2c20::t_4347ea5e46546a 25,79
+debug_tools/Datasets/20261016_request_baseline/Q038.json
+  s_6c5290694a2c20::t_dcb3d6bddf8b14 38,106
+debug_tools/Datasets/20261016_request_baseline/Q041.json
+  s_6c5290694a2c20::t_b908590a4a121c 27,84
+debug_tools/Datasets/20261016_request_baseline/Q042.json
+  s_6c5290694a2c20::t_8200bc5ac3027b 49-50,129-130
+debug_tools/Datasets/20261016_request_baseline/Q045.json
+  s_6c5290694a2c20::t_dff40b0dd15d52 33,35,98,100
+debug_tools/Datasets/20261016_request_baseline/Q049.json
+  s_6c5290694a2c20::t_00be7ece9d0d59 37-38,95-96
+debug_tools/Datasets/20261016_request_baseline/Q050.json
+  s_6c5290694a2c20::t_ae9255b2c10091 39,100
+debug_tools/Datasets/20261016_request_baseline/Q051.json
+  s_6c5290694a2c20::t_2c96b0c71e426b 27,85
+debug_tools/Datasets/20261016_request_baseline/Q055.json
+  s_6c5290694a2c20::t_de0b1a88a51421 26,81
+debug_tools/Datasets/20261016_request_baseline/Q056.json
+  s_6c5290694a2c20::t_9043c882948936 53,135
+debug_tools/Datasets/20261016_request_baseline/Q057.json
+  s_6c5290694a2c20::t_57f69abcca2f6c 53,136
+debug_tools/Datasets/20261016_request_baseline/Q059.json
+  s_6c5290694a2c20::t_0d088cf03d8ab4 50,129
+debug_tools/Datasets/20261016_request_baseline/Q061.json
+  s_6c5290694a2c20::t_b75af870c198c0 62,155
+debug_tools/Datasets/20261016_request_baseline/Q063.json
+  s_6c5290694a2c20::t_bcfd0c0c8bac82 52,133
+debug_tools/Datasets/20261016_request_baseline/Q065.json
+  s_6c5290694a2c20::t_e4ad31a0b4e5d9 45,121
+debug_tools/Datasets/20261016_request_baseline/Q068.json
+  s_6c5290694a2c20::t_7b3c64a27056c2 50,53,132,135
+debug_tools/Datasets/20261016_request_baseline/Q072.json
+  s_6c5290694a2c20::t_a07a68bb37a17a 62,64,155,157
+debug_tools/Datasets/20261016_request_baseline/Q074.json
+  s_6c5290694a2c20::t_2db9d3e9cf9bc6 64,66,160,162
+debug_tools/Datasets/20261016_request_baseline/Q075.json
+  s_6c5290694a2c20::t_ddc9f64571702a 52,133
+debug_tools/Datasets/20261016_request_baseline/Q076.json
+  s_6c5290694a2c20::t_c40dc3e450075d 49-50,130-131
+debug_tools/Datasets/20261016_request_baseline/Q077.json
+  s_6c5290694a2c20::t_f6ec3b91c99278 52,134
+debug_tools/Datasets/20261016_request_baseline/Q078.json
+  s_6c5290694a2c20::t_16cc32ec651d23 41,112
+debug_tools/Datasets/20261016_request_baseline/Q080.json
+  s_6c5290694a2c20::t_fa8cdd2cef10c4 37,95
+debug_tools/Datasets/20261016_request_baseline/Q081.json
+  s_6c5290694a2c20::t_7ba9a7ab33f4c0 41,102
+debug_tools/Datasets/20261016_request_baseline/Q086.json
+  s_6c5290694a2c20::t_37431654ab7776 48,128
+debug_tools/Datasets/20261016_request_baseline/Q088.json
+  s_6c5290694a2c20::t_9004980973eeec 48-49,128-129
+debug_tools/README.md
+  s_6c5290694a2c20::t_bc5ac112dad6d3 3-70,74-76,129-140,241-247
+debug_tools/__main__.py
+  s_6c5290694a2c20::t_deea6e29f746f5 32
+debug_tools/a2ui_render/.gitignore
+  s_6c5290694a2c20::t_6ebf85ea7674e8 1-24
+debug_tools/a2ui_render/AppScope/app.json5
+  s_6c5290694a2c20::t_5b6036019ccc4e 2-8
+debug_tools/a2ui_render/AppScope/resources/base/element/string.json
+  s_6c5290694a2c20::t_8c1d53d983c05d 2-7
+debug_tools/a2ui_render/AppScope/resources/base/media/layered_image.json
+  s_6c5290694a2c20::t_21d8fed297b0cb 1-7
+debug_tools/a2ui_render/DEPENDENCIES.md
+  s_6c5290694a2c20::t_a109c99303cf30 1-7
+debug_tools/a2ui_render/README.md
+  s_6c5290694a2c20::t_2da01625f729b4 1,3,5-7,9,11-18,20,22-25,27,29,31-34,36,38,40,42-51,54-63
+debug_tools/a2ui_render/build-profile.json5
+  s_6c5290694a2c20::t_0af7a552e8422e 2-4,6-14,19-25,28,30-37,39
+debug_tools/a2ui_render/code-linter.json5
+  s_6c5290694a2c20::t_beb851ffc8a2a7 1-32
+debug_tools/a2ui_render/entry/build-profile.json5
+  s_6c5290694a2c20::t_64dc43d934dfe6 2-6,10-32
+debug_tools/a2ui_render/entry/hvigorfile.ts
+  s_6c5290694a2c20::t_f25bfa9339aa5a 1-6
+debug_tools/a2ui_render/entry/obfuscation-rules.txt
+  s_6c5290694a2c20::t_5f84523b7438d8 1-23
+debug_tools/a2ui_render/entry/oh-package.json5
+  s_6c5290694a2c20::t_5d545e9a146e32 2-8
+debug_tools/a2ui_render/entry/src/main/ets/entryability/EntryAbility.ets
+  s_6c5290694a2c20::t_dd019171c5d3e4 1-183
+debug_tools/a2ui_render/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets
+  s_6c5290694a2c20::t_8ac1048c69b9be 1-16
+debug_tools/a2ui_render/entry/src/main/ets/pages/Index.ets
+  s_6c5290694a2c20::t_1928751b7f8b99 1-76,78-129,132-140,142-285,288-298
+debug_tools/a2ui_render/entry/src/main/ets/runner/A2UIProtocol.ets
+  s_6c5290694a2c20::t_91be44ea36de9d 1-33,35-39,41-56,58,60-62,64-67,71-75,77-98,100-108,111
+debug_tools/a2ui_render/entry/src/main/module.json5
+  s_6c5290694a2c20::t_c4896c5d7dbbb2 1-56
+debug_tools/a2ui_render/entry/src/main/resources/base/element/color.json
+  s_6c5290694a2c20::t_338643b9669a9e 1-8
+debug_tools/a2ui_render/entry/src/main/resources/base/element/float.json
+  s_6c5290694a2c20::t_44db44076a4407 2-7
+debug_tools/a2ui_render/entry/src/main/resources/base/element/string.json
+  s_6c5290694a2c20::t_a27c0237426576 1-16
+debug_tools/a2ui_render/entry/src/main/resources/base/media/airplane_fill_1.svg
+  s_6c5290694a2c20::t_c5446ec2969228 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/alarm_fill_1.svg
+  s_6c5290694a2c20::t_5a8147b5f321de 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/average_pace_fill.svg
+  s_6c5290694a2c20::t_a3a58eb6b2c0bc 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/backward_fill.svg
+  s_6c5290694a2c20::t_e54302a29c3085 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/battery_leaf_fill.svg
+  s_6c5290694a2c20::t_735880ac90c3f3 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/bell_fill.svg
+  s_6c5290694a2c20::t_6c9e9ff2dadd78 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/bell_slash_fill.svg
+  s_6c5290694a2c20::t_8620f215448c18 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/bolt_fill.svg
+  s_6c5290694a2c20::t_3a94ffc5e2db6e 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/book_pages_fill_1.svg
+  s_6c5290694a2c20::t_89f3355d1d4098 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/cake_fill.svg
+  s_6c5290694a2c20::t_f9d001730f5fa0 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/calendar_fill.svg
+  s_6c5290694a2c20::t_80fab052e8b7a5 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/camera_fill.svg
+  s_6c5290694a2c20::t_2f4a62e57353bb 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/checkmark_calendar_fill.svg
+  s_6c5290694a2c20::t_3461bfd7578c31 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/checkmark_circle_fill.svg
+  s_6c5290694a2c20::t_cbe247ef45fd16 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/clean_fill.svg
+  s_6c5290694a2c20::t_4e314803ec76eb 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/control_fill.svg
+  s_6c5290694a2c20::t_277cecb53c84f2 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/drop_1.svg
+  s_6c5290694a2c20::t_beef708f3846a3 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/earphone_case_16644.svg
+  s_6c5290694a2c20::t_e02bc3f4a933d5 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ellipsis_message_badge_circle_fill.svg
+  s_6c5290694a2c20::t_ab2c9b3e8fc113 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/envelope_badge_dot_fill.svg
+  s_6c5290694a2c20::t_c8e39314de828a 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/externaldrive_fill.svg
+  s_6c5290694a2c20::t_1654539278d2aa 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/figure_pool_swim.svg
+  s_6c5290694a2c20::t_11cf13bc1c130d 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/figure_run.svg
+  s_6c5290694a2c20::t_2df2b5ed05afc6 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/figure_sleeping_bed_side_fill.svg
+  s_6c5290694a2c20::t_c476ae64d8a1e8 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/flame_fill.svg
+  s_6c5290694a2c20::t_36dc138be7c9d9 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/gearshape_fill.svg
+  s_6c5290694a2c20::t_1cb88756ff5116 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/heart_fill.svg
+  s_6c5290694a2c20::t_064532d8df4660 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/hourglass_fill.svg
+  s_6c5290694a2c20::t_bc0f93c2334ac7 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/house_fill.svg
+  s_6c5290694a2c20::t_954aae83a5c992 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_Bluetooth.svg
+  s_6c5290694a2c20::t_19944dd54b08ee 1-3
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_calender.svg
+  s_6c5290694a2c20::t_45bc228a9c285d 1-10
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_call_bule.svg
+  s_6c5290694a2c20::t_901143142d429c 1-16
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_call_yellow.svg
+  s_6c5290694a2c20::t_c28202343a1ca6 1-16
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_charge.svg
+  s_6c5290694a2c20::t_e5043ca36d9990 1-3
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_flashlight.svg
+  s_6c5290694a2c20::t_1be396fc7b14c1 1-6
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_flashlight2.svg
+  s_6c5290694a2c20::t_bea69d1c33afaa 1-13
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_hotspot.svg
+  s_6c5290694a2c20::t_8e79999fe98cac 1-9
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_hotspot2.svg
+  s_6c5290694a2c20::t_8733cbec4f9d0c 1-3
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_nearlink_monochrome.svg
+  s_6c5290694a2c20::t_2d99a458a5d3b9 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_public_connection_filled.svg
+  s_6c5290694a2c20::t_b6f0110f106205 1-13
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_purification.svg
+  s_6c5290694a2c20::t_fbf8d657f59ad5 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_ranking.svg
+  s_6c5290694a2c20::t_f06bb729ebe5e0 1-6
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_ring_bule.svg
+  s_6c5290694a2c20::t_08174df5a9d77d 1-35
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_ring_yellow.svg
+  s_6c5290694a2c20::t_3b16d9d6a1bb96 1-35
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_sportsHealth_bule.svg
+  s_6c5290694a2c20::t_dc7a72ea07b1fb 1-16
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_sportsHealth_yellow.svg
+  s_6c5290694a2c20::t_2a7f735282b5f6 1-16
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_sun.svg
+  s_6c5290694a2c20::t_bc57211be17051 1-12
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_sun_monochrome.svg
+  s_6c5290694a2c20::t_8066761c5eb66c 1-4
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_switch.svg
+  s_6c5290694a2c20::t_19dd047c70dc87 1-3
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_uv_color.svg
+  s_6c5290694a2c20::t_70586a1c0e8cbc 1-11
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_uv_monochrome.svg
+  s_6c5290694a2c20::t_3d530fc9b13487 1-5
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_warning_color.svg
+  s_6c5290694a2c20::t_87d1d065e73cbe 1-9
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_warning_monochrome.svg
+  s_6c5290694a2c20::t_30f8b6340ab4cd 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_wave_monochrome.svg
+  s_6c5290694a2c20::t_4e40794dd244e9 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_weatherWarning.svg
+  s_6c5290694a2c20::t_3a3c893664b2c0 1-12
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_weather_color.svg
+  s_6c5290694a2c20::t_428c1fcc682ce6 1-12
+debug_tools/a2ui_render/entry/src/main/resources/base/media/ic_weather_monochrome.svg
+  s_6c5290694a2c20::t_935f4f56f045bf 1-5
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_car.svg
+  s_6c5290694a2c20::t_b372e0533cd542 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_earphone.svg
+  s_6c5290694a2c20::t_5839b69b4fffc7 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_focus.svg
+  s_6c5290694a2c20::t_29507565df4a7b 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_id.svg
+  s_6c5290694a2c20::t_254442d161ebf6 1-4
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_left.svg
+  s_6c5290694a2c20::t_37f628085830f1 1-13
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_meeting.svg
+  s_6c5290694a2c20::t_da4ecfdb316421 1-4
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_music.svg
+  s_6c5290694a2c20::t_bb083a1b3888ac 1-13
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_right.svg
+  s_6c5290694a2c20::t_27991fa562661a 1-13
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_run.svg
+  s_6c5290694a2c20::t_a3e368201082d4 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_schedule.svg
+  s_6c5290694a2c20::t_f7df10b5192e0b 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_weather_thermometer_medium.svg
+  s_6c5290694a2c20::t_9a5e23d3376245 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/icon_weather_wind.svg
+  s_6c5290694a2c20::t_f79dff63064a0d 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/id_fill.svg
+  s_6c5290694a2c20::t_ece8c08bca08a1 1-3
+debug_tools/a2ui_render/entry/src/main/resources/base/media/layered_image.json
+  s_6c5290694a2c20::t_707687cf443fde 1-7
+debug_tools/a2ui_render/entry/src/main/resources/base/media/list_book_fill.svg
+  s_6c5290694a2c20::t_412dbb50ab63ae 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/local_and_rectangle_fill.svg
+  s_6c5290694a2c20::t_0839930550e02f 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/local_fill.svg
+  s_6c5290694a2c20::t_aa306ad1a3034e 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/location_north_up_right_fill.svg
+  s_6c5290694a2c20::t_ec96ef14bd0fdf 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/mic_fill.svg
+  s_6c5290694a2c20::t_77a62835b4eab6 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/mobiledata_circle_fill.svg
+  s_6c5290694a2c20::t_15d8b5fc7cf832 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/moon_circle_fill.svg
+  s_6c5290694a2c20::t_42e885e3934b02 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/moon_fill.svg
+  s_6c5290694a2c20::t_171a09691033f5 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/moon_z_fill_1.svg
+  s_6c5290694a2c20::t_40761262743ac1 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/music_fill.svg
+  s_6c5290694a2c20::t_9afe6f048a9908 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/pc_ic_tab_index.svg
+  s_6c5290694a2c20::t_a7b180170a663b 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/phone_fill.svg
+  s_6c5290694a2c20::t_10d600106b886f 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/phone_fill_1.svg
+  s_6c5290694a2c20::t_ba147a14866754 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/play_fill.svg
+  s_6c5290694a2c20::t_b615033d088f37 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/project_fill.svg
+  s_6c5290694a2c20::t_ea9519471410e5 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/qrcode.svg
+  s_6c5290694a2c20::t_27850f3c655d36 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/r_circle_fill.svg
+  s_6c5290694a2c20::t_dab36b2263ee76 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/simcard_fill.svg
+  s_6c5290694a2c20::t_c77cca038b3080 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/staircase_badge_clock_fill.svg
+  s_6c5290694a2c20::t_48e3fc0bc900dc 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/stopwatch_fill.svg
+  s_6c5290694a2c20::t_1c59a97675e514 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/sun_max.svg
+  s_6c5290694a2c20::t_130f5a2b3117f4 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/thermometer_snowflake.svg
+  s_6c5290694a2c20::t_cb59041ee9f9a7 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/thermometer_sun_fill.svg
+  s_6c5290694a2c20::t_d9127697702bbb 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/thunder_storm.svg
+  s_6c5290694a2c20::t_303f5862484b3b 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/tram_fill.svg
+  s_6c5290694a2c20::t_85f8896628c5a3 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/typhoon_fill.svg
+  s_6c5290694a2c20::t_75cccde7698b8a 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/video_fill.svg
+  s_6c5290694a2c20::t_73505de0224209 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/wifi.svg
+  s_6c5290694a2c20::t_7326476b7985d7 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/worldclock_fill_2.svg
+  s_6c5290694a2c20::t_8af8b4088f6e19 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/media/z_alarm_fill.svg
+  s_6c5290694a2c20::t_4d952829563b3e 1-2
+debug_tools/a2ui_render/entry/src/main/resources/base/profile/backup_config.json
+  s_6c5290694a2c20::t_9d76b6de2da929 2
+debug_tools/a2ui_render/entry/src/main/resources/base/profile/main_pages.json
+  s_6c5290694a2c20::t_333d24c5065be9 2-4
+debug_tools/a2ui_render/entry/src/main/resources/dark/element/color.json
+  s_6c5290694a2c20::t_84d906ab2dd1c1 1-8
+debug_tools/a2ui_render/entry/src/main/resources/rawfile/test.json
+  s_6c5290694a2c20::t_298d0819f04d2a 1-3
+debug_tools/a2ui_render/entry/src/mock/mock-config.json5
+  s_6c5290694a2c20::t_a6376c66fbb297 2
+debug_tools/a2ui_render/entry/src/ohosTest/ets/test/Ability.test.ets
+  s_6c5290694a2c20::t_6adccffc245fd4 1-35
+debug_tools/a2ui_render/entry/src/ohosTest/ets/test/List.test.ets
+  s_6c5290694a2c20::t_22eb3d8fc7c20b 1-5
+debug_tools/a2ui_render/entry/src/ohosTest/module.json5
+  s_6c5290694a2c20::t_254c325bc80b19 2-10
+debug_tools/a2ui_render/entry/src/test/List.test.ets
+  s_6c5290694a2c20::t_46200a206b2f1f 1-5
+debug_tools/a2ui_render/entry/src/test/LocalUnit.test.ets
+  s_6c5290694a2c20::t_773cc37b6fda7c 1-51
+debug_tools/a2ui_render/hvigor/hvigor-config.json5
+  s_6c5290694a2c20::t_cc48373eb7f212 2-3,5-11,13-14,16-17,19-21
+debug_tools/a2ui_render/hvigorfile.ts
+  s_6c5290694a2c20::t_edc9fc116ecef0 1-6
+debug_tools/a2ui_render/oh-package-lock.json5
+  s_6c5290694a2c20::t_ca222ff4569be8 2-18,20-25,27-32,34-35
+debug_tools/a2ui_render/oh-package.json5
+  s_6c5290694a2c20::t_f93e4223c4d0b5 1-12
+debug_tools/a2ui_render/scripts/run-a2ui-batch.ps1
+  s_6c5290694a2c20::t_080f4cbcbeadd2 1-461
+debug_tools/batch_testing/README.md
+  s_6c5290694a2c20::t_f46280848b3b91 6-8,32,42-55,57,111-115,117-119
+debug_tools/batch_testing/api.py
+  s_6c5290694a2c20::t_6ba433d4b8819a 18,59-65,130-144,153,170-172,194,199,241,291-297,307,346,361,466
+debug_tools/batch_testing/artifacts.py
+  s_6c5290694a2c20::t_0b0ddc777e288a 19-39,45-46,51-59,78-80
+debug_tools/batch_testing/device_capture.py
+  s_6c5290694a2c20::t_5b523016c142f6 8
+debug_tools/batch_testing/managed_config.py
+  s_6c5290694a2c20::t_cc7eaceec62188 1-418
+debug_tools/batch_testing/metrics.py
+  s_6c5290694a2c20::t_051202f8661df4 1-423
+debug_tools/batch_testing/postprocess.py
+  s_6c5290694a2c20::t_d095c3c14fb8e5 53,58,66,72,76-80,111-120,156-157,161-163,172-176,181-182,385-448,475-478,487-493,545-546,548-551,561-567,1148-1194,1329-1331,1348-1349,1360-1361
+debug_tools/batch_testing/runner.py
+  s_6c5290694a2c20::t_c48c2c3bb97d70 9,28,30-36,40,59,139-140,554,557-564,577,584-593,598,610,612,615-658,675-676,678,696,704-706,708,719,733,795-796,827,847,849-871,904,914-922,931,934-935,942-947,949,956,975,977,981,987-1025,1027-1034,1072-1073,1092-1122,1126
+debug_tools/batch_testing/service_manager.py
+  s_6c5290694a2c20::t_ca1d9c05f258da 20-28,32-36,41,47-48,51-52,55-56,59-62,71,75,79-91,95-111,115,119,121-122,131,138,142,146,150-154,158-162,165-175,201,230-241,248,252,259-265,295,347,360-361
+debug_tools/batch_testing/task_manager.py
+  s_6c5290694a2c20::t_c981ba4d6d85ca 18-19,26-27,92-93,99-101,190,207,230-238,293-303,370-373,375,381,383,385,389-390,415-417,420-422,429-443,449-457,461-462,465-486,522-533,535-542,568,655-662,664-671,673,706,723,725-735
+debug_tools/batch_testing/trace_semantics.py
+  s_6c5290694a2c20::t_772e5efc76deac 4-17,62-79,126,153-168
+debug_tools/batch_testing/trace_view.py
+  s_6c5290694a2c20::t_e6b420ff45ed48 7,134-139,145-146
+debug_tools/card_renderer/api.py
+  s_6c5290694a2c20::t_9de84acfbe0753 5,26-50,62-65,71,73,76-79,86-104
+debug_tools/card_renderer/asset-routes.ts
+  s_6c5290694a2c20::t_cb3666592bc399 1-48,50-54,56-60,62
+debug_tools/card_renderer/assets/fonts/harmonyos/harmonyos.css
+  s_6c5290694a2c20::t_5ba556b5515246 1-87
+debug_tools/card_renderer/fixtures/a2ui-weather-cities.jsonl
+  s_6c5290694a2c20::t_8499f5e4a3fee8 1-3
+debug_tools/card_renderer/frontend/src/CardRenderer.tsx
+  s_6c5290694a2c20::t_0bb1ee29c450cd 52,75-89,199
+debug_tools/card_renderer/frontend/src/parser.ts
+  s_6c5290694a2c20::t_b717b2fe278363 335-337,574-575,592,595-596
+debug_tools/card_renderer/frontend/src/styles.css
+  s_6c5290694a2c20::t_b3459968e3feb2 148
+debug_tools/card_renderer/frontend/tests/badge-intrinsic-width.test.tsx
+  s_6c5290694a2c20::t_15708fbc8fdcfe 1-24
+debug_tools/card_renderer/frontend/tests/parser.test.ts
+  s_6c5290694a2c20::t_3cfc64068718ec 31-41
+debug_tools/card_renderer/frontend/tests/python-conversion.test.ts
+  s_6c5290694a2c20::t_c9c71c0e166b26 2,18-30,67-72
+debug_tools/card_renderer/frontend/tests/render-preview.test.tsx
+  s_6c5290694a2c20::t_27306c3ecf332a 35-60
+debug_tools/card_renderer/frontend/tests/text-overflow.test.tsx
+  s_6c5290694a2c20::t_7648211a3f0999 29-34
+debug_tools/card_renderer/frontend/vite.config.ts
+  s_6c5290694a2c20::t_82d185173d0d03 1,3,6
+debug_tools/card_renderer/runtime/SOURCE.md
+  s_6c5290694a2c20::t_a7696aae44233e 18-21,47,76,98,139-156
+debug_tools/card_renderer/runtime/components/src/extended/ExtendedText.tsx
+  s_6c5290694a2c20::t_5b144430f10216 133-134
+debug_tools/card_renderer/runtime/components/src/extended/common-styles.ts
+  s_6c5290694a2c20::t_e882d558402733 120
+debug_tools/card_renderer/runtime/components/src/extended/complete-text.ts
+  s_6c5290694a2c20::t_4d62d4a16768b9 31
+debug_tools/card_renderer/runtime/scripts/sync-runtime.mjs
+  s_6c5290694a2c20::t_693d55d0afc5c8 41-44,57
+debug_tools/debug_tool.yaml.example
+  s_6c5290694a2c20::t_3e783dc7adda5a 1-49,54,56-58,60,62,64-211,213,215,217,219,221,223,225,228,230,232
+debug_tools/device_debug/__init__.py
+  s_6c5290694a2c20::t_47562d86f9c50e 1
+debug_tools/device_debug/api.py
+  s_6c5290694a2c20::t_8793b503a4f711 1-185
+debug_tools/device_debug/commands.py
+  s_6c5290694a2c20::t_1f314c5c399d5c 1-2,5,7,10-15,18-21,24-25,28-91
+debug_tools/device_debug/config.py
+  s_6c5290694a2c20::t_0559563e80bc7e 1-2,5-8,11-12,14-126,128,130-191,193-196,198-224,226-253
+debug_tools/device_debug/conversion.py
+  s_6c5290694a2c20::t_135c872e08c58c 1-54
+debug_tools/device_debug/devices.py
+  s_6c5290694a2c20::t_b8e498315a608c 1-2,5-7,9-16,20-21,23-69,71,73-74,76-82,84-95,97-100,102-112,114-145,147-152,154-190,192-199,201-202,204-208,211-224,226,228-286,288-419
+debug_tools/device_debug/jobs.py
+  s_6c5290694a2c20::t_4dbf8d1bef5d66 1-2,5,7-10,13-22,24-26,28-30,32-133,135-173
+debug_tools/device_debug/locks.py
+  s_6c5290694a2c20::t_841f5a174fdb59 1-19
+debug_tools/device_debug/runner.py
+  s_6c5290694a2c20::t_f5d40cef62d654 1,5-7,9-13,17-75,77-83,85,87-108,110-173,175-194,196-201,203-228,230-275,277-324,326-365,368-386,388-395,397-418,420-484,486-587
+debug_tools/dist/assets/index-DRurRpwQ.css
+  s_6c5290694a2c20::t_09c358a1fdaded 1
+debug_tools/dist/assets/index-qomYBFC5.js
+  s_6c5290694a2c20::t_db07c52762d343 1,9,17,25,33-34,37-38,40,49,58,67-84,87
+debug_tools/dist/index.html
+  s_6c5290694a2c20::t_192f0a960a36b8 8-9,13
+debug_tools/end_to_end_debug/README.md
+  s_6c5290694a2c20::t_0f035e828e3304 26-32,51,56,58,64
+debug_tools/end_to_end_debug/backend/debug_agent/config.py
+  s_6c5290694a2c20::t_e8b6236ee88906 3,14-19,127-130,181-184,190,194,208,224-225,241,243-250,252-257,261,265,325-332
+debug_tools/end_to_end_debug/backend/debug_agent/upstream_ws_client.py
+  s_6c5290694a2c20::t_bd52a9751aba42 19-22,43-56,216
+debug_tools/end_to_end_debug/backend/server.py
+  s_6c5290694a2c20::t_93c5c8fae84342 23,75,85
+debug_tools/file_io.py
+  s_6c5290694a2c20::t_fad4474a5d48ae 1-2,5-8,11-13,16-19,21-58
+debug_tools/interface_debug/frontend/src/parser.ts
+  s_6c5290694a2c20::t_66988eca3cd3c0 237-245
+debug_tools/interface_debug/frontend/tests/parser.test.ts
+  s_6c5290694a2c20::t_a43ad6cd118694 104-115
+debug_tools/paths.py
+  s_6c5290694a2c20::t_9d9be81f5f0459 16-18
+debug_tools/platform/src/App.tsx
+  s_6c5290694a2c20::t_73d62c28ecafef 2,9,26,79
+debug_tools/platform/src/GalleryDocument.test.ts
+  s_6c5290694a2c20::t_9bfdac47b08370 1-85
+debug_tools/platform/src/batchApi.ts
+  s_6c5290694a2c20::t_bd47b6a0a3b69b 19-56,76,107-108,118-119,128-131,365-367,409-410,412-414,417-436
+debug_tools/platform/src/components/BackendStatusWidget.tsx
+  s_6c5290694a2c20::t_f1ce1a095b2a0a 21,45,47,52,85-88,97,100
+debug_tools/platform/src/components/BatchMetrics.test.tsx
+  s_6c5290694a2c20::t_6efd38b4da7249 1-26,28-70
+debug_tools/platform/src/components/BatchMetrics.tsx
+  s_6c5290694a2c20::t_f9573a14953276 1-88
+debug_tools/platform/src/components/BatchRetryParameters.test.tsx
+  s_6c5290694a2c20::t_42ade793d3044a 1-109
+debug_tools/platform/src/components/BatchRetryParameters.tsx
+  s_6c5290694a2c20::t_5e59d7f4a1b64e 1,3-17,19-23,25-66,68-103
+debug_tools/platform/src/components/PostprocessArtifactView.test.tsx
+  s_6c5290694a2c20::t_44133cab6c79cf 1,7,91-117
+debug_tools/platform/src/components/PostprocessArtifactView.tsx
+  s_6c5290694a2c20::t_bf0f62a5d33dff 159,241
+debug_tools/platform/src/components/PostprocessPanel.test.tsx
+  s_6c5290694a2c20::t_51eeae0cf77666 1-2,11-23,29,31-33,58,60,68,72-103,125-176,197-198,207,231-232,243,264-341
+debug_tools/platform/src/components/PostprocessPanel.tsx
+  s_6c5290694a2c20::t_0cedcca5e9031a 10,33,35-49,65-94,98-107,140-141,208-209,216-227,237,257-281,286,294,304
+debug_tools/platform/src/components/ServiceConfigInput.tsx
+  s_6c5290694a2c20::t_db6e410b8f4571 1-2,4-9,11-23,25-48
+debug_tools/platform/src/components/SettingsPanel.test.tsx
+  s_6c5290694a2c20::t_6603d293d7e7da 1,5-6,9-39,41-62,65-66,68-131
+debug_tools/platform/src/components/SettingsPanel.tsx
+  s_6c5290694a2c20::t_11c16f9e859796 2,5-7,10-15,17-18,20,22-33,35-38,40-55,58,60-65,68-75,77-105
+debug_tools/platform/src/components/ToolchainStatusWidget.test.tsx
+  s_6c5290694a2c20::t_36b83eb0b95659 1-30
+debug_tools/platform/src/components/ToolchainStatusWidget.tsx
+  s_6c5290694a2c20::t_cee546c1fb1939 1-33,35-75,77-78
+debug_tools/platform/src/components/TraceViewer.tsx
+  s_6c5290694a2c20::t_7b7380d14398f1 5
+debug_tools/platform/src/config.ts
+  s_6c5290694a2c20::t_3f84d819509b1b 10,111
+debug_tools/platform/src/deviceApi.ts
+  s_6c5290694a2c20::t_0a12d7f2d48558 1-49
+debug_tools/platform/src/routes/BatchRoute.test.tsx
+  s_6c5290694a2c20::t_6249cf4103ae56 37-94
+debug_tools/platform/src/routes/BatchRoute.tsx
+  s_6c5290694a2c20::t_e8b744c1ee9146 18-19,63-68,79,131-135,137,190,192-195,245-246,249-291,294
+debug_tools/platform/src/routes/BatchTaskCenterRoute.test.tsx
+  s_6c5290694a2c20::t_9230ec38b893d4 1,12-54
+debug_tools/platform/src/routes/BatchTaskCenterRoute.tsx
+  s_6c5290694a2c20::t_5951440d5345ce 1,50-66,150-152,204-206
+debug_tools/platform/src/routes/BatchTaskCreateRoute.test.tsx
+  s_6c5290694a2c20::t_b7c2c97273bcac 6,16,20,40-47,58-60
+debug_tools/platform/src/routes/BatchTaskCreateRoute.tsx
+  s_6c5290694a2c20::t_0e463e420f8a79 12-13,26-28,37,68,70,107-118,121
+debug_tools/platform/src/routes/DeviceRenderRoute.test.tsx
+  s_6c5290694a2c20::t_02a3d116b1f9cc 1-154
+debug_tools/platform/src/routes/DeviceRenderRoute.tsx
+  s_6c5290694a2c20::t_604f37ad125d74 1-224
+debug_tools/platform/src/routes/PostprocessDashboardRoute.test.tsx
+  s_6c5290694a2c20::t_6d24297a8dbc32 13-42
+debug_tools/platform/src/routes/QualityRoute.tsx
+  s_6c5290694a2c20::t_28a6a4c4030f26 59,62,110-111
+debug_tools/platform/src/routes/device-render.css
+  s_6c5290694a2c20::t_e5918bfdcbfe27 1-57
+debug_tools/platform/src/serviceConfig.testFixture.ts
+  s_6c5290694a2c20::t_d470b8c443e03d 1-29
+debug_tools/platform/src/serviceConfig.ts
+  s_6c5290694a2c20::t_37ecc02176ff20 2
+debug_tools/platform/src/styles.css
+  s_6c5290694a2c20::t_e21a26d76dd53a 203,208-222,275,281-306,311,552-553,690
+debug_tools/platform/vite.config.ts
+  s_6c5290694a2c20::t_72c351ade53bba 1,4,9-12,57-60
+debug_tools/postprocess_plugins/README.md
+  s_6c5290694a2c20::t_d0cc2477c1fe41 21,23,27,49-50,53-66,69-77,79,86-87,89-107,150-152,157-158
+debug_tools/postprocess_plugins/_io.py
+  s_6c5290694a2c20::t_14039caff279fd 9-10,15
+debug_tools/postprocess_plugins/browser_capture/plugin.json
+  s_6c5290694a2c20::t_4ab7e95f915670 2-15,17-44,46,48
+debug_tools/postprocess_plugins/component-recall/plugin.json
+  s_6c5290694a2c20::t_51d8c57daea6ea 5,8-10
+debug_tools/postprocess_plugins/data_analysis/README.md
+  s_6c5290694a2c20::t_e9232c3f3eb0c6 1-73
+debug_tools/postprocess_plugins/data_analysis/__init__.py
+  s_6c5290694a2c20::t_6bb675f556057b 1
+debug_tools/postprocess_plugins/data_analysis/metrics.py
+  s_6c5290694a2c20::t_7e77e003bde4ab 1-2,5-13,15,18-84,87-117,119-129,131-198,201-204,206-276
+debug_tools/postprocess_plugins/data_analysis/plugin.json
+  s_6c5290694a2c20::t_1768b07509da63 2-14,16-20,23-27,30-35,38-43,46-51
+debug_tools/postprocess_plugins/data_analysis/plugin.py
+  s_6c5290694a2c20::t_3e8a27395c8cc6 1-142
+debug_tools/postprocess_plugins/data_analysis/usage.py
+  s_6c5290694a2c20::t_2d720c0f3e4656 1-2,6-7,10,13-17,20-24,27-30,33-54,56-58,60-61,63-132,134-149,152-179,181-217
+debug_tools/postprocess_plugins/device_capture/__init__.py
+  s_6c5290694a2c20::t_ec86f33856e57e 3-4,6
+debug_tools/postprocess_plugins/device_capture/plugin.json
+  s_6c5290694a2c20::t_35c9e528c3a979 3-6,10-16,25-32,63-81
+debug_tools/postprocess_plugins/device_capture/plugin.py
+  s_6c5290694a2c20::t_fab8732748bce8 1,6,8,10,14-17,23,29,32-45,51-52,55-78,90,95,105,113,119,134-156,161-163,165-182,184-190,192-203,205,208-209,214-216,223,231-345
+debug_tools/postprocess_plugins/device_gallery/plugin.json
+  s_6c5290694a2c20::t_2cd3d2a97aaed2 2-9,11-39,41-42,44-46,48-49,51
+debug_tools/postprocess_plugins/gallery/capture.py
+  s_6c5290694a2c20::t_c7d007fdc2cb63 1-2,6-7,9,12-78
+debug_tools/postprocess_plugins/gallery/plugin.json
+  s_6c5290694a2c20::t_0735318cccbb69 3-12,15,20,22-23,30-31
+debug_tools/postprocess_plugins/gallery/plugin.py
+  s_6c5290694a2c20::t_4f3ed7abb4d4b9 19-21,41,46,205,209-212,214-216
+debug_tools/postprocess_plugins/gallery/report.py
+  s_6c5290694a2c20::t_991b45bcd1ad25 1-2,5-6,8-9,12,14,17-21,24-50,52-82,85-92,94-172
+debug_tools/postprocess_plugins/gallery/templates/report.html
+  s_6c5290694a2c20::t_428fe2c459d51d 1-117
+debug_tools/postprocess_plugins/quality-score/README.md
+  s_6c5290694a2c20::t_5133dccdff61d7 32,37
+debug_tools/postprocess_plugins/quality-score/plugin.json
+  s_6c5290694a2c20::t_bc5b216de5c762 5,8
+debug_tools/postprocess_plugins/quality-score/plugin.py
+  s_6c5290694a2c20::t_ddcb52632280e4 95,134,138,149,163,182
+debug_tools/postprocess_plugins/validation_failure_gallery/history.py
+  s_6c5290694a2c20::t_a9d1a195ac9581 17-19,288,293,697,699-702,704-706
+debug_tools/postprocess_plugins/validation_failure_gallery/plugin.json
+  s_6c5290694a2c20::t_127728edcd244b 5,8-10
+debug_tools/postprocess_plugins/validation_failure_gallery/plugin.py
+  s_6c5290694a2c20::t_906a5d03843994 16-18,280,285,502,504-507,509-511
+debug_tools/runtime_environment.py
+  s_6c5290694a2c20::t_9feda4d9811362 1-2,5-10,14,16,18-19,22-23,26-37,39-41,43-56,59-60,62-87,91-93,95-100,103-107,111-115,118-185,188-191,194-208
+debug_tools/scripts/check_postprocess_gallery.mjs
+  s_6c5290694a2c20::t_e329e3406724ee 1-48
+debug_tools/scripts/sync_assets.py
+  s_6c5290694a2c20::t_b38e42656a695f 1-2,6,8-10,12-17,20-24,27-32,34-86,88-147
+debug_tools/static_site.py
+  s_6c5290694a2c20::t_953f0c28d37fc9 12-13,16-18,55
+debug_tools/subprocesses.py
+  s_6c5290694a2c20::t_80e4aa04f9854d 1-106
+debug_tools/批跑失败案例分析指南.md
+  s_6c5290694a2c20::t_bba53648ff8351 1-54,57-58,60,62-66,68-70,72,74,76,79-97,100-101,103,105,107-112,114-116,118,120-123,125,127,129-138,140-143,145-146,148,150,152-156,158,160-255,258-265,268-269,271-273,275,277-278,280-288,290-291
+debug_tools/素材同步记录.md
+  s_6c5290694a2c20::t_0bfd326b9f1271 1-14
+debug_tools/调试平台技术方案.md
+  s_6c5290694a2c20::t_37bed1c8d35414 8-55,63,117-119,125-136,147,171-173,183,223-231,261-265,284,292-299,304,313,324-335,342-343,350-384,390-400,402-414,421-426,462-473
+debug_tools/调试平台运行规范.md
+  s_6c5290694a2c20::t_38839197ae908f 8-33,36-44,68-89,96-145,148-150,161-170,203-204,215-220,240-266,273,276,284,289,294,315,319-325,328,375-411
+docs/compact-dsl-validator-refactor/Compact_DSL校验器重构方案_v3.md
+  s_6c5290694a2c20::t_7c69ffaf5a56fe 28-32,50,84-103,183,312,489-494
+docs/compact-dsl-validator-refactor/Compact_DSL现有校验规则分类清单_v1.md
+  s_6c5290694a2c20::t_6737abf68e51ed 3-18,30-91,113,147-182,237,541,543,549,551,947-954,957-961,1121,1171-1180
+docs/plans/2026-10-13-compact-semantic-2x4-results.md
+  s_6c5290694a2c20::t_23358e8c92eb15 1-131
+docs/plans/2026-10-13-compact-semantic-2x4.md
+  s_6c5290694a2c20::t_80cd3442e0f762 1-31
+docs/plans/2026-10-14-2x4-casewise-q57.md
+  s_6c5290694a2c20::t_cca0c8b0ba71ce 1-91
+docs/plans/2026-10-14-2x4-casewise-q58.md
+  s_6c5290694a2c20::t_e55006a6b5f5f2 1-79
+docs/plans/2026-10-14-2x4-casewise-q59.md
+  s_6c5290694a2c20::t_f5cbaaeaf3e979 1-18
+docs/plans/2026-10-14-2x4-casewise-q61.md
+  s_6c5290694a2c20::t_53df4e5474a4fc 1-42
+docs/plans/2026-10-14-2x4-casewise-q65.md
+  s_6c5290694a2c20::t_e8f59bdcf8e38b 1-67
+docs/plans/2026-10-14-pr522-files-and-validation.md
+  s_6c5290694a2c20::t_4e7181ac2c8b3a 1-99
+docs/plans/2026-10-14-pr522-main-integration.md
+  s_6c5290694a2c20::t_c8d321e9e89de6 1-60
+docs/plans/2026-10-16-baseline-protocol-fix.md
+  s_6c5290694a2c20::t_24f7a9d98b6c2e 1,3,5-8,10,12-18,20,22-26
+docs/plans/2026-10-16-prompt-compression-pr568-local.md
+  s_6c5290694a2c20::t_930b750a511578 1-62
+docs/plans/2026-10-16-skill-boundaries-compact.md
+  s_6c5290694a2c20::t_fddbe1b60a7764 1-57
+docs/plans/2026-10-16-textblock-equal-height-protocol-fix.md
+  s_6c5290694a2c20::t_ad08215bb0116a 1-42
+docs/plans/2026-10-19-minimal-closed-templates.md
+  s_6c5290694a2c20::t_eacc0247d84453 1-35
+docs/plans/2026-10-19-minimal-structural-ids.md
+  s_6c5290694a2c20::t_5c17b80cf1c4b6 1-57
+docs/plans/2026-10-19-peer-infoblock-stability.md
+  s_6c5290694a2c20::t_3521573c4276f5 1-63
+docs/多轮卡片编辑开发方案.md
+  s_6c5290694a2c20::t_c1d781f95de8b8 5-17
+docs/校验、重试与兜底机制入门指南.md
+  s_6c5290694a2c20::t_1ddae0af293d2b 461,463,466-473,476-478
+pyproject.toml
+  s_6c5290694a2c20::t_fd14214055f734 7-8,21-41
+render/docs/fusion-compatibility.md
+  s_6c5290694a2c20::t_6b24c444ec3f7e 12
+render/genui-sdk/components/src/extended/ExtendedText.tsx
+  s_6c5290694a2c20::t_519e7fb3880bc5 133-134
+render/genui-sdk/components/src/extended/common-styles.ts
+  s_6c5290694a2c20::t_8619425f4ecc2c 120
+render/genui-sdk/components/src/extended/complete-text.ts
+  s_6c5290694a2c20::t_b6b989f111288e 31
+render/genui-sdk/test-renderer/package.json
+  s_6c5290694a2c20::t_95d05592277cec 10-11
+render/genui-sdk/test-renderer/src/measure-theme.tsx
+  s_6c5290694a2c20::t_5582fd65d71368 1-8,10-89,91-98,100-106,108-114,116-119,121-159,161-198,200-214,216-229,232
+render/genui-sdk/test-renderer/src/theme-text-bounds.test.ts
+  s_6c5290694a2c20::t_5b518217a15ade 1-43
+render/genui-sdk/test-renderer/src/theme-text-bounds.ts
+  s_6c5290694a2c20::t_4c1f967f585968 1-44,46-48,50-55
+render/genui-sdk/test-renderer/src/theme-text-measurement.test.ts
+  s_6c5290694a2c20::t_3a011237f05f38 1-193
+render/platform/README.md
+  s_6c5290694a2c20::t_77b83f172c303d 24-26
+render/platform/fixtures/high-level-component-examples.json
+  s_6c5290694a2c20::t_368831e4e4ba81 88-89
+render/platform/lib/compact-components.ts
+  s_6c5290694a2c20::t_1309ef2acd2b05 3-4,253-292,507-668,675,743-745,770,772-774,779-781,785-788,790,804-805,817,821-827,832,1658-1683,1686,1689-1708,1710,1715-1716,1719-1751,1803,1805,1813-1819,1821,1824-1837,1841,1855-1857,1874-1885,1923-1927,1931-1933,1935-1938,1940-1941,1948-1957
+render/platform/lib/mini-renderer.ts
+  s_6c5290694a2c20::t_a67d8b3cb173a1 20-180,321-325,329-333,341-343
+render/platform/scripts/export-runner-results.ts
+  s_6c5290694a2c20::t_cc4b5bdd6494a1 1-4,8,23-24,33,42-44,49-58,63,70-95,119-179,260-382,389,393,396-406,413,420,424-463,465-482,484-488,501,503-521,531,534-545,553-554,559-561,568,573,577,581-582,584,588,596,600-607,612,617,619,659-666,673,675,689,693,697,710,728-736,740-743,750-751
+render/platform/src/component-gallery-data.ts
+  s_6c5290694a2c20::t_fd45c0aa4f87e6 517-518,525
+render/platform/tests/fusion-compatibility.test.ts
+  s_6c5290694a2c20::t_c2c287cf1390d3 87-114
+render/platform/tests/high-level-components.test.ts
+  s_6c5290694a2c20::t_63326421d7f122 65,156-164,371,411-451,490-562,584,592
+render/platform/tests/python-converter.test.ts
+  s_6c5290694a2c20::t_3f2ab68e5f6e89 84-102
+render/shared/compact-region-layout.ts
+  s_6c5290694a2c20::t_3c5f9f4a446397 94,168-171,284-290
+resources/base/media/ic_calender.svg
+  s_6c5290694a2c20::t_ad789220833188 1-10
+resources/base/media/ic_sun_monochrome.svg
+  s_6c5290694a2c20::t_344e952cd8ab11 1-4
+skills/harmony-card-generation-online/SKILL.md
+  s_6c5290694a2c20::t_78178c03e4fd4e 3,42,97-98
+skills/harmony-card-generation-online/references/examples.md
+  s_6c5290694a2c20::t_c00f01d4133f69 215-235
+skills/harmony-card-generation-online/references/runtime-guide.md
+  s_6c5290694a2c20::t_e32349a806844d 103-104,116-135,148-150
+uv.lock
+  s_6c5290694a2c20::t_33c22bf0fa24f3 177-178,190-194,203-211,324-349,359-367,437-455,751-780,806-814,846-857,991,1016
+widget_service/.env.example
+  s_6c5290694a2c20::t_f638c394ffb652 34,41-42,51-61,113-114,116-118
+widget_service/README.md
+  s_6c5290694a2c20::t_b91473004e5e0a 18-22,26-27
+widget_service/cloud/api/routes.py
+  s_6c5290694a2c20::t_a1cedf9e5b3c29 52,702-706,719,1014,1083-1088
+widget_service/cloud/api/schemas.py
+  s_6c5290694a2c20::t_37e6d251dfc67b 16,158,275-276
+widget_service/cloud/config/config.py
+  s_6c5290694a2c20::t_3ae27af9e933d6 70-81,88,169-171,195-208,242-251,279-281,292,378
+widget_service/cloud/config/default_config.yaml
+  s_6c5290694a2c20::t_909fc553d93860 3-6,30-36,43,50-51,81,88-94,104
+widget_service/cloud/custom/a2ui_model_client.py
+  s_6c5290694a2c20::t_700c6ea1456060 37,104,166-175,315-330,374-381
+widget_service/cloud/custom/aliyun_bailian_transport.py
+  s_6c5290694a2c20::t_98a3f52e2e5698 1,3,5-9,12-30
+widget_service/cloud/custom/deepseek_official_http_transport.py
+  s_6c5290694a2c20::t_4f34d6e8f0360b 12-19,40,67-71,77,83-85,88,92,94-96,107,135-179,193-199
+widget_service/cloud/custom/model_runtime.py
+  s_6c5290694a2c20::t_800bd92241888b 13,74,85-87,102,222-224
+widget_service/cloud/custom/model_transport.py
+  s_6c5290694a2c20::t_6530283cd64bdf 14
+widget_service/cloud/custom/openai_compatible_http_transport.py
+  s_6c5290694a2c20::t_7e4d78bc199037 1-3,6-8,10,12,14-19,22-24,26-34,37-38,40-56,58-61,63-96,98-108,110-116,118-121,123-148,150-187,189-198,200-242,245-254,256-264,266-279
+widget_service/cloud/data/capabilities/app-11.7.7.300_rom-7.0/asset_capabilities.json
+  s_6c5290694a2c20::t_c6e3c746cdc852 1,469,726,728-730,837,861,873,897,921,981,1066,1079,1092,1105,1118,1131,1144,1309,1311-1313,1316,1322,1324-1339,1342-1343,1347
+widget_service/cloud/data/capabilities/app-11.7.7.300_rom-7.0/event_capabilities.json
+  s_6c5290694a2c20::t_f26be932c141bf 955,970,1004,2147,2162,2196,2225,2240,2274,2303,2318,2352
+widget_service/cloud/data/capabilities/registry_ranges.json
+  s_6c5290694a2c20::t_d3310dc2391108 8
+widget_service/cloud/data/post_layout_themes.json
+  s_6c5290694a2c20::t_eb0f2c6f177050 1-19,21-22,25-31,33-36,38-74,76-87,89-97,99-107,109-112,114-148,150-152,154-156,160-192,194-196,198-200,204-236,238-240,242-244,248-277,279-281,283-285,289-317,319-321,323-325,329-357,359-361,363-365,369-384,386-399,401-402,404-406,410-425,427-440,442-443,445-447,451-466,468-481,483-484,486-488,492-507,509-522,524-525,527-551,554-555,557-633,635-645,647-648,650-652,654,656-668,670-714,717-795,797-798,800-802,805-851,853-938,940-982,984-1028,1031-1074,1076-1117,1119-1135,1137-1138,1140-1211,1215-1245,1247-1299,1301-1303,1305-1317,1319-1320,1322-1393,1397-1424,1426,1429-1481,1483-1485,1487-1499,1501-1540,1542-1601,1603-1604
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/README.md
+  s_6c5290694a2c20::t_26237823be9d9e 34
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/argument_repair.md
+  s_6c5290694a2c20::t_3b6245762bf2f3 1-5
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/combinations/2x2.md
+  s_6c5290694a2c20::t_65fa64df356b64 1-4,6,8-9,11-16,18,20,22-55
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/combinations/2x4.md
+  s_6c5290694a2c20::t_668ead85e2a3b9 1-4,6,9,11,13-20
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/combinations/common.md
+  s_6c5290694a2c20::t_6fbd47497023de 1-4,6,9,11,15-35
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/components/2x2.md
+  s_6c5290694a2c20::t_94cb174c4bb6fa 1-4,6,8-9,11-22,24-33,35-36,38,40-43,45-47,49-53,55,57,59,61-86,89,92-105,108,111-114,130
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/components/2x4.md
+  s_6c5290694a2c20::t_11ab1a987b6ba7 1-4,6,8-9,11-25,27-28,30,32,34-36,38-40,42,44,46,48-49,51,53-104,121,127-132,138,149,152,159,164-165,167,172,176
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/components/common.md
+  s_6c5290694a2c20::t_d7e11d22d8c621 1-4,6,18,27-34,38,40,42-44,46,63-64,74,76,93,97-98,103-104,120-122,128,133-135,164,168-175,185-190,194-195,198,201-203,206,210-217,219-221,227-229,241-242,244-247,252-253,257,259,265-267,283-286,288,290,298-302,304,337,353,362,371,403,420-425,430-431,449-454,460,479,492-494,499,515
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/composition.md
+  s_6c5290694a2c20::t_ac8d9e3048b2e5 1-4,6,9,11-12,16,18,20-25,27
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/core.md
+  s_6c5290694a2c20::t_8ef3d19caf20be 1-4,6,8,11-14,18,20,24,26,28,30,34,36-41,43-45,47,49-56,58,60-64,68,70,72-76,82-95,99,101,103,105,108,110-115,117,119-122,124,127,129,131-132,138-139,143,145-148
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/edit.md
+  s_6c5290694a2c20::t_c04da49fa41b05 1-5,64-65
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/fewshots/2x2.md
+  s_6c5290694a2c20::t_2879238d699c28 5,11-13,21,36,50-51,71-72,78-101,121-123,155-159,184-187,210-213,235-237,261-264,285-288,316-320,343-347,373-377,401-404,426-428
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/fewshots/2x4.md
+  s_6c5290694a2c20::t_f3d6b6a1445571 5,11-13,21,31-32,49,54,57-58,66-70,84,93-96,121,123-124,132-157,176-184,210-215,239-246,272-278,303-307,328-332,353-357
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/information/2x2.md
+  s_6c5290694a2c20::t_2bbb13104fd31e 1-4,6
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/information/2x4.md
+  s_6c5290694a2c20::t_a8713205ee1c1d 1-4,6
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/information/common.md
+  s_6c5290694a2c20::t_c69ed46a8e9226 1-4,6,8-22,24,26,28-31,33-37,39,41-53,55-56
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/layouts/2x2.md
+  s_6c5290694a2c20::t_f00239802ad174 1-4,6,8,10-11,13-88,90-92,94,96,98-99,101-103,105,107,109,112,115-118,120-123,126,129-131,133-134,137,140-141,144,147-149,151-152,155,158,160-164,166-169,172,175,178,181-183,185-186,189,192-193,196,199-206,209,212,215,218-220,222-225,228
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/layouts/2x4.md
+  s_6c5290694a2c20::t_9b19efdb1da169 1-4,6,8,11-15,17,19-24,26-32,34,36-91,93-95,97-98,100-102,104-105,107-109,111-113,115-117,119,121,123-125,128,131-133,136,139,142,145-146,148-150,152-153,156,159,161,163,165-169,171,173-176,178,181,184-187,190-192,195,197-199,201,203,205-206,208,210-213,216-218,221,223-224,226,228,230-234,236,238-245,247,250-251,254,256,258-261,263-267,269,271-272,274,277,280-284,286-293
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/layouts/common.md
+  s_6c5290694a2c20::t_97593addb3d1a6 1-4,6,9,11,15,19,21-25,27-29,33,39,43
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/manifest.yaml
+  s_6c5290694a2c20::t_56faf84f712522 188,207,231-234,297-300
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/plan.md
+  s_6c5290694a2c20::t_64145dd7d75862 1-4,6,8-9,11,13,15-84,86
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/prompt_source/repair.md
+  s_6c5290694a2c20::t_14e227c8ffaf89 1-4,6,8,10-11,13-14,16-19,21,23-110
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/runtime/layout-contracts-v1.json
+  s_6c5290694a2c20::t_a466bb49c31546 256-262,344-352,380-388
+widget_service/cloud/data/protocol_profiles/design-compact-dsl-fusion/runtime/visual-recipes-v1.json
+  s_6c5290694a2c20::t_5ac0a7c2cd1552 206-216,264,728,731,838-847,850-871,1086,1207,1629-1637,1642,1649-1658,1674-1683,1686-1700,1781-1823
+widget_service/cloud/data/protocol_profiles/widget-edit/EDIT_SYSTEM_PROMPT.md
+  s_6c5290694a2c20::t_27290a1208dee3 1,3,5-7,9,11,13-18,20-22,24,26-27,29,31-34,36-37,39,41-52,54,56-59,61,63,65-68,70,72-76
+widget_service/cloud/data/protocol_profiles/widget-edit/FEWSHOT_2x2.md
+  s_6c5290694a2c20::t_e21ab3ff70d489 1-351
+widget_service/cloud/data/protocol_profiles/widget-edit/FEWSHOT_2x4.md
+  s_6c5290694a2c20::t_3d9f9242a4163d 1-403
+widget_service/cloud/data/protocol_profiles/widget-edit/PROMPT.md
+  s_6c5290694a2c20::t_9099629bec31a8 1-1076
+widget_service/cloud/data/protocol_profiles/widget-edit/REPAIR_SYSTEM_PROMPT.md
+  s_6c5290694a2c20::t_308f658936d8b6 1-33
+widget_service/cloud/data/protocol_profiles/widget-edit/mock.design-compact-dsl-2x2.dat
+  s_6c5290694a2c20::t_a9498d98416f22 1-3
+widget_service/cloud/data/protocol_profiles/widget-edit/mock.design-compact-dsl-2x4.dat
+  s_6c5290694a2c20::t_8e3f374fa59e5e 1-3
+widget_service/cloud/data/protocol_profiles/widget-edit/protocol.json
+  s_6c5290694a2c20::t_814d218008f20c 2,4-7,9-11
+widget_service/cloud/data/protocol_profiles/widget-edit/provenance.json
+  s_6c5290694a2c20::t_2feb52aa69494a 2-3,5-8,11-14,17-20,23-26,29-32,35-38,41-44,47-50,53-56,59-62
+widget_service/cloud/data/validator_rules/compact/layout_overflow_tolerances.json
+  s_6c5290694a2c20::t_f013f57fb2f35f 2-8,10-11,13-16,18-19,21-24,26-27
+widget_service/cloud/data/validator_rules/compact/repair_hints.json
+  s_6c5290694a2c20::t_b8f72dc027ce64 7-8
+widget_service/cloud/fusion-runner/build_gallery.mjs
+  s_6c5290694a2c20::t_7462f4e5f9aa08 1-115
+widget_service/cloud/generate_dsl_from_task_spec.py
+  s_6c5290694a2c20::t_650b77cf8f3ca1 21,64,73-76
+widget_service/cloud/models/generation.py
+  s_6c5290694a2c20::t_53e5892e98f413 25-32
+widget_service/cloud/services/asset_url_mapper.py
+  s_6c5290694a2c20::t_7a67f5d66eaa39 88-91
+widget_service/cloud/services/card_validation/compact_validation/api.py
+  s_6c5290694a2c20::t_abd5ed44fae008 44-46,54,69,92-97,100-102,113-117,133-139,145-149,155,180-182,189-192,194-201,218-219
+widget_service/cloud/services/card_validation/compact_validation/context.py
+  s_6c5290694a2c20::t_06b1132661a4a2 41
+widget_service/cloud/services/card_validation/compact_validation/model_feedback.py
+  s_6c5290694a2c20::t_42ef27f166c6b4 6-7,12-189,273-278,286-447
+widget_service/cloud/services/card_validation/compact_validation/rule_catalog.py
+  s_6c5290694a2c20::t_ddf1d341cafafe 33-34
+widget_service/cloud/services/card_validation/compact_validation/semantic/asset_references.py
+  s_6c5290694a2c20::t_af6c495565d539 18
+widget_service/cloud/services/card_validation/compact_validation/semantic/display.py
+  s_6c5290694a2c20::t_15661606dc6a58 333,355-359,364-367,406-407,429-430
+widget_service/cloud/services/card_validation/compact_validation/semantic/effective.py
+  s_6c5290694a2c20::t_ee328be69c7dbe 19,129,137
+widget_service/cloud/services/card_validation/compact_validation/semantic/layout/assets.py
+  s_6c5290694a2c20::t_34cd32734d7138 14,20-21,27
+widget_service/cloud/services/card_validation/compact_validation/semantic/layout/geometry.py
+  s_6c5290694a2c20::t_79e3ef0ff1a5eb 16,21-39,46-47,49,51-52,83,93-120,127-128,138,143-177,265-300
+widget_service/cloud/services/card_validation/compact_validation/semantic/layout/horizontal.py
+  s_6c5290694a2c20::t_009b81b61527dc 1-404
+widget_service/cloud/services/card_validation/compact_validation/semantic/layout/overflow_tolerances.py
+  s_6c5290694a2c20::t_abdf09eea81faa 1-2,6-9,11-69,72-74,78-106,108-115,120-156,159-162
+widget_service/cloud/services/card_validation/compact_validation/semantic/layout/text_width.py
+  s_6c5290694a2c20::t_dfc5ed4b04e239 24,27,82-83,94,105-133
+widget_service/cloud/services/card_validation/compact_validation/semantic/plan_contracts.py
+  s_6c5290694a2c20::t_76160bb2dbe94d 15-16,21-66,72-73,78-85,89-119,153-159,161-162,198-199,209,223-226,253-254,267-268,270-273,395-397,500-504
+widget_service/cloud/services/card_validation/compact_validation/source_locations.py
+  s_6c5290694a2c20::t_29ed0836f3cb0b 51-58
+widget_service/cloud/services/card_validation/contrast_validator.py
+  s_6c5290694a2c20::t_0233d53443bf94 144-161,169,181,194,209-210,222,224-233,292
+widget_service/cloud/services/card_validation/effective_capability_validator.py
+  s_6c5290694a2c20::t_f70e40b85ef087 8-9,282-283
+widget_service/cloud/services/card_validation/pipeline.py
+  s_6c5290694a2c20::t_6274a4c62e21b8 18-19,80-81
+widget_service/cloud/services/card_validation/standard_plan_coverage.py
+  s_6c5290694a2c20::t_20273d3b979a2e 1-3,5,10-87,89-94,96-124,126-200,202-211
+widget_service/cloud/services/card_validation/theme_phase_validator.py
+  s_6c5290694a2c20::t_3527085f923355 1,3,5-28,32-39
+widget_service/cloud/services/card_validation/字段约束与演进记录.md
+  s_6c5290694a2c20::t_9b961cf0556d68 3-17,30-59,93,293-314,374-375,399-416,420-424,467-471,501-510
+widget_service/cloud/services/compact_component_bindings.py
+  s_6c5290694a2c20::t_9c3092139cd943 129-132
+widget_service/cloud/services/compact_component_runtime.py
+  s_6c5290694a2c20::t_914ee3ae8f6478 9,11,16-17,42-43,50-114,139-140,195,207-261
+widget_service/cloud/services/compact_component_semantics.py
+  s_6c5290694a2c20::t_7d0d7fffeb819b 23-36
+widget_service/cloud/services/compact_composition_context.py
+  s_6c5290694a2c20::t_ad5ee74c8de2ad 14-15,38-68
+widget_service/cloud/services/compact_composition_planner.py
+  s_6c5290694a2c20::t_2c30dbc7ae9c5e 13-17,20,99-101,735,744,750,911-912,957-959,964-974
+widget_service/cloud/services/compact_dsl_a2ui_converter.py
+  s_6c5290694a2c20::t_48fb8b1705f81c 60,78-80,109,389-390,393-422,454,472-494,546-547,560,585,663-665,783-784,787-791,805-817,819-869,1779,1781-1806,1963-1965,2027-2028,2186-2189,2291-2318
+widget_service/cloud/services/compact_dsl_interface_retry.py
+  s_6c5290694a2c20::t_50c303de91be4c 10,49,53-57,65-69,81,120
+widget_service/cloud/services/compact_high_level_components.py
+  s_6c5290694a2c20::t_295a2084b89a9d 17-18,21-28,82-83,94-98,110-117,129-132,134,229-240,266,298-302,304,336-340,426,429-434,456,465-472,478-480,628-629,665-666,668-669,707-708,710-761,766-776,778,784-785,789,791-795,797,799-803,824-827,847-859,861-865,867,870-876,878-888,890-893,905-934,1970-1974,2692,2864-2903,2906-2914,2917,2920-2924,2926,2930-2938,2945-2946,2949-2964,2971,2973,2979,2986-3023,3115-3119,3121-3122,3135,3137,3139-3143,3148-3150,3153,3155-3159,3161,3163-3166,3319-3320,3329-3330,3436,3467-3469
+widget_service/cloud/services/compact_layout_runtime.py
+  s_6c5290694a2c20::t_b885a8e9e10ce8 20,111,128-129,137-140,460-461,468-478
+widget_service/cloud/services/compact_outer_recomposition.py
+  s_6c5290694a2c20::t_8eb09df903bcab 10,12,16,32,102-110,112-113,115-116,119,131-134,144-145,153,160,162,238,240-241,248-253,259-260,285,293,306-307,335,341,350,355,357-360,364,371-379,385,390-392,397-398,418,436,502-546,583,588-589,591,594,605,607-617
+widget_service/cloud/services/compact_plan.py
+  s_6c5290694a2c20::t_ad63667e88f371 13-18,35-37,49-66,93-95,118-122,154,158,178-181,214-220,226-233,235-244,248-252,267,269,271,276-292,306-321,344,347,354-357,359-362,380-384,425-427,431,514-520,523-540,570-576,613,616,629-637,789-792,824-829,839-841,848-863,896-898,940-1050,1061-1070,1075-1083,1091-1095,1135-1136,1143-1150,1157-1158,1168,1181-1183,1207-1209,1240,1245-1259,1262,1266,1271,1280-1285,1287-1293,1300,1314-1316,1318-1343,1347-1350,1353-1354,1364-1365,1376,1378,1388,1401-1407,1423-1443,1511-1514,1516,1555-1562,1575-1577,1602-1673,1722-1723,1759-1768,1789-1801,1945-1949,2044-2102,2269-2320,2341-2372,2374
+widget_service/cloud/services/compact_plan_output.py
+  s_6c5290694a2c20::t_51c8e3e05106ef 1-94
+widget_service/cloud/services/compact_repair_context.py
+  s_6c5290694a2c20::t_33402028b0774d 1-578
+widget_service/cloud/services/compact_repair_simplification.py
+  s_6c5290694a2c20::t_10c25ab4259a31 1-332
+widget_service/cloud/services/compact_repair_strategy.py
+  s_6c5290694a2c20::t_450a932b707d8e 5,18-23,30,35,44-73,85-90,92-121,145-146,185-188,216-422,433-443,459-465,475-483,486-488,490-491,503-612,620-623,625-632,640-655,680-685,711-729,860,864-871,882,904,915,958-963,967,979-987,996-1019,1030-1033,1040-1042,1062-1091,1106-1118,1149-1202,1227,1270-1289,1310,1357,1360,1369,1382-1390,1392-1400,1407-1410,1421-1453,1456-1479
+widget_service/cloud/services/compact_semantic_layout.py
+  s_6c5290694a2c20::t_d777fbf71e6354 1-823
+widget_service/cloud/services/compact_slot_compatibility.py
+  s_6c5290694a2c20::t_72563bad6df2b6 1-182
+widget_service/cloud/services/compact_whole_card_click.py
+  s_6c5290694a2c20::t_87fc7352647244 1-2,5,7,10-26,29-32,35-85,88-100,102-135
+widget_service/cloud/services/compact_wide_recomposition.py
+  s_6c5290694a2c20::t_9608166bc9ece8 1,3,5-57,59-60,62-108,110-116,120-202
+widget_service/cloud/services/event_matching.py
+  s_6c5290694a2c20::t_0c8684298dcd54 1-2,5-6,10-26,28-36
+widget_service/cloud/services/generation_pipeline.py
+  s_6c5290694a2c20::t_a869019d59133b 4,8,20,29-30,69-74,91,93,125-126,157,174-221,224-226,229-231,244-256,314,324-337,370-372,414-426
+widget_service/cloud/services/generation_retry_policy.py
+  s_6c5290694a2c20::t_177050923283f3 1-28
+widget_service/cloud/services/generation_trace_recorder.py
+  s_6c5290694a2c20::t_7c0f7ff33c9c8d 264,313,402-406,424,432-445,672-677,721-749,872-873,876
+widget_service/cloud/services/layout_theme_contract.py
+  s_6c5290694a2c20::t_60c0fb308d8c0f 1-2,5-6,11-15,18-19,22-32,34-43,46-60,62-159,161-162
+widget_service/cloud/services/post_layout_theme.py
+  s_6c5290694a2c20::t_1d38562dbf7b75 1-2,6,8,10,13-19,21-105,107-259,261-430,432-449,451-458,460-469,471-515,517-541,543-552,554-616,618-675,677-768
+widget_service/cloud/services/post_layout_theme_registry.py
+  s_6c5290694a2c20::t_b627e082aa1942 1-540
+widget_service/cloud/services/prompt_builder.py
+  s_6c5290694a2c20::t_3db244ce861ed5 9-10,14,27-36,58-68,110-128,149,168,516-517,811-817,1545-1553,1561-1562,1713-1714,1731-1733,1735,1740,1742-1745,1753,1786,1788-1789,1939-1941,1969,2061,2071-2073,2093-2100,2103-2121,2142-2144,2147-2150,2193-2221
+widget_service/cloud/services/single_step_contract.py
+  s_6c5290694a2c20::t_641a552c4c4047 1-3,5,8-31,33-61,63-73,75-77,80-108,110,113-117,120-121
+widget_service/cloud/services/single_step_edit.py
+  s_6c5290694a2c20::t_f1b359ca1e6ec4 1-305
+widget_service/cloud/services/single_step_output.py
+  s_6c5290694a2c20::t_cbe80b07448f13 1-3,5,7-10,13-14,16-30
+widget_service/cloud/services/single_step_processor.py
+  s_6c5290694a2c20::t_cb5aebd34cc6a6 1-46
+widget_service/cloud/services/single_step_prompt.py
+  s_6c5290694a2c20::t_a5fb9e581c2350 1-47
+widget_service/cloud/services/single_step_theme.py
+  s_6c5290694a2c20::t_a6cc60bb24b802 1-113
+widget_service/cloud/services/source_artifact_repository.py
+  s_6c5290694a2c20::t_67c126aecfa395 13,19,95-104,106,120-127
+widget_service/cloud/services/square_photo_expansion.py
+  s_6c5290694a2c20::t_df0649f331b251 1-181
+widget_service/cloud/services/subjectless_wide_theme.py
+  s_6c5290694a2c20::t_882d59c2a8de80 1-66
+widget_service/cloud/services/template_generation/docs/action-label-fallback.md
+  s_6c5290694a2c20::t_dcd3b420e4dc1b 1-90
+widget_service/cloud/services/template_generation/docs/architecture.md
+  s_6c5290694a2c20::t_eb9f680923ab37 16-18,21-22,45,52-53,111-112,198-202,219-220,233-234,240-246
+widget_service/cloud/services/template_generation/docs/provider-template-capability-checklist.md
+  s_6c5290694a2c20::t_a48f9605a7279b 7,25,40,42-45,51-52,56-71,80,97,166-167,254-257,260-261,290-312
+widget_service/cloud/services/template_generation/docs/provider-template-contract.md
+  s_6c5290694a2c20::t_54268ca76f5143 30-31,66-68,149-150,159-162,191-192,549-550,552
+widget_service/cloud/services/template_generation/docs/provider-template-e2e-gallery.md
+  s_6c5290694a2c20::t_450c0c5aa4a969 7,48,52,132,148,159,198-202,231,302,360-375
+widget_service/cloud/services/template_generation/docs/provider-template-preview-gallery.md
+  s_6c5290694a2c20::t_e2f4c65a2ed2ee 8,12-17,35,40
+widget_service/cloud/services/template_generation/docs/support-template-action-policy.md
+  s_6c5290694a2c20::t_d46c6e69475940 24,28-30,35-49,51-60,63-64,66,87-90
+widget_service/cloud/services/template_generation/docs/template-generation-design.md
+  s_6c5290694a2c20::t_d1a1d4eeb13a70 8-38,51-60,320-359,364-381,440-488
+widget_service/cloud/services/template_generation/docs/template-search-planner-contract.md
+  s_6c5290694a2c20::t_f27e0d26eae88d 294-311,371-397
+widget_service/cloud/services/template_generation/engine/advanced/content_selectors.py
+  s_6c5290694a2c20::t_fb75dd8c600b5a 152,155-157,218,1043-1045,1092-1101,1621-1630,1774-1784
+widget_service/cloud/services/template_generation/engine/cardplan/action_labels.py
+  s_6c5290694a2c20::t_1f7bade8a2c5b5 1-101
+widget_service/cloud/services/template_generation/engine/cardplan/calendar_list_no_action_policy.py
+  s_6c5290694a2c20::t_2368e121aedb7e 57-65,111-116,193-199,225-253
+widget_service/cloud/services/template_generation/engine/cardplan/calendar_mixed_no_action_policy.py
+  s_6c5290694a2c20::t_b6fdd608d82124 1-2,7-8,10-23,25-27,30-45,47-53,55-112
+widget_service/cloud/services/template_generation/engine/cardplan/calendar_weather_presentation.py
+  s_6c5290694a2c20::t_124ded834c53a1 1-2,6-60,63-66,69,71-78,81-86,90-91,93-125,127-188
+widget_service/cloud/services/template_generation/engine/cardplan/compiler.py
+  s_6c5290694a2c20::t_7e9f7c4b21b9e9 63,65,72,449,751-755,757-758,893,925-932,940-944,951,978,1087,1140-1141,1216-1221,1326,1329,1380,1383-1389,4550-4551,4554-4562,4654,4682-4687,5138,5330,5340-5345,5695-5697,6532,6751-6756,6767-6772,6777-6782,8085,8091,9250,9363-9367
+widget_service/cloud/services/template_generation/engine/cardplan/generated/prompts.py
+  s_6c5290694a2c20::t_e46f51556369fe 40,66-183,186,215-238
+widget_service/cloud/services/template_generation/engine/cardplan/layout_surface_policy.py
+  s_6c5290694a2c20::t_d185a5998ddb9d 1-59
+widget_service/cloud/services/template_generation/engine/cardplan/models.py
+  s_6c5290694a2c20::t_45f904fb3cb57a 59-60
+widget_service/cloud/services/template_generation/engine/cardplan/preview_dataset.py
+  s_6c5290694a2c20::t_c2f87f01563b41 7-8,128,149,210-213,336,353,357-359,376-380,384-416,419
+widget_service/cloud/services/template_generation/engine/cardplan/prompt.py
+  s_6c5290694a2c20::t_6032d3c994367f 17,62,77-94,100,165,287,341,469,482-483,730,737-738,1094-1099,1121,1127-1128,1151-1153,1261-1281,1331
+widget_service/cloud/services/template_generation/engine/cardplan/provider_bundle.py
+  s_6c5290694a2c20::t_1728b3853d231e 148,237-242
+widget_service/cloud/services/template_generation/engine/cardplan/runtime_expression.py
+  s_6c5290694a2c20::t_2103ae0c8ce695 13,86,104-108,128-129
+widget_service/cloud/services/template_generation/engine/cardplan/template_retrieval.py
+  s_6c5290694a2c20::t_3ed1284444ca96 327-332,1338-1340,1344,1676
+widget_service/cloud/services/template_generation/engine/cardplan/wide_template_planner.py
+  s_6c5290694a2c20::t_398b44d76c84ac 31,68-81,175-188,425,427,436-446,450-459,462-463,470-492,501,509-537,541-543,552-565,655,665
+widget_service/cloud/services/template_generation/engine/pipeline.py
+  s_6c5290694a2c20::t_5fc68873c3cdff 46-48,289-299
+widget_service/cloud/services/template_generation/facade.py
+  s_6c5290694a2c20::t_3d9e53d9a47727 43
+widget_service/cloud/services/template_generation/model_client.py
+  s_6c5290694a2c20::t_613da1f8cd13c8 90
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/00-hybrid-kernel.md
+  s_6c5290694a2c20::t_af447e3147a1d0 5
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/10-template-composition.md
+  s_6c5290694a2c20::t_9f8b436defb71a 5,13
+widget_service/cloud/services/template_generation/resources/source/prompts/hybrid-body-generator/20-action-and-budget.md
+  s_6c5290694a2c20::t_da61c60beab0d6 5,11,18-27
+widget_service/cloud/services/template_generation/resources/source/prompts/ux-mixed-generator/00-ux-mixed-kernel.md
+  s_6c5290694a2c20::t_3ceb2ff5946275 5,29,35-44
+widget_service/cloud/services/template_generation/resources/source/providers/README.md
+  s_6c5290694a2c20::t_d74eb4028d74c8 34-39,41,43-44
+widget_service/cloud/services/template_generation/resources/source/providers/action/provider.json
+  s_6c5290694a2c20::t_ead6eda9ff0378 13
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/action.cardtpl
+  s_6c5290694a2c20::t_a3431ecbae82db 140
+widget_service/cloud/services/template_generation/resources/source/providers/action/templates/playlist-compact.cardtpl
+  s_6c5290694a2c20::t_9cccf00e0f35cf 3,5
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/first-layer.md
+  s_6c5290694a2c20::t_c4499addf5c57e 5-18,34-36,62-69,86-90
+widget_service/cloud/services/template_generation/resources/source/providers/battery/layer-docs/second-layer.md
+  s_6c5290694a2c20::t_3de94d2962c024 3-6,12-14,18-39,43,83,100-101,159-166
+widget_service/cloud/services/template_generation/resources/source/providers/battery/provider.json
+  s_6c5290694a2c20::t_6a67e42c0b12dc 16-17,38,338,567-662
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-charging-temperature-full.cardtpl
+  s_6c5290694a2c20::t_1927257183254c 1-38
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-charging-type-percent-full.cardtpl
+  s_6c5290694a2c20::t_eefccd665aa9bd 1-35
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-overview.cardtpl
+  s_6c5290694a2c20::t_b0b9e754bacf56 1,67,76-97,1856,1902,1912,2744
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-percent-health-current-details-full.cardtpl
+  s_6c5290694a2c20::t_f8067f3609433d 1-45
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-percent-health-details-full.cardtpl
+  s_6c5290694a2c20::t_68f0d4d78be24a 1-45
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-percent-status-full.cardtpl
+  s_6c5290694a2c20::t_4180aa078bed5c 1-64
+widget_service/cloud/services/template_generation/resources/source/providers/battery/templates/battery-temperature-status-full.cardtpl
+  s_6c5290694a2c20::t_6b17f0935e5d35 1-56
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/provider.json
+  s_6c5290694a2c20::t_f9820984cda8d9 16-17,900-954
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-additional-no-action-full.cardtpl
+  s_6c5290694a2c20::t_73ae2f4d823727 349-377
+widget_service/cloud/services/template_generation/resources/source/providers/calendar/templates/schedule-richeng3-no-action-full.cardtpl
+  s_6c5290694a2c20::t_a9926c84af195c 1,3-6,9-17,19-21,23-30,32-35,37,41,43-49,52,54-66,68-71,73-76,78,82,84-85,87-96,98-107,109,111-122,124-131,133,135-147,149
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/first-layer.md
+  s_6c5290694a2c20::t_059a9710904cbb 20-25
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/layer-docs/second-layer.md
+  s_6c5290694a2c20::t_1bfa58027ecf34 33-35,39-44
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/provider.json
+  s_6c5290694a2c20::t_7e1639a32553ab 16-17,137-140
+widget_service/cloud/services/template_generation/resources/source/providers/countdown/templates/countdown-overview.cardtpl
+  s_6c5290694a2c20::t_701b8c9b9914d6 7-20,23,28
+widget_service/cloud/services/template_generation/resources/source/providers/current-time/layer-docs/first-layer.md
+  s_6c5290694a2c20::t_ed8d43537a3d1b 1-11
+widget_service/cloud/services/template_generation/resources/source/providers/current-time/layer-docs/second-layer.md
+  s_6c5290694a2c20::t_b15016a7c9945e 3,5-11
+widget_service/cloud/services/template_generation/resources/source/providers/current-time/provider.json
+  s_6c5290694a2c20::t_77e156f6d7a213 3,13-14,16-17,23-27,29,31-34,38-42,44,46-49,53-57,59,61-64
+widget_service/cloud/services/template_generation/resources/source/providers/current-time/templates/current-time-overview.cardtpl
+  s_6c5290694a2c20::t_4a2b0a553cad85 1-203
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/first-layer.md
+  s_6c5290694a2c20::t_6e2acaf10e4130 3-5,146-158
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/layer-docs/second-layer.md
+  s_6c5290694a2c20::t_c82590ab3e1f78 3-7,22,76-79,99-120
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/provider.json
+  s_6c5290694a2c20::t_421843fb8e7e63 16-17,47-58,73-81,99-107,124-132,149-157,162-163,178,206-207,231-232,238-239,261-262,295-303,336-374,391-399,417-428,445-453,486-491,543-551,593-596,599,614-617,623,658-663,701-706
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/bluetooth-device-overview.cardtpl
+  s_6c5290694a2c20::t_68f7347930f827 57,66-80,101,111-125,143,165-166,177-191,206,236,245-259,278,288-302,315,317,339,348-362,384,394-408,424,447-448,459,461,472-501,542,551-567,613,623-639,720,748-749,761-776,829,838-854,900,910-926,1085-1101,1105-1121,1240,1272-1273,1283-1296,1477,1625,1633-1649,1731,1740-1756,1826-1830,1853,1855-1856,1859-1860,1869-1892,1898,1902,1912,1916,1927,1931,1939,1941,1950-1973,1979,1983,1993,1997,2008,2012,2020-2021,2031-2054,2060,2064,2074,2078,2091,2119-2120,2132-2147,2199,2208-2224,2268,2278-2294,2326,2352-2353,2363-2376,2411,2416,2418-2421,2425-2427,2436-2445,2447-2449,2453-2470,2473,2476,2480,2482-2485,2488,2490-2491,2500-2509,2511-2513,2517-2534,2537,2540,2545,2547-2550,2553-2554,2564-2587,2592,2595-2596,2605,2627-2628,2639-2653,2692,2701-2717,2761,2771-2787,2910-2915,3201,3210-3226,3286,3296-3312,3320,3339-3340,3348-3359,3456,3513
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/connection-text-full.cardtpl
+  s_6c5290694a2c20::t_3a7f30aa77a6e7 1,11,13,17-25
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/earbud-pair-charging-full.cardtpl
+  s_6c5290694a2c20::t_ce950f8c4d6ddf 1-155
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/earbud-triple.cardtpl
+  s_6c5290694a2c20::t_fb4f2ffb04c548 26,28-29,32-33,36-60,64-65,71-72,78-79,81,83,86-110,114-115,121-122,128-129,131-132,136-160,164-165,171-172
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/earbuds-charging-wide.cardtpl
+  s_6c5290694a2c20::t_8ae5489ba7cac4 19,24-25,29-44,46-52,54,65,69,71,75-81,83-89,91-100,122-123,127-152
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/earphone-case-connection.cardtpl
+  s_6c5290694a2c20::t_dd8a624e970a82 25,51-52,71-78
+widget_service/cloud/services/template_generation/resources/source/providers/earphone/templates/triple-battery-wide-half.cardtpl
+  s_6c5290694a2c20::t_fa193aa56c7c46 7-8,12-37,50-51,63-80,91,93,105-122
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/first-layer.md
+  s_6c5290694a2c20::t_83c734096e9422 41-47
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/layer-docs/second-layer.md
+  s_6c5290694a2c20::t_f66ac84c295482 83-89
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/provider.json
+  s_6c5290694a2c20::t_1f373e65bb528a 16-17,276-280,301-305,505-507,589-592,610-614,636-639
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/sleep-overview.cardtpl
+  s_6c5290694a2c20::t_d042bf3e92a067 2045,2061
+widget_service/cloud/services/template_generation/resources/source/providers/health-sport/templates/workout-overview.cardtpl
+  s_6c5290694a2c20::t_010ac82982b917 65
+widget_service/cloud/services/template_generation/resources/source/providers/layout/provider.json
+  s_6c5290694a2c20::t_9ac99f9f25eb88 68,447
+widget_service/cloud/services/template_generation/resources/source/providers/weather/provider.json
+  s_6c5290694a2c20::t_f89579fcfe52ba 361-378,547-569,585-621,691-718,869-885,1028-1046
+widget_service/cloud/services/template_generation/resources/source/providers/weather/templates/weather-overview.cardtpl
+  s_6c5290694a2c20::t_21714812b1e853 49-248,739-844,1706-1809,2261,2267-2268,2343,2349,2351-2361,2363-2366,2369-2381
+widget_service/cloud/services/template_generation/resources/source/themes/2x2-two-support/theme.json
+  s_6c5290694a2c20::t_4d9e64477d26a9 9
+widget_service/cloud/services/template_generation/resources/source/themes/README.md
+  s_6c5290694a2c20::t_bed13f53a5af25 57,68
+widget_service/cloud/services/template_generation/resources/source/themes/fusion-sport-orange/theme.json
+  s_6c5290694a2c20::t_dc06351b68da75 32-34
+widget_service/cloud/services/template_generation/test_support/wide_compositions.py
+  s_6c5290694a2c20::t_823bd3e2dd3f77 24-27,29,35,47,50,54,60,70,72,81,88,92,165-166
+widget_service/cloud/services/template_generation/tests/fixtures/focus_dnd_mode.json
+  s_6c5290694a2c20::t_19f3c625ef298e 2-15,17-28,31-32,36-37,41-42,46-47,51-52,55,59-65
+widget_service/cloud/services/template_generation/tests/fixtures/gallery_failed_plans.json
+  s_6c5290694a2c20::t_f857becc1603f0 1-56,58-63,65-70,72-82,84,86,88-107,110-112,114,117-119,121-126,128-144,146-151,153-157,159-167,169-170,172-174,176-253,255-259,262-266,269-273,275,278-284,286-295,297-299,301,304-306,309-311,313-318,320,322-337,339-343,345-349,351-446,448-459,461-466,468-473,475,477,479-498,500,503-505,507,510-517,519,521-536,538-542,544-548,550-566,568-574,576-577,579-635,637-655,657-661,664-670,673-675,678-690,692-701,703-725,727-729,731-737,739-743,745-746,748-804,806-824,826-830,832-835,839-855,857-878,880-881,883-889,891-895,897-898,900-955,957-975,977-981,984-1001,1004-1006,1008,1010-1019,1021-1023,1025-1031,1033-1037,1039-1040,1042-1098,1100-1107,1111-1129,1131-1135,1137-1140,1143-1145,1147-1149,1151-1160,1162-1183,1185-1186,1188-1195,1197-1276,1278-1289,1291-1296,1298-1303,1305,1307-1318,1320-1322,1325-1327,1329,1332-1334,1336-1341,1343,1345-1361,1363-1368,1370-1375,1377-1385,1387-1388,1390-1466,1468-1479,1482-1486,1489-1493,1495-1498,1500,1503-1509,1511-1520,1522-1524,1526,1529-1533,1535-1545,1547-1564,1566-1568,1570-1574,1576-1582,1584-1595,1597-1603,1605-1606,1608-1680,1682-1686,1689-1693,1695-1698,1701-1705,1707,1710,1712-1721,1723-1727,1729,1732-1734,1736,1739-1746,1748,1750-1767,1769-1771,1773-1824
+widget_service/cloud/services/template_generation/tests/helpers/generate_q073_preview.py
+  s_6c5290694a2c20::t_55a864ba04cd8e 54-55,57-58
+widget_service/cloud/services/template_generation/tests/public_processing.py
+  s_6c5290694a2c20::t_f981380054adb8 12-13,21-24
+widget_service/cloud/services/template_generation/tests/test_battery_action_policy.py
+  s_6c5290694a2c20::t_c4e63fd69a99ab 250-251,447,452-456,471-479,491,533-534,570,578-579
+widget_service/cloud/services/template_generation/tests/test_battery_non_fusion_palette.py
+  s_6c5290694a2c20::t_c1d889c0478165 1,31-35,44
+widget_service/cloud/services/template_generation/tests/test_calendar_no_action_fallback.py
+  s_6c5290694a2c20::t_f66043468a1b97 84,115-116,123,131-136
+widget_service/cloud/services/template_generation/tests/test_calendar_richeng2_no_action_fallback.py
+  s_6c5290694a2c20::t_db48feca9c368f 1-345
+widget_service/cloud/services/template_generation/tests/test_calendar_richeng2_no_action_render.py
+  s_6c5290694a2c20::t_39278a891da50a 1-117
+widget_service/cloud/services/template_generation/tests/test_calendar_richeng3_list_no_action_fallback.py
+  s_6c5290694a2c20::t_c9608f3e5888e1 1-304
+widget_service/cloud/services/template_generation/tests/test_calendar_richeng3_no_action_fallback.py
+  s_6c5290694a2c20::t_d68b79fb44b6bf 1-584
+widget_service/cloud/services/template_generation/tests/test_calendar_richeng3_no_action_render.py
+  s_6c5290694a2c20::t_2c88fb383b5cbb 1-501
+widget_service/cloud/services/template_generation/tests/test_calendar_weather_presentation.py
+  s_6c5290694a2c20::t_7455477188b742 1-250
+widget_service/cloud/services/template_generation/tests/test_focus_action_label.py
+  s_6c5290694a2c20::t_b78e1efd66c6cf 1-110
+widget_service/cloud/services/template_generation/tests/test_gallery_failure_regressions.py
+  s_6c5290694a2c20::t_92f16b92b66416 48-50,131,158-161
+widget_service/cloud/services/template_generation/tests/test_image_color_policy.py
+  s_6c5290694a2c20::t_60d7300ea4639e 42
+widget_service/cloud/services/template_generation/tests/test_provider_asset_semantics.py
+  s_6c5290694a2c20::t_c451da55f7f627 27,83,157,164,332
+widget_service/cloud/services/template_generation/tests/test_q059_composition.py
+  s_6c5290694a2c20::t_cfa21d617d27f0 1,25-26,52-53,55-56
+widget_service/cloud/services/template_generation/tests/test_retired_app_usage.py
+  s_6c5290694a2c20::t_6c2558ee9fd820 23,79-91
+widget_service/cloud/services/template_generation/tests/test_support_action_policy.py
+  s_6c5290694a2c20::t_bd6d68659c872b 55,63-68,117,120,123,126-130,133-134,137-139,142-143,148,228-245,271-272,291-316,472,492-505,508,510-511,527-536,538,550-551,555-556,574-579
+widget_service/cloud/services/template_generation/tests/test_support_template_refresh.py
+  s_6c5290694a2c20::t_f0a7c0f8a643b0 189-190,385-387,389-390
+widget_service/cloud/services/template_generation/tests/test_template_generation.py
+  s_6c5290694a2c20::t_4b31bd03cdd728 60,89,189,303-308,314,331-333,358,366-367,375,400,425,427-432,449-455,578-599,1175-1177,1287,1295,1323,1501,1546,1552,1556,1561,1734,2137,2530-2685,3356-3358,3365,3493,3511-3512,3630,3731-3736,5040-5134,6691,6848,6876-6878,7534-7538,7543,7545,7549,7581,7689-7691,7695,7730-7733,8615-8648,8797,8811,8905-8908,8911,8914
+widget_service/cloud/services/template_generation/tests/test_template_internal_contracts.py
+  s_6c5290694a2c20::t_0f3a0c987e7678 651
+widget_service/cloud/services/template_generation/tests/test_template_plan_planner.py
+  s_6c5290694a2c20::t_c60f9adc7d3ad0 647-738
+widget_service/cloud/services/template_generation/tests/test_template_preview_dataset.py
+  s_6c5290694a2c20::t_117a74c8b91006 23,27-28,30,32,35-36,45,196,316,329-332
+widget_service/cloud/services/template_generation/tests/test_template_required_only_render.py
+  s_6c5290694a2c20::t_ff9ff0f8587e44 72-77
+widget_service/cloud/services/template_generation/tests/test_template_retrieval.py
+  s_6c5290694a2c20::t_f3eecc3527dddb 819-822,918-922,924-926,928-931,945-949,955,960-961,1082-1083,1090,1138,1151,2729,2734,2738-2744,2748,2753-2755,2758,2760-2848
+widget_service/cloud/services/template_generation/tests/test_wide_gallery_compositions.py
+  s_6c5290694a2c20::t_c53fc13ec281e9 92
+widget_service/cloud/services/template_generation/tests/test_wide_template_planner.py
+  s_6c5290694a2c20::t_1bedbb3dee46f8 648,656,660-661,664-670,696,700,719,721
+widget_service/cloud/services/template_generation/tools/build_cardplan_bundle.py
+  s_6c5290694a2c20::t_0b4863452d13c8 20,25
+widget_service/cloud/services/template_generation/tools/generate_provider_template_gallery.py
+  s_6c5290694a2c20::t_3a29e118e1a2ec 33-34,76-83,116-117
+widget_service/cloud/services/template_generation/tools/generate_template_preview_dataset.py
+  s_6c5290694a2c20::t_770214a42fbd0f 18-19,30-32
+widget_service/cloud/services/theme_content_regions.py
+  s_6c5290694a2c20::t_4cc863e231af70 1-197
+widget_service/cloud/services/theme_layout_summary.py
+  s_6c5290694a2c20::t_54f648373744dd 1-160
+widget_service/cloud/services/theme_photo_eligibility.py
+  s_6c5290694a2c20::t_89848672a5766b 1-530
+widget_service/cloud/services/theme_selection_policy.py
+  s_6c5290694a2c20::t_28cb149e0b1cbb 1-84
+widget_service/cloud/services/theme_style_roles.py
+  s_6c5290694a2c20::t_bbd6da199bcca5 1-171
+widget_service/cloud/services/validator.py
+  s_6c5290694a2c20::t_90abfaa0df5fe9 11-12,18-24,54-57
+widget_service/cloud/services/widget_edit_protocol/__init__.py
+  s_6c5290694a2c20::t_0de196527f096d 1
+widget_service/cloud/services/widget_edit_protocol/converter.py
+  s_6c5290694a2c20::t_358bf05e5f3fc7 1-3,8,15,17-547,550-551,555-561,565-566,568-569,572,575-581,584-586,589-603,605-715,717-726,728-738,740-761,763-971,973-987,990-996,998-1011,1013-1060,1063-1152,1154-1173,1175-1224,1226-1227,1231-1246,1249-1259,1262-1357,1359-1362,1364-1373,1375-1398,1400,1402-1407,1409-1436,1439-1458,1460-1471,1473-1490,1493-1535,1537-1556,1558-1565,1567-1569,1571-1581,1583,1585-1627,1630,1633-1638,1640-1647,1650-1662,1665-1685,1687,1690-1731,1733-1735,1737-1780,1783-1788,1791-1833,1835-1837,1839-1847,1849-1890,1892-1895,1897-1901,1903,1905-1910,1914-1925,1927-1930,1932-1934,1937-1948,1950-1982,1984-2010,2012-2016,2019-2052,2054-2084,2087-2090,2093-2130,2133-2182,2184-2188,2190-2193,2195-2204,2206-2211,2214-2275,2277-2357,2359-2362,2365-2385,2388-2510,2512,2514-2516,2518,2520-2524,2527-2541,2544-2593,2596-2613,2616-2626,2630-2638,2641-2647,2649-2666,2668-2670,2675-2679,2681-2742,2744-2757,2759-2761,2763-2770,2772-2776,2780-2784,2786-2797,2801-2807,2810-2825,2827-2846,2848-2869,2872-2878,2881-2890,2893-2900,2903-2919,2922-2950,2953-2988,2991,2994-2998,3001-3042,3044-3052,3055-3058,3061-3062,3064,3067-3089,3091-3099,3101,3103-3107,3109-3113,3116-3178,3181-3274,3277-3295,3298-3316,3319-3330,3333-3338,3340-3379,3381-3383,3385,3388-3393,3397-3426,3428-3437,3440-3446,3449-3461,3463-3482,3484-3486,3489,3491-3529,3531-3580,3583-3585,3588-3598,3601-3602,3604-3617,3619-3630,3632-3635,3639-3653
+widget_service/cloud/services/widget_edit_protocol/prompt_builder.py
+  s_6c5290694a2c20::t_ccd236d2c0496e 1-2,6-11,14,16-20,22-455,457-488,490-506,508-544,546-559,561-564,566-569,571-573,575-578,580-599,601-602,604-607,609-615,617,619-622,624-628,630-633,635-636,638-644,646-649,651-664,666-814,816-823,825-828,830-851,853-877,879-885,887-889,891-911,914-924,926-933,935-958,960-974,976-986,988-993,995-998,1000-1010,1012-1019,1021-1058,1060-1063,1065-1090,1092-1120,1122-1175,1177-1178,1180-1181,1183-1194,1196-1198,1200-1206,1209-1216,1218-1221,1223-1231,1233-1235,1237-1241,1243-1250,1252-1259,1261-1276,1279-1330,1332-1370,1372-1394,1396-1435,1437-1440
+widget_service/cloud/services/widget_edit_protocol/resources.py
+  s_6c5290694a2c20::t_79dd0ae57aa3f0 1-30
+widget_service/cloud/services/widget_generation_service.py
+  s_6c5290694a2c20::t_c647fd845948e1 40,50,56-59,92-94,102-103,304,327-335,379,685-690,692-694,699-708,768-769,776-779,782-783,797-803,825,831-851,871,880,1010,1017,1024-1034,1038-1043,1046-1064,1071,1075,1106-1110,1131,1202,1206-1209,1240-1241,1251,1267-1268,1372,1374-1377,1379-1382,1389-1407,1421-1425,1481,1537-1541,1549-1560,1612-1613,1629,1633-1646,1652,1726-1765,1780-1800,1832-1875,1915-1918,1924,1950,2243-2246,2276,2279-2290,2307,2325-2343,2633
+widget_service/cloud/utils/download_file_from_url.py
+  s_6c5290694a2c20::t_94cb205a66b854 1-233
+widget_service/cloud/utils/url_guard.py
+  s_6c5290694a2c20::t_212e26b31bcf54 1-3,5-10,12-15,17,19-21,23,25,28-29,32-44,47-48,50-59,61-68,70-86
+widget_service/docs/generateWidgetCardCompactDsl数据流.md
+  s_6c5290694a2c20::t_4c42d0721a8849 672
+widget_service/docs/generateWidgetCard数据流.md
+  s_6c5290694a2c20::t_6e634873cfd906 185,488
+widget_service/docs/latest_design_diff.md
+  s_6c5290694a2c20::t_ef59151a4bebf2 66-69
+widget_service/docs/method_usage.md
+  s_6c5290694a2c20::t_01f83661afd863 46,52-57,61,185-187,193,196-200,722,1586
+widget_service/docs/第一二四接口内部流程图.md
+  s_6c5290694a2c20::t_635c3bea1f644b 49-50
+widget_service/pyproject.toml
+  s_6c5290694a2c20::t_b58f1728ec4d95 11
+widget_service/requirements.txt
+  s_6c5290694a2c20::t_bc234c53431e15 5
+widget_service/test_reports/phase2-directory-removal-20261016.md
+  s_6c5290694a2c20::t_e5f98102a390a6 1-83
+widget_service/tests/compact_dsl_validate/README.md
+  s_6c5290694a2c20::t_4eb62ea13c131e 3,5,7,21-23
+widget_service/tests/conftest.py
+  s_6c5290694a2c20::t_22fd99cf62239a 1-12
+widget_service/tests/fixtures/compact_horizontal_overflow/input.jsonl
+  s_6c5290694a2c20::t_2016e5d73aebaf 1-17
+widget_service/tests/fixtures/compact_horizontal_overflow/text-block-input.jsonl
+  s_6c5290694a2c20::t_890c3f9843347f 1-13
+widget_service/tests/fixtures/compact_semantic_2x2_legacy.json
+  s_6c5290694a2c20::t_5fa0b47741c6b0 1-70,72
+widget_service/tests/fixtures/compact_validation_baseline.json
+  s_6c5290694a2c20::t_3c13e18484f204 3532,3575
+widget_service/tests/fixtures/compact_validation_rule_inventory.json
+  s_6c5290694a2c20::t_0e52d35a4f7209 109-122
+widget_service/tests/fixtures/post_layout_theme_v1_outputs.json
+  s_6c5290694a2c20::t_4638f5012dda97 2-6,8-18,20-21,24-28,30-31,34-38,40-41,44-48,50-51,54-61,64-71,74-77,80-87,90-97,100-107,110-117,120-127,130-137,140-143,146-153,156-163,166-173,176-183,186-190,192-193,196-200,202-209,212-216,218-219,222-226,228-229,232-236,238-239,242-246,248-249,252-256,258-259,262-266,268-269,272-275,278-285,288-292,294-295,298-302,304-887,890-1250
+widget_service/tests/test_aliyun_bailian_transport.py
+  s_6c5290694a2c20::t_bbbda8f9b89502 1-220
+widget_service/tests/test_argument_json_recovery.py
+  s_6c5290694a2c20::t_c9a6fde868fc7e 33
+widget_service/tests/test_asset_mapping_generation.py
+  s_6c5290694a2c20::t_b56818a91a6d5a 46-64,81,85-86,89-90,219,221,223,226-228,266-269,298-301,304,306,308-311,319,325,341-350,361-364,367,380,382,384-387,401-402
+widget_service/tests/test_autumn_calendar_photos.py
+  s_6c5290694a2c20::t_f00acec0ebad6c 1-308
+widget_service/tests/test_battery_music_photo_rules.py
+  s_6c5290694a2c20::t_e970f7c919872d 1-295
+widget_service/tests/test_capability_overview_descriptions.py
+  s_6c5290694a2c20::t_696c9ef41b5be4 62-63,65,71
+widget_service/tests/test_compact_actions_only.py
+  s_6c5290694a2c20::t_c4d18178a55cf9 1-212
+widget_service/tests/test_compact_calendar_badge_context.py
+  s_6c5290694a2c20::t_94e0d674c6945f 1-113
+widget_service/tests/test_compact_capacity_and_tree_routing.py
+  s_6c5290694a2c20::t_2fab19f8f93780 1-171
+widget_service/tests/test_compact_codecheck_regressions.py
+  s_6c5290694a2c20::t_e31bdc7ac2146f 1-159
+widget_service/tests/test_compact_component_bindings.py
+  s_6c5290694a2c20::t_f0a8d96c7ea525 43-45,62-65,89-127,320,328,333,352-369,373-417
+widget_service/tests/test_compact_component_runtime.py
+  s_6c5290694a2c20::t_fdfd4848c5e375 49,62,65-88,91,94,97-99,157,159-162,168,286,315,321-323,327,329-331
+widget_service/tests/test_compact_composition_planner.py
+  s_6c5290694a2c20::t_b08fca412a8c6e 15,38,62-73,75-78,82
+widget_service/tests/test_compact_dsl_a2ui_converter.py
+  s_6c5290694a2c20::t_85fe15aa5ea6c4 211,236,239-241,496,1281-1321,1337,1371-1479,1482-1483,1533,1591-1592,1597-1607,1635,1637-1638,1640,1658-1666,2215,2233,2389-2398,3363,3385-3388,3743-3830,4143-4200
+widget_service/tests/test_compact_dsl_interface_retry.py
+  s_6c5290694a2c20::t_af9f87520ab4b2 13,211-245,287
+widget_service/tests/test_compact_dsl_interface_retry_routes.py
+  s_6c5290694a2c20::t_c70792a3e58528 120-148
+widget_service/tests/test_compact_dsl_validator.py
+  s_6c5290694a2c20::t_7aa9046fd6c855 226-251,658-720,772-802,1142,1163,1184
+widget_service/tests/test_compact_horizontal_budget.py
+  s_6c5290694a2c20::t_077263540a31e1 1,4-5,8-38,40-43,45-49,51-57,59-63,65-69,71-74,76-81,83-88,90-96,98-99,101-108,112-146,149-151,153-160,163-164,166-167,169-175,178-187,190-196,199-225,228-256,259-278,280-287,289-290,293-299,301-341,344-352,354-355,357-358,360-382,385-418,421-426,428-479,482-585
+widget_service/tests/test_compact_infoblock_text_geometry.py
+  s_6c5290694a2c20::t_dc2fbd219b7b6b 1,3,5,7-8,11-13,16-22,25-46,48-116
+widget_service/tests/test_compact_joint_repair.py
+  s_6c5290694a2c20::t_b2ba125cdf8576 1-191
+widget_service/tests/test_compact_layout_overflow_tolerances.py
+  s_6c5290694a2c20::t_fc336c1c72f529 1-95
+widget_service/tests/test_compact_layout_runtime.py
+  s_6c5290694a2c20::t_b14b1e3cb46b1c 11-15,24,262,269-275,608-610,645-650,652-665,667-671
+widget_service/tests/test_compact_outer_recomposition.py
+  s_6c5290694a2c20::t_cffa1809957e38 1-122
+widget_service/tests/test_compact_plan.py
+  s_6c5290694a2c20::t_87b841b180e41f 10,18,21,60-103,133-366,448,523-539,597-794,1143-1193,1245-1322,1365-1419,1545-1551,1601,1612,1615-1616,1627,1631,1650,1693-1801,1806,1827-1830,1832-1894,1902,1917-1918,1921,1926,1940,1944
+widget_service/tests/test_compact_plan_generation.py
+  s_6c5290694a2c20::t_f1b1c0929b5a8e 23-24,27,42,59-78,125-128,132-138,142,145-152,163,175-179
+widget_service/tests/test_compact_plan_output.py
+  s_6c5290694a2c20::t_9b586b169da91f 1-174
+widget_service/tests/test_compact_plan_selection.py
+  s_6c5290694a2c20::t_c1d96baf95ad99 1-159,161-177
+widget_service/tests/test_compact_prompt_boundaries.py
+  s_6c5290694a2c20::t_46525e80ed8e17 1-176,179-248
+widget_service/tests/test_compact_prompt_bundle.py
+  s_6c5290694a2c20::t_649f4f4f7ea050 10,19,79,95-98,103-111,114-123,126-128,130,138,141-154,157-158,160-166,192-196,206,213,231-236,241,262-268,273-280,284-307,339-342,344-349,352-371,374-386,463,494-503,531,534-537
+widget_service/tests/test_compact_recomposition_search.py
+  s_6c5290694a2c20::t_1a952bc14a3fe3 1-255
+widget_service/tests/test_compact_repair_strategy.py
+  s_6c5290694a2c20::t_9b97765ba13d7e 3-8,19-127,139,148-181,200-221,225-227,234-243,285-286,293-521,542-654,713-720,735,753-755,760-761,763-774,777-780,1070-1316
+widget_service/tests/test_compact_runtime_prompt_context.py
+  s_6c5290694a2c20::t_ef4e6c36fc4047 10,137-163
+widget_service/tests/test_compact_semantic_layout.py
+  s_6c5290694a2c20::t_4d6c2df278f754 1-547
+widget_service/tests/test_compact_semantic_ratio_conversion.py
+  s_6c5290694a2c20::t_671b7fca541ac5 1-119
+widget_service/tests/test_compact_semantic_small_layout.py
+  s_6c5290694a2c20::t_73550f736d2aad 1,3,5,7-53,55-184,186-269
+widget_service/tests/test_compact_slot_compatibility.py
+  s_6c5290694a2c20::t_690d9cba61aa09 1-87
+widget_service/tests/test_compact_structural_ids.py
+  s_6c5290694a2c20::t_7ead26ad119a2e 1-314
+widget_service/tests/test_compact_template_fallback.py
+  s_6c5290694a2c20::t_ed7d4e86922011 1-302
+widget_service/tests/test_compact_validation_assets.py
+  s_6c5290694a2c20::t_ba734b1dcb6a2d 47,149,152-154,173-175,208-209
+widget_service/tests/test_compact_validation_diagnostics.py
+  s_6c5290694a2c20::t_8355a3c66aa9fe 25-28,139-221,250-293
+widget_service/tests/test_compact_validation_equivalence.py
+  s_6c5290694a2c20::t_ce332a4fb2cbbd 43-44,48-49,52,54-58,83-91,99-101
+widget_service/tests/test_compact_validation_fusion.py
+  s_6c5290694a2c20::t_f846886f6188b1 46-125,293,309,325-361,400,410
+widget_service/tests/test_compact_validation_height_closure.py
+  s_6c5290694a2c20::t_dde96229861852 1-225
+widget_service/tests/test_compact_validation_repair_integration.py
+  s_6c5290694a2c20::t_42f87b7e67a46a 60,89-129,175,196,199-201,246
+widget_service/tests/test_compact_validation_restoration_integration.py
+  s_6c5290694a2c20::t_57280a470d0ffc 284
+widget_service/tests/test_compact_validation_title_icon.py
+  s_6c5290694a2c20::t_ce8a46c889ec43 82,84-91,152-156
+widget_service/tests/test_compact_whole_card_click.py
+  s_6c5290694a2c20::t_b3a934da24ea09 1-38,41-43,45-77,79-81,84-443
+widget_service/tests/test_compact_wide_expression_budget.py
+  s_6c5290694a2c20::t_738d77983b3af1 1-233
+widget_service/tests/test_compact_wide_label_budget.py
+  s_6c5290694a2c20::t_b5b64231b0ef00 1-49
+widget_service/tests/test_compact_wide_recomposition.py
+  s_6c5290694a2c20::t_30a4e47ffabc7a 1-231
+widget_service/tests/test_config_helper.py
+  s_6c5290694a2c20::t_65caec6cb425fc 10-12,19-29,45,47-79,99-109,159-196
+widget_service/tests/test_contrast_validator.py
+  s_6c5290694a2c20::t_053172a961bd1f 120-156
+widget_service/tests/test_debug_batch_artifact_collection.py
+  s_6c5290694a2c20::t_fd39ccb9b986c4 1-223
+widget_service/tests/test_debug_batch_metrics.py
+  s_6c5290694a2c20::t_a3d4a321f7857a 1-427
+widget_service/tests/test_debug_batch_tasks.py
+  s_6c5290694a2c20::t_6bfde02be04caa 5,7,13,16,23,70-78,155-209,264-265,268-272,279-284,286,293-296,298-310,312,316-358,565-773,804-805,839,897,899,932,939-943,985,1013-1016,1091,1163-1245
+widget_service/tests/test_debug_batch_testing.py
+  s_6c5290694a2c20::t_479710c5d89359 10,26-46,424,549-550,558-559,568-685
+widget_service/tests/test_debug_data_analysis.py
+  s_6c5290694a2c20::t_0cb73cc9884b72 1-17,19-98,100-106,109-111,114-115,117-176,178-189,191-196,199-224,226-239,241-279,281-288,290-297
+widget_service/tests/test_debug_device_capture.py
+  s_6c5290694a2c20::t_bd36e5f6cb3bfa 3-4,6,8,12-24,26-28,32-50,53-65,68-100,103-105,109,111,113-122,124-197,201-230,233-273,277,279,281-285,287-293,295-297,300-304,306-312,314-365,367-382,384-395,397-403,407-415,417-447,449-453,455-457,459-463,465-487,489-518,520-521,523-550,552-617
+widget_service/tests/test_debug_example_config.py
+  s_6c5290694a2c20::t_90e370798e425c 1-27
+widget_service/tests/test_debug_file_io.py
+  s_6c5290694a2c20::t_7e48b7e3878c5d 1-244
+widget_service/tests/test_debug_gallery_pipeline.py
+  s_6c5290694a2c20::t_dfc9068366306f 1-45,47-55,57-94,97-106,108-230
+widget_service/tests/test_debug_optional_environment.py
+  s_6c5290694a2c20::t_91f70f737e7e15 1-153
+widget_service/tests/test_debug_postprocess_retry.py
+  s_6c5290694a2c20::t_b7571111d8418e 1-2,5,8-109,113-223,226-245,247-264,266-271,273-285,287-315,317-449,451-454,456-462
+widget_service/tests/test_debug_quality_score.py
+  s_6c5290694a2c20::t_fb1f2fba6d07ab 12-13,57,228,233-240,266
+widget_service/tests/test_debug_quality_workflow.py
+  s_6c5290694a2c20::t_b5878e84a6f98d 74
+widget_service/tests/test_debug_renderer_conversion.py
+  s_6c5290694a2c20::t_edc9d6698f959d 4,15-18,31-48,65,80-140
+widget_service/tests/test_debug_shared_assets.py
+  s_6c5290694a2c20::t_7ed53f2419df37 3-4,6-11,14-26,29-54,56-131
+widget_service/tests/test_debug_shared_config.py
+  s_6c5290694a2c20::t_fc716799b20ec3 1-68
+widget_service/tests/test_deepseek_official_http_transport.py
+  s_6c5290694a2c20::t_4b9fde0d35710f 7-8,35-38,40-46,61,78-89,93-94,115-118,128,137-139,141-142,146,154,158-160,162,165,172-265,319,324
+widget_service/tests/test_design_compact_few_shots.py
+  s_6c5290694a2c20::t_b537c0ece412af 11,13,16,58,76,94,107,123,231-280,410-414,421,439,462-467,475,492-494,573-576,597,602-613,655,684-703
+widget_service/tests/test_design_compact_repair_prompt.py
+  s_6c5290694a2c20::t_e1d7896d210744 7,16-155,157-166,246-252,279-328
+widget_service/tests/test_edit_artifact_validation.py
+  s_6c5290694a2c20::t_fe39e507fe5ba5 1,3-4,6-31,33-41,43-54,58,65,71,73-78,82-94,97-169,171-178,181-287,289-389,391-448
+widget_service/tests/test_emphasized_data_protocol_alignment.py
+  s_6c5290694a2c20::t_684040ce1a535e 1,3,5,7-14,17-66,69-77,80-96
+widget_service/tests/test_event_matching.py
+  s_6c5290694a2c20::t_7bd80ea011dc5a 1-84
+widget_service/tests/test_fusion_ball_version_gate.py
+  s_6c5290694a2c20::t_f08484c4b1247b 141,168
+widget_service/tests/test_gallery_compact_converter.py
+  s_6c5290694a2c20::t_f6328d3363449d 1-42
+widget_service/tests/test_generate_dsl_from_task_spec.py
+  s_6c5290694a2c20::t_5dcf839e27968c 4,27-29
+widget_service/tests/test_generation_preflight.py
+  s_6c5290694a2c20::t_e5517b2d697e43 17
+widget_service/tests/test_generation_trace_recorder.py
+  s_6c5290694a2c20::t_1f54cb16f076d1 26,32,82-118,578,595-599,688,723-727
+widget_service/tests/test_geometry_calendar_weather_photos.py
+  s_6c5290694a2c20::t_13d657a87efaa9 1-141
+widget_service/tests/test_jsonl_trace_compaction.py
+  s_6c5290694a2c20::t_13bfb32bcc2e44 1-165
+widget_service/tests/test_managed_config.py
+  s_6c5290694a2c20::t_74bbd8b2a49f16 1-2,5,7-8,11-187,189-248,250-253,255-260,263-351,354-363
+widget_service/tests/test_metronome_photo.py
+  s_6c5290694a2c20::t_75498ff5cfd2fa 1-151
+widget_service/tests/test_multi_round_edit.py
+  s_6c5290694a2c20::t_39872ddaab7de5 104-105
+widget_service/tests/test_native_asset_colors.py
+  s_6c5290694a2c20::t_dd9ddd88bff0c3 1-296
+widget_service/tests/test_peer_info_prompt_contract.py
+  s_6c5290694a2c20::t_7c7c573415f945 1-104
+widget_service/tests/test_phase_two_registry_defaults.py
+  s_6c5290694a2c20::t_9a7543bc78c5e5 1-233
+widget_service/tests/test_photo_asset_delivery.py
+  s_6c5290694a2c20::t_8c6b20df6c5c22 1-256
+widget_service/tests/test_photo_background_fallback.py
+  s_6c5290694a2c20::t_26589e1f49100f 1-169
+widget_service/tests/test_photo_layout_and_countdown_rules.py
+  s_6c5290694a2c20::t_b11065fa3b9f8d 1-201
+widget_service/tests/test_photo_surface_material.py
+  s_6c5290694a2c20::t_c59edb1e2f7580 1-151
+widget_service/tests/test_photo_theme_contracts.py
+  s_6c5290694a2c20::t_c3f26ac7e30374 1-120
+widget_service/tests/test_plugin_stream_json.py
+  s_6c5290694a2c20::t_5278c0c6577b6c 1-170
+widget_service/tests/test_post_layout_fusion_palette_alignment.py
+  s_6c5290694a2c20::t_4eb3bbf6526a86 1-69
+widget_service/tests/test_post_layout_fusion_render_marker.py
+  s_6c5290694a2c20::t_205afc81d4dabe 1-152
+widget_service/tests/test_post_layout_sleep_theme.py
+  s_6c5290694a2c20::t_a1357aec88d5dd 1-272
+widget_service/tests/test_post_layout_theme_boundary.py
+  s_6c5290694a2c20::t_43bbbced012ee5 1-182
+widget_service/tests/test_post_layout_theme_registry.py
+  s_6c5290694a2c20::t_2f3a3a0e9a82bd 1-328
+widget_service/tests/test_post_layout_theme_selection.py
+  s_6c5290694a2c20::t_954a2f7986a8a4 1-196
+widget_service/tests/test_selected_photo_eligibility.py
+  s_6c5290694a2c20::t_f8b927d7850a9e 1-172
+widget_service/tests/test_service_units.py
+  s_6c5290694a2c20::t_de3028b9213130 167,176-180,360,521-531,534-535,807,867,895-896,909,952-955,1454,1458,1500,1611,1714,1719-1722,1724-1726,1730,1735-1738,1742,1777-1779,1791,1796,1817,1874,2102,2120,2144,2168,2188,2236-2238,2252,2271,2457,2474,2508,2535,2553,2584,3857,3860,3917-3918,3983,4029,4089,4276,4285-4288,4293,4595,4821
+widget_service/tests/test_single_step_edit.py
+  s_6c5290694a2c20::t_14f74a8b7dfbe9 1-216
+widget_service/tests/test_single_step_generation.py
+  s_6c5290694a2c20::t_35b5e9a227aec1 1-966
+widget_service/tests/test_single_step_theme.py
+  s_6c5290694a2c20::t_bc096661f489ff 1-184
+widget_service/tests/test_template_semantic_layout_context.py
+  s_6c5290694a2c20::t_d8fd99431713b6 1-105
+widget_service/tests/test_textblock_protocol_geometry.py
+  s_6c5290694a2c20::t_a5100d6a06559d 1-83
+widget_service/tests/test_theme_codecheck_regressions.py
+  s_6c5290694a2c20::t_c369101aeb1af0 1-39,41-46,48-57,59-199
+widget_service/tests/test_theme_surface_roles.py
+  s_6c5290694a2c20::t_972284b9dec998 1-119
+widget_service/tests/test_theme_unknown_geometry.py
+  s_6c5290694a2c20::t_66e9433fea3315 1-124
+widget_service/tests/test_trace_adaptation.py
+  s_6c5290694a2c20::t_a97133727a3883 1-161,163,165-166,170-313
+widget_service/tests/test_ux_photo_matching.py
+  s_6c5290694a2c20::t_ea9f0e8cd668a0 1-571
+widget_service/tests/test_weather_photo_eligibility.py
+  s_6c5290694a2c20::t_9626c9207f13a9 1-265
+widget_service/tests/test_widget_edit_protocol.py
+  s_6c5290694a2c20::t_ea1dac300ceab1 1-149
+widget_service/tests/theme_photo_samples.py
+  s_6c5290694a2c20::t_da089eb3b4e0bb 1-26
+widget_service/tests/ws_response_parser.py
+  s_6c5290694a2c20::t_dba7d8b5cbcef6 4,16,21-34
+widget_service/tools/analyze_compact_semantic_run.py
+  s_6c5290694a2c20::t_2c0381c0592cd5 1-138
+widget_service/tools/convert_compact_gallery.py
+  s_6c5290694a2c20::t_73f50d19008a6a 1-2,7-8,10,14-29,31,34-53,55-71,74-91,93-96,99-102,104-109,113
+widget_service/tools/migrate_compact_semantic_fewshots.py
+  s_6c5290694a2c20::t_e5d21f1b559024 1-158
+widget_service/tools/run_compact_semantic_batch.py
+  s_6c5290694a2c20::t_ed71617f6f6d37 1,4-10,13-58,60-119,123-132
+widget_service/tools/verify_compact_semantic_examples.py
+  s_6c5290694a2c20::t_665bbf0d6bc9d6 1-108
+widget_service/uv.lock
+  s_6c5290694a2c20::t_c9b9fc64c80db4 215-223,335-360,493-511,818-826,858-869,1003,1036
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.7",
+  "base_commit_sha": "1424b776fe0f1b2fc8d6780512611c866e4ba0ba",
+  "prompts": {},
+  "sessions": {
+    "s_6c5290694a2c20": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1390d-4d9a-7343-b499-f005a795710d",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"gpt-6-astra\":{\"additions\":1886,\"deletions\":136}}",
+        "stats_total_additions": "1886",
+        "stats_total_deletions": "136",
+        "stats_turn_models": "{\"t_5367d5439124d2\":\"gpt-6-astra\",\"t_80349d701ed848\":\"gpt-6-astra\",\"t_896490977267d1\":\"gpt-6-astra\",\"t_9f2841641a8b1f\":\"gpt-6-astra\",\"t_f066a29692dcaa\":\"gpt-6-astra\"}"
+      }
+    }
+  }
+}

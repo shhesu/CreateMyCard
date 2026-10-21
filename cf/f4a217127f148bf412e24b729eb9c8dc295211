@@ -1,0 +1,27 @@
+docs/云侧方案设计.md
+  s_6c5290694a2c20::t_af00142add53b2 1249
+widget_service/cloud/services/template_generation/resources/source/providers/current-time/templates/current-time-overview.cardtpl
+  s_6c5290694a2c20::t_af00142add53b2 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.7",
+  "base_commit_sha": "cff4a217127f148bf412e24b729eb9c8dc295211",
+  "prompts": {},
+  "sessions": {
+    "s_6c5290694a2c20": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1390d-4d9a-7343-b499-f005a795710d",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "yan_shuifeng <yanshuifeng@huawei.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"gpt-6-astra\":{\"additions\":1888,\"deletions\":138}}",
+        "stats_total_additions": "2",
+        "stats_total_deletions": "2",
+        "stats_turn_models": "{\"t_5367d5439124d2\":\"gpt-6-astra\",\"t_80349d701ed848\":\"gpt-6-astra\",\"t_896490977267d1\":\"gpt-6-astra\",\"t_9f2841641a8b1f\":\"gpt-6-astra\",\"t_af00142add53b2\":\"gpt-6-astra\",\"t_f066a29692dcaa\":\"gpt-6-astra\"}"
+      }
+    }
+  }
+}
